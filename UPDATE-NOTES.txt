@@ -3,6 +3,7 @@ HWS Studio update - October 11, 2026
 SOURCE PACKAGE: This package has not been deployed. Upload its contents into the repository root, including the .github folder. Deploy the Cloudflare backend and GitHub Pages frontend from this same source version. Existing backend secrets remain in Cloudflare; do not put them in this package. See DEPLOYMENT.md.
 
 Included:
+- Scratch-creation hotfix: verify the persisted draft before opening the editor. Older backends that ignore the starting choice now receive an explicit empty-draft save for the untouched new record. Save/verification failures retain the same record for retry, and edited/published websites are never automatically cleared.
 - Website creation and the editor template picker now offer Start from scratch (the UI default) or Use the whole template. Scratch keeps the selected design with one empty Home page and removes demo pages, menus, links, logos, contacts, and events. Whole template includes all sample content. Changing an existing site requires an explicit apply action and can be undone.
 - Sign-in and password recovery; public sign-up UI and handler removed.
 - A separate shared calendar per website, opened from Calendar in the editor toolbar.
@@ -15,6 +16,7 @@ Included:
 - Editable header mini menus, hierarchical navigation, mega menus, and responsive menu refinements.
 
 Verified:
+- 21 new website-creation regression checks covering older/current backend behavior, all 12 selectable templates, failed saves/reads, retry without duplicate records, and protection for edited/published drafts. The local browser creation flow against a simulated older backend showed one empty Home page still present after reload.
 - TypeScript check, production Pages build, Cloudflare Worker dry-run build.
 - 1,356 template page renders and 377 template/block combinations.
 - 104 backend checks, 61 commerce checks, 16 private storage checks. All external providers were mocked; no email/payment/DNS changes were made.

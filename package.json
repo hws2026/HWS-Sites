@@ -24,7 +24,8 @@
     "verify:backend": "node scripts/verify-backend.mjs",
     "verify:commerce": "node scripts/verify-commerce.mjs",
     "verify:storage": "node scripts/verify-storage.mjs",
-    "verify:calendar": "node scripts/verify-calendar.mjs"
+    "verify:calendar": "node scripts/verify-calendar.mjs",
+    "verify:creation": "node scripts/verify-creation.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

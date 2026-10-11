@@ -22,6 +22,8 @@ When creating a website or choosing a replacement template in the editor, select
 
 Whole template includes all demo pages, menus, sections, and sample events. In the editor, selecting a design does not replace anything until you click the apply button. Replacement keeps an existing customer's site name and address and can be undone. New-site API requests may pass `startMode: 'scratch'` or `'full'`; omitted values retain the previous full-template behavior for older clients.
 
+Scratch creation checks the saved draft before opening the editor. If an older backend ignores the choice, the frontend saves and verifies the blank starter through the existing draft API. This applies only to the untouched, unpublished record just created. Failed verification keeps the form open with a retry for the same record; it never silently clears an existing edited website. Run `npm run verify:creation` for the mixed-version and retry regression checks.
+
 ## Access and publishing
 
 The suite starts private. The `#/website/<site-id>/<slug>` route is an assigned-access review. On the standalone backend, publish in the editor and enable public access under Domains to serve `/sites/<site-id>/` and connected domains without sign-in. Custom domains require Cloudflare for SaaS configuration and DNS verification. Invitation email delivery is not configured. See DEPLOYMENT.md for the separate GitHub Pages/Supabase deployment and required provider setup.

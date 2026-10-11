@@ -106,6 +106,8 @@ The earlier Sites-hosted database is separate from the new Cloudflare database. 
 
 ## Deploying the expanded template/calendar update
 
+The scratch-creation hotfix also works when GitHub Pages updates before the Cloudflare Worker: it verifies the new site's draft and initializes its empty Home page through the existing save endpoint if the older Worker ignored `startMode`. A failed save stays on the creation form with a retry for the same record. Already edited or published sites are preserved. For a site previously created with unwanted demo content, open **Library → Choose a starting template → Start from scratch** and apply it explicitly; that replacement is undoable. The new-site fix does not automatically reset existing websites.
+
 Upload the complete source, including new `lib/`, `app/`, `pages/`, and `scripts/` files. Deploy the backend and Pages frontend from the same source version: the backend validator now accepts up to 600 pages, shared calendars, nested modules, saved sections and expanded color settings. An older backend rejects these drafts. No new database migration is needed for this update; data stays inside the existing website snapshots. Deploy the backend before inviting users to save with the new editor, and finish the Pages deployment promptly.
 
 Existing customer websites retain their saved content. New template structures apply to newly created websites or when choosing a replacement template. Existing websites can enable the calendar without replacing their template. Publishing remains explicit. The suite's signup option is removed; use Supabase's administrative invitation flow to provision an auth account, then assign that email to the appropriate customer/site in HWS.
