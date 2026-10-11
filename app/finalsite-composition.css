@@ -1,0 +1,305 @@
+/* Finalsite reference compositions. These rules map onto editable suite blocks. */
+.website .event-time-icon{display:none}
+.website .event-weekday{display:block;width:100%;font-size:13px;font-weight:400;text-transform:uppercase;line-height:1.4}
+.website .calendar-full-link{margin-right:auto;border:1px solid currentColor;padding:16px 19px;font:600 13px/1.4 var(--body-font);letter-spacing:1.2px;text-transform:uppercase}
+
+/* Community schools: full-width resource rail, centered captions, calendar footer. */
+.website.layout-school .website-brand{max-width:none}
+.website.layout-school .header-resource-links{max-width:none}
+.website.layout-school .website-header-actions:has(>.website-mobile-menu:not([open])){flex:0 0 auto}
+.website.layout-school .hero-slide .hero-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch;padding:30px 115px 115px 45px;overflow:auto}
+.website.layout-school .hero-slide .hero-copy>p{margin:0 0 20px}
+.website.layout-school .hero-slide .hero-copy>p:first-of-type:first-line{font-weight:inherit}
+.website.layout-school .hero-slide .hero-copy>p.hero-lead{font-weight:700;margin-bottom:20px}
+.website.layout-school .hero-slide .website-button{align-self:flex-start;font:400 18px/1.6 var(--body-font);letter-spacing:0}
+.website.layout-school .hero-controls>button{width:32px;min-width:32px;height:37px;padding:0}
+.website.layout-school .hero-counter{height:37px;min-width:72px;font-size:13px}
+.website.layout-school .hero-controls{gap:4px}
+.website.layout-school .section-events{padding:40px 50px!important}
+.website.layout-school .section-events .website-section-heading{margin-bottom:37px}
+.website.layout-school .section-events :is(h1,h2){font:300 37px/1.4 var(--body-font);letter-spacing:0}
+.website.layout-school .event-list>article{min-height:307px}
+.website.layout-school .event-date{flex-wrap:wrap;align-content:center;justify-content:flex-start;align-items:baseline;gap:0 9px;min-height:75px;padding:13px 28px 10px;font:300 30px/1 var(--body-font)}
+.website.layout-school .event-date small{font:300 30px/1 var(--body-font)}
+.website.layout-school .event-date strong{font:600 30px/1 var(--body-font)}
+.website.layout-school .event-list>article>div{padding:20px 20px 30px}
+.website.layout-school .event-list h3{font:600 20px/1.4 var(--body-font);margin:0 0 12px}
+.website.layout-school .event-list p{display:flex;gap:6px;justify-content:center;align-items:baseline;white-space:normal;font:400 16px/1.6 var(--body-font);color:#636363;margin:0}
+.website.layout-school .event-time-icon{display:inline;flex-shrink:0}
+.website.layout-school .event-carousel-controls{margin-top:30px;align-items:flex-end}
+.website.layout-school .event-carousel-controls>button{width:32px;height:32px;background:#ffffffcc;color:#111;border:0}
+.website.layout-school .section-news h2,.website.layout-school .section-news+.section-image h2{font:300 37px/1.4 var(--body-font)}
+.website.layout-school .news-body h3{font:700 24px/1.4 var(--body-font)}
+.website.layout-school .news-body p{font:400 18px/1.6 var(--body-font)}
+.website.layout-school .news-grid{gap:40px}
+.website.layout-school .news-grid .news-read{display:inline-flex;font:600 13px/1.4 var(--body-font);letter-spacing:1.2px}
+
+/* Shared two-column panels for the corporation, international and network families. */
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav .website-nav-group{position:relative}
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav .mega-link-columns>div{left:50%;right:auto;translate:-50% 0;width:580px;max-width:calc(100cqw - 40px);border:0;padding:20px 30px 10px}
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav .mega-link-columns .submenu-links{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(var(--menu-rows),auto);gap:0 30px}
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav .mega-link-columns .submenu-links>a{font-weight:600;padding:15px 0;border-bottom:1px solid #ffffff4d}
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav .menu-leading-arrow{display:none}
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav>div>details:nth-child(2)>div{left:0;translate:0 0}
+.website:is(.layout-corporation,.layout-international,.layout-network) .website-nav>div>details:last-child>div{left:auto;right:0;translate:0 0}
+
+/* District: proportional photo, backed welcome image, news mosaic and notice panels. */
+.website.layout-district{--site-detail:#52878f}
+.website.layout-district .website-brand{font:700 22px/31px 'Lato',Arial,sans-serif}
+.website.layout-district .hero-slide{height:50cqw;min-height:0;max-height:700px}
+.website.layout-district .website-nav>div>a,.website.layout-district .website-nav>div>details>summary{position:relative}
+.website.layout-district .website-nav>div>a:after,.website.layout-district .website-nav>div>details>summary:after{content:'';position:absolute;left:20px;right:20px;bottom:-5px;height:10px;background:var(--site-detail);transform:scaleX(0);transition:transform .3s;z-index:2}
+.website.layout-district .website-nav>div>a:hover:after,.website.layout-district .website-nav>div>details[open]>summary:after{transform:scaleX(1)}
+.website.layout-district .website-nav .website-nav-group{position:relative}
+.website.layout-district .website-nav .website-nav-group:not(.website-mega-menu)>div{left:50%;translate:-50% 0;background:color-mix(in srgb,var(--site-accent),black 20%);padding:20px}
+.website.layout-district .website-nav .submenu-links>a{padding:10px 0!important}
+.website.layout-district .section-split{padding:100px 50px!important}
+.website.layout-district .section-split>.section-content{max-width:1180px!important}
+.website.layout-district .split-content{grid-template-columns:57.62% 37.28%;gap:5.1%;align-items:center}
+.website.layout-district .split-content>img{height:420px;box-shadow:-40px 40px 0 var(--site-detail)}
+.website.layout-district .split-content h2{font:700 32px/1.3 'Lato',sans-serif;letter-spacing:0}
+.website.layout-district .split-content p{font:400 17px/28px 'Open Sans',sans-serif}
+.website.layout-district .section-news{padding:60px 50px 100px!important;background:white!important}
+.website.layout-district .section-news>.section-content{max-width:1180px!important;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.website.layout-district .section-news .website-section-heading{background:var(--site-accent);color:white;padding:45px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;margin:0}
+.website.layout-district .section-news h2{font:700 40px/1.2 'Lato',sans-serif}
+.website.layout-district .section-news .news-grid{display:contents}
+.website.layout-district .news-grid>a{position:relative;min-height:320px;box-shadow:none;border:0;overflow:hidden;background:var(--site-accent)}
+.website.layout-district .news-visual{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+.website.layout-district .news-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent,#000c)}
+.website.layout-district .news-body{position:absolute;inset:auto 0 0;padding:30px;color:white;background:transparent}
+.website.layout-district .news-body h3{font:700 24px/1.3 'Lato',sans-serif;color:white}
+.website.layout-district .news-date{color:white}
+.website.layout-district .news-body p{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s;margin:0}
+.website.layout-district .news-grid>a:is(:hover,:focus-visible) .news-body p{max-height:130px;opacity:1;margin-bottom:16px}
+.website.layout-district .news-read{display:none}
+.website.layout-district .website-main:has(>.section-events+.section-text){display:grid;grid-template-columns:1fr 1fr}
+.website.layout-district .website-main>section{grid-column:1/-1}
+.website.layout-district .website-main>.section-events:has(+.section-text){grid-column:1;padding:40px!important;margin:0 20px 80px 50px;border:1px solid var(--site-detail);border-bottom-width:12px}
+.website.layout-district .website-main>.section-events+.section-text{grid-column:2;padding:40px!important;margin:0 50px 80px 20px;border:1px solid var(--site-detail);border-bottom-width:12px}
+.website.layout-district .website-footer strong{font:700 24px/30px 'Lato',sans-serif}
+.website.layout-district .website-footer p{font:400 17px/28px 'Open Sans',sans-serif}
+
+/* Day school: seven editable story panels; dots navigate the page's stories. */
+.website.layout-editorial .website-brand{font:600 22px/32px 'EB Garamond',Georgia,serif}
+.website.layout-editorial .website-brand small{display:block;font:400 16px/22px 'EB Garamond',Georgia,serif;letter-spacing:0;text-transform:none;margin:0;color:#626262}
+.website.layout-editorial .hero-slide{height:calc(var(--site-view-height,100svh) - 70px);min-height:650px;border-bottom:10px solid white;align-items:flex-end}
+.website.layout-editorial .hero-slide .hero-copy{width:calc(100% - 80px);max-width:980px!important;margin:0 auto 0!important;padding:0 0 9%;align-self:flex-end}
+.website.layout-editorial .hero-slide h1{font:700 48px/60px var(--body-font);letter-spacing:0}
+.website.layout-editorial .hero-slide .hero-copy>p{font:600 20px/32px var(--body-font);max-width:760px;white-space:normal}
+.website.layout-editorial .hero-slide .hero-shade{background:linear-gradient(to bottom,transparent 30%,#000c 100%)}
+.website.layout-editorial .hero-pagination{display:none}
+.website.layout-editorial .hero-scroll{right:4%;bottom:30px}
+.website.layout-editorial.sticky-navigation .section-hero{scroll-margin-top:84px}
+.website.layout-editorial .story-progress{position:sticky;top:calc(var(--site-view-height,100svh) * .4);height:0;z-index:8;display:flex;flex-direction:column;align-items:flex-end;padding-right:30px;gap:20px;pointer-events:none}
+.website.layout-editorial .story-progress button{position:relative;width:10px;height:10px;min-height:10px;border:1px solid #fff;border-radius:50%;box-shadow:0 0 2px #000;background:#0004;padding:0;pointer-events:auto}
+.website.layout-editorial .story-progress button[aria-current=true]{background:white}
+.website.layout-editorial .story-progress button span{position:absolute;right:25px;top:-8px;width:max-content;padding:4px 9px;background:#fff;color:#353839;opacity:0;pointer-events:none;font-size:13px;transition:opacity .2s}
+.website.layout-editorial .story-progress button:is(:hover,:focus-visible) span{opacity:1}
+.website.layout-editorial .website-footer{padding:40px 20px;max-width:1180px;margin:auto}
+
+/* Corporation: photograph grid, paired introduction/calendar and charcoal footer. */
+.website.layout-corporation .website-brand{font:700 28px/1.2 'Libre Caslon Text',Georgia,serif}
+.website.layout-corporation .website-utility{background:#242424}
+.website.layout-corporation .website-nav>div{max-width:1180px}
+.website.layout-corporation .website-nav>div>a,.website.layout-corporation .website-nav>div>details>summary{font:700 18px/20px 'Lato',sans-serif;padding:15px 10px}
+.website.layout-corporation .website-nav .mega-link-columns>div{width:520px;min-width:520px;padding:40px;background:var(--site-accent);color:white;box-shadow:0 15px 25px #0005}
+.website.layout-corporation .website-nav .mega-link-columns .submenu-links>a{font:600 15px/21px 'Lato',sans-serif;padding:10px 0;color:white}
+.website.layout-corporation .hero-slide{height:58cqw;max-height:830px;min-height:0;border-bottom:6px solid black}
+.website.layout-corporation .hero-slide .hero-shade{background:linear-gradient(#0003,transparent 30%)}
+.website.layout-corporation .hero-controls{left:45px;right:60px;bottom:38px;justify-content:flex-start;gap:15px}
+.website.layout-corporation .hero-controls .slide-play{position:absolute;right:0}
+.website.layout-corporation .section-features{padding:130px 40px 120px!important}
+.website.layout-corporation .section-features>.section-content{max-width:1180px!important}
+.website.layout-corporation .section-features .feature-columns{margin:0;gap:20px}
+.website.layout-corporation .section-features .feature-columns>article{height:24.15cqw;max-height:350px;min-height:0;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;background:#343b43}
+.website.layout-corporation .feature-columns .module-image{opacity:1;object-fit:cover;z-index:0}
+.website.layout-corporation .feature-columns>article:after{content:'';position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#343b43f2);transition:inset .4s;z-index:0}
+.website.layout-corporation .feature-columns>article h3{font:700 27px/29px 'Libre Caslon Text',Georgia,serif;color:white;transform:translateY(40px);margin:0 0 15px}
+.website.layout-corporation .feature-columns>article p{font:400 16px/1.4 'Lato',sans-serif;color:white;opacity:0;transform:translateY(100%) scale(.5);margin:0 0 10px}
+.website.layout-corporation .feature-columns>article .text-link{color:white;opacity:0}
+.website.layout-corporation .feature-columns>article:is(:hover,:focus-within):after{inset:0;border-bottom:18px solid black}
+.website.layout-corporation .feature-columns>article:is(:hover,:focus-within) :is(h3,p){transform:none;opacity:1}
+.website.layout-corporation .feature-columns>article:is(:hover,:focus-within) .text-link{opacity:1}
+.website.layout-corporation .website-main{display:grid;grid-template-columns:1fr 1fr}
+.website.layout-corporation .website-main>section{grid-column:1/-1}
+.website.layout-corporation .website-main>.section-text:has(+.section-events){grid-column:1;padding:40px max(40px,calc((100cqw - 1180px)/2)) 80px!important;padding-right:40px!important}
+.website.layout-corporation .website-main>.section-text+.section-events{grid-column:2;padding:40px max(40px,calc((100cqw - 1180px)/2)) 80px 40px!important}
+.website.layout-corporation .section-text h2{font:700 45px/56px 'Libre Caslon Text',Georgia,serif}
+.website.layout-corporation .section-text p{font:400 18px/1.7 'Lato',sans-serif}
+.website.layout-corporation .section-news{padding:50px 40px 150px!important}
+.website.layout-corporation .section-news>.section-content{max-width:1180px!important}
+.website.layout-corporation .news-grid>a{background:transparent;border:0;box-shadow:none;text-align:center}
+.website.layout-corporation .news-grid>a:hover{transform:none;box-shadow:none}
+.website.layout-corporation .news-grid>a:hover img{transform:scale(1.2)}
+.website.layout-corporation .news-body h3{font:700 22px/32px 'Lato',sans-serif}
+.website.layout-corporation .section-stats{background:linear-gradient(#ffffffb8,#ffffffb8),url('../public/demo-campus.webp') center/cover!important;color:black;padding:100px 40px!important}
+.website.layout-corporation .stats-grid>div{display:flex;flex-direction:column;align-items:center;gap:14px}
+.website.layout-corporation .stats-grid strong{font:700 42px/1.2 'Lato',sans-serif}
+.website.layout-corporation .website-footer{background:#242424;color:white}
+
+/* International: divided white menus, circular resources and photographic program cards. */
+.website.layout-international{--site-detail:#d12a2f;--body-font:'Open Sans',Arial,sans-serif}
+.website.layout-international .website-brand{max-width:300px;font-size:26px}
+.website.layout-international .school-emblem{width:56px;flex-basis:56px;height:85px}
+.website.layout-international .website-nav .mega-link-columns>div{background:white;color:#636363;border:1px solid #cfcfcf;border-top:2px solid var(--site-detail)}
+.website.layout-international .website-nav .mega-link-columns .submenu-links>a{font:600 14px/19px var(--body-font);border-color:#cfcfcf}
+.website.layout-international .hero-controls{inset:0;pointer-events:none}
+.website.layout-international .hero-controls>button{position:absolute;bottom:70px;background:transparent;color:white;border:1px solid #ffffff88;pointer-events:auto;width:40px;height:40px}
+.website.layout-international .hero-controls .slide-previous{left:calc(34.87% - 95px)}
+.website.layout-international .hero-controls .slide-next{left:calc(34.87% - 45px)}
+.website.layout-international .hero-controls .slide-play{right:calc(4% + 30px);width:26px;height:26px;border:0;background:#0004}
+.website.layout-international .section-quicklinks{padding:45px 4% 65px!important}
+.website.layout-international .section-quicklinks .quicklink-grid>a{background:transparent;border:0;gap:25px;font:600 15px/20px var(--body-font);color:var(--site-accent);padding:10px}
+.website.layout-international .quicklink-grid>a>svg:first-child{width:120px;height:120px;padding:31px;border:1px solid #cfcfcf;border-radius:50%;color:var(--site-detail);stroke-width:1.3;transition:background .3s,color .3s}
+.website.layout-international .quicklink-grid>a:hover>svg:first-child{background:var(--site-detail);color:white}
+.website.layout-international .section-features:has(.module-image) .feature-columns>article{position:relative;border:1px solid #ccc;border-radius:10px;background:white;padding:0;overflow:hidden}
+.website.layout-international .feature-columns>article:hover{transform:none;box-shadow:none}
+.website.layout-international .section-features:has(.module-image) .module-image{height:310px;margin:0;object-fit:cover;transition:transform .4s}
+.website.layout-international .section-features:has(.module-image) article:hover .module-image{transform:scale(1.2)}
+.website.layout-international .section-features:has(.module-image) h3{position:relative;background:white;min-height:102px;display:flex;align-items:center;padding:25px 70px 25px 30px;margin:0;font:700 16px/1.4 var(--body-font);color:var(--site-accent)}
+.website.layout-international .section-features:has(.module-image) p{display:none}
+.website.layout-international .section-features:has(.module-image) .text-link{position:absolute;right:25px;bottom:30px;margin:0;border-radius:50%;background:var(--site-accent);color:transparent;width:40px;height:40px;overflow:hidden;font-size:0;padding:0;display:grid;place-items:center}
+.website.layout-international .section-features:has(.module-image) .text-link svg{color:white;width:20px;height:20px}
+.website.layout-international .section-split{padding:60px 4%!important}
+.website.layout-international .section-split>.section-content{max-width:1180px!important}
+.website.layout-international .split-content{grid-template-columns:62% 38%;gap:0;background:#f4f4f4}
+.website.layout-international .split-content>div{padding:40px}
+.website.layout-international .split-content>img{height:380px}
+.website.layout-international .website-main{grid-template-columns:55% 45%}
+.website.layout-international .section-news,.website.layout-international .section-events{padding:40px!important;background:white!important}
+.website.layout-international .section-news .news-grid{grid-template-columns:1fr;gap:0}
+.website.layout-international .section-news .news-visual{display:none}
+.website.layout-international .section-news .news-grid>a{padding:25px 0;border:0;border-bottom:1px solid #ddd;box-shadow:none;background:transparent}
+.website.layout-international .news-body{padding:0}
+.website.layout-international .news-body h3{font:400 17px/27px var(--body-font);color:#636363}
+.website.layout-international .news-body p{display:none}
+.website.layout-international .news-date{color:#888;font-size:13px;letter-spacing:0;text-transform:none}
+.website.layout-international .section-news h2,.website.layout-international .section-events h2{font:700 16px/1.4 var(--body-font);letter-spacing:.1em;text-transform:uppercase}
+.website.layout-international .section-features:not(:has(.module-image)){border-top:1px solid #ddd}
+.website.layout-international .section-features:not(:has(.module-image)) article{background:white;border:0;text-align:center;padding:20px}
+.website.layout-international .section-features:not(:has(.module-image)) .icon-symbol{margin:auto;color:#888}
+
+/* Network: shorter masthead, red menus, gray mission, navy news and date bars. */
+.website.layout-network{--site-detail:#a4343a}
+.website.layout-network .website-masthead{height:140px;min-height:140px;padding:50px 2%}
+.website.layout-network .website-brand{font-size:40px}
+.website.layout-network .school-emblem{height:65px;width:65px;flex-basis:65px}
+.website.layout-network .header-resource-links{font-size:14px;font-weight:700}
+.website.layout-network .website-nav>div>a,.website.layout-network .website-nav>div>details>summary{font:400 18px/18px var(--body-font);padding:18px 20px}
+.website.layout-network .website-nav>div>details[open]>summary{background:var(--site-detail)}
+.website.layout-network .website-nav .mega-link-columns>div{background:var(--site-detail);color:white}
+.website.layout-network .website-nav .mega-link-columns .submenu-links>a{font:400 16px/24px var(--body-font);letter-spacing:.5px;color:white}
+.website.layout-network .hero-slide{height:56.26cqw;min-height:0;max-height:630px}
+.website.layout-network .hero-slide .hero-shade{background:linear-gradient(transparent 30%,#0003)}
+.website.layout-network .hero-controls .slide-play{top:20px;left:20px;bottom:auto;right:auto;width:32px;height:32px}
+.website.layout-network .hero-controls{inset:0;align-items:center}
+.website.layout-network .section-hero+.section-quicklinks{padding:0 40px 35px!important}
+.website.layout-network .section-quicklinks>.section-content{max-width:1180px!important}
+.website.layout-network .quicklink-grid>a>svg:first-child{width:44px;height:44px;color:#aeafb0;transition:transform .3s,color .3s}
+.website.layout-network .quicklink-grid>a:hover>svg:first-child{transform:scale(1.2);color:var(--site-accent)}
+.website.layout-network .section-split{padding:60px 40px!important}
+.website.layout-network .split-content.reverse{grid-template-columns:40% 60%;gap:0;align-items:center}
+.website.layout-network .split-content.reverse>div{padding-right:40px}
+.website.layout-network .section-split h2{font:300 35px/40px var(--body-font);letter-spacing:0}
+.website.layout-network .section-split p{font:400 18px/1.7 var(--body-font)}
+.website.layout-network .section-news{padding:50px!important}
+.website.layout-network .section-news .news-grid>a{background:white;color:#333;border:0;box-shadow:none}
+.website.layout-network .section-news .news-grid>a:hover{transform:none;box-shadow:none}
+.website.layout-network .news-visual{height:216px;aspect-ratio:auto}
+.website.layout-network .news-body h3{font:400 16px/1.5 var(--body-font)}
+.website.layout-network .section-events{padding:60px 40px!important}
+.website.layout-network .event-list>article{display:flex;flex-direction:column;padding:0;gap:0;align-items:stretch;border:0}
+.website.layout-network .event-date{display:flex;flex-direction:row;justify-content:space-between;padding:0 0 0 25px;width:100%;height:68px;min-height:68px;border-radius:0;background:var(--site-accent)}
+.website.layout-network .event-date small{font:400 26px/1 var(--body-font)}
+.website.layout-network .event-date strong{display:grid;place-items:center;width:30.7%;height:100%;font:400 40px/1 var(--body-font);background:var(--site-detail)}
+.website.layout-network .event-list>article>div{padding:25px;text-align:center}
+.website.layout-network .event-list h3{font:400 18px/1.5 var(--body-font)}
+.website.layout-network .website-footer{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:30px;min-height:496px;border-top:5px solid #adaeb0;background:linear-gradient(#0c2340e6,#0c2340e6),url('../public/demo-campus.webp') center/cover!important;padding:60px 40px}
+.website.layout-network .footer-identity p{text-transform:uppercase;font-size:14px;letter-spacing:.05em}
+.website.layout-network .footer-links{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:20px}
+.website.layout-network .footer-bottom{width:100%;max-width:1180px;justify-content:center;flex-wrap:wrap}
+
+@container(max-width:1199px){
+ .website.layout-school .hero-slide .hero-copy{padding:30px 32px 90px;max-height:none}
+ .website.layout-corporation .section-features{padding:40px 32px!important}
+ .website.layout-corporation .website-nav,.website.layout-corporation .header-resource-links,.website.layout-corporation .website-utility{display:none!important}
+ .website.layout-corporation .website-mobile-menu{display:block}
+ .website.layout-corporation .website-masthead{height:100px;min-height:100px}
+}
+@container(max-width:999px){
+ .website.layout-international .hero-slide{grid-template-columns:1fr;padding:30px;gap:10px}
+ .website.layout-international .hero-slide .hero-media{grid-column:1;grid-row:1;height:63cqw;min-height:0;border-radius:8px}
+ .website.layout-international .hero-slide .hero-copy{grid-column:1;grid-row:2;border-radius:8px;padding:30px 30px 90px}
+ .website.layout-international .hero-controls .slide-previous{left:auto;right:110px;bottom:60px}
+ .website.layout-international .hero-controls .slide-next{left:auto;right:60px;bottom:60px}
+ .website.layout-international .hero-controls .slide-play{top:calc(63cqw - 26px);bottom:auto;right:60px}
+ .website.layout-international .quicklink-grid{grid-template-columns:repeat(3,1fr)}
+ .website.layout-international .section-features:has(.module-image) .module-image{height:240px}
+ .website.layout-international .website-main{display:block}
+ .website.layout-editorial .hero-slide{height:var(--site-view-height,100svh);min-height:620px;border-bottom-width:5px}
+ .website.layout-corporation .feature-columns{grid-template-columns:1fr 1fr}
+ .website.layout-corporation .section-features .feature-columns>article{height:44.29cqw;max-height:none}
+ .website.layout-corporation .website-main{display:block}
+ .website.layout-corporation .hero-slide{max-height:580px}
+ .website.layout-district .section-split{padding:60px 40px!important}
+ .website.layout-network .split-content.reverse{grid-template-columns:1fr;gap:25px}
+ .website.layout-network .split-content.reverse>div{padding:0}
+}
+@container(max-width:700px){
+ .website.layout-school .hero-slide .hero-copy{padding:25px 22px 85px}
+ .website.layout-school .section-events{padding:35px 22px!important}
+ .website.layout-school .section-events :is(h1,h2){font-size:29px}
+ .website.layout-school .event-carousel{--block-columns:1.2}
+ .website.layout-school .event-date,.website.layout-school .event-date small,.website.layout-school .event-date strong{font-size:25px}
+ .website.layout-school .calendar-full-link{padding:12px;font-size:11px}
+ .website.layout-district .hero-slide{height:65cqw;min-height:260px}
+ .website.layout-district .section-split{padding:50px 25px!important}
+ .website.layout-district .split-content{grid-template-columns:1fr;gap:45px}
+ .website.layout-district .split-content>img{height:260px;box-shadow:-15px 20px 0 var(--site-detail)}
+ .website.layout-district .section-news{padding:30px 25px!important}
+ .website.layout-district .section-news>.section-content{grid-template-columns:1fr}
+ .website.layout-district .website-main:has(>.section-events+.section-text){display:block}
+ .website.layout-district .website-main>.section-events:has(+.section-text),.website.layout-district .website-main>.section-events+.section-text{margin:25px;padding:25px!important}
+ .website.layout-editorial .website-brand small{display:none}
+ .website.layout-editorial .story-progress{display:none}
+ .website.layout-corporation .hero-slide{height:94cqw;max-height:none;border-bottom-width:6px}
+ .website.layout-corporation .hero-controls{left:20px;right:20px;bottom:20px}
+ .website.layout-corporation .feature-columns{grid-template-columns:1fr;gap:6px!important}
+ .website.layout-corporation .section-features{padding:40px 0!important}
+ .website.layout-corporation .section-features .feature-columns>article{height:68.75cqw}
+ .website.layout-corporation .feature-columns>article h3{font-size:22px;line-height:24px;transform:none}
+ .website.layout-corporation .feature-columns>article .text-link{opacity:1}
+ .website.layout-corporation .section-news{padding:40px 20px!important}
+ .website.layout-corporation .section-stats{padding:50px 20px!important}
+ .website.layout-corporation .stats-grid{grid-template-columns:1fr 1fr}
+ .website.layout-international .hero-slide{padding:20px;gap:0}
+ .website.layout-international .hero-slide .hero-media{height:64cqw;aspect-ratio:auto;border-radius:8px 8px 0 0}
+ .website.layout-international .hero-slide .hero-copy{padding:30px 24px 90px;border-radius:0 0 8px 8px}
+ .website.layout-international .hero-controls .slide-previous{right:94px;bottom:45px}
+ .website.layout-international .hero-controls .slide-next{right:44px;bottom:45px}
+ .website.layout-international .hero-controls .slide-play{top:calc(64cqw - 30px);right:40px}
+ .website.layout-international .quicklink-grid{grid-template-columns:1fr 1fr}
+ .website.layout-international .quicklink-grid>a>svg:first-child{width:80px;height:80px;padding:21px}
+ .website.layout-international .section-features:has(.module-image) .module-image{height:200px}
+ .website.layout-international .split-content{grid-template-columns:1fr}
+ .website.layout-international .split-content>img{height:250px}
+ .website.layout-international .split-content>div{padding:25px}
+ .website.layout-network .website-masthead{height:auto;min-height:84px;padding:16px}
+ .website.layout-network .hero-slide{height:62.5cqw;min-height:0}
+ .website.layout-network .section-hero+.section-quicklinks{padding:0 20px 25px!important}
+ .website.layout-network .section-quicklinks .section-content{margin-top:-20px}
+ .website.layout-network .section-split,.website.layout-network .section-news,.website.layout-network .section-events{padding:40px 20px!important}
+ .website.layout-network .section-split h2{font-size:30px}
+}
+@container(max-width:599px){
+ .website.layout-editorial .hero-slide{height:auto;min-height:0;display:flex;flex-direction:column;align-items:stretch;padding:0;border-bottom:0}
+ .website.layout-editorial .hero-slide .hero-media{position:relative;inset:auto;height:64cqw;width:100%;flex:none}
+ .website.layout-editorial .hero-slide .hero-shade{display:none}
+ .website.layout-editorial .hero-slide .hero-copy{width:100%;max-width:none!important;margin:0!important;padding:40px 20px;align-self:stretch;color:#353839;background:white}
+ .website.layout-editorial .hero-slide h1{font-size:36px;line-height:46px}
+ .website.layout-editorial .hero-slide .hero-copy>p{font-size:20px;line-height:32px}
+ .website.layout-editorial .hero-slide .website-button{background:var(--site-accent);color:white}
+ .website.layout-editorial .hero-scroll{display:none}
+}
+@media(prefers-reduced-motion:reduce){.website .news-body p,.website .feature-columns>article:after{transition:none}}

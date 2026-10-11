@@ -76,3 +76,4 @@ School-style headers switch to the compact menu below 1200px of canvas width; ot
 
 The seven Finalsite-style demos now use template-specific section compositions: seven editable full-height day-school stories with page navigation dots; nine corporation photo tiles with hover details; a district news mosaic and paired notice panels; international circular resources, photo program cards and a feature story; and network mission, news and calendar treatments. School templates have weekday date cards and a calendar footer. Corporation, international and network headers default to two-column mega menus with their own colors and dimensions. Tablet and mobile breakpoints retain the Menu-only header and vertical link lists. Existing customer content is preserved; new section arrangements appear in demos and newly selected templates.
 # HWS-Sites
+# HWS-Sites

@@ -1,0 +1,43 @@
+name: Deploy Cloudflare backend
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Build backend for verification
+        run: npx wrangler deploy --config backend/wrangler.json --dry-run --outdir backend-dist
+      - run: npm run verify:backend
+      - run: npm run verify:commerce
+      - run: npm run verify:storage
+      - name: Configure deployment
+        run: node scripts/configure-backend.mjs
+        env:
+          HWS_FRONTEND_URL: ${{ vars.HWS_FRONTEND_URL }}
+          HWS_D1_ID: ${{ vars.HWS_D1_ID }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+          SUPABASE_STORAGE_BUCKET: ${{ vars.SUPABASE_STORAGE_BUCKET }}
+          ADMIN_SUPABASE_USER_IDS: ${{ vars.ADMIN_SUPABASE_USER_IDS }}
+          CUSTOM_DOMAIN_ZONE_ID: ${{ vars.CUSTOM_DOMAIN_ZONE_ID }}
+          CUSTOM_DOMAIN_TARGET: ${{ vars.CUSTOM_DOMAIN_TARGET }}
+          STRIPE_PORTAL_CONFIGURATION_ID: ${{ vars.STRIPE_PORTAL_CONFIGURATION_ID }}
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+      - run: npm run db:backend
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config backend/wrangler.json
