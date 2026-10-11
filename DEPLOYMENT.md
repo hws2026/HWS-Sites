@@ -92,7 +92,8 @@ Public routes serve only the published snapshot of a non-archived site with publ
 ## Local checks
 
 - `npm run typecheck`
-- `npm run verify:templates` — 234 template/block combinations
+- `npm run verify:calendar` — shared calendar synchronization, migration, timezone and validation checks
+- `npm run verify:templates` — 377 template/block combinations and 1,356 generated pages
 - `PAGES_BASE_PATH=/HWS-Sites/ npm run build:pages`
 - `npx wrangler deploy --config backend/wrangler.json --dry-run --outdir backend-dist`
 - `npm run verify:backend` — local Miniflare, mock Supabase and mock email delivery
@@ -101,3 +102,10 @@ Public routes serve only the published snapshot of a non-archived site with publ
 - `npm run dev:pages` — static frontend preview
 
 The earlier Sites-hosted database is separate from the new Cloudflare database. This deployment does not automatically migrate its customer content. The original hosting manifest is retained for that deployment; GitHub Pages and the standalone Worker do not use it.
+
+
+## Deploying the expanded template/calendar update
+
+Upload the complete source, including new `lib/`, `app/`, `pages/`, and `scripts/` files. Deploy the backend and Pages frontend from the same source version: the backend validator now accepts up to 600 pages, shared calendars, nested modules, saved sections and expanded color settings. An older backend rejects these drafts. No new database migration is needed for this update; data stays inside the existing website snapshots. Deploy the backend before inviting users to save with the new editor, and finish the Pages deployment promptly.
+
+Existing customer websites retain their saved content. New template structures apply to newly created websites or when choosing a replacement template. Existing websites can enable the calendar without replacing their template. Publishing remains explicit. The suite's signup option is removed; use Supabase's administrative invitation flow to provision an auth account, then assign that email to the appropriate customer/site in HWS.

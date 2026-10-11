@@ -1,0 +1,20 @@
+declare const __HWS_PAGES__:boolean;
+declare const __HWS_API_URL__:string;
+declare const __HWS_BASE_PATH__:string;
+export const isPages=typeof __HWS_PAGES__!=='undefined'&&__HWS_PAGES__;
+export const apiOrigin=isPages?__HWS_API_URL__:'';
+export const basePath=isPages?__HWS_BASE_PATH__:'/';
+let token='';
+let visitorFrontend='';
+let visitorBase='';
+export const isPublicVisitor=()=>Boolean(visitorFrontend);
+export const setVisitorFrontend=(value:string,path='')=>{visitorFrontend=value.replace(/\/?$/,'/');visitorBase=path;};
+export const setSessionToken=(value:string)=>{token=value;};
+export const hasSession=()=>Boolean(token);
+export const appHref=(path:string)=>visitorFrontend?visitorFrontend+'#'+path:isPages?basePath+'#'+path:path;
+export const publicUrl=(path:string)=>isPages?window.location.origin+appHref(path):window.location.origin+path;
+export const signInHref=(path='/')=>isPages?appHref('/signin?return_to='+encodeURIComponent(path)):'/signin-with-chatgpt?return_to='+encodeURIComponent(path);
+export const signOutHref=()=>isPages?appHref('/signout'):'/signout-with-chatgpt?return_to=/';
+export const siteAdminHref=(id:string)=>isPages?appHref('/site-admin/'+encodeURIComponent(id)):signInHref('/editor/'+id);
+export const assetUrl=(path:string)=>visitorFrontend&&path.startsWith('/')&&!path.startsWith('//')?(path.startsWith('/media/')?visitorBase+path:visitorFrontend+path.slice(1)):isPages&&path.startsWith('/')&&!path.startsWith('//')?(path.startsWith('/media/')?apiOrigin+path:basePath+path.slice(1)):path;
+export async function apiFetch(path:string,init:RequestInit={}){if(!isPages)return fetch(path,init);if(!apiOrigin)throw new Error('The backend connection is not configured.');const headers=new Headers(init.headers);if(token)headers.set('Authorization','Bearer '+token);return fetch(apiOrigin+path,{...init,headers,credentials:'omit'});}

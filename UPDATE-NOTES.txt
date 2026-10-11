@@ -1,0 +1,27 @@
+HWS Studio update - October 11, 2026
+
+SOURCE PACKAGE: This package has not been deployed. Upload its contents into the repository root, including the .github folder. Deploy the Cloudflare backend and GitHub Pages frontend from this same source version. Existing backend secrets remain in Cloudflare; do not put them in this package. See DEPLOYMENT.md.
+
+Included:
+- Sign-in and password recovery; public sign-up UI and handler removed.
+- A separate shared calendar per website, opened from Calendar in the editor toolbar.
+- Homepage event cards and full calendars use the same events, including nested sections. Categories, featured events, card limits, all-day/multi-day dates and website timezones are editable.
+- Events update the draft preview immediately. Publishing updates live website placements. Existing automatic customer email reminders use published events and deduplicate repeated placements. Email credentials and enabled rules are still required.
+- Existing sites can import dated events into their shared calendar. Undated legacy cards remain local until explicitly connected.
+- Ten fictional reference templates now contain 1,347 generated pages from public page inventories. Three general templates add nine pages. All references use the common editable module system.
+- 44 reusable section presets, 19 page layouts, saved-section import/export, nested tabs/accordions/groups, tables, directory and document filters, galleries, forms and calendars.
+- 37 theme color roles, editable existing template palette, section colors, and nested-section color overrides.
+- Editable header mini menus, hierarchical navigation, mega menus, and responsive menu refinements.
+
+Verified:
+- TypeScript check, production Pages build, Cloudflare Worker dry-run build.
+- 1,356 template page renders and 377 template/block combinations.
+- 96 backend checks, 61 commerce checks, 16 private storage checks. All external providers were mocked; no email/payment/DNS changes were made.
+- Shared calendar synchronization, filtering, backups, legacy migration, timezone/DST and invalid-input checks.
+- Browser checks of event create/edit/delete synchronization, all-day multi-day events, mobile calendar overflow, and sign-in/password-reset screens.
+- Representative template interior/header/mobile menu and editable color checks.
+
+Coverage limits:
+Public inventories and representative interior pages informed the templates. This is not a claim that every source page has been visually reproduced pixel for pixel. Source portals/external applications use fictional local content, and demonstration forms do not send or store responses. Colors embedded inside photos/videos remain part of those assets.
+
+Existing customer drafts are preserved. Selecting a replacement template replaces the draft and is undoable; new template page architecture is not silently merged into existing customer sites. This update does not change Supabase's project-level registration setting.

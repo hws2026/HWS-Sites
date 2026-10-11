@@ -1,0 +1,20 @@
+'use client';
+import {Plus,ArrowUp,ArrowDown,Trash2} from 'lucide-react';
+import {uid,type DirectoryMenu,type Website} from '@/lib/editor-model';
+
+export function DirectoryEditor({site,onChange}:{site:Website;onChange:(site:Website)=>void}){
+ const directory:DirectoryMenu=site.directoryMenu??{enabled:false,label:'Our schools',groups:[]};
+ const update=(patch:Partial<DirectoryMenu>)=>onChange({...site,directoryMenu:{...directory,...patch}});
+ return <div className="directory-editor"><p className="panel-label">DIRECTORY MENU</p>
+  <label className="native-check"><input type="checkbox" checked={directory.enabled} onChange={event=>{const enabled=event.target.checked;onChange({...site,directoryMenu:{...directory,enabled,groups:directory.groups.length?directory.groups:[{id:uid(),name:'Schools',items:[]}]},utilityLinks:enabled&&!site.utilityLinks?.includes('|#directory')?[site.utilityLinks,`${directory.label}|#directory`].filter(Boolean).join('\n'):site.utilityLinks});}}/>Show tabbed directory</label>
+  {directory.enabled&&<><label>Directory button label<input value={directory.label} maxLength={80} onChange={event=>update({label:event.target.value})}/></label><p className="field-help">Group schools, locations, or services into tabs. Each listing can link to a page or website.</p>
+   {directory.groups.map((group,index)=><details className="item-editor" key={group.id}><summary>{group.name||'Untitled category'}</summary><div>
+    <label>Category name<input value={group.name} maxLength={80} onChange={event=>update({groups:directory.groups.map(g=>g.id===group.id?{...g,name:event.target.value}:g)})}/></label>
+    {group.items.map(item=><div className="directory-item-editor" key={item.id}><label>Listing name<input value={item.name} maxLength={120} onChange={event=>update({groups:directory.groups.map(g=>g.id===group.id?{...g,items:g.items.map(i=>i.id===item.id?{...i,name:event.target.value}:i)}:g)})}/></label><label>Listing destination<input value={item.link} placeholder="Page address or https://…" onChange={event=>update({groups:directory.groups.map(g=>g.id===group.id?{...g,items:g.items.map(i=>i.id===item.id?{...i,link:event.target.value}:i)}:g)})}/><select aria-label={`Choose page for ${item.name||'listing'}`} value={site.pages.some(p=>p.slug===item.link)?item.link:''} onChange={event=>{if(event.target.value)update({groups:directory.groups.map(g=>g.id===group.id?{...g,items:g.items.map(i=>i.id===item.id?{...i,link:event.target.value}:i)}:g)});}}><option value="">Choose a page…</option>{site.pages.map(page=><option key={page.id} value={page.slug}>{page.name}</option>)}</select></label><button className="danger-link" onClick={()=>update({groups:directory.groups.map(g=>g.id===group.id?{...g,items:g.items.filter(i=>i.id!==item.id)}:g)})}>Remove listing</button></div>)}
+    <button className="button" disabled={group.items.length>=60} onClick={()=>update({groups:directory.groups.map(g=>g.id===group.id?{...g,items:[...g.items,{id:uid(),name:'New listing',link:site.pages[0].slug}]}:g)})}><Plus size={14}/>Add listing</button>
+    <div className="item-actions"><button className="icon-button" aria-label={`Move ${group.name} category earlier`} disabled={index===0} onClick={()=>{const groups=[...directory.groups];[groups[index-1],groups[index]]=[groups[index],groups[index-1]];update({groups});}}><ArrowUp size={15}/></button><button className="icon-button" aria-label={`Move ${group.name} category later`} disabled={index===directory.groups.length-1} onClick={()=>{const groups=[...directory.groups];[groups[index+1],groups[index]]=[groups[index],groups[index+1]];update({groups});}}><ArrowDown size={15}/></button><button className="danger-link" disabled={directory.groups.length===1} onClick={()=>update({groups:directory.groups.filter(g=>g.id!==group.id)})}><Trash2 size={14}/>Category</button></div>
+   </div></details>)}
+   <button className="button" disabled={directory.groups.length>=10} onClick={()=>update({groups:[...directory.groups,{id:uid(),name:'New category',items:[]}]})}><Plus size={14}/>Add category</button>
+  </>}
+ </div>;
+}

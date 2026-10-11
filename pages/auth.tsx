@@ -8,7 +8,7 @@ export const supabase=url&&key?createClient(url,key,{auth:{flowType:'pkce',detec
 export async function initializeAuth(){if(!supabase)return;const {data}=await supabase.auth.getSession();setSessionToken(data.session?.access_token??'');supabase.auth.onAuthStateChange((event,session)=>{setSessionToken(session?.access_token??'');if(event==='PASSWORD_RECOVERY'){const site=new URLSearchParams(window.location.search).get('site');window.location.hash='/reset-password'+(site?'?site='+encodeURIComponent(site):'');}});}
 type LoginSite={id:string;name:string;accent:string;slug?:string};
 export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string}){
- const [mode,setMode]=useState<'login'|'signup'|'forgot'>(window.location.hash.includes('mode=forgot')?'forgot':'login');
+ const [mode,setMode]=useState<'login'|'forgot'>(window.location.hash.includes('mode=forgot')?'forgot':'login');
  const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[confirm,setConfirm]=useState('');
  const [message,setMessage]=useState(''),[busy,setBusy]=useState(false),[failed,setFailed]=useState(false);
  const demo=siteId?.startsWith('demo-')?referenceTemplates.find(t=>t.id===siteId.slice(5)):undefined;
@@ -26,9 +26,6 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
    }else if(mode==='forgot'){
     const {error}=await supabase.auth.resetPasswordForEmail(email,{redirectTo:root+'?recovery=1'+(siteId?'&site='+encodeURIComponent(siteId):'')});if(error)throw error;
     setMessage('If this email has an account, a reset link will arrive shortly.');
-   }else if(mode==='signup'&&!siteId){
-    const {error}=await supabase.auth.signUp({email,password,options:{emailRedirectTo:root}});if(error)throw error;
-    setMessage('Check your email to confirm your account, then sign in.');
    }else{
     const {data,error}=await supabase.auth.signInWithPassword({email,password});
     if(error)throw new Error(siteId?'Invalid email or password for this website.':error.message);
@@ -55,21 +52,21 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
   <a className="brand" href={site?.slug?appHref(`/website/${siteId}/${site.slug}`):demo?appHref('/editor/'+siteId):appHref('/')}>{site?.name??(siteId?'Website administration':'HWS Studio')}</a>
   <div className="auth-card">
    {siteId&&<span className="auth-site-label">{site?.name??'This website'} · Admin access</span>}
-   <h1>{reset?'Set a new password':mode==='forgot'?'Reset your password':mode==='signup'?'Create your account':siteId?'Website admin login':'Welcome back'}</h1>
+   <h1>{reset?'Set a new password':mode==='forgot'?'Reset your password':siteId?'Website admin login':'Welcome back'}</h1>
    <p>{reset?'Choose a password of at least 12 characters.':siteId?'Sign in with an account assigned to this website.':'Your websites and workspace, in one place.'}</p>
    {!supabase&&<p role="status">Sign-in is not configured yet.</p>}
    <form onSubmit={submit}>
     {!reset&&<label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>}
-    {(reset||mode!=='forgot')&&<label>Password<input type="password" autoComplete={reset||mode==='signup'?'new-password':'current-password'} minLength={reset||mode==='signup'?12:1} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}
+    {(reset||mode!=='forgot')&&<label>Password<input type="password" autoComplete={reset?'new-password':'current-password'} minLength={reset?12:1} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}
     {reset&&<label>Confirm password<input type="password" autoComplete="new-password" minLength={12} value={confirm} onChange={e=>setConfirm(e.target.value)} required/></label>}
-    <button className="button primary" disabled={busy||!supabase}>{busy?'Please wait…':reset?'Update password':mode==='forgot'?'Send reset email':mode==='signup'?'Create account':'Sign in'}</button>
+    <button className="button primary" disabled={busy||!supabase}>{busy?'Please wait…':reset?'Update password':mode==='forgot'?'Send reset email':'Sign in'}</button>
    </form>
    {message&&<p role={failed?'alert':'status'} className={failed?'auth-error':''}>{message}</p>}
    {!reset&&<div className="auth-links">
-    {(!siteId||mode!=='login')&&<button onClick={()=>{setMode(mode==='login'?'signup':'login');setMessage('');}}>{mode==='login'?'Create an account':'Back to sign in'}</button>}
-    <button onClick={()=>{setMode('forgot');setMessage('');}}>Forgot password?</button>
+    {mode==='forgot'&&<button onClick={()=>{setMode('login');setMessage('');}}>Back to sign in</button>}
+    {mode==='login'&&<button onClick={()=>{setMode('forgot');setMessage('');}}>Forgot password?</button>}
    </div>}
-   {reset?<a href={returnLink}>Return to sign in</a>:siteId?<p className="auth-scope-note">Access to another customer’s website does not grant access here.</p>:<p className="auth-scope-note">Sign in to access your admin panel or customer workspace.</p>}
+   {reset?<a href={returnLink}>Return to sign in</a>:siteId?<p className="auth-scope-note">Access to another customer’s website does not grant access here.</p>:<p className="auth-scope-note">Accounts are provided by your administrator. Sign in to access your workspace.</p>}
   </div>
  </main>;
 }

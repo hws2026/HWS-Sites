@@ -48,9 +48,9 @@ Reference review: October 10, 2026. Source attribution is also available in the 
 ## Shared editor capabilities
 Every reference template and customer website uses the same editor, model, renderer and save validation. Existing legacy item content is preserved and becomes structured when edited. Individual icon tiles, news cards, quick links, event records, statistics, column cards, gallery images, FAQs and directory entries can be added, edited, reordered or removed. Images and destinations are editable per item.
 
-All 18 block types are available on any page of any template. Sections support width, spacing, corners, columns, anchors, mobile visibility, publication visibility, hero overlays and reversed image/text layouts. Sections can be copied between pages; navigation pages can be reordered. Site-wide settings include logo uploads, layout style, header/footer colors, utility text, footer links and announcements. YouTube and Vimeo links use a restricted embed parser. Existing role rules apply to all shared controls.
+All 29 block types are available on any page of any template. Sections support width, spacing, corners, columns, anchors, mobile visibility, publication visibility, hero overlays and reversed image/text layouts. Sections can be copied between pages; navigation pages can be reordered. Site-wide settings include logo uploads, layout style, header/footer colors, utility text, footer links and announcements. YouTube and Vimeo links use a restricted embed parser. Existing role rules apply to all shared controls.
 
-Run `npm run verify:templates` for the 234 template/block validation and render combinations (ten references plus three general templates); `npm run verify:api` checks persisted expanded content across all ten templates against the local production Worker on port 5174.
+Run `npm run verify:templates` for the 377 template/block validation and render combinations (ten references plus three general templates); `npm run verify:api` checks persisted expanded content across all ten templates against the local production Worker on port 5174.
 
 The Icon Grid section includes 36 selectable Lucide icons, keyword search, labels, descriptions, optional links and custom PNG/JPEG/WebP/GIF images. Quick links and column cards share the icon picker. A custom image takes precedence; selecting a built-in icon replaces it. All icons, images and destinations persist in the normal draft/published snapshot.
 
@@ -58,7 +58,7 @@ Navigation supports compact dropdowns and full-width mega menus, with site defau
 
 `npm run verify:backend` exercises server authorization, site-specific login, saved/published icon content and reminders against local D1/R2 and mocked identity/email services. `npm run verify:storage` adds 16 checks for the standalone Supabase Storage deployment. The backend must be built first as described in `DEPLOYMENT.md`; these checks do not deploy or send real mail.
 
-Willow Creek and Redstone include reference-shaped two-column navigation and an Our schools directory with five editable category tabs and fictional school destinations. Both mega-menu layouts and the tabbed directory are available in Theme on every template. The page limit is 150 to support these expanded navigation structures. The compact Menu presentation keeps nested menus in a single column even when used on desktop.
+Willow Creek and Redstone include reference-shaped two-column navigation and an Our schools directory with five editable category tabs and fictional school destinations. Both mega-menu layouts and the tabbed directory are available in Theme on every template. The page limit is 600 to support these expanded navigation structures. The compact Menu presentation keeps nested menus in a single column even when used on desktop.
 
 ### Reference styling and motion
 
@@ -75,3 +75,22 @@ School-style headers switch to the compact menu below 1200px of canvas width; ot
 ### Finalsite composition refinements
 
 The seven Finalsite-style demos now use template-specific section compositions: seven editable full-height day-school stories with page navigation dots; nine corporation photo tiles with hover details; a district news mosaic and paired notice panels; international circular resources, photo program cards and a feature story; and network mission, news and calendar treatments. School templates have weekday date cards and a calendar footer. Corporation, international and network headers default to two-column mega menus with their own colors and dimensions. Tablet and mobile breakpoints retain the Menu-only header and vertical link lists. Existing customer content is preserved; new section arrangements appear in demos and newly selected templates.
+
+
+### Expanded interiors, content library, and colors
+
+The ten fictional reference templates contain 1,347 generated pages based on their public page inventories, with reusable interior layouts, breadcrumbs and section navigation. The library offers 44 section presets and 19 complete page layouts, including nested tabs/accordions, grouped tables, documents, directories, forms and calendars. Saved sections can be reused or exported/imported as JSON. Template coverage is based on public inventories and representative interior inspection, not a claim that every source page has been visually replicated. Source-only portals and external applications use fictional local content; demonstration forms do not submit data.
+
+Theme supports 37 color roles and an editable template palette for existing backgrounds, text, buttons, borders, menus, hover states and overlays. Section and nested-section colors override the site defaults. Raster image/video colors remain part of their assets. Header utility/resource mini menus have independently editable labels and destinations.
+
+### Website calendar
+
+Use **Calendar** in the editor toolbar. Add/edit/delete events with a title, start/end, all-day option, category, location, description, link and featured flag. Each website stores its own event list and timezone. Connected homepage event cards, full month/list calendars, and calendars inside groups/tabs read that list; all new templates and newly inserted calendar modules use it. Event sections offer category filters, featured-only display, a card limit, and automatic hiding of past events. Choose **This section only** to keep an independent local list.
+
+Changes update the draft preview immediately and use the normal autosave/undo/backup flow. **Publish** updates all live placements and the events used by automatic reminders; draft-only edits do not alter live reminders. Reminder delivery still requires the existing email-provider configuration and enabled admin rules. Shared events create one reminder per website even when displayed in many sections. Rescheduling/removing published events cancels obsolete queued reminders on the next scheduler run.
+
+Existing websites without a shared calendar show **Connect website calendar**. This imports and deduplicates dated events while preserving undated local cards. Calendars support up to 500 events within the overall 900 KB website limit. Time inputs use the selected website timezone, including daylight saving time. Calendar events and categories remain editable in every template.
+
+Public account sign-up and its submission handler have been removed from the suite login screen. Existing-account sign-in and password recovery remain available; administrators provision customer accounts. This frontend change does not change the Supabase project's registration setting.
+
+Run `npm run verify:calendar` for synchronization, migration, filtering, backups, reminder deduplication, timezone/DST, event validation, and login-option checks.

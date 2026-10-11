@@ -1,0 +1,29 @@
+import type {Block,SiteColors,Website} from './editor-model';
+export const colorGroups={
+ 'Page & content':{background:'Page background',text:'Body text',heading:'Headings',muted:'Secondary text',link:'Links',linkHover:'Link hover',border:'Borders',icon:'Icons',focus:'Keyboard focus'},
+ 'Buttons & cards':{button:'Button background',buttonText:'Button text',buttonHover:'Button hover background',buttonHoverText:'Button hover text',card:'Card background',cardText:'Card text',cardHover:'Card hover background',input:'Input background',inputText:'Input text',overlay:'Photo overlay'},
+ 'Header & navigation':{header:'Header background',headerText:'Header text',utility:'Utility bar background',utilityText:'Utility bar text',navigation:'Navigation background',navigationText:'Navigation text'},
+ 'Menus':{menu:'Dropdown & mega-menu background',menuText:'Menu text',menuHover:'Menu hover background',menuHoverText:'Menu hover text',menuBorder:'Menu borders',mobileMenu:'Mobile menu background',mobileMenuText:'Mobile menu text'},
+ 'Footer & announcements':{footer:'Footer background',footerText:'Footer text',footerLink:'Footer links',announcement:'Announcement background',announcementText:'Announcement text'}
+} as const;
+export const colorKeys=Object.values(colorGroups).flatMap(group=>Object.keys(group));
+export const normalizeColor=(value:string)=>{const hex=value.toLowerCase();return /^#[0-9a-f]{3}$/.test(hex)?'#'+hex.slice(1).split('').map(c=>c+c).join(''):hex;};
+export function mappedColor(site:Website,value?:string){return value?site.palette?.[normalizeColor(value)]??value:undefined;}
+export function colorVariables(site:Website){return Object.fromEntries(Object.entries(site.palette??{}).map(([source,value])=>['--palette-'+source.slice(1),value]));}
+export const colorSelectors:Record<string,[string,string]>={
+ background:['','background'],text:[' .website-section, & .website-section p, & .rich-content','color'],heading:[' h1, & h2, & h3, & h4','color'],muted:[' small, & .news-date, & .module-meta, & .footer-kicker','color'],
+ link:[' a:not(.website-button)','color'],linkHover:[' a:not(.website-button):hover','color'],
+ button:[' .website-button, & .module-button, & .hero-button','background-color'],buttonText:[' .website-button, & .module-button, & .hero-button','color'],buttonHover:[' .website-button:hover, & .module-button:hover, & .hero-button:hover','background-color'],buttonHoverText:[' .website-button:hover, & .module-button:hover, & .hero-button:hover','color'],
+ border:[' .website-section article, & .website-accordion details, & .module-card, & .module-table th, & .module-table td, & .module-tabs, & input, & select, & textarea','border-color'],
+ card:[' .module-card, & .news-body, & .icon-tile, & .feature-columns article, & .directory-grid article, & .website-event-card','background-color'],cardText:[' .module-card, & .news-body, & .icon-tile, & .feature-columns article, & .directory-grid article, & .website-event-card','color'],cardHover:[' .module-card:hover, & .news-body:hover, & .icon-tile:hover, & .feature-columns article:hover','background-color'],
+ icon:[' .icon-symbol, & .quicklink-grid svg, & .header-resource-links svg, & .resource-icon','color'],input:[' input, & select, & textarea','background-color'],inputText:[' input, & select, & textarea','color'],focus:[' :focus-visible','outline-color'],overlay:[' .hero-shade','background'],
+ header:[' .website-header, & .website-masthead','background'],headerText:[' .website-masthead, & .website-brand, & .header-resource-links a, & .header-resource-links summary, & .website-header-actions','color'],
+ utility:[' .website-utility','background'],utilityText:[' .website-utility, & .website-utility a, & .website-utility button, & .website-utility .header-mini-menu>summary','color'],
+ navigation:[' .website-nav','background'],navigationText:[' .website-nav > div > a, & .website-nav > div > details > summary','color'],
+ menu:[' .website-nav-group > div, & .website-directory-panel, & .nested-menu-links, & .header-mini-menu > div','background'],menuText:[' .website-nav-group > div, & .website-nav-group > div a, & .website-nav-group > div summary, & .website-directory-panel, & .website-directory-panel a, & .header-mini-menu > div, & .header-mini-menu > div a','color'],
+ menuHover:[' .submenu-links a:hover, & .submenu-links summary:hover, & .website-directory-panel a:hover, & .header-mini-menu > div a:hover','background-color'],menuHoverText:[' .submenu-links a:hover, & .submenu-links summary:hover, & .website-directory-panel a:hover, & .header-mini-menu > div a:hover','color'],menuBorder:[' .website-nav-group > div, & .submenu-links a, & .submenu-links summary, & .website-directory-panel, & .header-mini-menu > div','border-color'],
+ mobileMenu:[' .website-mobile-menu > nav, & .website-mobile-menu .website-nav-group > div, & .website-mobile-menu .nested-menu-links, & .website-mobile-menu .header-mini-menu > div','background-color'],mobileMenuText:[' .website-mobile-menu > nav, & .website-mobile-menu > nav a, & .website-mobile-menu > nav summary, & .website-mobile-menu > nav button','color'],
+ footer:[' .website-footer','background'],footerText:[' .website-footer, & .website-footer strong, & .website-footer p','color'],footerLink:[' .website-footer a','color'],announcement:[' .website-announcement','background'],announcementText:[' .website-announcement, & .website-announcement a','color']
+};
+export function colorRules(colors:SiteColors|undefined,scope:string){return Object.entries(colors??{}).flatMap(([key,value])=>{const config=colorSelectors[key];if(!config||!/^#[0-9a-f]{6}$/i.test(value))return [];const [selector,property]=config;return `${scope}${selector.replaceAll('&',scope)}{${property}:${value}!important}`;}).join('\n');}
+export function blockColorRules(block:Block,scope:string){return colorRules(block.colors,scope);}

@@ -23,7 +23,8 @@
     "db:backend": "wrangler d1 migrations apply DB --config backend/wrangler.json --remote",
     "verify:backend": "node scripts/verify-backend.mjs",
     "verify:commerce": "node scripts/verify-commerce.mjs",
-    "verify:storage": "node scripts/verify-storage.mjs"
+    "verify:storage": "node scripts/verify-storage.mjs",
+    "verify:calendar": "node scripts/verify-calendar.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
