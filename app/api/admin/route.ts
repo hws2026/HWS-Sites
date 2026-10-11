@@ -1,8 +1,8 @@
 import {rejectForeignOrigin} from '@/lib/request-guard';
 import {NextRequest,NextResponse} from 'next/server';
 import {database,identity,initialize,logStatement} from '@/lib/suite-store';
-import {referenceTemplates,referenceTemplate} from '@/lib/templates';
-import {template} from '@/lib/editor-model';
+import {referenceTemplates} from '@/lib/templates';
+import {startFromTemplate,type TemplateStartMode} from '@/lib/template-start';
 export const dynamic='force-dynamic';
 const fail=(error:string,status=400)=>NextResponse.json({error},{status});
 export async function GET(req:NextRequest){const user=identity(req);if(!user)return fail('Sign in to manage your workspace.',401);try{const db=database();const [workspace,customers,sites,access,activity]=await Promise.all([db.prepare('SELECT id,name FROM workspaces WHERE owner = ?').bind(user.id).first(),db.prepare('SELECT id,name,email,phone,status,notes FROM customers WHERE owner = ? ORDER BY name').bind(user.id).all(),db.prepare('SELECT id,customer_id,title,slug,template_id,revision,archived,updated_at,CASE WHEN published IS NULL THEN 0 ELSE 1 END AS is_published FROM client_sites WHERE owner = ? ORDER BY updated_at DESC').bind(user.id).all(),db.prepare('SELECT id,site_id,email,role,user_id FROM site_access WHERE owner = ?').bind(user.id).all(),db.prepare('SELECT id,description,created_at,site_id FROM activity WHERE owner = ? ORDER BY created_at DESC LIMIT 40').bind(user.id).all()]);return NextResponse.json({workspace,customers:customers.results,sites:sites.results,access:access.results,activity:activity.results,email:user.email},{headers:{'Cache-Control':'no-store'}});}catch(e){console.error(e);return fail('Workspace unavailable. Please try again.',503);}}
@@ -16,7 +16,9 @@ export async function POST(req:NextRequest){const user=identity(req);if(!user)re
   if(!ownAccount){const customer=await db.prepare('SELECT id FROM customers WHERE id = ? AND owner = ?').bind(customerId,user.id).first();if(!customer)return fail('Choose a customer in your workspace.',404);}
   const templateId=text(body.templateId);
   if(!referenceTemplates.some(t=>t.id===templateId)&&!['business','general'].includes(templateId))throw new Error('Choose a valid starting template.');
-  const draft=referenceTemplates.some(t=>t.id===templateId)?referenceTemplate(templateId):template(templateId);
+  const startMode=body.startMode??'full';
+  if(startMode!=='scratch'&&startMode!=='full')throw new Error('Choose start from scratch or use the whole template.');
+  const draft=startFromTemplate(templateId,startMode as TemplateStartMode);
   const title=text(body.title,120);if(!title)throw new Error('Enter a website name.');draft.name=title;
   const id=crypto.randomUUID();
   await db.batch([db.prepare('INSERT INTO client_sites (id,owner,customer_id,title,slug,template_id,draft,revision,archived,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)').bind(id,user.id,customerId,title,draft.slug,templateId,JSON.stringify(draft),1,0,new Date().toISOString()),logStatement(user.id,`Created ${ownAccount?'account ':''}website ${title}`,id)]);

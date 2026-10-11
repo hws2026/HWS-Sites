@@ -16,6 +16,12 @@ A customer website suite with a separate workspace admin dashboard, customer por
 - Storage: Cloudflare D1 customer/site/access records and private Supabase Storage image assets for the GitHub Pages deployment. No browser storage is the authoritative data source.
 - New administrator workspaces start with no customer or website records. The template library remains available with fictional content. Choose **New website → Website owner → My account** to create your own website from any starting template, or select a customer. Personal websites do not create customer records.
 
+## Choose how to start
+
+When creating a website or choosing a replacement template in the editor, select **Start from scratch** or **Use the whole template**. Scratch is the default: it keeps the selected design, colors, fonts, and header/footer styling, with one empty Home page. Demo pages, sections, menus, contact details, links, logos, and calendar events are removed. Add your own content from the Library and your own navigation in Header & menus.
+
+Whole template includes all demo pages, menus, sections, and sample events. In the editor, selecting a design does not replace anything until you click the apply button. Replacement keeps an existing customer's site name and address and can be undone. New-site API requests may pass `startMode: 'scratch'` or `'full'`; omitted values retain the previous full-template behavior for older clients.
+
 ## Access and publishing
 
 The suite starts private. The `#/website/<site-id>/<slug>` route is an assigned-access review. On the standalone backend, publish in the editor and enable public access under Domains to serve `/sites/<site-id>/` and connected domains without sign-in. Custom domains require Cloudflare for SaaS configuration and DNS verification. Invitation email delivery is not configured. See DEPLOYMENT.md for the separate GitHub Pages/Supabase deployment and required provider setup.

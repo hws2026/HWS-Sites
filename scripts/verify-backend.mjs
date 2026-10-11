@@ -17,6 +17,7 @@ const empty=check(await req('/api/admin'),200,'empty workspace loads');assert.eq
 check(await req('/api/admin','POST',{action:'initialize'}),200,'workspace initialization is idempotent');assert.equal((await db.prepare('SELECT count(*) n FROM workspaces').first()).n,1);
 check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Forbidden',templateId:'sau70'},'customer-token'),403,'customer cannot claim platform-owned templates');
 check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Invalid',templateId:'unknown'}),400,'unknown starting template rejected');
+check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Invalid mode',templateId:'eaglecrest',startMode:'invalid'}),400,'invalid template starting choice rejected');
 for(const templateId of ['sau70','crane','greece','athena','horizon','eaglecrest','dubois','ics','greenwich','police','business','general']){
  const own=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'My '+templateId,templateId,owner:'other-uuid'}),200,'owner creates own-account site: '+templateId);
  const record=await db.prepare('SELECT owner,customer_id,template_id FROM client_sites WHERE id=?').bind(own.id).first();assert.equal(record.owner,'admin-uuid');assert.equal(record.customer_id,'');assert.equal(record.template_id,templateId);
@@ -26,6 +27,11 @@ for(const templateId of ['sau70','crane','greece','athena','horizon','eaglecrest
 assert.equal((await req('/api/admin')).data.customers.length,0);checks++;console.log('PASS personal websites create no fake customer records');
 const ownerPortal=check(await req('/api/portal'),200,'owner can see personal websites in portal');assert.equal(ownerPortal.sites.length,12);assert.ok(ownerPortal.sites.every(site=>site.role==='admin'));
 assert.equal((await req('/api/portal','GET',null,'other-token')).data.sites.length,0);checks++;console.log('PASS other accounts cannot see owner personal websites');
+const blankSiteId=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Blank branded site',templateId:'eaglecrest',startMode:'scratch'}),200,'owner creates a site from scratch').id;
+const blankSite=check(await req('/api/site?id='+blankSiteId),200,'scratch website opens in the editor');assert.equal(blankSite.site.pages.length,1);assert.equal(blankSite.site.pages[0].blocks.length,0);assert.equal(blankSite.site.name,'Blank branded site');assert.equal(blankSite.site.templateId,'eaglecrest');assert.deepEqual(blankSite.site.calendarEvents,[]);assert.equal(blankSite.site.utilityLinks,'');assert.deepEqual(blankSite.site.headerMenus,[]);checks++;console.log('PASS scratch site stores only the theme and a clean Home page');
+check(await req('/api/site','PUT',{id:blankSiteId,site:blankSite.site,revision:blankSite.revision,publish:true}),200,'empty branded starting site can be saved and published');
+const fullSiteId=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Full branded site',templateId:'eaglecrest',startMode:'full'}),200,'owner explicitly creates the whole template').id;
+const fullSite=check(await req('/api/site?id='+fullSiteId),200,'whole template opens in the editor');assert.ok(fullSite.site.pages.length>100);assert.ok(fullSite.site.pages[0].blocks.length>0);assert.ok(fullSite.site.calendarEvents.length>0);checks++;console.log('PASS full mode retains all template pages and sample content');
 const customer=check(await req('/api/admin','POST',{action:'customer',name:'Backend test customer',email:'customer@example.com'}),200,'explicit test customer created');
 const siteId=check(await req('/api/admin','POST',{action:'site',customerId:customer.id,title:'Backend test site',templateId:'sau70'}),200,'explicit customer website created').id;
 const secondSiteId=check(await req('/api/admin','POST',{action:'site',customerId:customer.id,title:'Second test site',templateId:'crane'}),200,'second test website created').id;
