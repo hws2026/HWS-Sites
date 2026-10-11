@@ -3,6 +3,11 @@ HWS Studio update - October 11, 2026
 SOURCE PACKAGE: This package has not been deployed. Upload its contents into the repository root, including the .github folder. Deploy the Cloudflare backend and GitHub Pages frontend from this same source version. Existing backend secrets remain in Cloudflare; do not put them in this package. See DEPLOYMENT.md.
 
 Included:
+- Working forms across every template, including nested forms: editable fields, required/choice options, confirmation text, privacy note and acceptance toggle. Published public websites receive responses; editor/demo/review previews do not submit.
+- A private Forms inbox in the admin panel, customer portal and editor. Website owners and assigned editors can read answers, mark new/read/archived, restore archived responses, download private attachments and export CSV. Viewers and other-site accounts are denied. No form response emails are sent.
+- Up to three attachments per form, each up to 256 KB (PDF, PNG, JPEG or TXT). Answers and files are stored in private Cloudflare D1 records. Published-schema validation, idempotent retries, a honeypot and per-sender/site rate limits protect submissions.
+- Persistent save-failure reasons with affected page/section details where available, retry, draft backup, expired-session sign-in and conflict recovery. Failed saves keep edits visible in the current tab.
+- REQUIRED: apply migration 0004_glossy_ma_gnuci.sql before deploying the new Worker, then deploy Pages. This package has not been deployed; uploading only the frontend will not activate submissions. The backend GitHub workflow applies pending migrations before deployment. No new secrets or storage setup are needed.
 - Scratch-creation hotfix: verify the persisted draft before opening the editor. Older backends that ignore the starting choice now receive an explicit empty-draft save for the untouched new record. Save/verification failures retain the same record for retry, and edited/published websites are never automatically cleared.
 - Website creation and the editor template picker now offer Start from scratch (the UI default) or Use the whole template. Scratch keeps the selected design with one empty Home page and removes demo pages, menus, links, logos, contacts, and events. Whole template includes all sample content. Changing an existing site requires an explicit apply action and can be undone.
 - Sign-in and password recovery; public sign-up UI and handler removed.
@@ -16,6 +21,8 @@ Included:
 - Editable header mini menus, hierarchical navigation, mega menus, and responsive menu refinements.
 
 Verified:
+- 41 forms and save-error checks, including site isolation, field validation, attachments, empty optional browser file fields, duplicate retries, connected domains, CSV escaping and rate limits.
+- Isolated browser checks of public form submission, corresponding inbox answers/read status, detailed save-validation and expired-session errors, retained edits and successful retries. Editor mobile preview form/canvas widths were checked for horizontal overflow; this was not a separate physical-device browser test.
 - 21 new website-creation regression checks covering older/current backend behavior, all 12 selectable templates, failed saves/reads, retry without duplicate records, and protection for edited/published drafts. The local browser creation flow against a simulated older backend showed one empty Home page still present after reload.
 - TypeScript check, production Pages build, Cloudflare Worker dry-run build.
 - 1,356 template page renders and 377 template/block combinations.
@@ -27,6 +34,6 @@ Verified:
 - Browser checks of the two template choices, adding content to an empty Home page, undoing replacement, and loading a complete 155-page template.
 
 Coverage limits:
-Public inventories and representative interior pages informed the templates. This is not a claim that every source page has been visually reproduced pixel for pixel. Source portals/external applications use fictional local content, and demonstration forms do not send or store responses. Colors embedded inside photos/videos remain part of those assets.
+Public inventories and representative interior pages informed the templates. This is not a claim that every source page has been visually reproduced pixel for pixel. Source portals/external applications use fictional local content. Demo/editor/review previews do not submit responses; published public website forms save responses privately in the suite. Colors embedded inside photos/videos remain part of those assets.
 
 Existing customer drafts are preserved. Selecting a replacement template replaces the draft and is undoable; new template page architecture is not silently merged into existing customer sites. This update does not change Supabase's project-level registration setting.

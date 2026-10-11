@@ -1,3 +1,4 @@
+import {submitPublicForm} from './forms';
 import {database} from '../lib/suite-store';
 import type {BackendEnv} from '../lib/server-context';
 import type {Website} from '../lib/editor-model';
@@ -11,8 +12,9 @@ export async function publicSite(request:Request,env:BackendEnv):Promise<Respons
  let basePath='',path=url.pathname;
  if(!record){const match=path.match(/^\/sites\/([a-zA-Z0-9-]+)(?:\/(.*))?$/);if(!match)return null;basePath='/sites/'+match[1];path='/'+(match[2]??'');record=await db.prepare("SELECT s.id site_id,'active' status,s.published,s.archived,COALESCE(p.enabled,0) enabled FROM client_sites s LEFT JOIN site_publications p ON p.site_id=s.id WHERE s.id=?").bind(match[1]).first();if(!record)return unavailable();}
  if(record.status!=='active'||record.archived||!record.enabled||!record.published)return unavailable();
- if(!['GET','HEAD'].includes(request.method)||path.startsWith('/api/'))return unavailable();
  const site=JSON.parse(record.published) as Website;
+ if(path==='/api/forms'&&request.method==='POST')return submitPublicForm(request,record.site_id,site);
+ if(!['GET','HEAD'].includes(request.method)||path.startsWith('/api/'))return unavailable();
  const primary=await db.prepare("SELECT hostname FROM site_domains WHERE site_id=? AND status='active' AND is_primary=1").bind(record.site_id).first<{hostname:string}>();
  if(primary&&primary.hostname!==url.hostname){url.hostname=primary.hostname;url.pathname=path;url.protocol='https:';url.port='';return new Response(null,{status:302,headers:{Location:url.href,'Cache-Control':'no-store'}});}
  const media=path.match(/^\/media\/([a-zA-Z0-9-]+)$/);

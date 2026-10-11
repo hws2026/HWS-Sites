@@ -14,6 +14,7 @@ A customer website suite with a separate workspace admin dashboard, customer por
 - Billing: administrator-assigned monthly/yearly/one-time prices, customer Stripe checkout, subscription portal, invoice history, and verified webhook updates.
 - Domains: included public site addresses, custom DNS ownership verification, certificate status, primary domain redirects, and explicit public-access controls.
 - Storage: Cloudflare D1 customer/site/access records and private Supabase Storage image assets for the GitHub Pages deployment. No browser storage is the authoritative data source.
+- Forms: published websites accept responses into a private per-site inbox, with editable fields, confirmation text, status tracking, CSV export and small private attachments. Form responses do not send email.
 - New administrator workspaces start with no customer or website records. The template library remains available with fictional content. Choose **New website → Website owner → My account** to create your own website from any starting template, or select a customer. Personal websites do not create customer records.
 
 ## Choose how to start
@@ -87,7 +88,7 @@ The seven Finalsite-style demos now use template-specific section compositions: 
 
 ### Expanded interiors, content library, and colors
 
-The ten fictional reference templates contain 1,347 generated pages based on their public page inventories, with reusable interior layouts, breadcrumbs and section navigation. The library offers 44 section presets and 19 complete page layouts, including nested tabs/accordions, grouped tables, documents, directories, forms and calendars. Saved sections can be reused or exported/imported as JSON. Template coverage is based on public inventories and representative interior inspection, not a claim that every source page has been visually replicated. Source-only portals and external applications use fictional local content; demonstration forms do not submit data.
+The ten fictional reference templates contain 1,347 generated pages based on their public page inventories, with reusable interior layouts, breadcrumbs and section navigation. The library offers 44 section presets and 19 complete page layouts, including nested tabs/accordions, grouped tables, documents, directories, forms and calendars. Saved sections can be reused or exported/imported as JSON. Template coverage is based on public inventories and representative interior inspection, not a claim that every source page has been visually replicated. Source-only portals and external applications use fictional local content. Demo and editor-preview forms do not submit data; published public websites can receive responses.
 
 Theme supports 37 color roles and an editable template palette for existing backgrounds, text, buttons, borders, menus, hover states and overlays. Section and nested-section colors override the site defaults. Raster image/video colors remain part of their assets. Header utility/resource mini menus have independently editable labels and destinations.
 
@@ -102,3 +103,17 @@ Existing websites without a shared calendar show **Connect website calendar**. T
 Public account sign-up and its submission handler have been removed from the suite login screen. Existing-account sign-in and password recovery remain available; administrators provision customer accounts. This frontend change does not change the Supabase project's registration setting.
 
 Run `npm run verify:calendar` for synchronization, migration, filtering, backups, reminder deduplication, timezone/DST, event validation, and login-option checks.
+
+### Forms and private responses
+
+Add a form from **Library**, select it, and edit its fields in **Section settings**. Labels, field types, required fields, choice options, submit text, confirmation message, privacy note and **Accept responses when published** are editable on every template, including nested forms. Publish the website and enable **Domains → Public website access** to receive submissions at its included public address or connected domain. Demo, editor and assigned-access review previews never submit responses.
+
+Open **Forms inbox** in the admin/customer portal or editor toolbar. The workspace owner and editors assigned to that website can read responses, mark them new/read/archived, restore archived responses and download private attachments. Viewers and accounts assigned only to another website cannot access them. CSV export includes up to 100 responses from the current list offset and protects spreadsheet formula cells. Responses snapshot the submitted field labels and values, so later form edits do not rewrite earlier answers.
+
+Forms allow up to three attachment fields, each accepting a PDF, PNG, JPEG or TXT file up to 256 KB. Responses and attachments are stored privately in Cloudflare D1; existing image storage is unchanged. The server validates against the published form, rejects invalid or unexpected fields, deduplicates retries, uses a honeypot and limits submissions per website and sender. These are basic abuse controls, not a CAPTCHA. Failed submissions retain the visitor's answers and show the reason. No response emails are sent.
+
+**Deployment:** apply migration `0004_glossy_ma_gnuci.sql`, then deploy the backend and Pages frontend from this source version. See **Deploying forms and save-error details** in [DEPLOYMENT.md](DEPLOYMENT.md). Run `npm run verify:forms` after the backend dry-run build for isolated integration checks.
+
+### Save failure details
+
+Failed saves display a persistent reason beside the editor, retain the draft in the current tab, and offer retry and a downloadable draft backup. Validation errors identify the affected page/section when possible. An expired session offers sign-in in a new tab; retry after signing in. A version conflict asks you to back up your edits and load the latest draft before saving again. Connection, permission, size-limit and backend failures have specific messages. Keep the tab open or download a backup before refreshing an unsaved draft.
