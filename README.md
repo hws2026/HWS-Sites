@@ -14,7 +14,7 @@ A customer website suite with a separate workspace admin dashboard, customer por
 - Billing: administrator-assigned monthly/yearly/one-time prices, customer Stripe checkout, subscription portal, invoice history, and verified webhook updates.
 - Domains: included public site addresses, custom DNS ownership verification, certificate status, primary domain redirects, and explicit public-access controls.
 - Storage: Cloudflare D1 customer/site/access records and private Supabase Storage image assets for the GitHub Pages deployment. No browser storage is the authoritative data source.
-- Ten sample websites and customer records are initialized in a new administrator workspace. Contacts, statistics, news, and events are fictional. The demo campus image is generated.
+- New administrator workspaces start with no customer or website records. The template library remains available with fictional content. Choose **New website → Website owner → My account** to create your own website from any starting template, or select a customer. Personal websites do not create customer records.
 
 ## Access and publishing
 
@@ -75,5 +75,3 @@ School-style headers switch to the compact menu below 1200px of canvas width; ot
 ### Finalsite composition refinements
 
 The seven Finalsite-style demos now use template-specific section compositions: seven editable full-height day-school stories with page navigation dots; nine corporation photo tiles with hover details; a district news mosaic and paired notice panels; international circular resources, photo program cards and a feature story; and network mission, news and calendar treatments. School templates have weekday date cards and a calendar footer. Corporation, international and network headers default to two-column mega menus with their own colors and dimensions. Tablet and mobile breakpoints retain the Menu-only header and vertical link lists. Existing customer content is preserved; new section arrangements appear in demos and newly selected templates.
-# HWS-Sites
-# HWS-Sites

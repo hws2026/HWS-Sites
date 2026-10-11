@@ -30,7 +30,9 @@ try{
  function check(r,status,label){assert.equal(r.status,status,label+': '+JSON.stringify(r.data));pass(label);return r.data;}
  let eventSeq=0;
  async function event(type,id='cs_test_1',options={}){const timestamp=Math.floor(Date.now()/1000),raw=JSON.stringify({id:options.id??'evt_'+(++eventSeq),type,created:options.created??timestamp,livemode:false,data:{object:{id}}});const signature=createHmac('sha256','whsec_mock_only').update(timestamp+'.'+raw).digest('hex');const response=await mf.dispatchFetch('https://api.test/api/stripe/webhook',{method:'POST',headers:{'Stripe-Signature':`t=${timestamp},v1=${signature}`},body:options.tamper?raw+' ':raw});return {status:response.status,data:await response.json()};}
- check(await req('/api/admin',{action:'initialize'}),200,'workspace initialized');const suite=check(await req('/api/admin'),200,'workspace loaded');const siteId=suite.sites[0].id,customerId=suite.sites[0].customer_id;
+ check(await req('/api/admin',{action:'initialize'}),200,'workspace initialized');const suite=check(await req('/api/admin'),200,'workspace loaded');assert.equal(suite.customers.length,0);assert.equal(suite.sites.length,0);
+ const customerId=check(await req('/api/admin',{action:'customer',name:'Commerce test customer',email:'customer@example.com'}),200,'explicit commerce customer created').id;
+ const siteId=check(await req('/api/admin',{action:'site',customerId,title:'Commerce test site',templateId:'sau70'}),200,'explicit commerce site created').id;
  await db.prepare('UPDATE customers SET email=? WHERE id=?').bind('customer@example.com',customerId).run();
  const payload={action:'save',customerId,label:'Website service',amount:'150.00',currency:'USD',interval:'month'};
  check(await req('/api/billing',payload,'customer-token'),403,'customer cannot assign their own price');

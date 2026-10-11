@@ -7,7 +7,10 @@ async function request(path,method='GET',body,user='owner',extra={}){const heade
 function check(result,status,label){assert.equal(result.status,status,label+': '+JSON.stringify(result.result).slice(0,300));checks++;console.log('PASS '+label);return result.result;}
 check(await request('/api/admin','GET',null,null),401,'anonymous admin rejected');
 check(await request('/api/admin','POST',{action:'initialize'}),200,'workspace initialized');
-const suite=check(await request('/api/admin'),200,'admin data loaded');assert.equal(suite.customers.length,10);assert.equal(suite.sites.length,10);assert.equal(new Set(suite.sites.map(s=>s.template_id)).size,10);checks++;console.log('PASS ten customers and ten distinct templates');
+const empty=check(await request('/api/admin'),200,'admin data loaded');assert.equal(empty.customers.length,0);assert.equal(empty.sites.length,0);checks++;console.log('PASS new workspace contains no demo records');
+const fixtureCustomer=check(await request('/api/admin','POST',{action:'customer',name:'API test customer',email:users.editor.email}),200,'explicit test customer created');
+for(const templateId of ['sau70','crane','greece','athena','horizon','eaglecrest','dubois','ics','greenwich','police'])check(await request('/api/admin','POST',{action:'site',customerId:fixtureCustomer.id,title:'Test '+templateId,templateId}),200,'explicit template fixture: '+templateId);
+const suite=check(await request('/api/admin'),200,'fixture sites loaded');assert.equal(suite.customers.length,1);assert.equal(suite.sites.length,10);assert.equal(new Set(suite.sites.map(s=>s.template_id)).size,10);
 const siteId=suite.sites[0].id;
 const original=check(await request('/api/site?id='+siteId),200,'owner can load a site');
 check(await request('/api/site?id='+siteId,'GET',null,'outsider'),404,'cross-customer draft denied');

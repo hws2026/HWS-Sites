@@ -47,10 +47,12 @@ try {
     return mf.dispatchFetch('https://api.test' + path, {method, headers: {Origin: 'https://front.test', Authorization: 'Bearer ' + token, 'Content-Type': 'application/json'}, body: body ? JSON.stringify(body) : undefined});
   }
   assert.equal((await request('/api/admin', {action: 'initialize'})).status, 200);
-  const suite = await (await request('/api/admin')).json(), siteId = suite.sites[0].id;
+  const initial = await (await request('/api/admin')).json(); assert.equal(initial.customers.length, 0); assert.equal(initial.sites.length, 0);
+  const siteId = (await (await request('/api/admin', {action: 'site', assignTo: 'self', title: 'Storage test site', templateId: 'sau70'})).json()).id;
+  const secondSiteId = (await (await request('/api/admin', {action: 'site', assignTo: 'self', title: 'Second storage site', templateId: 'crane'})).json()).id;
   await request('/api/admin', {action: 'access', siteId, email: 'editor@example.com', role: 'editor'});
   await request('/api/portal', {}, 'editor-token');
-  await request('/api/admin', {action: 'access', siteId: suite.sites[1].id, email: 'other@example.com', role: 'viewer'});
+  await request('/api/admin', {action: 'access', siteId: secondSiteId, email: 'other@example.com', role: 'viewer'});
   await request('/api/portal', {}, 'other-token');
   const bytes = new Uint8Array([137, 80, 78, 71, 13, 10, 26, 10]);
   async function upload(token = 'editor-token', id = siteId, type = 'image/png') {
@@ -60,7 +62,7 @@ try {
   }
   assert.equal((await upload('')).status, 401); pass('anonymous uploads denied without contacting storage');
   assert.equal((await upload('other-token')).status, 403);
-  assert.equal((await upload('other-token', suite.sites[1].id)).status, 403);
+  assert.equal((await upload('other-token', secondSiteId)).status, 403);
   assert.equal(storageWrites, 0); pass('cross-site and viewer uploads denied before storage');
   assert.equal((await upload('editor-token', siteId, 'image/svg+xml')).status, 400); pass('unsafe upload types rejected');
   const first = await upload(); assert.equal(first.status, 200); const imageUrl = (await first.json()).url;
@@ -90,8 +92,8 @@ try {
     assert.equal((await secretFree.dispatchFetch('https://api.test/health')).status, 200); pass('core API can launch before the storage secret is configured');
     const headers = {Authorization: 'Bearer admin-token', Origin: 'https://front.test', 'Content-Type': 'application/json'};
     assert.equal((await secretFree.dispatchFetch('https://api.test/api/admin', {method: 'POST', headers, body: JSON.stringify({action: 'initialize'})})).status, 200);
-    const readySuite = await (await secretFree.dispatchFetch('https://api.test/api/admin', {headers})).json();
-    const form = new FormData(); form.set('siteId', readySuite.sites[0].id); form.set('file', new File([bytes], 'photo.png', {type: 'image/png'}));
+    const readySite = await (await secretFree.dispatchFetch('https://api.test/api/admin', {method: 'POST', headers, body: JSON.stringify({action: 'site', assignTo: 'self', title: 'Credential test site', templateId: 'sau70'})})).json();
+    const form = new FormData(); form.set('siteId', readySite.id); form.set('file', new File([bytes], 'photo.png', {type: 'image/png'}));
     const incoming = new Request('https://api.test/api/upload', {method: 'POST', headers: {Authorization: 'Bearer admin-token', Origin: 'https://front.test'}, body: form});
     assert.equal((await secretFree.dispatchFetch(incoming.url, {method: 'POST', headers: incoming.headers, body: await incoming.arrayBuffer()})).status, 503);
     assert.equal((await emptyDb.prepare('SELECT count(*) n FROM media').first()).n, 0); pass('missing storage credentials block uploads without blocking admin setup');

@@ -42,8 +42,10 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
      window.location.hash='/editor/'+encodeURIComponent(siteId);
     }else{
      const target=new URLSearchParams(window.location.hash.split('?')[1]??'').get('return_to');
-     if(target&&/^\/(?:editor\/[a-zA-Z0-9-]+|admin|portal)?$/.test(target))window.location.hash=target;
-     else{const response=await apiFetch('/api/me');const account=await response.json() as {role?:string;error?:string};if(!response.ok)throw new Error(account.error??'Unable to load your account.');window.location.hash=account.role==='admin'?'/admin':'/portal';}
+     const response=await apiFetch('/api/me');const account=await response.json() as {role?:string;error?:string};if(!response.ok)throw new Error(account.error??'Unable to load your account.');
+     const targetPath=target?.split('?')[0];
+     const validTarget=target&&/^\/(?:editor\/[a-zA-Z0-9-]+|admin|portal)(?:\?view=(?:billing|domains))?$/.test(target);
+     window.location.hash=validTarget&&(targetPath!=='/admin'||account.role==='admin')?target:account.role==='admin'?'/admin':'/portal';
     }
    }
   }catch(e){setFailed(true);setMessage(e instanceof Error?e.message:'Please try again.');}finally{setBusy(false);}
@@ -67,7 +69,7 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
     {(!siteId||mode!=='login')&&<button onClick={()=>{setMode(mode==='login'?'signup':'login');setMessage('');}}>{mode==='login'?'Create an account':'Back to sign in'}</button>}
     <button onClick={()=>{setMode('forgot');setMessage('');}}>Forgot password?</button>
    </div>}
-   {reset?<a href={returnLink}>Return to sign in</a>:siteId?<p className="auth-scope-note">Access to another customer’s website does not grant access here.</p>:<><a href={appHref('/')}>Go to admin dashboard</a><a href={appHref('/portal')}>Go to customer portal</a></>}
+   {reset?<a href={returnLink}>Return to sign in</a>:siteId?<p className="auth-scope-note">Access to another customer’s website does not grant access here.</p>:<p className="auth-scope-note">Sign in to access your admin panel or customer workspace.</p>}
   </div>
  </main>;
 }

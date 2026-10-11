@@ -12,10 +12,28 @@ async function req(path,method='GET',body,token='admin-token',origin='https://fr
 function check(r,status,label){assert.equal(r.status,status,label+': '+JSON.stringify(r.data));checks++;console.log('PASS '+label);return r.data;}
 check(await req('/api/admin','GET',null,null,'https://front.test',{'oai-authenticated-user-id':'admin-uuid','oai-authenticated-user-email':'admin@example.com'}),401,'spoofed identity headers rejected');check(await req('/api/admin','GET',null,'customer-token'),403,'customer cannot open platform admin');check(await req('/api/admin','GET',null,'admin-token','https://evil.test'),403,'foreign origin rejected');
 const me=await req('/api/me');check(me,200,'Supabase identity validated');assert.equal(me.headers.get('access-control-allow-origin'),'https://front.test');
-check(await req('/api/admin','POST',{action:'initialize'}),200,'admin initializes workspace');const suite=check(await req('/api/admin'),200,'workspace loads');const siteId=suite.sites[0].id;check(await req('/api/admin','POST',{action:'access',siteId,email:'customer@example.com',role:'editor'}),200,'assigned site access');check(await req('/api/portal','POST',{},'customer-token'),200,'verified email claims portal access');check(await req('/api/site?id='+siteId,'GET',null,'customer-token'),200,'assigned customer can edit');check(await req('/api/site?id='+siteId,'GET',null,'other-token'),404,'cross-customer data denied');
+check(await req('/api/admin','POST',{action:'initialize'}),200,'admin initializes workspace');
+const empty=check(await req('/api/admin'),200,'empty workspace loads');assert.equal(empty.customers.length,0);assert.equal(empty.sites.length,0);checks++;console.log('PASS no demo accounts or sites are seeded');
+check(await req('/api/admin','POST',{action:'initialize'}),200,'workspace initialization is idempotent');assert.equal((await db.prepare('SELECT count(*) n FROM workspaces').first()).n,1);
+check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Forbidden',templateId:'sau70'},'customer-token'),403,'customer cannot claim platform-owned templates');
+check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Invalid',templateId:'unknown'}),400,'unknown starting template rejected');
+for(const templateId of ['sau70','crane','greece','athena','horizon','eaglecrest','dubois','ics','greenwich','police','business','general']){
+ const own=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'My '+templateId,templateId,owner:'other-uuid'}),200,'owner creates own-account site: '+templateId);
+ const record=await db.prepare('SELECT owner,customer_id,template_id FROM client_sites WHERE id=?').bind(own.id).first();assert.equal(record.owner,'admin-uuid');assert.equal(record.customer_id,'');assert.equal(record.template_id,templateId);
+ check(await req('/api/site?id='+own.id),200,'own-account template is editable: '+templateId);
+ check(await req('/api/site?id='+own.id,'GET',null,'other-token'),404,'own-account template stays private: '+templateId);
+}
+assert.equal((await req('/api/admin')).data.customers.length,0);checks++;console.log('PASS personal websites create no fake customer records');
+const ownerPortal=check(await req('/api/portal'),200,'owner can see personal websites in portal');assert.equal(ownerPortal.sites.length,12);assert.ok(ownerPortal.sites.every(site=>site.role==='admin'));
+assert.equal((await req('/api/portal','GET',null,'other-token')).data.sites.length,0);checks++;console.log('PASS other accounts cannot see owner personal websites');
+const customer=check(await req('/api/admin','POST',{action:'customer',name:'Backend test customer',email:'customer@example.com'}),200,'explicit test customer created');
+const siteId=check(await req('/api/admin','POST',{action:'site',customerId:customer.id,title:'Backend test site',templateId:'sau70'}),200,'explicit customer website created').id;
+const secondSiteId=check(await req('/api/admin','POST',{action:'site',customerId:customer.id,title:'Second test site',templateId:'crane'}),200,'second test website created').id;
+check(await req('/api/admin','POST',{action:'site',customerId:'foreign-customer',title:'No access',templateId:'sau70'}),404,'foreign customer assignment denied');
+check(await req('/api/admin','POST',{action:'access',siteId,email:'customer@example.com',role:'editor'}),200,'assigned site access');check(await req('/api/portal','POST',{},'customer-token'),200,'verified email claims portal access');check(await req('/api/site?id='+siteId,'GET',null,'customer-token'),200,'assigned customer can edit');check(await req('/api/site?id='+siteId,'GET',null,'other-token'),404,'cross-customer data denied');
 
 check(await req('/api/site-login','POST',{id:siteId},'customer-token'),200,'site admin login accepts the assigned editor');
-const secondSiteId=suite.sites[1].id;
+
 const crossLogin=check(await req('/api/site-login','POST',{id:secondSiteId},'customer-token'),403,'another website rejects the same authenticated account');assert.equal(crossLogin.site,null);
 const missingLogin=check(await req('/api/site-login','POST',{id:'missing-site'},'customer-token'),403,'unknown website uses the same invalid response');assert.equal(missingLogin.site,null);
 check(await req('/api/site-login','POST',{id:siteId},null),401,'site login requires verified authentication');
@@ -32,7 +50,7 @@ check(await req('/api/published?id='+siteId,'GET',null,'customer-token'),200,'Pa
 
 const branding=check(await req('/api/site-login?id='+siteId,'GET',null,null),200,'published login branding can load before sign-in');assert.deepEqual(Object.keys(branding.site).sort(),['accent','id','name','slug']);assert.equal(branding.site.name,draft.site.name);
 check(await req('/api/reminders','POST',{action:'rules',onboardingEnabled:true,eventEnabled:true,onboardingDays:7,eventHours:24}),200,'both automatic rules enabled');check(await req('/api/reminders','GET',null,'customer-token'),403,'customer cannot schedule admin mail');
-const customerId=suite.customers[0].id;check(await req('/api/reminders','POST',{customerId,subject:'Test reminder',body:'Test message',nextAt:new Date(Date.now()+60000).toISOString(),intervalDays:0}),200,'custom reminder scheduled');
+const customerId=customer.id;check(await req('/api/reminders','POST',{customerId,subject:'Test reminder',body:'Test message',nextAt:new Date(Date.now()+60000).toISOString(),intervalDays:0}),200,'custom reminder scheduled');
 await db.prepare("UPDATE customers SET status='Onboarding' WHERE owner='admin-uuid'").run();await db.prepare("UPDATE reminders SET next_at=? WHERE source IS NULL").bind(new Date(Date.now()-1000).toISOString()).run();
 const scheduled=await (await mf.getWorker()).scheduled({cron:'0 * * * *'});const deliveries=await db.prepare("SELECT * FROM reminder_deliveries WHERE status='sent'").all();assert.equal(deliveries.results.length,2);checks++;console.log('PASS scheduled custom and published-event reminders sent through mock provider');
 const auto=await db.prepare("SELECT * FROM reminders WHERE source LIKE 'onboarding-%'").all();assert.ok(auto.results.length>0);checks++;console.log('PASS onboarding reminders generated');

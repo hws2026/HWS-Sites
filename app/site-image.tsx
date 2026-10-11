@@ -1,4 +1,0 @@
-'use client';
-import {useEffect,useState} from 'react';
-import {assetUrl,apiFetch,isPages,isPublicVisitor} from '@/lib/client-runtime';
-export function SiteImage({src,...props}:React.ImgHTMLAttributes<HTMLImageElement>){const privateImage=isPages&&!isPublicVisitor()&&typeof src==='string'&&src.startsWith('/media/');const [url,setUrl]=useState('');useEffect(()=>{if(!privateImage||typeof src!=='string')return;const abort=new AbortController();let object='';setUrl('');void apiFetch(src,{signal:abort.signal}).then(r=>{if(!r.ok)throw new Error('Image unavailable');return r.blob();}).then(blob=>{if(abort.signal.aborted)return;object=URL.createObjectURL(blob);setUrl(object);}).catch(()=>{});return()=>{abort.abort();if(object)URL.revokeObjectURL(object);};},[src,privateImage]);return <img {...props} src={privateImage?url||undefined:assetUrl(String(src??''))}/>;}
