@@ -4,7 +4,7 @@ import {body,CommerceError,failure,field,json,providerUrl,type CommerceUser} fro
 
 export type BillingEnv={FRONTEND_URL?:string;STRIPE_SECRET_KEY?:string;STRIPE_WEBHOOK_SECRET?:string;STRIPE_PORTAL_CONFIGURATION_ID?:string};
 type Agreement={id:string;owner:string;customer_id:string;label:string;amount:number;currency:string;interval:BillingInterval;status:string;revision:number;stripe_subscription_id:string|null;stripe_session_id:string|null;session_url:string|null;session_expires:number;checkout_key:string|null};
-type Customer={id:string;owner:string;name:string;email:string;status:string};
+type Customer={id:string;owner:string;name:string;email:string;status:string;archived:number};
 type Session={id:string;url:string;status:string;payment_status:string;customer:string;subscription:string|null;invoice:string|null;amount_total:number;currency:string;metadata?:Record<string,string>};
 type Subscription={id:string;customer:string;status:string;cancel_at_period_end:boolean;metadata?:Record<string,string>};
 type Invoice={id:string;customer:string;subscription?:string;parent?:{subscription_details?:{subscription:string}};status:string;amount_paid:number;amount_due:number;currency:string;hosted_invoice_url:string|null;created:number;metadata?:Record<string,string>};
@@ -14,6 +14,14 @@ async function stripe<T>(env:BillingEnv,path:string,params?:Record<string,string
  const data=await response.json() as T&{error?:{message?:string}};
  if(!response.ok){console.error('Stripe error',response.status,data.error?.message);throw new CommerceError('Stripe could not complete this request. Check the provider configuration or retry.',502);}return data;
 }
+export async function checkCustomerDeletionBilling(env:BillingEnv,customerId:string){
+ const agreements=await database().prepare('SELECT * FROM billing_agreements WHERE customer_id=?').bind(customerId).all<Agreement>();
+ for(const a of agreements.results){
+  if(a.stripe_subscription_id){const sub=await stripe<Subscription>(env,'subscriptions/'+encodeURIComponent(a.stripe_subscription_id));if(!['canceled','incomplete_expired'].includes(sub.status))throw new CommerceError('Cancel this customer’s Stripe subscriptions in Billing before deleting. Archiving does not cancel charges.',409);}
+  if(a.stripe_session_id){const session=await stripe<Session>(env,'checkout/sessions/'+encodeURIComponent(a.stripe_session_id));if(session.status==='open'||(session.status==='complete'&&(session.payment_status!=='paid'||(session.subscription&&!a.stripe_subscription_id))))throw new CommerceError('Disable open payment links and wait for pending payments to finish before deleting this customer.',409);}
+  else if(a.checkout_key&&a.session_expires>Math.floor(Date.now()/1000))throw new CommerceError('A payment link is being prepared. Wait for it to expire before deleting this customer.',409);
+ }
+}
 function parseAmount(value:unknown){try{return amountInMinorUnits(value);}catch(error){throw new CommerceError(error instanceof Error?error.message:'Invalid amount.');}}
 function returnUrl(env:BillingEnv,admin:boolean){const url=new URL(env.FRONTEND_URL!);url.hash=(admin?'/':'/portal')+'?view=billing';return url.href;}
 async function customerAccess(id:string,user:CommerceUser){const c=await database().prepare('SELECT * FROM customers WHERE id=?').bind(id).first<Customer>();if(!c||!(user.isAdmin?c.owner===user.id:c.email.toLowerCase()===user.email))throw new CommerceError('Billing account not found.',404);return c;}
@@ -22,6 +30,7 @@ async function stripeCustomer(env:BillingEnv,c:Customer){const db=database();awa
  const customer=await stripe<{id:string}>(env,'customers',{'metadata[hws_customer_id]':c.id},'hws-customer-'+c.id);await db.prepare('UPDATE billing_accounts SET stripe_customer_id=? WHERE customer_id=? AND stripe_customer_id IS NULL').bind(customer.id,c.id).run();return customer.id;
 }
 async function checkout(env:BillingEnv,a:Agreement,c:Customer){
+ if(c.archived)throw new CommerceError('Restore this customer before starting a new payment.',409);
  if(c.status==='Paused')throw new CommerceError('This customer account is paused.',409);
  if(a.stripe_subscription_id||['paid','disabled','active','canceled'].includes(a.status))throw new CommerceError('This agreement cannot start another payment. Open billing management for an existing subscription.',409);
  const db=database(),now=Math.floor(Date.now()/1000);
@@ -43,6 +52,7 @@ export async function billingRoute(request:Request,env:BillingEnv,user:CommerceU
  if(action==='save'){
   if(!user.isAdmin)throw new CommerceError('Only the platform administrator can assign amounts.',403);
   const customer=await customerAccess(field(input.customerId),user),label=field(input.label,120),amount=parseAmount(input.amount),currency=field(input.currency).toUpperCase(),interval=field(input.interval);
+  if(customer.archived)throw new CommerceError('Restore this customer before assigning a new amount.',409);
   if(!billingCurrencies.includes(currency as typeof billingCurrencies[number])||!['one_time','month','year'].includes(interval))throw new CommerceError('Choose a supported currency and billing schedule.');
   const id=input.id?field(input.id):crypto.randomUUID();if(input.id){const {a}=await agreementAccess(id,user);if(a.customer_id!==customer.id)throw new CommerceError('The customer cannot be changed.');if(a.stripe_subscription_id||!['ready','disabled','failed'].includes(a.status)||a.checkout_key)throw new CommerceError('A payment has already started. Manage the existing subscription in Stripe or create a separate agreement.',409);const result=await db.prepare("UPDATE billing_agreements SET label=?,amount=?,currency=?,interval=?,status='ready',revision=revision+1,updated_at=? WHERE id=? AND owner=? AND revision=? AND checkout_key IS NULL AND stripe_subscription_id IS NULL AND status IN ('ready','disabled','failed')").bind(label,amount,currency,interval,new Date().toISOString(),id,user.id,Number(input.revision)).run();if(!result.meta.changes)throw new CommerceError('This agreement changed in another tab. Refresh first.',409);}else{await db.prepare("INSERT INTO billing_agreements (id,owner,customer_id,label,amount,currency,interval,status,updated_at) VALUES (?,?,?,?,?,?,?,'ready',?)").bind(id,user.id,customer.id,label,amount,currency,interval,new Date().toISOString()).run();}
   await logStatement(user.id,`Assigned ${currency} ${(amount/100).toFixed(2)} ${interval} billing to ${customer.name}`).run();return json({ok:true,id});
