@@ -27,7 +27,7 @@ Scratch creation checks the saved draft before opening the editor. If an older b
 
 ## Access and publishing
 
-The suite starts private. The `#/website/<site-id>/<slug>` route is an assigned-access review. On the standalone backend, publish in the editor and enable public access under Domains to serve `/sites/<site-id>/` and connected domains without sign-in. Custom domains require Cloudflare for SaaS configuration and DNS verification. Invitation email delivery is not configured. See DEPLOYMENT.md for the separate GitHub Pages/Supabase deployment and required provider setup.
+The admin suite and editor require sign-in. **Publish website** saves the approved snapshot and enables anonymous access at `/sites/<site-id>/` and connected domains in one operation. Old `#/website/<site-id>/<slug>` links redirect there. **Unpublish website** closes pages, media and forms while retaining the draft. Custom domains use a Cloudflare Pages Free gateway, DNS ownership verification and HTTPS. Customer archiving suspends their websites and reminders; restoring does not automatically republish. Permanent customer deletion requires archiving first, an exact-name confirmation and cleanup of all their websites and related data. Active billing must be resolved first. See DEPLOYMENT.md for setup. Editors save drafts, viewers preview, and website administrators publish. Every server mutation checks identity and site/workspace authorization; conflicting saves return HTTP 409.
 
 The account owning a workspace is its administrator. Customer grants apply to specific sites: editors can save drafts, viewers can only preview, and administrators publish. Every server mutation checks identity and site/workspace authorization. Archiving unpublishes the website; restore retains the draft. Conflicting saves return HTTP 409.
 
@@ -106,7 +106,7 @@ Run `npm run verify:calendar` for synchronization, migration, filtering, backups
 
 ### Forms and private responses
 
-Add a form from **Library**, select it, and edit its fields in **Section settings**. Labels, field types, required fields, choice options, submit text, confirmation message, privacy note and **Accept responses when published** are editable on every template, including nested forms. Publish the website and enable **Domains → Public website access** to receive submissions at its included public address or connected domain. Demo, editor and assigned-access review previews never submit responses.
+Add a form from **Library**, select it, and edit its fields in **Section settings**. Labels, field types, required fields, choice options, submit text, confirmation message, privacy note and **Accept responses when published** are editable on every template, including nested forms. Choose **Publish website** to receive submissions at its included public address or connected domain. Demo, editor and assigned-access review previews never submit responses.
 
 Open **Forms inbox** in the admin/customer portal or editor toolbar. The workspace owner and editors assigned to that website can read responses, mark them new/read/archived, restore archived responses and download private attachments. Viewers and accounts assigned only to another website cannot access them. CSV export includes up to 100 responses from the current list offset and protects spreadsheet formula cells. Responses snapshot the submitted field labels and values, so later form edits do not rewrite earlier answers.
 
