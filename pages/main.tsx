@@ -5,7 +5,7 @@ import Editor from '@/app/editor';
 import {WebsiteView} from '@/app/website-view';
 import {referenceTemplate,referenceTemplates} from '@/lib/templates';
 import type {Website} from '@/lib/editor-model';
-import {apiFetch,appHref,hasSession,setSessionToken} from '@/lib/client-runtime';
+import {apiFetch,appHref,publishedSiteUrl,hasSession,setSessionToken} from '@/lib/client-runtime';
 import {initializeAuth,AuthScreen,supabase} from './auth';
 import '@/app/globals.css';
 import '@/app/commerce.css';
@@ -14,7 +14,7 @@ import '@/app/website-design.css';
 import '@/app/website-fidelity.css';
 import '@/app/finalsite-composition.css';
 import '@/app/website-modules.css';
-function Published({id,slug,pageSlug}:{id:string;slug:string;pageSlug?:string}){const [site,setSite]=useState<Website|null>(null);const [error,setError]=useState('');useEffect(()=>{const abort=new AbortController();void apiFetch('/api/published?id='+encodeURIComponent(id),{signal:abort.signal}).then(async r=>{const data=await r.json() as {error?:string;site:Website};if(!r.ok)throw new Error(data.error??'Website unavailable');setSite(data.site);}).catch(e=>{if(!abort.signal.aborted)setError(e.message);});return()=>abort.abort();},[id]);if(error)return <main className="publication-empty"><h1>Website unavailable</h1><p>{error}</p><a href={appHref('/signin')}>Sign in</a></main>;if(!site)return <main className="publication-empty">Loading website…</main>;const page=pageSlug?site.pages.find(p=>p.slug===pageSlug):site.pages[0];if(site.slug!==slug||!page)return <main className="publication-empty">Page not found.</main>;return <div className="published-page"><WebsiteView site={site} siteId={id} page={page} base={appHref(`/website/${id}/${slug}`)}/></div>;}
+function Published({id,pageSlug}:{id:string;slug:string;pageSlug?:string}){const url=publishedSiteUrl(id,pageSlug);useEffect(()=>{window.location.replace(url);},[url]);return <main className="publication-empty" role="status">Opening public website… <a href={url}>Continue to website</a></main>;}
 function DemoPreview({templateId,slug}:{templateId:string;slug?:string}){const [site]=useState(()=>referenceTemplate(templateId));const page=site.pages.find(p=>p.slug===slug)??site.pages[0];useEffect(()=>{document.title=page.name+' | '+site.name;window.scrollTo({top:0,behavior:'instant'});},[page.id,site.name]);return <div className="published-page"><WebsiteView site={site} siteId={'demo-'+templateId} page={page} base={appHref('/demo/'+templateId)} onPage={id=>{const destination=site.pages.find(p=>p.id===id);if(destination)location.hash='/demo/'+templateId+(destination.id===site.pages[0].id?'':'/'+destination.slug);}}/></div>;}
 function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(appHref(to));},[to]);return <main className="publication-empty" role="status">Opening your workspace…</main>;}
 function AccountHome(){
