@@ -19,4 +19,6 @@ export const siteAdminHref=(id:string)=>isPages?appHref('/site-admin/'+encodeURI
 export const assetUrl=(path:string)=>visitorFrontend&&path.startsWith('/')&&!path.startsWith('//')?(path.startsWith('/media/')?visitorBase+path:visitorFrontend+path.slice(1)):isPages&&path.startsWith('/')&&!path.startsWith('//')?(path.startsWith('/media/')?apiOrigin+path:basePath+path.slice(1)):path;
 export async function apiFetch(path:string,init:RequestInit={}){if(!isPages)return fetch(path,init);if(!apiOrigin)throw new Error('The backend connection is not configured.');const headers=new Headers(init.headers);if(token)headers.set('Authorization','Bearer '+token);return fetch(apiOrigin+path,{...init,headers,credentials:'omit'});}
 
+export const publishedSiteUrl=(id:string,pageSlug?:string)=>apiOrigin+'/sites/'+encodeURIComponent(id)+'/'+(pageSlug?encodeURIComponent(pageSlug):'');
+
 export const publicFormUrl=()=>visitorFrontend?visitorBase+'/api/forms':'';

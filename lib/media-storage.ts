@@ -62,3 +62,20 @@ export async function getMediaObject(env: BackendEnv, key: string): Promise<{bod
   if (!response.ok) throw new Error('Image storage is unavailable.');
   return {body: response.body};
 }
+
+export async function deleteMediaObjects(env: BackendEnv, keys: string[]) {
+  if (!keys.length) return;
+  keys.forEach(objectPath);
+  if (env.MEDIA_STORAGE !== 'supabase') {
+    if (!env.BUCKET) throw new Error('Image storage is unavailable. Retry deletion once storage is connected.');
+    await env.BUCKET.delete(keys);
+    return;
+  }
+  const config = storageConfig(env);
+  const response = await fetch(config.url + '/object/' + config.bucket, {
+    method: 'DELETE', headers: {...config.headers, 'Content-Type': 'application/json'},
+    body: JSON.stringify({prefixes: keys}), redirect: 'manual', signal: AbortSignal.timeout(30000),
+  });
+  if (!response.ok) throw new Error('Uploaded images could not be removed. The customer remains suspended; retry deletion.');
+  await response.body?.cancel();
+}
