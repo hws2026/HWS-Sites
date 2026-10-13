@@ -10,7 +10,7 @@ The production suite is `https://suite.huskysol.com/` on GitHub Pages, and the b
 
 On October 13, 2026, migration 0005 and Worker version `dbd8d964-6313-46a6-9433-b4bb912d6273` were deployed. This connects publishing to anonymous public access, supports unpublishing, and adds customer archive/delete. The existing published Husky Solutions website was confirmed accessible without signing in. Its current Google Site DNS has not been changed.
 
-The Free Cloudflare Pages project `hws-customer-sites` is deployed with the `HWS_BACKEND` service binding. Its domain target is `hws-customer-sites.pages.dev`. Automatic custom-domain connection still requires the encrypted backend secret `CLOUDFLARE_PAGES_TOKEN` with account-scoped Cloudflare Pages Edit permission. No paid plan or paid add-on was activated. GitHub Pages continues hosting the admin suite.
+The Free Cloudflare Pages project `hws-customer-sites` is deployed with the `HWS_BACKEND` service binding. Its domain target is `hws-customer-sites.pages.dev`. The encrypted backend secret `CLOUDFLARE_PAGES_TOKEN` is saved for automatic domain management, with account-scoped Cloudflare Pages Edit permission. Each customer hostname still requires the displayed DNS records and successful certificate validation. No paid plan or paid add-on was activated. GitHub Pages continues hosting the admin suite.
 
 GitHub Actions still needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` for automated backend deployments; the current backend was deployed directly with Wrangler OAuth. Deploy the matching frontend source through the existing Pages workflow. Supabase custom SMTP, reminders and Stripe are separate optional integrations that require their own configuration.
 
