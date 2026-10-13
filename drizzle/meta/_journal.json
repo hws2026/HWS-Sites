@@ -36,6 +36,13 @@
       "when": 1791729514188,
       "tag": "0004_glossy_ma_gnuci",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1791863503035,
+      "tag": "0005_tan_quicksilver",
+      "breakpoints": true
     }
   ]
 }
