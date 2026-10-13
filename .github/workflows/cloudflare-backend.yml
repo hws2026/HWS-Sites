@@ -15,8 +15,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
+      - run: npm run verify:creation
+      - run: npm run verify:calendar
       - name: Build backend for verification
         run: npx wrangler deploy --config backend/wrangler.json --dry-run --outdir backend-dist
+      - run: npm run verify:publication
+      - run: npm run verify:forms
       - run: npm run verify:backend
       - run: npm run verify:commerce
       - run: npm run verify:storage
@@ -28,7 +32,8 @@ jobs:
           SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
           SUPABASE_STORAGE_BUCKET: ${{ vars.SUPABASE_STORAGE_BUCKET }}
           ADMIN_SUPABASE_USER_IDS: ${{ vars.ADMIN_SUPABASE_USER_IDS }}
-          CUSTOM_DOMAIN_ZONE_ID: ${{ vars.CUSTOM_DOMAIN_ZONE_ID }}
+          CUSTOM_DOMAIN_ACCOUNT_ID: ${{ vars.CUSTOM_DOMAIN_ACCOUNT_ID }}
+          CUSTOM_DOMAIN_PROJECT: ${{ vars.CUSTOM_DOMAIN_PROJECT }}
           CUSTOM_DOMAIN_TARGET: ${{ vars.CUSTOM_DOMAIN_TARGET }}
           STRIPE_PORTAL_CONFIGURATION_ID: ${{ vars.STRIPE_PORTAL_CONFIGURATION_ID }}
           EMAIL_FROM: ${{ vars.EMAIL_FROM }}
@@ -40,4 +45,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --config backend/wrangler.json
+          command: deploy --config backend/wrangler.json --keep-vars

@@ -23,6 +23,8 @@ jobs:
       - uses: actions/configure-pages@v5
         id: pages
       - run: npm run typecheck
+      - run: npm run verify:creation
+      - run: npm run verify:calendar
       - name: Check backend connection
         run: test -n "$VITE_API_URL"
         env:
