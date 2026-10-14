@@ -1,4 +1,5 @@
 'use client';
+import {WebsitePayment} from './website-payment';
 import {useId,useState,useEffect,useRef} from 'react';
 import {ArrowRight,ChevronLeft,ChevronRight,Download,FileText,Search,X} from 'lucide-react';
 import {getBlockItems,videoEmbed,type Block,type BlockItem,type Website} from '@/lib/editor-model';
@@ -10,7 +11,7 @@ import {isDirectVideo} from '@/lib/media-policy';
 import {SiteImage,SiteVideo} from './site-image';
 import {WebsiteIcon} from './website-icons';
 type Props={block:Block;site:Website;href:(link:string)=>string;onNavigate:(event:React.MouseEvent,link:string)=>void;editing?:boolean;depth?:number};
-export const extendedModules=['testimonial','documents','tabs','table','timeline','form','contact','calendar','feed','logos','linklist','group','directory','gallery','accordion'];
+export const extendedModules=['payment','testimonial','documents','tabs','table','timeline','form','contact','calendar','feed','logos','linklist','group','directory','gallery','accordion'];
 export function RichText({text}:{text:string}){return <div className="rich-content">{text.split(/\n\s*\n/).filter(Boolean).map((paragraph,i)=>{const lines=paragraph.split('\n');return lines.every(line=>/^[-*] /.test(line))?<ul key={i}>{lines.map((line,j)=><li key={j}>{line.slice(2)}</li>)}</ul>:<p key={i}>{paragraph.split(/(\*\*[^*]+\*\*)/g).map((part,j)=>part.startsWith('**')?<strong key={j}>{part.slice(2,-2)}</strong>:part)}</p>;})}</div>;}
 function Modal({title,onClose,children,className}:{title:string;onClose:()=>void;children:React.ReactNode;className:string}){const ref=useRef<HTMLDivElement>(null);useEffect(()=>{const previous=document.activeElement as HTMLElement|null;ref.current?.querySelector<HTMLElement>('button')?.focus();return()=>{if(previous?.isConnected)previous.focus();};},[]);return <div className="module-modal-backdrop" onClick={onClose}><div ref={ref} className={className} role="dialog" aria-modal="true" aria-label={title} onClick={e=>e.stopPropagation()} onKeyDown={e=>{if(e.key==='Escape'){e.preventDefault();onClose();}if(e.key==='Tab'){const targets=Array.from(ref.current?.querySelectorAll<HTMLElement>('button,a[href],input,select,textarea,[tabindex="0"]')??[]);const first=targets[0],last=targets.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}}}><button type="button" className="module-close" aria-label={'Close '+title} onClick={onClose}><X/></button>{children}</div></div>;}
 function ItemChildren({item,...props}:Omit<Props,'block'>&{item:BlockItem}){return <><RichText text={item.text}/>{item.children?.map(child=><NestedSection key={child.id} {...props} block={child} depth={(props.depth??0)+1}/>)}</>;}
@@ -30,6 +31,7 @@ export function ModuleContent(props:Props){const {block,href,onNavigate,editing}
  if(block.type==='tabs')return <TabsModule {...props}/>;
  if(['documents','directory','feed'].includes(block.type))return <FilterCollection {...props}/>;
  if(block.type==='calendar')return <CalendarModule {...props}/>;
+ if(block.type==='payment')return <WebsitePayment block={block} editing={editing}/>;
  if(block.type==='form')return <WebsiteForm block={block} editing={editing}/>;
  if(block.type==='gallery')return <GalleryModule {...props}/>;
  if(block.type==='group')return <div className={'nested-grid module-grid columns-'+(block.columnLayout??'equal')}>{block.children?.map(child=><NestedSection key={child.id} {...props} block={child} depth={(props.depth??0)+1}/>)}</div>;

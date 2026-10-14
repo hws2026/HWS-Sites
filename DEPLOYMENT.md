@@ -155,3 +155,21 @@ Run `npm run db:backend` before `npm run deploy:backend -- --keep-vars`, then up
 ## Inactivity, image sizing, and legal footer release
 
 Deploy the updated Worker (website validation) with existing secrets preserved, then the Pages frontend. No database migration or paid Supabase session setting is required. Run `npm run verify:editor-options`, the template render checks, typecheck and the Pages build. Browser inactivity defaults to 30 minutes with a two-minute warning, cross-tab coordination, refresh/sleep checks, local-scope Supabase sign-out and account-scoped draft recovery. Offline logout clears local credentials; existing access tokens keep their normal server expiry. Image sizing and legal link fields are optional and backwards compatible.
+
+## Website payments (optional; setup can stay deferred)
+
+Suite billing charges the administrator's customers. **Website payments** uses Stripe Connect direct charges so each customer business receives its own website payments. A new Payment checkout section is available in every template, including imported templates; original imported source files are unchanged. Prices can be saved before Stripe is activated. With no Stripe secrets, connection and checkout remain disabled.
+
+Apply migration `0007_spicy_xorn.sql`, deploy the backend with `--keep-vars`, and deploy the customer-domain gateway as well as the frontend. Do not activate Stripe or submit business verification until the owner is ready (currently deferred until LLC formation).
+
+When ready:
+
+1. Complete the platform's Stripe business verification and enable Connect. Use a separate test deployment/database to test credentials, never mix live and test accounts in the same database.
+2. Configure the existing platform billing secret/webhook described above.
+3. Create a **Connected accounts** webhook at `https://hws-suite-api.huskysol.workers.dev/api/stripe/connect-webhook`, API version `2025-03-31.basil`, for `account.updated`, `account.application.deauthorized`, `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, `checkout.session.expired`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`, `invoice.paid`, `invoice.payment_failed`, `invoice.payment_action_required`, and `invoice.voided`. Store its signing secret as `STRIPE_CONNECT_WEBHOOK_SECRET`. Do not reuse the platform webhook signing secret.
+4. Each business's named customer contact signs into the suite, opens **Website payments**, and connects Stripe through its hosted onboarding. Only that contact can open onboarding; the platform administrator can assign prices and see payment history. Refresh status after returning from Stripe. Existing independent Stripe accounts should follow the options Stripe presents; never manually paste account IDs.
+5. Create an offer for a website (amount, currency, one-time/monthly/yearly). Add **Payment checkout** from the editor's content library, select the offer in the right inspector, save and publish. Stripe verification and the server's published website/offer checks must pass before checkout opens.
+
+Prices are immutable; create and select a new offer to change future prices. Disable an offer to stop new checkouts and expire open sessions. This does not cancel existing subscriptions. Refunds, disputes, recurring cancellations and payout management remain in the business's Stripe dashboard. Payment history records verified checkout payments and recurring invoices; it is not a full accounting ledger. One-time website checkout does not enable the optional paid invoice-creation feature. HWS adds no application fee; Stripe's processing/Billing/Connect terms still apply.
+
+`node scripts/verify-website-payments.mjs` uses mocked Stripe and an isolated database; it never charges cards or creates real accounts. The public return URL cannot mark an order paid; only a valid webhook with an independently fetched Stripe session can do so. Card details are never collected by HWS.

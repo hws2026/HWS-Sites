@@ -1,3 +1,4 @@
+import {publicPayment,type MerchantEnv} from './website-payments';
 import {visitorWebsite} from '../lib/publication';
 import {submitPublicForm} from './forms';
 import {database} from '../lib/suite-store';
@@ -7,7 +8,7 @@ import {getMediaObject,mediaResponse} from '../lib/media-storage';
 
 const unavailable=()=>new Response('Website unavailable',{status:404,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 const escape=(text:string)=>text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-export async function publicSite(request:Request,env:BackendEnv):Promise<Response|null>{
+export async function publicSite(request:Request,env:BackendEnv&MerchantEnv):Promise<Response|null>{
  const url=new URL(request.url),db=database();
  let record=await db.prepare('SELECT d.site_id,d.status,s.published,MAX(s.archived,COALESCE((SELECT c.archived FROM customers c WHERE c.id=s.customer_id AND c.owner=s.owner),0)) archived,COALESCE(p.enabled,0) enabled FROM site_domains d JOIN client_sites s ON s.id=d.site_id LEFT JOIN site_publications p ON p.site_id=s.id WHERE d.hostname=?').bind(url.hostname).first<{site_id:string;status:string;published:string|null;archived:number;enabled:number}>();
  let basePath='',path=url.pathname;
@@ -15,6 +16,7 @@ export async function publicSite(request:Request,env:BackendEnv):Promise<Respons
  if(record.status!=='active'||record.archived||!record.enabled||!record.published)return unavailable();
  const site=visitorWebsite(JSON.parse(record.published) as Website);
  if(url.protocol==='http:'&&!['localhost','127.0.0.1'].includes(url.hostname)){url.protocol='https:';return Response.redirect(url.href,308);}
+ if(path==='/api/payments')return publicPayment(request,env,record.site_id,site,basePath);
  if(path==='/api/forms'&&request.method==='POST')return submitPublicForm(request,record.site_id,site);
  if(!['GET','HEAD'].includes(request.method)||path.startsWith('/api/'))return unavailable();
  const primary=await db.prepare("SELECT hostname FROM site_domains WHERE site_id=? AND status='active' AND is_primary=1").bind(record.site_id).first<{hostname:string}>();

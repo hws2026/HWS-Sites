@@ -1,3 +1,4 @@
+import {validateImportedEdits,validateImportedSection,PARADIS_TEMPLATE,paradisPages} from './imported-template';
 import {validateImageSizing} from './image-sizing';
 import {isDirectVideo} from './media-policy';
 import {MAX_CALENDAR_EVENTS,validTimeZone} from './site-calendar';
@@ -22,9 +23,12 @@ if(typeof b.id!=='string'||blockIds.has(b.id)||!blockTypes.includes(b.type)||!['
  if(b.columnLayout!==undefined&&!['equal','wide-left','wide-right'].includes(b.columnLayout))throw new Error('Invalid column layout.');
  if(b.eventSource!==undefined&&!['site','local'].includes(b.eventSource)||b.eventCategory!==undefined&&(typeof b.eventCategory!=='string'||b.eventCategory.length>100)||b.eventLimit!==undefined&&(!Number.isInteger(b.eventLimit)||b.eventLimit<1||b.eventLimit>50)||b.featuredOnly!==undefined&&typeof b.featuredOnly!=='boolean'||b.upcomingOnly!==undefined&&typeof b.upcomingOnly!=='boolean')throw new Error('Invalid calendar section settings.');
  validateColors(b.colors);validateImageSizing(b.imageSizing);
+ if(b.type==='imported'&&!b.imported)throw new Error('Original template section is missing.');
+ if(b.imported!==undefined){if(b.type!=='imported')throw new Error('Imported content requires an original template section.');validateImportedSection(b.imported);}
  if(b.filterable!==undefined&&typeof b.filterable!=='boolean')throw new Error('Invalid filter setting.');
  if(b.tableGroups!==undefined&&(!Array.isArray(b.tableGroups)||b.tableGroups.length>12||b.tableGroups.some(g=>!g||typeof g.label!=='string'||g.label.length>150||!Number.isInteger(g.span)||g.span<1||g.span>12)||b.tableGroups.reduce((n,g)=>n+g.span,0)>(b.tableColumns?.length??0)))throw new Error('Invalid table column groups.');
  if(b.tableColumns!==undefined&&(!Array.isArray(b.tableColumns)||b.tableColumns.length>12||b.tableColumns.some(c=>typeof c!=='string'||c.length>150)))throw new Error('Use up to 12 table columns.');
+ if(b.paymentOfferId!==undefined&&(typeof b.paymentOfferId!=='string'||b.paymentOfferId.length>100))throw new Error('Invalid payment offer.');
  if(b.formEnabled!==undefined&&typeof b.formEnabled!=='boolean')throw new Error('Invalid form accepting-responses setting.');
  for(const key of ['formSuccessMessage','formPrivacyText'] as const)if(b[key]!==undefined&&(typeof b[key]!=='string'||b[key]!.length>1000))throw new Error('Form messages must be 1,000 characters or fewer.');
  if(b.fields!==undefined){if(Array.isArray(b.fields)&&b.fields.filter(f=>f.type==='file').length>3)throw new Error('Use up to three attachment fields per form.');if(!Array.isArray(b.fields)||b.fields.length>60)throw new Error('Use up to 60 form fields.');const ids=new Set();for(const f of b.fields){if(!f||typeof f.id!=='string'||ids.has(f.id)||typeof f.label!=='string'||f.label.length>200||!['text','email','tel','textarea','select','checkbox','date','radio','number','file'].includes(f.type)||f.required!==undefined&&typeof f.required!=='boolean'||f.options!==undefined&&(!Array.isArray(f.options)||f.options.length>50||f.options.some(o=>typeof o!=='string'||o.length>200)))throw new Error('Invalid form field.');ids.add(f.id);}}
@@ -35,6 +39,8 @@ if(typeof b.id!=='string'||blockIds.has(b.id)||!blockTypes.includes(b.type)||!['
 export function validateWebsite(data:unknown):Website{
  if(!data||typeof data!=='object')throw new Error('Invalid website.');
  const s=data as Website;
+ if(s.imported!==undefined){if(!s.imported||s.imported.template!==PARADIS_TEMPLATE)throw new Error('Invalid imported template.');validateImportedEdits(s.imported.header);validateImportedEdits(s.imported.footer);}
+
  if(typeof s.name!=='string'||s.name.length>120||!s.name.trim())throw new Error('Website name is required and must be 120 characters or fewer.');
  if(!/^#[0-9a-f]{6}$/i.test(s.accent))throw new Error('Accent color must be a six-digit hex color.');
  if(!['serif','sans'].includes(s.font))throw new Error('Choose a supported heading style.');
@@ -57,7 +63,7 @@ export function validateWebsite(data:unknown):Website{
 
  if(s.templateId!==undefined&&(typeof s.templateId!=='string'||!s.templateId||s.templateId.length>100))throw new Error('Invalid template identifier.');
  if(s.layout && !['simple','district','editorial','portal','school','corporation','international','network','civic'].includes(s.layout))throw new Error('Invalid layout.');
- for(const p of s.pages){if(p.navLabel!==undefined&&(typeof p.navLabel!=='string'||p.navLabel.length>100))throw new Error('Invalid navigation label.');if(p.menuStyle!==undefined&&!['dropdown','mega'].includes(p.menuStyle))throw new Error('Invalid page menu style.');if(p.parentId&&(!s.pages.some(x=>x.id===p.parentId)||p.parentId===p.id))throw new Error('Invalid navigation parent.');const ancestors=pageAncestors(s.pages,p);if(ancestors.length>=MAX_NAVIGATION_DEPTH||ancestors.some(a=>a.parentId===p.id)||p.parentId&&ancestors.length===0)throw new Error('Navigation cannot contain cycles or exceed 16 levels.');if(p.layout!==undefined&&!['full','sidebar','article'].includes(p.layout))throw new Error('Invalid page layout.');if(p.banner!==undefined&&!validImage(p.banner))throw new Error('Invalid page banner.');if(p.summary!==undefined&&(typeof p.summary!=='string'||p.summary.length>2000))throw new Error('Invalid page summary.');for(const key of ['hidden','breadcrumbs'] as const)if(p[key]!==undefined&&typeof p[key]!=='boolean')throw new Error('Invalid page option.');}
+ for(const p of s.pages){if(p.importedPage!==undefined&&!paradisPages.some(source=>source.file===p.importedPage))throw new Error('Invalid imported page.');if(p.navLabel!==undefined&&(typeof p.navLabel!=='string'||p.navLabel.length>100))throw new Error('Invalid navigation label.');if(p.menuStyle!==undefined&&!['dropdown','mega'].includes(p.menuStyle))throw new Error('Invalid page menu style.');if(p.parentId&&(!s.pages.some(x=>x.id===p.parentId)||p.parentId===p.id))throw new Error('Invalid navigation parent.');const ancestors=pageAncestors(s.pages,p);if(ancestors.length>=MAX_NAVIGATION_DEPTH||ancestors.some(a=>a.parentId===p.id)||p.parentId&&ancestors.length===0)throw new Error('Navigation cannot contain cycles or exceed 16 levels.');if(p.layout!==undefined&&!['full','sidebar','article'].includes(p.layout))throw new Error('Invalid page layout.');if(p.banner!==undefined&&!validImage(p.banner))throw new Error('Invalid page banner.');if(p.summary!==undefined&&(typeof p.summary!=='string'||p.summary.length>2000))throw new Error('Invalid page summary.');for(const key of ['hidden','breadcrumbs'] as const)if(p[key]!==undefined&&typeof p[key]!=='boolean')throw new Error('Invalid page option.');}
  for(const k of ['heroLinks','headerLinks','socialLinks','utilityLinks','footerText','footerLinks','announcement','announcementLink','utilityLabel'] as const)if(s[k]!==undefined&&(typeof s[k]!=='string'||s[k]!.length>5000))throw new Error('Invalid site content.');
  if(s.navigationStyle!==undefined&&!['dropdown','mega'].includes(s.navigationStyle))throw new Error('Invalid navigation style.');
  if(s.megaMenuLayout!==undefined&&!['featured','columns'].includes(s.megaMenuLayout))throw new Error('Invalid mega menu layout.');

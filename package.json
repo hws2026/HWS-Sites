@@ -30,7 +30,9 @@
     "verify:publication": "node scripts/verify-publication.mjs",
     "deploy:domains": "node scripts/deploy-domains.mjs",
     "verify:devices": "node scripts/verify-device-access.mjs",
-    "verify:editor-options": "node scripts/verify-idle-media-footer.mjs"
+    "verify:editor-options": "node scripts/verify-idle-media-footer.mjs",
+    "verify:imported-template": "node scripts/verify-imported-template.mjs",
+    "verify:website-payments": "node scripts/verify-website-payments.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

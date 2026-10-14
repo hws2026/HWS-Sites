@@ -66,3 +66,5 @@ export async function downloadPrivateMedia(path: string) {
  try { link.download = name ? decodeURIComponent(name) : blob.type === 'application/pdf' ? 'document.pdf' : 'download'; } catch { link.download = 'download'; }
  link.click(); setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
+
+export const publicPaymentUrl=()=>visitorFrontend?visitorBase+'/api/payments':'';

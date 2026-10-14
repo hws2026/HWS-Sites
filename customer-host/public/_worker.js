@@ -6,7 +6,8 @@ export default {
   const formPath = url.pathname === '/api/forms' || /^\/sites\/[a-zA-Z0-9-]+\/api\/forms$/.test(url.pathname);
   const form = formPath && request.method === 'POST';
   const page = ['GET', 'HEAD'].includes(request.method) && !url.pathname.startsWith('/api/') && url.pathname !== '/health';
-  if (!page && !form) return new Response('Not found', {status: 404});
+  const payment = (url.pathname === '/api/payments' || /^\/sites\/[a-zA-Z0-9-]+\/api\/payments$/.test(url.pathname)) && ['GET','POST'].includes(request.method);
+  if (!page && !form && !payment) return new Response('Not found', {status: 404});
   const headers = new Headers(request.headers);
   headers.delete('Authorization');
   headers.delete('Cookie');

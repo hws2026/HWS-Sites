@@ -50,6 +50,13 @@
       "when": 1791901673310,
       "tag": "0006_luxuriant_living_tribunal",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1791983402340,
+      "tag": "0007_spicy_xorn",
+      "breakpoints": true
     }
   ]
 }

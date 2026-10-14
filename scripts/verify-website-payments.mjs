@@ -1,0 +1,82 @@
+import {Miniflare,createFetchMock} from 'miniflare';
+import {readFile,readdir} from 'node:fs/promises';
+import {createHmac,randomUUID} from 'node:crypto';
+import assert from 'node:assert/strict';
+const mock=createFetchMock();mock.disableNetConnect();
+for(const [token,id,email] of [['admin','owner','admin@example.com'],['customer','customer-user','customer@example.com'],['other','other-user','other@example.com']])mock.get('https://auth.test').intercept({path:'/auth/v1/user',headers:{authorization:'Bearer '+token}}).reply(200,{id,email,email_confirmed_at:'2026-10-01'}).persist();
+let charges=true,params=[],sessions=new Map(),sub={id:'sub_1',status:'active',metadata:{}},invoice={id:'in_1',parent:{subscription_details:{subscription:'sub_1'}},status:'paid',amount_paid:12500,amount_due:12500,currency:'usd',hosted_invoice_url:'https://invoice.stripe.com/test',created:Math.floor(Date.now()/1000)};
+mock.get('https://api.stripe.com').intercept({path:'/v1/accounts',method:'POST'}).reply(200,{id:'acct_business'}).persist();
+mock.get('https://api.stripe.com').intercept({path:'/v1/accounts/acct_business'}).reply(()=>({statusCode:200,data:JSON.stringify({id:'acct_business',charges_enabled:charges,details_submitted:true})})).persist();
+mock.get('https://api.stripe.com').intercept({path:'/v1/account_links',method:'POST'}).reply(200,{url:'https://connect.stripe.com/setup/test'}).persist();
+mock.get('https://api.stripe.com').intercept({path:'/v1/checkout/sessions',method:'POST',headers:{'stripe-account':'acct_business'}}).reply(200,async options=>{const p=Object.fromEntries(new URLSearchParams(await new Response(options.body).text()));params.push(p);const s={id:'cs_'+params.length,url:'https://checkout.stripe.com/c/pay/'+params.length,status:'open',payment_status:'unpaid',livemode:false,amount_total:Number(p['line_items[0][price_data][unit_amount]']),currency:p['line_items[0][price_data][currency]'],subscription:null,metadata:{hws_order_id:p['metadata[hws_order_id]']}};sessions.set(s.id,s);return JSON.stringify(s);}).persist();
+mock.get('https://api.stripe.com').intercept({path:/^\/v1\/checkout\/sessions\/cs_\d+$/,headers:{'stripe-account':'acct_business'}}).reply(options=>({statusCode:200,data:JSON.stringify(sessions.get(options.path.split('/').pop()))})).persist();
+mock.get('https://api.stripe.com').intercept({path:/^\/v1\/checkout\/sessions\/cs_\d+\/expire$/,method:'POST',headers:{'stripe-account':'acct_business'}}).reply(options=>{const s=sessions.get(options.path.split('/').at(-2));s.status='expired';return {statusCode:200,data:JSON.stringify(s)};}).persist();
+mock.get('https://api.stripe.com').intercept({path:'/v1/subscriptions/sub_1',headers:{'stripe-account':'acct_business'}}).reply(()=>({statusCode:200,data:JSON.stringify(sub)})).persist();
+mock.get('https://api.stripe.com').intercept({path:'/v1/invoices/in_1',headers:{'stripe-account':'acct_business'}}).reply(()=>({statusCode:200,data:JSON.stringify(invoice)})).persist();
+const bindings={FRONTEND_URL:'https://front.test/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'test',ADMIN_SUPABASE_USER_IDS:'owner',STRIPE_SECRET_KEY:'sk_test_mock',STRIPE_CONNECT_WEBHOOK_SECRET:'whsec_mock'};
+const mf=new Miniflare({modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],fetchMock:mock,bindings});
+let count=0;const check=(r,status,label)=>{assert.equal(r.status,status,JSON.stringify(r.data));console.log('PASS '+label);count++;return r.data;};
+try{
+ const db=await mf.getD1Database('DB');for(const f of (await readdir('drizzle')).filter(f=>f.endsWith('.sql')).sort())for(const sql of (await readFile('drizzle/'+f,'utf8')).replaceAll(/-->[^\n]*/g,'').split(';').filter(v=>v.trim()))await db.prepare(sql).run();
+ await db.prepare("INSERT INTO customers (id,owner,name,email,phone,status,notes) VALUES ('business','owner','Business','customer@example.com','','Active','')").run();
+ let site={name:'Business',slug:'business',accent:'#2020b7',font:'sans',pages:[{id:'home',name:'Home',slug:'home',blocks:[]}]};
+ await db.prepare("INSERT INTO client_sites (id,owner,customer_id,title,slug,template_id,draft,published,updated_at) VALUES ('site','owner','business','Business','business','sau70',?,?,?)").bind(JSON.stringify(site),JSON.stringify(site),new Date().toISOString()).run();
+ await db.prepare("INSERT INTO site_publications (site_id,owner,enabled) VALUES ('site','owner',1)").run();
+ await db.prepare("INSERT INTO site_access (id,owner,site_id,email,user_id,role) VALUES ('access','owner','site','customer@example.com','customer-user','editor')").run();
+ async function req(input,token='admin',query=''){const r=await mf.dispatchFetch('https://api.test/api/website-payments'+query,{method:input?'POST':'GET',headers:{Origin:'https://front.test',Authorization:'Bearer '+token,'Content-Type':'application/json'},body:input?JSON.stringify(input):undefined});return {status:r.status,data:await r.json()};}
+ async function pub(input,query='',origin='https://api.test'){const r=await mf.dispatchFetch('https://api.test/sites/site/api/payments'+query,{method:input?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json','User-Agent':'Mozilla/5.0 iPhone','CF-Connecting-IP':'192.0.2.8'},body:input?JSON.stringify(input):undefined});return {status:r.status,data:await r.json()};}
+ let seq=0;async function event(type,id='cs_1',opt={}){const t=Math.floor(Date.now()/1000),raw=JSON.stringify({id:opt.id??'evt_'+(++seq),type,account:opt.account??'acct_business',livemode:opt.live??false,data:{object:{id}}}),sig=createHmac('sha256','whsec_mock').update(t+'.'+raw).digest('hex');const r=await mf.dispatchFetch('https://api.test/api/stripe/connect-webhook',{method:'POST',headers:{'Stripe-Signature':`t=${t},v1=${sig}`},body:opt.tamper?raw+' ':raw});return {status:r.status,data:await r.json()};}
+ check(await req({action:'connect',customerId:'business'}),403,'administrator cannot open another business’s onboarding');
+ check(await req({action:'connect',customerId:'business'},'other'),404,'unrelated account cannot connect business');
+ check(await req({action:'connect',customerId:'business'},'customer'),200,'business contact can start hosted Stripe onboarding');
+ check(await req({action:'refresh',customerId:'business'},'customer'),200,'Stripe account readiness fetched from provider');
+ const payload={action:'save-offer',siteId:'site',label:'Booking deposit',amount:'125.00',currency:'USD',interval:'one_time'};
+ check(await req(payload,'other'),404,'cross-customer price creation denied');
+ check(await req({...payload,amount:'1.001'}),400,'fractional cents rejected');
+ const offer=check(await req(payload),200,'admin can assign website payment amount');
+ const monthly=check(await req({...payload,interval:'month'},'customer'),200,'business contact creates monthly price');
+ check(await req({...payload,interval:'year'},'customer'),200,'business contact creates yearly price');
+ assert.equal(check(await req(undefined,'other'),200,'private history scoped by business contact').offers.length,0);
+ assert.equal(check(await req(undefined,'customer','?siteId=site'),200,'authorized editor can select site offers').offers.length,3);
+ check(await req(undefined,'other','?siteId=site'),404,'unrelated editor cannot list site offers');
+ const b={id:'payment',type:'payment',title:'Pay',text:'',label:'Pay',link:'',image:'',background:'#fff',color:'#333',align:'left',padding:32,paymentOfferId:offer.id};site.pages[0].blocks=[{...b,id:'group',type:'group',children:[b]}];
+ const publish=()=>db.prepare('UPDATE client_sites SET published=? WHERE id=?').bind(JSON.stringify(site),'site').run();await publish();
+ const input={pageId:'home',blockId:'payment',requestId:randomUUID(),amount:1,currency:'eur',account:'acct_attacker'};
+ check(await pub(undefined,'?pageId=home&blockId=payment'),200,'public mobile visitors can read nested payment offer');
+ check(await pub(input,'','https://attacker.test'),403,'cross-origin checkout rejected');
+ check(await pub({...input,blockId:'not-published'}),404,'unpublished payment section rejected');
+ site.pages[0].blocks[0].hidden=true;await publish();check(await pub(input),404,'hidden parent prevents payment');delete site.pages[0].blocks[0].hidden;await publish();
+ charges=false;check(await pub(input),503,'incomplete Stripe account cannot take payments');charges=true;
+ check(await pub(input),200,'signed-out mobile visitor creates hosted checkout');assert.equal(params[0]['line_items[0][price_data][unit_amount]'],'12500');assert.equal(params[0]['line_items[0][price_data][currency]'],'usd');assert.equal(params[0]['application_fee_amount'],undefined);assert.equal(params[0]['invoice_creation[enabled]'],undefined);assert.ok(params[0].success_url.startsWith('https://api.test/sites/site/?hws_payment='));
+ check(await pub(input),200,'duplicate request reuses same Stripe session');assert.equal(params.length,1);
+ check(await event('checkout.session.completed','cs_1',{tamper:true}),400,'forged webhook rejected');
+ const orderId=sessions.get('cs_1').metadata.hws_order_id;
+ assert.equal(check(await pub(undefined,'?order='+orderId),200,'public status does not trust success redirects').status,'pending');
+ sessions.get('cs_1').amount_total=1;check(await event('checkout.session.completed'),400,'provider amount mismatch rejected');sessions.get('cs_1').amount_total=12500;
+ check(await event('checkout.session.completed','cs_1',{live:true}),200,'opposite Stripe mode ignored');assert.equal((await db.prepare('SELECT status FROM website_orders WHERE id=?').bind(orderId).first()).status,'pending');
+ sessions.get('cs_1').status='complete';sessions.get('cs_1').payment_status='paid';
+ check(await event('checkout.session.completed','cs_1',{id:'evt_paid'}),200,'signed event and provider verification confirm payment');
+ check(await event('checkout.session.completed','cs_1',{id:'evt_paid'}),200,'duplicate event is idempotent');assert.equal((await db.prepare('SELECT COUNT(*) n FROM website_payments').first()).n,1);
+ assert.equal(check(await pub(undefined,'?order='+orderId),200,'visitor sees verified payment status').status,'paid');
+ check(await pub(input),409,'completed checkout cannot be purchased twice with same request');
+ // Recurring invoices can arrive before checkout confirmation and must be retried.
+ b.paymentOfferId=monthly.id;await publish();check(await pub({...input,requestId:randomUUID()}),200,'monthly checkout created');assert.equal(params[1]['line_items[0][price_data][recurring][interval]'],'month');
+ const s2=sessions.get('cs_2');sub.metadata.hws_order_id=s2.metadata.hws_order_id;s2.status='complete';s2.payment_status='paid';s2.subscription='sub_1';
+ check(await event('invoice.paid','in_1'),503,'early recurring invoice retries until session association');
+ check(await event('checkout.session.completed','cs_2'),200,'subscription checkout associated with correct business');
+ check(await event('invoice.paid','in_1'),200,'recurring paid invoice stored');assert.equal((await db.prepare('SELECT COUNT(*) n FROM website_payments').first()).n,2);
+ invoice.status='open';invoice.amount_paid=0;sub.status='past_due';check(await event('invoice.payment_failed','in_1'),200,'failed recurring invoice updates private history');
+ const data=check(await req(undefined,'customer'),200,'business sees orders and recurring payment history');assert.equal(data.orders.length,2);assert.equal(data.payments.length,2);assert.equal(data.orders.find(o=>o.id===s2.metadata.hws_order_id).subscription_status,'past_due');
+ b.paymentOfferId=offer.id;await publish();check(await pub({...input,requestId:randomUUID()}),200,'second customer purchase creates separate session');
+ check(await req({action:'toggle-offer',id:offer.id,enabled:false}),200,'disabling offer expires outstanding checkout');assert.equal(sessions.get('cs_3').status,'expired');
+ check(await pub({...input,requestId:randomUUID()}),404,'disabled offer cannot take new payments');
+ check(await event('account.application.deauthorized','ca_1'),200,'Stripe disconnect stops future charges');assert.equal((await db.prepare('SELECT disconnected FROM merchant_accounts').first()).disconnected,1);
+ b.paymentOfferId=monthly.id;await publish();check(await pub({...input,requestId:randomUUID()}),503,'revoked account checkout blocked');
+ await db.prepare('UPDATE site_publications SET enabled=0').run();const unpublished=await mf.dispatchFetch('https://api.test/sites/site/api/payments?pageId=home&blockId=payment');assert.equal(unpublished.status,404);console.log('PASS unpublished site cannot take payments');count++;
+ // No credentials: prices still save, onboarding stays disabled.
+ await mf.setOptions({modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],fetchMock:mock,bindings:{...bindings,STRIPE_SECRET_KEY:'',STRIPE_CONNECT_WEBHOOK_SECRET:''}});
+ assert.equal(check(await req(undefined),200,'deferred setup is visible').configured,false);
+ check(await req({...payload,label:'Future offer'}),200,'prices can be prepared before Stripe activation');
+ check(await req({action:'connect',customerId:'business'},'customer'),503,'no onboarding without configured Stripe secrets');
+ console.log(`Verified ${count} website payment checks with mocked Stripe. No real transactions.`);
+}finally{await mf.dispose();}
