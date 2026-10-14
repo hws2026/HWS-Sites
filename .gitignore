@@ -49,3 +49,6 @@ next-env.d.ts
 /backend/.dev.vars*
 /backend-dist/
 /backend/backend-dist/
+
+# Local delivery archives and verification artifacts
+/exports/

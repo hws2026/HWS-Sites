@@ -1,0 +1,5 @@
+import {backendEnv} from '@/lib/server-context';
+import {getMediaObject,mediaResponse} from '@/lib/media-storage';
+import {NextRequest} from 'next/server';
+import {identity,database,sitePermission} from '@/lib/suite-store';
+export async function GET(req:NextRequest,{params}:{params:Promise<{id:string}>}){const env=backendEnv();const user=identity(req);if(!user)return new Response('Sign in required',{status:401});const {id}=await params;try{const record=await database().prepare('SELECT site_id,key,content_type,filename FROM media WHERE id = ?').bind(id).first<{site_id:string;key:string;content_type:string;filename:string}>();if(!record||!await sitePermission(record.site_id,user.id))return new Response('Not found',{status:404});const file=await getMediaObject(env,record.key,req.headers.get('Range'));if(!file)return new Response('Not found',{status:404});return mediaResponse(file,record.content_type,record.filename,'private, max-age=86400');}catch{return new Response('Media unavailable',{status:503});}}

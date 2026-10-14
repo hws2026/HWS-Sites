@@ -1,0 +1,35 @@
+#!/bin/sh
+# Protect the main branch even when VS Code's Force Push is selected.
+set -eu
+zero=0000000000000000000000000000000000000000
+while read -r local_ref local_oid remote_ref remote_oid; do
+ [ "$remote_ref" = refs/heads/main ] || continue
+ if [ "$local_oid" = "$zero" ]; then
+  echo 'HWS: refusing to delete the main branch.' >&2
+  exit 1
+ fi
+ if [ "$remote_oid" != "$zero" ] && ! git merge-base --is-ancestor "$remote_oid" "$local_oid" 2>/dev/null; then
+  echo 'HWS upload stopped: GitHub has history that is missing from this checkout.' >&2
+  echo 'Fetch and pull the latest main branch in VS Code, resolve any conflicts, then push normally. Do not force-push an older folder.' >&2
+  exit 1
+ fi
+ if ! manifest=$(git show "$local_oid:SOURCE-FILES.txt" 2>/dev/null); then
+  echo 'HWS upload stopped: SOURCE-FILES.txt is missing. Use the COMPLETE project ZIP.' >&2
+  exit 1
+ fi
+ missing=$(printf '%s\n' "$manifest" | while IFS= read -r file; do
+  case "$file" in (''|'#'*) continue;; esac
+  if ! git cat-file -e "$local_oid:$file" 2>/dev/null; then printf '  - %s\n' "$file"; fi
+ done)
+ if [ -n "$missing" ]; then
+  echo 'HWS upload stopped: this commit deletes required source files:' >&2
+  printf '%s\n' "$missing" >&2
+  echo 'Restore the COMPLETE project contents, stage all files, commit, and push again. Your live site was not changed.' >&2
+  exit 1
+ fi
+ # A stale manifest is also incomplete if it drops essential entry points.
+ for file in app/editor.tsx app/globals.css app/api/admin/route.ts lib/templates.ts pages/main.tsx backend/worker.ts public/CNAME .github/workflows/github-pages.yml; do
+  if ! git cat-file -e "$local_oid:$file" 2>/dev/null; then echo "HWS upload stopped: required file missing: $file" >&2; exit 1; fi
+ done
+ echo 'HWS source and history checks passed.' >&2
+done

@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Verify complete source upload
+        run: node scripts/verify-source.mjs
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -23,6 +25,10 @@ jobs:
       - uses: actions/configure-pages@v5
         id: pages
       - run: npm run typecheck
+      - run: npm run verify:devices
+      - run: npm run verify:creation
+      - run: npm run verify:calendar
+      - run: npm run verify:imported-template
       - name: Check backend connection
         run: test -n "$VITE_API_URL"
         env:
