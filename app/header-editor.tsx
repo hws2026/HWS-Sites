@@ -2,12 +2,12 @@
 import {HeaderMenuEditor} from './header-menu-editor';
 import {ColorEditor} from './color-editor';
 import type {Website} from '@/lib/editor-model';
-import {ImageField,LinkField} from './editor-controls';
+import {BrandingFields,LinkField} from './editor-controls';
 
-export function HeaderEditor({site,onChange,onUpload,disabled}:{site:Website;onChange:(site:Website)=>void;onUpload:(file:File)=>void;disabled:boolean}){
+export function HeaderEditor({site,onChange,onUpload,onFaviconUpload,disabled}:{site:Website;onChange:(site:Website)=>void;onUpload:(file:File)=>void;onFaviconUpload:(file:File)=>void;disabled:boolean}){
  return <><p className="inspector-hint">Edit the header here. Click a menu name on the canvas to edit that menu’s links and style.</p>
   <label>Header name<input value={site.name} maxLength={120} onChange={e=>onChange({...site,name:e.target.value})}/></label>
-  <ImageField label="Header logo" value={site.logo??''} onChange={logo=>onChange({...site,logo})} onUpload={onUpload} disabled={disabled}/>
+  <BrandingFields site={site} onChange={onChange} onUpload={onUpload} onFaviconUpload={onFaviconUpload} disabled={disabled}/>
   <label>Tagline<input value={site.utilityLabel??''} onChange={e=>onChange({...site,utilityLabel:e.target.value})}/></label>
   <label>Utility links<textarea rows={4} value={site.utilityLinks??''} onChange={e=>onChange({...site,utilityLinks:e.target.value})}/><span className="field-help">One per line: Label | Page address. Use #directory for the school selector.</span></label>
   <label>Header resource links<textarea rows={4} value={site.headerLinks??''} onChange={e=>onChange({...site,headerLinks:e.target.value})}/><span className="field-help">One per line: Label | Page address.</span></label>

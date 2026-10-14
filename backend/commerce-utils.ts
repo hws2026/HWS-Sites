@@ -1,7 +1,0 @@
-export class CommerceError extends Error{constructor(message:string,public status=400){super(message);}}
-export type CommerceUser={id:string;email:string;isAdmin:boolean};
-export function field(value:unknown,max=200){if(typeof value!=='string'||!value.trim()||value.length>max)throw new CommerceError('Check the form fields.');return value.trim();}
-export async function body(request:Request){if(Number(request.headers.get('content-length')??0)>12000)throw new CommerceError('Request is too large.',413);const raw=await request.text();if(raw.length>12000)throw new CommerceError('Request is too large.',413);try{const value=JSON.parse(raw);if(!value||Array.isArray(value)||typeof value!=='object')throw new Error();return value as Record<string,unknown>;}catch{throw new CommerceError('Invalid request.');}}
-export const json=(data:unknown,status=200)=>Response.json(data,{status});
-export function failure(error:unknown){if(error instanceof CommerceError)return json({error:error.message},error.status);console.error('Commerce request failed',error instanceof Error?error.message:'Unknown failure');return json({error:'The service could not complete this request. Try again.'},503);}
-export function providerUrl(value:unknown,hosts:string[]){if(typeof value!=='string')return null;try{const url=new URL(value);return url.protocol==='https:'&&!url.username&&!url.password&&hosts.some(host=>url.hostname===host||url.hostname.endsWith('.'+host))?url.href:null;}catch{return null;}}

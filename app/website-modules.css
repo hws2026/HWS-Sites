@@ -265,3 +265,7 @@
 }
 
 .website .module-form>fieldset{display:grid;gap:22px}.website .module-form>fieldset>label{display:grid;gap:8px;font-size:16px;font-weight:600}.website .module-form small{font-size:12px;font-weight:400}.website .module-form .form-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.website .form-error{padding:14px;border:1px solid #c93d3d;background:#fff2f2;color:#842020;border-radius:6px}.website .form-success{padding:28px;background:var(--palette-edf2ee,#edf2ee);color:var(--palette-172c47,#172c47);max-width:760px}.website .form-privacy{font-size:14px;white-space:pre-wrap}.website .module-form button:disabled{opacity:.6;cursor:not-allowed}
+
+.website .website-brand.logo-only{gap:0;max-width:100%}.website .website-brand.logo-only .website-logo{width:auto;max-width:min(360px,50cqw);height:auto;max-height:88px;object-fit:contain}.website .footer-logo{width:auto;max-width:240px;max-height:100px;object-fit:contain}@container(max-width:700px){.website .website-brand.logo-only .website-logo{max-height:56px;max-width:60cqw}}
+
+.website .footer-legal{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;min-width:0;max-width:100%;overflow-wrap:anywhere}.website .footer-legal a{text-decoration:underline;text-underline-offset:3px}.website .footer-legal a:hover{text-decoration-thickness:2px}

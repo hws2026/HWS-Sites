@@ -1,7 +1,8 @@
 import {startFromTemplate,type TemplateStartMode} from './template-start';
 import type {Website} from './editor-model';
 
-export type CreateWebsiteInput={title:string;assignTo:'self'|'customer';customerId:string;templateId:string;startMode:TemplateStartMode};
+export type WebsiteSource='blank'|'template'|'existing';
+export type CreateWebsiteInput={title:string;assignTo:'self'|'customer';customerId:string;templateId:string;startMode:TemplateStartMode|'outline'|'design';source?:WebsiteSource;sourceSiteId?:string;contextSiteId?:string};
 type Requester=(path:string,init?:RequestInit)=>Promise<Response>;
 type DraftResponse={site:Website;revision:number;published?:Website|null};
 
@@ -13,7 +14,7 @@ export function isEmptyStartingSite(site:Website){
 }
 
 /** Verify the persisted starting choice before navigation, including older API deployments. */
-export async function createWebsite(input:CreateWebsiteInput,request:Requester,options:{id?:string;onCreated?:(id:string)=>void}={}){
+export async function createWebsite(input:CreateWebsiteInput,request:Requester,options:{id?:string;endpoint?:'/api/admin'|'/api/portal';onCreated?:(id:string)=>void}={}){
  async function json<T>(path:string,init?:RequestInit):Promise<T>{
   const response=await request(path,init);
   const result=await response.json() as T & {error?:string};
@@ -22,9 +23,16 @@ export async function createWebsite(input:CreateWebsiteInput,request:Requester,o
  }
  let id=options.id;
  if(!id){
-  const created=await json<{id:string}>('/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'site',...input})});
+  const created=await json<{id:string;creationVersion?:number}>(options.endpoint??'/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'site',...input})});
   if(!created.id)throw new Error('The server did not return the new website. Refresh your website list before trying again.');
   id=created.id;options.onCreated?.(id);
+  if(input.source&&input.source!=='template'&&created.creationVersion!==2)throw new Error('Update the backend before using blank or existing-site creation. The created draft was preserved for review.');
+ }
+ if(input.source==='existing'||input.source==='blank'){
+  const saved=await json<DraftResponse>('/api/site?id='+encodeURIComponent(id));
+  if(input.source==='blank'&&(saved.site.templateId!=='blank'||!isEmptyStartingSite(saved.site)))throw new Error('The backend did not save a blank website. Open the existing draft before trying again.');
+  if(input.source==='existing'&&(input.startMode==='outline'||input.startMode==='design')&&saved.site.pages.some(page=>page.blocks.length))throw new Error('The backend did not clear the copied page content. Open the existing draft before trying again.');
+  return id;
  }
  if(input.startMode==='full')return id;
  const read=()=>json<DraftResponse>('/api/site?id='+encodeURIComponent(id!));

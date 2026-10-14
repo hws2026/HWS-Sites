@@ -8,7 +8,7 @@ const invalid=()=>NextResponse.json({site:null,error:'Invalid account for this w
 // Public branding is taken only from the published snapshot, never the draft.
 export async function GET(req:NextRequest){
  const id=req.nextUrl.searchParams.get('id')??'';
- const row=await database().prepare('SELECT published FROM client_sites WHERE id = ? AND archived = 0').bind(id).first<{published:string|null}>();
+ const row=await database().prepare('SELECT published FROM client_sites WHERE id = ? AND archived = 0 AND NOT EXISTS (SELECT 1 FROM customers c WHERE c.id=client_sites.customer_id AND c.owner=client_sites.owner AND c.archived!=0)').bind(id).first<{published:string|null}>();
  if(!row?.published)return NextResponse.json({site:null},{status:404});
  const site=JSON.parse(row.published) as {name:string;accent:string;slug:string};
  return NextResponse.json({site:{id,name:site.name,accent:site.accent,slug:site.slug}});
