@@ -26,7 +26,11 @@
     "verify:storage": "node scripts/verify-storage.mjs",
     "verify:calendar": "node scripts/verify-calendar.mjs",
     "verify:creation": "node scripts/verify-creation.mjs",
-    "verify:forms": "node scripts/verify-forms.mjs"
+    "verify:forms": "node scripts/verify-forms.mjs",
+    "verify:publication": "node scripts/verify-publication.mjs",
+    "deploy:domains": "node scripts/deploy-domains.mjs",
+    "verify:devices": "node scripts/verify-device-access.mjs",
+    "verify:editor-options": "node scripts/verify-idle-media-footer.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

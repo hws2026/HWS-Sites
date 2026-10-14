@@ -27,7 +27,7 @@ Scratch creation checks the saved draft before opening the editor. If an older b
 
 ## Access and publishing
 
-The suite starts private. The `#/website/<site-id>/<slug>` route is an assigned-access review. On the standalone backend, publish in the editor and enable public access under Domains to serve `/sites/<site-id>/` and connected domains without sign-in. Custom domains require Cloudflare for SaaS configuration and DNS verification. Invitation email delivery is not configured. See DEPLOYMENT.md for the separate GitHub Pages/Supabase deployment and required provider setup.
+The admin suite and editor require sign-in. **Publish website** saves the approved snapshot and enables anonymous access at `/sites/<site-id>/` and connected domains in one operation. Old `#/website/<site-id>/<slug>` links redirect there. **Unpublish website** closes pages, media and forms while retaining the draft. Custom domains use a Cloudflare Pages Free gateway, DNS ownership verification and HTTPS. Customer archiving suspends their websites and reminders; restoring does not automatically republish. Permanent customer deletion requires archiving first, an exact-name confirmation and cleanup of all their websites and related data. Active billing must be resolved first. See DEPLOYMENT.md for setup. Editors save drafts, viewers preview, and website administrators publish. Every server mutation checks identity and site/workspace authorization; conflicting saves return HTTP 409.
 
 The account owning a workspace is its administrator. Customer grants apply to specific sites: editors can save drafts, viewers can only preview, and administrators publish. Every server mutation checks identity and site/workspace authorization. Archiving unpublishes the website; restore retains the draft. Conflicting saves return HTTP 409.
 
@@ -106,7 +106,7 @@ Run `npm run verify:calendar` for synchronization, migration, filtering, backups
 
 ### Forms and private responses
 
-Add a form from **Library**, select it, and edit its fields in **Section settings**. Labels, field types, required fields, choice options, submit text, confirmation message, privacy note and **Accept responses when published** are editable on every template, including nested forms. Publish the website and enable **Domains → Public website access** to receive submissions at its included public address or connected domain. Demo, editor and assigned-access review previews never submit responses.
+Add a form from **Library**, select it, and edit its fields in **Section settings**. Labels, field types, required fields, choice options, submit text, confirmation message, privacy note and **Accept responses when published** are editable on every template, including nested forms. Choose **Publish website** to receive submissions at its included public address or connected domain. Demo, editor and assigned-access review previews never submit responses.
 
 Open **Forms inbox** in the admin/customer portal or editor toolbar. The workspace owner and editors assigned to that website can read responses, mark them new/read/archived, restore archived responses and download private attachments. Viewers and accounts assigned only to another website cannot access them. CSV export includes up to 100 responses from the current list offset and protects spreadsheet formula cells. Responses snapshot the submitted field labels and values, so later form edits do not rewrite earlier answers.
 
@@ -117,3 +117,38 @@ Forms allow up to three attachment fields, each accepting a PDF, PNG, JPEG or TX
 ### Save failure details
 
 Failed saves display a persistent reason beside the editor, retain the draft in the current tab, and offer retry and a downloadable draft backup. Validation errors identify the affected page/section when possible. An expired session offers sign-in in a new tab; retry after signing in. A version conflict asks you to back up your edits and load the latest draft before saving again. Connection, permission, size-limit and backend failures have specific messages. Keep the tab open or download a backup before refreshing an unsaved draft.
+
+## Media uploads
+
+All customer templates support JPG, PNG, WebP, GIF, MP4, WebM, and PDF files up to **50 MB per file**. Image controls upload images, Video sections and Hero settings upload videos, and Documents items upload PDFs. Uploads show progress, cancellation, and specific failure reasons. Published media can be viewed without signing in; draft-only files require website access. Unpublishing also blocks public media.
+
+For Supabase Free, keep `hws-suite-media` private, set its file-size limit to `52428800`, and allow `image/jpeg, image/png, image/webp, image/gif, video/mp4, video/webm, application/pdf`. The project-wide Storage limit must also be 50 MB. The frontend streams files through authenticated `PUT /api/upload`; the backend validates actual byte length and streams to storage. Videos support byte-range requests and PDFs download with their original filenames. No schema migration or paid plan is required. Total storage and bandwidth still count toward the project allowance.
+
+Oversized images are optimized in the browser before upload. Images already at or below 50 MB are unchanged. Larger images retain their proportions, with an 8,192-pixel edge / 16-megapixel cap, JPEG or transparency-preserving WebP encoding, and further reduction until below the upload limit. Oversized GIF/APNG/animated WebP uploads ask before converting to a still image. Videos and PDFs still have a 50 MB limit. Conversion failures explain how to retry.
+
+Platform administrators can use **Workspace settings → Test storage connection** to upload, read back, and remove a temporary test image. This never changes a website draft. Missing keys and accidentally configured publishable keys have separate actionable errors. For browser optimization checks, start `npm run dev:pages` and open `/@fs/<absolute-project-directory>/scripts/verify-image-upload.html`.
+
+The administration suite is desktop-only. Detected phones and tablets see a computer-required screen before sign-in, password recovery, customer portals, or editors, including direct links and existing sessions. The frontend skips Supabase client initialization on those devices; the backend rejects detected mobile suite requests with `403 DESKTOP_REQUIRED` before authentication. Detection combines browser mobile hints, device user agents, and the desktop-mode iPad touch signature. It never uses viewport width, so resizing a laptop window or using editor mobile preview stays supported. Public website pages, published media, and visitor forms remain accessible on mobile. Device signals can be disguised, so this is a best-effort access policy; account and website authorization remain required.
+
+Run `npm run verify:devices` for detection cases. With `npm run dev:pages`, open `/@fs/<absolute-project-directory>/scripts/verify-device-browser.html` to exercise the actual app under local simulated profiles. This fixture is excluded from the production build and sends no authentication requests to a real account.
+
+### Template library and organization websites
+Platform admins can archive/restore designs under Template library. Archived designs disappear from new template selectors. Saved websites keep their content and publishing access, with a notice in the suite and editor. A retired design can still be copied from an assigned website within the same customer organization.
+
+New websites support: a neutral blank homepage; a library design with one empty homepage or all sample content; or an existing website copied as design only, an empty-page outline, or the whole saved draft. Outline copies retain page hierarchy, header/footer, colors, and menus while clearing page sections, summaries, banners, events, announcements, and saved library content. Copies get fresh IDs and stay unpublished. No domains, form responses, billing, or access lists are copied.
+
+Customer editors can create siblings only inside the organization of an assigned editable site. They receive editor access to the new draft; the platform administrator remains its owner/publisher. Viewers cannot create. Copied uploaded media has separate site authorization while reusing stored bytes within the same customer; customer deletion deduplicates object cleanup.
+
+Apply D1 migration `0006_luxuriant_living_tribunal.sql` before deploying the updated Worker. It adds library status and aligns legacy template labels with saved draft designs without changing page content. `verify:creation` and `verify:backend` cover all starting modes, template retirement, permissions, and copied media. The local-only browser review is `scripts/verify-lifecycle-browser.html` (`?mode=portal` or `?mode=editor`); it uses fictional data and is excluded from the production entry points.
+
+Website branding is editable in the right-side Header settings and Site style panel: choose Logo only or Text + logo, upload/paste a favicon, then publish. An uploaded logo defaults to Logo only unless a display choice was already selected. Names remain in page titles, accessible labels, and copyright. Uploaded favicons use the same site-scoped public media access as logos; they are copied with sibling-site branding. Suite colors are #2020b7 and #333333, scoped separately from customer website palettes.
+
+The Husky Suite emblem in `public/husky-suite-logo.png` is the supplied original PNG, used unchanged in the suite login, sidebar, editor, and desktop-access screen. Its display size is controlled by CSS.
+
+### Inactivity, image sizing, and legal footer
+
+The GitHub Pages suite signs out the current browser session after 30 minutes without interaction, with a two-minute warning and Stay signed in control. Activity is shared across tabs; automatic token refresh does not count as activity. Reloading or waking a sleeping computer checks the stored deadline before allowing workspace requests. This browser inactivity control uses the existing Supabase session and does not require a paid plan. It does not replace server authorization or change JWT expiry. Unsaved website drafts are preserved for the same account and website in that tab, with a Restore unsaved draft prompt after signing in. If browser storage is unavailable, recovery lasts while that tab stays open.
+
+Image sizing in Section settings supports percent/pixel width, automatic/fixed height, cover/contain, position and alignment. Collection images, nested images and logos have independent controls; hero slides support fit and position within their hero area. Pixel widths shrink to the available space. These settings change display only, preserve original media, and save/publish with every template.
+
+Header & menus → Footer & legal links edits the copyright company name and individually toggles Privacy Policy, Terms of use, and Terms of service links. Each accepts an existing page or URL. Enabled links appear when a destination is provided; disabled links retain their destinations. Footer text follows `copyright (c) [current year] [company]. All Right Reserved.` and uses the site name unless overridden. Publish to update configured links on the public website.

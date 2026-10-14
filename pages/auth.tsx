@@ -1,11 +1,47 @@
+import {idleSession,sessionIdentity} from '@/lib/idle-session';
+import {isMobileBrowser,isPublicSuitePath} from '@/lib/device-access';
 import {supabaseUrl,supabasePublishableKey} from './public-config';
 import {createClient} from '@supabase/supabase-js';
 import {useEffect,useState} from 'react';
-import {apiFetch,appHref,setSessionToken} from '@/lib/client-runtime';
+import {assetUrl,apiFetch,appHref,setSessionToken,setSessionUser,setSessionGuard} from '@/lib/client-runtime';
 import {referenceTemplates} from '@/lib/templates';
 const url=import.meta.env.VITE_SUPABASE_URL||supabaseUrl, key=import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY||supabasePublishableKey;
-export const supabase=url&&key?createClient(url,key,{auth:{flowType:'pkce',detectSessionInUrl:true}}):null;
-export async function initializeAuth(){if(!supabase)return;const {data}=await supabase.auth.getSession();setSessionToken(data.session?.access_token??'');supabase.auth.onAuthStateChange((event,session)=>{setSessionToken(session?.access_token??'');if(event==='PASSWORD_RECOVERY'){const site=new URLSearchParams(window.location.search).get('site');window.location.hash='/reset-password'+(site?'?site='+encodeURIComponent(site):'');}});}
+export const supabase=url&&key&&!isMobileBrowser()?createClient(url,key,{auth:{flowType:'pkce',detectSessionInUrl:true}}):null;
+const authStorageKey='sb-'+(url?new URL(url).hostname.split('.')[0]:'')+'-auth-token';
+let ending:Promise<void>|null=null;
+export function endBrowserSession(reason:'inactive'|'signout'='signout'){
+ if(ending)return ending;
+ window.dispatchEvent(new Event('hws-session-ending'));
+ const expiredSession=idleSession.read()?.session;
+ idleSession.expire();setSessionToken('');setSessionUser('');
+ window.dispatchEvent(new Event('hws-auth-changed'));
+ ending=(async()=>{
+  let deadline:ReturnType<typeof setTimeout>|undefined;
+  try{await Promise.race([supabase?.auth.signOut({scope:'local'}),new Promise(resolve=>{deadline=setTimeout(resolve,5000);})]);}catch{/* The local session must still end when offline. */}finally{clearTimeout(deadline);}
+  if(idleSession.read()?.session===expiredSession&&idleSession.read()?.expired){
+   try{localStorage.removeItem(authStorageKey);localStorage.removeItem(authStorageKey+'-code-verifier');localStorage.removeItem(authStorageKey+'-user');}catch{/* Storage may be unavailable. */}
+  }
+  const path=window.location.hash.slice(1).split('?')[0];
+  if(reason!=='inactive'||!isPublicSuitePath(path)&&!path.startsWith('/editor/demo-'))window.location.hash='/signin'+(reason==='inactive'?'?reason=inactive':'');
+ })().finally(()=>{ending=null;});
+ return ending;
+}
+export async function initializeAuth(){
+ if(!supabase)return;
+ setSessionGuard(()=>{if(idleSession.remaining()>0)return true;void endBrowserSession('inactive');return false;});
+ const accept=(session:{access_token:string;user:{id:string}}|null)=>{
+  if(!session){setSessionToken('');setSessionUser('');return;}
+  if(!idleSession.accept(sessionIdentity(session.access_token,session.user.id),session.user.id)){setSessionToken('');setSessionUser('');setTimeout(()=>void endBrowserSession('inactive'),0);return;}
+  setSessionToken(session.access_token);setSessionUser(session.user.id);
+ };
+ const {data}=await supabase.auth.getSession();accept(data.session);
+ supabase.auth.onAuthStateChange((event,session)=>{
+  if(event==='SIGNED_OUT'){window.dispatchEvent(new Event('hws-session-ending'));idleSession.expire();}
+  accept(session);window.dispatchEvent(new Event('hws-auth-changed'));
+  if(event==='PASSWORD_RECOVERY'){const site=new URLSearchParams(window.location.search).get('site');window.location.hash='/reset-password'+(site?'?site='+encodeURIComponent(site):'');}
+ });
+}
+
 type LoginSite={id:string;name:string;accent:string;slug?:string};
 export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string}){
  const [mode,setMode]=useState<'login'|'forgot'>(window.location.hash.includes('mode=forgot')?'forgot':'login');
@@ -27,9 +63,11 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
     const {error}=await supabase.auth.resetPasswordForEmail(email,{redirectTo:root+'?recovery=1'+(siteId?'&site='+encodeURIComponent(siteId):'')});if(error)throw error;
     setMessage('If this email has an account, a reset link will arrive shortly.');
    }else{
+    if(ending)await ending;
     const {data,error}=await supabase.auth.signInWithPassword({email,password});
     if(error)throw new Error(siteId?'Invalid email or password for this website.':error.message);
-    setSessionToken(data.session?.access_token??'');
+    if(data.session){idleSession.start(sessionIdentity(data.session.access_token,data.session.user.id),data.session.user.id);setSessionUser(data.session.user.id);}
+    setSessionToken(data.session?.access_token??'');window.dispatchEvent(new Event('hws-auth-changed'));
     if(siteId){
      try{
       const response=await apiFetch('/api/site-login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:siteId})});
@@ -49,11 +87,12 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
  }
  const returnLink=siteId?appHref('/site-admin/'+encodeURIComponent(siteId)):appHref('/signin');
  return <main className={'auth-screen'+(siteId?' site-auth-screen':'')} style={site?{'--login-accent':site.accent} as React.CSSProperties:undefined}>
-  <a className="brand" href={site?.slug?appHref(`/website/${siteId}/${site.slug}`):demo?appHref('/editor/'+siteId):appHref('/')}>{site?.name??(siteId?'Website administration':'HWS Studio')}</a>
+  <a className="brand" href={site?.slug?appHref(`/website/${siteId}/${site.slug}`):demo?appHref('/editor/'+siteId):appHref('/')}>{siteId?(site?.name??'Website administration'):<img className="husky-suite-logo" src={assetUrl('/husky-suite-logo.png')} alt="Husky Suite"/>}</a>
   <div className="auth-card">
    {siteId&&<span className="auth-site-label">{site?.name??'This website'} · Admin access</span>}
    <h1>{reset?'Set a new password':mode==='forgot'?'Reset your password':siteId?'Website admin login':'Welcome back'}</h1>
    <p>{reset?'Choose a password of at least 12 characters.':siteId?'Sign in with an account assigned to this website.':'Your websites and workspace, in one place.'}</p>
+   {!reset&&new URLSearchParams(window.location.hash.split('?')[1]??'').get('reason')==='inactive'&&<p role="status">You were signed out after 30 minutes of inactivity. Sign in again to continue. Any unsaved website draft can be recovered in its editor in this tab.</p>}
    {!supabase&&<p role="status">Sign-in is not configured yet.</p>}
    <form onSubmit={submit}>
     {!reset&&<label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>}
