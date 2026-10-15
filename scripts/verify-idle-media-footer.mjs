@@ -28,7 +28,7 @@ for(const id of ['sau70','crane','greece','athena','horizon','eaglecrest','duboi
   site.pages[0].blocks=[block];site.copyrightName='Example Company';site.legalLinks={privacy:{enabled:true,url:'https://example.com/privacy'},termsOfUse:{enabled:false,url:'https://example.com/hidden-terms'},termsOfService:{enabled:true,url:'https://example.com/terms'}};
   m.validateWebsite(JSON.parse(JSON.stringify(site)));
   const html=renderToStaticMarkup(React.createElement(m.WebsiteView,{site,page:site.pages[0],siteId:'test',base:'/test'}));
-  assert.match(html,/width:60%/);assert.match(html,/height:240px/);assert.match(html,/object-fit:contain/);assert.ok(html.includes(`copyright (c) ${new Date().getFullYear()} Example Company. All Right Reserved.`));assert.match(html,/Privacy Policy\./);assert.match(html,/Terms of service\./);assert.ok(!html.includes('hidden-terms'));
+  assert.match(html,/width:60%/);assert.match(html,/height:240px/);assert.match(html,/object-fit:contain/);assert.ok(html.includes(`Copyright © ${new Date().getFullYear()} Example Company. All Right Reserved.`));assert.match(html,/Privacy Policy\./);assert.match(html,/Terms of service\./);assert.ok(!html.includes('hidden-terms'));
   const outline=m.startFromWebsite(site,'outline');assert.deepEqual(outline.legalLinks,site.legalLinks);assert.equal(m.startFromWebsite(site,'design').legalLinks,undefined);
  });
 }
