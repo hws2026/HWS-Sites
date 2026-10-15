@@ -3,7 +3,7 @@ import {mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 const dir=resolve('.sites-runtime/idle-media-footer');await mkdir(dir,{recursive:true});
-await build({stdin:{contents:"export * from './lib/idle-session';export * from './lib/image-sizing';export * from './lib/editor-model';export * from './lib/site-store';export * from './lib/template-start';export * from './lib/draft-recovery';export {WebsiteView} from './app/website-view';",resolveDir:resolve('.')},bundle:true,platform:'node',format:'esm',packages:'external',outfile:dir+'/checks.mjs',logLevel:'silent'});
+await build({stdin:{contents:"export * from './app/social-links';export * from './lib/idle-session';export * from './lib/image-sizing';export * from './lib/editor-model';export * from './lib/site-store';export * from './lib/template-start';export * from './lib/draft-recovery';export {WebsiteView} from './app/website-view';",resolveDir:resolve('.')},bundle:true,platform:'node',format:'esm',packages:'external',outfile:dir+'/checks.mjs',logLevel:'silent'});
 const m=await import(dir+'/checks.mjs'),React=await import('react'),{renderToStaticMarkup}=await import('react-dom/server');
 let checks=0;const check=(label,fn)=>{fn();checks++;console.log('PASS '+label);};
 let now=1000;const values=new Map();const storage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
@@ -36,6 +36,22 @@ check('legal links reject executable and protocol-relative URLs',()=>{for(const 
 check('disabled legal links retain URLs and do not render',()=>{const site=m.blankWebsite();site.legalLinks={privacy:{enabled:false,url:'https://example.com/privacy'}};const html=renderToStaticMarkup(React.createElement(m.WebsiteView,{site,page:site.pages[0],siteId:'test',base:'/test'}));assert.ok(!html.includes('https://example.com/privacy'));});
 check('nested item images and hero slides are validated',()=>{const site=m.blankWebsite(),group=m.makeBlock('group'),gallery=m.makeBlock('gallery');gallery.items=[{id:'one',title:'Photo',text:'',meta:'',link:'',image:'https://example.com/photo.png',imageSizing:{width:40,fit:'contain'}}];group.children=[gallery];site.pages[0].blocks=[group];m.validateWebsite(site);gallery.items[0].imageSizing.width=300;assert.throws(()=>m.validateWebsite(site),/Image width/);});
 check('image settings do not alias when a section is duplicated',()=>{const b=m.makeBlock('image');b.imageSizing={width:50};const copy=m.cloneBlock(b);copy.imageSizing.width=70;assert.equal(b.imageSizing.width,50);});
+check('social rows preserve legacy labels and order without saving empty additions',()=>{
+ const legacy='Facebook|https://facebook.com/example\nTwitter|https://x.com/example\nOur community|https://example.com/community';
+ const rows=m.parseSocialLinks(legacy);assert.equal(m.serializeSocialLinks([...rows,{label:'Instagram',url:''}]),legacy);
+ assert.equal(m.socialPlatform('Twitter').id,'x');assert.equal(m.socialPlatform('Our community'),undefined);
+ assert.equal(m.normalizeSocialUrl('instagram.com/example'),'https://instagram.com/example');
+ assert.equal(m.parseSocialLinks(m.serializeSocialLinks([...rows].reverse()))[0].label,'Our community');
+});
+check('every selectable social logo renders and unsafe links stay hidden',()=>{
+ for(const platform of m.socialPlatforms){const html=renderToStaticMarkup(React.createElement(m.SocialLinks,{value:platform.label+'|'+platform.placeholder}));assert.ok(html.includes('data-social-logo="'+platform.id+'"'));assert.ok(html.includes('noopener noreferrer'));assert.ok(html.includes('opens in new tab'));}
+ for(const url of ['javascript:alert(1)','http://example.com','https://user:password@example.com','//example.com','https://example.com|extra']){assert.equal(m.validSocialUrl(url),false);assert.equal(renderToStaticMarkup(React.createElement(m.SocialLinks,{value:'Instagram|'+url})), '');}
+});
+for(const id of ['sau70','crane','greece','athena','horizon','eaglecrest','dubois','ics','greenwich','police','business','general'])check(id+' saves and renders selected social logos in footer',()=>{
+ const site=m.startFromTemplate(id,'scratch');site.socialLinks='TikTok|https://www.tiktok.com/@example\nInstagram|https://www.instagram.com/example';m.validateWebsite(JSON.parse(JSON.stringify(site)));
+ const html=renderToStaticMarkup(React.createElement(m.WebsiteView,{site,page:site.pages[0]})),footer=html.slice(html.indexOf('<footer'));
+ assert.ok(footer.includes('data-social-logo="tiktok"'));assert.ok(footer.includes('https://www.instagram.com/example'));assert.ok(footer.indexOf('TikTok (opens')<footer.indexOf('Instagram (opens'));
+});
 console.log(`Passed ${checks} inactivity, recovery, image, and footer checks.`);
 
 // Exercise the real auth wrapper without contacting Supabase or using credentials.

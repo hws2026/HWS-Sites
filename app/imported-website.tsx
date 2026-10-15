@@ -10,6 +10,7 @@ import type {ImportedEdits} from '@/lib/imported-template';
 import {applyOriginalEdits,makeImportedDocument,nodePath,originalDocument,originalSection} from '@/lib/imported-document';
 import {apiFetch,assetUrl,isPages,isPublicVisitor} from '@/lib/client-runtime';
 import {SiteFavicon} from './site-image';
+import {SocialLinks} from './social-links';
 
 function isolatedHost(host:HTMLElement,tools=false){
  const shadow=host.attachShadow({mode:'open'});
@@ -21,6 +22,7 @@ function isolatedHost(host:HTMLElement,tools=false){
 export function ImportedWebsite(props:WebsiteViewProps&{renderNative:(block:Block)=>React.ReactNode}){
  const {site,page,selected,onSelect,onEditChrome,onPage,base='',renderTools,renderNative,onImportedSelect,onImportedDrop}=props;
  const frame=useRef<HTMLIFrameElement>(null),current=useRef(props);current.current=props;
+ const [socialMount,setSocialMount]=useState<HTMLElement|null>(null);
  const [doc,setDoc]=useState<Document|null>(null),[height,setHeight]=useState(900),[portals,setPortals]=useState<{id:string;node:HTMLElement}[]>([]),[tools,setTools]=useState<HTMLElement|null>(null);
  const editing=Boolean(onSelect),structure=page.blocks.map(b=>[b.id,b.imported?.page,b.imported?.section,b.hidden,b.hideOnMobile].join(':')).join('|');
  const assetBase=typeof window==='undefined'?'':new URL(assetUrl('/imported-templates/paradis-photo-booths/'),window.location.href).href;
@@ -29,6 +31,13 @@ export function ImportedWebsite(props:WebsiteViewProps&{renderNative:(block:Bloc
  const previous=useRef(new Map<HTMLElement,ImportedEdits>()),media=useRef(new Map<string,string>());
  useEffect(()=>{previous.current.clear();setDoc(null);setPortals([]);setTools(null);},[html]);
  useEffect(()=>()=>{media.current.forEach(url=>URL.revokeObjectURL(url));media.current.clear();},[]);
+
+ useEffect(()=>{
+  if(!doc)return;
+  const footer=doc.querySelector<HTMLElement>('.site-footer');if(!footer)return;
+  const mount=doc.createElement('div');mount.dataset.hwsSocialLinks='true';footer.appendChild(mount);setSocialMount(mount);
+  return()=>{mount.remove();setSocialMount(null);};
+ },[doc]);
 
  useEffect(()=>{
   if(!doc)return;
@@ -70,6 +79,7 @@ export function ImportedWebsite(props:WebsiteViewProps&{renderNative:(block:Bloc
   for(const {root,original,edits} of roots){
    applyOriginalEdits(root,original,edits,previous.current.get(root));previous.current.set(root,structuredClone(edits));
    root.querySelectorAll<HTMLAnchorElement>('a').forEach(anchor=>{
+    if(anchor.closest('[data-hws-social-links]'))return;
     const path=nodePath(root,anchor),sourceNode=path==='root'?original:path.split('.').reduce<Node|undefined>((node,n)=>node?.childNodes[Number(n)],original);
     const href=edits[path]?.href??(sourceNode as Element|undefined)?.getAttribute?.('href')??'';
     delete anchor.dataset.hwsPage;delete anchor.dataset.hwsAnchor;
@@ -98,5 +108,5 @@ export function ImportedWebsite(props:WebsiteViewProps&{renderNative:(block:Bloc
  const formSettings=page.blocks.filter(isImportedInquiry).map(b=>[b.id,b.formEnabled,b.formSuccessMessage].join(':')).join('|');
  useEffect(()=>{if(!doc)return;const dispose:Array<()=>void>=[];doc.querySelectorAll<HTMLFormElement>('.local-inquiry').forEach(form=>{const id=form.closest<HTMLElement>('[data-hws-section]')?.dataset.hwsSection,block=page.blocks.find(b=>b.id===id);if(block&&isImportedInquiry(block))dispose.push(connectImportedInquiry(form,{pageId:page.id,formId:block.id,live:isPublicVisitor()&&!editing,enabled:block.formEnabled!==false,message:block.formSuccessMessage}));});return()=>dispose.forEach(fn=>fn());},[doc,page.id,formSettings,editing]);
  const block=page.blocks.find(b=>b.id===selected);
- return <div className="imported-website">{site.favicon&&!editing&&<SiteFavicon src={site.favicon}/>}<iframe ref={frame} title={site.name+' | '+page.name} srcDoc={html} sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation-by-user-activation allow-downloads" style={{display:'block',border:0,width:'100%',height}} onLoad={()=>setDoc(frame.current?.contentDocument??null)}/>{portals.map(({id,node})=>{const b=page.blocks.find(item=>item.id===id);return b?createPortal(renderNative(b),node,id):null;})}{tools&&block&&renderTools&&createPortal(renderTools(block),tools)}</div>;
+ return <div className="imported-website">{site.favicon&&!editing&&<SiteFavicon src={site.favicon}/>}<iframe ref={frame} title={site.name+' | '+page.name} srcDoc={html} sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation-by-user-activation allow-downloads" style={{display:'block',border:0,width:'100%',height}} onLoad={()=>setDoc(frame.current?.contentDocument??null)}/>{socialMount&&createPortal(<><style>{`[data-hws-social-links] .website-social{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;padding-top:16px}[data-hws-social-links] .website-social a{display:grid;place-items:center;width:36px;height:36px;border:1px solid currentColor;border-radius:50%;color:inherit;text-decoration:none}[data-hws-social-links] .website-social a:hover{opacity:.75}[data-hws-social-links] .website-social a:focus-visible{outline:2px solid currentColor;outline-offset:3px}[data-hws-social-links] .social-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}`}</style><SocialLinks value={site.socialLinks}/></>,socialMount)}{portals.map(({id,node})=>{const b=page.blocks.find(item=>item.id===id);return b?createPortal(renderNative(b),node,id):null;})}{tools&&block&&renderTools&&createPortal(renderTools(block),tools)}</div>;
 }

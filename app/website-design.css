@@ -1030,3 +1030,6 @@
 
 .website{overflow-x:clip}
 @container(max-width:700px){.website.adaptive-header .website-utility{inset:auto}}
+
+/* Keep long social-link rows usable on smaller published pages. */
+.website .website-social{flex-wrap:wrap}.website .website-social a{flex-shrink:0}.website .website-social a:focus-visible{outline:2px solid currentColor;outline-offset:3px}

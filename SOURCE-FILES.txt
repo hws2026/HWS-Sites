@@ -55,6 +55,8 @@ app/page.tsx
 app/payment-settings.tsx
 app/portal/page.tsx
 app/site-image.tsx
+app/social-links-editor.tsx
+app/social-links.tsx
 app/suite-brand.css
 app/template-start-options.tsx
 app/website-design.css
