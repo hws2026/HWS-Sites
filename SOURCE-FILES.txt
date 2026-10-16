@@ -80,6 +80,7 @@ backend/commerce-utils.ts
 backend/domains.ts
 backend/forms.ts
 backend/http.ts
+backend/mobile.ts
 backend/public-site.ts
 backend/reminders.ts
 backend/website-payments.ts
@@ -237,6 +238,8 @@ pages/env.d.ts
 pages/idle-guard.tsx
 pages/index.html
 pages/main.tsx
+pages/mobile-workspace.css
+pages/mobile-workspace.tsx
 pages/public-config.ts
 pages/template-review.html
 pages/template-review.tsx
@@ -364,6 +367,9 @@ scripts/verify-imported-template.html
 scripts/verify-imported-template.mjs
 scripts/verify-imported-template.tsx
 scripts/verify-lifecycle-browser.html
+scripts/verify-mobile.html
+scripts/verify-mobile.mjs
+scripts/verify-mobile.tsx
 scripts/verify-payments.html
 scripts/verify-payments.tsx
 scripts/verify-publication.mjs

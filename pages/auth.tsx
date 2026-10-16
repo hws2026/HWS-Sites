@@ -6,7 +6,7 @@ import {useEffect,useState} from 'react';
 import {assetUrl,apiFetch,appHref,setSessionToken,setSessionUser,setSessionGuard} from '@/lib/client-runtime';
 import {referenceTemplates} from '@/lib/templates';
 const url=import.meta.env.VITE_SUPABASE_URL||supabaseUrl, key=import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY||supabasePublishableKey;
-export const supabase=url&&key&&!isMobileBrowser()?createClient(url,key,{auth:{flowType:'pkce',detectSessionInUrl:true}}):null;
+export const supabase=url&&key?createClient(url,key,{auth:{flowType:'pkce',detectSessionInUrl:true}}):null;
 const authStorageKey='sb-'+(url?new URL(url).hostname.split('.')[0]:'')+'-auth-token';
 let ending:Promise<void>|null=null;
 export function endBrowserSession(reason:'inactive'|'signout'='signout'){
@@ -74,13 +74,13 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
       const access=await response.json() as {site:{id:string}|null;role?:string};
       if(!response.ok||access.site?.id!==siteId||!['admin','editor'].includes(access.role??''))throw new Error(response.status>=500?'Unable to verify website access. Please try again.':'Invalid account for this website.');
      }catch(error){setSessionToken('');await supabase.auth.signOut({scope:'local'});throw error;}
-     window.location.hash='/editor/'+encodeURIComponent(siteId);
+     window.location.hash=isMobileBrowser()?'/mobile?view=forms&site='+encodeURIComponent(siteId):'/editor/'+encodeURIComponent(siteId);
     }else{
      const target=new URLSearchParams(window.location.hash.split('?')[1]??'').get('return_to');
      const response=await apiFetch('/api/me');const account=await response.json() as {role?:string;error?:string};if(!response.ok)throw new Error(account.error??'Unable to load your account.');
      const targetPath=target?.split('?')[0];
-     const validTarget=target&&/^\/(?:editor\/[a-zA-Z0-9-]+|admin|portal)(?:\?view=(?:billing|domains))?$/.test(target);
-     window.location.hash=validTarget&&(targetPath!=='/admin'||account.role==='admin')?target:account.role==='admin'?'/admin':'/portal';
+     const validTarget=target&&/^\/(?:editor\/[a-zA-Z0-9-]+|admin|portal|mobile)(?:\?view=(?:billing|domains|forms|events))?$/.test(target);
+     window.location.hash=isMobileBrowser()?'/mobile':validTarget&&(targetPath!=='/admin'||account.role==='admin')?target:account.role==='admin'?'/admin':'/portal';
     }
    }
   }catch(e){setFailed(true);setMessage(e instanceof Error?e.message:'Please try again.');}finally{setBusy(false);}
@@ -91,7 +91,7 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
   <div className="auth-card">
    {siteId&&<span className="auth-site-label">{site?.name??'This website'} · Admin access</span>}
    <h1>{reset?'Set a new password':mode==='forgot'?'Reset your password':siteId?'Website admin login':'Welcome back'}</h1>
-   <p>{reset?'Choose a password of at least 12 characters.':siteId?'Sign in with an account assigned to this website.':'Your websites and workspace, in one place.'}</p>
+   <p>{reset?'Choose a password of at least 12 characters.':siteId?'Sign in with an account assigned to this website.':isMobileBrowser()?'Sign in to manage Billing, Forms, and Events.':'Your websites and workspace, in one place.'}</p>
    {!reset&&new URLSearchParams(window.location.hash.split('?')[1]??'').get('reason')==='inactive'&&<p role="status">You were signed out after 30 minutes of inactivity. Sign in again to continue. Any unsaved website draft can be recovered in its editor in this tab.</p>}
    {!supabase&&<p role="status">Sign-in is not configured yet.</p>}
    <form onSubmit={submit}>

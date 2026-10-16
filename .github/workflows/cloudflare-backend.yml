@@ -23,6 +23,7 @@ jobs:
         run: npx wrangler deploy --config backend/wrangler.json --dry-run --outdir backend-dist
       - run: npm run verify:publication
       - run: npm run verify:forms
+      - run: npm run verify:mobile
       - run: npm run verify:backend
       - run: npm run verify:commerce
       - run: npm run verify:website-payments

@@ -1,3 +1,6 @@
+MOBILE WORKSPACE
+Phones and tablets can sign in to Billing, Forms, and Events. Use Mobile workspace in the desktop header to preview it. Deploy the backend as well as the GitHub Pages frontend. Event publishing keeps unrelated website edits private.
+
 HWS Studio update - October 11, 2026
 
 SOURCE PACKAGE: This package has not been deployed. Upload its contents into the repository root, including the .github folder. Deploy the Cloudflare backend and GitHub Pages frontend from this same source version. Existing backend secrets remain in Cloudflare; do not put them in this package. See DEPLOYMENT.md.

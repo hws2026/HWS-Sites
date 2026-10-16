@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {assetUrl} from '@/lib/client-runtime';
+import {assetUrl,appHref} from '@/lib/client-runtime';
 import {Monitor} from 'lucide-react';
 import {DESKTOP_REQUIRED_MESSAGE} from '@/lib/device-access';
 
@@ -10,9 +10,9 @@ export function DesktopRequired() {
     <div className="auth-card" role="alert">
       <Monitor size={40} aria-hidden="true"/>
       <span className="auth-site-label">DESKTOP ACCESS ONLY</span>
-      <h1>Open the suite on a computer</h1>
+      <h1>Use a computer for this feature</h1>
       <p>{DESKTOP_REQUIRED_MESSAGE}</p>
-      <p className="auth-scope-note">Use your laptop or desktop browser to visit {window.location.host}.</p>
+      <a className="button primary" href={appHref('/mobile')}>Open mobile workspace</a>
     </div>
   </main>;
 }

@@ -35,7 +35,8 @@
     "verify:website-payments": "node scripts/verify-website-payments.mjs",
     "verify:source": "node scripts/verify-source.mjs",
     "package:source": "node scripts/package-source.mjs",
-    "setup:upload": "node scripts/setup-upload-guard.mjs"
+    "setup:upload": "node scripts/setup-upload-guard.mjs",
+    "verify:mobile": "node scripts/verify-mobile.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

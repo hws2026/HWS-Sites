@@ -1,0 +1,57 @@
+import {Miniflare,createFetchMock} from 'miniflare';
+import {readFile,readdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const mock=createFetchMock();mock.disableNetConnect();
+for(const id of ['admin','editor','viewer','other'])mock.get('https://auth.test').intercept({path:'/auth/v1/user',headers:{authorization:'Bearer '+id}}).reply(200,{id,email:id+'@example.com',email_confirmed_at:'2026-10-01'}).persist();
+const mf=new Miniflare({modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],fetchMock:mock,bindings:{FRONTEND_URL:'https://front.test/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'public-test-key',ADMIN_SUPABASE_USER_IDS:'admin'}});
+let checks=0;
+try{
+ const db=await mf.getD1Database('DB');for(const file of (await readdir('drizzle')).filter(f=>f.endsWith('.sql')).sort())for(const sql of (await readFile('drizzle/'+file,'utf8')).replaceAll(/-->[^\n]*/g,'').split(';').filter(x=>x.trim()))await db.prepare(sql).run();
+ async function req(path,method='GET',body,token='admin',mobile=true){const headers={Origin:'https://front.test'};if(token)headers.Authorization='Bearer '+token;if(mobile)headers['X-HWS-Device']='mobile';if(body)headers['Content-Type']='application/json';const r=await mf.dispatchFetch('https://api.test'+path,{method,headers,body:body?JSON.stringify(body):undefined});return {status:r.status,data:await r.json()};}
+ function check(r,status,label){assert.equal(r.status,status,label+': '+JSON.stringify(r.data));checks++;console.log('PASS '+label);return r.data;}
+ const desktop=(path,method='GET',body)=>req(path,method,body,'admin',false);
+ check(await desktop('/api/admin','POST',{action:'initialize'}),200,'workspace initialized');
+ const customer=check(await desktop('/api/admin','POST',{action:'customer',name:'Mobile customer',email:'editor@example.com'}),200,'customer created');
+ const id=check(await desktop('/api/admin','POST',{action:'site',customerId:customer.id,title:'Published school',templateId:'general',startMode:'full'}),200,'test website created').id;
+ const otherId=check(await desktop('/api/admin','POST',{action:'site',assignTo:'self',title:'Private other site',templateId:'general',startMode:'scratch'}),200,'other website created').id;
+ for(const role of ['editor','viewer'])check(await desktop('/api/admin','POST',{action:'access',siteId:id,email:role+'@example.com',role}),200,role+' invited');
+ check(await req('/api/mobile','POST',{action:'site',title:'Forbidden'}),400,'mobile cannot create websites');
+ for(const user of ['editor','viewer'])check(await req('/api/mobile','POST',{action:'activate'},user),200,'mobile invitation activated: '+user);
+ const customerSites=check(await req('/api/mobile','GET',undefined,'editor'),200,'customer mobile list loads');assert.deepEqual(customerSites.sites.map(s=>s.id),[id]);
+ assert.equal(check(await req('/api/mobile'),200,'administrator can select all owned customer sites').sites.length,2);
+ assert.equal(check(await req('/api/mobile','GET',undefined,'other'),200,'unassigned account has empty workspace').sites.length,0);
+ for(const path of ['/api/mobile','/api/events?siteId='+id,'/api/forms?siteId='+id,'/api/billing'])check(await req(path,'GET',undefined,null),401,'login required: '+path);
+ for(const [path,method,body] of [['/api/admin','GET'],['/api/site','PUT',{}],['/api/portal','POST',{action:'site'}],['/api/domains','POST',{}],['/api/upload','POST',{}]])check(await req(path,method,body),403,'mobile denies full workspace route '+path);
+ check(await req('/api/events?siteId='+otherId,'GET',undefined,'editor'),403,'events reject another customer website');
+ check(await req('/api/events?siteId='+id,'GET',undefined,'viewer'),403,'viewers cannot manage events');
+ check(await req('/api/forms?siteId='+id,'GET',undefined,'viewer'),403,'viewers cannot read form responses');
+ let site=check(await desktop('/api/site?id='+id),200,'desktop draft loaded');
+ check(await desktop('/api/site','PUT',{id,site:site.site,revision:site.revision,publish:true}),200,'website initially published from desktop');
+ site=(await desktop('/api/site?id='+id)).data;const publishedPages=structuredClone(site.published.pages);site.site.name='Unpublished design edit';
+ check(await desktop('/api/site','PUT',{id,site:site.site,revision:site.revision,publish:false}),200,'unrelated design edit remains in draft');
+ const endpoint='/api/events?siteId='+id;
+ let calendar=check(await req(endpoint),200,'mobile event editor loads');
+ const event={id:'mobile-event',title:'Open house',description:'Meet our team',category:'Community',location:'Main campus',link:'',startsAt:'2027-01-15T15:00:00.000Z'};
+ const payload=()=>({revision:calendar.revision,calendarEvents:[event],calendarTimeZone:'America/New_York',publish:false});
+ check(await req(endpoint,'PUT',{...payload(),name:'forged'}),400,'non-calendar fields are rejected');
+ check(await req(endpoint,'PUT',{...payload(),calendarTimeZone:'Not/AZone'}),400,'invalid calendar timezone rejected');
+ check(await req(endpoint,'PUT',{...payload(),calendarEvents:Array.from({length:501},(_,n)=>({...event,id:'event-'+n}))}),400,'calendar event limit enforced');
+ check(await req(endpoint,'PUT',{...payload(),revision:calendar.revision-1}),409,'stale edits cannot overwrite a newer version');
+ check(await req(endpoint,'PUT',{...payload(),publish:true},'editor'),403,'editor cannot publish events');
+ calendar=check(await req(endpoint,'PUT',payload(),'editor'),200,'assigned editor saves calendar draft');
+ site=(await desktop('/api/site?id='+id)).data;assert.equal(site.site.calendarEvents[0].id,event.id);assert.equal(site.published.calendarEvents.some(e=>e.id===event.id),false);
+ calendar=check(await req(endpoint,'PUT',{...payload(),publish:true}),200,'administrator publishes only calendar changes');
+ site=(await desktop('/api/site?id='+id)).data;assert.equal(site.published.name,'Published school');assert.equal(site.site.name,'Unpublished design edit');assert.deepEqual(site.published.calendarEvents,[event]);
+ assert.deepEqual(site.published.pages,publishedPages);checks++;console.log('PASS unrelated unpublished design remains private');
+ const blank=check(await req('/api/events?siteId='+otherId),200,'unpublished website calendar can load');
+ check(await req('/api/events?siteId='+otherId,'PUT',{...payload(),revision:blank.revision,publish:true}),409,'event publishing cannot publish an unpublished website');
+ check(await req('/api/events?siteId='+otherId,'PUT',{...payload(),revision:blank.revision}),200,'unpublished site accepts event drafts');
+ check(await req('/api/forms?siteId='+id,'GET',undefined,'editor'),200,'assigned editor can open forms on mobile');
+ check(await req('/api/forms?siteId='+otherId,'GET',undefined,'editor'),403,'mobile forms remain isolated');
+ check(await req('/api/billing','POST',{action:'save',customerId:customer.id,label:'Forged amount',amount:'20',currency:'USD',interval:'month'},'editor'),403,'customer cannot assign billing prices');
+ await db.prepare('DELETE FROM site_access WHERE site_id=? AND user_id=?').bind(id,'editor').run();
+ check(await req(endpoint,'GET',undefined,'editor'),403,'revoked event access is rejected immediately');
+ await db.prepare('UPDATE customers SET archived=1 WHERE id=?').bind(customer.id).run();
+ check(await req(endpoint),403,'archived customers cannot manage events');assert.equal((await req('/api/mobile')).data.sites.some(s=>s.id===id),false);
+ console.log(`PASS: ${checks} mobile checks. Identity, billing, and data are isolated test fixtures.`);
+}finally{await mf.dispose();}

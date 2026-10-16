@@ -1,4 +1,4 @@
-export const DESKTOP_REQUIRED_MESSAGE = 'The HWS suite requires a laptop or desktop computer. Sign-in and workspace access are disabled on phones and tablets.';
+export const DESKTOP_REQUIRED_MESSAGE = 'Use a laptop or desktop for the website editor and full administration. Billing, Forms, and Events are available in your mobile workspace after sign-in.';
 
 type DeviceSignals = {
   userAgent?: string;
@@ -31,3 +31,15 @@ export function isMobileRequest(headers: Headers) {
 }
 
 export const isPublicSuitePath = (path: string) => path.startsWith('/demo/') || path.startsWith('/website/');
+
+// A narrow server allowlist supplements the mobile UI. Every private route
+// still verifies the session and the existing customer/site permissions.
+export function isMobileApiAllowed(path:string,method:string) {
+  const routes:Record<string,string[]>={
+    '/api/me':['GET'], '/api/site-login':['GET','POST'],
+    '/api/mobile':['GET','POST'], '/api/events':['GET','PUT'],
+    '/api/forms':['GET','PUT'], '/api/billing':['GET','POST'],
+    '/api/website-payments':['GET','POST'],
+  };
+  return routes[path]?.includes(method)??false;
+}

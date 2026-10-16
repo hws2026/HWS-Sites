@@ -1,5 +1,6 @@
+import {MobileWorkspace} from './mobile-workspace';
 import {IdleGuard} from './idle-guard';
-import {isMobileBrowser,isPublicSuitePath} from '@/lib/device-access';
+import {isMobileBrowser} from '@/lib/device-access';
 import {DesktopRequired} from './desktop-access';
 import {createRoot} from 'react-dom/client';
 import {useEffect,useState} from 'react';
@@ -20,7 +21,7 @@ import '@/app/finalsite-composition.css';
 import '@/app/website-modules.css';
 function Published({id,pageSlug}:{id:string;slug:string;pageSlug?:string}){const url=publishedSiteUrl(id,pageSlug);useEffect(()=>{window.location.replace(url);},[url]);return <main className="publication-empty" role="status">Opening public website… <a href={url}>Continue to website</a></main>;}
 function DemoPreview({templateId,slug}:{templateId:string;slug?:string}){const [site]=useState(()=>referenceTemplate(templateId));const page=site.pages.find(p=>p.slug===slug)??site.pages[0];useEffect(()=>{document.title=site.name+' | '+(page.id===site.pages[0].id?'Homepage':page.name);window.scrollTo({top:0,behavior:'instant'});},[page.id,site.name]);return <div className="published-page"><WebsiteView site={site} siteId={'demo-'+templateId} page={page} base={appHref('/demo/'+templateId)} onPage={id=>{const destination=site.pages.find(p=>p.id===id);if(destination)location.hash='/demo/'+templateId+(destination.id===site.pages[0].id?'':'/'+destination.slug);}}/></div>;}
-function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace(appHref(to));},[to]);return <main className="publication-empty" role="status">Opening your workspace…</main>;}
+function Redirect({to}:{to:string}){useEffect(()=>{window.location.replace('#'+to);},[to]);return <main className="publication-empty" role="status">Opening your workspace…</main>;}
 function AccountHome(){
  const [destination,setDestination]=useState(hasSession()?'':'/signin');
  const [error,setError]=useState('');
@@ -32,7 +33,7 @@ function AccountHome(){
    if(response.status===401){setSessionToken('');setDestination('/signin');return;}
    const account=await response.json() as {role?:string;error?:string};
    if(!response.ok)throw new Error(account.error??'Unable to load your account.');
-   setDestination(account.role==='admin'?'/admin':'/portal');
+   setDestination(isMobileBrowser()?'/mobile':account.role==='admin'?'/admin':'/portal');
   }).catch(error=>{if(!abort.signal.aborted)setError(error instanceof Error?error.message:'Unable to load your account.');});
   return()=>abort.abort();
  },[attempt]);
@@ -42,14 +43,15 @@ function AccountHome(){
 }
 function RoutedApp({route}:{route:string}){
  const path=route.split('?')[0];
- if(isMobileBrowser()&&!isPublicSuitePath(path))return <DesktopRequired/>;
  if(path==='/')return <AccountHome/>;
  if(path==='/signout')return <SignOut/>;
  if(path.startsWith('/site-admin/'))return <AuthScreen key={path} siteId={decodeURIComponent(path.slice(12))}/>;
  if(path==='/signin')return <AuthScreen/>;
  if(path==='/reset-password')return <AuthScreen reset siteId={new URLSearchParams(route.split('?')[1]??'').get('site')??undefined}/>;
  if(path.startsWith('/demo/')){const [id,slug]=path.slice(6).split('/');if(referenceTemplates.some(t=>t.id===id))return <DemoPreview key={id} templateId={id} slug={slug}/>;}
+ if(path==='/mobile'){if(!hasSession())return <Redirect to='/signin?return_to=%2Fmobile'/>;return <MobileWorkspace route={route}/>;}
  if(path.startsWith('/editor/')){
+  if(isMobileBrowser())return hasSession()?<DesktopRequired/>:<Redirect to={'/site-admin/'+encodeURIComponent(path.slice(8))}/>;
   const id=decodeURIComponent(path.slice(8));
   if(!id.startsWith('demo-')&&!hasSession())return <Redirect to={'/site-admin/'+encodeURIComponent(id)}/>;
   return <Editor key={path} siteId={id}/>;
@@ -57,6 +59,7 @@ function RoutedApp({route}:{route:string}){
  if(path.startsWith('/website/')){const [, ,id,slug,pageSlug]=path.split('/');return <Published key={id+slug+pageSlug} id={id} slug={slug} pageSlug={pageSlug}/>;}
  if(path==='/admin'||path==='/portal'){
   if(!hasSession())return <Redirect to={'/signin?return_to='+encodeURIComponent(route)}/>;
+  if(isMobileBrowser())return <Redirect to={'/mobile?view='+(new URLSearchParams(route.split('?')[1]??'').get('view')==='billing'?'billing':'forms')}/>;
   return <Suite key={path} portal={path==='/portal'}/>;
  }
  return <main className="publication-empty"><h1>Page not found</h1><a href={appHref('/')}>Return to sign in</a></main>;
@@ -72,5 +75,4 @@ const params=new URLSearchParams(window.location.search);
 const root=createRoot(document.getElementById('root')!);
 let disposed=false;
 import.meta.hot?.dispose(()=>{disposed=true;root.unmount();});
-if(isMobileBrowser())root.render(<App/>);
-else void initializeAuth().then(()=>{if(disposed)return;if(params.has('code')){const recovery=params.has('recovery');history.replaceState(null,'',window.location.pathname+(recovery?'#/reset-password'+(params.get('site')?'?site='+encodeURIComponent(params.get('site')!):''):'#/'));}root.render(<App/>);});
+void initializeAuth().then(()=>{if(disposed)return;if(params.has('code')){const recovery=params.has('recovery');history.replaceState(null,'',window.location.pathname+(recovery?'#/reset-password'+(params.get('site')?'?site='+encodeURIComponent(params.get('site')!):''):'#/'));}root.render(<App/>);});
