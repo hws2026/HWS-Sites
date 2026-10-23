@@ -1,3 +1,18 @@
+SECURITY & PRICING UPDATE — OCTOBER 23, 2026
+Read UPLOAD-README.txt and SECURITY-REVIEW.txt first. Deploy BOTH services from
+this commit. Pending migrations include 0012 (profiles) and 0013 (incidents).
+Security emails use security@huskysol.com; onboarding uses onboarding@huskysol.com.
+Owner recovery: https://suite.huskysol.com/#/security. HoneyBook remains on hold.
+New editable Pricing & plans layout: Editor -> Library -> Pages.
+Earlier deployment statements below refer to previous releases.
+
+LATEST UPDATE — OCTOBER 23, 2026
+Read UPLOAD-README.txt first. This release requires backend migration 0012 and
+both deployment workflows. Earlier deployment statements below are historical.
+Onboarding now activates completed customers automatically; profiles, owner-only
+audit deletion, clearer geolocation, and refresh persistence are included.
+HoneyBook sync is on hold.
+
 HUSKY SUITE — CUSTOMER SERVICES UPDATE
 Release prepared October 23, 2026
 

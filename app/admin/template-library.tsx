@@ -1,12 +1,14 @@
 'use client';
-import {useState} from 'react';
+import {readViewState,replaceViewState} from '@/lib/view-state';
+import {useEffect,useState} from 'react';
 import {Archive,ExternalLink,Plus} from 'lucide-react';
 import {referenceTemplates} from '@/lib/templates';
 import {templateChoices} from '@/lib/template-catalog';
 import {appHref,assetUrl} from '@/lib/client-runtime';
 
 export function TemplateLibrary({archivedIds,busy,onUse,onAction}:{archivedIds:string[];busy:boolean;onUse:(id:string)=>void;onAction:(payload:Record<string,unknown>)=>Promise<unknown>}){
- const [archived,setArchived]=useState(false);
+ const [archived,setArchived]=useState(()=>readViewState('templates')==='archived');
+ useEffect(()=>{replaceViewState({templates:archived?'archived':null});},[archived]);
  const choices=templateChoices.filter(t=>archivedIds.includes(t.id)===archived);
  return <><div className="list-toolbar"><label>Library view<select value={archived?'archived':'available'} onChange={e=>setArchived(e.target.value==='archived')}><option value="available">Available templates</option><option value="archived">Archived templates</option></select></label><span>{choices.length} templates</span></div><p className="template-library-help">Archiving removes a design from template pickers. Existing websites keep their design, content, and editing access.</p><div className="template-gallery">{choices.map(choice=>{
  const t=referenceTemplates.find(t=>t.id===choice.id);

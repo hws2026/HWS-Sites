@@ -117,3 +117,26 @@ for(const {id} of allTemplates){
 }
 const unsafeBrand=template();unsafeBrand.favicon='javascript:alert(1)';assert.throws(()=>validateWebsite(unsafeBrand),/favicon/);unsafeBrand.favicon='';unsafeBrand.logoDisplay='anything';assert.throws(()=>validateWebsite(unsafeBrand),/logo only/);
 console.log('PASS logo-only, text + logo, no-logo fallback and favicon validation across every template.');
+
+// Pricing content is native editor data, never executable imported HTML.
+const {pricingContent}=await import(resolve(root,'content-library.mjs'));
+const {paradisTemplate}=await import(resolve(root,'imported-template.mjs'));
+assert.equal(pricingContent.plans.length,9);assert.equal(pricingContent.addons.length,10);
+assert.deepEqual(pricingContent.plans.map(p=>p.price.amount),['$0','$9','$15','$22','$29','$59','$129','$249','Contact Sales']);
+assert.equal(pricingContent.plans[4].price.annual,'or $290/year');
+for(const themed of [...allTemplates.map(t=>referenceTemplates.some(r=>r.id===t.id)?referenceTemplate(t.id):template(t.id)),paradisTemplate()]){
+ const original=JSON.stringify(themed),page={id:'price-page',name:'Pricing & plans',slug:'pricing',layout:'full',blocks:pagePreset('pricing','Pricing & plans',themed)};
+ const configured={...themed,accent:'#a52535',colors:{background:'#f9f0e5',text:'#302319',card:'#fff8ed'},pages:[...themed.pages,page]};
+ const saved=validateWebsite(JSON.parse(JSON.stringify(configured)));assert.equal(JSON.stringify(themed),original);
+ assert.ok(saved.pages.at(-1).blocks.every(b=>b.inheritTheme));
+ const renderSite=saved.imported?{...saved,imported:undefined,layout:'simple',pages:[saved.pages.at(-1)]}:saved;
+ const html=renderToStaticMarkup(React.createElement(WebsiteView,{site:renderSite,page:saved.pages.at(-1)}));
+ assert.equal((html.match(/class="hws-price-card module-card"/g)||[]).length,19);
+ assert.ok(html.includes('or $290/year'));assert.ok(html.includes('--price-surface:#fff8ed'));assert.ok(html.includes('background:transparent'));
+ assert.ok(!html.includes('name="checkout"'));
+}
+const priceSite=template();priceSite.pages[0].blocks=[sectionPreset('pricing')];
+const originalPrice=priceSite.pages[0].blocks[0],copyPrice=cloneBlock(originalPrice);copyPrice.items[0].price.features[0]='Changed only in copy';assert.notEqual(originalPrice.items[0].price.features[0],copyPrice.items[0].price.features[0]);
+for(const price of [null,[],{amount:'x'.repeat(201),period:'',annual:'',badge:'',features:[]},{amount:'',period:'',annual:'',badge:'',features:Array(31).fill('x')}]){const copy=structuredClone(priceSite);copy.pages[0].blocks[0].items[0].price=price;assert.throws(()=>validateWebsite(copy),/pricing|Pricing/);}
+priceSite.pages[0].blocks[0].items[0].price.amount='<script>alert(1)</script>';const priceHtml=renderToStaticMarkup(React.createElement(WebsiteView,{site:priceSite,page:priceSite.pages[0]}));assert.ok(priceHtml.includes('&lt;script&gt;alert(1)&lt;/script&gt;'));assert.ok(!priceHtml.includes('<script>alert(1)</script>'));
+console.log('PASS pricing: 9 plans and 10 add-ons preserve prices; full page validates and renders in all 14 templates, adopts theme colors, clones independently, rejects oversized pricing data and escapes HTML.');

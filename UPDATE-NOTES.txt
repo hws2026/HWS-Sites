@@ -1,3 +1,83 @@
+SECURITY SAFEGUARDS & PRICING LIBRARY — OCTOBER 23, 2026
+
+SOURCE UPDATE ONLY — NOT DEPLOYED LIVE.
+Upload the complete contents, including .github. Start a NEW Deploy Cloudflare
+backend workflow from main and deploy GitHub Pages from the same commit. The
+backend applies pending migrations 0012 and 0013 automatically. Existing server
+secrets must be preserved. No paid service or new secret was added.
+
+- Security alerts send FROM security@huskysol.com TO awilson2951@gmail.com.
+  Welcome emails still send from onboarding@huskysol.com.
+- Wrong passwords are throttled; they never trigger a suite-wide shutdown.
+  Sustained authenticated probing of restricted admin areas holds only the
+  offending account. Only the primary owner can take the whole suite offline.
+- Owner recovery and audit access remain at /#/security, including on mobile.
+  Other admins can view; only the primary owner can manage restrictions or purge.
+- Alerts repeat approximately every 15 minutes until acknowledged. Acknowledging
+  stops reminders without restoring access. Email-provider errors show in the UI.
+- Updated dependencies, bounded request bodies, upload signature checks, and a
+  production browser script policy. See SECURITY-REVIEW.txt for scope, encryption,
+  test results and remaining advisory limitations. This is not a hack-proof claim.
+- Added the supplied pricing HTML as editable native content: nine plans, ten
+  add-ons, shared features and billing notes. Editor -> Library -> Pages ->
+  Pricing & plans adds the full page. Sections -> Commerce adds pricing cards or
+  add-ons individually; Pricing billing notes is also available in the library.
+  Use the right inspector to edit prices, periods, badges and feature lists.
+  Cards use the current website's accent, fonts and colors; mobile stacks them.
+  This display content does not create payments or change account allowances.
+- All earlier profile, onboarding, audit, refresh and template work remains.
+  Original photo-booth files were not changed. Private audit exports are excluded.
+- HoneyBook sync is ON HOLD. Stop after delivering this ZIP until the owner asks.
+
+PRIOR UPDATE DETAILS FOLLOW
+
+PROFILE, ONBOARDING, AUDIT & REFRESH UPDATE — OCTOBER 23, 2026
+
+THIS PACKAGE IS SOURCE CODE, NOT A LIVE DEPLOYMENT.
+Upload the complete contents, including .github. Run the NEWEST main version of
+Deploy Cloudflare backend (not a rerun of an old job), then deploy GitHub Pages.
+The backend workflow applies migration 0012 automatically. No new secrets or
+paid services are needed. Existing server secrets must remain in Cloudflare.
+
+IN THIS RELEASE
+- A customer switches from Onboarding to Active after changing any required
+  temporary password and accepting every current policy. Completion is timestamped.
+  Opening Customers also reconciles accounts that finished before this fix.
+  Paused/archived customers are not automatically reactivated.
+- Profile photo/name/password settings open from the top-left account button.
+  Admins, customers, and staff can update their own profiles. Uploaded photos
+  are cropped/resized, and stored encrypted. Email/phone fields are read-only.
+  Normal password changes require the current password.
+- Workspace identity moves to the desktop header's right side. The desktop
+  Mobile workspace link is removed. Mobile sessions still use the mobile workspace.
+- Audit filters run on the server, so failed sign-ins do not disappear behind
+  the newest 100 general activity records. The open log refreshes every 15 seconds.
+  Unreadable old encrypted details no longer break the entire event list.
+- Only the configured primary owner can delete an audit entry or purge the
+  audit log. Other administrators retain view access. Deletion needs typed
+  confirmation, keeps newer activity and policy acceptance records, and writes
+  a deletion receipt. No live records were purged while preparing this update.
+- Empty geolocation coordinates now stay unavailable instead of turning into
+  zero degrees. IP locations are labeled as estimates and use a wider map,
+  without a house-level pin. This cannot guarantee a person's physical location.
+- Refresh keeps the current admin/customer section, editor page and preview size,
+  editor panel, mobile billing area, selected form inbox and status, domain site,
+  billing filter, support conversation, and archive views in the URL.
+  Refresh does not automatically save unpublished/unsaved form or editor edits.
+- HoneyBook syncing is ON HOLD. This ZIP keeps the existing HoneyBook links;
+  it does not claim to connect a customer's HoneyBook account or sync payments.
+
+VERIFIED
+TypeScript check; production frontend/backend builds; 96 customer security,
+157 backend, and 44 mobile regression checks; browser checks for photo resizing,
+profile save, read-only contact fields, purge confirmation, audit filtering,
+and actual navigation/refresh in the suite and editor.
+A single fake-address live login test returned logged=true. Live audit data
+was not deleted. Direct database inspection was denied by the current local
+Cloudflare credential; deployment must use the configured GitHub workflow.
+
+PRIOR RELEASE NOTES (historical deployment statements below are not for this ZIP)
+
 CUSTOMER SERVICES UPDATE — OCTOBER 23, 2026
 
 LOGIN NOTICE: The always-visible security notice has been removed. Invalid

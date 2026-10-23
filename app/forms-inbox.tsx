@@ -1,4 +1,5 @@
 'use client';
+import {readViewState,replaceViewState} from '@/lib/view-state';
 import {useEffect,useState} from 'react';
 import {Download,RefreshCw,Inbox} from 'lucide-react';
 import {apiFetch} from '@/lib/client-runtime';
@@ -7,9 +8,10 @@ import type {FormSubmission} from '@/lib/form-model';
 type Site={id:string;title:string;archived?:number;role?:string};
 export function FormsInbox({sites,initialSiteId=''}:{sites:Site[];initialSiteId?:string}){
  const available=sites.filter(s=>!s.archived&&s.role!=='viewer');
- const [siteId,setSiteId]=useState(initialSiteId||available[0]?.id||''),[status,setStatus]=useState('new'),[offset,setOffset]=useState(0),[items,setItems]=useState<Omit<FormSubmission,'answers'>[]>([]),[total,setTotal]=useState(0),[detail,setDetail]=useState<FormSubmission|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[version,setVersion]=useState(0);
+ const [siteId,setSiteId]=useState(()=>readViewState('formSite')||initialSiteId||available[0]?.id||''),[status,setStatus]=useState(()=>['new','read','archived','all'].includes(readViewState('formStatus'))?readViewState('formStatus'):'new'),[offset,setOffset]=useState(()=>Math.max(0,Math.min(100000,Math.floor(Number(readViewState('formOffset'))||0)))),[items,setItems]=useState<Omit<FormSubmission,'answers'>[]>([]),[total,setTotal]=useState(0),[detail,setDetail]=useState<FormSubmission|null>(null),[busy,setBusy]=useState(false),[error,setError]=useState(''),[version,setVersion]=useState(0);
  const selected=available.some(s=>s.id===siteId)?siteId:available[0]?.id||'';
  const endpoint='/api/forms?siteId='+encodeURIComponent(selected);
+ useEffect(()=>{if(selected)replaceViewState({formSite:selected,formStatus:status,formOffset:String(offset)});},[selected,status,offset]);
  useEffect(()=>{if(!selected)return;const abort=new AbortController();setBusy(true);setError('');setDetail(null);void apiFetch(endpoint+'&status='+status+'&offset='+offset,{signal:abort.signal}).then(responseJson<{responses:typeof items;total:number}>).then(data=>{if(!abort.signal.aborted){setItems(data.responses);setTotal(data.total);}}).catch(e=>{if(!abort.signal.aborted){setItems([]);setError(failureReason(e));}}).finally(()=>{if(!abort.signal.aborted)setBusy(false);});return()=>abort.abort();},[selected,status,offset,version]);
  async function open(id:string){setBusy(true);setError('');try{setDetail(await responseJson<FormSubmission>(await apiFetch(endpoint+'&id='+encodeURIComponent(id))));}catch(e){setError(failureReason(e));}finally{setBusy(false);}}
  async function changeStatus(next:string){if(!detail)return;setBusy(true);setError('');try{await responseJson(await apiFetch(endpoint,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:detail.id,status:next})}));setVersion(v=>v+1);}catch(e){setError(failureReason(e));}finally{setBusy(false);}}

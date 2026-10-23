@@ -85,6 +85,20 @@
       "when": 1792727718627,
       "tag": "0011_amusing_hellion",
       "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "6",
+      "when": 1792731290986,
+      "tag": "0012_wealthy_rafael_vega",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "6",
+      "when": 1792732952910,
+      "tag": "0013_careless_zarda",
+      "breakpoints": true
     }
   ]
 }

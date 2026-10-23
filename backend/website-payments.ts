@@ -1,3 +1,4 @@
+import {boundedBytes,RequestSizeError} from '../lib/request-size';
 import {database,sitePermission} from '../lib/suite-store';
 import {visibleBlocks,type Website} from '../lib/editor-model';
 import {amountInMinorUnits,billingCurrencies} from '../lib/commerce-model';
@@ -112,7 +113,7 @@ export async function publicPayment(request:Request,env:MerchantEnv,siteId:strin
 
 export async function merchantWebhook(request:Request,env:MerchantEnv){try{
  if(request.method!=='POST')return json({error:'Method not allowed.'},405);if(!env.STRIPE_CONNECT_WEBHOOK_SECRET)return json({error:'Webhook is not configured.'},503);
- if(Number(request.headers.get('content-length')??0)>1000000)return json({error:'Event too large.'},413);const raw=await request.text();if(raw.length>1000000)return json({error:'Event too large.'},413);
+ let raw:string;try{raw=new TextDecoder().decode(await boundedBytes(request,1000000));}catch(error){if(error instanceof RequestSizeError)return json({error:'Event too large.'},413);throw error;}
  if(!await validSignature(raw,request.headers.get('stripe-signature'),env.STRIPE_CONNECT_WEBHOOK_SECRET))return json({error:'Invalid signature.'},400);
  const event=JSON.parse(raw) as {id:string;account:string;livemode:boolean;type:string;data:{object:{id:string}}};if(!event.id||!event.account||!event.data?.object?.id)return json({error:'Invalid connected-account event.'},400);
  // Connect can send both test and live events. Ignore the opposite mode without mutating anything.

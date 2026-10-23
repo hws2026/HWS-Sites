@@ -1,4 +1,5 @@
 'use client';
+import {readViewState,replaceViewState} from '@/lib/view-state';
 import {useEffect,useState} from 'react';
 import {CreditCard,Plus,RefreshCw,ExternalLink,ReceiptText,Pencil,X} from 'lucide-react';
 import {toast} from 'sonner';
@@ -7,8 +8,9 @@ import {billingCurrencies,intervalLabel,money,type BillingAgreement,type Billing
 import type {Customer} from '@/lib/suite-model';
 
 export function BillingPanel({demo,portal,customers}:{demo:boolean;portal:boolean;customers:Customer[]}){
- const [data,setData]=useState<BillingData|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[loading,setLoading]=useState(true),[filter,setFilter]=useState(''),[editing,setEditing]=useState<BillingAgreement|null>(null),[showForm,setShowForm]=useState(false);
+ const [data,setData]=useState<BillingData|null>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[loading,setLoading]=useState(true),[filter,setFilter]=useState(()=>readViewState('billingCustomer')),[editing,setEditing]=useState<BillingAgreement|null>(null),[showForm,setShowForm]=useState(false);
  const [customerId,setCustomerId]=useState(''),[label,setLabel]=useState('Website hosting & support'),[amount,setAmount]=useState(''),[currency,setCurrency]=useState('USD'),[interval,setInterval]=useState<BillingInterval>('month');
+ useEffect(()=>{replaceViewState({billingCustomer:filter});},[filter]);
  async function load(){setLoading(true);setError('');try{if(demo){setData({agreements:[],payments:[],customers,configured:false,portalConfigured:false,testMode:true,admin:!portal});return;}const r=await apiFetch('/api/billing');const result=await r.json() as BillingData&{error?:string};if(!r.ok)throw new Error(result.error);setData(result);}catch(e){setError(e instanceof Error?e.message:'Billing could not load.');}finally{setLoading(false);}}
  useEffect(()=>{void load();},[demo,portal]);
  async function action(payload:Record<string,unknown>){if(demo)return;setBusy(true);setError('');try{const r=await apiFetch('/api/billing',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const result=await r.json() as {error?:string;url?:string};if(!r.ok)throw new Error(result.error);if(result.url){window.location.assign(result.url);return;}setShowForm(false);setEditing(null);await load();toast.success('Billing updated.');}catch(e){setError(e instanceof Error?e.message:'Billing could not be updated.');}finally{setBusy(false);}}

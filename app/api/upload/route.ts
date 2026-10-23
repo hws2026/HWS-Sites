@@ -1,7 +1,7 @@
 import {rejectForeignOrigin} from '@/lib/request-guard';
 import {backendEnv} from '@/lib/server-context';
 import {putMediaObject, deleteMediaObjects, MediaStorageError} from '@/lib/media-storage';
-import {validateMedia} from '@/lib/media-policy';
+import {validateMedia,mediaSignatureMatches} from '@/lib/media-policy';
 import {NextRequest, NextResponse} from 'next/server';
 import {identity, sitePermission, database} from '@/lib/suite-store';
 
@@ -17,10 +17,13 @@ async function store(req: NextRequest, siteId: string, filename: string, size: n
   // Enforce the actual byte count while streaming a known-length body to storage.
   const stream = new FixedLengthStream(size);
   let incomplete = false, received = 0;
+  let signatureChecked=false,validationError:MediaStorageError|undefined;
+  const prefix=new Uint8Array(12),pending:Uint8Array[]=[];let prefixSize=0;
+  const verify=()=>{if(!mediaSignatureMatches(prefix.slice(0,prefixSize),type)){validationError=new MediaStorageError('The file contents do not match its type. Choose a valid image, video, or PDF.',415);throw validationError;}signatureChecked=true;};
   const counted = body.pipeThrough(new TransformStream<Uint8Array, Uint8Array>({
-    transform(chunk, controller) { received += chunk.byteLength; if (received > size) { incomplete = true; throw new Error('Upload size mismatch'); } controller.enqueue(chunk); },
-    flush() { if (received !== size) { incomplete = true; throw new Error('Upload size mismatch'); } },
-  }));
+    transform(chunk, controller) { received += chunk.byteLength; if (received > size) { incomplete = true; throw new Error('Upload size mismatch'); } if(signatureChecked){controller.enqueue(chunk);return;}const take=Math.min(12-prefixSize,chunk.length);prefix.set(chunk.slice(0,take),prefixSize);prefixSize+=take;pending.push(chunk);if(prefixSize===12){verify();pending.forEach(part=>controller.enqueue(part));pending.length=0;} },
+    flush(controller) { if (received !== size) { incomplete = true; throw new Error('Upload size mismatch'); }if(!signatureChecked){verify();pending.forEach(part=>controller.enqueue(part));} },
+  }),{preventCancel:true});
   const pipe = counted.pipeTo(stream.writable, {signal: abort.signal}).catch(error => { incomplete = !abort.signal.aborted; throw error; });
   try {
     await Promise.all([pipe, putMediaObject(env, key, stream.readable, type, size, abort.signal)]);
@@ -33,9 +36,15 @@ async function store(req: NextRequest, siteId: string, filename: string, size: n
     }
     return NextResponse.json({url: `/media/${id}`});
   } catch (error) {
+    if(validationError)throw validationError;
     if (incomplete) throw new MediaStorageError('The upload was interrupted or its size did not match. Select the file again and retry.', 400);
     throw error;
-  } finally { abort.abort(); await stream.readable.cancel().catch(() => {}); await pipe.catch(() => {}); }
+  } finally {
+    abort.abort();await stream.readable.cancel().catch(()=>{});await pipe.catch(()=>{});
+    // Complete a bounded incoming request after early provider rejection so the
+    // browser receives the useful JSON error instead of a reset upload socket.
+    if(received<size&&!body.locked){const reader=body.getReader();const timer=setTimeout(()=>void reader.cancel().catch(()=>{}),5000);try{for(;;){const {done,value}=await reader.read();if(done)break;received+=value.length;if(received>size){await reader.cancel();break;}}}catch{}finally{clearTimeout(timer);reader.releaseLock();}}
+  }
 }
 
 function failure(error: unknown) {

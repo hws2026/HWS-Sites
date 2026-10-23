@@ -82,7 +82,9 @@ try {
   const readsBefore = storageReads; assert.equal((await request(imageUrl, undefined, 'other-token')).status, 404); assert.equal(storageReads, readsBefore); pass('cross-customer image reads never reach storage');
   assert.equal((await mf.dispatchFetch('https://api.test/sites/' + siteId + imageUrl)).status, 404); pass('unpublished images remain private');
   const second = await upload(); assert.equal(second.status, 200); const privateUrl = (await second.json()).url;
-  async function rawUpload({type='video/mp4',size=bytes.length,body=bytes,token='editor-token',id=siteId,name='video.mp4'}={}) {
+  const mp4=new Uint8Array([0,0,0,24,102,116,121,112,109,112,52,50]);
+  async function rawUpload({type='video/mp4',size,body,token='editor-token',id=siteId,name='video.mp4'}={}) {
+    body??=type==='application/pdf'?new TextEncoder().encode('%PDF-1.7\n%%EOF'):type==='video/webm'?new Uint8Array([26,69,223,163,0,0,0,0,0,0,0,0]):mp4;size??=body.length;
     return mf.dispatchFetch('https://api.test/api/upload?' + new URLSearchParams({siteId:id,filename:name,size:String(size)}), {method:'PUT', headers:{Origin:'https://front.test','Content-Type':type,...(token?{Authorization:'Bearer '+token}:{})}, body});
   }
   const beforeInvalid = storageWrites;
@@ -92,7 +94,7 @@ try {
   assert.equal((await rawUpload({token:'other-token'})).status,403);
   assert.equal((await rawUpload({token:'other-token',id:secondSiteId})).status,403);
   assert.equal(storageWrites,beforeInvalid); pass('streamed uploads reject oversize, empty, unsafe, anonymous and unauthorized files before storage');
-  const large = new Uint8Array(50*1024*1024); large.set(bytes);
+  const large = new Uint8Array(50*1024*1024); large.set(mp4);
   response = await rawUpload({size:large.length,body:large});
   assert.equal(response.status,200); const videoUrl=(await response.json()).url;
   assert.equal(stored.get((await db.prepare('SELECT key FROM media WHERE id=?').bind(videoUrl.split('/').at(-1)).first()).key).length,large.length);
@@ -107,7 +109,7 @@ try {
   response=await mf.dispatchFetch('https://api.test'+videoUrl,{headers:{Authorization:'Bearer editor-token',Range:'bytes=2-5'}});assert.equal(response.status,206);assert.equal(response.headers.get('content-range'),`bytes 2-5/${large.length}`);assert.deepEqual(new Uint8Array(await response.arrayBuffer()),large.slice(2,6));pass('private videos support byte-range seeking');
   response=await mf.dispatchFetch('https://api.test'+videoUrl,{headers:{Authorization:'Bearer other-token',Range:'bytes=2-5'}});assert.equal(response.status,404);pass('range requests preserve customer isolation');
   response=await mf.dispatchFetch('https://api.test'+videoUrl,{headers:{Authorization:'Bearer editor-token',Range:'bytes=1-3,5-7'}});assert.equal(response.status,416);pass('multi-range requests are rejected');
-  bucketLimit=8*1024*1024;response=await rawUpload({size:9*1024*1024,body:new Uint8Array(9*1024*1024)});assert.equal(response.status,413);assert.match((await response.json()).error,/still limited to 8 MB/);bucketLimit=50*1024*1024;pass('outdated bucket limits explain exactly what to fix');
+  bucketLimit=8*1024*1024;response=await rawUpload({size:9*1024*1024,body:large.subarray(0,9*1024*1024)});assert.equal(response.status,413);assert.match((await response.json()).error,/still limited to 8 MB/);bucketLimit=50*1024*1024;pass('outdated bucket limits explain exactly what to fix');
   uploadFailure=true;uploadStatus=413;response=await rawUpload();assert.equal(response.status,413);assert.match((await response.json()).error,/50 MB/);
   uploadStatus=403;response=await rawUpload();assert.equal(response.status,503);assert.match((await response.json()).error,/storage key/);
   uploadFailure=false;uploadStatus=503;pass('provider size and authorization failures return actionable errors');

@@ -1,3 +1,4 @@
+import {SecurityPanel} from '@/app/admin/security-panel';
 import {Onboarding} from './onboarding';
 import {StaffWorkspace} from '@/app/admin/customer-center';
 import '@/app/customer-services.css';
@@ -47,6 +48,7 @@ function AccountHome(){
 function RoutedApp({route}:{route:string}){
  const path=route.split('?')[0];
  if(path==='/')return <AccountHome/>;
+ if(path==='/security')return hasSession()?<main className="security-recovery"><a className="button" href={appHref('/')}>Back to workspace</a><a className="button" href={appHref('/signout')}>Sign out</a><SecurityPanel/></main>:<Redirect to='/signin?return_to=%2Fsecurity'/>;
  if(path==='/onboarding')return hasSession()?<Onboarding/>:<Redirect to='/signin'/>;
  if(path==='/team-workspace')return hasSession()?<StaffWorkspace/>:<Redirect to='/signin'/>;
  if(path==='/signout')return <SignOut/>;
@@ -70,7 +72,7 @@ function RoutedApp({route}:{route:string}){
  return <main className="publication-empty"><h1>Page not found</h1><a href={appHref('/')}>Return to sign in</a></main>;
 }
 function AccessGate({route,children}:{route:string;children:React.ReactNode}){
- const path=route.split('?')[0],protectedRoute=['/','/admin','/portal','/mobile','/team-workspace'].includes(path)||path.startsWith('/editor/')&&!path.startsWith('/editor/demo-');
+ const path=route.split('?')[0],protectedRoute=['/','/admin','/portal','/mobile','/team-workspace','/security'].includes(path)||path.startsWith('/editor/')&&!path.startsWith('/editor/demo-');
  const [checked,setChecked]=useState(''),[error,setError]=useState('');
  useEffect(()=>{if(!protectedRoute||!hasSession())return;let live=true;setError('');void apiFetch('/api/me').then(async r=>{const d=await r.json() as {error?:string;onboardingRequired?:boolean;role:string};if(!r.ok)throw new Error(d.error??'Account verification failed.');if(!live)return;if(d.onboardingRequired){window.location.hash='/onboarding';return;}if((d.role==='support'||d.role==='billing')&&path!=='/team-workspace'){window.location.hash='/team-workspace';return;}setChecked(route);}).catch(e=>{if(live)setError(e.message);});return()=>{live=false;};},[route,protectedRoute,path]);
  if(protectedRoute&&hasSession()&&checked!==route)return <main className="publication-empty">{error?<><p role="alert">{error}</p><a href={appHref('/signin')}>Sign in again</a></>:<p role="status">Verifying account access…</p>}</main>;

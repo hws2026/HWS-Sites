@@ -1,4 +1,22 @@
-# GitHub Pages + Cloudflare + Supabase
+# October 23 security safeguards and pricing library update
+
+This package is **not deployed**. Follow UPLOAD-README.txt. Run a **new** backend workflow from the latest main commit and confirm Pages is green for that same commit. Pending migrations include `0012_wealthy_rafael_vega.sql` and `0013_careless_zarda.sql`. The pricing module requires the matching backend validator.
+
+The backend checks security alerts every minute; actual emails repeat approximately every 15 minutes until acknowledged. Ordinary customer reminders and rate-limit cleanup remain hourly. `SECURITY_ALERT_EMAIL=awilson2951@gmail.com` and `SECURITY_EMAIL_FROM=Husky Suite Security <security@huskysol.com>` are included public configuration; optional Actions variables can override them. `EMAIL_FROM` remains the onboarding sender. Existing `RESEND_API_KEY` and `HWS_DATA_KEY` secrets must remain intact. No new secret or paid service is required.
+
+The primary owner's recovery page is `https://suite.huskysol.com/#/security`. Only the primary owner can manually enable global maintenance; repeated bad passwords never do so. Read SECURITY-REVIEW.txt for encryption coverage, detection limits, email behavior, remaining development advisory and verification. Keep npm postinstall enabled for the included development-tool mitigation. HoneyBook stays on hold.
+
+# Previous update notes
+
+# October 23 profile, onboarding, audit, and refresh update
+
+This source package has **not** been deployed. Deploy its backend and frontend together. After pushing the complete source to GitHub, start a **new** `Deploy Cloudflare backend` run from **main**, then confirm the Pages deployment is green for the same commit. Do not rerun an old workflow run: it uses the old source revision.
+
+Migration `0012_wealthy_rafael_vega.sql` adds encrypted account profiles and onboarding completion timestamps. The backend workflow applies it automatically. No new secrets are needed. The existing GitHub deployment credential is `CLOUDFLARE_API_TOKEN`; Worker secrets are separate and must be preserved.
+
+The current local Wrangler credential was denied database inspection with Cloudflare code 7403, so no live database migration or new Worker deployment was attempted for this package. Backend tests used an isolated local database. HoneyBook sync remains on hold.
+
+# Existing deployment reference
 
 The editor, your platform admin panel, customer portal and visitor viewer build into `pages-dist`. Hash routes support refreshes under `/HWS-Sites/` without server rewrites. Cloudflare runs the API, D1 database and hourly reminder scheduler. Supabase handles private image storage, email/password sign-in, confirmation and password reset. R2 is not required by this deployment.
 

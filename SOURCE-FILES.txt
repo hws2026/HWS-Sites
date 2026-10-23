@@ -8,16 +8,21 @@
 CUSTOMER-SETUP-README.txt
 DEPLOYMENT.md
 README.md
+SECURITY-REVIEW.txt
 SOURCE-FILES.txt
 UPDATE-NOTES.txt
 UPLOAD-README.txt
+app/account-profile.css
+app/account-profile.tsx
 app/admin/billing-panel.tsx
 app/admin/customer-center.tsx
 app/admin/customers-panel.tsx
 app/admin/domains-panel.tsx
 app/admin/honeybook-panel.tsx
+app/admin/incident-panel.tsx
 app/admin/page.tsx
 app/admin/reminders-panel.tsx
+app/admin/security-panel.tsx
 app/admin/site-start-fields.tsx
 app/admin/storage-check.tsx
 app/admin/suite.tsx
@@ -58,6 +63,7 @@ app/navigation-editor.tsx
 app/page.tsx
 app/payment-settings.tsx
 app/portal/page.tsx
+app/pricing-fields.tsx
 app/site-image.tsx
 app/social-links-editor.tsx
 app/social-links.tsx
@@ -85,7 +91,9 @@ backend/customer-services.ts
 backend/domains.ts
 backend/forms.ts
 backend/http.ts
+backend/incidents.ts
 backend/mobile.ts
+backend/profile.ts
 backend/public-site.ts
 backend/reminders.ts
 backend/security.ts
@@ -179,6 +187,8 @@ drizzle/0008_thin_nicolaos.sql
 drizzle/0009_normal_old_lace.sql
 drizzle/0010_dashing_monster_badoon.sql
 drizzle/0011_amusing_hellion.sql
+drizzle/0012_wealthy_rafael_vega.sql
+drizzle/0013_careless_zarda.sql
 drizzle/meta/0000_snapshot.json
 drizzle/meta/0001_snapshot.json
 drizzle/meta/0002_snapshot.json
@@ -191,6 +201,8 @@ drizzle/meta/0008_snapshot.json
 drizzle/meta/0009_snapshot.json
 drizzle/meta/0010_snapshot.json
 drizzle/meta/0011_snapshot.json
+drizzle/meta/0012_snapshot.json
+drizzle/meta/0013_snapshot.json
 drizzle/meta/_journal.json
 eslint.config.mjs
 examples/d1/app/api/notes/route.ts
@@ -228,6 +240,7 @@ lib/reference-appearance.ts
 lib/reference-inventory.ts
 lib/reference-pages.ts
 lib/request-guard.ts
+lib/request-size.ts
 lib/school-navigation.ts
 lib/server-context.ts
 lib/site-calendar.ts
@@ -242,6 +255,7 @@ lib/template-palette.ts
 lib/template-start.ts
 lib/templates.ts
 lib/utils.ts
+lib/view-state.ts
 lib/website-navigation.ts
 lib/website-payment-model.ts
 next.config.ts
@@ -380,6 +394,7 @@ scripts/connector-preview/protocol.mjs
 scripts/deploy-domains.mjs
 scripts/device-browser-fixture.js
 scripts/execution-profile.mjs
+scripts/harden-build-dependencies.mjs
 scripts/install-ci.mjs
 scripts/install-ci.sh
 scripts/install-pnpm.sh
@@ -394,6 +409,7 @@ scripts/sites-env.mjs
 scripts/sites-env.sh
 scripts/verify-api.mjs
 scripts/verify-backend.mjs
+scripts/verify-build-security.mjs
 scripts/verify-calendar.mjs
 scripts/verify-commerce.mjs
 scripts/verify-creation.mjs
@@ -417,11 +433,13 @@ scripts/verify-mobile.tsx
 scripts/verify-payments.html
 scripts/verify-payments.tsx
 scripts/verify-publication.mjs
+scripts/verify-security-hardening.mjs
 scripts/verify-source.mjs
 scripts/verify-storage.mjs
 scripts/verify-templates.mjs
 scripts/verify-upload.mjs
 scripts/verify-website-payments.mjs
+templates/hws-studio-pricing.original.html
 tsconfig.json
 vendor/shadcn-tailwind-4.13.0.LICENSE.md
 vendor/shadcn-tailwind-4.13.0.css

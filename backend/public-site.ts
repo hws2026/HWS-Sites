@@ -1,3 +1,5 @@
+import {suiteLocked,holdResponse} from './incidents';
+import type {Env} from './worker';
 import {publicPayment,type MerchantEnv} from './website-payments';
 import {visitorWebsite} from '../lib/publication';
 import {submitPublicForm} from './forms';
@@ -13,6 +15,7 @@ export async function publicSite(request:Request,env:BackendEnv&MerchantEnv):Pro
  let record=await db.prepare('SELECT d.site_id,d.status,s.published,MAX(s.archived,COALESCE((SELECT c.archived FROM customers c WHERE c.id=s.customer_id AND c.owner=s.owner),0)) archived,COALESCE(p.enabled,0) enabled FROM site_domains d JOIN client_sites s ON s.id=d.site_id LEFT JOIN site_publications p ON p.site_id=s.id WHERE d.hostname=?').bind(url.hostname).first<{site_id:string;status:string;published:string|null;archived:number;enabled:number}>();
  let basePath='',path=url.pathname;
  if(!record){const match=path.match(/^\/sites\/([a-zA-Z0-9-]+)(?:\/(.*))?$/);if(!match)return null;basePath='/sites/'+match[1];path='/'+(match[2]??'');record=await db.prepare("SELECT s.id site_id,'active' status,s.published,MAX(s.archived,COALESCE((SELECT c.archived FROM customers c WHERE c.id=s.customer_id AND c.owner=s.owner),0)) archived,COALESCE(p.enabled,0) enabled FROM client_sites s LEFT JOIN site_publications p ON p.site_id=s.id WHERE s.id=?").bind(match[1]).first();if(!record)return unavailable();}
+ if(await suiteLocked(env as Env))return holdResponse('suite');
  if(record.status!=='active'||record.archived||!record.enabled||!record.published)return unavailable();
  const site=visitorWebsite(JSON.parse(record.published) as Website);
  if(url.protocol==='http:'&&!['localhost','127.0.0.1'].includes(url.hostname)){url.protocol='https:';return Response.redirect(url.href,308);}

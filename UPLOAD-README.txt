@@ -1,15 +1,23 @@
-HUSKY SUITE — COMPLETE SOURCE UPLOAD
+HUSKY SUITE — COMPLETE SOURCE UPLOAD — OCTOBER 23, 2026
 
-OCTOBER 23 CUSTOMER SERVICES UPDATE: the Cloudflare backend and database are
-already updated. Upload the frontend source below, then see CUSTOMER-SETUP-README.txt
-for the owner-only Enable customer setup step and policy-document readiness notes.
+THIS UPDATE NEEDS BOTH BACKEND AND FRONTEND DEPLOYMENT.
+The new backend/database changes in this package have not been deployed live.
+No new paid service or secret is required. Existing Cloudflare server secrets
+stay in Cloudflare; this ZIP does not include them.
 
-The manual "Deploy Cloudflare backend" workflow also needs a separate GitHub
-Actions secret named CLOUDFLARE_API_TOKEN. Backend secrets saved in Cloudflare
-do not sign GitHub in. The corrected workflow checks this before installing or
-building, and reads the public account ID from the included configuration.
-For this release the backend/database are already updated; deploy the frontend
-with "Deploy suite to GitHub Pages". See DEPLOYMENT.md for future backend setup.
+1. Extract this ZIP and copy its CONTENTS into your repository root (beside
+   package.json), including the hidden .github folder. Keep your .git folder.
+2. Commit and use normal Push / Sync Changes in VS Code.
+3. GitHub -> Actions -> Deploy Cloudflare backend -> Run workflow -> main.
+   Start a NEW run using the latest commit; do not rerun a historical job.
+   It applies pending migrations 0012 and 0013 and deploys the matching backend.
+4. Confirm Deploy suite to GitHub Pages is green for that same latest commit.
+   Refresh suite.huskysol.com after both deployments finish.
+
+See UPDATE-NOTES.txt and SECURITY-REVIEW.txt for the change list and security
+limitations. Pricing cards need this matching backend before they can be saved.
+Security email: security@huskysol.com -> awilson2951@gmail.com.
+HoneyBook sync is on hold.
 
 Use HWS-Sites-COMPLETE.zip for folder-based uploads. Update-only ZIPs do not
 contain the whole application and must never replace a repository folder.
@@ -25,7 +33,7 @@ For future updates:
 3. Run npm run verify:source, then npm run typecheck.
 4. Stage all changed files, commit, and use normal Push / Sync Changes.
    Do not force-push. If the push is rejected, fetch/pull the newer commits.
-5. Check GitHub Actions -> Deploy suite to GitHub Pages for a green result.
+5. Check BOTH current backend and GitHub Pages workflows for a green result.
 
 The upload guard is installed inside .git in the repaired local checkout,
 so replacing source folders cannot remove the installed guard. For another

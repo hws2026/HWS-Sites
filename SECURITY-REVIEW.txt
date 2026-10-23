@@ -1,0 +1,157 @@
+HUSKY SUITE — SECURITY REVIEW AND UPDATE
+Prepared October 23, 2026
+
+STATUS AND SCOPE
+This is a source-code update, not a live deployment or a promise that the system
+cannot be hacked. Review covered the supplied frontend/backend source, package
+advisories, local integration tests, and read-only Supabase security/storage
+checks. No live account was restricted, no customer data was deleted, and no real
+security alert was sent. External provider access settings were not exhaustively
+audited. Install and verify this release before relying on its new safeguards.
+
+WHAT WAS FIXED
+1. Updated vulnerable application and build dependencies. A clean npm ci completed
+   and the production frontend and local backend builds passed. The production
+   dependency advisory scan reported zero known advisories at review time.
+2. Added limits on streamed request bodies. Login, JSON APIs and signed-payment
+   webhook requests stop reading when they exceed their limit; a missing or false
+   Content-Length cannot bypass these limits.
+3. Media uploads check file signatures instead of trusting a supplied MIME type.
+   HTML masquerading as an image is rejected. Existing JPEG, PNG, GIF, WebP, MP4,
+   WebM and PDF support and the 50 MB per-file ceiling remain. Storage failures
+   return an understandable response without unnecessarily resetting the upload.
+   Signature validation is not malware scanning or a guarantee of safe content.
+4. Added a production Content Security Policy to the suite entry page. It blocks
+   arbitrary inline scripts/eval and object embeds, while allowing the exact
+   trusted imported-template behavior. The login and imported template navigation,
+   accordion and form-preview adapter were checked in the production build.
+   Styles and HTTPS media/frames remain flexible for customer website editing.
+5. Added the incident system described below, with server-verified owner recovery,
+   account-specific restrictions and controlled email retries.
+6. New pricing content is native, validated editor data. The uploaded HTML is a
+   source reference, not executable code injected into customer pages. Pricing
+   labels/features render as escaped text; oversized/invalid data is rejected.
+
+WHAT TRIGGERS AN INCIDENT
+Ordinary wrong passwords use the existing temporary sign-in rate limits and audit
+log. They do NOT automatically open an incident, email every typo, or shut down
+other customers' websites.
+
+A verified signed-in account that receives at least 12 permission denials across
+at least three restricted administrative API areas within ten minutes is placed
+on an account-only hold. These areas are platform administration, team, security,
+customer services and reminders. Other accounts and public websites remain online.
+The primary owner is excluded so recovery stays available. This narrow rule is a
+signal for review, not proof of a breach and not a general AI/hacker detector.
+Restoring access ignores earlier incident events when evaluating a new hold.
+
+Only the primary owner can deliberately enable full emergency maintenance, after
+typing TAKE SUITE OFFLINE. This blocks customer/staff workspace requests, new
+public-site requests, forms and checkout. It does not retract content already
+loaded or downloaded. The login shell, health endpoint and owner recovery remain
+available. Verified payment-provider webhooks continue to preserve payment records.
+Application maintenance cannot repair a compromised provider account or deployment.
+
+OWNER CONTROLS AND EMAIL
+Recovery address: https://suite.huskysol.com/#/security
+Desktop: Security & audit log. The owner recovery route also works on mobile.
+
+Security sender: Husky Suite Security <security@huskysol.com>
+Security recipient: awilson2951@gmail.com
+Welcome/onboarding sender remains: Husky Suite <onboarding@huskysol.com>
+
+A new incident queues an alert. One combined reminder is sent approximately every
+15 minutes while any incident is unacknowledged. The scheduler checks every minute;
+provider/scheduler delays or quotas can delay delivery. One database claim prevents
+concurrent scheduler calls sending the same reminder. Failed/uncertain sends retry
+with the same provider idempotency key and exact payload. Provider failures appear
+in the security panel. Mail failure does not remove a restriction.
+
+Opening the panel is not acknowledgment. Acknowledge & stop reminders stops alerts
+for that incident but keeps its hold. Review & restore access requires RESTORE
+ACCESS and removes that hold. Other admins can view incidents; only the configured
+primary owner can acknowledge, restore, or enable full maintenance. Audit-purge
+permissions remain owner-only, and purging audit entries does not erase incidents.
+
+Security emails omit passwords, IP addresses and detailed customer records. The
+new sender uses the existing verified huskysol.com Resend domain and existing
+RESEND_API_KEY. No new mailbox, paid plan, or secret was created. This release was
+verified with a simulated provider; real inbox delivery must be checked after
+deployment. Provider acceptance does not guarantee inbox placement.
+
+ENCRYPTION — WHAT IS AND IS NOT COVERED
+- Production requests use HTTPS.
+- Supabase stores password hashes, not recoverable plaintext passwords.
+- Cloudflare D1 encrypts stored database data at rest.
+- The app additionally uses AES-256-GCM with unique nonces and context binding for
+  audit details (email/IP/location/device), policy-acceptance context, support
+  messages, account profile information and saved HoneyBook link URLs.
+- Customer contact records, form responses/attachments, website JSON and billing
+  metadata are not individually encrypted by that extra app layer. They rely on
+  provider storage encryption and server-side access controls.
+- Uploaded media uses a private Supabase bucket and authenticated/public-site
+  gateway access checks. Published website content is intentionally public.
+- This is not end-to-end encryption. Backend services can read data needed to
+  operate the suite. Invitation emails necessarily pass a temporary password
+  through the sending provider; it is not retained in the suite audit log.
+- Preserve the existing HWS_DATA_KEY secret. Replacing it without a migration can
+  make existing encrypted records unreadable. No secret keys are in this ZIP.
+
+REMAINING FINDINGS AND LIMITATIONS
+A. One upstream development-tool advisory remains: GHSA-vfj7-8cjw-p6xm (braces
+   3.0.3, deep recursive parsing/walking). npm reports eight high entries because
+   it also lists packages depending on braces. These are development dependencies,
+   not production dependencies. No patched upstream version was available at
+   review time. The root postinstall script applies a local nesting limit to
+   parse/compile/expand/stringify. Tests confirm deeply nested patterns/ASTs are
+   rejected while ordinary expansion works. Keep postinstall enabled. npm still
+   displays the advisory because it sees the upstream version number. Review and
+   replace the local patch when an upstream fix becomes available.
+B. Supabase's security advisor reports leaked-password protection disabled.
+   Its documented availability requires a paid plan. No plan was upgraded or
+   charge incurred. Strong unique passwords and MFA on provider/owner accounts
+   remain advisable; this update does not configure an MFA sign-in flow.
+C. IP geolocation is approximate and can represent an ISP, cellular gateway or
+   VPN. It cannot reliably identify a house, person, street or actual device.
+D. Suite audit/throttling covers suite API sign-ins; Supabase's direct Auth API
+   has its own provider controls. The suite does not observe all provider traffic.
+E. No safeguard can guarantee detection of every attack or zero false positives.
+   Owner identity bypass preserves recovery but does not protect a stolen owner
+   account. Keep provider accounts and the owner login secure.
+F. Free email/database/hosting quotas still apply. No paid service was added.
+
+VERIFICATION
+- Clean npm ci, TypeScript check, production frontend build, backend dry-run build.
+- 548 local backend regression checks across security, customers, publishing,
+  forms, mobile access, uploads, domain management and payment adapters. These use
+  test identities, local databases and mock providers; no real charges or emails.
+- Production script policy and development dependency mitigation checks.
+- 403 template/module combinations and 1,356 reference/general pages rendered by
+  the template suite. Pricing validates with all 14 templates, including the
+  imported photo-booth template's native-section adapter.
+- All 74 original photo-booth source/assets remain byte-identical to the archive.
+- Browser checks: right-side price editing, full pricing page creation, one-column
+  phone layout without horizontal overflow, and the imported-template bridge.
+
+DEPLOYMENT
+Use the complete ZIP contents at the repository root, including .github. Keep
+.git. Commit and push normally; do not force-push or replace the repository with
+an update-only folder. Run a NEW Deploy Cloudflare backend workflow from main.
+It applies pending migrations, including 0012 and 0013, then deploys the Worker.
+Confirm the GitHub Pages workflow is green for the same source commit. Until the
+backend is updated, new pricing sections can fail validation on the old server.
+
+The release sets SECURITY_ALERT_EMAIL and SECURITY_EMAIL_FROM as non-secret
+configuration. Optional Actions variables with those exact names override the
+included defaults. Existing Resend/storage/encryption secrets remain server-side.
+The Worker cron changes to every minute for alert checks; normal reminder jobs
+and rate-limit cleanup still run on the hourly boundary.
+
+After deployment, check /#/security for the configured sender/recipient and
+email configuration. Do not deliberately lock the live suite merely to test mail.
+HoneyBook sync/payment integration remains on hold until the owner says ready.
+
+REFERENCES
+https://developers.cloudflare.com/d1/reference/data-security/
+https://supabase.com/docs/guides/auth/password-security
+https://github.com/advisories/GHSA-vfj7-8cjw-p6xm

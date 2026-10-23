@@ -1,4 +1,5 @@
 'use client';
+import {readViewState,replaceViewState} from '@/lib/view-state';
 import {useEffect,useState} from 'react';
 import {Globe,Plus,RefreshCw,Copy,ExternalLink} from 'lucide-react';
 import {toast} from 'sonner';
@@ -7,7 +8,8 @@ import type {DomainData,DomainRecord} from '@/lib/commerce-model';
 import type {ClientSite} from '@/lib/suite-model';
 
 export function DomainsPanel({demo,portal,sites}:{demo:boolean;portal:boolean;sites:ClientSite[]}){
- const [data,setData]=useState<DomainData|null>(null),[siteId,setSiteId]=useState(''),[domain,setDomain]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false),[loading,setLoading]=useState(true),[removing,setRemoving]=useState('');
+ const [data,setData]=useState<DomainData|null>(null),[siteId,setSiteId]=useState(()=>readViewState('domainSite')),[domain,setDomain]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false),[loading,setLoading]=useState(true),[removing,setRemoving]=useState('');
+ useEffect(()=>{if(siteId)replaceViewState({domainSite:siteId});},[siteId]);
  async function load(){setLoading(true);try{if(demo){setData({domains:[],sites:sites.filter(s=>!s.archived).map(s=>({id:s.id,title:s.title,enabled:0,is_published:s.is_published,can_manage:portal?0:1,can_publish:portal?0:1})),configured:false,target:'',admin:!portal});return;}const r=await apiFetch('/api/domains'),result=await r.json() as DomainData&{error?:string};if(!r.ok)throw new Error(result.error);setData(result);}catch(e){setError(e instanceof Error?e.message:'Domains could not load.');}finally{setLoading(false);}}
  useEffect(()=>{void load();},[demo,portal]);
  async function action(payload:Record<string,unknown>){setBusy(true);setError('');try{const r=await apiFetch('/api/domains',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}),result=await r.json() as {error?:string};if(!r.ok)throw new Error(result.error);if(payload.action==='add')setDomain('');setRemoving('');await load();toast.success(payload.action==='verify'?'Domain status checked.':'Domain settings saved.');}catch(e){setError(e instanceof Error?e.message:'Domain update failed.');await load();}finally{setBusy(false);}}

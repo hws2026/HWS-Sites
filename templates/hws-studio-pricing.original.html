@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore HWS Studio website plans, monthly and annual pricing, and add-on solutions for businesses, schools and organizations.">
+  <meta name="theme-color" content="#2020b7">
+  <title>Pricing &amp; Plans | HWS Studio</title>
+  <style>
+/*
+  HWS Studio — self-contained pricing page.
+  No JavaScript, external assets, links, buttons, forms, or billing toggles.
+  Edit the HTML below to change plan names, prices, features, or copy.
+  Each plan's colors are declared with --accent, --check, and --tint.
+  PRO I uses $290/year from the written pricing schedule, not the image's $220 typo.
+*/
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0c1736;
+  background: #e9eafe;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+svg { display: block; }
+h1, h2, h3, p { margin: 0; }
+
+.hws-pricing {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 26px clamp(14px, 1.6vw, 32px) 22px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #6630ee 0%, transparent 33%),
+    radial-gradient(ellipse at 7% 12%, #0649de 0%, transparent 38%),
+    linear-gradient(164deg, #0923a8 0%, #0a68ef 24%, #bcdcff 63%, #b696ff 100%);
+}
+.page-inner { position: relative; z-index: 1; max-width: 1920px; margin: 0 auto; }
+.background-art { position: absolute; z-index: 0; pointer-events: none; inset: 0; width: 100%; height: 100%; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.icon { width: 24px; height: 24px; flex: 0 0 auto; }
+
+/* Header */
+.hero {
+  display: grid;
+  grid-template-columns: 1.13fr 1fr;
+  align-items: center;
+  gap: 34px;
+  color: #fff;
+  padding: 4px 14px 35px;
+}
+.eyebrow {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #e5edff;
+}
+.hero h1 { font-size: clamp(44px, 4.8vw, 78px); line-height: 1.03; letter-spacing: -2.8px; font-weight: 800; }
+.hero-subtitle { margin-top: 9px; font-size: clamp(20px, 1.87vw, 31px); line-height: 1.2; letter-spacing: -.6px; }
+.hero-description { margin-top: 7px; font-size: clamp(13px, 1.1vw, 18px); line-height: 1.45; color: #eef3ff; }
+.benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.benefit { display: flex; align-items: flex-start; gap: 10px; }
+.benefit-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px #ffffff7a, 0 6px 16px #10278430;
+}
+.benefit-icon .icon { width: 25px; height: 25px; stroke-width: 2; }
+.benefit--templates .benefit-icon { background: linear-gradient(140deg, #c06bff, #7b08f5); }
+.benefit--manage .benefit-icon { background: linear-gradient(140deg, #05d7b2, #00a482); }
+.benefit--grow .benefit-icon { background: linear-gradient(140deg, #ffda48, #efa500); }
+.benefit h2 { padding-top: 3px; font-size: clamp(13px, 1.04vw, 18px); line-height: 1.22; letter-spacing: -.1px; }
+.benefit p { margin-top: 5px; font-size: clamp(11px, .84vw, 14px); line-height: 1.35; color: #eef2ff; }
+
+/* Nine plans, in the same left-to-right order as the graphic. */
+.plan-grid { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px; align-items: stretch; }
+.plan {
+  --accent: #bbc8df;
+  --check: #62799c;
+  --tint: #eaf0f9;
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--accent);
+  border-radius: 17px;
+  background: var(--tint);
+  box-shadow: 0 5px 16px #122a7920;
+}
+.plan--free { --accent: #d1def0; --check: #62799c; --tint: #eaf0f9; }
+.plan--starter { --accent: #42dfb0; --check: #00895f; --tint: #e0faef; }
+.plan--essentials { --accent: #39c6ff; --check: #0060de; --tint: #e4f7ff; }
+.plan--growth { --accent: #9c7eff; --check: #6024e8; --tint: #ede5ff; }
+.plan--pro-1 { --accent: #ffb45c; --check: #db5100; --tint: #fff0dc; }
+.plan--pro-2 { --accent: #ff65a2; --check: #dc0057; --tint: #ffe7f0; }
+.plan--premium-1 { --accent: #ffdc59; --check: #a87900; --tint: #fff8d5; }
+.plan--premium-2 { --accent: #46d7e6; --check: #008f99; --tint: #ddfafd; }
+.plan--enterprise { --accent: #b098ff; --check: #6020e9; --tint: #ece3ff; }
+.recommended {
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+  background: #e9005f;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .25px;
+  box-shadow: 0 4px 12px #ab064327;
+}
+.plan-heading { min-height: 106px; padding: 23px 9px 16px; text-align: center; }
+.plan-heading h3 { font-size: clamp(15px, 1.14vw, 20px); font-weight: 800; letter-spacing: -.5px; line-height: 1.2; color: #0d123b; }
+.plan-heading > p { max-width: 190px; margin: 10px auto 0; font-size: clamp(11.5px, .81vw, 14px); line-height: 1.35; }
+.plan-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px 22px;
+  border-radius: 14px 14px 16px 16px;
+  background: linear-gradient(162deg, #ffffffed 0%, #ffffffd9 48%, #ffffff24 100%);
+}
+.plan-price { min-height: 123px; padding: 20px 0 13px; text-align: center; }
+.monthly strong { display: block; font-size: clamp(32px, 2.55vw, 46px); letter-spacing: -1.5px; line-height: 1.05; font-weight: 800; color: #0c1230; }
+.monthly > span { display: block; margin-top: 5px; font-size: 14px; line-height: 1.3; }
+.annual { margin-top: 8px; font-size: clamp(11px, .86vw, 14px); line-height: 1.35; color: #283655; }
+.enterprise-price { padding-top: 16px; }
+.custom-price { font-size: clamp(24px, 1.82vw, 33px); line-height: 1.08; letter-spacing: -.7px; font-weight: 800; color: #150f56; }
+.enterprise-start { margin-top: 9px; font-size: clamp(10px, .76vw, 13px); line-height: 1.3; }
+.enterprise-start strong { font-weight: 600; }
+.enterprise-price .annual { font-size: clamp(9.5px, .7vw, 12px); margin-top: 5px; }
+.plan-features { flex: 1; list-style: none; padding: 3px 0 0; margin: 0; display: flex; flex-direction: column; gap: 13px; }
+.plan-features li { display: flex; align-items: flex-start; gap: 7px; font-size: clamp(11.8px, .85vw, 14.5px); line-height: 1.42; overflow-wrap: break-word; }
+.check { width: 15px; height: 16px; flex: 0 0 15px; margin-top: 1px; stroke: var(--check); stroke-width: 3.1; }
+
+/* Shared features stay informational: no CTA or interactive control. */
+.standard-features {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px 12px;
+  margin: 15px 2px;
+  padding: 13px 18px;
+  border: 1px solid #ffffffac;
+  border-radius: 13px;
+  background: #ffffffdf;
+  box-shadow: 0 3px 10px #3437940b;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #29395e;
+}
+.standard-features h2 { font-size: 12px; font-weight: 800; letter-spacing: .1px; color: #192052; }
+.standard-features p { text-align: center; }
+.standard-features .separator { padding: 0 6px; color: #8391b3; }
+
+/* Add-on section: a short introduction plus ten service cards. */
+.addons-panel {
+  padding: 17px;
+  border: 1px solid #ffffffd9;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #ffffffef, #f9faffee);
+  box-shadow: 0 7px 22px #333d9012;
+}
+.addon-grid { display: grid; grid-template-columns: minmax(174px, 1.8fr) repeat(10, minmax(0, 1fr)); gap: 8px; }
+.addons-intro { position: relative; min-width: 0; padding: 2px 10px 0 5px; }
+.addons-intro h2 { font-size: clamp(20px, 1.54vw, 29px); letter-spacing: -.85px; line-height: 1.04; color: #111351; }
+.addons-intro > p { max-width: 260px; margin-top: 10px; font-size: clamp(12px, .9vw, 15px); line-height: 1.4; color: #2e365b; }
+.laptop-art { width: min(100%, 245px); height: auto; margin: 14px auto 0; }
+.addon {
+  --addon-color: #257bff;
+  --addon-light: #eef5ff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 0;
+  padding: 12px 7px 15px;
+  border-radius: 13px;
+  border: 1px solid #fff;
+  background: linear-gradient(155deg, #ffffff, var(--addon-light));
+  text-align: center;
+}
+.addon--extra-site { --addon-color: #287aff; --addon-light: #edf4ff; }
+.addon--extra-editor { --addon-color: #00b387; --addon-light: #edfcf5; }
+.addon--extra-storage { --addon-color: #9653ed; --addon-light: #f5effe; }
+.addon--launch { --addon-color: #f53984; --addon-light: #fff0f6; }
+.addon--build { --addon-color: #f6a600; --addon-light: #fff8e7; }
+.addon--migration { --addon-color: #f0b100; --addon-light: #fffbea; }
+.addon--care { --addon-color: #00b1c2; --addon-light: #ebfafc; }
+.addon--training { --addon-color: #317ffa; --addon-light: #eff6ff; }
+.addon--reminders { --addon-color: #963df8; --addon-light: #f7efff; }
+.addon--development { --addon-color: #4e658c; --addon-light: #eef2f9; }
+.addon-icon {
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--addon-color);
+  box-shadow: inset 0 3px 8px #ffffff50, 0 4px 10px #21326012;
+}
+.addon-icon .icon { width: 21px; height: 21px; }
+.addon h3 { min-height: 41px; margin-top: 10px; font-size: clamp(11px, .82vw, 14px); line-height: 1.24; letter-spacing: -.25px; font-weight: 800; }
+.addon-price { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; column-gap: 3px; margin-top: 6px; white-space: nowrap; }
+.addon-price strong { font-size: clamp(20px, 1.52vw, 27px); line-height: 1.15; letter-spacing: -.7px; font-weight: 800; }
+.price-from { font-size: 10px; font-weight: 500; }
+.addon-period { margin-top: 2px; font-size: clamp(10px, .75vw, 13px); line-height: 1.3; }
+.addon-annual { margin-top: 4px; font-size: clamp(9px, .68vw, 11.5px); line-height: 1.4; color: #475270; }
+.addon-description { margin-top: 11px; font-size: clamp(10px, .75vw, 12.5px); line-height: 1.43; color: #263555; }
+
+/* Plain-text billing notes, also visible when printed. */
+.billing-notes { margin-top: 15px; padding: 16px 20px; border-radius: 16px; background: #ffffffdf; color: #35415e; }
+.billing-summary { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 22px; padding-bottom: 9px; margin-bottom: 9px; border-bottom: 1px solid #d9dfef; font-size: 12px; line-height: 1.5; }
+.billing-summary strong { color: #1f2255; }
+.billing-details { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 25px; font-size: 11px; line-height: 1.55; }
+.billing-details strong { color: #263252; }
+
+/* Comfortable reading rather than squeezing nine cards onto small screens. */
+@media (min-width: 1750px) {
+  .plan-grid { gap: 11px; }
+  .plan-content { padding-left: 16px; padding-right: 16px; }
+  .plan-features { gap: 14px; }
+  .addon-grid { gap: 10px; }
+  .addon { padding-left: 10px; padding-right: 10px; }
+}
+@media (max-width: 1399px) {
+  .hws-pricing { padding: 26px 24px 22px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; padding: 0 6px 30px; }
+  .hero h1 { font-size: 62px; }
+  .hero-subtitle { font-size: 28px; }
+  .hero-description { font-size: 15px; }
+  .benefits { max-width: 830px; gap: 24px; }
+  .benefit h2 { font-size: 16px; }
+  .benefit p { font-size: 13px; max-width: 190px; }
+  .plan-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 16px; }
+  .plan-heading { min-height: 100px; padding: 24px 16px 17px; }
+  .plan-heading h3 { font-size: 20px; }
+  .plan-heading > p { font-size: 13px; max-width: 230px; }
+  .plan-price { min-height: 126px; padding-top: 20px; }
+  .monthly strong { font-size: 42px; }
+  .monthly > span { font-size: 15px; }
+  .annual { font-size: 14px; }
+  .custom-price { font-size: 31px; }
+  .enterprise-start { font-size: 12px; }
+  .enterprise-price .annual { font-size: 11px; }
+  .plan-content { padding: 0 22px 26px; }
+  .plan-features { gap: 12px; }
+  .plan-features li { font-size: 14px; }
+  .check { width: 16px; height: 17px; flex-basis: 16px; }
+  .standard-features { margin: 18px 0; padding: 16px; }
+  .standard-features h2, .standard-features p { font-size: 13px; }
+  .addon-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .addons-intro { grid-column: 1 / -1; min-height: 112px; padding: 11px 190px 15px 10px; }
+  .addons-intro h2 { font-size: 28px; }
+  .addons-intro > p { font-size: 15px; max-width: 450px; }
+  .laptop-art { position: absolute; right: 10px; top: -15px; width: 150px; margin: 0; }
+  .addon { padding: 17px 12px 20px; }
+  .addon h3 { font-size: 14px; min-height: 35px; }
+  .addon-price strong { font-size: 26px; }
+  .price-from { font-size: 12px; }
+  .addon-period { font-size: 13px; }
+  .addon-annual { font-size: 11px; }
+  .addon-description { font-size: 12px; }
+  .billing-summary { font-size: 13px; }
+  .billing-details { font-size: 12px; }
+}
+@media (max-width: 850px) {
+  .hws-pricing { padding: 24px 18px 18px; background: radial-gradient(ellipse at 100% 0%, #5839d8 0%, transparent 22%), linear-gradient(163deg, #0840c7 0%, #6eb8ff 40%, #c7b2ff 100%); }
+  .hero h1 { font-size: 55px; }
+  .hero-subtitle { font-size: 25px; }
+  .hero-description { font-size: 14px; max-width: 490px; }
+  .benefits { gap: 14px; }
+  .benefit { flex-direction: column; gap: 6px; }
+  .benefit-icon { width: 40px; height: 40px; }
+  .benefit-icon .icon { width: 23px; height: 23px; }
+  .benefit h2 { font-size: 14px; }
+  .benefit p { font-size: 12px; }
+  .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
+  .plan--enterprise { grid-column: 1 / -1; }
+  .plan--enterprise .plan-features { display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
+  .addon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .addons-intro { min-height: 116px; padding-right: 155px; }
+  .addons-intro h2 { font-size: 25px; }
+  .addons-intro > p { font-size: 14px; }
+  .laptop-art { width: 130px; top: -4px; }
+  .addon h3 { min-height: 35px; font-size: 15px; }
+  .addon-description { font-size: 13px; max-width: 240px; }
+  .addon-icon { width: 43px; height: 43px; }
+  .billing-details { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .hws-pricing { padding: 24px 14px 16px; }
+  .hero { padding: 0 4px 29px; gap: 22px; }
+  .eyebrow { font-size: 10px; letter-spacing: 2.2px; }
+  .hero h1 { font-size: clamp(40px, 11.7vw, 56px); letter-spacing: -2px; }
+  .hero-subtitle { margin-top: 10px; font-size: 22px; max-width: 330px; line-height: 1.17; }
+  .hero-description { font-size: 13px; line-height: 1.45; max-width: 330px; }
+  .benefits { gap: 9px; }
+  .benefit h2 { font-size: 12px; line-height: 1.25; }
+  .benefit p { font-size: 11px; }
+  .benefit-icon { width: 36px; height: 36px; }
+  .benefit-icon .icon { width: 20px; height: 20px; }
+  .plan-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .plan-heading { min-height: 97px; padding-top: 24px; }
+  .plan-heading h3 { font-size: 22px; }
+  .plan-heading > p { max-width: 275px; font-size: 14px; margin-top: 8px; }
+  .plan-content { padding: 0 25px 27px; }
+  .plan-price { min-height: 130px; }
+  .monthly strong { font-size: 47px; }
+  .plan-features { gap: 11px; }
+  .plan-features li { font-size: 14px; gap: 9px; }
+  .plan--enterprise { grid-column: auto; }
+  .plan--enterprise .plan-features { display: flex; }
+  .custom-price { font-size: 34px; }
+  .enterprise-start { font-size: 13px; }
+  .enterprise-price .annual { font-size: 12px; }
+  .standard-features { gap: 7px; padding: 16px 14px; }
+  .standard-features h2 { font-size: 12px; }
+  .standard-features p { font-size: 12px; }
+  .addons-panel { padding: 13px 10px; border-radius: 19px; }
+  .addon-grid { gap: 9px; }
+  .addons-intro { min-height: 112px; padding: 10px 113px 18px 4px; }
+  .addons-intro h2 { font-size: 22px; letter-spacing: -.75px; }
+  .addons-intro > p { font-size: 12px; margin-top: 8px; }
+  .laptop-art { width: 107px; right: 0; top: 5px; }
+  .addon { padding: 15px 9px 17px; }
+  .addon h3 { font-size: 13px; min-height: 35px; }
+  .addon-price strong { font-size: 25px; }
+  .addon-description { font-size: 12px; line-height: 1.45; }
+  .billing-notes { padding: 15px; }
+  .billing-summary { font-size: 12px; }
+  .billing-details { font-size: 11px; }
+}
+@media print {
+  @page { size: landscape; margin: 8mm; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hws-pricing { padding: 12px; }
+  .hero { grid-template-columns: 1.13fr 1fr; padding: 0 5px 22px; gap: 20px; }
+  .hero h1 { font-size: 44px; }
+  .hero-subtitle { font-size: 20px; }
+  .hero-description { font-size: 11px; }
+  .benefits { gap: 10px; }
+  .benefit { flex-direction: row; gap: 7px; }
+  .benefit-icon { width: 31px; height: 31px; }
+  .benefit-icon .icon { width: 19px; height: 19px; }
+  .benefit h2 { font-size: 11px; }
+  .benefit p { font-size: 9px; }
+  .plan-grid { grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; }
+  .plan { border-radius: 10px; break-inside: avoid; }
+  .plan--enterprise { grid-column: auto; }
+  .plan--enterprise .plan-features { display: flex; }
+  .plan-heading { min-height: 81px; padding: 17px 5px 10px; }
+  .plan-heading h3 { font-size: 12px; letter-spacing: -.5px; }
+  .plan-heading > p { font-size: 9px; margin-top: 7px; }
+  .plan-content { padding: 0 7px 14px; }
+  .plan-price { min-height: 93px; padding-top: 15px; }
+  .monthly strong { font-size: 27px; }
+  .monthly > span { font-size: 10px; }
+  .annual { font-size: 9px; margin-top: 5px; }
+  .custom-price { font-size: 21px; }
+  .enterprise-start { font-size: 8px; margin-top: 7px; }
+  .enterprise-price .annual { font-size: 7px; margin-top: 4px; }
+  .plan-features { gap: 8px; }
+  .plan-features li { font-size: 9px; gap: 4px; }
+  .check { width: 11px; height: 12px; flex-basis: 11px; }
+  .recommended { top: -10px; font-size: 7px; padding: 5px 7px; }
+  .standard-features { margin: 10px 0; padding: 8px; }
+  .standard-features h2, .standard-features p { font-size: 9px; }
+  .addons-panel { padding: 10px; border-radius: 15px; break-inside: avoid; }
+  .addon-grid { grid-template-columns: minmax(110px, 1.6fr) repeat(10, minmax(0, 1fr)); gap: 5px; }
+  .addons-intro { grid-column: auto; padding: 3px 5px 0 0; min-height: 0; }
+  .addons-intro h2 { font-size: 16px; }
+  .addons-intro > p { font-size: 9px; margin-top: 6px; }
+  .laptop-art { position: static; width: 120px; max-width: 100%; margin-top: 10px; }
+  .addon { padding: 8px 4px; }
+  .addon-icon { width: 26px; height: 26px; }
+  .addon-icon .icon { width: 16px; height: 16px; }
+  .addon h3 { font-size: 8.5px; min-height: 27px; margin-top: 6px; }
+  .addon-price strong { font-size: 17px; }
+  .price-from { font-size: 7px; }
+  .addon-period { font-size: 8px; }
+  .addon-annual { font-size: 7px; }
+  .addon-description { font-size: 8px; margin-top: 7px; }
+  .billing-notes { margin-top: 10px; padding: 9px 12px; break-inside: avoid; }
+  .billing-summary { font-size: 8.5px; padding-bottom: 6px; margin-bottom: 6px; }
+  .billing-details { grid-template-columns: 1fr 1fr; font-size: 8px; gap: 5px 18px; }
+}
+
+  </style>
+</head>
+<body>
+  <main class="hws-pricing">
+    <svg class="background-art" viewBox="0 0 1800 1400" preserveAspectRatio="none" fill="none" aria-hidden="true">
+      <path d="M-100-30h1150C770 130 853 191 655 93S346 156 151 147-58 152-100-30Z" fill="#4981ff" opacity=".6"/>
+      <path d="M1164-100h690v137c-181-63-247 73-394 4s-181-77-296-141Z" fill="#9c4fff" opacity=".55"/>
+      <path d="M-170 36C-58 106 6 260 117 238s143-77 243-64C145 349 18 365-170 285Z" fill="#1721b7" opacity=".25"/>
+      <circle cx="826" cy="69" r="22" fill="#00cbe9" opacity=".33"/>
+      <circle cx="729" cy="33" r="14" fill="#7893ff" opacity=".36"/>
+      <circle cx="1009" cy="159" r="6" fill="#d6e2ff" opacity=".58"/>
+      <path d="M-90 1131c117-145 310-35 400 104s287 37 415 165H-90Z" fill="#6453ff" opacity=".4"/>
+      <path d="M1097 1440c91-209 193-155 307-262s227-40 396-129v391Z" fill="#9556fa" opacity=".2"/>
+    </svg>
+
+    <div class="page-inner">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Pricing &amp; Plans</p>
+          <h1>HWS Studio</h1>
+          <p class="hero-subtitle">Professional Websites for Every Stage</p>
+          <p class="hero-description">Simple. Flexible. Built for Businesses, Schools, and Organizations.</p>
+        </div>
+        <div class="benefits" aria-label="Platform highlights">
+          <section class="benefit benefit--templates">
+            <div class="benefit-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/><path d="m9 10 2 2 4-4"/></svg></div>
+            <div><h2>Beautiful<br>Templates</h2><p>Modern designs<br>for your website.</p></div>
+          </section>
+          <section class="benefit benefit--manage">
+            <div class="benefit-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.3 3-.6 2.1-1.7 1-2.1-.5-2 3.4 1.5 1.6v2.1L3 14.3l2 3.5 2.1-.5 1.7 1 .6 2.1h4l.6-2.1 1.8-1 2 .5 2-3.5-1.4-1.6v-2.1L20 9l-2-3.4-2 .5-1.8-1-.6-2.1Z"/><circle cx="11.6" cy="11.7" r="3"/></svg></div>
+            <div><h2>Easy to Manage</h2><p>A visual editor with powerful features.</p></div>
+          </section>
+          <section class="benefit benefit--grow">
+            <div class="benefit-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M17 4a3 3 0 0 1 0 6m1 4a5 5 0 0 1 3 4v3"/></svg></div>
+            <div><h2>Grows With You</h2><p>From a single website to multi-site organizations.</p></div>
+          </section>
+        </div>
+      </header>
+
+      <section aria-labelledby="plans-heading">
+        <h2 id="plans-heading" class="sr-only">Website subscription plans</h2>
+        <div class="plan-grid">
+        <article class="plan plan--free" aria-labelledby="plan-free">
+          
+          <header class="plan-heading">
+            <h3 id="plan-free">FREE</h3>
+            <p>Build and explore before upgrading.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$0</strong><span>forever</span></p>
+              <p class="annual">$0/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 unpublished draft website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 5 pages</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>250 MB media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 editor account</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Access to templates</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Visual editor</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Preview your website</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--starter" aria-labelledby="plan-starter">
+          
+          <header class="plan-heading">
+            <h3 id="plan-starter">STARTER</h3>
+            <p>An affordable first step for your business.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$9</strong><span>/month</span></p>
+              <p class="annual">or $90/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 published website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 5 pages</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>250 MB media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 editor account</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom-domain connection</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Standard email support</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--essentials" aria-labelledby="plan-essentials">
+          
+          <header class="plan-heading">
+            <h3 id="plan-essentials">ESSENTIALS</h3>
+            <p>More room to showcase your business.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$15</strong><span>/month</span></p>
+              <p class="annual">or $150/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 published website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 10 pages</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>500 MB media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 editor account</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom-domain connection</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Standard email support</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--growth" aria-labelledby="plan-growth">
+          
+          <header class="plan-heading">
+            <h3 id="plan-growth">GROWTH</h3>
+            <p>Expand your online presence.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$22</strong><span>/month</span></p>
+              <p class="annual">or $220/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 published website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 20 pages</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 GB media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 editor account</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom-domain connection</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Standard email support</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--pro-1" aria-labelledby="plan-pro-1">
+          
+          <header class="plan-heading">
+            <h3 id="plan-pro-1">PRO I</h3>
+            <p>For businesses and organizations.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$29</strong><span>/month</span></p>
+              <p class="annual">or $290/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 published website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 25 pages</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>2 GB media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 editor account</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom-domain connection</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Standard email support</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--pro-2" aria-labelledby="plan-pro-2">
+          <span class="recommended">RECOMMENDED</span>
+          <header class="plan-heading">
+            <h3 id="plan-pro-2">PRO II</h3>
+            <p>For growing teams and content-rich sites.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$59</strong><span>/month</span></p>
+              <p class="annual">or $590/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>1 published website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 100 pages</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>10 GB media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 5 editor accounts</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom-domain connection</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Standard email support</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--premium-1" aria-labelledby="plan-premium-1">
+          
+          <header class="plan-heading">
+            <h3 id="plan-premium-1">PREMIUM I</h3>
+            <p>For schools and multi-site organizations.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$129</strong><span>/month</span></p>
+              <p class="annual">or $1,290/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 3 published websites</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>250 pages per website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>25 GB shared media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 10 editor accounts</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom domain per website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Priority email support</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>One 60-minute onboarding session</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--premium-2" aria-labelledby="plan-premium-2">
+          
+          <header class="plan-heading">
+            <h3 id="plan-premium-2">PREMIUM II</h3>
+            <p>For larger organizations and school networks.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price">
+              <p class="monthly"><strong>$249</strong><span>/month</span></p>
+              <p class="annual">or $2,490/year</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 10 published websites</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>600 pages per website¹</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>50 GB shared media storage</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Up to 25 editor accounts</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom domain per website</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>All standard features</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Priority email support</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Onboarding and quarterly review</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="plan plan--enterprise" aria-labelledby="plan-enterprise">
+          
+          <header class="plan-heading">
+            <h3 id="plan-enterprise">ENTERPRISE</h3>
+            <p>Custom solutions for your organization.</p>
+          </header>
+          <div class="plan-content">
+            <div class="plan-price enterprise-price">
+              <p class="custom-price">Contact<br>Sales</p>
+              <p class="enterprise-start">Starting at <strong>$599/month</strong></p>
+              <p class="annual">Custom annual agreement</p>
+            </div>
+            <ul class="plan-features" role="list">
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom website count</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom page and storage allowances¹</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Tailored editor access</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Custom-domain connections</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Forms with a private inbox</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Named account contact</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Tailored onboarding plan</span></li>
+              <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span>Training, migration and integrations scoped separately</span></li>
+            </ul>
+          </div>
+        </article>
+        </div>
+      </section>
+
+      <section class="standard-features" aria-labelledby="standard-heading">
+        <h2 id="standard-heading">STANDARD FEATURES ON EVERY PAID PLAN</h2>
+        <p>Hosting &amp; HTTPS <span class="separator" aria-hidden="true">·</span> Visual editor &amp; templates <span class="separator" aria-hidden="true">·</span> Custom branding <span class="separator" aria-hidden="true">·</span> Device previews <span class="separator" aria-hidden="true">·</span> Autosave &amp; draft backups <span class="separator" aria-hidden="true">·</span> Form inbox &amp; CSV export <span class="separator" aria-hidden="true">·</span> Website calendar</p>
+      </section>
+
+      <section class="addons-panel" aria-labelledby="addons-heading">
+        <div class="addon-grid">
+          <div class="addons-intro">
+            <h2 id="addons-heading">ADD-ON SOLUTIONS</h2>
+            <p>Enhance your plan with additional features and services.</p>
+            <svg class="laptop-art" viewBox="0 0 260 171" fill="none" aria-hidden="true">
+  <ellipse cx="134" cy="148" rx="119" ry="13" fill="#7157dc" opacity=".14"/>
+  <path d="M18 102C-1 59 46 33 77 42c35 10 28-43 80-32s39 37 69 72c27 33-13 67-60 63C104 140 45 162 18 102Z" fill="#c3afff"/>
+  <path d="M144 144c19-48 60-77 94-55 16 11 20 39 5 58Z" fill="#91b8ff"/>
+  <rect x="30" y="28" width="198" height="123" rx="9" fill="#202044"/>
+  <rect x="37" y="35" width="184" height="108" rx="3" fill="#faf8ff"/>
+  <path d="M37 38a3 3 0 0 1 3-3h178a3 3 0 0 1 3 3v11H37Z" fill="#6930e9"/>
+  <circle cx="43" cy="42" r="1.5" fill="#ffffff" opacity=".7"/>
+  <circle cx="48" cy="42" r="1.5" fill="#ffffff" opacity=".7"/>
+  <circle cx="53" cy="42" r="1.5" fill="#ffffff" opacity=".7"/>
+  <rect x="180" y="40" width="32" height="3" rx="1.5" fill="#ffffff" opacity=".4"/>
+  <text x="47" y="62" font-family="Arial, sans-serif" font-size="5.8" font-weight="700" fill="#5224b0">HWS STUDIO</text>
+  <path d="M174 58h10m5 0h10m5 0h9" stroke="#79738e" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="47" y="86" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#201446">Your ideas.</text>
+  <text x="47" y="100" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#201446">Online.</text>
+  <path d="M48 110h62m-62 5h54m-54 5h43" stroke="#b3a7cc" stroke-width="2" stroke-linecap="round"/>
+  <rect x="136" y="70" width="75" height="62" rx="7" fill="#ebe2ff"/>
+  <circle cx="176" cy="94" r="15" fill="#9565f3"/>
+  <path d="M152 119c14-30 22 10 42-14l9 20h-51Z" fill="#6232d2"/>
+  <path d="M151 92c5 4 8 4 12-1m18 24c5 3 10 3 15-2" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M14 150h231l-5 7H20Z" fill="#cbd3ef"/>
+  <path d="M14 150h231v3H14Z" fill="#eff3ff"/>
+  <path d="M103 150h52l-4 4h-44Z" fill="#9fadd7"/>
+</svg>
+          </div>
+        <article class="addon addon--extra-site" aria-labelledby="addon-extra-site">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 6.5h14M5 17.5h14"/></svg></div>
+          <h3 id="addon-extra-site">Additional Website</h3>
+          <p class="addon-price"><strong>$19</strong></p>
+          <p class="addon-period">/month</p>
+          <p class="addon-annual">or $190/year</p>
+          <p class="addon-description">Add one website to a Premium plan. Existing page, shared storage and editor allowances apply.</p>
+        </article>
+        <article class="addon addon--extra-editor" aria-labelledby="addon-extra-editor">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></svg></div>
+          <h3 id="addon-extra-editor">Additional Editor</h3>
+          <p class="addon-price"><strong>$5</strong></p>
+          <p class="addon-period">/month</p>
+          <p class="addon-annual">or $50/year</p>
+          <p class="addon-description">Add one editor account to a paid plan, with access assigned to specific websites.</p>
+        </article>
+        <article class="addon addon--extra-storage" aria-labelledby="addon-extra-storage">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/></svg></div>
+          <h3 id="addon-extra-storage">Additional Storage</h3>
+          <p class="addon-price"><strong>$10</strong></p>
+          <p class="addon-period">/month</p>
+          <p class="addon-annual">or $100/year</p>
+          <p class="addon-description">Add 10 GB of shared media storage. Bandwidth and video streaming are not unlimited.</p>
+        </article>
+        <article class="addon addon--launch" aria-labelledby="addon-launch">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 4 5 5M4 20l5-1L21 7a2.1 2.1 0 0 0-5-5L4 14Z"/><path d="m4 14 5 5"/></svg></div>
+          <h3 id="addon-launch">Launch Assistance</h3>
+          <p class="addon-price"><strong>$299</strong></p>
+          <p class="addon-period">one-time</p>
+          <p class="addon-annual" aria-hidden="true">&nbsp;</p>
+          <p class="addon-description">Template, branding, navigation and up to 5 pages using your content. One revision round.</p>
+        </article>
+        <article class="addon addon--build" aria-labelledby="addon-build">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/><path d="m9 10 2 2 4-4"/></svg></div>
+          <h3 id="addon-build">Website Build</h3>
+          <p class="addon-price"><span class="price-from">From</span><strong>$999</strong></p>
+          <p class="addon-period">one-time</p>
+          <p class="addon-annual" aria-hidden="true">&nbsp;</p>
+          <p class="addon-description">Up to 10 standard pages using your content. Two revision rounds; custom work quoted separately.</p>
+        </article>
+        <article class="addon addon--migration" aria-labelledby="addon-migration">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H5v20h14V7Z"/><path d="M14 2v5h5M8 11h8m-8 4h8m-8 4h5"/></svg></div>
+          <h3 id="addon-migration">Content Migration</h3>
+          <p class="addon-price"><span class="price-from">From</span><strong>$499</strong></p>
+          <p class="addon-period">one-time</p>
+          <p class="addon-annual" aria-hidden="true">&nbsp;</p>
+          <p class="addon-description">Migrate up to 20 standard pages. Complex layouts and large libraries quoted separately.</p>
+        </article>
+        <article class="addon addon--care" aria-labelledby="addon-care">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9.3 3-.6 2.1-1.7 1-2.1-.5-2 3.4 1.5 1.6v2.1L3 14.3l2 3.5 2.1-.5 1.7 1 .6 2.1h4l.6-2.1 1.8-1 2 .5 2-3.5-1.4-1.6v-2.1L20 9l-2-3.4-2 .5-1.8-1-.6-2.1Z"/><circle cx="11.6" cy="11.7" r="3"/></svg></div>
+          <h3 id="addon-care">Managed Content Care</h3>
+          <p class="addon-price"><strong>$99</strong></p>
+          <p class="addon-period">/month</p>
+          <p class="addon-annual">or $990/year</p>
+          <p class="addon-description">Up to 1 hour of updates each month. No rollover; additional work is $85/hour.</p>
+        </article>
+        <article class="addon addon--training" aria-labelledby="addon-training">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M17 4a3 3 0 0 1 0 6m1 4a5 5 0 0 1 3 4v3"/></svg></div>
+          <h3 id="addon-training">Team Training</h3>
+          <p class="addon-price"><strong>$149</strong></p>
+          <p class="addon-period">per session</p>
+          <p class="addon-annual" aria-hidden="true">&nbsp;</p>
+          <p class="addon-description">One 60-minute remote session covering editing, calendars, forms and publishing.</p>
+        </article>
+        <article class="addon addon--reminders" aria-labelledby="addon-reminders">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="17" rx="2"/><path d="M7 2v6m10-6v6M3 11h18m-13 4h1m3 0h1m3 0h1m-9 3h1m3 0h1"/></svg></div>
+          <h3 id="addon-reminders">Calendar Reminder Setup</h3>
+          <p class="addon-price"><strong>$99</strong></p>
+          <p class="addon-period">one-time</p>
+          <p class="addon-annual" aria-hidden="true">&nbsp;</p>
+          <p class="addon-description">Configure and test calendar reminders. Email-provider usage charges are additional.</p>
+        </article>
+        <article class="addon addon--development" aria-labelledby="addon-development">
+          <div class="addon-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16"/></svg></div>
+          <h3 id="addon-development">Custom Development</h3>
+          <p class="addon-price"><span class="price-from">From</span><strong>$125</strong></p>
+          <p class="addon-period">/hour</p>
+          <p class="addon-annual" aria-hidden="true">&nbsp;</p>
+          <p class="addon-description">Custom features and integrations, subject to feasibility and an agreed written scope.</p>
+        </article>
+        </div>
+      </section>
+
+      <footer class="billing-notes" aria-label="Billing and service details">
+        <div class="billing-summary">
+          <p><strong>All prices in USD.</strong> Annual plans and recurring add-ons are billed upfront: 12 months for the price of 10.</p>
+          <p><strong>Enterprise:</strong> monthly and annual terms are tailored to your agreement.</p>
+        </div>
+        <div class="billing-details">
+          <p><strong>Domains &amp; services:</strong> Domain registration and renewal are separate. Website builds, migration, copywriting, training and managed updates are included only where explicitly stated.</p>
+          <p><strong>Website management:</strong> A desktop or laptop is required to manage your website. Public websites work on mobile. Customer editors save drafts; administrators publish changes.</p>
+          <p><strong>Plan allowances:</strong> Storage and editor seats are shared across your organization; page limits apply per website. ¹ Page allowances remain subject to supported platform limits, including the 900 KB website-data limit, separate from media storage.</p>
+          <p><strong>Forms &amp; reminders:</strong> Responses go to a private inbox without email notifications. Calendar reminders require a configured email provider and enabled administrator rules; usage charges are additional.</p>
+        </div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

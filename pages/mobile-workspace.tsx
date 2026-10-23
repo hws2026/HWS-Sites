@@ -1,3 +1,5 @@
+import {readViewState,replaceViewState} from '@/lib/view-state';
+import {AccountProfile} from '@/app/account-profile';
 import {useEffect,useState} from 'react';
 import {CalendarDays,CreditCard,Inbox,LogOut,Monitor,RefreshCw} from 'lucide-react';
 import {Toaster} from 'sonner';
@@ -18,22 +20,24 @@ const tabs=[{id:'billing',label:'Billing',icon:CreditCard},{id:'forms',label:'Fo
 
 export function MobileWorkspace({route}:{route:string}){
  const params=new URLSearchParams(route.split('?')[1]??''),view=(tabs.some(t=>t.id===params.get('view'))?params.get('view'):'forms') as View;
- const [data,setData]=useState<Workspace|null>(null),[error,setError]=useState(''),[attempt,setAttempt]=useState(0),[dirty,setDirty]=useState(false),[billing,setBilling]=useState<'suite'|'website'>('suite');
+ const [data,setData]=useState<Workspace|null>(null),[error,setError]=useState(''),[attempt,setAttempt]=useState(0),[dirty,setDirty]=useState(false),[billing,setBilling]=useState<'suite'|'website'>(()=>readViewState('billing')==='website'?'website':'suite');
  useEffect(()=>{
   document.title='Mobile workspace | Husky Suite';const abort=new AbortController();setError('');
   void (async()=>{await responseJson(await apiFetch('/api/mobile',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'activate'}),signal:abort.signal}));const next=await responseJson<Workspace>(await apiFetch('/api/mobile',{signal:abort.signal}));if(!abort.signal.aborted)setData(next);})().catch(e=>{if(!abort.signal.aborted){setData(null);setError(failureReason(e));}});
   return()=>abort.abort();
  },[attempt]);
+ useEffect(()=>{if(view==='billing')replaceViewState({billing});},[billing,view]);
  function navigate(next:View){if(next===view)return;if(dirty&&!window.confirm('Leave without saving your event changes?'))return;setDirty(false);location.hash='/mobile?view='+next;}
  const editable=data?.sites.filter(s=>s.role==='admin'||s.role==='editor')??[];
  return <div className="mobile-workspace">
-  <header className="mobile-workspace-header"><a href={appHref('/mobile')} aria-label="Husky Suite mobile workspace"><img src={assetUrl('/husky-suite-logo.png')} alt="Husky Suite"/></a><div><strong>Mobile workspace</strong><small>{data?.email??'Your suite, on the go'}</small></div><a className="mobile-signout" href={appHref('/signout')} aria-label="Sign out"><LogOut size={20}/></a></header>
+  <header className="mobile-workspace-header"><AccountProfile email={data?.email} compact/><a href={appHref('/mobile')} aria-label="Husky Suite mobile workspace"><img src={assetUrl('/husky-suite-logo.png')} alt="Husky Suite"/></a><div><strong>Mobile workspace</strong><small>{data?.email??'Your suite, on the go'}</small></div><a className="mobile-signout" href={appHref('/signout')} aria-label="Sign out"><LogOut size={20}/></a></header>
   <main className="mobile-workspace-main">
    {error?<div className="mobile-state" role="alert"><h1>Unable to open your workspace</h1><p>{error}</p><button className="button" onClick={()=>setAttempt(v=>v+1)}><RefreshCw size={16}/>Try again</button><a href={appHref('/signin')}>Sign in again</a></div>:!data?<p className="mobile-state" role="status">Loading your workspace…</p>:<>
     <div className="mobile-view-heading"><span>HUSKY SUITE</span><h1>{tabs.find(t=>t.id===view)?.label}</h1><p>{view==='billing'?'Manage bills and payments.':view==='forms'?'Read and manage your website responses.':'Keep your website calendars up to date.'}</p></div>
     {view==='billing'&&<><div className="mobile-billing-switch" role="group" aria-label="Billing area"><button aria-pressed={billing==='suite'} onClick={()=>setBilling('suite')}>Suite billing</button><button aria-pressed={billing==='website'} onClick={()=>setBilling('website')}>Website payments</button></div>{billing==='suite'?<BillingPanel demo={false} portal={data.role!=='admin'} customers={[]}/>:<WebsitePaymentsPanel/>}</>}
     {view==='forms'&&<FormsInbox sites={editable} initialSiteId={params.get('site')??''}/>}
     {view==='events'&&<MobileEvents sites={editable} initialSiteId={params.get('site')??''} onDirty={setDirty}/>}
+    {data.role==='admin'&&<a className="button" href={appHref('/security')}>Owner security recovery</a>}
     <p className="mobile-desktop-note"><Monitor size={16}/>Use a computer for the website editor and full administration.{!isMobileBrowser()&&<a href={appHref(data.role==='admin'?'/admin':'/portal')}>Open full workspace</a>}</p>
    </>}
   </main>
@@ -45,6 +49,7 @@ export function MobileWorkspace({route}:{route:string}){
 type CalendarData={site:Website;revision:number;role:string;published:boolean};
 function MobileEvents({sites,initialSiteId,onDirty}:{sites:Site[];initialSiteId:string;onDirty:(dirty:boolean)=>void}){
  const [siteId,setSiteId]=useState(sites.some(s=>s.id===initialSiteId)?initialSiteId:sites[0]?.id??'');
+ useEffect(()=>{if(siteId)replaceViewState({site:siteId});},[siteId]);
  const [data,setData]=useState<CalendarData|null>(null),[dirty,setDirty]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),[attempt,setAttempt]=useState(0);
  useEffect(()=>{onDirty(dirty);const warn=(event:BeforeUnloadEvent)=>{if(dirty){event.preventDefault();event.returnValue='';}};window.addEventListener('beforeunload',warn);return()=>{window.removeEventListener('beforeunload',warn);onDirty(false);};},[dirty,onDirty]);
  useEffect(()=>{

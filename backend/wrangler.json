@@ -18,7 +18,7 @@
   ],
   "triggers": {
     "crons": [
-      "0 * * * *"
+      "* * * * *"
     ]
   },
   "vars": {
@@ -32,7 +32,9 @@
     "CUSTOM_DOMAIN_PROJECT": "hws-customer-sites",
     "CUSTOM_DOMAIN_TARGET": "hws-customer-sites.pages.dev",
     "EMAIL_FROM": "Husky Suite <onboarding@huskysol.com>",
-    "HWS_ONBOARDING_ENABLED": "false"
+    "HWS_ONBOARDING_ENABLED": "false",
+    "SECURITY_ALERT_EMAIL": "awilson2951@gmail.com",
+    "SECURITY_EMAIL_FROM": "Husky Suite Security <security@huskysol.com>"
   },
   "account_id": "73a55022d22624abd7a6c5408c67b7c4"
 }

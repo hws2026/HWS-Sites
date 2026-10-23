@@ -1,11 +1,13 @@
 'use client';
-import {useState} from 'react';
+import {readViewState,replaceViewState} from '@/lib/view-state';
+import {useEffect,useState} from 'react';
 import {Archive,RotateCcw,Pencil,Plus,Trash2,Loader2} from 'lucide-react';
 import {Dialog,DialogContent,DialogHeader,DialogTitle,DialogDescription} from '@/components/ui/dialog';
 import type {Customer,ClientSite} from '@/lib/suite-model';
 
 export function CustomersPanel({customers,sites,search,busy,onEdit,onWebsite,onAction}:{customers:Customer[];sites:ClientSite[];search:string;busy:boolean;onEdit:(c:Customer)=>void;onWebsite:(c:Customer)=>void;onAction:(payload:Record<string,unknown>)=>Promise<unknown>}){
- const [archived,setArchived]=useState(false),[selected,setSelected]=useState<Customer|null>(null),[operation,setOperation]=useState<'archive'|'delete'>('archive'),[confirmation,setConfirmation]=useState('');
+ const [archived,setArchived]=useState(()=>readViewState('customers')==='archived'),[selected,setSelected]=useState<Customer|null>(null),[operation,setOperation]=useState<'archive'|'delete'>('archive'),[confirmation,setConfirmation]=useState('');
+ useEffect(()=>{replaceViewState({customers:archived?'archived':null});},[archived]);
  const rows=customers.filter(c=>Boolean(c.archived)===archived&&(c.name+' '+c.email).toLowerCase().includes(search.toLowerCase()));
  const related=sites.filter(site=>site.customer_id===selected?.id);
  function confirm(c:Customer,action:'archive'|'delete'){setSelected(c);setOperation(action);setConfirmation('');}
