@@ -1,0 +1,1102 @@
+HUSKY SOLUTIONS LLC
+PRIVACY POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) respects the privacy of our customers, users, website visitors, organization administrators, employees of customer organizations, and other individuals who interact with our products and services.
+This Privacy Policy explains how Husky Solutions LLC collects, uses, processes, stores, protects, and discloses information when you access or use our websites, applications, software, platforms, digital products, customer portals, administrative systems, and related services (collectively, the “Services”).
+Our Services may include, without limitation:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Digital and creative services
+* Graphics services
+* FiveM-related products and services
+* Customer portals
+* Administrative systems
+* APIs
+* Websites operated by Husky Solutions LLC
+* Other current or future Husky Solutions LLC products
+Certain Services may have additional or supplemental privacy notices. If a product-specific privacy notice applies, that notice should be read together with this Privacy Policy.
+By accessing or using the Services, you acknowledge the practices described in this Privacy Policy.
+________________
+
+
+1. INFORMATION WE COLLECT
+The information Husky Solutions LLC collects depends on which Services you use and how you interact with us.
+We may collect information:
+* Directly from you
+* Automatically through your use of the Services
+* From an organization that manages your account
+* From authorized third-party services
+* From devices, browsers, networks, or applications interacting with our Services
+* Through security and fraud-prevention systems
+________________
+
+
+2. ACCOUNT INFORMATION
+When you create or use a Husky Solutions account, we may collect information such as:
+* First and last name
+* Display name
+* Username
+* Email address
+* Telephone number
+* Organization or company name
+* Job title or organizational role
+* Account identification numbers
+* Profile information
+* Account preferences
+* User permissions
+* Organization membership
+* Login and authentication information
+* Password-related information
+* Multifactor authentication information
+* Account recovery information
+Passwords should be stored using appropriate cryptographic protection rather than in readable plain text.
+________________
+
+
+3. ORGANIZATION AND BUSINESS ACCOUNT INFORMATION
+Some Services allow businesses, agencies, organizations, departments, teams, or other entities to create organization-managed accounts.
+In connection with those accounts, we may process:
+* Organization name
+* Business contact information
+* Departments or divisions
+* Locations
+* Employee or member names
+* Organizational hierarchy
+* Account roles
+* Permissions
+* Administrator assignments
+* Workplace records
+* Scheduling information
+* Timekeeping information
+* Organization settings
+* Internal identifiers
+* Activity associated with the organization's account
+If your account belongs to an organization, authorized administrators of that organization may have access to information associated with your account.
+Your organization's administrators may be able to:
+* Create or remove your account
+* Modify account information
+* Change permissions
+* Assign roles
+* View organization-related activity
+* Access organization-controlled records
+* Reset certain credentials
+* Manage connected systems
+* Export organization data
+* Suspend or deactivate accounts
+Husky Solutions LLC does not control how a customer organization independently uses information that the organization obtains outside of the Services.
+________________
+
+
+4. TRANSACTION AND BILLING INFORMATION
+When you purchase a product or Service, we may collect or process information such as:
+* Customer name
+* Billing address
+* Email address
+* Order number
+* Invoice information
+* Product or subscription purchased
+* Transaction date
+* Transaction amount
+* Subscription status
+* Payment status
+* Refund information
+* Limited payment-method information
+* Payment processor transaction identifiers
+Payment transactions may be handled by third-party payment processors.
+Unless specifically disclosed otherwise, Husky Solutions LLC does not intend to directly store complete payment-card numbers, card security codes, or other payment credentials handled by an authorized payment processor.
+Third-party payment processors maintain their own terms and privacy practices.
+________________
+
+
+5. INFORMATION YOU SUBMIT TO THE SERVICES
+Depending on the Service you use, you may submit information or content to Husky Solutions LLC.
+This may include:
+* Text
+* Images
+* Logos
+* Graphics
+* Videos
+* Documents
+* Website content
+* Forms
+* Files
+* Business records
+* Employee records
+* Schedules
+* Time records
+* Organization records
+* User-created databases
+* Project information
+* Communications
+* Templates
+* Configurations
+* Support requests
+* Uploaded attachments
+* Other information you choose to provide
+We refer to this information generally as “Customer Content.”
+The type of Customer Content processed varies significantly by Service.
+You are responsible for ensuring that you have lawful authority to provide Customer Content to Husky Solutions LLC.
+________________
+
+
+6. TECHNICAL AND DEVICE INFORMATION
+When you access the Services, certain technical information may automatically be collected.
+This may include:
+* Internet Protocol (“IP”) address
+* Browser type
+* Browser version
+* Operating system
+* Device type
+* Device identifiers
+* Application version
+* Language settings
+* Screen or display information
+* Referring website
+* Network information
+* Internet service provider information
+* Login timestamps
+* Session identifiers
+* Authentication events
+* Pages visited
+* Features accessed
+* Error logs
+* Crash information
+* Performance information
+* Security-related device or network information
+We may use this information to operate, secure, troubleshoot, analyze, and improve the Services.
+________________
+
+
+7. LOCATION AND GEOLOCATION INFORMATION
+Husky Solutions LLC may process geographic information at different levels of precision depending on the Service, purpose, available technology, permissions, and applicable law.
+Location information may be particularly important for:
+* Account security
+* Fraud prevention
+* Authentication
+* Detecting unusual access
+* Investigating suspected security breaches
+* Investigating confirmed security breaches
+* Protecting users and organizations
+Location information may include both approximate geolocation and, in limited circumstances, precise or close-pinpoint geolocation.
+________________
+
+
+7.1 IP-BASED APPROXIMATE GEOLOCATION
+Husky Solutions LLC may use an IP address to estimate an approximate geographic location.
+This may identify information such as:
+* Country
+* State
+* Region
+* Metropolitan area
+* City
+* Internet service provider
+* Network or organization
+IP-derived location information is generally approximate.
+An IP address by itself should not be interpreted as necessarily identifying a person's exact physical address, building, or GPS location.
+Location estimates can be affected by:
+* VPNs
+* Proxy servers
+* Mobile carriers
+* Corporate networks
+* Cloud networks
+* Satellite connections
+* Internet routing
+* Other technical factors
+________________
+
+
+7.2 PRECISE OR CLOSE-PINPOINT GEOLOCATION
+In certain circumstances, Husky Solutions LLC may request, collect, process, or analyze location information that is substantially more precise than ordinary IP-based geolocation.
+Depending on the device, browser, application, operating system, and permissions involved, precise location information may be derived from technologies such as:
+* Device location services
+* Browser geolocation
+* Global Positioning System (“GPS”)
+* Wi-Fi-based positioning
+* Cellular-network positioning
+* Application-provided location
+* Other authorized location technologies
+Such information may, in some circumstances, indicate a device's location at a relatively close or street-level level of precision.
+Husky Solutions LLC does not represent ordinary IP geolocation as GPS or exact physical-location information.
+________________
+
+
+7.3 WHEN PRECISE SECURITY GEOLOCATION MAY BE USED
+Precise or enhanced geolocation may be requested or processed when reasonably relevant to circumstances such as:
+* Suspected unauthorized login
+* Attempted account takeover
+* Confirmed account takeover
+* Credential theft
+* Session hijacking
+* Suspicious password reset
+* Stolen authentication token
+* Suspicious administrator activity
+* Unauthorized administrative access
+* Unrecognized device access
+* Repeated authentication failures
+* Security-control circumvention
+* Suspicious API activity
+* Fraudulent billing activity
+* Attempted cybersecurity breach
+* Active cybersecurity breach
+* Confirmed security breach
+* Other activity reasonably indicating compromise, fraud, or unauthorized access
+Precise security location may be used to determine whether account activity is consistent with expected use and to investigate or contain security incidents.
+________________
+
+
+7.4 LOCATION PERMISSIONS
+Where a browser, operating system, device, or application requires permission before providing precise location, Husky Solutions LLC will rely on the applicable permission mechanism.
+A request may explain that location will be used for purposes such as:
+* Verifying suspicious account activity
+* Protecting an account
+* Investigating a potential security incident
+* Preventing fraud
+Where precise-location permission is optional, you may decline it.
+Declining a location request may result in Husky Solutions LLC requiring another reasonable method of security verification before allowing certain sensitive actions or restoring account access.
+Alternative verification may include:
+* Multifactor authentication
+* Email verification
+* Device verification
+* Security-key verification
+* Administrator verification
+* Manual security review
+________________
+
+
+7.5 IMPOSSIBLE-TRAVEL AND LOCATION-ANOMALY DETECTION
+Husky Solutions LLC may compare:
+* Login locations
+* IP locations
+* Device locations
+* Timestamps
+* Prior account activity
+to identify suspicious geographic behavior.
+For example, account activity appearing in distant locations within an unrealistically short period may trigger additional security review.
+Such an alert does not by itself establish that unauthorized access occurred.
+________________
+
+
+7.6 VPN, PROXY, AND NETWORK LOCATION SIGNALS
+Security systems may identify or estimate whether traffic originates from:
+* VPN services
+* Proxy services
+* Tor exit nodes
+* Hosting providers
+* Data centers
+* Known malicious networks
+* Other network-routing technologies
+Use of a VPN or proxy is not automatically prohibited.
+It may, however, contribute to a security review when combined with other suspicious indicators.
+________________
+
+
+7.7 SECURITY-FOCUSED USE OF PRECISE LOCATION
+Precise location collected specifically during security verification or incident response is intended primarily for:
+* Account protection
+* Authentication
+* Fraud prevention
+* Security investigation
+* Breach investigation
+* Access verification
+* Incident containment
+* Evidence preservation
+* Protecting Husky Solutions LLC systems and users
+Husky Solutions LLC does not intend to use precise location collected specifically for a security incident to build unrelated advertising profiles.
+________________
+
+
+8. USAGE INFORMATION
+We may collect information concerning how users interact with the Services.
+This may include:
+* Features used
+* Buttons or controls selected
+* Pages viewed
+* Login activity
+* Administrative actions
+* Settings changed
+* Account activity
+* Time and date of activity
+* Error events
+* Security events
+* API activity
+* Service performance
+* General interaction patterns
+Usage information may be associated with an account where reasonably necessary to provide:
+* Security
+* Auditing
+* Administrative functionality
+* Troubleshooting
+* Customer support
+* Fraud prevention
+________________
+
+
+9. AUTHENTICATION AND SECURITY INFORMATION
+To protect accounts and systems, we may collect or generate security-related information such as:
+* Login attempts
+* Successful and failed authentication events
+* IP addresses
+* Approximate IP-derived geolocation
+* Precise security geolocation where applicable and authorized
+* Session identifiers
+* Security alerts
+* Account recovery events
+* Password-reset events
+* Multifactor authentication events
+* One-time-password events
+* Device or browser information
+* Security logs
+* Administrative actions
+* Suspicious activity indicators
+* VPN or proxy indicators
+* Threat-intelligence indicators
+This information may be used to detect:
+* Unauthorized access
+* Fraud
+* Abuse
+* Account compromise
+* Security breaches
+* Other security threats
+________________
+
+
+10. BIOMETRIC AND DEVICE AUTHENTICATION
+Certain Husky Solutions Services may support authentication features using biometrics or device-level security functionality, such as:
+* Fingerprint recognition
+* Facial recognition
+* Operating-system authentication
+* Passkeys
+Where biometric authentication is performed entirely by your device or a third-party authentication provider, Husky Solutions LLC may receive only confirmation that authentication was successful rather than the underlying fingerprint or facial template.
+If Husky Solutions LLC directly collects or stores biometric information in connection with a future feature, we will provide additional disclosures and obtain consent where required by applicable law before doing so.
+Additional information is available in the Husky Solutions LLC Biometric Information & Authentication Policy.
+________________
+
+
+11. COMMUNICATIONS WITH HUSKY SOLUTIONS
+If you communicate with us, we may collect:
+* Your name
+* Email address
+* Telephone number
+* Account information
+* Support-ticket information
+* Email correspondence
+* Chat communications
+* Attachments
+* Diagnostic information
+* Transaction information
+* Information about the issue you report
+We may retain support communications as reasonably necessary to provide assistance, document resolutions, improve Services, resolve disputes, and protect our legal rights.
+________________
+
+
+12. INFORMATION FROM THIRD PARTIES
+We may receive information from third parties when you choose to connect or interact with them through our Services or when they assist us in operating and protecting the Services.
+Examples may include:
+* Authentication providers
+* Payment processors
+* Cloud platforms
+* Email providers
+* Domain providers
+* Business integrations
+* APIs
+* Hosting providers
+* Security providers
+* Fraud-prevention providers
+* Threat-intelligence providers
+* Geolocation providers
+* Customer organizations
+* Other authorized integrations
+The information received depends on the provider, permissions, configuration, and purpose of the service.
+Third-party services are governed by their own privacy practices where they independently control information.
+________________
+
+
+13. HOW WE USE INFORMATION
+Husky Solutions LLC may use information for legitimate business and operational purposes including the following.
+Provide the Services
+We may use information to:
+* Create accounts
+* Authenticate users
+* Operate websites and applications
+* Provide requested functionality
+* Process transactions
+* Maintain subscriptions
+* Provide hosting
+* Store customer information
+* Process user requests
+* Operate organization accounts
+Maintain Security
+We may use information to:
+* Detect unauthorized access
+* Prevent fraud
+* Identify suspicious activity
+* Investigate security incidents
+* Investigate suspected breaches
+* Investigate confirmed breaches
+* Protect accounts
+* Enforce access controls
+* Maintain audit logs
+* Prevent malicious activity
+* Protect infrastructure
+* Verify suspicious login locations
+* Detect impossible travel
+* Analyze IP and geolocation anomalies
+* Preserve relevant security evidence
+Provide Customer Support
+We may use information to:
+* Respond to questions
+* Troubleshoot problems
+* Investigate reported issues
+* Restore account access
+* Process billing requests
+* Resolve technical problems
+Improve the Services
+We may use information to:
+* Identify errors
+* Analyze performance
+* Improve user interfaces
+* Understand feature usage
+* Develop new features
+* Improve reliability
+* Improve security
+Communicate With Users
+We may use contact information to send:
+* Account notices
+* Verification messages
+* Password resets
+* Security alerts
+* Billing notices
+* Subscription notices
+* Service updates
+* Support responses
+* Changes to legal policies
+* Important product information
+Comply With Legal Obligations
+We may use information to:
+* Respond to valid legal process
+* Maintain legally required records
+* Protect legal rights
+* Prevent unlawful activity
+* Comply with applicable laws
+* Respond to regulatory requirements
+________________
+
+
+14. MARKETING COMMUNICATIONS
+Where permitted by applicable law, Husky Solutions LLC may send promotional or marketing communications regarding our products or Services.
+You may opt out of promotional email communications using an unsubscribe mechanism in the communication or by contacting us.
+Opting out of marketing communications does not prevent necessary transactional or operational communications.
+For example, you may still receive:
+* Password-reset emails
+* Security alerts
+* Billing notices
+* Subscription notices
+* Account-verification emails
+* Important service announcements
+* Legal notices
+________________
+
+
+15. COOKIES AND SIMILAR TECHNOLOGIES
+Husky Solutions LLC may use cookies and similar technologies including:
+* Browser cookies
+* Session storage
+* Local storage
+* Software development kits
+* Authentication tokens
+* Pixels
+* Similar browser or application technologies
+These technologies may be used for:
+* Authentication
+* Security
+* Session management
+* User preferences
+* Fraud prevention
+* Analytics
+* Performance
+* Functionality
+* Remembering user settings
+Some cookies may be essential for operation of the Services.
+Where required by law, we will provide appropriate controls regarding non-essential cookies.
+Additional details appear in the Husky Solutions LLC Cookie Policy.
+________________
+
+
+16. ANALYTICS
+We may use internal analytics or third-party analytics providers to understand how the Services are used.
+Analytics may include information concerning:
+* Website traffic
+* Page views
+* Feature usage
+* Approximate geographic region
+* Device categories
+* Browser types
+* Performance
+* Errors
+Where required by law, users will be provided appropriate notice or controls regarding optional analytics technologies.
+Precise location collected specifically for account security or breach investigation is not intended to be repurposed for unrelated analytics or advertising.
+________________
+
+
+17. HOW WE DISCLOSE INFORMATION
+Husky Solutions LLC does not disclose personal information simply because another person requests it.
+We may disclose information in the circumstances described below.
+________________
+
+
+18. SERVICE PROVIDERS AND SUBPROCESSORS
+We may provide information to vendors, contractors, service providers, or subprocessors that help us operate or secure the Services.
+These may include:
+* Cloud hosting providers
+* Database providers
+* Payment processors
+* Email providers
+* Security providers
+* Fraud-prevention providers
+* Threat-intelligence providers
+* Geolocation providers
+* Customer-support providers
+* Analytics providers
+* Infrastructure providers
+* Content-delivery networks
+* Backup providers
+These providers may receive information only as reasonably necessary for their authorized role.
+Where a provider processes precise geolocation for security purposes on behalf of Husky Solutions LLC, we intend to restrict that processing to legitimate authorized purposes and not authorize unrelated advertising use.
+Additional information appears in the Husky Solutions LLC Third-Party Services & Subprocessor Policy.
+________________
+
+
+19. ORGANIZATION ADMINISTRATORS
+If your account belongs to an organization, authorized organization administrators may have access to data controlled by that organization.
+This can include:
+* Account information
+* User roles
+* Organization records
+* Activity logs
+* Workplace records
+* Scheduling records
+* Timekeeping information
+* Content submitted to the organization's workspace
+If you have questions regarding an organization's use of your information, you may need to contact that organization directly.
+________________
+
+
+20. THIRD-PARTY INTEGRATIONS
+If you intentionally connect a Husky Solutions Service to another service, we may exchange information with the third party as required to perform the integration.
+Husky Solutions LLC is not responsible for the independent privacy practices of unrelated third-party services.
+________________
+
+
+21. LEGAL PROCESS AND GOVERNMENT REQUESTS
+Husky Solutions LLC may disclose information when we reasonably believe disclosure is required by applicable law or valid legal process.
+This may include:
+* Court orders
+* Search warrants
+* Subpoenas
+* Regulatory demands
+* Other legally enforceable requests
+Depending on the scope of valid legal process and information available, records potentially subject to lawful disclosure may include:
+* Account information
+* IP addresses
+* Login records
+* Device information
+* Approximate geolocation
+* Precise or close-pinpoint geolocation collected for security purposes
+* Security logs
+* Other responsive information
+Where appropriate and legally permitted, Husky Solutions LLC may:
+* Verify the authority making the request
+* Require valid legal process
+* Request clarification
+* Seek narrowing of an overly broad request
+* Challenge legally defective requests
+* Notify affected users
+We may be legally prohibited from notifying a user in certain circumstances.
+Nothing in this Privacy Policy promises that Husky Solutions LLC will challenge every governmental or legal request.
+Additional information appears in our Government, Law Enforcement & Legal Requests Policy.
+________________
+
+
+22. EMERGENCY DISCLOSURES
+Where permitted by law, Husky Solutions LLC may disclose information when we reasonably believe doing so is necessary to address a qualifying emergency involving an imminent risk of death, serious physical injury, significant cybersecurity harm, or another emergency recognized by applicable law.
+Depending on:
+* Applicable law
+* Nature of the emergency
+* Information available
+such information may include:
+* Account identifiers
+* Contact information
+* IP information
+* Login information
+* Approximate geolocation
+* Precise geolocation lawfully available to Husky Solutions LLC
+* Relevant security information
+Husky Solutions LLC will evaluate emergency disclosures based on the circumstances and applicable legal requirements.
+________________
+
+
+23. FRAUD, SECURITY, AND ABUSE
+We may use or disclose information where reasonably necessary to:
+* Investigate fraud
+* Prevent account compromise
+* Investigate cybersecurity incidents
+* Investigate suspected or confirmed security breaches
+* Enforce our Terms of Service
+* Investigate abuse
+* Protect our users
+* Protect our systems
+* Protect Husky Solutions LLC
+* Protect the rights or property of another person
+________________
+
+
+24. BUSINESS TRANSFERS
+If Husky Solutions LLC is involved in a:
+* Merger
+* Acquisition
+* Financing
+* Reorganization
+* Sale of assets
+* Corporate restructuring
+* Bankruptcy
+* Transfer of a business division
+information associated with the business may be transferred as part of that transaction.
+Any successor handling personal information remains subject to applicable legal obligations.
+________________
+
+
+25. WITH YOUR CONSENT OR DIRECTION
+We may disclose information when you specifically direct or authorize us to do so.
+________________
+
+
+26. SALE OF PERSONAL INFORMATION
+Husky Solutions LLC does not sell personal information to third parties for money as part of our ordinary business model.
+Some privacy laws define terms such as “sell,” “sale,” or “share” more broadly and may include certain advertising, analytics, or cross-context behavioral advertising arrangements.
+If Husky Solutions LLC engages in activity that legally constitutes a sale or sharing of personal information subject to an opt-out requirement, we will provide the required notice and method to exercise that right.
+Husky Solutions LLC does not intend to sell precise geolocation collected specifically for account-security or breach-investigation purposes.
+________________
+
+
+27. DATA RETENTION
+Husky Solutions LLC retains personal information only for as long as reasonably necessary for legitimate purposes.
+These purposes may include:
+* Maintaining an account
+* Providing Services
+* Processing transactions
+* Maintaining business records
+* Providing customer support
+* Protecting security
+* Preventing fraud
+* Resolving disputes
+* Enforcing contracts
+* Complying with legal requirements
+* Establishing or defending legal claims
+Retention periods may differ depending on:
+* Type of information
+* Applicable Service
+* Whether an account remains active
+* Legal requirements
+* Contractual obligations
+* Security requirements
+* Customer instructions
+When information is no longer reasonably necessary, we may delete, anonymize, or de-identify it.
+Information may remain temporarily in backup systems after deletion until the applicable backup is overwritten or expires.
+________________
+
+
+28. LOCATION DATA RETENTION
+Location information is retained according to its purpose and sensitivity.
+Unless another legitimate legal, contractual, or security reason requires a different period:
+Approximate IP Location
+Approximate location associated with ordinary security logs may generally follow the retention period for the underlying security or authentication log.
+Ordinary Precise Security Location
+Precise location used solely for routine account-security verification and not associated with a suspected or confirmed security breach will generally be targeted for deletion or de-identification within approximately 90 days.
+Suspected Security Incidents
+Precise or close-pinpoint location associated with a suspected breach may be retained while the incident is investigated.
+If the investigation determines that no significant incident occurred, the information may return to the ordinary retention schedule.
+Confirmed Security Incidents
+Precise location materially relevant to a confirmed security incident may be retained as security evidence generally for up to two years after the incident is closed.
+Information may be retained longer where reasonably necessary because of:
+* Continuing investigation
+* Repeated related attacks
+* Legal proceedings
+* Litigation
+* Regulatory investigation
+* Law-enforcement preservation
+* Valid legal process
+* Legal claims
+* Other legitimate security or legal obligations
+Additional details appear in the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+29. ACCOUNT DELETION
+Where available, users may request deletion of their Husky Solutions account.
+Deleting an account may result in permanent loss of information associated with that account.
+Certain information may be retained after account deletion where reasonably necessary for:
+* Legal compliance
+* Fraud prevention
+* Security
+* Active breach investigations
+* Billing records
+* Tax records
+* Dispute resolution
+* Enforcement of agreements
+* Protection of legal rights
+* Backup integrity
+Organization-managed accounts may also be subject to retention decisions made by the applicable customer organization.
+________________
+
+
+30. DATA SECURITY
+Husky Solutions LLC uses reasonable administrative, technical, and physical safeguards designed to protect information from unauthorized access, destruction, loss, misuse, alteration, or disclosure.
+Depending on the applicable Service, safeguards may include:
+* Account authentication
+* Access controls
+* Role-based permissions
+* Least-privilege access
+* Password hashing
+* Multifactor authentication
+* Encryption in transit
+* Encryption at rest where appropriate
+* Security logging
+* Network protections
+* Monitoring
+* Secure backups
+* Security updates
+* Vulnerability remediation
+* Incident-response procedures
+* Administrative access controls
+* Service-provider security review
+The particular security controls used may differ between Services based on their architecture, purpose, and risk profile.
+No online system, cloud platform, network, database, or security technology can guarantee complete security.
+Accordingly, Husky Solutions LLC cannot guarantee that unauthorized access, data loss, or another security incident will never occur.
+________________
+
+
+31. USER SECURITY RESPONSIBILITIES
+Users are responsible for taking reasonable steps to protect their accounts.
+You should:
+* Use a strong and unique password
+* Never share passwords unnecessarily
+* Protect authentication codes
+* Protect recovery codes
+* Enable multifactor authentication where available
+* Keep account contact information current
+* Log out of shared devices
+* Protect devices from unauthorized access
+* Promptly report suspicious activity
+Organization administrators should regularly review user permissions and remove access belonging to users who no longer require it.
+________________
+
+
+32. DATA BREACHES AND SECURITY INCIDENTS
+If Husky Solutions LLC becomes aware of a security incident affecting information under our control, we may:
+* Investigate the incident
+* Contain the incident
+* Remediate affected systems
+* Preserve necessary evidence
+* Review IP information
+* Review approximate and precise geolocation where relevant and lawfully available
+* Determine what information was involved
+* Determine which individuals or organizations were affected
+* Notify affected customers
+* Notify affected individuals
+* Notify regulatory authorities
+* Notify law enforcement
+Notifications will be provided where required by applicable law.
+________________
+
+
+33. RESTRICTED AND HIGHLY REGULATED INFORMATION
+Unless Husky Solutions LLC has expressly authorized the applicable use through a written agreement, users should not upload information requiring specialized regulatory or governmental protections.
+This may include:
+* Protected health information regulated by HIPAA
+* Actual NCIC information
+* Actual CJIS-controlled criminal justice information
+* Classified government information
+* Government authentication credentials
+* Complete payment-card information
+* Social Security numbers unless specifically authorized
+* Highly sensitive authentication credentials
+* Information that you are legally prohibited from possessing or processing
+The technical ability to enter information into a field does not mean Husky Solutions LLC has authorized that information to be stored there.
+________________
+
+
+34. HUSKYCAD AND PUBLIC-SAFETY INFORMATION
+Features that resemble public-safety, computer-aided dispatch, records-management, law-enforcement, emergency-service, or government systems do not automatically constitute access to actual government systems.
+Unless Husky Solutions LLC specifically states otherwise in a written agreement, standard Husky Solutions Services should not be considered:
+* An actual NCIC connection
+* An actual government criminal-history database
+* A CJIS-certified system
+* A government-operated database
+* A replacement for required emergency-service infrastructure
+Organizations seeking to process actual regulated government or criminal-justice information must first obtain written authorization from Husky Solutions LLC and satisfy applicable contractual, security, legal, and technical requirements.
+________________
+
+
+35. WORKFORCE INFORMATION
+Certain Services may allow customer organizations to process workforce-related information.
+This may include:
+* Employee names
+* Employee identifiers
+* Scheduling information
+* Attendance information
+* Time records
+* Organizational roles
+* Workplace documents
+* Administrative records
+When Husky Solutions LLC processes this information on behalf of a customer organization, that organization may control how and why the information is used.
+Questions about an employer's independent use of employee information should generally be directed to the employer.
+Husky Solutions LLC does not determine whether a customer's employment practices comply with wage, labor, employment, scheduling, or workplace laws.
+________________
+
+
+36. CHILDREN'S PRIVACY
+The Services are not directed to children under 13.
+Husky Solutions LLC does not knowingly collect personal information online from children under 13 in circumstances requiring parental consent without obtaining the legally required consent.
+If we become aware that personal information has been improperly collected from a child under 13, we may take reasonable steps to delete it.
+A parent or legal guardian who believes a child has provided personal information to Husky Solutions LLC may contact:
+[PRIVACY EMAIL]
+Users under the age of legal majority in their jurisdiction may require permission from a parent or legal guardian to enter into certain agreements or purchase certain Services.
+________________
+
+
+37. PRIVACY RIGHTS
+Depending on where you live and the laws that apply to Husky Solutions LLC, you may have certain rights concerning your personal information.
+These may include the right to:
+* Request access to personal information
+* Request a copy of personal information
+* Request correction
+* Request deletion
+* Request portability
+* Object to certain processing
+* Restrict certain processing
+* Withdraw consent where processing relies on consent
+* Opt out of certain targeted advertising
+* Opt out of certain sales or sharing
+* Limit certain uses of sensitive personal information
+* Appeal certain privacy decisions
+* Receive equal service when exercising applicable privacy rights
+These rights are not absolute and may be subject to exceptions under applicable law.
+For example, a deletion request concerning security-location evidence may be delayed or denied to the extent applicable law permits Husky Solutions LLC to retain the information for an active:
+* Fraud investigation
+* Security investigation
+* Breach investigation
+* Legal preservation obligation
+Additional information appears in the Husky Solutions LLC Privacy Choices & State-Specific Rights Notice.
+________________
+
+
+38. SUBMITTING A PRIVACY REQUEST
+Privacy requests may be submitted to:
+Husky Solutions LLC
+Privacy Department
+Email:
+[PRIVACY EMAIL]
+Privacy Request Portal:
+[PRIVACY REQUEST URL]
+We may request information reasonably necessary to:
+* Confirm your identity
+* Locate relevant information
+* Protect against fraudulent requests
+* Confirm your authority to act for another person
+We will respond within the period required by applicable law.
+________________
+
+
+39. AUTHORIZED AGENTS
+Where applicable law permits an authorized agent to make a privacy request on your behalf, Husky Solutions LLC may require evidence that the agent is authorized to represent you.
+We may also verify your identity directly where legally permitted.
+________________
+
+
+40. CALIFORNIA PRIVACY RIGHTS
+To the extent the California Consumer Privacy Act, as amended (“CCPA”), applies to Husky Solutions LLC and the relevant processing, California residents may have rights including:
+* The right to know what personal information is collected
+* The right to know the sources of personal information
+* The right to know the purposes for collecting or using personal information
+* The right to know categories of third parties receiving personal information
+* The right to access certain personal information
+* The right to deletion
+* The right to correction
+* The right to data portability
+* The right to opt out of qualifying sale or sharing
+* The right to limit qualifying uses of sensitive personal information
+* The right not to receive unlawful discriminatory treatment for exercising applicable privacy rights
+Under California law, precise geolocation is a category of sensitive personal information.
+Where the CCPA applies and Husky Solutions LLC's use of sensitive personal information creates an applicable limitation right, we will provide the required mechanism.
+Certain uses necessary to provide requested Services, maintain security, prevent fraud, or protect accounts may be treated differently under applicable law.
+Privacy requests may be submitted through:
+[PRIVACY REQUEST URL]
+or
+[PRIVACY EMAIL]
+________________
+
+
+41. OTHER UNITED STATES STATE PRIVACY LAWS
+Residents of certain U.S. states may have privacy rights under applicable state law.
+Depending on the jurisdiction and whether the relevant law applies to Husky Solutions LLC, such rights may include:
+* Access
+* Correction
+* Deletion
+* Portability
+* Opt-out rights
+* Consent rights
+* Restriction rights
+* Appeal rights
+* Additional protections for precise geolocation or other sensitive information
+Husky Solutions LLC will process valid requests as required by applicable law.
+________________
+
+
+42. NEW YORK PRIVACY AND DATA SECURITY
+Husky Solutions LLC is based in New York and maintains reasonable safeguards designed to protect covered private information consistent with applicable New York data-security requirements.
+Our information-security practices may include administrative, technical, and physical safeguards proportionate to the nature and size of our operations and the information processed.
+IP addresses and geolocation information used for account security are treated as security-sensitive operational information.
+Where information qualifies as protected or private information under applicable New York law, Husky Solutions LLC will apply applicable statutory protections.
+Where a security breach triggers a notification obligation under applicable New York law, Husky Solutions LLC will provide legally required notifications.
+________________
+
+
+43. GLOBAL PRIVACY CONTROL
+Where applicable law requires recognition of a valid browser-based opt-out preference signal such as Global Privacy Control (“GPC”), Husky Solutions LLC will process supported signals as required by law.
+________________
+
+
+44. DO NOT TRACK
+Some web browsers provide a “Do Not Track” or “DNT” setting.
+Because no single DNT technical standard applies universally, our Services may not respond to traditional DNT signals unless required by applicable law.
+This section does not affect legally recognized browser-based privacy signals where applicable.
+________________
+
+
+45. INTERNATIONAL USERS
+Husky Solutions LLC is based in the United States.
+If you access the Services from another country, your information may be transferred to and processed in the United States or other jurisdictions where our authorized service providers operate.
+Data-protection laws in those jurisdictions may differ from those in your country.
+Where international privacy laws apply to Husky Solutions LLC, we will process information based on an appropriate legal basis as required.
+Depending on applicable law, this may include:
+* Performance of a contract
+* Compliance with a legal obligation
+* Legitimate interests
+* Consent
+* Protection of legal rights
+________________
+
+
+46. THIRD-PARTY WEBSITES
+The Services may contain links to third-party websites, applications, or services.
+Husky Solutions LLC does not control the independent privacy practices of third parties.
+This Privacy Policy does not apply to information collected directly by an unrelated third party.
+Review the privacy policy of any third-party service before providing personal information to it.
+________________
+
+
+47. PUBLIC INFORMATION
+Some Services may permit users to publish information publicly.
+Information intentionally placed in a public area may be accessible to:
+* Other users
+* Search engines
+* Website visitors
+* Third parties
+Do not publish information publicly that you do not want others to see.
+Husky Solutions LLC cannot control how unrelated third parties use information after it has been lawfully made public.
+________________
+
+
+48. DE-IDENTIFIED AND AGGREGATED INFORMATION
+Husky Solutions LLC may create aggregated or de-identified information that is not reasonably capable of identifying a particular individual.
+We may use such information for purposes including:
+* Analytics
+* Research
+* Service improvement
+* Performance analysis
+* Security analysis
+* Product development
+* Business planning
+Where required by law, we will maintain such information in de-identified form and will not attempt to re-identify it except as legally permitted.
+________________
+
+
+49. AUTOMATED SECURITY AND DECISION SYSTEMS
+Husky Solutions LLC may use automated tools for purposes including:
+* Fraud detection
+* Spam detection
+* Account protection
+* Login-risk assessment
+* Location-anomaly detection
+* Impossible-travel detection
+* Abuse prevention
+* Temporary account restrictions
+These automated security measures may result in:
+* Additional authentication
+* Temporary account locking
+* Session termination
+* Security alerts
+* Manual security review
+Husky Solutions LLC does not intend to make unrelated legally significant consumer decisions solely through these security systems unless the applicable Service specifically provides such functionality and appropriate disclosures are provided.
+________________
+
+
+50. CHANGES TO THIS PRIVACY POLICY
+Husky Solutions LLC may update this Privacy Policy as our:
+* Services
+* Technologies
+* Security practices
+* Business practices
+* Legal obligations
+change.
+When we update this Policy, we will revise the “Last Updated” date.
+If required by law, we may also provide additional notice through:
+* Email
+* Account notifications
+* Website notices
+* Application notifications
+* Other appropriate methods
+Material changes will take effect in accordance with applicable law.
+________________
+
+
+51. RELATED PRIVACY AND SECURITY POLICIES
+This Privacy Policy should be read together with applicable Husky Solutions LLC policies, including:
+* Security, Incident Response & Vulnerability Disclosure Policy
+* Data Retention & Deletion Policy
+* Cookie Policy
+* Biometric Information & Authentication Policy
+* Privacy Choices & State-Specific Rights Notice
+* Government, Law Enforcement & Legal Requests Policy
+* Third-Party Services & Subprocessor Policy
+* Account, Authentication & Identity Verification Policy
+________________
+
+
+52. CONTACT HUSKY SOLUTIONS LLC
+Questions, concerns, privacy requests, or complaints regarding this Privacy Policy may be directed to:
+Husky Solutions LLC
+Privacy Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Privacy Email:
+[PRIVACY EMAIL]
+Privacy Request Portal:
+[PRIVACY REQUEST URL]
+Security Email:
+[SECURITY EMAIL]
+General Support:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+53. EFFECTIVE DATE
+This Privacy Policy is effective as of:
+October 12, 2026
+and remains in effect until amended or replaced by Husky Solutions LLC.

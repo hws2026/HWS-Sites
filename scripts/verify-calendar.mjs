@@ -30,5 +30,5 @@ for(const [date,zone,expected] of [['2030-07-01T09:00','America/New_York','2030-
 assert.throws(()=>localEventTime('2026-03-08T02:30','America/New_York'),/daylight/);
 for(const patch of [{startsAt:'bad-date'},{endsAt:'2020-01-01T00:00:00.000Z'},{link:'javascript:alert(1)'},{title:''},{featured:'yes'}])assert.throws(()=>validateWebsite({...site,calendarEvents:[{...event,...patch}]}));
 assert.throws(()=>validateWebsite({...site,calendarTimeZone:'Invalid/Zone'}));assert.throws(()=>validateWebsite({...site,calendarEvents:[event,event]}));assert.throws(()=>validateWebsite({...site,calendarEvents:Array.from({length:501},(_,i)=>({...event,id:String(i)}))}));
-const auth=await readFile('pages/auth.tsx','utf8');assert.ok(!auth.includes('auth.signUp(')&&!auth.includes('Create an account'));assert.ok(auth.includes('resetPasswordForEmail')&&auth.includes('signInWithPassword'));
+const auth=await readFile('pages/auth.tsx','utf8');assert.ok(!auth.includes('auth.signUp(')&&!auth.includes('Create an account'));assert.ok(auth.includes('resetPasswordForEmail')&&auth.includes('/api/login')&&auth.includes('setSession'));
 console.log('PASS shared calendar: edits/deletions sync across pages and nested sections; category/featured/limits; reminder deduplication; backups; isolated sites; legacy migration; DST/timezones; date and link validation; public signup removed.');

@@ -30,7 +30,9 @@
     "ADMIN_SUPABASE_USER_IDS": "85b82380-1c73-415a-a6f9-fc5da3c31802",
     "CUSTOM_DOMAIN_ACCOUNT_ID": "73a55022d22624abd7a6c5408c67b7c4",
     "CUSTOM_DOMAIN_PROJECT": "hws-customer-sites",
-    "CUSTOM_DOMAIN_TARGET": "hws-customer-sites.pages.dev"
+    "CUSTOM_DOMAIN_TARGET": "hws-customer-sites.pages.dev",
+    "EMAIL_FROM": "Husky Suite <onboarding@huskysol.com>",
+    "HWS_ONBOARDING_ENABLED": "false"
   },
   "account_id": "73a55022d22624abd7a6c5408c67b7c4"
 }

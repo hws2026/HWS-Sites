@@ -1,0 +1,1087 @@
+HUSKY SOLUTIONS LLC
+SECURITY, INCIDENT RESPONSE & VULNERABILITY DISCLOSURE POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) considers information security an important component of the design, operation, and maintenance of our websites, software, applications, infrastructure, and digital services.
+This Security, Incident Response & Vulnerability Disclosure Policy (“Security Policy”) describes:
+* Our general approach to information security;
+* Account and authentication security;
+* Security logging and monitoring;
+* IP address monitoring;
+* Geolocation use for security;
+* Precise geolocation use during suspected or confirmed security incidents;
+* Fraud and account-compromise detection;
+* Security incident investigation;
+* Data-breach response;
+* Vulnerability reporting;
+* Responsible security research;
+* Prohibited security testing; and
+* Customer responsibilities.
+This Policy applies, where applicable, to:
+* Husky Solutions LLC websites;
+* Husky Suite;
+* HuskyCAD;
+* PunchPal;
+* Customer portals;
+* Administrative dashboards;
+* APIs;
+* Hosting services;
+* FiveM resources and licensing systems;
+* Authentication systems;
+* Billing systems;
+* Cloud infrastructure;
+* Other current or future Husky Solutions LLC Services.
+________________
+
+
+1. SECURITY PRINCIPLES
+Husky Solutions LLC seeks to maintain security practices appropriate to the nature of our operations, Services, systems, and information.
+Our security practices may be guided by principles including:
+* Least-privilege access;
+* Defense in depth;
+* Data minimization;
+* Authentication controls;
+* Secure configuration;
+* Logging and monitoring;
+* Incident detection;
+* Risk-based access controls;
+* Encryption where appropriate;
+* Vulnerability remediation;
+* Backup and recovery;
+* Access accountability;
+* Reasonable data retention.
+Security controls may vary between Services based on architecture, functionality, risk, and available technology.
+________________
+
+
+2. NO ABSOLUTE SECURITY GUARANTEE
+No software, application, network, cloud platform, database, authentication system, or internet-connected service can be guaranteed to be completely secure.
+Husky Solutions LLC does not guarantee that:
+* Unauthorized access will never occur;
+* A vulnerability will never exist;
+* Data loss will never occur;
+* Every cyberattack can be prevented;
+* Every malicious actor will be detected immediately;
+* Every third-party provider will remain secure.
+Husky Solutions LLC uses reasonable safeguards intended to reduce security risk and respond appropriately when incidents occur.
+________________
+
+
+3. ADMINISTRATIVE SECURITY SAFEGUARDS
+Husky Solutions LLC may use administrative safeguards such as:
+* Access policies;
+* User-role management;
+* Administrative-access restrictions;
+* Security procedures;
+* Incident-response procedures;
+* Credential-management procedures;
+* Vendor review;
+* Security training where appropriate;
+* Access revocation;
+* Internal security documentation;
+* Risk assessment.
+________________
+
+
+4. TECHNICAL SECURITY SAFEGUARDS
+Depending on the applicable Service, technical safeguards may include:
+* Password hashing;
+* Authentication controls;
+* Multifactor authentication;
+* Encryption in transit;
+* Encryption at rest where appropriate;
+* Secure session management;
+* Firewall protections;
+* Network restrictions;
+* Rate limiting;
+* Access logging;
+* Security monitoring;
+* Suspicious-login detection;
+* Automated abuse detection;
+* Backup systems;
+* Software updates;
+* Vulnerability remediation;
+* API authentication;
+* Role-based permissions;
+* Token revocation.
+________________
+
+
+5. PHYSICAL SECURITY
+Where Husky Solutions LLC directly controls physical equipment or facilities, reasonable physical protections may be implemented.
+Much of the Company's infrastructure may also operate through third-party cloud or hosting providers responsible for their own physical security controls.
+________________
+
+
+6. ACCOUNT SECURITY
+Users are responsible for maintaining reasonable security over their accounts.
+Users should:
+* Use unique passwords;
+* Avoid password reuse;
+* Protect authentication codes;
+* Protect recovery codes;
+* Enable multifactor authentication where available;
+* Protect email accounts associated with Husky Solutions accounts;
+* Keep devices secure;
+* Sign out of shared devices;
+* Report suspicious activity promptly.
+________________
+
+
+7. MULTIFACTOR AUTHENTICATION
+Certain Services may require or support multifactor authentication.
+Methods may include:
+* Email one-time passwords;
+* Authenticator applications;
+* Device authentication;
+* Security keys;
+* Other supported authentication mechanisms.
+Husky Solutions LLC may require additional authentication following suspicious activity.
+________________
+
+
+8. ACCOUNT RECOVERY SECURITY
+Account recovery processes may require additional verification before account access is restored.
+Husky Solutions LLC may consider information such as:
+* Verified email address;
+* Prior authentication information;
+* Account history;
+* Device information;
+* Network information;
+* Recent login information;
+* Organization administrator approval;
+* Other relevant security information.
+________________
+
+
+9. SECURITY LOGGING
+Husky Solutions LLC may maintain security logs for purposes including:
+* Detecting attacks;
+* Investigating suspicious activity;
+* Diagnosing account compromise;
+* Identifying unauthorized access;
+* Preventing fraud;
+* Troubleshooting;
+* Enforcing security controls;
+* Responding to incidents;
+* Complying with legal obligations.
+________________
+
+
+10. INFORMATION INCLUDED IN SECURITY LOGS
+Security logs may include information such as:
+* IP addresses;
+* Login timestamps;
+* Logout timestamps;
+* Authentication attempts;
+* Successful logins;
+* Failed login attempts;
+* Device information;
+* Browser information;
+* Operating system information;
+* Session identifiers;
+* Account identifiers;
+* Authentication-method information;
+* API requests;
+* Administrative actions;
+* Security events;
+* Approximate geographic information;
+* Precise geographic information where authorized and applicable;
+* Network information;
+* Account changes;
+* Password-reset events;
+* Multifactor authentication events.
+________________
+
+
+11. IP ADDRESS COLLECTION
+Husky Solutions LLC may collect and process Internet Protocol (“IP”) addresses when users access the Services.
+IP addresses may be used for:
+* Account security;
+* Session security;
+* Fraud detection;
+* Abuse prevention;
+* Attack detection;
+* Security investigations;
+* Rate limiting;
+* Approximate geolocation;
+* Network analysis;
+* Incident response;
+* Legal compliance.
+________________
+
+
+12. IP GEOLOCATION
+Husky Solutions LLC may use an IP address to estimate an approximate geographic location.
+IP-derived location may identify information such as:
+* Country;
+* State;
+* Region;
+* Metropolitan area;
+* City;
+* Internet service provider;
+* Network or organization.
+IP geolocation is not guaranteed to be precise.
+Factors such as:
+* VPNs;
+* Proxies;
+* Mobile networks;
+* Corporate networks;
+* Satellite connections;
+* Carrier routing;
+* Cloud services
+may cause the location associated with an IP address to differ from the user's actual physical location.
+________________
+
+
+13. SECURITY GEOLOCATION
+Husky Solutions LLC may use geolocation information as part of our security and fraud-prevention systems.
+Geolocation may be compared against:
+* Previous login locations;
+* Known devices;
+* Recent sessions;
+* Account history;
+* IP history;
+* Network history;
+* Organization location;
+* Authentication events;
+* Other legitimate security indicators.
+This information may help identify potentially unauthorized activity.
+________________
+
+
+14. PRECISE GEOLOCATION FOR SECURITY PURPOSES
+In certain circumstances involving a suspected or confirmed security incident, Husky Solutions LLC may request, collect, process, or analyze more precise geolocation information where:
+* The user has granted appropriate device, browser, application, or operating-system location permission;
+* The applicable Service supports precise location functionality;
+* Collection is permitted by applicable law; and
+* The information is reasonably relevant to protecting an account, user, organization, or Husky Solutions LLC system.
+This information may include location data capable of identifying a user's or device's location with significantly greater accuracy than ordinary IP-based geolocation.
+________________
+
+
+15. CLOSE-PINPOINT GEOLOCATION DURING SECURITY EVENTS
+During a suspected, attempted, active, or confirmed security breach, Husky Solutions LLC may use available lawful security technologies to determine or verify a device's geographic location with increased precision.
+Where technically available and legally authorized, this may include:
+* Device-provided location;
+* Browser geolocation;
+* Application geolocation;
+* GPS-derived location;
+* Wi-Fi-based location;
+* Cellular-network-derived location;
+* Network-location information;
+* Other technically available location signals.
+Such information may permit Husky Solutions LLC to determine a location more precisely than IP-based city or regional data, including, in some circumstances, a relatively close or street-level location.
+Husky Solutions LLC will not represent ordinary IP geolocation as precise GPS location.
+________________
+
+
+16. WHEN PRECISE SECURITY LOCATION MAY BE USED
+Precise or enhanced location information may be used when Husky Solutions LLC reasonably suspects circumstances such as:
+* Unauthorized login;
+* Account takeover;
+* Credential theft;
+* Session hijacking;
+* Unauthorized administrative access;
+* Fraudulent password reset;
+* Stolen authentication token;
+* Suspicious administrator activity;
+* Unrecognized device access;
+* Repeated authentication failures;
+* Unusual access to sensitive account areas;
+* Attempted security-control bypass;
+* Suspicious API access;
+* Fraudulent billing activity;
+* Active cybersecurity attack;
+* Other activity reasonably suggesting account or system compromise.
+________________
+
+
+17. IMPOSSIBLE-TRAVEL DETECTION
+Husky Solutions LLC may compare login locations and timestamps to identify circumstances where an account appears to have accessed the Services from geographically distant locations within an unrealistic period.
+For example, a login occurring from one location followed shortly afterward by access from a distant region may trigger additional security review.
+An impossible-travel alert does not by itself establish that unauthorized access occurred.
+VPNs, proxies, mobile networks, or routing behavior may produce false positives.
+________________
+
+
+18. SECURITY LOCATION VERIFICATION
+When suspicious access is detected, Husky Solutions LLC may ask a user to verify information such as:
+* Whether the login was authorized;
+* Whether the device belongs to the user;
+* Whether the geographic location is expected;
+* Whether a VPN or proxy is in use;
+* Whether account credentials may have been compromised.
+Additional authentication may be required before access is restored.
+________________
+
+
+19. SECURITY USE ONLY
+When precise geolocation is collected specifically for incident detection or security verification, Husky Solutions LLC intends to use that information primarily for purposes including:
+* Account protection;
+* Security investigation;
+* Breach investigation;
+* Fraud prevention;
+* Access verification;
+* Incident response;
+* Evidence preservation;
+* Protecting affected users;
+* Protecting Husky Solutions LLC infrastructure.
+Security geolocation data will not automatically be used for unrelated advertising simply because it was collected during a security investigation.
+________________
+
+
+20. PRECISE LOCATION CONSENT AND PERMISSIONS
+Where device-level or browser-level permission is required to obtain precise geolocation, Husky Solutions LLC will rely on the applicable permission mechanism.
+A user may see a request such as:
+“Allow Husky Solutions to access your location?”
+Where precise location is optional, users may decline the request.
+However, during a high-risk security event, declining optional location verification may result in Husky Solutions LLC requiring another form of identity or security verification before restoring or continuing account access.
+________________
+
+
+21. ALTERNATIVE SECURITY VERIFICATION
+If precise geolocation cannot be obtained or the user declines an optional request, Husky Solutions LLC may use another verification method.
+This may include:
+* Multifactor authentication;
+* Email verification;
+* Account recovery verification;
+* Organization administrator verification;
+* Security key verification;
+* Manual security review;
+* Device verification;
+* Credential reset.
+________________
+
+
+22. LOCATION DATA MINIMIZATION
+Husky Solutions LLC intends to collect only the location information reasonably necessary for legitimate security purposes.
+We may limit:
+* Collection frequency;
+* Location precision;
+* Number of location events retained;
+* Retention period;
+* Employee access;
+* Third-party access.
+The appropriate controls may vary depending on the nature of the security incident.
+________________
+
+
+23. LOCATION DATA RETENTION
+Precise geolocation collected specifically for security investigation may be retained for a period reasonably necessary to:
+* Investigate the incident;
+* Determine the scope of compromise;
+* Restore account security;
+* Prevent related attacks;
+* Document security actions;
+* Resolve disputes;
+* Comply with legal obligations;
+* Establish or defend legal claims.
+When the information is no longer reasonably needed, it may be deleted, anonymized, aggregated, or otherwise handled in accordance with the Husky Solutions LLC Privacy Policy.
+________________
+
+
+24. RESTRICTED ACCESS TO SECURITY LOCATION DATA
+Access to detailed location information may be limited to personnel, contractors, systems, or service providers with a legitimate need to access that information.
+Access may be limited based on:
+* Job responsibility;
+* Incident involvement;
+* Technical need;
+* Security role;
+* Legal obligations.
+________________
+
+
+25. SECURITY EVENT CORRELATION
+Husky Solutions LLC may combine multiple security indicators when investigating suspicious activity.
+These indicators may include:
+* IP address;
+* Geolocation;
+* Device identifiers;
+* Browser information;
+* Login time;
+* Session activity;
+* Authentication status;
+* Account history;
+* Administrative actions;
+* API activity;
+* Billing activity;
+* Known malicious-network information.
+This may allow Husky Solutions LLC to distinguish normal account activity from suspicious access.
+________________
+
+
+26. VPN AND PROXY DETECTION
+Husky Solutions LLC may use security services capable of detecting or estimating whether traffic originates from:
+* VPN services;
+* Proxy servers;
+* Hosting providers;
+* Data centers;
+* Tor exit nodes;
+* Known malicious infrastructure;
+* Other anonymizing or network-routing technologies.
+Use of a VPN or proxy is not automatically prohibited.
+However, such use may trigger additional security verification when combined with other suspicious activity.
+________________
+
+
+27. MALICIOUS IP DETECTION
+Husky Solutions LLC may evaluate IP addresses against:
+* Abuse databases;
+* Threat-intelligence systems;
+* Security reputation services;
+* Fraud-prevention systems;
+* Internal security records.
+Traffic associated with known or suspected malicious infrastructure may be restricted or subjected to additional verification.
+________________
+
+
+28. DEVICE RECOGNITION
+Certain Services may recognize devices or browsers previously associated with an account.
+Device recognition may use information such as:
+* Browser characteristics;
+* Operating system;
+* Application installation;
+* Device identifiers;
+* Authentication history;
+* Security tokens;
+* Network information.
+Device recognition may help identify unusual access.
+________________
+
+
+29. NEW-DEVICE ALERTS
+Husky Solutions LLC may notify users when a new or unrecognized device accesses their account.
+A notification may include information such as:
+* Approximate location;
+* Date;
+* Time;
+* Device type;
+* Browser;
+* IP-related information.
+Users should promptly report activity they do not recognize.
+________________
+
+
+30. SUSPICIOUS LOGIN RESPONSE
+When suspicious authentication activity occurs, Husky Solutions LLC may:
+* Require additional authentication;
+* Terminate active sessions;
+* Revoke tokens;
+* Reset passwords;
+* Temporarily lock the account;
+* Notify the user;
+* Notify an organization administrator;
+* Block an IP address;
+* Block a device or session;
+* Require location verification;
+* Begin a security investigation.
+________________
+
+
+31. SESSION TERMINATION
+Husky Solutions LLC may remotely terminate active sessions when reasonably necessary to:
+* Protect a compromised account;
+* Stop unauthorized access;
+* Respond to credential theft;
+* Respond to a security incident;
+* Enforce account-security requirements.
+________________
+
+
+32. PASSWORD RESET REQUIREMENTS
+Following a suspected account compromise, users may be required to create a new password.
+Husky Solutions LLC may also revoke:
+* Active sessions;
+* Remembered devices;
+* Recovery codes;
+* Authentication tokens;
+* API keys
+when reasonably necessary.
+________________
+
+
+33. API SECURITY
+Users receiving Husky Solutions LLC API credentials are responsible for protecting them.
+API credentials must not be:
+* Published publicly;
+* Embedded insecurely in public client code where avoidable;
+* Shared with unauthorized users;
+* Stored in public repositories;
+* Transmitted through insecure channels.
+________________
+
+
+34. API SECURITY MONITORING
+Husky Solutions LLC may monitor API activity for:
+* Abnormal request volume;
+* Unauthorized endpoints;
+* Suspicious geographic activity;
+* Authentication failures;
+* Credential abuse;
+* Rate-limit circumvention;
+* Automated attacks.
+________________
+
+
+35. ADMINISTRATIVE ACCOUNT SECURITY
+Accounts with elevated permissions may be subject to additional security requirements.
+These may include:
+* Mandatory multifactor authentication;
+* Restricted session duration;
+* More detailed audit logs;
+* Device verification;
+* Location verification;
+* Additional access review.
+________________
+
+
+36. ORGANIZATION SECURITY
+Customer organizations are responsible for appropriately configuring user access.
+Organizations should:
+* Remove former users;
+* Review administrator roles;
+* Apply least privilege;
+* Protect shared systems;
+* Review suspicious activity;
+* Secure organization email accounts;
+* Promptly report suspected compromise.
+________________
+
+
+37. SECURITY AUDIT LOGS
+Certain Services may provide organization administrators with security or audit records.
+These may contain:
+* Login history;
+* User changes;
+* Role changes;
+* Administrative activity;
+* Account changes;
+* Security events;
+* IP information;
+* Location information where appropriate.
+The availability of audit logs may depend on the Service or subscription level.
+________________
+
+
+38. FRAUD PREVENTION
+Husky Solutions LLC may use automated or manual systems to identify suspected fraud.
+Indicators may include:
+* Unusual transaction activity;
+* Billing discrepancies;
+* IP reputation;
+* Device anomalies;
+* Geographic anomalies;
+* Account takeover indicators;
+* Repeated failed payments;
+* Suspicious account creation.
+________________
+
+
+39. AUTOMATED SECURITY SYSTEMS
+Certain security decisions may initially be triggered automatically.
+Examples include:
+* Rate limiting;
+* Temporary account locking;
+* Suspicious-login alerts;
+* CAPTCHA challenges;
+* Additional authentication;
+* IP blocking.
+Where appropriate, users may contact Support if legitimate activity was incorrectly restricted.
+________________
+
+
+40. SECURITY INCIDENT DEFINITION
+A “Security Incident” is an event that may compromise or threaten the:
+* Confidentiality;
+* Integrity;
+* Availability
+of Husky Solutions LLC systems or information.
+Examples may include:
+* Account takeover;
+* Malware infection;
+* Unauthorized database access;
+* Credential compromise;
+* Unauthorized administrative access;
+* Data exfiltration;
+* Vulnerability exploitation;
+* Ransomware;
+* Unauthorized information disclosure.
+________________
+
+
+41. SUSPECTED SECURITY INCIDENTS
+Husky Solutions LLC may begin an investigation before it has conclusively determined that a breach occurred.
+A reasonable suspicion of compromise may be sufficient to initiate:
+* Logging review;
+* Geolocation analysis;
+* Account restrictions;
+* Credential resets;
+* Session termination;
+* Evidence preservation;
+* Additional security verification.
+Security measures taken during an investigation do not necessarily mean Husky Solutions LLC has determined that a breach occurred.
+________________
+
+
+42. INCIDENT RESPONSE
+When a significant Security Incident is identified, Husky Solutions LLC may take actions including:
+1. Detecting and confirming the incident;
+2. Containing affected systems;
+3. Restricting compromised access;
+4. Preserving relevant evidence;
+5. Determining affected systems;
+6. Determining affected information;
+7. Identifying the likely attack method;
+8. Removing unauthorized access;
+9. Restoring system integrity;
+10. Monitoring for continued activity;
+11. Evaluating notification obligations;
+12. Improving safeguards where appropriate.
+________________
+
+
+43. INCIDENT CONTAINMENT
+Containment measures may include:
+* Disabling accounts;
+* Revoking credentials;
+* Blocking IP addresses;
+* Isolating systems;
+* Disabling APIs;
+* Taking systems temporarily offline;
+* Restricting network traffic;
+* Requiring password resets;
+* Suspending integrations.
+________________
+
+
+44. EVIDENCE PRESERVATION
+Husky Solutions LLC may preserve relevant security information when investigating an incident.
+This may include:
+* Logs;
+* IP information;
+* Geolocation;
+* Precise location information where lawfully collected;
+* Authentication history;
+* Access records;
+* Account changes;
+* System activity;
+* Relevant files;
+* Network information.
+Preservation may continue where reasonably necessary for investigation, legal compliance, or legal claims.
+________________
+
+
+45. DATA-BREACH EVALUATION
+Not every security event constitutes a legally reportable data breach.
+Husky Solutions LLC may evaluate:
+* Whether unauthorized access occurred;
+* Whether information was acquired;
+* Nature of the information;
+* Encryption status;
+* Number of affected individuals;
+* Risk of misuse;
+* Applicable legal definitions;
+* Notification obligations.
+________________
+
+
+46. BREACH NOTIFICATION
+If Husky Solutions LLC determines that a Security Incident triggers a legal notification obligation, notices will be provided as required by applicable law.
+Depending on the circumstances, notifications may be provided to:
+* Affected individuals;
+* Customer organizations;
+* Government agencies;
+* Regulators;
+* Consumer reporting agencies;
+* Law enforcement;
+* Other legally required parties.
+________________
+
+
+47. CUSTOMER SECURITY INCIDENTS
+Customers should immediately report suspected compromise of a Husky Solutions LLC account.
+Examples include:
+* Unknown login;
+* Stolen password;
+* Unauthorized administrator;
+* Unrecognized API activity;
+* Unexpected password reset;
+* Unauthorized billing changes.
+Reports should be sent to:
+[SECURITY EMAIL]
+________________
+
+
+48. VULNERABILITY REPORTING
+Husky Solutions LLC encourages responsible reporting of potential security vulnerabilities.
+Reports should be sent to:
+[SECURITY EMAIL]
+Include, where available:
+* Affected product;
+* Affected URL;
+* Endpoint;
+* Vulnerability description;
+* Steps to reproduce;
+* Expected impact;
+* Screenshots;
+* Technical details;
+* Proof-of-concept information that does not expose unrelated user data.
+________________
+
+
+49. RESPONSIBLE DISCLOSURE
+Security researchers should make reasonable efforts to:
+* Avoid privacy violations;
+* Avoid service disruption;
+* Avoid accessing unnecessary information;
+* Avoid modifying user data;
+* Avoid destroying information;
+* Report vulnerabilities promptly;
+* Provide sufficient details to reproduce the issue.
+________________
+
+
+50. UNAUTHORIZED SECURITY TESTING
+This Security Policy does not provide blanket authorization to test Husky Solutions LLC systems.
+Unless expressly authorized in writing, you may not perform:
+* Penetration testing;
+* Vulnerability scanning;
+* Denial-of-service testing;
+* Password attacks;
+* Credential stuffing;
+* Social engineering;
+* Physical security testing;
+* Malware deployment;
+* Data exfiltration testing;
+* Automated exploit scanning.
+________________
+
+
+51. PROHIBITED SECURITY-RESEARCH ACTIVITY
+Security researchers must not intentionally:
+* Access unrelated user accounts;
+* Download unrelated customer data;
+* Modify production data;
+* Delete data;
+* Interrupt Services;
+* Install malware;
+* Conduct ransomware testing;
+* Perform denial-of-service attacks;
+* Social-engineer employees or customers;
+* Threaten disclosure as leverage for payment.
+________________
+
+
+52. MINIMUM NECESSARY TESTING
+If a potential vulnerability can be demonstrated without accessing private information, researchers should stop before accessing private information.
+If sensitive information is unintentionally encountered, researchers should:
+* Stop further access;
+* Avoid copying unnecessary information;
+* Report the issue;
+* Securely delete any unnecessary copy where legally appropriate.
+________________
+
+
+53. SECURITY-RESEARCH AUTHORIZATION
+Husky Solutions LLC may provide written authorization for specific security testing.
+Such authorization may establish:
+* Authorized systems;
+* Testing period;
+* Permitted techniques;
+* Prohibited techniques;
+* Contact information;
+* Reporting requirements.
+Only testing falling within the written authorization is authorized.
+________________
+
+
+54. VULNERABILITY RESPONSE
+After receiving a credible vulnerability report, Husky Solutions LLC may:
+* Confirm receipt;
+* Investigate;
+* Request additional information;
+* Attempt reproduction;
+* Assess severity;
+* Develop a remediation;
+* Deploy a mitigation;
+* Monitor for exploitation.
+________________
+
+
+55. DISCLOSURE COORDINATION
+Husky Solutions LLC may request that a researcher avoid public disclosure until:
+* The vulnerability is understood;
+* A reasonable remediation has been developed;
+* Customers have had an opportunity to update where applicable.
+Any coordinated disclosure arrangement should be reasonable and appropriate to the severity of the issue.
+________________
+
+
+56. BUG BOUNTIES
+Submission of a security vulnerability does not automatically create entitlement to:
+* Payment;
+* Reward;
+* Credit;
+* Employment;
+* Contract.
+If Husky Solutions LLC establishes a bug-bounty program, compensation terms will be separately published.
+________________
+
+
+57. SECURITY SUPPORT IMPERSONATION
+Husky Solutions LLC will not ordinarily ask users to provide:
+* Complete passwords;
+* Complete authentication tokens;
+* Complete session cookies;
+* Full payment-card numbers;
+* Card security codes
+through ordinary support communications.
+Users should report suspicious messages claiming to represent Husky Solutions LLC security personnel.
+________________
+
+
+58. PHISHING
+Users should verify that they are interacting with an authorized Husky Solutions LLC website before entering credentials.
+Suspicious communications should be reported to:
+[SECURITY/ABUSE EMAIL]
+________________
+
+
+59. THIRD-PARTY PROVIDERS
+Husky Solutions LLC may rely on third-party providers for:
+* Hosting;
+* Cloud infrastructure;
+* Email;
+* Authentication;
+* Payment processing;
+* Analytics;
+* Security services;
+* Databases;
+* Content delivery.
+Security of these providers may affect the Services.
+Husky Solutions LLC may consider security practices when selecting significant providers.
+________________
+
+
+60. THIRD-PARTY SECURITY INCIDENTS
+If a third-party provider experiences an incident affecting Husky Solutions LLC information or Services, Husky Solutions LLC may:
+* Investigate;
+* Restrict the integration;
+* Rotate credentials;
+* Migrate Services;
+* Request information from the provider;
+* Provide required notifications.
+________________
+
+
+61. BACKUPS
+Husky Solutions LLC may maintain backups appropriate to certain Services.
+Backups may support:
+* Disaster recovery;
+* Data restoration;
+* Incident recovery;
+* Business continuity.
+No backup system guarantees against every form of data loss.
+Customers should maintain independent backups of critical information where appropriate.
+________________
+
+
+62. SOFTWARE UPDATES
+Husky Solutions LLC may deploy security updates when vulnerabilities or risks are identified.
+Users may be required to:
+* Update applications;
+* Update integrations;
+* Update FiveM resources;
+* Update configuration;
+* Replace deprecated software.
+Failure to install required updates may increase security risk.
+________________
+
+
+63. OUTDATED OR UNSUPPORTED SOFTWARE
+Husky Solutions LLC may discontinue security support for outdated product versions.
+Where reasonably possible, users may receive notice or documentation identifying supported versions.
+________________
+
+
+64. FIVE M / FIVEM RESOURCE SECURITY
+FiveM resources distributed by Husky Solutions LLC may include security or licensing mechanisms designed to:
+* Validate legitimate licenses;
+* Prevent unauthorized redistribution;
+* Detect license abuse;
+* Protect proprietary resources.
+Customers must not intentionally bypass legitimate licensing or security systems.
+________________
+
+
+65. NO HIDDEN REMOTE ADMINISTRATION
+Husky Solutions LLC will not intentionally market ordinary customer software as benign while secretly using it to obtain unauthorized administrative control over customer systems.
+Any functionality requiring remote administration or support access should be appropriately disclosed or authorized.
+________________
+
+
+66. EMPLOYEE AND CONTRACTOR ACCESS
+Where employees or contractors require access to production systems or customer information, Husky Solutions LLC may limit access according to role and legitimate business need.
+Access may be:
+* Logged;
+* Restricted;
+* Revoked when no longer required.
+________________
+
+
+67. TERMINATION OF ACCESS
+Access credentials belonging to personnel who no longer require access may be revoked as reasonably appropriate.
+This may include:
+* Administrative accounts;
+* VPN credentials;
+* API keys;
+* Cloud credentials;
+* Internal system accounts.
+________________
+
+
+68. SECURITY DATA DISCLOSURE
+Security-related information may be disclosed where reasonably necessary to:
+* Investigate fraud;
+* Protect users;
+* Protect Husky Solutions LLC;
+* Respond to a cyberattack;
+* Comply with law;
+* Respond to valid legal process;
+* Address an imminent security threat.
+Any disclosure remains subject to applicable law and the Husky Solutions LLC Privacy Policy.
+________________
+
+
+69. LAW-ENFORCEMENT REQUESTS
+Husky Solutions LLC may preserve or disclose relevant security information in response to valid legal process or where another lawful disclosure basis applies.
+The existence of a security incident does not automatically authorize unrestricted disclosure of customer information.
+________________
+
+
+70. SECURITY INFORMATION AND PRIVACY
+Security information, including IP addresses and geolocation data, may constitute personal information.
+Such information will be handled according to:
+* This Security Policy;
+* The Husky Solutions LLC Privacy Policy;
+* Applicable law.
+________________
+
+
+71. PRIVACY POLICY DISCLOSURE
+Husky Solutions LLC's Privacy Policy should disclose that the Company may process:
+* IP addresses;
+* Approximate location;
+* Precise geolocation where applicable;
+* Device information;
+* Authentication information;
+* Security logs
+for security, fraud prevention, account protection, and incident response.
+________________
+
+
+72. NO COMMERCIAL SALE OF SECURITY LOCATION DATA
+Husky Solutions LLC does not intend to commercially sell precise security geolocation information as part of its ordinary business model.
+Location information collected specifically for security purposes is intended to be used for legitimate security, fraud-prevention, incident-response, legal, and related operational purposes.
+________________
+
+
+73. CUSTOMER RESPONSIBILITY
+Customers also have responsibility for maintaining security.
+Customers should:
+* Protect credentials;
+* Maintain appropriate user permissions;
+* Install security updates;
+* Secure customer-controlled infrastructure;
+* Protect API credentials;
+* Review administrator access;
+* Maintain backups;
+* Report suspicious activity.
+________________
+
+
+74. SECURITY CONTACT
+Security incidents, suspicious activity, and vulnerabilities should be reported to:
+Husky Solutions LLC
+Security Team
+Security Email:
+[SECURITY EMAIL]
+Abuse Email:
+[ABUSE EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+For urgent account compromise, use the security reporting method provided within the applicable Service where available.
+________________
+
+
+75. INFORMATION TO INCLUDE IN AN INCIDENT REPORT
+Security reports should include, when available:
+* Your account email;
+* Affected product;
+* Date and time;
+* Description of the issue;
+* Suspicious IP information;
+* Suspicious location;
+* Device information;
+* Screenshots;
+* Relevant log information;
+* Actions already taken.
+Do not send passwords, complete session tokens, or full payment-card numbers.
+________________
+
+
+76. CHANGES TO THIS SECURITY POLICY
+Husky Solutions LLC may update this Policy as:
+* Security threats evolve;
+* Technology changes;
+* New Services are introduced;
+* Security controls change;
+* Legal requirements change.
+The “Last Updated” date identifies the current version.
+Material changes affecting privacy practices will also be reflected in appropriate privacy disclosures where required.
+________________
+
+
+77. RELATIONSHIP TO OTHER POLICIES
+This Security Policy should be read together with:
+* Husky Solutions LLC Privacy Policy;
+* Husky Solutions LLC Terms of Service;
+* Husky Solutions LLC Terms of Use;
+* Husky Solutions LLC Acceptable Use Policy;
+* Husky Solutions LLC Cookie Policy;
+* Husky Solutions LLC Copyright & DMCA Policy;
+* Product-specific terms;
+* Applicable customer agreements.
+________________
+
+
+78. GOVERNING LAW
+This Security Policy is governed by the laws of the State of New York, subject to applicable federal law and non-waivable rights.
+________________
+
+
+79. CONTACT INFORMATION
+Husky Solutions LLC
+Security & Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Security Email:
+[SECURITY EMAIL]
+Privacy Email:
+[PRIVACY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+80. EFFECTIVE DATE
+This Security, Incident Response & Vulnerability Disclosure Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

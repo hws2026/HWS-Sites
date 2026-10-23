@@ -1,0 +1,971 @@
+HUSKY SOLUTIONS LLC
+SERVICE LEVEL & SUPPORT POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Service Level & Support Policy (“Support Policy”) describes the general support, maintenance, availability, incident-response, and service-level practices of Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This Policy applies, where relevant, to:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* FiveM scripts and resources
+* Website and hosting services
+* Customer portals
+* APIs and integrations
+* Billing systems
+* Digital products
+* Custom development
+* Graphics and creative services
+* Other current or future Husky Solutions LLC Services
+This Policy supplements the Husky Solutions LLC Terms of Service.
+Unless Husky Solutions LLC expressly enters into a written Service Level Agreement (“SLA”) stating otherwise, the targets and practices described in this Policy are operational goals and not guaranteed service levels.
+________________
+
+
+1. GENERAL SUPPORT COMMITMENT
+Husky Solutions LLC seeks to provide reasonable technical and customer support for supported Services.
+Support availability may vary based on:
+* Product
+* Subscription plan
+* Customer type
+* License type
+* Support package
+* Enterprise agreement
+* Nature of the issue
+* Product support status
+________________
+
+
+2. NO AUTOMATIC 24/7 SUPPORT
+Unless expressly stated in a written agreement, Husky Solutions LLC does not guarantee:
+* 24-hour support
+* Seven-day-per-week support
+* Immediate response
+* Immediate resolution
+* Continuous live staffing
+Support requests may be reviewed during normal support operations.
+________________
+
+
+3. BUSINESS HOURS
+Standard support business hours may be published through the applicable:
+* Product page
+* Customer portal
+* Support center
+* Order form
+* Enterprise agreement
+Unless separately stated, holidays, emergencies, staffing limitations, and maintenance periods may affect availability.
+________________
+
+
+4. SUPPORT CHANNELS
+Depending on the Service, support may be available through:
+* Email
+* Support tickets
+* Customer portal
+* Discord
+* In-product support tools
+* Other officially published channels
+Only channels identified by Husky Solutions LLC should be treated as official support channels.
+________________
+
+
+5. GENERAL SUPPORT EMAIL
+General customer-support requests may be directed to:
+[SUPPORT EMAIL]
+________________
+
+
+6. BILLING SUPPORT
+Billing questions should be directed to:
+[BILLING EMAIL]
+Billing support may assist with:
+* Invoices
+* Subscription questions
+* Duplicate charges
+* Payment issues
+* Cancellation issues
+* Refund eligibility
+* Billing records
+________________
+
+
+7. SECURITY SUPPORT
+Security incidents should be directed to:
+[SECURITY EMAIL]
+Security issues may include:
+* Account compromise
+* Unauthorized login
+* Credential theft
+* Suspicious administrator access
+* Vulnerability reports
+* Security incidents
+________________
+
+
+8. FIVEM SUPPORT
+FiveM-related support may be directed to:
+[FIVEM SUPPORT EMAIL]
+FiveM support may include assistance with:
+* Installation
+* Configuration
+* Documented dependencies
+* License activation
+* Product defects
+* Supported compatibility questions
+________________
+
+
+9. LEGAL REQUESTS ARE NOT SUPPORT REQUESTS
+Legal notices, subpoenas, copyright complaints, law-enforcement requests, or similar matters should be submitted through the applicable legal channel rather than ordinary technical support.
+________________
+
+
+10. SUPPORT PRIORITY LEVELS
+Husky Solutions LLC may categorize support requests according to severity.
+Priority classifications help determine the order in which issues are reviewed.
+________________
+
+
+11. PRIORITY 1 — CRITICAL
+A Priority 1 (“P1”) issue generally involves a severe production problem affecting core Service availability.
+Examples may include:
+* Broad Service outage
+* Widespread authentication failure
+* Significant production infrastructure failure
+* Confirmed active security incident affecting multiple customers
+* Severe data-integrity issue
+P1 does not automatically apply to a problem affecting only a customer's unsupported configuration.
+________________
+
+
+12. PRIORITY 2 — HIGH
+A Priority 2 (“P2”) issue may involve:
+* Major functionality unavailable
+* Significant degradation
+* Important customer workflow blocked
+* Serious account-access problem
+* Production problem without a reasonable workaround
+________________
+
+
+13. PRIORITY 3 — NORMAL
+A Priority 3 (“P3”) issue may include:
+* Ordinary technical problems
+* Configuration assistance
+* Product questions
+* Non-critical bugs
+* Documentation questions
+* General account assistance
+________________
+
+
+14. PRIORITY 4 — LOW
+A Priority 4 (“P4”) issue may include:
+* Feature requests
+* Cosmetic problems
+* General feedback
+* Minor documentation issues
+* Non-urgent questions
+________________
+
+
+15. PRIORITY MAY BE RECLASSIFIED
+Husky Solutions LLC may change a ticket's priority based on:
+* Actual technical impact
+* Number of affected users
+* Security risk
+* Availability of a workaround
+* Supported configuration
+* Service scope
+A customer labeling a ticket “urgent” does not automatically make the issue P1.
+________________
+
+
+16. TARGET RESPONSE TIMES
+Unless a specific plan or written SLA provides otherwise, Husky Solutions LLC does not guarantee a fixed response time.
+We may publish target response times for particular:
+* Products
+* Plans
+* Enterprise agreements
+* Support packages
+A target response time is different from a guaranteed resolution time.
+________________
+
+
+17. RESPONSE TIME VS. RESOLUTION TIME
+“Response time” means the period before Husky Solutions LLC initially reviews or responds to a support request.
+“Resolution time” means the time required to fully correct or otherwise resolve an issue.
+An initial response does not guarantee immediate resolution.
+Resolution may depend on:
+* Technical complexity
+* Customer cooperation
+* Third-party providers
+* Product architecture
+* Software updates
+* Reproduction of the issue
+* Security considerations
+________________
+
+
+18. NO DEFAULT RESOLUTION GUARANTEE
+Unless a written SLA expressly provides otherwise, Husky Solutions LLC does not guarantee resolution within a specific number of:
+* Minutes
+* Hours
+* Days
+Some technical issues may require extended investigation.
+________________
+
+
+19. CUSTOMER INFORMATION REQUIRED
+Customers should provide sufficient information to allow Husky Solutions LLC to understand and investigate a problem.
+Useful information may include:
+* Account email
+* Product
+* Organization
+* Error message
+* Screenshots
+* Logs
+* Steps to reproduce
+* Approximate time of issue
+* Relevant server or environment information
+________________
+
+
+20. DO NOT SEND PASSWORDS
+Customers should not send:
+* Account passwords
+* Complete session cookies
+* Complete authentication tokens
+* Full payment-card numbers
+* Card security codes
+through ordinary support channels.
+________________
+
+
+21. CUSTOMER COOPERATION
+Resolution may depend on reasonable customer cooperation.
+A customer may be asked to:
+* Provide logs
+* Reproduce an issue
+* Update software
+* Test a supported configuration
+* Confirm account ownership
+* Provide screenshots
+* Disable conflicting third-party software
+* Install a required update
+________________
+
+
+22. DELAYS CAUSED BY CUSTOMER
+Time during which Husky Solutions LLC is awaiting required customer information may not be counted toward applicable contractual support targets where permitted by the governing agreement.
+________________
+
+
+23. SUPPORTED CONFIGURATIONS
+Support is generally provided for product configurations identified as supported.
+Husky Solutions LLC may have limited ability to troubleshoot:
+* Unsupported frameworks
+* Heavily modified code
+* Obsolete software versions
+* Unsupported browsers
+* Unsupported operating systems
+* Unrelated third-party scripts
+________________
+
+
+24. THIRD-PARTY SOFTWARE
+Husky Solutions LLC may assist in identifying a conflict with third-party software but does not guarantee repair of unrelated third-party products.
+Customers may need to contact the third-party provider.
+________________
+
+
+25. FIVE M / FIVEM SUPPORT SCOPE
+FiveM support generally covers the Husky Solutions LLC resource itself.
+Standard support does not automatically include:
+* Full FiveM server setup
+* Repair of unrelated scripts
+* Framework conversion
+* Custom development
+* Database redesign
+* Hosting administration
+* Repair of customer modifications
+unless separately purchased.
+________________
+
+
+26. MODIFIED FIVEM RESOURCES
+Where a customer modifies a FiveM resource, Husky Solutions LLC may require testing with the original supported version.
+Problems caused by customer or third-party modifications may fall outside standard support.
+________________
+
+
+27. CUSTOM DEVELOPMENT SUPPORT
+Support for custom-developed products may be governed by the applicable:
+* Statement of work
+* Project agreement
+* Quote
+* Invoice
+* Maintenance agreement
+________________
+
+
+28. GRAPHICS SUPPORT
+Support for completed graphics generally concerns:
+* Delivery problems
+* File corruption
+* Material delivery errors
+* Agreed revisions
+Support does not automatically include unlimited future redesign.
+________________
+
+
+29. SERVICE AVAILABILITY
+Husky Solutions LLC seeks to maintain reasonable availability of supported online Services.
+Unless a written SLA expressly guarantees uptime, Husky Solutions LLC does not guarantee a specific uptime percentage.
+________________
+
+
+30. NO DEFAULT 99.9% GUARANTEE
+References to reliable hosting, availability, or production infrastructure do not automatically constitute a contractual:
+* 99%
+* 99.9%
+* 99.99%
+uptime guarantee.
+A specific uptime commitment exists only where expressly stated in a written SLA or applicable plan terms.
+________________
+
+
+31. SCHEDULED MAINTENANCE
+Husky Solutions LLC may perform scheduled maintenance for purposes such as:
+* Software updates
+* Security patches
+* Database maintenance
+* Infrastructure upgrades
+* Network changes
+* Performance improvements
+Scheduled maintenance may temporarily affect availability.
+________________
+
+
+32. MAINTENANCE NOTICE
+Where commercially reasonable, Husky Solutions LLC may provide advance notice of significant planned maintenance.
+Notice may be provided through:
+* Email
+* Customer portal
+* Status page
+* Application notice
+* Other support channel
+________________
+
+
+33. EMERGENCY MAINTENANCE
+Emergency maintenance may occur without advance notice when reasonably necessary to address:
+* Security vulnerabilities
+* Infrastructure failures
+* Active attacks
+* Data-integrity risks
+* Critical defects
+* Third-party provider failures
+________________
+
+
+34. SECURITY TAKES PRIORITY
+Husky Solutions LLC may temporarily reduce or suspend functionality where necessary to protect:
+* Customer information
+* Infrastructure
+* Account security
+* Data integrity
+* Other users
+Security-related downtime may be necessary to prevent greater harm.
+________________
+
+
+35. SERVICE STATUS INFORMATION
+Husky Solutions LLC may provide a:
+* Status page
+* Incident notice
+* Dashboard notice
+* Support announcement
+for significant Service disruptions.
+Not every isolated customer issue will necessarily appear on a public status page.
+________________
+
+
+36. INCIDENT COMMUNICATIONS
+During significant incidents, Husky Solutions LLC may communicate information such as:
+* Acknowledgment of the issue
+* Affected Services
+* Current status
+* Available workaround
+* Restoration notice
+Detailed technical information may be withheld where disclosure could create a security risk.
+________________
+
+
+37. INCIDENT UPDATES
+Unless governed by an SLA, the frequency of incident updates may vary based on:
+* Severity
+* Available information
+* Security sensitivity
+* Number of affected customers
+________________
+
+
+38. ROOT CAUSE ANALYSIS
+Following certain significant incidents, Husky Solutions LLC may conduct internal root-cause analysis.
+A formal customer-facing incident report is not guaranteed unless required by:
+* Law
+* Contract
+* Written SLA
+________________
+
+
+39. SECURITY INCIDENT REPORTS
+Security incidents are governed by the Husky Solutions LLC Security, Incident Response & Vulnerability Disclosure Policy.
+Applicable breach notifications will be provided when legally required.
+________________
+
+
+40. THIRD-PARTY OUTAGES
+A Service may depend on unrelated providers such as:
+* Cloud infrastructure
+* Payment processors
+* DNS providers
+* Email providers
+* Authentication systems
+* APIs
+* Cfx.re
+* Hosting providers
+Husky Solutions LLC does not control unrelated third-party outages.
+________________
+
+
+41. THIRD-PARTY INCIDENT RESPONSE
+Where a third-party failure affects a Husky Solutions LLC Service, we may take reasonable actions such as:
+* Contacting the provider
+* Implementing a workaround
+* Migrating functionality
+* Temporarily disabling an integration
+* Communicating known impact
+________________
+
+
+42. INTERNET AND CUSTOMER NETWORKS
+Husky Solutions LLC is not responsible for failures caused solely by:
+* Customer internet service
+* Customer routers
+* Customer firewalls
+* Local network configuration
+* Device failure
+* Customer VPN configuration
+________________
+
+
+43. CUSTOMER HOSTING
+If a Husky Solutions product runs on infrastructure controlled by the customer, availability may depend on that customer's:
+* Server
+* Hosting provider
+* Network
+* Database
+* Configuration
+Husky Solutions LLC cannot guarantee uptime of customer-controlled infrastructure.
+________________
+
+
+44. HOSTED SERVICES
+Where Husky Solutions LLC controls the hosted environment, we are responsible for managing our portion of the infrastructure subject to the Terms of Service and applicable SLA.
+________________
+
+
+45. BACKUPS
+Husky Solutions LLC may maintain backups for applicable hosted Services.
+Backups are intended for:
+* Disaster recovery
+* System restoration
+* Business continuity
+They are not necessarily a replacement for customer-maintained copies of critical information.
+________________
+
+
+46. CUSTOMER BACKUPS
+Customers should maintain independent backups where:
+* Export functionality exists
+* Customer-controlled data is critical
+* FiveM resources are modified
+* Website files are important
+* Custom configuration is difficult to reproduce
+________________
+
+
+47. RESTORATION
+Husky Solutions LLC may attempt restoration where data is affected by a supported infrastructure failure.
+Restoration success is not guaranteed in every circumstance.
+________________
+
+
+48. DATA LOSS
+Potential data-loss events will be handled according to:
+* Technical feasibility
+* Backup availability
+* Security requirements
+* Applicable law
+* Applicable written SLA
+________________
+
+
+49. SERVICE CREDITS
+Service credits are provided only where:
+* A written SLA expressly provides them;
+* A product-specific agreement provides them; or
+* Husky Solutions LLC voluntarily grants them.
+There is no automatic right to service credit merely because downtime occurred.
+________________
+
+
+50. SERVICE CREDITS ARE NOT CASH
+Unless otherwise required by law or agreement, contractual service credits:
+* Are not cash refunds
+* Apply to future eligible Services
+* May be subject to limits
+* May expire according to applicable SLA terms
+________________
+
+
+51. REFUNDS
+Refund eligibility is governed by the Husky Solutions LLC Refund & Cancellation Policy.
+Support dissatisfaction alone does not automatically create a refund right.
+________________
+
+
+52. FIVEM FINAL SALE
+One-time-payment FiveM scripts and resources remain subject to the applicable final-sale/no-refund rule after delivery or access is granted, except where applicable law requires otherwise.
+Support or troubleshooting does not change that rule.
+________________
+
+
+53. SUPPORT DOES NOT GUARANTEE COMPATIBILITY
+Support assistance does not guarantee that a resource can be made compatible with an unsupported customer environment.
+________________
+
+
+54. CUSTOM WORK
+Custom work outside standard support may require a separate:
+* Quote
+* Invoice
+* Project agreement
+* Statement of work
+________________
+
+
+55. PROFESSIONAL SERVICES
+Customers may be offered paid professional services for needs outside ordinary support.
+These may include:
+* Custom configuration
+* Development
+* Migration
+* Integration
+* Consulting
+* Advanced setup
+________________
+
+
+56. FEATURE REQUESTS
+Feature requests are not incidents or defects.
+Submitting a feature request does not guarantee:
+* Acceptance
+* Development
+* Release
+* Specific delivery date
+________________
+
+
+57. BUG REPORTS
+A bug report should include enough information to reproduce the issue where reasonably possible.
+A reported behavior is not necessarily a bug if it results from:
+* Intended functionality
+* Unsupported configuration
+* Third-party conflict
+* Customer customization
+________________
+
+
+58. BETA SUPPORT
+Beta, preview, experimental, or early-access products may receive reduced support.
+Such Services may:
+* Change quickly
+* Contain defects
+* Be temporarily unavailable
+* Be discontinued
+________________
+
+
+59. LEGACY PRODUCTS
+Husky Solutions LLC may designate older products or versions as:
+* Legacy
+* Deprecated
+* End of support
+* End of life
+Support may be reduced or discontinued after reasonable notice where appropriate.
+________________
+
+
+60. SECURITY UPDATES
+Customers may be required to install security updates to continue receiving support.
+Husky Solutions LLC may decline to troubleshoot an issue caused by continued use of a version with a known critical vulnerability.
+________________
+
+
+61. END-OF-LIFE NOTICE
+Where commercially reasonable, Husky Solutions LLC may provide advance notice before discontinuing support for a significant paid product.
+Notice may include:
+* End-of-support date
+* Recommended replacement
+* Migration guidance
+* Available upgrade options
+________________
+
+
+62. ACCOUNT VERIFICATION
+Support personnel may require identity or account verification before making sensitive account changes.
+Verification may be required for:
+* Email changes
+* Ownership disputes
+* Organization administrator changes
+* Account recovery
+* Security incidents
+* License transfers
+________________
+
+
+63. SUPPORT AND PRIVACY
+Support personnel may access information reasonably necessary to diagnose an issue.
+Such access is governed by the Husky Solutions LLC Privacy Policy.
+________________
+
+
+64. SUPPORT AND SECURITY LOGS
+Technical support may review:
+* Error logs
+* Login logs
+* IP information
+* Device information
+* Security events
+where reasonably necessary to diagnose or secure an account.
+________________
+
+
+65. PRECISE LOCATION
+Precise or close-pinpoint location information collected for security purposes will not ordinarily be accessed by general support personnel unless relevant and authorized for a security investigation.
+Such information is governed by the Husky Solutions LLC Security and Privacy Policies.
+________________
+
+
+66. SUPPORT RECORDING AND LOGGING
+Support communications may be:
+* Logged
+* Ticketed
+* Retained
+* Reviewed
+for purposes including:
+* Providing support
+* Quality control
+* Security
+* Dispute resolution
+* Training where appropriate
+Retention is governed by the Data Retention & Deletion Policy.
+________________
+
+
+67. SUPPORT ABUSE
+Customers may not use support channels to:
+* Threaten personnel
+* Harass personnel
+* Conduct phishing
+* Conduct social engineering
+* Submit malware
+* Attempt unauthorized access
+* Obtain another customer's information
+________________
+
+
+68. SUPPORT RESTRICTIONS
+Husky Solutions LLC may restrict a customer's access to non-essential support channels following serious or repeated abuse.
+Where reasonably possible, essential billing or security communications will remain available.
+________________
+
+
+69. PROFANITY AND FRUSTRATION
+Husky Solutions LLC recognizes that customers may be frustrated during technical issues.
+Ordinary expressions of frustration do not automatically result in support termination.
+However, credible threats, harassment, discrimination, deliberate abuse, or attempts to compromise personnel or systems may result in restrictions.
+________________
+
+
+70. ESCALATION
+A support issue may be escalated when:
+* Technical complexity requires additional expertise
+* A significant security concern exists
+* The issue affects multiple customers
+* Administrative authority is required
+* A billing or legal review is necessary
+________________
+
+
+71. ESCALATION DOES NOT GUARANTEE IMMEDIATE RESOLUTION
+Escalation indicates that additional review is appropriate.
+It does not guarantee resolution within a particular timeframe unless governed by a written SLA.
+________________
+
+
+72. ENTERPRISE SUPPORT
+Enterprise customers may receive additional benefits through a negotiated agreement.
+These may include:
+* Dedicated support contacts
+* Priority routing
+* Defined response targets
+* Uptime commitments
+* Service credits
+* Scheduled reviews
+* Custom escalation procedures
+________________
+
+
+73. WRITTEN SERVICE LEVEL AGREEMENTS
+A binding SLA must expressly identify:
+* Covered Service
+* Covered customer
+* Availability commitment
+* Measurement method
+* Exclusions
+* Support response commitments
+* Credit procedure
+* Claim deadlines
+* Other relevant terms
+General marketing statements do not create an SLA.
+________________
+
+
+74. SLA MEASUREMENT
+If an SLA applies, uptime and performance will be measured according to the method stated in that agreement.
+Different measurements may produce different results.
+________________
+
+
+75. SLA EXCLUSIONS
+A written SLA may exclude downtime caused by:
+* Scheduled maintenance
+* Emergency maintenance
+* Customer actions
+* Customer infrastructure
+* Unsupported configurations
+* Third-party services
+* Force majeure
+* Security attacks outside reasonable control
+The applicable written SLA controls.
+________________
+
+
+76. FORCE MAJEURE
+Husky Solutions LLC is not responsible for failures or delays caused by events reasonably outside our control, subject to applicable law and contract.
+Such events may include:
+* Severe weather
+* Natural disasters
+* Fire
+* War
+* Civil unrest
+* Government action
+* Telecommunications failures
+* Internet outages
+* Large-scale cloud outages
+* Cyberattacks
+* Utility failures
+* Other comparable events
+________________
+
+
+77. CUSTOMER MAINTENANCE RESPONSIBILITY
+Where a customer controls part of the environment, the customer is responsible for maintaining:
+* Supported software
+* Hardware
+* Internet access
+* Dependencies
+* Credentials
+* Configuration
+* Security updates
+________________
+
+
+78. API SUPPORT
+API support may include assistance with:
+* Authentication
+* Documented endpoints
+* Reported product defects
+Standard API support does not include writing the customer's integration unless separately purchased.
+________________
+
+
+79. RATE LIMITS
+API or Service rate limits may be used to protect:
+* Reliability
+* Security
+* Fair resource allocation
+Requests to increase limits may require:
+* Plan upgrade
+* Enterprise agreement
+* Technical review
+________________
+
+
+80. DOCUMENTATION
+Documentation may be updated as Services evolve.
+Customers should use the current supported documentation.
+________________
+
+
+81. SUPPORT FOR OUTDATED DOCUMENTATION
+If older documentation conflicts with current supported functionality, current official product documentation generally controls unless a written agreement states otherwise.
+________________
+
+
+82. LANGUAGE OF SUPPORT
+Unless otherwise stated, official support may primarily be provided in English.
+Automated translation may be used where appropriate but may contain errors.
+________________
+
+
+83. ACCESSIBILITY
+Customers who experience an accessibility barrier when using support systems may contact Husky Solutions LLC through an alternative available channel.
+Accessibility requests are governed by the Husky Solutions LLC Accessibility Policy.
+________________
+
+
+84. SUPPORT TICKETS ARE NOT EMERGENCY SERVICES
+Husky Solutions LLC support channels are not emergency communications systems.
+Do not use technical support as a substitute for:
+* 911
+* Emergency medical services
+* Law enforcement
+* Fire services
+* Other emergency authorities
+________________
+
+
+85. SECURITY EMERGENCIES
+A suspected active compromise of a Husky Solutions LLC account should be reported through the designated security channel as soon as reasonably possible.
+Husky Solutions LLC may take immediate protective action where appropriate.
+________________
+
+
+86. MAINTENANCE OF CUSTOMER CONTACT INFORMATION
+Customers are responsible for maintaining current:
+* Email addresses
+* Administrator contacts
+* Billing contacts
+* Security contacts
+where supported.
+Important Service notices may be sent to those contacts.
+________________
+
+
+87. STATUS NOTIFICATION
+Husky Solutions LLC may send outage or maintenance notices only to:
+* Account administrators
+* Billing contacts
+* Designated technical contacts
+depending on the product and account configuration.
+________________
+
+
+88. CUSTOMER RESPONSIBILITY TO MONITOR NOTICES
+Customers should monitor official:
+* Email
+* Customer portals
+* Status pages
+* Support channels
+for relevant Service notices.
+________________
+
+
+89. NO GUARANTEE OF THIRD-PARTY DISCORD SUPPORT
+If Husky Solutions LLC uses Discord for convenience, Discord availability is controlled by Discord and is not guaranteed by Husky Solutions LLC.
+Official support alternatives may be provided where appropriate.
+________________
+
+
+90. INTELLECTUAL PROPERTY DURING SUPPORT
+Providing a file or code sample for troubleshooting does not transfer ownership of underlying intellectual property.
+Customers must have authority to provide materials submitted to Support.
+________________
+
+
+91. CONFIDENTIAL INFORMATION
+Support information identified and handled as confidential may be subject to:
+* Terms of Service
+* Privacy Policy
+* Separate confidentiality agreement
+where applicable.
+________________
+
+
+92. SERVICE MODIFICATIONS
+Husky Solutions LLC may change:
+* Support channels
+* Support procedures
+* Support hours
+* Product support status
+as Services evolve.
+Material changes affecting paid contractual support will be handled according to applicable agreements and law.
+________________
+
+
+93. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Support Policy from time to time.
+The “Last Updated” date identifies the current version.
+________________
+
+
+94. RELATIONSHIP TO OTHER POLICIES
+This Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Privacy Policy
+* Husky Solutions LLC Security Policy
+* Husky Solutions LLC Refund & Cancellation Policy
+* Husky Solutions LLC Subscription & Billing Policy
+* Husky Solutions LLC FiveM Resource Terms
+* Product-specific agreements
+* Written Service Level Agreements
+A separately signed SLA controls where it directly conflicts with this general Policy.
+________________
+
+
+95. GOVERNING LAW
+This Policy is governed by the laws of the State of New York, subject to applicable federal law and non-waivable rights.
+________________
+
+
+96. CONTACT INFORMATION
+Husky Solutions LLC
+Customer Support
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+General Support:
+[SUPPORT EMAIL]
+Billing:
+[BILLING EMAIL]
+Security:
+[SECURITY EMAIL]
+FiveM Support:
+[FIVEM SUPPORT EMAIL]
+Legal:
+[LEGAL EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+97. EFFECTIVE DATE
+This Service Level & Support Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

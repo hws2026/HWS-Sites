@@ -1,0 +1,807 @@
+HUSKY SOLUTIONS LLC
+ELECTRONIC COMMUNICATIONS & E-SIGN CONSENT POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Electronic Communications & E-Sign Consent Policy (“Electronic Communications Policy”) governs the use of electronic records, electronic notices, electronic signatures, digital acknowledgments, electronic contracts, and electronic communications between Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) and users, customers, businesses, organizations, administrators, and other parties interacting with our Services.
+This Policy may apply to:
+* Husky Solutions LLC websites
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* FiveM products and resources
+* Customer portals
+* Billing systems
+* Subscription enrollment
+* Digital purchases
+* Quotes
+* Invoices
+* Order forms
+* Statements of work
+* Account creation
+* Support communications
+* Business agreements
+* Other current or future Husky Solutions LLC Services
+This Policy supplements the Husky Solutions LLC Terms of Service and other applicable agreements.
+________________
+
+
+1. ELECTRONIC BUSINESS
+Husky Solutions LLC primarily conducts business electronically.
+You understand that transactions with Husky Solutions LLC may involve electronic:
+* Contracts
+* Signatures
+* Receipts
+* Invoices
+* Subscription confirmations
+* Renewal notices
+* Cancellation confirmations
+* Billing notices
+* Account notices
+* Security alerts
+* Legal notices
+* Product licenses
+* Support communications
+* Order confirmations
+* Other records
+subject to applicable law.
+________________
+
+
+2. CONSENT TO ELECTRONIC TRANSACTIONS
+By conducting an eligible transaction electronically with Husky Solutions LLC, you agree that applicable records and signatures may be created, delivered, accepted, and maintained electronically where permitted by law.
+Your electronic agreement may have the same legal effect as a handwritten signature or paper record where applicable law recognizes electronic records and signatures.
+________________
+
+
+3. ELECTRONIC SIGNATURES
+An electronic signature may include an electronic sound, symbol, or process attached to or logically associated with an electronic record and adopted with the intent to sign or authenticate the record.
+Depending on the transaction, an electronic signature may include:
+* Clicking an “I Agree” button
+* Checking an agreement checkbox
+* Typing your name into a signature field
+* Drawing a signature electronically
+* Applying a digital signature
+* Signing through an electronic-signature provider
+* Using another electronic process clearly intended to indicate agreement
+The circumstances surrounding the action must demonstrate an intent to agree, sign, approve, or adopt the applicable record.
+________________
+
+
+4. CLICKWRAP AGREEMENTS
+Husky Solutions LLC may use “clickwrap” or similar electronic acceptance mechanisms.
+For example, you may be required to affirmatively select:
+“I have read and agree to the Terms of Service and Privacy Policy.”
+and then complete an affirmative action such as:
+Create Account
+Purchase
+Subscribe
+Accept
+or another clearly identified action.
+Where properly implemented, Husky Solutions LLC may treat that affirmative action as evidence of your agreement to the applicable terms.
+________________
+
+
+5. NO IMPLIED CONSENT FROM SILENCE WHERE AFFIRMATIVE CONSENT IS REQUIRED
+Where applicable law requires affirmative consent, Husky Solutions LLC will not rely solely upon:
+* Silence
+* Inactivity
+* Failure to respond
+* A pre-checked box
+as affirmative consent.
+________________
+
+
+6. INTENT TO SIGN
+Merely accessing a webpage does not necessarily mean you electronically signed an agreement.
+Husky Solutions LLC may use affirmative processes intended to establish that a user knowingly:
+* Accepted
+* Approved
+* Authorized
+* Signed
+* Agreed to
+the applicable record.
+________________
+
+
+7. ELECTRONIC RECORD VALIDITY
+Electronic records and contracts should not be considered invalid merely because they exist electronically where applicable law recognizes electronic records.
+Husky Solutions LLC may maintain contracts entirely in electronic form.
+________________
+
+
+8. ELECTRONIC SIGNATURE VALIDITY
+Where applicable law permits electronic execution, an electronic signature may have the same validity and effect as a handwritten signature.
+This does not mean every document may legally be signed electronically.
+Certain documents may be governed by special legal requirements.
+________________
+
+
+9. NEW YORK ELECTRONIC SIGNATURES
+Husky Solutions LLC is based in New York.
+New York's Electronic Signatures and Records Act (“ESRA”) generally recognizes electronic signatures where applicable and provides that an electronic signature may have the same validity and effect as a handwritten signature.
+These FiveM Terms, business agreements, account agreements, and other commercial records may therefore be entered electronically where legally permissible.
+________________
+
+
+10. FEDERAL E-SIGN LAW
+Transactions involving interstate or foreign commerce may also be subject to the federal Electronic Signatures in Global and National Commerce Act (“E-SIGN Act”).
+Where applicable, a contract or signature generally will not be denied legal effect solely because it is electronic.
+________________
+
+
+11. CONSUMER ELECTRONIC DISCLOSURES
+Where federal or other applicable law requires a consumer disclosure to be provided “in writing,” additional electronic-consent procedures may apply before the disclosure may be provided exclusively electronically.
+Where applicable, Husky Solutions LLC may request a consumer's affirmative consent to receive required disclosures electronically.
+________________
+
+
+12. ELECTRONIC DISCLOSURE CONSENT
+Where required by the E-SIGN Act or another applicable law, before obtaining electronic consent Husky Solutions LLC may provide information explaining:
+* That records may be provided electronically
+* The categories of records covered by consent
+* The right or option to receive paper records where applicable
+* The right to withdraw electronic consent
+* Any consequences of withdrawing consent
+* Procedures for updating electronic contact information
+* How paper copies may be requested
+* Whether any legally permitted fee applies to paper copies
+* Hardware and software requirements
+________________
+
+
+13. ABILITY TO ACCESS ELECTRONIC RECORDS
+Where legally required, electronic consent may be obtained in a manner that reasonably demonstrates that you can access information in the electronic form Husky Solutions LLC intends to use.
+For example, you may be asked to:
+* Open an electronic disclosure
+* Access a webpage containing the disclosure
+* Download a document
+* Check a consent box associated with an electronic disclosure
+________________
+
+
+14. HARDWARE REQUIREMENTS
+To receive electronic communications from Husky Solutions LLC, you generally need:
+* A device capable of accessing the internet
+* A supported web browser
+* A valid email account
+* Sufficient electronic storage
+* Software capable of displaying applicable electronic records
+Some documents may require software capable of displaying PDF files or another commonly supported format.
+________________
+
+
+15. SOFTWARE REQUIREMENTS
+Users should maintain a reasonably current browser or application capable of displaying Husky Solutions LLC Services.
+Older or unsupported software may not correctly display certain electronic records.
+________________
+
+
+16. CHANGES TO TECHNICAL REQUIREMENTS
+If applicable law requires additional consent when a material change in hardware or software requirements creates a significant risk that a consumer can no longer access required electronic records, Husky Solutions LLC will provide the legally required notice and renewed consent opportunity.
+________________
+
+
+17. EMAIL COMMUNICATIONS
+Husky Solutions LLC may send electronic communications to an email address associated with your account.
+Communications may include:
+* Account verification
+* Security alerts
+* Password resets
+* Billing notices
+* Subscription notices
+* Renewal notices
+* Cancellation confirmations
+* Product delivery notices
+* Legal notices
+* Support responses
+* Policy updates
+________________
+
+
+18. ACCOUNT NOTIFICATIONS
+Certain electronic communications may be provided through:
+* Customer portals
+* Dashboards
+* In-application notifications
+* Website notices
+* Account message centers
+where appropriate and legally permitted.
+________________
+
+
+19. TEXT MESSAGES
+If Husky Solutions LLC offers SMS or text-message notifications, the user may separately opt in where consent is required.
+Text communications may include:
+* Authentication codes
+* Security alerts
+* Service notifications
+* Other authorized messages
+Electronic-record consent alone does not automatically constitute consent to receive every type of marketing text message.
+________________
+
+
+20. MARKETING CONSENT IS SEPARATE
+Consent to electronic records does not automatically mean that you have consented to receive:
+* Promotional text messages
+* Telemarketing calls
+* Marketing communications requiring separate consent
+Marketing communications remain subject to applicable law and the Husky Solutions LLC Privacy Policy.
+________________
+
+
+21. TRANSACTIONAL COMMUNICATIONS
+Operational communications may be necessary to provide a Service.
+These may include:
+* Account-security notices
+* Billing receipts
+* Subscription information
+* License information
+* Password resets
+* Account changes
+* Legal notices
+These messages may be sent even where a user has opted out of marketing communications.
+________________
+
+
+22. KEEPING YOUR EMAIL ADDRESS CURRENT
+You are responsible for maintaining accurate electronic contact information.
+You should promptly update your email address if it changes.
+Where account controls permit, contact information may be updated through your account settings.
+________________
+
+
+23. FAILED EMAIL DELIVERY
+If an electronic communication cannot be delivered because your address is:
+* Incorrect
+* Inactive
+* Full
+* Blocking our messages
+Husky Solutions LLC may attempt to contact you through another authorized channel.
+You remain responsible for maintaining accurate contact information.
+________________
+
+
+24. SPAM FILTERS
+Users should configure spam or email-security settings so legitimate Husky Solutions LLC communications can be received.
+Husky Solutions LLC is not responsible for a customer's email provider incorrectly classifying legitimate communications as spam where the issue is outside our reasonable control.
+________________
+
+
+25. ELECTRONIC PURCHASE CONFIRMATIONS
+Following a purchase, Husky Solutions LLC may provide an electronic confirmation containing information such as:
+* Product
+* Order number
+* Purchase price
+* Billing frequency
+* Subscription status
+* License information
+* Refund terms
+* Delivery information
+Customers should retain confirmations for their records.
+________________
+
+
+26. ELECTRONIC RECEIPTS
+Receipts may be provided electronically through:
+* Email
+* Customer portal
+* Download
+* Account dashboard
+where legally permitted.
+________________
+
+
+27. ELECTRONIC INVOICES
+Invoices may be delivered electronically.
+An electronic invoice may include:
+* Customer information
+* Invoice number
+* Services
+* Taxes
+* Amount due
+* Payment terms
+* Payment status
+________________
+
+
+28. ELECTRONIC SUBSCRIPTION AGREEMENTS
+Subscription enrollment may occur entirely electronically.
+Husky Solutions LLC may retain evidence of:
+* Terms presented
+* Renewal disclosures presented
+* Date of enrollment
+* User account
+* Consent action
+* Applicable terms version
+________________
+
+
+29. AUTOMATIC-RENEWAL CONSENT
+Electronic consent to an automatically renewing subscription will be obtained in accordance with the Husky Solutions LLC Subscription & Billing Policy and applicable law.
+General acceptance of this Electronic Communications Policy alone does not replace any separate affirmative consent required for automatic renewal.
+________________
+
+
+30. FIVEM PURCHASE ACKNOWLEDGMENTS
+For one-time-payment FiveM digital resources, Husky Solutions LLC may require an electronic acknowledgment such as:
+“I understand that this is a licensed digital resource and that, once delivered or access is granted, the purchase is final and non-refundable except where required by law.”
+The customer's affirmative acceptance may be recorded electronically.
+________________
+
+
+31. PRODUCT LICENSE ACCEPTANCE
+Husky Solutions LLC may require electronic acceptance of a product license before:
+* Download
+* Installation
+* Activation
+* Purchase
+* Use
+Acceptance may be recorded as evidence of the applicable license agreement.
+________________
+
+
+32. ORGANIZATION AGREEMENTS
+Organization administrators may electronically accept terms on behalf of an organization only where they possess authority to do so.
+By accepting on behalf of an organization, the administrator represents that they have authority to bind that organization.
+________________
+
+
+33. ADMINISTRATOR ACTIONS
+Administrative actions may be electronically logged.
+Examples include:
+* User creation
+* Role assignment
+* Subscription purchase
+* Plan change
+* License transfer
+* Account deletion
+* Organization configuration
+Logs may be used to establish what actions were taken through an authorized administrator account.
+________________
+
+
+34. ELECTRONIC STATEMENTS OF WORK
+Husky Solutions LLC may permit customers to electronically sign or approve:
+* Statements of work
+* Development proposals
+* Project scopes
+* Custom graphics orders
+* Service agreements
+The signed electronic record may be retained for future reference.
+________________
+
+
+35. QUOTES
+A customer may electronically accept a quote where the quote specifically provides an acceptance mechanism.
+A quote does not automatically become a binding order merely because it was viewed.
+________________
+
+
+36. DIGITAL SIGNATURE PROVIDERS
+Husky Solutions LLC may use third-party electronic-signature providers.
+These providers may collect information such as:
+* Name
+* Email
+* Signature
+* IP address
+* Timestamp
+* Authentication information
+* Document audit history
+Their processing may also be subject to their privacy terms.
+________________
+
+
+37. ELECTRONIC SIGNATURE AUDIT TRAILS
+Husky Solutions LLC may retain audit information relating to electronic acceptance.
+Audit information may include:
+* Document identifier
+* Agreement version
+* Signatory
+* Account identifier
+* Date and time
+* IP address
+* Device or browser information
+* Signature event
+* Acceptance event
+where reasonably necessary.
+________________
+
+
+38. IP ADDRESS RECORDING
+An IP address may be recorded when an electronic agreement is accepted.
+IP information may assist with:
+* Authentication
+* Fraud detection
+* Audit records
+* Security
+* Dispute resolution
+IP data alone may not conclusively establish the physical identity or precise location of the signer.
+________________
+
+
+39. GEOLOCATION AND E-SIGN SECURITY
+Where legally permitted and consistent with applicable notices and permissions, Husky Solutions LLC may use approximate or precise location information as a security signal in connection with sensitive electronic transactions.
+For example, security systems may identify an electronic acceptance that appears to originate from an unusual or suspicious location.
+Location information is governed by the Husky Solutions LLC Privacy and Security Policies.
+________________
+
+
+40. SECURITY VERIFICATION
+Husky Solutions LLC may require additional verification before accepting certain high-risk electronic actions.
+Verification may include:
+* Password confirmation
+* Email code
+* Multifactor authentication
+* Device verification
+* Organization administrator verification
+* Identity verification
+* Security review
+________________
+
+
+41. SUSPECTED UNAUTHORIZED SIGNATURES
+If Husky Solutions LLC reasonably suspects that an account was compromised when an agreement was accepted, we may investigate the transaction.
+Investigation may include review of:
+* Login records
+* IP addresses
+* Device information
+* Geolocation
+* Authentication records
+* Audit trails
+________________
+
+
+42. ELECTRONIC ACCEPTANCE DISPUTES
+If you believe an agreement was electronically accepted through your account without authorization, notify Husky Solutions LLC promptly at:
+[LEGAL/SECURITY EMAIL]
+We may request information necessary to investigate.
+________________
+
+
+43. SECURITY OF ELECTRONIC SIGNATURES
+Users are responsible for protecting accounts and credentials used to electronically sign or accept records.
+Do not share:
+* Passwords
+* Authentication codes
+* Digital-signature credentials
+* Security keys
+with unauthorized persons.
+________________
+
+
+44. ELECTRONIC RECORD RETENTION
+Husky Solutions LLC may retain electronic agreements and related records in a manner intended to:
+* Accurately reflect the applicable information
+* Allow later reference
+* Permit reproduction where necessary
+* Document the transaction
+Retention periods are governed by applicable law and the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+45. RETAINABLE COPIES
+Where required by law, an electronic record may be made available in a format capable of being retained or reproduced for later reference.
+This may include:
+* Downloadable PDF
+* Email
+* Printable webpage
+* Customer-portal document
+________________
+
+
+46. CUSTOMER COPIES
+Customers should retain copies of important:
+* Agreements
+* Receipts
+* Invoices
+* Licenses
+* Subscription confirmations
+* Cancellation confirmations
+for their records.
+________________
+
+
+47. REQUESTING A PAPER COPY
+Where applicable law provides a right to a paper copy of a required record, you may request one by contacting:
+[LEGAL/SUPPORT EMAIL]
+Husky Solutions LLC will provide paper records when legally required.
+Any fee for a paper copy will be disclosed in advance and imposed only where legally permitted.
+________________
+
+
+48. PAPER RECORDS DO NOT AUTOMATICALLY REPLACE ELECTRONIC ACCOUNTS
+Requesting a paper copy of a particular record does not necessarily terminate your electronic account or withdraw your consent to electronic communications generally.
+________________
+
+
+49. WITHDRAWING ELECTRONIC CONSENT
+Where applicable law grants a consumer the right to withdraw consent to receive legally required records electronically, the consumer may withdraw that consent using the method provided with the applicable disclosure or by contacting:
+[LEGAL/SUPPORT EMAIL]
+________________
+
+
+50. EFFECT OF WITHDRAWAL
+Withdrawal of electronic-record consent is generally prospective.
+It does not invalidate electronic records or signatures that were validly provided or executed before withdrawal became effective.
+________________
+
+
+51. CONSEQUENCES OF WITHDRAWAL
+Certain Husky Solutions LLC Services are designed to operate primarily or exclusively online.
+If you withdraw consent to electronic delivery of records where paper delivery is impractical for the applicable Service, Husky Solutions LLC may be unable to continue providing certain optional Services, subject to applicable law.
+Any material consequence required to be disclosed before consent will be disclosed.
+________________
+
+
+52. NO FEE FOR WITHDRAWING CONSENT WHERE PROHIBITED
+Husky Solutions LLC will not impose a fee for withdrawing electronic-consent rights where applicable law prohibits such a fee.
+________________
+
+
+53. UPDATING ELECTRONIC CONTACT INFORMATION
+Users may update their electronic contact information through:
+* Account settings
+* Customer support
+* Another published method
+depending on the applicable Service.
+________________
+
+
+54. ELECTRONIC POLICY UPDATES
+Husky Solutions LLC may provide notices concerning updated legal policies electronically.
+Notice may be provided through:
+* Email
+* Website banner
+* Customer portal
+* Application notice
+* Other authorized electronic method
+depending on the significance of the update and applicable law.
+________________
+
+
+55. MATERIAL CONTRACT CHANGES
+Where applicable law requires additional notice or consent for a material contractual change, Husky Solutions LLC will provide the required process.
+Merely posting a new contract does not substitute for separate consent when applicable law requires affirmative acceptance.
+________________
+
+
+56. ELECTRONIC CANCELLATION
+Where permitted, cancellation requests may be submitted electronically.
+Subscription cancellation is governed by the Husky Solutions LLC Subscription & Billing Policy.
+________________
+
+
+57. ELECTRONIC REFUND REQUESTS
+Eligible refund requests may be submitted electronically according to the Husky Solutions LLC Refund & Cancellation Policy.
+________________
+
+
+58. ELECTRONIC SUPPORT RECORDS
+Support communications may be retained electronically.
+These records may document:
+* Customer requests
+* Troubleshooting
+* Commitments
+* Resolutions
+* Account changes
+________________
+
+
+59. CHAT AND DIRECT MESSAGES
+Where Husky Solutions LLC provides support through:
+* Chat
+* Discord
+* Direct message
+* Similar systems
+those communications may constitute electronic records.
+However, a casual support conversation does not amend a signed agreement unless the person making the amendment has authority to do so and applicable amendment requirements are satisfied.
+________________
+
+
+60. EMPLOYEE AUTHORITY
+Not every Husky Solutions LLC employee, contractor, moderator, or support representative has authority to modify a contract.
+Contract modifications may require approval by authorized personnel.
+________________
+
+
+61. ELECTRONIC RECORDS AS EVIDENCE
+Electronic records may be used to document:
+* Transactions
+* Agreements
+* Account actions
+* Consents
+* Purchases
+* Cancellations
+* Security events
+subject to applicable evidentiary law.
+________________
+
+
+62. AUTOMATED SYSTEMS
+Certain electronic transactions may involve automated systems.
+For example:
+* Subscription enrollment
+* License issuance
+* Digital delivery
+* Billing
+* Account provisioning
+may occur automatically after a customer takes an authorized action.
+Use of an automated process does not by itself invalidate an electronic transaction where applicable law recognizes the transaction.
+________________
+
+
+63. RECORD ACCURACY
+Husky Solutions LLC may use technical measures intended to preserve the integrity of electronic records.
+These may include:
+* Timestamps
+* Version identifiers
+* Audit logs
+* Access controls
+* Digital signatures
+* Hashing
+* Protected storage
+where appropriate.
+________________
+
+
+64. CORRECTIONS
+If a customer believes an electronic record contains an error, the customer should contact Husky Solutions LLC.
+Husky Solutions LLC may:
+* Investigate
+* Correct an administrative error
+* Issue an amended record
+* Preserve the original record where legally appropriate
+________________
+
+
+65. EXCLUDED OR SPECIAL DOCUMENTS
+Electronic-signature laws do not necessarily apply in the same way to every category of legal document.
+Certain records may be excluded or subject to specialized legal requirements.
+Examples may include, depending on applicable law:
+* Certain wills or testamentary documents
+* Certain trusts
+* Certain powers of attorney
+* Certain family-law documents
+* Certain court documents
+* Certain negotiable instruments
+* Documents requiring specialized notarization, witnessing, filing, or execution procedures
+Husky Solutions LLC will not treat this Policy as authorization to electronically execute a document where applicable law requires another method.
+________________
+
+
+66. NOTARIZATION
+Where a transaction legally requires notarization, ordinary electronic acceptance through a Husky Solutions LLC account does not automatically satisfy that requirement.
+An appropriate:
+* Traditional notarization
+* Electronic notarization
+* Remote online notarization
+process may be required under applicable law.
+________________
+
+
+67. GOVERNMENT FILINGS
+A government agency may impose its own requirements concerning:
+* Electronic filings
+* Electronic signatures
+* Authentication
+* Forms
+Husky Solutions LLC's acceptance of an electronic signature does not guarantee that an unrelated government agency will accept the same signature method.
+________________
+
+
+68. BUSINESS-TO-BUSINESS AGREEMENTS
+Businesses may enter eligible agreements with Husky Solutions LLC electronically.
+Representatives signing on behalf of a company represent that they possess authority to bind the company.
+________________
+
+
+69. UNAUTHORIZED ORGANIZATION SIGNATURES
+If a person accepts an agreement on behalf of an organization without authority, Husky Solutions LLC reserves all rights available under applicable law concerning the transaction and representation of authority.
+________________
+
+
+70. INTERNATIONAL ELECTRONIC SIGNATURES
+Electronic-signature laws differ between countries.
+Where a transaction involves another jurisdiction, Husky Solutions LLC may require:
+* Additional authentication
+* A particular signature platform
+* A handwritten signature
+* Additional documentation
+where appropriate.
+________________
+
+
+71. PRIVACY
+Information collected during electronic transactions is handled according to the Husky Solutions LLC Privacy Policy.
+This may include:
+* Signatory information
+* IP address
+* Device information
+* Audit data
+* Authentication data
+* Geolocation where applicable
+________________
+
+
+72. SECURITY
+Electronic transactions are subject to the Husky Solutions LLC Security, Incident Response & Vulnerability Disclosure Policy.
+________________
+
+
+73. DATA RETENTION
+Electronic records will be retained according to the Husky Solutions LLC Data Retention & Deletion Policy and applicable legal requirements.
+________________
+
+
+74. ACCESSIBILITY
+If an electronic document or signature process presents an accessibility barrier, contact:
+[ACCESSIBILITY EMAIL]
+Husky Solutions LLC may provide an appropriate accessible alternative where reasonably available and legally permitted.
+________________
+
+
+75. NO WAIVER OF REQUIRED FORMALITIES
+Nothing in this Policy waives a legal requirement for:
+* Notarization
+* Witnesses
+* Paper originals
+* Government filing
+* Specialized authentication
+* Another formality
+where applicable law requires it.
+________________
+
+
+76. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Electronic Communications Policy as:
+* Technology changes
+* Signature systems change
+* Communications methods change
+* Applicable law changes
+The “Last Updated” date identifies the current version.
+________________
+
+
+77. RELATIONSHIP TO OTHER AGREEMENTS
+This Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Terms of Use
+* Privacy Policy
+* Subscription & Billing Policy
+* Refund & Cancellation Policy
+* Product Licensing Agreement
+* FiveM Resource Terms
+* Data Retention & Deletion Policy
+* Applicable signed agreements
+If a separately signed agreement specifies a particular signature or notice method, that agreement controls within its scope.
+________________
+
+
+78. GOVERNING LAW
+This Policy is governed by applicable federal electronic-signature law and, where applicable, the laws of the State of New York, subject to rights that cannot legally be waived.
+________________
+
+
+79. ELECTRONIC COMMUNICATIONS CONTACT
+Questions about electronic records, signatures, or communications may be directed to:
+Husky Solutions LLC
+Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Legal Email:
+[LEGAL EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Accessibility Email:
+[ACCESSIBILITY EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+80. EFFECTIVE DATE
+This Electronic Communications & E-Sign Consent Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

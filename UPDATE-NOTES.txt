@@ -1,3 +1,13 @@
+CUSTOMER SERVICES UPDATE — OCTOBER 23, 2026
+
+See CUSTOMER-SETUP-README.txt for the complete change list and activation steps.
+Includes verified Resend onboarding, temporary passwords, policy version history,
+security logs, encrypted support conversations, staff roles, HoneyBook links,
+customer template assignment, and mobile-menu fixes.
+Upload the complete source package, then enable customer setup in Customers.
+
+OLDER RELEASE NOTES BELOW (deployment statements refer to those older releases)
+
 MOBILE WORKSPACE
 Phones and tablets can sign in to Billing, Forms, and Events. Use Mobile workspace in the desktop header to preview it. Deploy the backend as well as the GitHub Pages frontend. Event publishing keeps unrelated website edits private.
 

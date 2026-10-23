@@ -57,6 +57,34 @@
       "when": 1791983402340,
       "tag": "0007_spicy_xorn",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1792616918584,
+      "tag": "0008_thin_nicolaos",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1792617999448,
+      "tag": "0009_normal_old_lace",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1792727347105,
+      "tag": "0010_dashing_monster_badoon",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "6",
+      "when": 1792727718627,
+      "tag": "0011_amusing_hellion",
+      "breakpoints": true
     }
   ]
 }

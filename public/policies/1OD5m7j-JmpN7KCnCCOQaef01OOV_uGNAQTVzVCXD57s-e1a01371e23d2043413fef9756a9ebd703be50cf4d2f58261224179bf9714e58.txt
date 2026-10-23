@@ -1,0 +1,1029 @@
+HUSKY SOLUTIONS LLC
+ACCOUNT, AUTHENTICATION & IDENTITY VERIFICATION POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Account, Authentication & Identity Verification Policy (“Account Security Policy”) explains the account-registration, authentication, identity-verification, account-recovery, access-control, and account-security practices applicable to services operated by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This Policy may apply to:
+* Husky Solutions LLC accounts
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer portals
+* Organization accounts
+* Administrative dashboards
+* FiveM customer and licensing accounts
+* Billing portals
+* APIs
+* Developer accounts
+* Support portals
+* Other current or future Husky Solutions LLC Services
+This Policy supplements the Husky Solutions LLC:
+* Terms of Service
+* Privacy Policy
+* Security Policy
+* Acceptable Use Policy
+* Electronic Communications & E-Sign Consent Policy
+________________
+
+
+1. ACCOUNT SECURITY
+Husky Solutions LLC may require users to create an account before accessing certain Services.
+Account access may be protected through one or more authentication mechanisms.
+These may include:
+* Email address and password
+* One-time passwords
+* Multifactor authentication
+* Authentication applications
+* Security keys
+* Device authentication
+* Biometric authentication performed by a supported device
+* Passkeys
+* Organization authentication systems
+* Other supported authentication methods
+Available methods may vary by Service.
+________________
+
+
+2. ACCURATE ACCOUNT INFORMATION
+Users must provide accurate information when creating or maintaining an account.
+You may not knowingly:
+* Create an account using another person's identity without authorization
+* Provide fraudulent contact information
+* Impersonate another person
+* Impersonate an organization
+* Misrepresent your authority
+* Create accounts for fraudulent purposes
+________________
+
+
+3. UNIQUE ACCOUNT IDENTIFIERS
+Accounts may be associated with identifiers such as:
+* Email address
+* Username
+* Customer ID
+* Organization ID
+* Internal account ID
+* Employee ID
+* License ID
+Husky Solutions LLC may use internal identifiers to administer accounts without publicly displaying them.
+________________
+
+
+4. ACCOUNT OWNERSHIP
+The person or organization identified as the authorized account owner is responsible for maintaining control of the account.
+For organization-managed accounts, ownership and administrative control may belong to the applicable organization rather than the individual end user.
+________________
+
+
+5. ORGANIZATION-MANAGED ACCOUNTS
+Organizations may be permitted to create or manage accounts for:
+* Employees
+* Contractors
+* Administrators
+* Managers
+* Members
+* Other authorized users
+An organization administrator may have authority to:
+* Create users
+* Disable users
+* Reset certain credentials
+* Assign roles
+* Change permissions
+* Remove access
+* Review organization-related activity
+* Configure authentication requirements
+________________
+
+
+6. USER RESPONSIBILITY
+Users are responsible for taking reasonable steps to protect their accounts.
+Users should:
+* Use strong passwords
+* Avoid password reuse
+* Protect authentication codes
+* Protect recovery codes
+* Maintain secure devices
+* Keep account email addresses current
+* Use multifactor authentication where available
+* Report suspicious activity promptly
+________________
+
+
+7. PASSWORD REQUIREMENTS
+Husky Solutions LLC may establish password requirements based on current security needs.
+Requirements may include:
+* Minimum password length
+* Prohibition of commonly compromised passwords
+* Restrictions on known breached passwords
+* Other reasonable security controls
+Password rules may change as security practices evolve.
+________________
+
+
+8. PASSWORD STORAGE
+Husky Solutions LLC does not intend to store ordinary user passwords in readable plain-text form.
+Passwords should be protected using appropriate cryptographic techniques.
+Husky Solutions LLC support personnel generally should not be able to tell a user what their existing password is.
+________________
+
+
+9. PASSWORD CONFIDENTIALITY
+Users must not intentionally disclose passwords to unauthorized persons.
+Husky Solutions LLC personnel will not ordinarily ask a user to send their complete password through:
+* Email
+* Support ticket
+* Discord
+* Chat
+* Direct message
+A person requesting your complete Husky Solutions LLC password may be attempting fraud or phishing.
+________________
+
+
+10. PASSWORD CHANGES
+Users may be required to change a password if Husky Solutions LLC reasonably believes:
+* The password may have been compromised
+* Credentials appeared in a known data breach
+* Suspicious activity occurred
+* An administrator requires a reset
+* Another security concern exists
+________________
+
+
+11. FORCED PASSWORD RESETS
+Husky Solutions LLC may force a password reset following:
+* Suspected account takeover
+* Security incident
+* Credential theft
+* Administrative compromise
+* Exposure of authentication information
+A forced reset may invalidate existing sessions.
+________________
+
+
+12. TEMPORARY PASSWORDS
+Certain organization-management features may permit an administrator to issue a temporary password.
+Temporary passwords may:
+* Expire automatically
+* Require replacement at first login
+* Be limited to one use
+* Be subject to additional verification
+________________
+
+
+13. MULTIFACTOR AUTHENTICATION
+Husky Solutions LLC may support or require multifactor authentication (“MFA”).
+MFA may use:
+* Email codes
+* Authenticator applications
+* Security keys
+* Device-based authentication
+* Passkeys
+* Other supported authentication factors
+________________
+
+
+14. MANDATORY MFA
+Husky Solutions LLC may require MFA for accounts with elevated privileges.
+This may include:
+* Super administrators
+* Organization administrators
+* Billing administrators
+* Security administrators
+* Developers with sensitive access
+* Internal administrative accounts
+________________
+
+
+15. ONE-TIME PASSWORDS
+Certain Services may send one-time passwords (“OTPs”) for purposes such as:
+* Login
+* Account recovery
+* Email verification
+* Sensitive account changes
+* Additional security verification
+OTPs may expire after a limited period.
+________________
+
+
+16. OTP CONFIDENTIALITY
+Users should never provide a one-time security code to someone who unexpectedly requests it.
+Husky Solutions LLC personnel should not ordinarily need a user to verbally provide a login OTP sent for the user's own authentication session.
+________________
+
+
+17. OTP EXPIRATION
+A one-time password may expire after:
+* A defined amount of time
+* Successful use
+* Issuance of a replacement code
+* A security event
+Expired codes cannot be relied upon for continued access.
+________________
+
+
+18. RATE LIMITING
+Husky Solutions LLC may limit:
+* Login attempts
+* OTP requests
+* Password resets
+* Account-recovery attempts
+* Verification requests
+to protect against:
+* Brute-force attacks
+* Abuse
+* Automated attacks
+* Account takeover
+________________
+
+
+19. ACCOUNT LOCKOUT
+An account may be temporarily locked following suspicious authentication activity.
+Examples include:
+* Repeated incorrect passwords
+* Repeated OTP failures
+* Credential-stuffing indicators
+* Suspicious recovery attempts
+* Unusual administrative access
+________________
+
+
+20. ACCOUNT LOCKDOWN
+For significant security concerns, Husky Solutions LLC may place an account into a heightened-security or lockdown state.
+During lockdown, the Company may restrict:
+* Login
+* Password resets
+* Email changes
+* Administrative changes
+* Billing changes
+* Data exports
+* API access
+until additional verification is completed.
+________________
+
+
+21. SESSION MANAGEMENT
+When you authenticate successfully, Husky Solutions LLC may create an authenticated session.
+Sessions may be represented through:
+* Secure cookies
+* Authentication tokens
+* Session identifiers
+* Application credentials
+________________
+
+
+22. SESSION EXPIRATION
+Sessions may expire because of:
+* Time limits
+* Inactivity
+* Password changes
+* Account security changes
+* Logout
+* Administrative action
+* Security incidents
+________________
+
+
+23. SESSION REVOCATION
+Husky Solutions LLC may revoke active sessions when reasonably necessary to protect an account.
+Examples include:
+* Password compromise
+* Suspicious login
+* Account takeover
+* Device theft
+* Security investigation
+________________
+
+
+24. REMOTE LOGOUT
+Where supported, users or administrators may be able to remotely terminate other active sessions.
+This may be useful when:
+* A device is lost
+* A device is stolen
+* An unknown login appears
+* Account compromise is suspected
+________________
+
+
+25. DEVICE RECOGNITION
+Husky Solutions LLC may recognize devices or browsers previously associated with an account.
+This may involve information such as:
+* Browser type
+* Operating system
+* Device identifiers
+* Security tokens
+* Login history
+* IP information
+________________
+
+
+26. NEW DEVICE VERIFICATION
+Login from a new or unrecognized device may trigger:
+* Email verification
+* MFA
+* OTP verification
+* Additional authentication
+* Security notification
+________________
+
+
+27. NEW LOGIN ALERTS
+Husky Solutions LLC may notify users when a new or unusual login is detected.
+A notice may include information such as:
+* Login date
+* Login time
+* Device type
+* Browser
+* Approximate location
+* IP-related information
+________________
+
+
+28. IP ADDRESS SECURITY
+Husky Solutions LLC may collect and analyze IP addresses associated with:
+* Account creation
+* Login
+* Password resets
+* MFA
+* Administrative activity
+* API access
+* Security incidents
+IP information may be used to detect suspicious or unauthorized activity.
+________________
+
+
+29. IP GEOLOCATION
+An IP address may be used to estimate an approximate geographic location.
+This may include:
+* Country
+* State
+* Region
+* City
+* Network provider
+IP location information is approximate and may be inaccurate.
+________________
+
+
+30. PRECISE SECURITY GEOLOCATION
+Where legally permitted and appropriately authorized, Husky Solutions LLC may request or use more precise device or browser location during a security event.
+This may include:
+* GPS
+* Browser geolocation
+* Wi-Fi positioning
+* Cellular positioning
+* Device-location services
+________________
+
+
+31. CLOSE-PINPOINT SECURITY LOCATION
+During a suspected, attempted, active, or confirmed account compromise, Husky Solutions LLC may use available lawful location information with substantially greater precision than ordinary IP data.
+This may include close or street-level device location where technically available and authorized.
+Such information may be used to help:
+* Verify a login
+* Identify unauthorized access
+* Investigate account takeover
+* Investigate fraud
+* Protect an organization account
+* Preserve security evidence
+________________
+
+
+32. LOCATION IS A SECURITY SIGNAL
+Geographic information is one security factor among many.
+A geographic mismatch does not automatically establish unauthorized access.
+For example:
+* VPNs
+* Proxies
+* Mobile networks
+* Travel
+* Carrier routing
+may cause unusual location signals.
+________________
+
+
+33. IMPOSSIBLE TRAVEL
+Husky Solutions LLC may compare account access locations and timestamps to identify apparent “impossible travel.”
+For example, an account appearing in geographically distant locations within an unrealistically short period may trigger:
+* Additional authentication
+* Session revocation
+* Security review
+* Account lockdown
+________________
+
+
+34. VPN AND PROXY USE
+The use of a VPN or proxy is not automatically prohibited.
+However, traffic associated with:
+* VPNs
+* Proxies
+* Tor
+* Data centers
+* Known malicious infrastructure
+may trigger additional security review where other suspicious indicators exist.
+________________
+
+
+35. THREAT INTELLIGENCE
+Husky Solutions LLC may evaluate network information against:
+* Security reputation databases
+* Fraud-prevention systems
+* Known malicious IP lists
+* Internal security records
+* Other threat-intelligence services
+________________
+
+
+36. RISK-BASED AUTHENTICATION
+Husky Solutions LLC may adjust authentication requirements based on risk.
+Signals may include:
+* Device recognition
+* Location
+* IP reputation
+* Login behavior
+* Account role
+* Requested action
+* Recent password reset
+* Security history
+________________
+
+
+37. STEP-UP AUTHENTICATION
+A user who is already logged in may be required to reauthenticate before completing a sensitive action.
+Sensitive actions may include:
+* Password changes
+* Email changes
+* MFA changes
+* Data exports
+* Account deletion
+* Billing changes
+* Administrator changes
+* API-key generation
+________________
+
+
+38. IDENTITY VERIFICATION
+Certain circumstances may require additional identity verification.
+Husky Solutions LLC may request verification when necessary for:
+* Account recovery
+* Ownership disputes
+* Fraud prevention
+* Sensitive account changes
+* Administrator transfers
+* Business verification
+* Security investigations
+* Legal compliance
+________________
+
+
+39. PROPORTIONAL VERIFICATION
+Husky Solutions LLC will seek to use verification methods proportionate to the risk and purpose involved.
+Not every account action requires government-issued identification.
+Lower-risk verification may use:
+* Email confirmation
+* MFA
+* Device verification
+* Organization administrator approval
+* Transaction verification
+________________
+
+
+40. GOVERNMENT-ISSUED IDENTIFICATION
+In higher-risk circumstances, Husky Solutions LLC may request a government-issued identity document where legally permitted and reasonably necessary.
+Examples may include serious:
+* Ownership disputes
+* Fraud investigations
+* Account recovery disputes
+* Business verification issues
+________________
+
+
+41. LIMITING IDENTITY DOCUMENT COLLECTION
+Husky Solutions LLC does not intend to request government identification when a less intrusive verification method is reasonably sufficient.
+Identity documentation should be retained only as long as reasonably necessary for the applicable purpose.
+________________
+
+
+42. BUSINESS VERIFICATION
+Organization accounts may require verification of:
+* Business name
+* Organization domain
+* Administrator authority
+* Business registration
+* Contact information
+* Other legitimate organizational information
+________________
+
+
+43. ADMINISTRATOR AUTHORITY
+Husky Solutions LLC may request evidence that a person seeking control of an organization account has authority to act for that organization.
+This may be especially important during:
+* Administrator disputes
+* Ownership transfers
+* Former employee disputes
+* Business acquisitions
+________________
+
+
+44. ACCOUNT OWNERSHIP DISPUTES
+If multiple people claim control over an account, Husky Solutions LLC may temporarily restrict sensitive changes while the dispute is investigated.
+The Company may consider information including:
+* Original account information
+* Billing history
+* Organization records
+* Prior administrator history
+* Verified email domains
+* Contracts
+* Other legitimate evidence
+________________
+
+
+45. HUSKY SOLUTIONS IS NOT A COURT
+Husky Solutions LLC may not be able to resolve complex private disputes concerning:
+* Business ownership
+* Employment
+* Partnerships
+* Corporate ownership
+* Estates
+* Contractual rights
+Parties may need to obtain appropriate legal documentation or a court order.
+________________
+
+
+46. ACCOUNT RECOVERY
+Account recovery may be available when a user loses access to:
+* Password
+* Email
+* MFA method
+* Recovery credentials
+Recovery requirements depend on the account and risk involved.
+________________
+
+
+47. ACCOUNT RECOVERY DOES NOT GUARANTEE ACCESS
+Husky Solutions LLC may refuse or delay account recovery where:
+* Identity cannot reasonably be verified
+* Ownership is disputed
+* Fraud is suspected
+* A legal restriction applies
+* Recovery would threaten another person's account
+________________
+
+
+48. EMAIL ACCOUNT COMPROMISE
+Because email may be used for account recovery, users should protect the email address associated with their Husky Solutions LLC account.
+Compromise of the underlying email account can create additional account-security risk.
+________________
+
+
+49. CHANGE OF ACCOUNT EMAIL
+Changing the primary account email may require:
+* Current-password confirmation
+* MFA
+* Verification of old email
+* Verification of new email
+* Additional security review
+________________
+
+
+50. RECOVERY CODES
+Where supported, Husky Solutions LLC may provide recovery codes.
+Users should:
+* Store recovery codes securely
+* Avoid publishing them
+* Avoid storing them with passwords where possible
+Recovery codes may be revoked or regenerated.
+________________
+
+
+51. PASSKEYS AND DEVICE AUTHENTICATION
+Husky Solutions LLC may support passkeys or device-based authentication.
+Passkeys may use device security technologies to authenticate a user without transmitting an ordinary reusable password.
+Availability depends on:
+* Browser
+* Operating system
+* Device
+* Applicable Service
+________________
+
+
+52. BIOMETRIC DEVICE AUTHENTICATION
+A supported device may allow authentication using:
+* Fingerprint
+* Facial recognition
+* Another biometric mechanism
+Where authentication occurs entirely through the user's device or operating system, Husky Solutions LLC may receive only confirmation that authentication succeeded.
+Husky Solutions LLC may not receive the underlying fingerprint or facial template.
+________________
+
+
+53. DIRECT BIOMETRIC COLLECTION
+If Husky Solutions LLC directly collects or stores biometric identifiers in the future, additional:
+* Notice
+* Consent
+* Retention
+* Destruction
+* Security
+requirements may apply.
+Those requirements will be addressed through an appropriate product-specific or biometric policy.
+________________
+
+
+54. ORGANIZATION BIOMETRIC FEATURES
+Organizations using biometric functionality remain responsible for determining whether applicable law requires:
+* Written notice
+* Employee consent
+* Retention schedules
+* Destruction requirements
+* Additional workplace disclosures
+________________
+
+
+55. API CREDENTIALS
+API credentials must be treated as sensitive authentication information.
+Users must not:
+* Publish API keys
+* Commit secret API keys to public repositories
+* Share credentials with unauthorized users
+* Use another customer's credentials
+________________
+
+
+56. API KEY ROTATION
+Husky Solutions LLC may permit or require API-key rotation.
+Credentials may be revoked following:
+* Exposure
+* Employee departure
+* Account compromise
+* Security incident
+* Administrative request
+________________
+
+
+57. SERVICE ACCOUNTS
+Organizations may be permitted to create service accounts or machine credentials.
+These credentials should be limited to the permissions reasonably necessary for their intended use.
+________________
+
+
+58. ROLE-BASED ACCESS CONTROL
+Certain Services may support role-based access controls.
+Roles may determine access to:
+* Records
+* Administrative settings
+* Billing
+* User management
+* Reports
+* APIs
+* Security functions
+________________
+
+
+59. LEAST PRIVILEGE
+Organizations should provide users only the permissions reasonably necessary for their roles.
+Unnecessary administrator privileges increase security risk.
+________________
+
+
+60. CUSTOM ROLES
+Where a Service supports custom roles, organization administrators are responsible for configuring those permissions appropriately.
+Husky Solutions LLC is not responsible for an administrator intentionally granting another user excessive access.
+________________
+
+
+61. ADMINISTRATOR SECURITY
+Administrator accounts should use stronger security controls where available.
+Husky Solutions LLC may require:
+* MFA
+* Additional verification
+* Shorter sessions
+* More detailed logging
+* Step-up authentication
+for elevated accounts.
+________________
+
+
+62. FORMER EMPLOYEES AND USERS
+Organizations should promptly disable access for users who no longer require it.
+Examples include:
+* Former employees
+* Former contractors
+* Transferred employees
+* Former administrators
+________________
+
+
+63. AUDIT LOGGING
+Certain account actions may be recorded in audit logs.
+These may include:
+* Logins
+* Account changes
+* Role changes
+* Administrator actions
+* Password resets
+* Security events
+* Organization changes
+________________
+
+
+64. FRAUD DETECTION
+Husky Solutions LLC may use automated or manual systems to identify suspicious account activity.
+Potential indicators may include:
+* Unusual location
+* Unusual device
+* Rapid account changes
+* Suspicious payment activity
+* Multiple failed authentication attempts
+* Known compromised credentials
+________________
+
+
+65. AUTOMATED ACCOUNT PROTECTION
+Automated security systems may temporarily:
+* Lock accounts
+* Require CAPTCHA
+* Require MFA
+* Block an IP
+* End sessions
+* Require additional verification
+These measures may occasionally affect legitimate users.
+________________
+
+
+66. HUMAN REVIEW
+Where appropriate, Husky Solutions LLC may manually review security restrictions affecting legitimate customers.
+Manual review does not guarantee that access will be restored if ownership or security cannot reasonably be confirmed.
+________________
+
+
+67. CUSTOMER SECURITY REPORTING
+Users should report suspected account compromise to:
+[SECURITY EMAIL]
+Useful information may include:
+* Account email
+* Approximate incident time
+* Unknown login information
+* Device information
+* Screenshots
+* Actions already taken
+________________
+
+
+68. ACCOUNT COMPROMISE RESPONSE
+Following suspected account compromise, Husky Solutions LLC may:
+* Lock the account
+* Reset the password
+* Revoke sessions
+* Revoke API keys
+* Require MFA
+* Verify account ownership
+* Review IP and geolocation information
+* Preserve security evidence
+________________
+
+
+69. SECURITY EVIDENCE
+Information preserved during a security investigation may include:
+* IP addresses
+* Approximate geolocation
+* Precise geolocation where lawfully available
+* Device information
+* Authentication records
+* Session records
+* Account changes
+* API activity
+Retention is governed by the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+70. LAW-ENFORCEMENT REQUESTS
+Authentication and security records may be preserved or disclosed only where legally permitted or required.
+Such requests are governed by the Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy.
+________________
+
+
+71. SUPPORT REPRESENTATIVE LIMITATIONS
+Support personnel may not have authority to bypass authentication and give account access solely because someone claims to own the account.
+Reasonable verification may be required.
+________________
+
+
+72. SOCIAL ENGINEERING
+Users must not attempt to manipulate Husky Solutions LLC personnel into:
+* Revealing credentials
+* Bypassing security
+* Transferring accounts
+* Disclosing another user's information
+* Resetting unauthorized accounts
+________________
+
+
+73. PHISHING PROTECTION
+Husky Solutions LLC may send legitimate account-security messages.
+Users should verify that communications originate from official Husky Solutions LLC channels before:
+* Entering credentials
+* Clicking sensitive links
+* Providing account information
+________________
+
+
+74. NO COMPLETE PASSWORD REQUEST
+A legitimate Husky Solutions LLC support representative should not request that you send your complete password.
+If someone claiming to represent Husky Solutions LLC asks for your complete password, report the communication.
+________________
+
+
+75. NO OTP REQUEST THROUGH UNSOLICITED CONTACT
+Users should be suspicious of unsolicited communications requesting a one-time login code.
+A login code should generally be entered only into the legitimate Husky Solutions LLC interface that initiated the authentication process.
+________________
+
+
+76. LOST OR STOLEN DEVICES
+If a device with active Husky Solutions LLC sessions is lost or stolen, users should:
+* Change their password where appropriate
+* Revoke active sessions where supported
+* Review account activity
+* Contact Security if necessary
+________________
+
+
+77. ACCOUNT DELETION
+Account deletion may require reauthentication or other security verification.
+This helps prevent an attacker from permanently deleting another person's account.
+________________
+
+
+78. HIGH-RISK DATA EXPORTS
+Downloading or exporting large amounts of sensitive organization information may trigger additional:
+* Authentication
+* Authorization
+* Logging
+* Security review
+where supported.
+________________
+
+
+79. BILLING CHANGES
+Sensitive billing actions may require account reauthentication.
+These may include:
+* Payment-method changes
+* Subscription changes
+* Billing administrator changes
+________________
+
+
+80. ELECTRONIC SIGNATURE SECURITY
+Account authentication records may be used as part of the audit trail for electronic contract acceptance.
+Electronic signature practices are further described in the Husky Solutions LLC Electronic Communications & E-Sign Consent Policy.
+________________
+
+
+81. RETENTION
+Authentication and identity-verification information is retained according to the Husky Solutions LLC Data Retention & Deletion Policy.
+Husky Solutions LLC seeks to avoid retaining sensitive verification information longer than reasonably necessary.
+________________
+
+
+82. PRIVACY
+Authentication data, IP addresses, device information, and geolocation may constitute personal information.
+Such information is processed according to the Husky Solutions LLC Privacy Policy.
+________________
+
+
+83. IDENTITY DOCUMENT SECURITY
+Where Husky Solutions LLC requires an identity document, access should be limited to personnel or systems reasonably requiring it for the verification process.
+Documents may be redacted, deleted, or otherwise minimized after verification where appropriate.
+________________
+
+
+84. ACCOUNT SHARING
+Unless a Service expressly permits shared access, users should not share a single personal account among multiple people.
+Organizations should instead use:
+* Individual user accounts
+* Roles
+* Delegated access
+* Team features
+where available.
+________________
+
+
+85. SHARED ACCOUNTS
+Where a product legitimately supports a shared operational account, the organization remains responsible for controlling who has access.
+Shared accounts may have reduced auditability and may be discouraged for sensitive administrative functions.
+________________
+
+
+86. ACCOUNT TRANSFER
+Personal user accounts generally may not be sold or transferred without authorization.
+Organization accounts may be transferred only according to applicable administrative or business-transfer procedures.
+________________
+
+
+87. DECEASED USERS
+Husky Solutions LLC may evaluate account-access requests relating to a deceased user according to:
+* Applicable law
+* Account type
+* Valid legal authority
+* Privacy considerations
+Documentation may be required.
+________________
+
+
+88. MINORS
+Users who are not legally capable of entering certain agreements may require parent or guardian authorization.
+Authentication does not itself establish legal capacity to enter into a contract.
+________________
+
+
+89. SECURITY CHANGES
+Husky Solutions LLC may introduce or modify authentication mechanisms as:
+* Threats evolve
+* Technology improves
+* Products change
+* Legal requirements change
+________________
+
+
+90. DEPRECATED AUTHENTICATION METHODS
+Husky Solutions LLC may discontinue outdated or insecure authentication mechanisms.
+Users may be required to migrate to a newer authentication method.
+________________
+
+
+91. NO GUARANTEE AGAINST ACCOUNT COMPROMISE
+Authentication systems reduce security risk but cannot guarantee that an account will never be compromised.
+Users remain responsible for reasonable account-security practices.
+________________
+
+
+92. CUSTOMER ORGANIZATION RESPONSIBILITY
+Organizations are responsible for appropriately managing:
+* User access
+* Roles
+* Administrator privileges
+* Employee departures
+* Security settings
+* Authentication requirements
+within customer-controlled settings.
+________________
+
+
+93. POLICY ENFORCEMENT
+Violation of this Policy may result in:
+* Additional authentication
+* Account restriction
+* Session termination
+* Credential revocation
+* Account suspension
+* Account termination
+where appropriate under the Terms of Service.
+________________
+
+
+94. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Account Security Policy as:
+* Authentication technology changes
+* Security risks evolve
+* Products change
+* Legal requirements change
+The “Last Updated” date identifies the current version.
+________________
+
+
+95. RELATIONSHIP TO OTHER POLICIES
+This Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Privacy Policy
+* Security Policy
+* Data Retention & Deletion Policy
+* Acceptable Use Policy
+* Electronic Communications & E-Sign Consent Policy
+* Government, Law Enforcement & Legal Requests Policy
+* Product-specific terms
+________________
+
+
+96. CONTACT INFORMATION
+Account-security questions may be directed to:
+Husky Solutions LLC
+Security & Account Services
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Security Email:
+[SECURITY EMAIL]
+Account Support:
+[SUPPORT EMAIL]
+Privacy Email:
+[PRIVACY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+97. EFFECTIVE DATE
+This Account, Authentication & Identity Verification Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

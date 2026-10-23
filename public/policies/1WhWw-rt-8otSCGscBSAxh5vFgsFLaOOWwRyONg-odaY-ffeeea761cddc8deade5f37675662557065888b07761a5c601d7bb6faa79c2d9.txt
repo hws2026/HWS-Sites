@@ -1,0 +1,833 @@
+HUSKY SOLUTIONS LLC
+COPYRIGHT, INTELLECTUAL PROPERTY & DMCA POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) respects the intellectual-property rights of others and expects users of our websites, software, platforms, hosting services, applications, and other services to do the same.
+This Copyright, Intellectual Property & DMCA Policy (“Copyright Policy”) explains:
+* Ownership of Husky Solutions LLC intellectual property
+* Customer responsibilities for uploaded or submitted content
+* Copyright infringement reporting procedures
+* Digital Millennium Copyright Act (“DMCA”) takedown procedures
+* Counter-notification procedures
+* Repeat-infringer enforcement
+* Trademark complaints
+* FiveM and gaming-related intellectual-property responsibilities
+* Graphics and creative-services requirements
+This Policy applies to Husky Solutions LLC Services including, where applicable:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Website hosting
+* User-created websites
+* Digital products
+* FiveM scripts and resources
+* Graphics and creative services
+* Broadcast graphics
+* Content graphics
+* Customer portals
+* APIs
+* Other current or future Husky Solutions LLC Services
+________________
+
+
+1. HUSKY SOLUTIONS LLC INTELLECTUAL PROPERTY
+Unless otherwise stated, Husky Solutions LLC owns or licenses intellectual property associated with its Services.
+This may include:
+* Software
+* Source code
+* Object code
+* Scripts
+* APIs
+* Databases
+* Website code
+* Applications
+* Interfaces
+* Dashboards
+* Design systems
+* Workflows
+* Templates
+* Documentation
+* Written materials
+* Graphics
+* Animations
+* Motion graphics
+* Logos
+* Icons
+* Product designs
+* Brand assets
+* Product names
+* Business names
+* Trademarks
+* Service marks
+* Internal tools
+* Libraries
+* Frameworks
+* Proprietary processes
+Access to a Husky Solutions LLC product or website does not transfer ownership of this intellectual property.
+________________
+
+
+2. COPYRIGHT OWNERSHIP
+Original works created by Husky Solutions LLC may be protected by United States and international copyright laws.
+Copyright protection may apply to original:
+* Computer code
+* Website content
+* Documentation
+* Graphics
+* Illustrations
+* Animations
+* User-interface elements
+* Videos
+* Written content
+* Templates
+* Digital assets
+* Other creative works
+Except where a separate written license or agreement provides otherwise, all rights not expressly granted remain reserved by Husky Solutions LLC.
+________________
+
+
+3. COPYRIGHT NOTICE
+Husky Solutions LLC may display copyright notices substantially similar to:
+© 2026 Husky Solutions LLC. All rights reserved.
+The absence of a copyright notice does not mean that a work is in the public domain or that Husky Solutions LLC has waived any applicable rights.
+________________
+
+
+4. SOFTWARE AND SOURCE CODE
+Husky Solutions LLC software may be provided under:
+* A subscription license
+* A commercial license
+* A one-time license
+* A custom agreement
+* An open-source license
+* Another applicable license
+You may use software only within the scope of the applicable license.
+Unless expressly authorized, you may not:
+* Redistribute proprietary source code
+* Sell unauthorized copies
+* Remove copyright notices
+* Claim authorship of Husky Solutions LLC code
+* Circumvent software licensing systems
+* Publish private source code
+* Sublicense software without permission
+* Copy proprietary software for unauthorized distribution
+________________
+
+
+5. FIVEM SCRIPTS AND RESOURCES
+Husky Solutions LLC may create and sell FiveM-related:
+* Scripts
+* Resources
+* User interfaces
+* Server systems
+* Utilities
+* Plugins
+* Configurations
+* Templates
+* Digital packages
+Unless expressly stated otherwise, purchasing a FiveM script or resource grants a license to use that resource according to the applicable product terms.
+Purchasing a script does not automatically transfer copyright ownership of the script to the customer.
+________________
+
+
+6. FIVEM LICENSE RESTRICTIONS
+Unless the applicable license expressly allows otherwise, customers may not:
+* Resell Husky Solutions LLC scripts
+* Redistribute scripts
+* Upload purchased scripts to public repositories
+* Leak scripts
+* Share purchased resources with unauthorized third parties
+* Remove copyright or licensing information
+* Claim Husky Solutions LLC code as their own
+* Sell modified versions containing substantial Husky Solutions LLC proprietary code
+* Circumvent license verification systems
+A customer's ability to view, modify, or configure code does not automatically grant redistribution rights.
+________________
+
+
+7. CUSTOM FIVEM DEVELOPMENT
+Ownership of custom-developed FiveM resources will be determined by the applicable:
+* Quote
+* Invoice
+* Statement of work
+* Development agreement
+* License agreement
+Unless Husky Solutions LLC expressly transfers ownership in writing, Husky Solutions LLC may retain ownership of pre-existing:
+* Libraries
+* Frameworks
+* Templates
+* Internal tools
+* Reusable code
+* Development methods
+* Generic components
+used in the project.
+________________
+
+
+8. GRAPHICS AND CREATIVE WORK
+Husky Solutions LLC may create:
+* Broadcast graphics
+* Player cards
+* Social-media graphics
+* Logos
+* Animations
+* Motion graphics
+* Website graphics
+* Branding
+* Overlays
+* Scorebugs
+* Other creative content
+Ownership or licensing rights for a custom creative project may be established by the applicable order, quote, invoice, or written agreement.
+________________
+
+
+9. SOURCE AND PROJECT FILES
+Delivery of a final graphic or creative product does not automatically include ownership or delivery of:
+* Editable project files
+* Source files
+* Templates
+* Internal assets
+* Production systems
+* Working files
+* Libraries
+* Scripts
+* Reusable components
+unless those files are expressly included in the applicable purchase.
+________________
+
+
+10. CUSTOMER-PROVIDED MATERIAL
+Customers may provide Husky Solutions LLC with material for use in custom projects.
+This may include:
+* Logos
+* Images
+* Photographs
+* Music
+* Videos
+* Team marks
+* League marks
+* Player images
+* Fonts
+* Game assets
+* Business branding
+* Artwork
+* Other copyrighted material
+By providing material to Husky Solutions LLC, you represent that you have the right, license, authorization, or other lawful basis necessary for the requested use.
+________________
+
+
+11. NO RIGHTS CLEARANCE BY DEFAULT
+Unless expressly agreed otherwise in writing, Husky Solutions LLC does not provide intellectual-property rights-clearance services.
+Our willingness or technical ability to:
+* Edit an image
+* Incorporate a logo
+* Use a photograph
+* Add music
+* Modify a game asset
+* Create a graphic involving a brand
+does not constitute a legal determination that the customer's proposed use is authorized.
+Customers remain responsible for obtaining necessary rights.
+________________
+
+
+12. SPORTS AND ENTERTAINMENT INTELLECTUAL PROPERTY
+Sports teams, leagues, athletes, broadcasters, game publishers, entertainment companies, and other third parties may own intellectual-property rights in their:
+* Logos
+* Names
+* Photographs
+* Broadcast footage
+* Uniform designs
+* Music
+* Graphics
+* Trademarks
+* Other assets
+Husky Solutions LLC does not claim ownership of third-party intellectual property merely because it appears in customer-provided materials or authorized creative work.
+________________
+
+
+13. FIVEM AND THIRD-PARTY GAME RIGHTS
+FiveM-related services may involve third-party intellectual property.
+Unless expressly stated otherwise, Husky Solutions LLC is independent and is not sponsored, operated, or endorsed by unrelated game publishers, developers, or platform operators.
+Third-party trademarks and copyrighted materials remain the property of their respective owners.
+Customers are responsible for complying with applicable third-party licenses and platform rules.
+________________
+
+
+14. CUSTOMER CONTENT
+Customers may upload, submit, publish, store, or otherwise provide content through certain Husky Solutions LLC Services.
+As between the customer and Husky Solutions LLC, customers retain ownership of Customer Content they lawfully own.
+The license granted to Husky Solutions LLC to process Customer Content is governed by the Husky Solutions LLC Terms of Service.
+________________
+
+
+15. CUSTOMER COPYRIGHT RESPONSIBILITY
+You must not knowingly upload, host, publish, distribute, or otherwise use copyrighted material through Husky Solutions LLC Services unless:
+* You own the applicable rights;
+* You have permission;
+* You have an appropriate license;
+* The material is in the public domain;
+* The use is legally permitted; or
+* Another lawful basis applies.
+________________
+
+
+16. FAIR USE AND OTHER COPYRIGHT EXCEPTIONS
+Certain uses of copyrighted material may be permitted under doctrines or exceptions such as fair use.
+Fair use is a fact-specific legal doctrine.
+Husky Solutions LLC does not determine in advance that every claimed fair use is legally valid.
+If a copyright dispute involves fair use or another legal defense, the parties may need to seek independent legal advice.
+________________
+
+
+17. USER-GENERATED CONTENT
+Some Husky Solutions LLC Services may permit users to:
+* Create websites
+* Upload files
+* Publish images
+* Publish text
+* Host content
+* Share digital materials
+Husky Solutions LLC does not necessarily review all user-generated content before it becomes available.
+The presence of user content on a Husky Solutions LLC system does not constitute endorsement of that content.
+________________
+
+
+18. DIGITAL MILLENNIUM COPYRIGHT ACT
+Husky Solutions LLC intends to respond to valid notifications of claimed copyright infringement in accordance with applicable provisions of the United States Digital Millennium Copyright Act, including 17 U.S.C. § 512, where applicable.
+This process may apply to copyrighted material stored or published through Services operated by Husky Solutions LLC.
+________________
+
+
+19. DESIGNATED DMCA AGENT
+Copyright infringement notices relating to material hosted through an applicable Husky Solutions LLC Service should be sent to our designated copyright agent:
+Designated Agent:
+Copyright Agent
+Husky Solutions LLC
+Mailing Address:
+[DMCA AGENT MAILING ADDRESS]
+Telephone:
+[DMCA AGENT PHONE NUMBER]
+Email:
+[DMCA EMAIL]
+Husky Solutions LLC will maintain the applicable designated-agent information with the United States Copyright Office when required to claim the applicable DMCA protections.
+________________
+
+
+20. DMCA AGENT REGISTRATION
+Where Husky Solutions LLC seeks protection under the applicable DMCA online-service-provider safe harbors, Husky Solutions LLC will:
+* Designate an agent to receive copyright notices;
+* Make the agent's information publicly accessible;
+* Register the designated agent with the United States Copyright Office;
+* Keep the agent information current; and
+* Renew the applicable Copyright Office designation as required.
+The public website information and Copyright Office registration should remain consistent.
+________________
+
+
+21. COPYRIGHT TAKEDOWN NOTICE
+If you believe copyrighted material is being infringed through a Husky Solutions LLC Service, you may submit a written notice to the designated agent.
+To be effective under the DMCA, the notice should include substantially the information required by 17 U.S.C. § 512(c)(3).
+________________
+
+
+22. REQUIRED INFORMATION IN A DMCA NOTICE
+A DMCA notice should include:
+1. Signature
+A physical or electronic signature of the copyright owner or a person authorized to act on behalf of the copyright owner.
+2. Identification of the Copyrighted Work
+Identification of the copyrighted work claimed to have been infringed.
+If multiple copyrighted works are involved on a single Service, a representative list may be provided where permitted.
+3. Identification of the Allegedly Infringing Material
+Identification of the material claimed to be infringing or the subject of infringing activity.
+You should provide information reasonably sufficient for Husky Solutions LLC to locate the material.
+Whenever possible, include the exact:
+* URL
+* Page
+* File
+* Account
+* Website
+* Resource location
+at issue.
+4. Contact Information
+Information reasonably sufficient for Husky Solutions LLC to contact you.
+This should include:
+* Your name
+* Mailing address
+* Telephone number
+* Email address
+5. Good-Faith Statement
+A statement that you have a good-faith belief that the disputed use is not authorized by:
+* The copyright owner;
+* The copyright owner's agent; or
+* The law.
+6. Accuracy and Authority Statement
+A statement that the information in the notice is accurate and, under penalty of perjury, that you are:
+* The copyright owner; or
+* Authorized to act on behalf of the copyright owner.
+________________
+
+
+23. RECOMMENDED NOTICE FORMAT
+A copyright notice should clearly identify itself as:
+DMCA Copyright Infringement Notice
+Notices should be sent to:
+[DMCA EMAIL]
+Sending the notice to unrelated support addresses may delay processing.
+________________
+
+
+24. INCOMPLETE NOTICES
+A copyright complaint that does not contain required information may not constitute a valid DMCA notification.
+If a notice contains sufficient information to identify:
+* The copyrighted work;
+* The allegedly infringing material; and
+* The complaining party,
+Husky Solutions LLC may contact the complaining party to request additional required information where appropriate.
+________________
+
+
+25. PROCESSING A VALID NOTICE
+When Husky Solutions LLC receives a substantially compliant DMCA notice concerning material eligible for the notice-and-takedown process, Husky Solutions LLC may act expeditiously to:
+* Remove the material;
+* Disable access to the material; or
+* Take another action appropriate under applicable law.
+________________
+
+
+26. NOTICE TO THE AFFECTED USER
+Where required by the DMCA process, Husky Solutions LLC will take reasonable steps to promptly notify the user whose content was removed or disabled.
+The notice may include:
+* Identification of the removed content;
+* Information about the copyright complaint;
+* Instructions concerning counter-notification;
+* Other relevant information.
+________________
+
+
+27. COUNTER-NOTIFICATION
+If you believe your content was removed or disabled because of mistake or misidentification, you may submit a DMCA counter-notification to the Husky Solutions LLC designated agent.
+A counter-notification must satisfy applicable legal requirements.
+________________
+
+
+28. COUNTER-NOTIFICATION REQUIREMENTS
+A counter-notification should contain substantially the following:
+1. Signature
+Your physical or electronic signature.
+2. Identification of Removed Material
+Identification of the material that was removed or disabled.
+You must also identify the location where the material appeared before it was removed or disabled.
+3. Statement Under Penalty of Perjury
+A statement under penalty of perjury that you have a good-faith belief that the material was removed or disabled because of:
+* Mistake; or
+* Misidentification of the material.
+4. Contact Information
+Your:
+* Name
+* Address
+* Telephone number
+5. Consent to Federal Court Jurisdiction
+A statement that you consent to the jurisdiction of the United States Federal District Court for the judicial district in which your address is located.
+If your address is outside the United States, you must consent to the jurisdiction of the federal judicial district in which Husky Solutions LLC may be found, as provided by applicable law.
+6. Acceptance of Service
+A statement that you will accept service of process from:
+* The person who submitted the original infringement notice; or
+* That person's agent.
+________________
+
+
+29. COUNTER-NOTICE DELIVERY
+Counter-notifications should be sent to:
+Copyright Agent
+Husky Solutions LLC
+Email:
+[DMCA EMAIL]
+Mailing Address:
+[DMCA AGENT MAILING ADDRESS]
+________________
+
+
+30. FORWARDING A COUNTER-NOTICE
+After receiving a valid counter-notification, Husky Solutions LLC may provide a copy to the party who submitted the original infringement notice.
+This disclosure is part of the statutory counter-notification process.
+Users submitting a counter-notification should understand that their contact information may therefore be provided to the original complaining party.
+________________
+
+
+31. RESTORATION FOLLOWING COUNTER-NOTICE
+After receipt of a valid counter-notification, Husky Solutions LLC may restore the removed material in accordance with applicable law.
+Under the DMCA process, material may generally be restored not less than 10 and not more than 14 business days after receipt of a valid counter-notification unless the designated agent receives notice that the complaining party has filed an appropriate court action seeking to restrain the alleged infringement.
+________________
+
+
+32. COURT ACTION FOLLOWING COUNTER-NOTICE
+If the original complaining party informs Husky Solutions LLC that an appropriate court action has been filed relating to the disputed material within the applicable period, Husky Solutions LLC may keep the material disabled while the dispute proceeds.
+Husky Solutions LLC is not responsible for deciding the underlying ownership dispute between the parties.
+________________
+
+
+33. MISREPRESENTATIONS
+Copyright notices and counter-notifications are legal communications.
+Knowingly materially misrepresenting:
+* That material is infringing; or
+* That material was removed by mistake or misidentification
+may result in liability under applicable law.
+Do not submit a DMCA notice or counter-notification containing information you know to be materially false.
+________________
+
+
+34. NO FALSE TAKEDOWN REQUESTS
+Husky Solutions LLC prohibits intentional abuse of the copyright-reporting process.
+You should not submit a copyright notice merely because:
+* You dislike another user;
+* You disagree with criticism;
+* You are involved in an unrelated dispute;
+* You want competing content removed;
+* You do not own or represent the copyrighted work.
+Abusive or fraudulent reports may result in action against an account where appropriate.
+________________
+
+
+35. REPEAT INFRINGER POLICY
+Husky Solutions LLC has adopted a policy providing for termination, in appropriate circumstances, of users or account holders who are determined to be repeat copyright infringers.
+Husky Solutions LLC may consider relevant circumstances including:
+* Number of valid notices;
+* Nature of alleged infringements;
+* Repeated removal of infringing content;
+* Evidence of intentional infringement;
+* Counter-notifications;
+* Court decisions;
+* Account history;
+* Other relevant information.
+No fixed number of notices guarantees either termination or continued access.
+________________
+
+
+36. REPEAT INFRINGER ENFORCEMENT
+Appropriate enforcement may include:
+* Warning
+* Content removal
+* Feature restriction
+* Upload restriction
+* Temporary suspension
+* Permanent account termination
+* Termination of hosting
+* Termination of customer websites
+Husky Solutions LLC reserves discretion to respond more quickly to serious or deliberate infringement.
+________________
+
+
+37. EVADING COPYRIGHT ENFORCEMENT
+Users whose accounts are terminated for repeated copyright infringement may not create replacement accounts for the purpose of evading enforcement without authorization.
+Accounts used primarily to evade prior enforcement may also be terminated.
+________________
+
+
+38. STANDARD TECHNICAL MEASURES
+To the extent required for applicable DMCA safe-harbor protection, Husky Solutions LLC will accommodate and not interfere with qualifying standard technical measures used by copyright owners to identify or protect copyrighted works as defined by applicable law.
+________________
+
+
+39. NO GENERAL MONITORING OBLIGATION CREATED
+Husky Solutions LLC may use moderation, security, detection, or abuse-prevention technologies where appropriate.
+However, this Policy does not create a promise that Husky Solutions LLC will proactively inspect every:
+* File
+* Website
+* Image
+* Video
+* Upload
+* Script
+* User submission
+for copyright infringement before publication.
+________________
+
+
+40. VOLUNTARY REMOVAL
+Husky Solutions LLC may remove or restrict material outside the formal DMCA process when reasonably necessary under:
+* Our Terms of Service
+* Acceptable Use Policy
+* Applicable law
+* Court orders
+* Other legitimate enforcement grounds
+Not every content removal is a DMCA takedown.
+________________
+
+
+41. RESTORATION IS NOT A COPYRIGHT RULING
+If Husky Solutions LLC restores content following the DMCA counter-notification process, restoration does not mean Husky Solutions LLC has determined:
+* The user owns the copyright;
+* The use is fair use;
+* The original claimant was wrong;
+* No infringement exists.
+It means the applicable procedural requirements for restoration were satisfied.
+________________
+
+
+42. REMOVAL IS NOT A COPYRIGHT RULING
+Likewise, removal following a copyright notice does not necessarily mean Husky Solutions LLC has independently determined that copyright infringement occurred.
+The DMCA notice-and-takedown procedure is a statutory process for handling certain allegations.
+________________
+
+
+43. TRADEMARK COMPLAINTS
+The DMCA applies to copyright and is not the statutory process for trademark disputes.
+Trademark complaints should be sent separately to:
+[LEGAL/IP EMAIL]
+A trademark complaint should include:
+* The complaining party's name;
+* Contact information;
+* Identification of the trademark;
+* Registration number, if applicable;
+* Jurisdiction of registration, if applicable;
+* Identification of the allegedly infringing material;
+* Exact location or URL;
+* Explanation of the alleged infringement;
+* Information showing the complainant's rights.
+________________
+
+
+44. TRADEMARK REVIEW
+Husky Solutions LLC may evaluate trademark complaints according to:
+* Applicable law;
+* Our Terms;
+* The nature of the use;
+* The information submitted;
+* Other relevant circumstances.
+Husky Solutions LLC is not required to resolve complex private trademark disputes between unrelated parties.
+A complainant may need to pursue appropriate legal remedies.
+________________
+
+
+45. COUNTERFEIT OR IMPERSONATION COMPLAINTS
+Complaints involving counterfeit goods, deceptive impersonation, fraudulent branding, or misleading affiliation may also be investigated under the Husky Solutions LLC Acceptable Use Policy.
+________________
+
+
+46. RIGHTS OF PUBLICITY AND PRIVACY
+The DMCA does not generally govern:
+* Privacy disputes;
+* Defamation;
+* Rights of publicity;
+* Contract disputes;
+* Trademark disputes.
+Complaints concerning those issues should be sent to:
+[LEGAL EMAIL]
+and should clearly identify the legal issue and content at issue.
+________________
+
+
+47. COURT ORDERS
+Husky Solutions LLC will evaluate valid court orders concerning intellectual property in accordance with applicable law.
+Court orders should be directed to:
+Husky Solutions LLC – Legal Department
+[LEGAL EMAIL]
+and any legally required method of service must also be followed.
+Email submission does not constitute waiver of formal service requirements.
+________________
+
+
+48. SUBPOENAS AND LEGAL PROCESS
+Legal requests for identifying information associated with an alleged infringer must comply with applicable law.
+Husky Solutions LLC may require formal legal process before releasing non-public customer information.
+The Husky Solutions LLC Privacy Policy also governs disclosure of customer information.
+________________
+
+
+49. PRESERVATION REQUESTS
+Husky Solutions LLC may preserve relevant account information when required by law or valid legal process.
+A preservation request does not itself automatically authorize disclosure of the preserved information.
+________________
+
+
+50. CONFIDENTIAL INFORMATION
+Do not include unnecessary:
+* Passwords;
+* Payment-card information;
+* Social Security numbers;
+* Authentication credentials;
+* Highly sensitive personal information
+in a copyright complaint.
+Copyright notices may need to be shared with the affected user as part of the DMCA process.
+________________
+
+
+51. PUBLICATION OF NOTICES
+Husky Solutions LLC may disclose or publish copyright notices or information from them where legally permitted, including through services used to document copyright takedown requests.
+If Husky Solutions LLC adopts such a practice, personal information may be redacted where appropriate.
+________________
+
+
+52. OWNERSHIP DISPUTES BETWEEN CUSTOMERS
+Husky Solutions LLC is not a court and generally does not adjudicate complex private disputes concerning:
+* Joint authorship;
+* Business ownership;
+* Contractor ownership;
+* Work-for-hire disputes;
+* Partnership disputes;
+* Licensing disputes.
+Parties may be required to resolve those matters directly or through appropriate legal proceedings.
+________________
+
+
+53. EMPLOYEE AND CONTRACTOR SUBMISSIONS
+If a customer provides content created by an employee, contractor, designer, photographer, developer, or other third party, the customer is responsible for ensuring that the customer has appropriate rights to use that material.
+Payment to a contractor does not automatically establish copyright ownership in every jurisdiction or circumstance.
+________________
+
+
+54. OPEN-SOURCE SOFTWARE
+Certain Husky Solutions LLC products may incorporate open-source software.
+Open-source components remain subject to their applicable licenses.
+Nothing in this Policy is intended to restrict rights granted under an applicable open-source license.
+________________
+
+
+55. THIRD-PARTY LICENSES
+Certain Husky Solutions LLC Services may include third-party components licensed under separate terms.
+Those components remain subject to the applicable third-party licenses.
+________________
+
+
+56. COPYRIGHT REGISTRATION BY HUSKY SOLUTIONS LLC
+Husky Solutions LLC may choose to register eligible works with the United States Copyright Office or other applicable authorities.
+The absence of formal registration does not necessarily mean that the work lacks copyright protection.
+________________
+
+
+57. UNAUTHORIZED COPYING OF HUSKY SOLUTIONS PRODUCTS
+If Husky Solutions LLC discovers unauthorized distribution of its proprietary:
+* Scripts;
+* Software;
+* Graphics;
+* Documentation;
+* Templates;
+* Source code;
+* Other copyrighted material,
+Husky Solutions LLC may take appropriate action.
+This may include:
+* License termination;
+* Account termination;
+* Hosting complaints;
+* DMCA notices;
+* Marketplace complaints;
+* Platform complaints;
+* Other legal remedies.
+________________
+
+
+58. PIRATED FIVEM RESOURCES
+Uploading, redistributing, leaking, selling, or publicly sharing unauthorized copies of paid Husky Solutions LLC FiveM resources is prohibited.
+Husky Solutions LLC may revoke the applicable license and pursue appropriate enforcement against unauthorized redistribution, subject to applicable law.
+________________
+
+
+59. LICENSE VERIFICATION
+Husky Solutions LLC may use reasonable technical systems to verify legitimate software licenses.
+Such systems may process limited information necessary to:
+* Validate a license;
+* Prevent unauthorized redistribution;
+* Detect license abuse;
+* Protect intellectual property.
+Relevant data practices are subject to the Husky Solutions LLC Privacy Policy.
+________________
+
+
+60. NO TRANSFER OF OWNERSHIP THROUGH PURCHASE
+Unless expressly stated in a written agreement, purchasing:
+* A subscription;
+* A FiveM resource;
+* Software access;
+* A graphic;
+* A template;
+* A digital product
+does not automatically transfer copyright ownership in the underlying intellectual property.
+Instead, the customer receives the rights expressly included with the purchase.
+________________
+
+
+61. TERMINATION OF LICENSE FOR INFRINGEMENT
+A customer's license to Husky Solutions LLC intellectual property may be suspended or terminated if the customer materially violates applicable licensing restrictions.
+This may include intentional:
+* Piracy;
+* Redistribution;
+* Unauthorized resale;
+* Copyright notice removal;
+* License circumvention.
+Termination does not eliminate rights or remedies relating to prior infringement.
+________________
+
+
+62. REPORTING INFRINGEMENT OF HUSKY SOLUTIONS LLC PROPERTY
+If you discover unauthorized copying or redistribution of Husky Solutions LLC intellectual property, you may report it to:
+[LEGAL/IP EMAIL]
+Please include:
+* Location of the suspected infringement;
+* Description of the material;
+* Relevant URLs;
+* Screenshots or other supporting information, if available.
+________________
+
+
+63. COPYRIGHT QUESTIONS
+Questions regarding copyright licensing or authorized use of Husky Solutions LLC intellectual property may be sent to:
+[LEGAL/IP EMAIL]
+Do not assume permission has been granted until Husky Solutions LLC expressly authorizes the requested use.
+________________
+
+
+64. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Copyright & DMCA Policy from time to time.
+The “Last Updated” date identifies the current version.
+Changes may be made to reflect:
+* Legal developments;
+* New Services;
+* New reporting procedures;
+* Updated designated-agent information;
+* Changes in company operations.
+________________
+
+
+65. RELATIONSHIP TO OTHER POLICIES
+This Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Terms of Use
+* Husky Solutions LLC Privacy Policy
+* Husky Solutions LLC Acceptable Use Policy
+* Husky Solutions LLC Refund & Cancellation Policy
+* Product-specific license terms
+* Applicable customer agreements
+________________
+
+
+66. DMCA CONTACT INFORMATION
+Copyright notices and counter-notifications should be directed to:
+Copyright Agent
+Husky Solutions LLC
+Mailing Address:
+[DMCA AGENT MAILING ADDRESS]
+Telephone:
+[DMCA AGENT PHONE NUMBER]
+Email:
+[DMCA EMAIL]
+________________
+
+
+67. GENERAL INTELLECTUAL-PROPERTY CONTACT
+For non-DMCA intellectual-property matters:
+Husky Solutions LLC
+Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Legal / Intellectual Property Email:
+[LEGAL/IP EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+68. EFFECTIVE DATE
+This Copyright, Intellectual Property & DMCA Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

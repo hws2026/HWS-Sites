@@ -1,0 +1,1015 @@
+HUSKY SOLUTIONS LLC
+DATA PROCESSING ADDENDUM
+BUSINESS DATA PROCESSING TERMS
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Data Processing Addendum (“DPA”) forms part of the applicable agreement between Husky Solutions LLC (“Husky Solutions,” “Processor,” “Service Provider,” “Contractor,” “we,” “us,” or “our”) and the customer identified in the applicable order, account, agreement, or subscription (“Customer,” “Controller,” “Business,” or “you”).
+This DPA governs the processing of Personal Data by Husky Solutions LLC on behalf of Customer in connection with the Services.
+The Services may include, where applicable:
+* Husky Suite
+* PunchPal
+* HuskyCAD
+* Hosting services
+* Customer portals
+* APIs and integrations
+* Organization accounts
+* Workforce-management functionality
+* Website services
+* Business software
+* Other Services through which Husky Solutions LLC processes Personal Data on behalf of a Customer
+This DPA supplements the Husky Solutions LLC Terms of Service, applicable order forms, statements of work, enterprise agreements, and other agreements governing the Services.
+________________
+
+
+1. PURPOSE
+The purpose of this DPA is to establish obligations concerning Personal Data processed by Husky Solutions LLC on behalf of Customer.
+This DPA is intended to address applicable processor, service-provider, contractor, or similar requirements under privacy and data-protection laws where those laws apply.
+________________
+
+
+2. DEFINITIONS
+For purposes of this DPA:
+“Applicable Data Protection Law”
+means privacy, data-protection, or data-security law applicable to the relevant processing under this DPA.
+This may include, where applicable:
+* United States state privacy laws
+* Regulation (EU) 2016/679 (“GDPR”)
+* United Kingdom GDPR
+* UK Data Protection Act 2018
+* Other applicable privacy legislation
+“Controller”
+means a person or entity that determines the purposes and means of processing Personal Data or otherwise has a substantially equivalent role under applicable law.
+“Customer Personal Data”
+means Personal Data processed by Husky Solutions LLC on behalf of Customer through the Services.
+“Data Subject”
+means an identified or identifiable individual whose Personal Data is processed.
+“Personal Data”
+means information defined as personal data, personal information, or a substantially similar term under Applicable Data Protection Law.
+“Process” or “Processing”
+means an operation performed on Personal Data, whether automated or otherwise, including:
+* Collection
+* Recording
+* Organization
+* Storage
+* Retrieval
+* Consultation
+* Use
+* Transmission
+* Disclosure
+* Restriction
+* Deletion
+* Destruction
+“Processor”
+means a person or entity that processes Personal Data on behalf of a Controller or equivalent entity.
+“Security Incident”
+means a breach of security leading to accidental or unlawful:
+* Destruction
+* Loss
+* Alteration
+* Unauthorized disclosure of
+* Unauthorized access to
+Customer Personal Data where applicable law recognizes such an incident.
+“Subprocessor”
+means a third party appointed by Husky Solutions LLC to process Customer Personal Data on behalf of Customer.
+________________
+
+
+3. ROLES OF THE PARTIES
+For Customer Personal Data processed under this DPA:
+Customer generally acts as the Controller, Business, or equivalent party, and
+Husky Solutions LLC generally acts as the Processor, Service Provider, Contractor, or equivalent party.
+The exact statutory terminology may vary by jurisdiction.
+________________
+
+
+4. INDEPENDENT PROCESSING
+Husky Solutions LLC may separately act as an independent Controller or Business for information processed for our own legitimate purposes.
+Examples may include:
+* Customer account administration
+* Billing
+* Fraud prevention
+* Security
+* Legal compliance
+* Service analytics using appropriately permitted data
+* Business records
+Such independent processing is governed by the Husky Solutions LLC Privacy Policy and applicable law rather than solely by Customer instructions.
+________________
+
+
+5. CUSTOMER INSTRUCTIONS
+Husky Solutions LLC will process Customer Personal Data only:
+* To provide the Services
+* According to Customer's documented instructions
+* As described in the applicable agreement
+* As necessary to protect the Services
+* As required by applicable law
+unless another legally permitted processing basis applies.
+________________
+
+
+6. DOCUMENTED INSTRUCTIONS
+Customer's documented instructions include:
+* This DPA
+* Terms of Service
+* Product configuration
+* Customer use of Service functionality
+* Order forms
+* Statements of work
+* Written support instructions
+* Other written agreements between the parties
+________________
+
+
+7. UNLAWFUL INSTRUCTIONS
+If Husky Solutions LLC reasonably believes a Customer instruction violates Applicable Data Protection Law, we may:
+* Inform Customer
+* Suspend the affected processing
+* Request clarification
+* Decline the instruction
+where appropriate or required by law.
+________________
+
+
+8. CUSTOMER RESPONSIBILITY FOR LAWFUL PROCESSING
+Customer is responsible for determining whether its use of the Services and Customer Personal Data complies with applicable law.
+Customer represents that it has an appropriate legal basis or other lawful authority to provide Customer Personal Data to Husky Solutions LLC for processing.
+________________
+
+
+9. CUSTOMER NOTICES AND CONSENTS
+Customer is responsible for providing required:
+* Privacy notices
+* Employee notices
+* User notices
+* Consents
+* Authorizations
+* Opt-out mechanisms
+applicable to Customer's collection and use of Customer Personal Data.
+________________
+
+
+10. PURPOSE LIMITATION
+Husky Solutions LLC will process Customer Personal Data for the purposes reasonably necessary to provide and protect the Services and as otherwise permitted under this DPA or applicable law.
+________________
+
+
+11. NO SALE OF CUSTOMER PERSONAL DATA
+Husky Solutions LLC will not sell Customer Personal Data for monetary consideration as part of processing performed on behalf of Customer.
+Where Applicable Data Protection Law defines “sale” more broadly, Husky Solutions LLC will not engage in activities prohibited for a processor, service provider, or contractor under the applicable law.
+________________
+
+
+12. NO UNAUTHORIZED SHARING
+Where applicable law regulates “sharing” of Personal Data for cross-context behavioral advertising or similar purposes, Husky Solutions LLC will not use Customer Personal Data processed under this DPA for prohibited sharing activities except where separately authorized and legally permitted.
+________________
+
+
+13. NO RETAINING OUTSIDE PERMITTED PURPOSES
+Where required by applicable law, Husky Solutions LLC will not retain, use, or disclose Customer Personal Data outside the direct business relationship with Customer except:
+* To provide the Services
+* For permitted security purposes
+* For legal compliance
+* As otherwise permitted by applicable law
+________________
+
+
+14. NO COMBINING WHERE PROHIBITED
+Where Applicable Data Protection Law restricts a service provider or contractor from combining Personal Data received from a Customer with certain other information, Husky Solutions LLC will comply with those restrictions.
+________________
+
+
+15. CONFIDENTIALITY
+Personnel authorized to process Customer Personal Data will be subject to appropriate confidentiality obligations.
+This may include:
+* Employment obligations
+* Contractor agreements
+* Confidentiality agreements
+* Internal policies
+* Professional obligations
+________________
+
+
+16. ACCESS RESTRICTION
+Access to Customer Personal Data should be limited to persons or systems with a legitimate need for such access.
+Husky Solutions LLC may use:
+* Role-based access
+* Least-privilege principles
+* Administrative controls
+* Access logging
+where appropriate.
+________________
+
+
+17. SECURITY MEASURES
+Husky Solutions LLC will maintain reasonable administrative, technical, and physical safeguards appropriate to the nature of Customer Personal Data and the Services.
+Security measures may include:
+* Authentication controls
+* Access controls
+* Password hashing
+* Multifactor authentication
+* Encryption in transit
+* Encryption at rest where appropriate
+* Network protections
+* Logging
+* Monitoring
+* Backups
+* Vulnerability management
+* Incident response
+* Secure development practices
+* Administrative-access restrictions
+________________
+
+
+18. SECURITY POLICY
+Additional security practices are described in the Husky Solutions LLC Security, Incident Response & Vulnerability Disclosure Policy.
+________________
+
+
+19. SECURITY DOES NOT ELIMINATE ALL RISK
+No security system can guarantee complete protection.
+Husky Solutions LLC does not warrant that a Security Incident can never occur.
+Our obligation is to maintain safeguards appropriate to applicable contractual and legal requirements.
+________________
+
+
+20. SECURITY INCIDENT NOTIFICATION
+If Husky Solutions LLC confirms a Security Incident involving Customer Personal Data that requires notice to Customer under applicable law or contract, Husky Solutions LLC will notify Customer without undue delay as required by applicable law.
+________________
+
+
+21. SECURITY INCIDENT NOTICE CONTENT
+To the extent information is reasonably available, an incident notice may include information concerning:
+* Nature of the incident
+* Categories of affected information
+* Approximate number of affected Data Subjects where known
+* Relevant mitigation steps
+* Contact information
+* Other information required by applicable law
+Information may be provided in phases as an investigation progresses.
+________________
+
+
+22. INCIDENT INVESTIGATION
+Husky Solutions LLC may investigate:
+* Nature of the incident
+* Systems affected
+* Data affected
+* Attack vector
+* Scope of unauthorized access
+* Appropriate remediation
+________________
+
+
+23. CUSTOMER NOTIFICATION RESPONSIBILITY
+Unless applicable law directly requires Husky Solutions LLC to notify affected Data Subjects or authorities, Customer remains responsible for determining and fulfilling its own notification obligations.
+Husky Solutions LLC will provide reasonable cooperation where required by this DPA or law.
+________________
+
+
+24. NO ADMISSION
+Notification of a potential or confirmed Security Incident does not constitute an admission of:
+* Fault
+* Negligence
+* Liability
+* Legal violation
+by Husky Solutions LLC.
+________________
+
+
+25. SUBPROCESSORS
+Customer generally authorizes Husky Solutions LLC to use Subprocessors reasonably necessary to provide the Services.
+Subprocessors may provide services including:
+* Cloud hosting
+* Database infrastructure
+* Email delivery
+* Customer support
+* Authentication
+* Security
+* Payment processing
+* Content delivery
+* Analytics
+* Other infrastructure
+________________
+
+
+26. SUBPROCESSOR OBLIGATIONS
+Where required by applicable law, Husky Solutions LLC will impose data-protection obligations on Subprocessors that are substantially appropriate to the processing performed.
+________________
+
+
+27. RESPONSIBILITY FOR SUBPROCESSORS
+To the extent required by Applicable Data Protection Law, Husky Solutions LLC remains responsible for its Subprocessors' processing of Customer Personal Data within the scope of the applicable legal requirement.
+________________
+
+
+28. SUBPROCESSOR LIST
+Husky Solutions LLC may maintain a list of material Subprocessors.
+The list may identify information such as:
+* Provider name
+* Service provided
+* Processing location or region where appropriate
+The list may be made available through:
+[SUBPROCESSOR URL]
+________________
+
+
+29. NEW SUBPROCESSORS
+Where applicable law or a written Customer agreement requires notice before adding a new Subprocessor, Husky Solutions LLC will provide reasonable notice through a supported method.
+This may include:
+* Subprocessor page update
+* Email notice
+* Customer portal notice
+________________
+
+
+30. SUBPROCESSOR OBJECTIONS
+Where legally required, Customer may object to a new Subprocessor on reasonable data-protection grounds.
+The parties will attempt in good faith to identify a commercially reasonable solution.
+If no reasonable solution is available, either party may have rights concerning termination of the affected Service according to the governing agreement and applicable law.
+________________
+
+
+31. DATA SUBJECT REQUESTS
+Husky Solutions LLC may assist Customer in responding to Data Subject requests where:
+* Required by applicable law
+* The requested information is within Husky Solutions LLC's systems
+* Customer cannot reasonably fulfill the request independently through available Service functionality
+________________
+
+
+32. TYPES OF DATA SUBJECT REQUESTS
+Depending on applicable law, requests may concern:
+* Access
+* Correction
+* Deletion
+* Portability
+* Restriction
+* Objection
+* Opt-out
+* Consent withdrawal
+________________
+
+
+33. REQUESTS RECEIVED DIRECTLY BY HUSKY SOLUTIONS
+If Husky Solutions LLC receives a request directly from a Data Subject concerning Customer Personal Data, we may direct that individual to Customer where appropriate.
+We generally will not independently respond regarding Customer-controlled data unless:
+* Customer authorizes us
+* Applicable law requires us
+* Another lawful basis applies
+________________
+
+
+34. CUSTOMER SELF-SERVICE TOOLS
+Where the Services provide tools allowing Customer to:
+* Search
+* Correct
+* Export
+* Delete
+* Restrict
+Customer Personal Data, Customer should generally use those tools before requesting manual assistance.
+________________
+
+
+35. ASSISTANCE WITH COMPLIANCE
+Where required by applicable law and taking into account the nature of the processing and information available, Husky Solutions LLC may reasonably assist Customer with obligations concerning:
+* Data Subject requests
+* Security
+* Security incidents
+* Data-protection impact assessments
+* Regulatory consultations
+________________
+
+
+36. DATA PROTECTION IMPACT ASSESSMENTS
+If Customer is legally required to complete a data-protection impact assessment relating to the Services, Husky Solutions LLC may provide reasonably available information regarding our processing and security practices.
+Husky Solutions LLC is not responsible for preparing Customer's entire legal assessment unless separately agreed.
+________________
+
+
+37. REGULATORY CONSULTATIONS
+Where required under applicable law, Husky Solutions LLC may provide reasonable information to assist Customer with a consultation involving a data-protection authority.
+________________
+
+
+38. AUDITS
+Where Applicable Data Protection Law grants Customer audit rights, Husky Solutions LLC will provide information reasonably necessary to demonstrate applicable compliance.
+________________
+
+
+39. AUDIT METHODS
+Husky Solutions LLC may satisfy audit obligations through reasonable methods including:
+* Security documentation
+* Certifications
+* Audit reports
+* Questionnaires
+* Remote review
+* On-site audit where legally required and reasonably necessary
+________________
+
+
+40. AUDIT LIMITATIONS
+Audits must not:
+* Compromise other customers' confidentiality
+* Expose unrelated customer information
+* Unreasonably disrupt operations
+* Create unnecessary security risks
+* Require disclosure of privileged information
+* Require disclosure of trade secrets beyond what is legally necessary
+________________
+
+
+41. AUDIT NOTICE
+Unless a shorter period is legally required, Customer should provide reasonable advance notice of an audit request.
+________________
+
+
+42. AUDIT FREQUENCY
+Unless applicable law requires otherwise, Customer should not conduct more than one routine audit in a twelve-month period.
+Additional audits may be appropriate following a significant Security Incident or where legally required.
+________________
+
+
+43. AUDIT COSTS
+Customer generally bears its own audit costs.
+If an audit requires substantial extraordinary assistance beyond ordinary legal obligations, the parties may discuss reasonable costs where permitted by law.
+________________
+
+
+44. RETURN OR DELETION
+Upon termination of the applicable Service, Husky Solutions LLC will delete or return Customer Personal Data according to:
+* Customer instructions
+* Service functionality
+* Applicable agreement
+* Data Retention & Deletion Policy
+* Applicable law
+________________
+
+
+45. RETENTION EXCEPTIONS
+Husky Solutions LLC may retain limited Customer Personal Data after termination where required or permitted for:
+* Legal obligations
+* Security
+* Fraud prevention
+* Billing
+* Litigation
+* Backup integrity
+* Enforcement of agreements
+Retained information remains subject to applicable confidentiality and security obligations.
+________________
+
+
+46. BACKUPS
+Deleted Customer Personal Data may remain temporarily in protected backups until the backup:
+* Expires
+* Is overwritten
+* Is securely destroyed
+Backups may not be modified immediately solely to delete an individual record where doing so is technically impractical.
+________________
+
+
+47. LOCATION DATA
+Customer Personal Data may include location information where the applicable Service supports such processing.
+Location information may include:
+* IP-derived approximate location
+* Device location
+* Browser geolocation
+* GPS-based location
+* Other authorized location information
+________________
+
+
+48. PRECISE GEOLOCATION
+Precise or close-pinpoint geolocation may constitute sensitive Personal Data under certain laws.
+Husky Solutions LLC will process such data on behalf of Customer only where:
+* Supported by the applicable Service
+* Authorized by Customer
+* Appropriate user permissions are obtained where required
+* Processing is permitted by law
+________________
+
+
+49. SECURITY GEOLOCATION
+Separately, Husky Solutions LLC may process IP addresses and geolocation information for independent security purposes, including:
+* Fraud prevention
+* Account protection
+* Security investigations
+* Suspected account compromise
+Such security processing may fall within Husky Solutions LLC's independent responsibilities rather than Customer instructions alone.
+________________
+
+
+50. BIOMETRIC INFORMATION
+Customer must not use the Services to collect biometric information unless:
+* The applicable Service expressly supports the processing
+* Husky Solutions LLC has authorized such use
+* Customer complies with applicable notice and consent requirements
+________________
+
+
+51. DEVICE-BASED BIOMETRICS
+Where biometric authentication is performed entirely by a user's device or operating system, Husky Solutions LLC may receive only an authentication confirmation rather than the underlying biometric template.
+________________
+
+
+52. SENSITIVE PERSONAL DATA
+Customer is responsible for ensuring that its processing of sensitive or special-category Personal Data is lawful.
+Customer should not upload categories of highly regulated information unless expressly supported and authorized.
+________________
+
+
+53. HIPAA
+This DPA is not a Business Associate Agreement under HIPAA.
+Customer must not submit Protected Health Information subject to HIPAA unless:
+* Husky Solutions LLC expressly authorizes such processing; and
+* The parties execute a separate Business Associate Agreement where required.
+________________
+
+
+54. CJIS AND NCIC DATA
+This DPA does not authorize Customer to upload or process:
+* Actual CJIS-controlled information
+* Actual NCIC information
+* Classified government information
+unless Husky Solutions LLC expressly authorizes such processing through a separate written agreement.
+________________
+
+
+55. PAYMENT CARD INFORMATION
+This DPA does not authorize Customer to store full payment-card data in ordinary Husky Solutions LLC fields or databases.
+Payment data should be processed only through approved payment mechanisms.
+________________
+
+
+56. CUSTOMER SECURITY RESPONSIBILITIES
+Customer is responsible for security controls within its control.
+This includes:
+* User provisioning
+* Access permissions
+* Administrator selection
+* Password security
+* API key security
+* Device security
+* Appropriate account configuration
+________________
+
+
+57. ORGANIZATION ADMINISTRATORS
+Customer administrators may have broad access to Customer Personal Data.
+Customer is responsible for assigning administrator privileges appropriately.
+________________
+
+
+58. FORMER USERS
+Customer should promptly remove access for:
+* Former employees
+* Former contractors
+* Former administrators
+* Users who no longer require access
+________________
+
+
+59. CUSTOMER CREDENTIALS
+Customer is responsible for safeguarding credentials associated with its account.
+Compromise resulting from Customer-controlled credentials may increase security risk.
+________________
+
+
+60. API PROCESSING
+Where Customer Personal Data is processed through Husky Solutions LLC APIs, Customer must comply with the API & Developer Terms.
+________________
+
+
+61. INTERNATIONAL DATA TRANSFERS
+Customer Personal Data may be processed in the United States or other countries where Husky Solutions LLC or authorized Subprocessors operate.
+Where Applicable Data Protection Law requires an international-transfer mechanism, the parties will use an appropriate lawful mechanism.
+________________
+
+
+62. EU/EEA STANDARD CONTRACTUAL CLAUSES
+Where:
+1. Customer Personal Data is transferred from the European Economic Area to Husky Solutions LLC or another recipient in a country not covered by an applicable adequacy decision; and
+2. Applicable Data Protection Law requires appropriate safeguards,
+the parties may incorporate the applicable European Commission Standard Contractual Clauses for international transfers adopted on June 4, 2021, as amended or replaced from time to time.
+________________
+
+
+63. APPLICABLE SCC MODULE
+The applicable Standard Contractual Clause module will depend on the roles of the parties.
+Where Customer acts as Controller and Husky Solutions LLC acts as Processor, the applicable controller-to-processor module will generally apply.
+Where the parties have different roles, another applicable module may apply.
+________________
+
+
+64. SCC PRIORITY
+If applicable Standard Contractual Clauses conflict with another provision of this DPA regarding an international transfer governed by those clauses, the Standard Contractual Clauses control to the extent of the conflict.
+________________
+
+
+65. SCC ANNEX INFORMATION
+Where the Standard Contractual Clauses apply, the information contained in the annexes to this DPA may be used to complete applicable SCC annexes to the extent appropriate.
+________________
+
+
+66. TRANSFER IMPACT INFORMATION
+Husky Solutions LLC may provide reasonably available information to assist Customer in evaluating international transfer requirements.
+Customer remains responsible for determining its own legal obligations concerning international transfers.
+________________
+
+
+67. SUPPLEMENTARY MEASURES
+Where legally required and appropriate to the risk, Husky Solutions LLC may implement supplementary technical or organizational safeguards relating to international transfers.
+________________
+
+
+68. UK INTERNATIONAL TRANSFERS
+Where United Kingdom data-protection law requires an appropriate transfer mechanism, the parties may enter into or incorporate an applicable:
+* UK International Data Transfer Agreement
+* UK Addendum to applicable EU Standard Contractual Clauses
+* Successor lawful transfer mechanism
+as appropriate.
+________________
+
+
+69. SWISS DATA
+Where Swiss data-protection law applies to an international transfer, applicable safeguards may be adapted as required by Swiss law.
+________________
+
+
+70. U.S. STATE PRIVACY LAWS
+Where an applicable U.S. state privacy law imposes contractual requirements between:
+* Controller and Processor
+* Business and Service Provider
+* Business and Contractor
+this DPA is intended to establish applicable restrictions and obligations.
+________________
+
+
+71. CALIFORNIA SERVICE PROVIDER / CONTRACTOR TERMS
+To the extent California privacy law applies and Husky Solutions LLC qualifies as a Service Provider or Contractor for Customer Personal Data, Husky Solutions LLC agrees to applicable statutory restrictions on:
+* Selling covered Personal Information
+* Sharing covered Personal Information
+* Retaining, using, or disclosing Personal Information outside permitted purposes
+* Combining Personal Information where prohibited
+subject to exceptions permitted by law.
+________________
+
+
+72. CALIFORNIA COMPLIANCE
+Husky Solutions LLC will provide the level of privacy protection required of an applicable Service Provider or Contractor under California law to the extent such obligations legally apply to the Services and Customer Personal Data.
+________________
+
+
+73. CUSTOMER MONITORING RIGHTS
+Where California law requires Customer to have a right to take reasonable and appropriate steps to help ensure Husky Solutions LLC uses Personal Information consistently with Customer's obligations, the parties will cooperate in a commercially reasonable manner.
+________________
+
+
+74. REMEDIATION
+If Husky Solutions LLC determines it can no longer meet an applicable privacy obligation under this DPA, we will notify Customer where legally required.
+Customer may take reasonable steps required by applicable law to stop and remediate unauthorized use.
+________________
+
+
+75. DE-IDENTIFIED DATA
+Where Husky Solutions LLC receives or creates legally de-identified data subject to statutory restrictions, we will maintain the information in de-identified form where required and will not attempt to re-identify it except where legally permitted.
+________________
+
+
+76. AGGREGATED DATA
+Husky Solutions LLC may use aggregated information that does not reasonably identify Customer or an individual for purposes such as:
+* Service improvement
+* Security analysis
+* Performance analysis
+* Business planning
+subject to applicable law and agreements.
+________________
+
+
+77. PRODUCT ANALYTICS
+Where Customer Personal Data is used for product analytics beyond strictly necessary processing, Husky Solutions LLC will ensure such processing is permitted by applicable agreement and law.
+Where possible, analytics may use aggregated or de-identified data.
+________________
+
+
+78. MACHINE LEARNING AND AI
+Husky Solutions LLC will not use Customer Personal Data to train unrelated general-purpose models unless such use is:
+* Expressly disclosed
+* Contractually permitted
+* Lawful
+If product-specific AI processing is introduced, additional terms may apply.
+________________
+
+
+79. GOVERNMENT REQUESTS
+Governmental requests for Customer Personal Data will be handled according to the Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy.
+________________
+
+
+80. CUSTOMER NOTICE OF GOVERNMENT REQUESTS
+Where legally permitted and appropriate, Husky Solutions LLC may notify Customer of governmental demands relating to Customer Personal Data.
+Notice may be withheld where prohibited by law.
+________________
+
+
+81. REQUEST REVIEW
+Husky Solutions LLC may evaluate legal requests for:
+* Validity
+* Jurisdiction
+* Scope
+* Legal authority
+and may seek clarification or narrowing where appropriate.
+________________
+
+
+82. EMERGENCY DISCLOSURES
+Where applicable law permits an emergency disclosure involving danger of death or serious physical injury, Husky Solutions LLC may make an appropriate disclosure consistent with applicable law.
+________________
+
+
+83. CONFIDENTIALITY OF CUSTOMER DATA
+Husky Solutions LLC will treat non-public Customer Personal Data as confidential information subject to the applicable agreement and law.
+________________
+
+
+84. CUSTOMER CONFIDENTIAL INFORMATION
+This DPA does not replace broader confidentiality obligations contained in:
+* Enterprise agreements
+* NDAs
+* Statements of work
+* Other written agreements
+________________
+
+
+85. REGULATOR COOPERATION
+Where legally required, Husky Solutions LLC may cooperate with applicable privacy or data-protection authorities concerning processing within the scope of this DPA.
+________________
+
+
+86. RECORDS OF PROCESSING
+Where applicable law requires Husky Solutions LLC to maintain records concerning processing performed as a Processor, Husky Solutions LLC will maintain such records as required.
+________________
+
+
+87. TRAINING
+Personnel with appropriate access to Customer Personal Data may receive relevant security or privacy guidance appropriate to their roles.
+________________
+
+
+88. BUSINESS CONTINUITY
+Husky Solutions LLC may maintain:
+* Backups
+* Recovery procedures
+* Incident-response plans
+* Business continuity measures
+appropriate to supported Services.
+________________
+
+
+89. DATA LOCATION
+Husky Solutions LLC may use cloud infrastructure operating in multiple geographic regions.
+A specific data-residency commitment applies only if expressly included in:
+* Applicable plan
+* Order form
+* Enterprise agreement
+________________
+
+
+90. DATA RESIDENCY REQUESTS
+Customers requiring specific geographic data residency should contact Husky Solutions LLC before uploading regulated information.
+Husky Solutions LLC does not guarantee a particular storage region unless agreed in writing.
+________________
+
+
+91. CHANGE IN PROCESSING
+If Husky Solutions LLC materially changes the nature of processing performed on behalf of Customer, we may update:
+* This DPA
+* Product documentation
+* Subprocessor information
+* Applicable notices
+as appropriate.
+________________
+
+
+92. LIABILITY
+Liability arising under this DPA is subject to the limitations and exclusions contained in the applicable agreement between Husky Solutions LLC and Customer, except to the extent applicable law requires otherwise.
+________________
+
+
+93. INDEMNIFICATION
+Any indemnification obligations relating to data processing are governed by the applicable agreement unless a separately signed enterprise DPA establishes different terms.
+________________
+
+
+94. TERM
+This DPA remains effective while Husky Solutions LLC processes Customer Personal Data on behalf of Customer under the applicable agreement.
+________________
+
+
+95. TERMINATION
+Termination of the underlying Service generally terminates this DPA after remaining Customer Personal Data has been returned, deleted, or otherwise handled according to applicable retention obligations.
+________________
+
+
+96. SURVIVAL
+Provisions concerning:
+* Confidentiality
+* Data deletion
+* Security
+* International transfer safeguards
+* Liability
+may survive termination to the extent necessary to fulfill their purpose.
+________________
+
+
+97. CONFLICT
+If this DPA conflicts with the general Terms of Service regarding processing of Customer Personal Data, this DPA controls for that processing.
+A separately signed enterprise DPA may supersede this standard DPA.
+________________
+
+
+98. ORDER OF PRECEDENCE
+Where applicable, the following order generally applies:
+1. Mandatory provisions of Applicable Data Protection Law
+2. Applicable Standard Contractual Clauses or another mandatory transfer mechanism
+3. A signed negotiated DPA
+4. This standard DPA
+5. Applicable enterprise agreement
+6. Terms of Service
+except where a particular document expressly and lawfully establishes another priority.
+________________
+
+
+99. CHANGES TO THIS DPA
+Husky Solutions LLC may update this standard DPA to reflect:
+* Changes in law
+* New Services
+* Changes in security practices
+* New Subprocessors
+* International-transfer developments
+Material changes will be handled according to applicable contractual and legal requirements.
+________________
+
+
+100. ELECTRONIC EXECUTION
+This DPA may be accepted electronically.
+Where Customer's use of a Service is subject to this standard DPA through incorporated Terms, no separate handwritten signature is required unless applicable law or a negotiated agreement requires one.
+________________
+
+
+101. NEGOTIATED DPA
+Enterprise customers requiring:
+* Custom privacy terms
+* Custom audit rights
+* Specific security commitments
+* Data residency
+* Specialized compliance obligations
+may request a separately negotiated DPA.
+Husky Solutions LLC is not required to accept every requested modification.
+________________
+
+
+102. CONTACT INFORMATION
+Privacy and data-processing questions may be directed to:
+Husky Solutions LLC
+Privacy & Data Protection
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Privacy Email:
+[PRIVACY EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Subprocessor Information:
+[SUBPROCESSOR URL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+ANNEX I
+DETAILS OF PROCESSING
+A. Subject Matter
+Processing of Customer Personal Data as necessary to provide the Services purchased or configured by Customer.
+B. Duration
+For the duration of the applicable Service agreement plus the period necessary to return, delete, back up, or lawfully retain Customer Personal Data according to applicable law and Husky Solutions LLC retention practices.
+C. Nature of Processing
+Processing may include:
+* Collection
+* Hosting
+* Storage
+* Organization
+* Retrieval
+* Transmission
+* Display
+* Modification at Customer direction
+* Authentication
+* Security monitoring
+* Backup
+* Deletion
+D. Purpose
+To:
+* Provide Services
+* Operate Customer accounts
+* Provide requested functionality
+* Authenticate users
+* Maintain security
+* Provide support
+* Maintain backups
+* Process Customer instructions
+E. Categories of Data Subjects
+Depending on Customer use, Data Subjects may include:
+* Customer employees
+* Contractors
+* Organization members
+* Administrators
+* Customers
+* Website visitors
+* End users
+* Applicants
+* Other individuals whose Personal Data Customer chooses to process
+F. Categories of Personal Data
+Depending on Customer configuration, Customer Personal Data may include:
+* Names
+* Email addresses
+* Telephone numbers
+* Account identifiers
+* Usernames
+* Organization information
+* Roles
+* Workforce information
+* Attendance information
+* Scheduling information
+* Website content
+* User-submitted information
+* Device information
+* IP addresses
+* Authentication information
+* Approximate location
+* Precise location where expressly supported and authorized
+* Other Personal Data submitted by Customer
+G. Sensitive Data
+Sensitive data should not be submitted unless the Service expressly supports the relevant category and Customer has a lawful basis for processing.
+Specialized regulated information such as HIPAA-regulated PHI, actual CJIS/NCIC data, or classified information is not authorized by this DPA alone.
+________________
+
+
+ANNEX II
+TECHNICAL AND ORGANIZATIONAL MEASURES
+Husky Solutions LLC may maintain measures including:
+Access Control
+* Role-based access
+* Least privilege
+* Authentication
+* Administrative restrictions
+Account Security
+* Password hashing
+* MFA where supported
+* Session controls
+* Suspicious-login detection
+Network and Application Security
+* Encryption in transit
+* Firewall and network protections
+* Rate limiting
+* Secure application practices
+Data Security
+* Encryption at rest where appropriate
+* Backup controls
+* Access restrictions
+* Retention practices
+Monitoring
+* Security logging
+* Authentication logging
+* Incident monitoring
+* IP and network analysis
+Incident Response
+* Incident investigation
+* Containment
+* Credential revocation
+* Customer notification where required
+Personnel
+* Confidentiality obligations
+* Restricted access
+* Role-appropriate security guidance
+The exact controls depend on the architecture and nature of the applicable Service.
+________________
+
+
+ANNEX III
+SUBPROCESSORS
+Husky Solutions LLC may maintain its current material Subprocessor list at:
+[SUBPROCESSOR URL]
+The list may identify:
+* Subprocessor name
+* Purpose
+* Relevant processing location or region where appropriate
+Customer authorizes Subprocessors in accordance with this DPA.
+________________
+
+
+103. EFFECTIVE DATE
+This Data Processing Addendum is effective as of:
+October 12, 2026
+and remains effective for the duration of applicable processing unless replaced by another applicable data-processing agreement.

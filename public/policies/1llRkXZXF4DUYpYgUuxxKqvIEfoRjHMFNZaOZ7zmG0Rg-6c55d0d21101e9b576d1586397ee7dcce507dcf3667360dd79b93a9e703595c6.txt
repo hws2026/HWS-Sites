@@ -1,0 +1,932 @@
+HUSKY SOLUTIONS LLC
+ENTERPRISE & ORGANIZATION ADMINISTRATION TERMS
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+These Enterprise & Organization Administration Terms (“Organization Terms”) govern organization-managed, business, agency, enterprise, team, multi-user, and administrative accounts provided by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+These Organization Terms supplement the Husky Solutions LLC Terms of Service and apply where an organization creates, purchases, manages, administers, or controls access to a Husky Solutions LLC Service.
+These Terms may apply to organization accounts associated with:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Enterprise subscriptions
+* Business subscriptions
+* Multi-location accounts
+* Agency accounts
+* Customer portals
+* Administrative dashboards
+* APIs
+* Developer systems
+* Hosting services
+* Other current or future Husky Solutions LLC Services
+By creating, administering, purchasing, or using an organization-managed account, the applicable organization and its authorized users agree to these Organization Terms.
+________________
+
+
+1. DEFINITIONS
+For purposes of these Organization Terms:
+“Organization” means a business, company, agency, department, team, nonprofit, school, public entity, or other organization using a Husky Solutions LLC Service.
+“Organization Account” means a Husky Solutions LLC account created or administered for an Organization.
+“Administrator” means a user granted elevated authority to manage an Organization Account.
+“User” means an individual authorized to access an Organization Account.
+“Super Administrator” means the highest-level administrative role where such a role exists.
+________________
+
+
+2. ORGANIZATION AUTHORITY
+A person creating or accepting terms for an Organization represents that they have authority to:
+* Create the Organization Account
+* Enter into agreements on behalf of the Organization
+* Purchase applicable Services
+* Manage users
+* Configure the Organization
+* Bind the Organization to applicable Husky Solutions LLC terms
+If you do not have that authority, you must not represent that you do.
+________________
+
+
+3. ORGANIZATION RESPONSIBILITY
+The Organization is responsible for activity conducted through authorized Organization Accounts, subject to applicable law.
+The Organization is responsible for:
+* Selecting Administrators
+* Managing user access
+* Assigning appropriate roles
+* Removing unauthorized users
+* Configuring permissions
+* Maintaining accurate billing information
+* Complying with applicable law
+* Protecting Organization credentials
+* Maintaining appropriate internal policies
+________________
+
+
+4. ADMINISTRATIVE ROLES
+Husky Solutions LLC Services may support roles such as:
+* Super Administrator
+* Organization Administrator
+* Agency Administrator
+* Regional Manager
+* District Manager
+* General Manager
+* Assistant Manager
+* Shift Lead
+* Supervisor
+* Standard User
+* Custom roles
+The exact roles available depend on the applicable Service.
+________________
+
+
+5. CUSTOM ROLES
+Where supported, Organizations may create custom roles.
+Custom roles may define permissions relating to:
+* User management
+* Billing
+* Documents
+* Scheduling
+* Reports
+* Organization records
+* APIs
+* Security
+* Configuration
+* Data export
+* Administrative settings
+Organizations are responsible for configuring custom roles appropriately.
+________________
+
+
+6. ADMINISTRATOR POWERS
+Depending on the Service and assigned permissions, an Administrator may be able to:
+* Add users
+* Remove users
+* Invite users
+* Disable accounts
+* Reset certain credentials
+* Assign roles
+* Modify roles
+* Access Organization data
+* Configure integrations
+* Manage subscriptions
+* Purchase add-ons
+* Change Organization settings
+* Export information
+* Review audit logs
+* Manage security settings
+* Configure retention settings
+* Delete Organization data
+________________
+
+
+7. ADMINISTRATOR ACCESS TO USER INFORMATION
+Users of an Organization Account understand that authorized Administrators may have access to information associated with the Organization.
+This may include:
+* Name
+* Account information
+* Role
+* Organization activity
+* Schedules
+* Attendance
+* Documents
+* Records
+* Communications
+* Audit events
+* Security events
+* Other Organization-controlled information
+________________
+
+
+8. ORGANIZATION-CONTROLLED DATA
+Where data is created, uploaded, stored, or maintained primarily for the Organization, the Organization may control access to that data.
+Individual users may not have an independent right to prevent authorized Organization administrators from accessing Organization-controlled records.
+________________
+
+
+9. CUSTOMER CONTENT
+As between Husky Solutions LLC and the Organization, the Organization retains rights to Customer Content it lawfully owns.
+User-generated content submitted within an Organization workspace may become subject to the Organization's internal policies and control.
+________________
+
+
+10. EMPLOYEE AND WORKFORCE INFORMATION
+Organizations using workforce-related functionality may process information including:
+* Employee names
+* Employee identifiers
+* Scheduling information
+* Attendance information
+* Timekeeping information
+* Workplace records
+* Documents
+* Role assignments
+* Administrative records
+The Organization is responsible for determining whether its use complies with applicable employment and privacy laws.
+________________
+
+
+11. HUSKY SOLUTIONS IS NOT THE EMPLOYER
+Use of PunchPal or another workforce Service does not make Husky Solutions LLC the employer of the Organization's employees or contractors.
+Husky Solutions LLC does not determine:
+* Wages
+* Overtime
+* Scheduling
+* Discipline
+* Hiring
+* Firing
+* Promotions
+* Employment status
+unless expressly engaged to provide a different service in writing.
+________________
+
+
+12. ORGANIZATION POLICIES
+Organizations may establish internal policies concerning use of the Services.
+Users may therefore be subject to both:
+* Husky Solutions LLC policies
+* Organization-specific policies
+Organization policies may be stricter but may not authorize conduct prohibited by Husky Solutions LLC.
+________________
+
+
+13. USER PROVISIONING
+Organizations are responsible for creating or inviting only authorized users.
+The Organization should verify that each account is assigned to the correct individual or operational role.
+________________
+
+
+14. USER OFFBOARDING
+Organizations should promptly revoke access when a user:
+* Leaves employment
+* Ends a contract
+* Changes departments
+* No longer requires access
+* Has permissions revoked
+Failure to remove unnecessary access may create security risk.
+________________
+
+
+15. FORMER EMPLOYEES
+Former employees do not automatically retain access to an Organization Account.
+The Organization is responsible for determining:
+* Whether access continues
+* Whether data should be transferred
+* Whether the user's role should be removed
+subject to applicable law.
+________________
+
+
+16. ADMINISTRATOR OFFBOARDING
+When an Administrator leaves an Organization, the Organization should promptly:
+* Remove Administrator permissions
+* Revoke active sessions
+* Rotate shared credentials
+* Review API keys
+* Review billing authority
+* Reassign administrative ownership
+where applicable.
+________________
+
+
+17. SUPER ADMINISTRATOR SECURITY
+Super Administrator accounts may have broad authority.
+Organizations should use heightened protections such as:
+* Multifactor authentication
+* Strong credentials
+* Restricted access
+* Role separation
+* Periodic permission review
+where supported.
+________________
+
+
+18. LEAST-PRIVILEGE PRINCIPLE
+Organizations should grant users only the permissions reasonably necessary for their responsibilities.
+Excessive permissions may increase the risk of:
+* Unauthorized access
+* Data loss
+* Fraud
+* Accidental deletion
+* Misconfiguration
+________________
+
+
+19. PERIODIC ACCESS REVIEW
+Organizations should periodically review:
+* Active users
+* Administrator accounts
+* Custom roles
+* API credentials
+* Billing permissions
+* External integrations
+and remove unnecessary access.
+________________
+
+
+20. SHARED ACCOUNTS
+Where possible, Organizations should use individual user accounts rather than shared personal credentials.
+Shared accounts may reduce:
+* Accountability
+* Auditability
+* Security
+If a shared operational account is permitted, the Organization remains responsible for controlling access.
+________________
+
+
+21. ORGANIZATION SECURITY SETTINGS
+Organizations may be able to configure security settings including:
+* MFA requirements
+* Password policies
+* Session limits
+* IP restrictions
+* Device restrictions
+* Authentication methods
+* Access permissions
+The Organization is responsible for determining appropriate settings.
+________________
+
+
+22. SECURITY OVERRIDES
+Husky Solutions LLC may enforce minimum security controls even if the Organization has configured weaker settings.
+This may include:
+* Forced password reset
+* Mandatory MFA
+* Session revocation
+* Blocking suspicious activity
+* Account lockdown
+where reasonably necessary.
+________________
+
+
+23. ACCOUNT LOCKDOWN
+Husky Solutions LLC may temporarily lock an Organization Account when there is reasonable suspicion of:
+* Administrator compromise
+* Account takeover
+* Fraud
+* Security breach
+* Malicious API access
+Access may remain restricted until security verification is completed.
+________________
+
+
+24. SECURITY LOCATION INFORMATION
+Husky Solutions LLC may use IP addresses and geolocation as security signals.
+During suspected or confirmed breaches, more precise location may be used where lawfully available and authorized.
+Such processing is governed by the:
+* Privacy Policy
+* Security Policy
+* Account Security Policy
+________________
+
+
+25. ORGANIZATION AUDIT LOGS
+Certain Services may provide Organization Administrators with audit logs.
+Logs may include:
+* User logins
+* User creation
+* User removal
+* Role changes
+* Data access
+* Administrative actions
+* Security events
+* Account configuration changes
+________________
+
+
+26. AUDIT LOG LIMITATIONS
+Husky Solutions LLC does not guarantee that every possible user action is recorded unless expressly stated in applicable product documentation or a written agreement.
+________________
+
+
+27. BILLING ADMINISTRATORS
+An Organization may designate one or more users with billing authority.
+A Billing Administrator may be able to:
+* Purchase subscriptions
+* Upgrade plans
+* Add seats
+* Purchase add-ons
+* Update payment methods
+* View invoices
+* Cancel subscriptions
+________________
+
+
+28. AUTHORIZED BILLING ACTIONS
+Husky Solutions LLC may rely on actions taken by a user who appears to have valid Billing Administrator authority unless there are reasonable indications of account compromise.
+________________
+
+
+29. INTERNAL BILLING DISPUTES
+Husky Solutions LLC is not responsible for internal disputes concerning which employee or Administrator was permitted by the Organization to make a purchase.
+The Organization is responsible for controlling billing permissions.
+________________
+
+
+30. SEAT-BASED BILLING
+Where pricing depends on users or seats, the Organization is responsible for monitoring its active seat count.
+Additional users may generate additional charges according to the applicable plan.
+________________
+
+
+31. LOCATION-BASED BILLING
+Certain Services may charge based on:
+* Locations
+* Stores
+* Agencies
+* Departments
+* Servers
+where disclosed.
+The Organization is responsible for maintaining accurate billing units.
+________________
+
+
+32. USAGE-BASED BILLING
+Where billing depends on usage, the Organization is responsible for monitoring usage where tools are available.
+________________
+
+
+33. ENTERPRISE AGREEMENTS
+An Enterprise Customer may enter into a separately negotiated agreement with Husky Solutions LLC.
+That agreement may include:
+* Custom pricing
+* Custom support
+* Service levels
+* Data-processing terms
+* Security requirements
+* Special billing terms
+* Custom functionality
+________________
+
+
+34. ORDER FORMS
+Enterprise or Organization purchases may be documented through an Order Form.
+An Order Form may include:
+* Products
+* Plan
+* User limits
+* Pricing
+* Billing cycle
+* Contract term
+* Renewal terms
+* Additional terms
+________________
+
+
+35. STATEMENTS OF WORK
+Custom implementation, development, migration, configuration, or consulting may be governed by a Statement of Work.
+________________
+
+
+36. CONTRACT TERM
+Organization subscriptions may operate:
+* Month-to-month
+* Annually
+* Multi-year
+* According to another written term
+as stated in the applicable agreement.
+________________
+
+
+37. AUTO-RENEWAL
+If an Organization subscription automatically renews, applicable renewal terms will be disclosed according to the Subscription & Billing Policy and applicable law.
+________________
+
+
+38. ENTERPRISE TERMINATION
+Enterprise contracts may contain specific:
+* Termination rights
+* Notice periods
+* Early termination provisions
+* Renewal procedures
+Those terms control within their scope.
+________________
+
+
+39. DATA EXPORT BEFORE TERMINATION
+Organizations should export important information before:
+* Subscription termination
+* Account closure
+* Workspace deletion
+where export functionality is available.
+________________
+
+
+40. ORGANIZATION ACCOUNT TERMINATION
+Termination of an Organization Account may result in:
+* Loss of user access
+* Deactivation of Services
+* Loss of administrative controls
+* Eventual deletion of Customer Content
+according to applicable retention practices.
+________________
+
+
+41. DATA RETENTION AFTER TERMINATION
+Customer Content may remain temporarily after termination as described in the Husky Solutions LLC Data Retention & Deletion Policy.
+Certain information may be retained longer for:
+* Billing
+* Fraud prevention
+* Legal compliance
+* Security
+* Contract enforcement
+________________
+
+
+42. ORGANIZATION DATA EXPORT
+Where supported, authorized Administrators may export Organization data.
+Exports may contain sensitive information.
+Organizations are responsible for protecting exported files after download.
+________________
+
+
+43. HIGH-RISK EXPORTS
+Large or sensitive exports may require:
+* Reauthentication
+* Administrator permission
+* MFA
+* Security review
+where supported.
+________________
+
+
+44. DATA DELETION
+An authorized Organization Administrator may request deletion of Organization data where permitted.
+Husky Solutions LLC may require verification before processing an irreversible deletion.
+________________
+
+
+45. DELETION AUTHORITY
+Husky Solutions LLC may rely on deletion instructions from an Administrator with appropriate permissions.
+The Organization is responsible for limiting which Administrators have deletion authority.
+________________
+
+
+46. ACCIDENTAL DELETION
+Husky Solutions LLC may attempt recovery of accidentally deleted information where backups or recovery functionality permit.
+Recovery is not guaranteed.
+________________
+
+
+47. CUSTOMER BACKUPS
+Organizations should maintain their own exports or backups of critical information where appropriate.
+________________
+
+
+48. DATA PROCESSING
+Where Husky Solutions LLC processes Personal Data on behalf of the Organization, the Husky Solutions LLC Data Processing Addendum may apply.
+________________
+
+
+49. PRIVACY REQUESTS
+An individual associated with an Organization may need to direct privacy requests to the Organization when the Organization controls the relevant data.
+Husky Solutions LLC may assist the Organization where required.
+________________
+
+
+50. EMPLOYEE PRIVACY
+Organizations remain responsible for providing legally required notices to employees concerning the Organization's use of:
+* Timekeeping
+* Scheduling
+* Monitoring
+* Biometrics
+* Location
+* Other workforce information
+________________
+
+
+51. BIOMETRIC FUNCTIONALITY
+If an Organization enables biometric functionality, it must comply with the Husky Solutions LLC Biometric Information & Authentication Policy.
+________________
+
+
+52. PRECISE LOCATION FEATURES
+An Organization may not use Husky Solutions LLC Services to secretly collect precise employee or user location in violation of applicable law.
+Any precise-location feature must be used within the scope disclosed and authorized.
+________________
+
+
+53. SECURITY GEOLOCATION
+Husky Solutions LLC may independently process location information for fraud prevention and security as described in our Security Policy.
+________________
+
+
+54. HUSKYCAD ORGANIZATIONS
+Organizations using HuskyCAD are responsible for determining whether their deployment is for:
+* Roleplay
+* Simulation
+* Training
+* Business use
+* Authorized government use
+The Organization must not misrepresent a non-government deployment as an actual official government system.
+________________
+
+
+55. RESTRICTED GOVERNMENT INFORMATION
+Actual:
+* CJIS data
+* NCIC data
+* Classified information
+* Restricted government credentials
+must not be stored unless Husky Solutions LLC expressly authorizes such use through an appropriate written agreement.
+________________
+
+
+56. PUNCHPAL ORGANIZATIONS
+Organizations using PunchPal remain responsible for their own compliance concerning:
+* Wages
+* Overtime
+* Breaks
+* Scheduling
+* Attendance
+* Payroll
+* Recordkeeping
+* Employment law
+________________
+
+
+57. TIMEKEEPING REVIEW
+Organizations should review timekeeping records before using them for payroll or other material employment decisions.
+________________
+
+
+58. HUSKY SUITE ORGANIZATIONS
+Organizations using Husky Suite remain responsible for the content and legal operation of websites they create.
+This may include responsibility for:
+* Privacy policies
+* Cookie disclosures
+* Accessibility
+* Consumer disclosures
+* User content
+* Intellectual property
+________________
+
+
+59. THIRD-PARTY INTEGRATIONS
+Administrators may enable third-party integrations.
+The Organization is responsible for determining whether an integration is appropriate for its users and data.
+________________
+
+
+60. AUTHORIZATION TO CONNECT THIRD-PARTY SYSTEMS
+An Administrator connecting an external system represents that they have authority to authorize the connection.
+________________
+
+
+61. THIRD-PARTY TERMS
+External integrations may be governed by third-party:
+* Terms
+* Privacy policies
+* Security practices
+* Fees
+Husky Solutions LLC does not control unrelated providers.
+________________
+
+
+62. API ACCESS
+Organizations may issue API credentials where supported.
+API use is governed by the Husky Solutions LLC API & Developer Terms.
+________________
+
+
+63. ORGANIZATION API RESPONSIBILITY
+The Organization is responsible for controlling:
+* API keys
+* Service accounts
+* Developer access
+* Integration permissions
+________________
+
+
+64. CUSTOM DEVELOPERS
+An Organization may authorize a developer or contractor to configure the Service.
+The Organization remains responsible for the access it provides.
+________________
+
+
+65. SUPPORT
+Support availability depends on the applicable:
+* Plan
+* Product
+* Enterprise agreement
+Support is governed by the Husky Solutions LLC Service Level & Support Policy.
+________________
+
+
+66. ENTERPRISE SUPPORT
+Enterprise agreements may provide:
+* Priority support
+* Dedicated contacts
+* Response commitments
+* Custom escalation
+* Service credits
+only where expressly stated.
+________________
+
+
+67. NO DEFAULT SLA
+An Organization Account does not automatically include a binding Service Level Agreement.
+A specific SLA must be expressly agreed.
+________________
+
+
+68. ADMINISTRATOR DISPUTES
+If multiple individuals claim Administrator control, Husky Solutions LLC may temporarily restrict sensitive changes while verifying authority.
+________________
+
+
+69. OWNERSHIP DISPUTES
+Husky Solutions LLC is not a court and may be unable to resolve disputes concerning:
+* Business ownership
+* Employment
+* Partnership rights
+* Corporate authority
+* Asset ownership
+The parties may be required to provide appropriate legal documentation or court orders.
+________________
+
+
+70. BUSINESS SALE OR ACQUISITION
+If an Organization is:
+* Sold
+* Acquired
+* Merged
+* Reorganized
+the Organization should notify Husky Solutions LLC where account ownership or contractual parties change.
+________________
+
+
+71. ACCOUNT TRANSFER
+Organization Account transfer may require verification of:
+* Existing owner
+* New owner
+* Business transaction
+* Authority
+* Billing arrangements
+________________
+
+
+72. DOMAIN OWNERSHIP
+Where an Organization uses custom domains, domain ownership remains subject to the applicable domain registrar.
+Organizations should ensure registration information remains under appropriate organizational control.
+________________
+
+
+73. ORGANIZATION NAME CHANGES
+Organizations may request account updates following:
+* Legal name changes
+* Rebranding
+* Reorganization
+Husky Solutions LLC may request supporting information where appropriate.
+________________
+
+
+74. ORGANIZATION TERMINATION OF USERS
+Organizations may terminate individual user access without terminating the entire Organization subscription.
+________________
+
+
+75. INDIVIDUAL USER RIGHTS
+Termination from an Organization workspace does not necessarily terminate an individual's separate personal Husky Solutions LLC account, if one exists independently.
+________________
+
+
+76. ORGANIZATION POLICIES DO NOT BIND HUSKY SOLUTIONS
+An Organization's internal policy does not create additional contractual obligations for Husky Solutions LLC unless Husky Solutions LLC expressly agrees to those obligations.
+________________
+
+
+77. ILLEGAL ORGANIZATION INSTRUCTIONS
+Husky Solutions LLC may decline Organization instructions that appear to:
+* Violate law
+* Compromise security
+* Violate user rights
+* Violate Husky Solutions LLC policies
+________________
+
+
+78. SUSPENSION OF ORGANIZATION ACCOUNTS
+Husky Solutions LLC may suspend an Organization Account for reasons including:
+* Nonpayment
+* Serious security risk
+* Fraud
+* Material policy violation
+* Illegal activity
+* Severe infrastructure abuse
+________________
+
+
+79. PARTIAL SUSPENSION
+Where appropriate, Husky Solutions LLC may restrict only affected:
+* Users
+* Features
+* Integrations
+* API credentials
+instead of suspending an entire Organization.
+________________
+
+
+80. SECURITY INCIDENTS
+If an Organization Account is affected by a significant security incident, Husky Solutions LLC may:
+* Restrict access
+* Revoke credentials
+* Notify Administrators
+* Require password resets
+* Require MFA
+* Preserve security logs
+________________
+
+
+81. INCIDENT CONTACTS
+Organizations should maintain current security contacts where supported.
+Security notices may be sent to designated:
+* Administrators
+* Security contacts
+* Legal contacts
+________________
+
+
+82. LAW-ENFORCEMENT REQUESTS
+Government and law-enforcement requests concerning Organization data are governed by the Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy.
+________________
+
+
+83. CUSTOMER LEGAL PROCESS
+An Organization's internal legal or HR request does not automatically authorize Husky Solutions LLC to disclose information belonging to another customer or unrelated user.
+________________
+
+
+84. RECORD RETENTION
+Organizations may have legal retention obligations separate from Husky Solutions LLC.
+Customers are responsible for determining whether they must retain:
+* Employment records
+* Payroll records
+* Business records
+* Public records
+* Other records
+for particular periods.
+________________
+
+
+85. PRODUCT RETENTION SETTINGS
+Where available, Organizations may configure certain retention settings.
+Customer-selected settings must comply with applicable law and contractual requirements.
+________________
+
+
+86. EXPORT AND SANCTIONS
+Organizations must use Husky Solutions LLC Services in compliance with applicable:
+* Export controls
+* Sanctions
+* Trade restrictions
+________________
+
+
+87. REGULATED INDUSTRIES
+Organizations in regulated industries should determine whether the applicable Service meets their regulatory requirements before deployment.
+________________
+
+
+88. NO AUTOMATIC REGULATORY CERTIFICATION
+Enterprise status does not itself mean that a Service is certified for:
+* HIPAA
+* CJIS
+* PCI DSS
+* FedRAMP
+* Any other specialized framework
+Certification applies only where expressly documented.
+________________
+
+
+89. CUSTOM COMPLIANCE REQUIREMENTS
+Organizations requiring specific compliance commitments must obtain them through an appropriate written agreement.
+________________
+
+
+90. ORGANIZATION REPRESENTATIONS
+The Organization represents that:
+* It has authority to use the Services
+* Its use will comply with law
+* It has rights to Customer Content
+* Its Administrators are authorized
+* It will protect account credentials
+________________
+
+
+91. INDEMNIFICATION
+Applicable indemnification obligations are governed by the Husky Solutions LLC Terms of Service and any separately signed enterprise agreement.
+________________
+
+
+92. LIABILITY
+Applicable liability limitations are governed by the Husky Solutions LLC Terms of Service or separately signed enterprise agreement.
+________________
+
+
+93. CONFLICT WITH ENTERPRISE AGREEMENT
+If a signed enterprise agreement conflicts with these Organization Terms, the signed enterprise agreement controls for the conflicting issue.
+________________
+
+
+94. ORDER OF PRECEDENCE
+Unless another written agreement states otherwise, the following general order applies:
+1. Signed enterprise agreement
+2. Applicable order form
+3. Applicable statement of work
+4. Data Processing Addendum
+5. Product-specific terms
+6. These Organization Terms
+7. Terms of Service
+subject to mandatory law.
+________________
+
+
+95. ELECTRONIC ACCEPTANCE
+These Organization Terms may be accepted electronically.
+An Administrator accepting these Terms represents that they have authority to bind the Organization.
+________________
+
+
+96. CHANGES TO THESE TERMS
+Husky Solutions LLC may update these Organization Terms as Services or legal requirements evolve.
+Material changes affecting existing enterprise customers will be handled according to applicable agreements and law.
+________________
+
+
+97. GOVERNING LAW
+These Organization Terms are governed by the laws of the State of New York, subject to applicable federal law and rights that cannot legally be waived.
+________________
+
+
+98. DISPUTES
+Disputes are governed by the applicable Husky Solutions LLC Terms of Service or separately signed enterprise agreement.
+________________
+
+
+99. ENTERPRISE CONTACT
+Enterprise and organization questions may be directed to:
+Husky Solutions LLC
+Enterprise Services
+Enterprise Email:
+[ENTERPRISE EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Billing Email:
+[BILLING EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+________________
+
+
+100. COMPANY CONTACT INFORMATION
+Husky Solutions LLC
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+101. EFFECTIVE DATE
+These Enterprise & Organization Administration Terms are effective as of:
+October 12, 2026
+and remain effective until amended or replaced by Husky Solutions LLC.

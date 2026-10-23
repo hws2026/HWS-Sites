@@ -1,0 +1,710 @@
+HUSKY SOLUTIONS LLC
+REFUND & CANCELLATION POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Refund & Cancellation Policy (“Refund Policy”) explains the refund, cancellation, credit, and final-sale rules applicable to products and services offered by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This Policy applies to purchases including, where applicable:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Software subscriptions
+* Digital products
+* FiveM scripts and resources
+* FiveM development services
+* Website services
+* Hosting services
+* Graphics and creative services
+* Broadcast graphics
+* Content graphics
+* Custom development
+* Add-ons
+* Enterprise services
+* Other Husky Solutions LLC products and services
+Certain purchases may also be governed by an order form, quote, invoice, statement of work, product-specific terms, or separately signed agreement.
+If specific purchase terms establish a different refund or cancellation policy, those terms will control for that purchase.
+Nothing in this Policy limits any refund, cancellation, or consumer right that cannot legally be waived.
+________________
+
+
+1. GENERAL REFUND POLICY
+Refund eligibility depends on the type of product or Service purchased.
+Husky Solutions LLC sells a combination of:
+* Recurring subscriptions
+* Immediately accessible digital products
+* Software licenses
+* Downloadable resources
+* Custom-created products
+* Professional services
+* One-time purchases
+Because these products are delivered differently, different refund rules apply.
+Customers should review the applicable refund terms before completing a purchase.
+________________
+
+
+2. REFUND POLICY DISCLOSURE
+Where applicable, Husky Solutions LLC will make the applicable refund policy reasonably available before a customer completes a purchase.
+For products subject to a special final-sale policy, the product page, checkout process, invoice, order form, or another applicable purchase notice may identify the product as:
+FINAL SALE — NO REFUNDS
+or contain substantially similar language.
+Customers are responsible for reviewing product descriptions, compatibility information, requirements, pricing, and applicable policies before purchasing.
+________________
+
+
+3. RECURRING SUBSCRIPTIONS
+Recurring subscriptions may be canceled in accordance with the Husky Solutions LLC Subscription & Billing Policy.
+Unless otherwise stated:
+* Cancellation prevents future renewal charges;
+* Cancellation does not automatically terminate the current paid billing period;
+* Customers may generally continue using the Service through the remainder of the paid term; and
+* Cancellation does not automatically create a right to a refund for the current billing period.
+________________
+
+
+4. MONTHLY SUBSCRIPTIONS
+Monthly subscription payments are generally non-refundable once a new billing period begins.
+If you cancel a monthly subscription, cancellation ordinarily takes effect at the end of the current paid monthly period.
+Husky Solutions LLC generally does not provide prorated refunds for unused days remaining in a monthly billing period unless:
+* Required by applicable law;
+* Required by a specific written agreement;
+* A billing error occurred; or
+* Husky Solutions LLC expressly approves an exception.
+________________
+
+
+5. ANNUAL SUBSCRIPTIONS
+Annual subscriptions may be canceled to prevent future annual renewals.
+Unless otherwise stated or required by law, cancellation during an existing annual term does not automatically entitle the customer to a prorated refund for unused months.
+Customers ordinarily retain access until the end of the paid annual term.
+________________
+
+
+6. AUTOMATIC RENEWALS
+Cancellation of an automatically renewing subscription stops future renewals once properly processed.
+Customers should cancel before the applicable renewal deadline.
+Automatic-renewal requirements are further governed by the Husky Solutions LLC Subscription & Billing Policy.
+________________
+
+
+7. FIVE M / FIVEM DIGITAL RESOURCES
+Husky Solutions LLC may sell FiveM-related digital products including:
+* Scripts
+* Server resources
+* Configurations
+* Plugins
+* Systems
+* Framework resources
+* User interfaces
+* Server utilities
+* Templates
+* Digital packages
+* Related software resources
+Unless expressly stated otherwise, one-time-payment FiveM scripts and digital resources are FINAL SALE.
+________________
+
+
+8. NO REFUNDS FOR ONE-TIME-PAYMENT FIVEM SCRIPTS
+ALL ONE-TIME-PAYMENT FIVEM SCRIPTS AND DIGITAL RESOURCES ARE NON-REFUNDABLE ONCE THE RESOURCE HAS BEEN DELIVERED, DOWNLOADED, LICENSED, MADE AVAILABLE, OR ACCESS HAS OTHERWISE BEEN GRANTED.
+This rule applies because FiveM scripts and similar digital resources may contain downloadable, copyable, executable, configurable, or otherwise immediately usable digital material that cannot practically be “returned” after access is provided.
+Once access has been granted, Husky Solutions LLC generally cannot verify that:
+* All copies have been deleted;
+* Source or executable files have not been retained;
+* Code has not been copied;
+* Components have not been extracted;
+* The resource has not been redistributed;
+* The resource has not otherwise been used.
+Accordingly, these purchases are final.
+________________
+
+
+9. WHEN A FIVEM RESOURCE IS CONSIDERED DELIVERED
+For purposes of this Policy, a FiveM resource is considered delivered when any of the following occurs:
+* A download becomes available;
+* A download link is provided;
+* Access to a customer portal containing the resource is granted;
+* A license key is issued;
+* The resource is sent through an authorized delivery system;
+* The resource is transferred to the customer's account;
+* Repository access is granted;
+* Files are provided directly;
+* Access is granted through an authorized marketplace;
+* The resource is installed on the customer's server;
+* The customer otherwise receives access to the purchased resource.
+The customer does not need to actually download the resource for delivery to occur if access to the resource has already been provided.
+________________
+
+
+10. CHANGE-OF-MIND FIVEM PURCHASES
+Refunds will not be issued for one-time-payment FiveM resources because:
+* You changed your mind;
+* You no longer want the resource;
+* You stopped operating your server;
+* Your server closed;
+* Your server changed direction;
+* You purchased another competing resource;
+* You no longer have a use for the resource;
+* You expected a feature that was not advertised;
+* You decided the resource was too complicated;
+* You did not read the product description;
+* You did not review the requirements before purchase.
+Customers should review the product description before purchasing.
+________________
+
+
+11. FIVEM COMPATIBILITY
+Customers are responsible for reviewing disclosed technical requirements before purchasing a FiveM resource.
+A refund will generally not be issued because the customer:
+* Uses an unsupported framework;
+* Uses an unsupported game build;
+* Uses an unsupported database configuration;
+* Uses incompatible third-party resources;
+* Uses an unsupported operating environment;
+* Has conflicting scripts;
+* Has incorrectly configured the resource;
+* Has incorrectly installed dependencies;
+* Does not meet published system requirements.
+Where appropriate, Husky Solutions LLC may provide reasonable troubleshooting assistance.
+________________
+
+
+12. DISCLOSED DEPENDENCIES
+Certain FiveM resources may require third-party dependencies.
+Where dependencies are disclosed before purchase, the customer's inability or unwillingness to obtain, install, configure, or maintain those dependencies does not create a refund right.
+Customers should review dependency requirements before purchasing.
+________________
+
+
+13. INSTALLATION ERRORS
+A refund will not ordinarily be provided because of an installation or configuration error attributable to the customer.
+Examples include:
+* Incorrect resource order;
+* Incorrect configuration values;
+* Incorrect database setup;
+* Missing dependencies;
+* Incorrect permissions;
+* Incorrect server settings;
+* Modifications that break functionality;
+* Conflicting third-party resources.
+Husky Solutions LLC may provide documentation or reasonable support to help resolve supported installation issues.
+________________
+
+
+14. CUSTOMER MODIFICATIONS
+Husky Solutions LLC is not responsible for problems caused by unauthorized or unsupported modifications to a resource.
+A customer does not become eligible for a refund merely because:
+* The customer modified the code;
+* Another developer modified the resource;
+* Files were removed;
+* Files were renamed;
+* Configuration was changed incorrectly;
+* Unsupported components were integrated;
+* The resource was altered in a way that causes it to stop functioning.
+________________
+
+
+15. THIRD-PARTY FIVEM OR PLATFORM CHANGES
+FiveM-related resources may depend on third-party platforms, APIs, frameworks, game software, hosting services, or community resources.
+Husky Solutions LLC does not control unrelated third parties.
+A refund will not automatically be issued because:
+* FiveM changes;
+* Cfx.re changes its platform;
+* A game publisher changes its software;
+* A third-party dependency changes;
+* An API changes;
+* A framework releases an incompatible update;
+* A hosting provider changes;
+* A customer's server provider experiences problems;
+* A third-party service becomes unavailable.
+Husky Solutions LLC may provide updates or compatibility fixes at its discretion or as otherwise promised for the applicable resource.
+________________
+
+
+16. SERVER BANS OR PLATFORM ENFORCEMENT
+Husky Solutions LLC does not guarantee that a customer's:
+* FiveM server;
+* Cfx.re account;
+* Gaming account;
+* Discord server;
+* Hosting account; or
+* Other third-party platform
+will remain active.
+A suspension, ban, restriction, enforcement action, or termination imposed by a third party does not automatically entitle the customer to a refund.
+________________
+
+
+17. LOST OR DELETED FIVEM FILES
+Customers are responsible for maintaining reasonable backups of purchased FiveM resources where permitted by the applicable license.
+Husky Solutions LLC is not required to issue a refund because the customer:
+* Deleted the files;
+* Lost the files;
+* Lost access to a device;
+* Reinstalled a server;
+* Experienced local data loss.
+Where technically available and consistent with licensing controls, Husky Solutions LLC may assist with restoring legitimate access.
+________________
+
+
+18. DEFECTIVE FIVEM RESOURCES
+If a FiveM resource contains a reproducible technical defect that prevents it from substantially performing the functionality expressly advertised by Husky Solutions LLC, the customer should contact Support.
+Where appropriate, Husky Solutions LLC may:
+* Troubleshoot the issue;
+* Correct configuration problems;
+* Repair the resource;
+* Provide an update;
+* Provide replacement files;
+* Provide installation guidance;
+* Provide another appropriate technical remedy.
+A technical problem does not automatically entitle the customer to a monetary refund.
+However, nothing in this section eliminates remedies required by applicable law.
+________________
+
+
+19. RESOURCE NOT DELIVERED
+If a customer pays for a digital resource but Husky Solutions LLC fails to provide access to the purchased resource, the customer should contact Support.
+Husky Solutions LLC may:
+* Restore delivery;
+* Provide a replacement download;
+* Correct account permissions;
+* Issue the applicable license;
+* Complete the delivery; or
+* If delivery cannot reasonably be completed, provide an appropriate refund.
+The no-refund rule does not permit Husky Solutions LLC to retain payment while intentionally failing to deliver the purchased product.
+________________
+
+
+20. MATERIALLY INCORRECT DELIVERY
+If Husky Solutions LLC accidentally provides a materially different resource from the one ordered, the customer should contact Support.
+Husky Solutions LLC may correct the error by providing the resource actually purchased.
+________________
+
+
+21. DUPLICATE FIVEM PURCHASES
+If a technical or payment-processing error causes a customer to be charged multiple times for the exact same intended purchase, Husky Solutions LLC may refund the verified duplicate transaction.
+A duplicate-charge correction does not constitute a refund of the valid original purchase.
+________________
+
+
+22. UNAUTHORIZED FIVEM PURCHASES
+If you believe your account or payment method was used without authorization, contact Husky Solutions LLC promptly.
+We may require reasonable information to investigate the transaction.
+Nothing in this Policy limits legitimate rights regarding unauthorized transactions under applicable law.
+________________
+
+
+23. FIVEM CUSTOM DEVELOPMENT
+Custom FiveM development is different from pre-made one-time-payment resources.
+Custom projects may include:
+* Custom scripts
+* Custom server systems
+* Custom integrations
+* Script modification
+* Configuration services
+* Custom UI development
+* Custom server setup
+Refund rights for custom development will be governed by:
+* The applicable quote;
+* Invoice;
+* Statement of work;
+* Project agreement; or
+* These general custom-work provisions.
+________________
+
+
+24. CUSTOM WORK DEPOSITS
+A custom project may require a deposit before work begins.
+Unless otherwise stated in writing:
+* A deposit may be refundable before work begins;
+* Once substantive work begins, the portion attributable to work already performed becomes non-refundable;
+* Completed work is not refundable merely because a customer changes their mind.
+Any project-specific deposit terms disclosed before payment control over this general provision.
+________________
+
+
+25. CUSTOM WORK CANCELLATION
+A customer may request cancellation of custom work.
+If cancellation occurs after work has begun, Husky Solutions LLC may retain payment reasonably attributable to:
+* Work already completed;
+* Time already spent;
+* Third-party expenses incurred;
+* Purchased resources;
+* Non-refundable project expenses.
+Any remaining refundable balance, if applicable, will be determined according to the applicable project terms and law.
+________________
+
+
+26. GRAPHICS AND CREATIVE SERVICES
+Custom graphics and creative services may include:
+* Broadcast graphics
+* Player cards
+* Social-media graphics
+* Logos
+* Website graphics
+* Animations
+* Motion graphics
+* Branding
+* Custom concepts
+Because these products may be created specifically for a customer, refund eligibility depends on the stage of the project.
+________________
+
+
+27. CREATIVE WORK BEFORE WORK BEGINS
+If a customer cancels a custom creative order before work begins, Husky Solutions LLC may provide a refund subject to:
+* Any disclosed deposit terms;
+* Payment-processing costs where legally permitted;
+* Project-specific terms.
+________________
+
+
+28. CREATIVE WORK AFTER WORK BEGINS
+Once substantial custom creative work begins, payment attributable to completed work is generally non-refundable.
+This may apply even if the customer later decides:
+* They no longer need the graphic;
+* They changed their branding;
+* They selected another designer;
+* They no longer operate the applicable project;
+* They changed their mind about the concept.
+________________
+
+
+29. COMPLETED CUSTOM DIGITAL WORK
+Completed and delivered custom digital work is generally final sale unless:
+* The deliverable materially differs from the agreed scope;
+* Husky Solutions LLC agrees to a refund;
+* A written agreement provides otherwise; or
+* Applicable law requires a remedy.
+Where a correctable problem exists, Husky Solutions LLC may first attempt to correct the deliverable.
+________________
+
+
+30. REVISIONS
+A request for a revision is not automatically a request for a refund.
+The number of included revisions may be established by:
+* Product description;
+* Quote;
+* Invoice;
+* Order form;
+* Statement of work;
+* Other project agreement.
+Additional revisions may require additional payment.
+________________
+
+
+31. DIGITAL PRODUCTS GENERALLY
+Unless a product page or applicable law states otherwise, immediately delivered digital products may be designated final sale after:
+* Download;
+* Delivery;
+* License issuance;
+* Account access;
+* Digital activation; or
+* Other provision of access.
+The applicable product page should identify whether a digital item is non-refundable.
+________________
+
+
+32. SOFTWARE LICENSES
+A one-time software license may be non-refundable after:
+* A license key is issued;
+* Software access is granted;
+* Software is downloaded;
+* The license is activated.
+This is subject to applicable law and any product-specific terms.
+________________
+
+
+33. WEBSITE SERVICES
+Refund eligibility for website design, configuration, migration, development, or related services depends on the amount of work completed.
+Once custom work has begun, completed work is generally non-refundable.
+Hosting subscriptions are subject to the applicable subscription rules.
+________________
+
+
+34. DOMAIN NAMES
+Domain-name registrations may involve third-party registrar fees that cannot be reversed after registration.
+Unless otherwise required by law, domain registration, renewal, transfer, redemption, and similar third-party costs are non-refundable after the applicable third-party transaction has been completed.
+________________
+
+
+35. THIRD-PARTY EXPENSES
+Husky Solutions LLC may purchase third-party products or services specifically for a customer's project.
+Examples may include:
+* Domains;
+* Licenses;
+* Assets;
+* Hosting;
+* Plugins;
+* APIs;
+* Software;
+* Fonts;
+* Stock resources.
+Third-party costs that cannot be recovered by Husky Solutions LLC are generally non-refundable once incurred.
+________________
+
+
+36. PROFESSIONAL SERVICES
+Consulting, configuration, setup, development, technical assistance, or other professional services are generally non-refundable after the applicable work has been performed.
+Unused prepaid professional-service hours may be handled according to the applicable agreement.
+________________
+
+
+37. MISSED APPOINTMENTS
+If Husky Solutions LLC introduces appointment-based services, project-specific cancellation or rescheduling rules may apply.
+Such rules will be disclosed when applicable.
+________________
+
+
+38. PROMOTIONAL PURCHASES
+Products purchased using:
+* Promotional codes;
+* Discounts;
+* Limited-time promotions;
+* Bundled pricing
+remain subject to this Refund Policy.
+A discounted purchase does not automatically create or eliminate refund rights.
+Any special promotional refund terms will be disclosed with the offer.
+________________
+
+
+39. ACCOUNT CREDITS
+In some circumstances, Husky Solutions LLC may voluntarily provide account credit instead of a refund.
+Unless required by law or expressly stated otherwise, discretionary account credits:
+* Have no cash value;
+* May be restricted to Husky Solutions LLC Services;
+* May be non-transferable;
+* May expire if the expiration was disclosed when issued.
+________________
+
+
+40. SERVICE OUTAGES
+Temporary downtime does not automatically create a right to a refund.
+Depending on:
+* Length of outage;
+* Applicable plan;
+* Service Level Agreement;
+* Cause of the outage;
+* Applicable law,
+Husky Solutions LLC may provide:
+* Service credit;
+* Extended access;
+* Another remedy;
+* A refund where required.
+________________
+
+
+41. SERVICE DISCONTINUATION
+If Husky Solutions LLC permanently discontinues a prepaid Service before the end of the applicable paid term, Husky Solutions LLC may:
+* Provide access through the remainder of the term;
+* Migrate the customer to a comparable Service;
+* Provide account credit; or
+* Provide an appropriate refund for unavailable prepaid service where required or appropriate.
+________________
+
+
+42. REFUNDS FOR BILLING ERRORS
+Verified billing errors may qualify for correction.
+Examples include:
+* Duplicate charges;
+* Incorrect amount charged;
+* Charges occurring after a properly completed cancellation where no amount was legitimately owed;
+* Other confirmed payment-processing errors.
+________________
+
+
+43. PRICE DIFFERENCES
+Husky Solutions LLC does not generally provide refunds merely because:
+* A product later goes on sale;
+* A promotional code becomes available;
+* The price is later reduced;
+* Another customer paid a different promotional price.
+Husky Solutions LLC may voluntarily provide price adjustments at its discretion.
+________________
+
+
+44. REFUND METHOD
+Approved refunds will generally be returned to the original payment method where reasonably possible.
+Husky Solutions LLC may use another lawful refund method if:
+* The original payment method cannot accept the refund;
+* The payment provider requires another method; or
+* Another method is agreed upon.
+________________
+
+
+45. REFUND PROCESSING
+After Husky Solutions LLC issues an approved refund, the time required for funds to appear may depend on:
+* Payment processor;
+* Bank;
+* Card issuer;
+* Payment method.
+Husky Solutions LLC does not control external financial institutions' processing times.
+________________
+
+
+46. REQUESTING A REFUND
+Where a purchase is eligible for refund consideration, submit a request to:
+[BILLING EMAIL]
+Include:
+* Your name;
+* Account email;
+* Order number;
+* Invoice number, if available;
+* Transaction date;
+* Product or Service;
+* Amount charged;
+* Reason for the request.
+Do not send full payment-card numbers or card security codes by email.
+________________
+
+
+47. PROOF OF PURCHASE
+Husky Solutions LLC may require reasonable proof of purchase before processing a refund request.
+Acceptable information may include:
+* Order number;
+* Invoice number;
+* Account email;
+* Transaction identifier;
+* Purchase receipt.
+________________
+
+
+48. REFUND REVIEW
+A request for a refund does not guarantee approval.
+Husky Solutions LLC may review:
+* Product type;
+* Delivery status;
+* Download status;
+* License status;
+* Account history;
+* Technical logs;
+* Support history;
+* Applicable product terms;
+* Applicable law.
+________________
+
+
+49. REFUND ABUSE
+Husky Solutions LLC may reject refund requests that are fraudulent or abusive.
+Examples may include attempts to:
+* Obtain a refund after knowingly retaining and using a digital resource;
+* Repeatedly purchase and refund digital products to obtain free access;
+* Falsely claim non-delivery;
+* Falsify billing information;
+* Manipulate technical systems to obtain both the product and payment.
+This does not limit legitimate consumer or payment-dispute rights.
+________________
+
+
+50. CHARGEBACKS AND PAYMENT DISPUTES
+Customers retain any legitimate rights provided by their:
+* Bank;
+* Credit-card issuer;
+* Payment provider;
+* Applicable law.
+If you believe a charge is incorrect, you are encouraged to contact Husky Solutions LLC so we can investigate.
+Knowingly initiating a fraudulent chargeback for a valid authorized purchase may constitute a violation of the Husky Solutions LLC Terms of Service.
+Husky Solutions LLC may provide transaction, delivery, license, login, download, and support records to a payment provider when responding to a payment dispute.
+________________
+
+
+51. FIVEM LICENSES FOLLOWING A REVERSED PAYMENT
+Where a payment for a FiveM resource is lawfully reversed, refunded, canceled, or charged back, the license associated with that refunded payment may be deactivated to the extent permitted by law.
+A customer may not retain a paid software license after the purchase price for that license has been lawfully returned to the customer.
+This section does not penalize a customer merely for exercising a legitimate payment-dispute right.
+________________
+
+
+52. MARKETPLACE PURCHASES
+Some Husky Solutions LLC products may be sold through a third-party marketplace.
+Where a marketplace processes the transaction and controls refunds, the marketplace's applicable refund procedure may govern.
+Examples may include digital distribution or gaming-resource marketplaces.
+Husky Solutions LLC cannot override a third-party platform's mandatory refund decision where that platform legally or contractually controls the transaction.
+________________
+
+
+53. PURCHASES MADE BY MINORS
+Users who are not legally capable of entering into a binding purchase agreement should not make purchases without required parent or guardian authorization.
+Transactions involving minors remain subject to applicable law.
+________________
+
+
+54. FRAUDULENT OR UNAUTHORIZED TRANSACTIONS
+This Policy's final-sale provisions do not mean Husky Solutions LLC may knowingly retain funds from a transaction determined to be legally unauthorized or fraudulent.
+Such matters will be handled according to applicable law, payment-provider procedures, and the circumstances of the transaction.
+________________
+
+
+55. NO REFUND POLICY DOES NOT OVERRIDE LAW
+Any statement in this Policy that a purchase is:
+* “Non-refundable”;
+* “Final sale”; or
+* “No refunds”
+means that Husky Solutions LLC does not voluntarily offer refunds for that category of purchase after the applicable delivery event.
+Those statements do not eliminate any refund, warranty, cancellation, or consumer right that applicable law expressly provides and that cannot legally be waived.
+________________
+
+
+56. NEW YORK CUSTOMERS
+Husky Solutions LLC will disclose its applicable refund policy to New York customers as required by applicable New York law.
+For online sales subject to applicable refund-policy disclosure requirements, Husky Solutions LLC may provide this Policy or the applicable product-specific refund notice:
+* Near the product description;
+* Through a clearly accessible hyperlink near the product;
+* During checkout; or
+* Before requesting billing information.
+Where a FiveM resource is final sale, the applicable product or checkout page should clearly state that the digital resource is non-refundable once access or delivery is provided.
+________________
+
+
+57. CUSTOMER ACKNOWLEDGMENT FOR FIVEM PURCHASES
+For one-time-payment FiveM resources, Husky Solutions LLC may require customers to affirmatively acknowledge substantially the following before purchase:
+“I understand that this purchase is for a digital FiveM resource. Once the resource is delivered or access is granted, the purchase is final and non-refundable except where required by law.”
+Customers should not complete the purchase unless they understand and accept this condition.
+________________
+
+
+58. RECOMMENDED PRODUCT-PAGE NOTICE
+Product pages for one-time-payment FiveM scripts should display a conspicuous notice substantially similar to:
+DIGITAL PRODUCT — FINAL SALE
+One-time-payment FiveM scripts and resources are non-refundable once delivered or access is granted. Please review all features, dependencies, compatibility requirements, and documentation before purchasing. This does not affect rights that cannot legally be waived.
+________________
+
+
+59. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Refund & Cancellation Policy from time to time.
+The “Last Updated” date identifies the current version.
+A later change to this Policy will not retroactively eliminate a refund or consumer right that had already legally vested.
+________________
+
+
+60. RELATIONSHIP TO OTHER POLICIES
+This Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Terms of Use
+* Husky Solutions LLC Privacy Policy
+* Husky Solutions LLC Acceptable Use Policy
+* Husky Solutions LLC Subscription & Billing Policy
+* Product-specific terms
+* Quotes
+* Invoices
+* Statements of work
+* Signed customer agreements
+________________
+
+
+61. CONTACT INFORMATION
+Questions regarding refunds, cancellations, or billing may be directed to:
+Husky Solutions LLC
+Billing Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Billing Email:
+[BILLING EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+62. EFFECTIVE DATE
+This Refund & Cancellation Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

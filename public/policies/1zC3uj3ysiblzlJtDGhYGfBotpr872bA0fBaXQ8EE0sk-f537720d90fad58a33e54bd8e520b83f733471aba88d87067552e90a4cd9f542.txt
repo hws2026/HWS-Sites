@@ -1,0 +1,628 @@
+HUSKY SOLUTIONS LLC
+COOKIE POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Cookie Policy explains how Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) uses cookies and similar technologies when you access or use our websites, applications, customer portals, administrative systems, and other online services.
+This Cookie Policy should be read together with the Husky Solutions LLC Privacy Policy.
+This Policy may apply to online properties associated with:
+* Husky Solutions LLC
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer portals
+* Administrative dashboards
+* Support systems
+* Billing systems
+* Website and hosting services
+* FiveM-related services
+* Other current or future Husky Solutions LLC websites and web-based Services
+________________
+
+
+1. WHAT ARE COOKIES?
+Cookies are small text files or pieces of data stored on your browser or device when you visit a website or use an online service.
+Cookies may allow a website to:
+* Recognize your browser
+* Maintain a login session
+* Remember preferences
+* Protect accounts
+* Prevent fraud
+* Maintain shopping or checkout sessions
+* Measure website usage
+* Improve performance
+* Provide personalized functionality
+Some cookies remain only until you close your browser, while others may remain for a longer period.
+________________
+
+
+2. SIMILAR TECHNOLOGIES
+Husky Solutions LLC may also use technologies similar to cookies.
+These may include:
+* Local storage
+* Session storage
+* Authentication tokens
+* Pixels
+* Tags
+* Software development kits
+* Device identifiers
+* Server-side session identifiers
+* Browser storage
+* Similar technologies
+For purposes of this Cookie Policy, references to “cookies” may also include these similar technologies where appropriate.
+________________
+
+
+3. WHY WE USE COOKIES
+Husky Solutions LLC may use cookies for purposes including:
+* Operating our websites
+* Authenticating users
+* Maintaining login sessions
+* Protecting accounts
+* Preventing fraud
+* Remembering preferences
+* Maintaining application state
+* Processing purchases
+* Supporting customer portals
+* Measuring website performance
+* Diagnosing technical problems
+* Understanding Service usage
+* Improving products
+* Protecting infrastructure
+* Complying with legal obligations
+The particular cookies used may vary depending on the Service.
+________________
+
+
+4. STRICTLY NECESSARY COOKIES
+Strictly necessary cookies are used for functions required for a website or Service to operate properly.
+These cookies may be used for:
+* Account login
+* User authentication
+* Security
+* Fraud prevention
+* Session management
+* Load balancing
+* Customer portals
+* Checkout
+* Payment-session management
+* Privacy preferences
+* Cookie-consent settings
+Without these technologies, certain Services may not function properly.
+Because these cookies are necessary to provide requested functionality, they may not always be optional.
+________________
+
+
+5. AUTHENTICATION COOKIES
+Authentication cookies may help determine whether a user has successfully logged into a Husky Solutions LLC Service.
+They may be used to:
+* Maintain an authenticated session
+* Identify the applicable account
+* Maintain organization permissions
+* Prevent repeated login prompts
+* Protect account access
+Authentication cookies should not be shared with another person.
+A stolen authentication cookie may potentially allow unauthorized account access.
+________________
+
+
+6. SECURITY COOKIES
+Husky Solutions LLC may use cookies or similar technologies for security purposes.
+These may assist with:
+* Detecting suspicious login activity
+* Preventing automated attacks
+* Detecting account compromise
+* Preventing fraudulent transactions
+* Enforcing rate limits
+* Protecting forms
+* Preventing cross-site request forgery
+* Maintaining session integrity
+* Detecting abusive traffic
+Security technologies may operate even when optional analytics technologies are disabled.
+________________
+
+
+7. SESSION COOKIES
+Session cookies generally exist only during a browser session.
+They may help:
+* Maintain login status
+* Remember actions during a session
+* Maintain forms
+* Maintain checkout information
+* Keep application state consistent
+Session cookies may automatically expire when the browser is closed or the applicable session ends.
+________________
+
+
+8. PERSISTENT COOKIES
+Persistent cookies may remain on a device after a browser session ends.
+They may be used to:
+* Remember preferences
+* Maintain consent choices
+* Recognize a returning browser
+* Support account security
+* Remember interface settings
+The duration of a persistent cookie may vary depending on its purpose.
+________________
+
+
+9. FUNCTIONAL COOKIES
+Functional cookies may allow Husky Solutions LLC Services to remember optional preferences.
+These may include:
+* Language preferences
+* Interface preferences
+* Display settings
+* Dashboard preferences
+* Theme preferences
+* Previously selected options
+Disabling functional cookies may cause certain preferences to reset between visits.
+________________
+
+
+10. ANALYTICS COOKIES
+Husky Solutions LLC may use analytics technologies to better understand how our websites and Services are used.
+Analytics may help us understand:
+* Number of visitors
+* Pages viewed
+* Features used
+* General interaction patterns
+* Browser types
+* Device categories
+* Approximate geographic regions
+* Website performance
+* Technical errors
+* Referral sources
+Analytics information may be aggregated or de-identified where appropriate.
+Where required by applicable law, optional analytics cookies will not be activated until appropriate consent or permission is obtained.
+________________
+
+
+11. PERFORMANCE COOKIES
+Performance technologies may help Husky Solutions LLC understand how efficiently a Service operates.
+These technologies may be used to identify:
+* Slow pages
+* Application errors
+* Failed requests
+* Performance bottlenecks
+* Service interruptions
+* Browser compatibility issues
+This information may help us improve reliability.
+________________
+
+
+12. PREFERENCE COOKIES
+Preference cookies may remember choices you make when using Husky Solutions LLC Services.
+Examples may include:
+* Preferred theme
+* Language
+* Layout
+* Recently selected workspace
+* Dashboard preferences
+* Accessibility settings
+________________
+
+
+13. BILLING AND CHECKOUT COOKIES
+Payment or checkout systems may use cookies to:
+* Maintain a shopping session
+* Prevent duplicate transactions
+* Protect payment forms
+* Detect fraud
+* Maintain transaction state
+* Communicate with a payment processor
+Payment providers may also place their own cookies or similar technologies.
+Their technologies are governed by their own privacy practices.
+________________
+
+
+14. THIRD-PARTY COOKIES
+Some Husky Solutions LLC websites may use services provided by third parties.
+Those providers may place or access cookies depending on the functionality involved.
+Examples may include providers supporting:
+* Payment processing
+* Authentication
+* Analytics
+* Security
+* Cloud infrastructure
+* Customer support
+* Embedded content
+* Video
+* Maps
+* CAPTCHA systems
+* Other integrations
+Third-party providers may process information under their own privacy policies.
+________________
+
+
+15. EMBEDDED CONTENT
+Husky Solutions LLC websites may occasionally embed content from third-party services.
+Examples may include:
+* Videos
+* Forms
+* Maps
+* Social-media content
+* Support tools
+* Payment interfaces
+An embedded provider may use cookies or collect information when you interact with its content.
+Husky Solutions LLC does not control unrelated third-party cookie practices.
+________________
+
+
+16. ADVERTISING COOKIES
+Husky Solutions LLC may choose to use advertising technologies in the future.
+Advertising cookies may be used to:
+* Measure advertising effectiveness
+* Limit repeated advertisements
+* Understand campaign performance
+* Deliver relevant advertising
+* Measure conversions
+If Husky Solutions LLC uses advertising technologies that require consent, opt-out rights, or additional disclosures under applicable law, we will provide those controls and disclosures.
+________________
+
+
+17. CROSS-CONTEXT BEHAVIORAL ADVERTISING
+Certain privacy laws may regulate technologies used to track activity across unrelated websites or services for targeted or cross-context behavioral advertising.
+If Husky Solutions LLC engages in activity legally classified as such, we will provide applicable notices and opt-out mechanisms as required by law.
+________________
+
+
+18. SALE OR SHARING OF PERSONAL INFORMATION
+Husky Solutions LLC does not intend to sell personal information for monetary consideration as part of our ordinary business model.
+Some privacy laws define “sale” or “sharing” more broadly and may treat certain advertising or tracking technologies as a sale or sharing.
+If Husky Solutions LLC uses technologies that legally constitute a sale or sharing requiring an opt-out mechanism, we will provide the legally required method for exercising that right.
+________________
+
+
+19. COOKIE CONSENT
+Depending on your location and the technologies being used, Husky Solutions LLC may display a cookie consent or preference interface.
+The interface may allow users to:
+* Accept optional cookies
+* Reject optional cookies
+* Customize preferences
+* Review cookie categories
+* Change prior selections
+Strictly necessary cookies may remain enabled because they are required for essential website functionality.
+________________
+
+
+20. COOKIE BANNER
+Where appropriate, Husky Solutions LLC may display a cookie banner containing language substantially similar to:
+“Husky Solutions LLC uses necessary cookies to operate and secure our Services. With your permission, we may also use optional analytics, functional, or advertising technologies. You can accept optional cookies, reject them, or manage your preferences.”
+The wording may vary based on the Service and technologies in use.
+________________
+
+
+21. REJECTING OPTIONAL COOKIES
+Where required or otherwise offered, users may reject optional cookies without losing access to basic website functionality.
+However, disabling optional technologies may affect:
+* Saved preferences
+* Analytics-based improvements
+* Certain embedded content
+* Personalized functionality
+Cookies essential for security, authentication, or requested functionality may remain active.
+________________
+
+
+22. CHANGING COOKIE PREFERENCES
+Where a cookie preference system is available, users may modify their choices through a link such as:
+Cookie Settings
+or
+Privacy Choices
+The applicable link may appear in:
+* Website footer
+* Privacy center
+* Account settings
+* Cookie banner
+________________
+
+
+23. BROWSER COOKIE CONTROLS
+Most browsers allow users to manage cookies through browser settings.
+Depending on your browser, you may be able to:
+* View stored cookies
+* Delete cookies
+* Block all cookies
+* Block third-party cookies
+* Clear site data
+* Restrict tracking technologies
+Browser controls vary by provider.
+________________
+
+
+24. EFFECT OF BLOCKING COOKIES
+Blocking or deleting cookies may cause certain features to stop functioning properly.
+For example, you may:
+* Be logged out
+* Lose saved preferences
+* Need to reauthenticate
+* Lose session information
+* Be unable to complete checkout
+* Need to repeat security verification
+* Experience reduced functionality
+________________
+
+
+25. CLEARING COOKIES
+If you clear browser cookies or website storage, Husky Solutions LLC may no longer be able to remember:
+* Login sessions
+* Saved preferences
+* Cookie-consent selections
+* Certain security information
+You may need to make your cookie selections again.
+________________
+
+
+26. GLOBAL PRIVACY CONTROL
+Some browsers and extensions support Global Privacy Control (“GPC”) or another recognized opt-out preference signal.
+Where applicable law requires Husky Solutions LLC to recognize and process a legally valid browser-based opt-out preference signal, we will process supported signals as required.
+A GPC signal may apply to the browser or device from which it is sent.
+________________
+
+
+27. DO NOT TRACK
+Some browsers include a “Do Not Track” or “DNT” signal.
+There is no single universally applied technical standard governing traditional DNT signals.
+Accordingly, Husky Solutions LLC websites may not respond to traditional DNT signals unless required by applicable law.
+This does not affect legally recognized opt-out preference signals where applicable.
+________________
+
+
+28. MOBILE APPLICATIONS
+If Husky Solutions LLC offers mobile applications, those applications may use technologies similar to cookies, including:
+* Device identifiers
+* Local storage
+* SDKs
+* Authentication tokens
+* Application preferences
+Mobile-device settings may provide additional controls.
+________________
+
+
+29. CUSTOMER PORTALS
+Customer and administrative portals may require cookies for:
+* Login
+* Authentication
+* Session management
+* Security
+* Role permissions
+* Organization switching
+* Account preferences
+Blocking these cookies may make authenticated portals unusable.
+________________
+
+
+30. HUSKY SUITE
+Husky Suite may use cookies and browser storage to:
+* Authenticate users
+* Save editor preferences
+* Maintain editing sessions
+* Protect websites
+* Provide previews
+* Maintain publishing sessions
+* Support analytics
+* Remember interface preferences
+Websites created by Husky Suite customers may also use their own cookies.
+Customers operating websites through Husky Suite are responsible for determining whether their own websites require:
+* A privacy policy
+* Cookie disclosures
+* Consent mechanisms
+* Opt-out controls
+Husky Solutions LLC does not automatically assume responsibility for the independent tracking practices selected by a Husky Suite customer.
+________________
+
+
+31. HUSKYCAD
+HuskyCAD may use cookies or similar technologies to:
+* Authenticate users
+* Maintain organization sessions
+* Maintain role permissions
+* Secure accounts
+* Record security events
+* Remember interface preferences
+Cookies used for HuskyCAD do not imply access to actual government databases.
+________________
+
+
+32. PUNCHPAL
+PunchPal may use cookies or similar technologies for:
+* Authentication
+* Workforce account access
+* Administrator sessions
+* Security
+* Role permissions
+* Device recognition
+* User preferences
+Organizations using PunchPal may have their own privacy obligations relating to workforce information.
+________________
+
+
+33. HOSTED CUSTOMER WEBSITES
+A website created or hosted using Husky Solutions LLC technology may contain cookies selected by the website owner.
+The website owner may be responsible for its own:
+* Cookie disclosures
+* Privacy policy
+* Tracking technologies
+* Analytics
+* Advertising
+* User consent
+depending on applicable law and how the website is configured.
+________________
+
+
+34. RETENTION OF COOKIE DATA
+The duration for which cookies remain active varies according to their purpose.
+Cookies may expire:
+* At the end of a browsing session
+* After a specified number of hours
+* After a specified number of days
+* After several months
+* When manually deleted
+* When replaced
+* When an account session ends
+Husky Solutions LLC will seek to retain cookie-derived information only as long as reasonably necessary for legitimate purposes.
+________________
+
+
+35. COOKIE INVENTORY
+Husky Solutions LLC may maintain a list or inventory of cookies used by our Services.
+Where practical, a cookie-management interface may identify information such as:
+* Cookie name
+* Provider
+* Purpose
+* Category
+* Duration
+The exact technologies in use may change as our Services evolve.
+________________
+
+
+36. EXAMPLE NECESSARY COOKIE CATEGORIES
+Necessary technologies may include identifiers relating to:
+Authentication
+Used to identify a logged-in user.
+Session Security
+Used to maintain a secure session.
+CSRF Protection
+Used to help protect forms and authenticated requests.
+Load Balancing
+Used to route traffic between infrastructure.
+Privacy Preferences
+Used to remember cookie or privacy selections.
+Checkout
+Used to maintain a transaction session.
+The actual cookie names may vary by Service.
+________________
+
+
+37. ANALYTICS PROVIDERS
+If Husky Solutions LLC uses third-party analytics providers, information may be processed according to the provider's privacy documentation and our applicable agreements with that provider.
+Where possible, Husky Solutions LLC may configure analytics tools to limit unnecessary collection.
+________________
+
+
+38. DATA MINIMIZATION
+Husky Solutions LLC aims to use cookie and tracking technologies proportionate to their intended purposes.
+We may limit:
+* Cookie duration
+* Data collected
+* Third-party access
+* Tracking scope
+where reasonably appropriate.
+________________
+
+
+39. SECURITY OF COOKIE DATA
+Husky Solutions LLC may use security measures intended to protect sensitive cookie information.
+These may include appropriate use of cookie attributes such as:
+* Secure
+* HttpOnly
+* SameSite
+where technically appropriate.
+Not every cookie requires or supports every security attribute.
+________________
+
+
+40. AUTHENTICATION TOKEN SECURITY
+Authentication tokens and session cookies should be treated as sensitive credentials.
+Users should not:
+* Share session tokens
+* Send authentication cookies to others
+* Publish browser storage
+* Post authentication data publicly
+* Provide session information to untrusted parties
+Husky Solutions LLC support personnel will not ordinarily need your complete authentication cookie or session token.
+________________
+
+
+41. SECURITY INCIDENTS
+If Husky Solutions LLC determines that cookie or session information may have been compromised, we may take actions including:
+* Invalidating sessions
+* Forcing users to log in again
+* Revoking tokens
+* Resetting credentials
+* Requesting additional verification
+________________
+
+
+42. CHILDREN
+Husky Solutions LLC Services are not directed to children under 13.
+We do not intentionally use cookies to build advertising profiles of children under 13 through Services directed to children.
+If a future Service is directed to children and requires additional consent or protections, Husky Solutions LLC will implement legally required measures.
+________________
+
+
+43. INTERNATIONAL VISITORS
+Visitors accessing Husky Solutions LLC websites from jurisdictions outside the United States may have additional rights regarding cookies and similar technologies.
+Where applicable law requires prior consent before using certain non-essential technologies, Husky Solutions LLC will seek to implement appropriate consent mechanisms for covered users.
+________________
+
+
+44. UNITED STATES PRIVACY RIGHTS
+Certain U.S. state laws may provide residents with rights concerning online tracking, targeted advertising, sale or sharing of personal information, or recognized opt-out preference signals.
+Husky Solutions LLC will honor applicable rights where the relevant law applies to Husky Solutions LLC and the applicable processing.
+________________
+
+
+45. THIRD-PARTY WEBSITE RESPONSIBILITY
+When you leave a Husky Solutions LLC website and visit an unrelated third-party website, that website may use its own cookies.
+Husky Solutions LLC does not control those technologies.
+Review the third party's cookie and privacy policies for additional information.
+________________
+
+
+46. CHANGES TO COOKIE TECHNOLOGIES
+Husky Solutions LLC may add, remove, or replace technologies as our Services evolve.
+For example, we may:
+* Change analytics providers
+* Change payment providers
+* Replace authentication systems
+* Add security tools
+* Add or remove integrations
+Where such changes materially affect privacy practices, we will update relevant disclosures as appropriate.
+________________
+
+
+47. CHANGES TO THIS COOKIE POLICY
+Husky Solutions LLC may update this Cookie Policy periodically.
+The “Last Updated” date identifies the current version.
+Material changes may be communicated through:
+* Website notice
+* Cookie banner
+* Email
+* Account notification
+* Privacy center
+where appropriate or required.
+________________
+
+
+48. RELATIONSHIP TO THE PRIVACY POLICY
+Information collected through cookies and similar technologies is handled in accordance with the Husky Solutions LLC Privacy Policy.
+If a cookie involves personal information, the Privacy Policy provides additional information regarding:
+* Collection
+* Use
+* Disclosure
+* Retention
+* Security
+* Privacy rights
+________________
+
+
+49. CONTACT HUSKY SOLUTIONS LLC
+Questions regarding cookies, tracking technologies, or privacy preferences may be directed to:
+Husky Solutions LLC
+Privacy Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Privacy Email:
+[PRIVACY EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+50. EFFECTIVE DATE
+This Cookie Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

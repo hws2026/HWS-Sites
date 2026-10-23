@@ -1,0 +1,982 @@
+HUSKY SOLUTIONS LLC
+API & DEVELOPER TERMS
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+These API & Developer Terms (“Developer Terms”) govern access to and use of application programming interfaces (“APIs”), software development kits (“SDKs”), developer tools, webhooks, credentials, documentation, integrations, testing environments, and related developer services provided by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+These Developer Terms supplement the Husky Solutions LLC Terms of Service.
+They may apply to APIs and developer functionality associated with:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer portals
+* Organization systems
+* Authentication systems
+* Billing integrations
+* FiveM-related systems
+* Webhooks
+* Developer platforms
+* Other current or future Husky Solutions LLC Services
+By obtaining developer credentials, accessing an API, creating an integration, or otherwise using Husky Solutions LLC developer functionality, you agree to these Developer Terms.
+________________
+
+
+1. DEFINITIONS
+For purposes of these Developer Terms:
+“API” means an application programming interface made available by Husky Solutions LLC.
+“Developer” means an individual or organization accessing or using an API or developer tool.
+“Developer Application” means software, a website, service, script, integration, automation, or other system that accesses a Husky Solutions LLC API.
+“API Credentials” means API keys, tokens, secrets, certificates, client credentials, or other authentication information used to access an API.
+“Developer Data” means data received from or transmitted to Husky Solutions LLC through an API.
+________________
+
+
+2. LIMITED API LICENSE
+Subject to these Developer Terms, applicable product terms, and payment of any required fees, Husky Solutions LLC grants you a limited, revocable, non-exclusive, non-transferable, and non-sublicensable right to access authorized APIs for the purpose of creating and operating approved integrations or Developer Applications.
+No ownership rights are transferred.
+________________
+
+
+3. AUTHORIZED USE ONLY
+You may access APIs only:
+* Through documented or authorized methods
+* Using valid credentials
+* Within your assigned permissions
+* For lawful purposes
+* Within applicable rate limits
+* In accordance with these Developer Terms
+The technical ability to reach an endpoint does not constitute authorization to use it.
+________________
+
+
+4. API CREDENTIALS
+API Credentials must be treated as confidential security information.
+You are responsible for protecting:
+* API keys
+* Client secrets
+* Access tokens
+* Refresh tokens
+* Private keys
+* Webhook secrets
+* Authentication certificates
+________________
+
+
+5. PROHIBITED CREDENTIAL EXPOSURE
+You must not knowingly expose API Credentials through:
+* Public GitHub repositories
+* Public GitLab repositories
+* Client-side JavaScript where a secret should remain private
+* Public Discord channels
+* Public documentation
+* Screenshots
+* Forums
+* Shared files accessible to unauthorized persons
+* Other public systems
+________________
+
+
+6. CREDENTIAL ROTATION
+API Credentials should be rotated when:
+* They are exposed
+* Compromise is suspected
+* An employee leaves
+* A contractor's authorization ends
+* Security requirements change
+Husky Solutions LLC may revoke or rotate credentials when reasonably necessary.
+________________
+
+
+7. COMPROMISED CREDENTIALS
+If you believe API Credentials have been compromised, you must promptly:
+* Stop unauthorized use where possible
+* Revoke or rotate the credential
+* Review relevant activity
+* Notify Husky Solutions LLC where appropriate
+Security incidents may be reported to:
+[SECURITY EMAIL]
+________________
+
+
+8. AUTHORIZED USERS
+You are responsible for controlling which employees, contractors, systems, and service accounts can access your API Credentials.
+Access should be limited to users with a legitimate need.
+________________
+
+
+9. SERVICE ACCOUNTS
+Where supported, API access may be assigned to a:
+* Service account
+* Application
+* Machine identity
+* Organization account
+Service accounts should use only permissions necessary for their intended purpose.
+________________
+
+
+10. LEAST PRIVILEGE
+Developers should request and use only the minimum API permissions reasonably necessary for their integration.
+Husky Solutions LLC may limit available scopes.
+________________
+
+
+11. OAUTH AND AUTHORIZATION FLOWS
+Certain APIs may use OAuth or another delegated authorization system.
+Developers must not:
+* Misrepresent requested permissions
+* Obtain access beyond user consent
+* Circumvent authorization screens
+* Retain authorization after access has been revoked
+________________
+
+
+12. USER CONSENT
+Where a Developer Application accesses user-controlled information, the Developer is responsible for obtaining any legally required user authorization.
+The Developer must accurately explain:
+* What information is accessed
+* Why access is requested
+* How information will be used
+________________
+
+
+13. NO DECEPTIVE PERMISSIONS
+You may not request broad API permissions primarily to collect information unrelated to your application's disclosed purpose.
+________________
+
+
+14. API SCOPES
+API access may be limited by permission scopes.
+Examples may include:
+* Read-only access
+* Write access
+* Organization administration
+* Billing access
+* User management
+* Reporting
+* Webhooks
+Your application must remain within its authorized scopes.
+________________
+
+
+15. RATE LIMITS
+Husky Solutions LLC may impose rate limits to protect:
+* Availability
+* Security
+* Performance
+* Fair resource usage
+* Infrastructure
+You must comply with published or technically enforced rate limits.
+________________
+
+
+16. RATE-LIMIT CIRCUMVENTION
+You may not attempt to circumvent rate limits by:
+* Creating multiple accounts
+* Creating multiple credentials
+* Distributing requests across unauthorized systems
+* Spoofing identifiers
+* Rotating credentials to evade limits
+________________
+
+
+17. BURST TRAFFIC
+Certain APIs may permit short bursts of traffic.
+Permitted burst behavior does not authorize sustained excessive traffic.
+________________
+
+
+18. RESOURCE ABUSE
+You must not intentionally use APIs in a manner that:
+* Exhausts system resources
+* Interferes with other customers
+* Causes excessive database load
+* Creates unreasonable bandwidth usage
+* Degrades Service performance
+________________
+
+
+19. DENIAL-OF-SERVICE ACTIVITY
+You may not use API access to perform or facilitate:
+* Denial-of-service attacks
+* Distributed denial-of-service attacks
+* Resource exhaustion
+* Traffic flooding
+* Intentional infrastructure disruption
+________________
+
+
+20. AUTOMATED ACCESS
+API access is intended for automation where authorized.
+However, automation must comply with:
+* Rate limits
+* Security requirements
+* Product restrictions
+* Applicable law
+________________
+
+
+21. UNDOCUMENTED ENDPOINTS
+You may not rely on private, internal, undocumented, or unauthorized endpoints unless Husky Solutions LLC expressly permits their use.
+Undocumented endpoints may:
+* Change without notice
+* Be disabled
+* Require different authorization
+________________
+
+
+22. PRIVATE APIs
+Accessing a private or internal API without authorization is prohibited.
+You may not attempt to discover or exploit internal APIs for unauthorized purposes.
+________________
+
+
+23. REVERSE ENGINEERING
+Except where applicable law expressly provides otherwise, you may not reverse engineer Husky Solutions LLC APIs, protocols, authentication systems, or proprietary services for the purpose of:
+* Circumventing access controls
+* Reproducing private systems
+* Obtaining unauthorized information
+* Avoiding license restrictions
+________________
+
+
+24. API DOCUMENTATION
+Developers should rely on current official documentation.
+Documentation may include:
+* Endpoint descriptions
+* Request formats
+* Response formats
+* Authentication requirements
+* Error codes
+* Rate limits
+* Examples
+________________
+
+
+25. DOCUMENTATION CHANGES
+API documentation may change as Services evolve.
+Developers are responsible for reviewing relevant updates.
+________________
+
+
+26. API VERSIONING
+Husky Solutions LLC may version APIs.
+Versions may be identified through:
+* URL
+* Header
+* SDK version
+* Configuration
+* Another documented mechanism
+________________
+
+
+27. API DEPRECATION
+Husky Solutions LLC may deprecate API versions.
+Where commercially reasonable, significant deprecations may include:
+* Advance notice
+* Migration documentation
+* Replacement endpoints
+* End-of-support dates
+Emergency security changes may occur more quickly.
+________________
+
+
+28. BREAKING CHANGES
+Husky Solutions LLC may make breaking changes where reasonably necessary because of:
+* Security
+* Legal requirements
+* Serious technical issues
+* Third-party dependencies
+Where practical, we may provide notice.
+________________
+
+
+29. BETA APIS
+Beta, experimental, preview, or early-access APIs may:
+* Change without notice
+* Contain errors
+* Be unstable
+* Lose data
+* Be discontinued
+Do not use beta APIs for critical production systems unless you accept those risks.
+________________
+
+
+30. SANDBOX ENVIRONMENTS
+Husky Solutions LLC may provide sandbox or development environments.
+Sandbox environments may:
+* Use simulated data
+* Have lower availability
+* Differ from production
+* Be reset periodically
+Sandbox data should not be treated as permanent.
+________________
+
+
+31. PRODUCTION ACCESS
+Husky Solutions LLC may require additional approval before an integration is permitted to access production systems.
+Production approval may consider:
+* Security
+* Intended use
+* Data sensitivity
+* Compliance
+* Application quality
+________________
+
+
+32. DEVELOPER APPLICATION SECURITY
+Developers are responsible for maintaining reasonable security for their Developer Applications.
+Security measures may include:
+* Secure credential storage
+* Encryption
+* Access controls
+* Dependency updates
+* Input validation
+* Secure session management
+* Logging
+* Vulnerability remediation
+________________
+
+
+33. ENCRYPTION IN TRANSIT
+Developers should use secure transport protocols when interacting with Husky Solutions LLC APIs.
+Where HTTPS or another secure protocol is required, unencrypted access may be rejected.
+________________
+
+
+34. SECRET STORAGE
+Private API secrets should be stored using appropriate secure-secret-management practices.
+Developers should avoid storing secrets directly in publicly distributed source code.
+________________
+
+
+35. INPUT VALIDATION
+Developer Applications should validate and appropriately handle user-controlled data.
+Applications must not knowingly use APIs to inject:
+* Malicious commands
+* Malicious queries
+* Malware
+* Other harmful content
+into Husky Solutions LLC systems.
+________________
+
+
+36. WEBHOOKS
+Husky Solutions LLC may provide webhook functionality.
+Developers should verify webhook authenticity using supported mechanisms such as:
+* Signatures
+* Shared secrets
+* Tokens
+where available.
+________________
+
+
+37. WEBHOOK SECURITY
+Webhook endpoints should be protected against:
+* Replay attacks
+* Unauthorized submissions
+* Injection
+* Abuse
+Developers are responsible for securing endpoints they control.
+________________
+
+
+38. WEBHOOK DELIVERY
+Husky Solutions LLC does not guarantee that every webhook will always be delivered instantly or exactly once unless a written agreement states otherwise.
+Developers should design systems capable of handling:
+* Retries
+* Duplicate events
+* Delayed delivery
+* Out-of-order events
+where appropriate.
+________________
+
+
+39. DATA ACCESS
+Developers may access only data they are authorized to access.
+You may not use an API to obtain:
+* Another customer's private data
+* Unauthorized organization data
+* Restricted administrative data
+* Government-controlled information
+* Credentials
+* Other non-public information
+outside your authorization.
+________________
+
+
+40. PERSONAL INFORMATION
+If your Developer Application processes personal information, you are responsible for complying with applicable privacy and data-protection laws.
+This may include obligations concerning:
+* Notice
+* Consent
+* Security
+* Retention
+* User rights
+* Data deletion
+________________
+
+
+41. PRIVACY POLICY
+Developer Applications that independently collect or process personal information may be required to maintain an accurate privacy policy.
+The privacy policy should describe relevant data practices.
+________________
+
+
+42. DATA MINIMIZATION
+Developers should collect or retain only the API data reasonably necessary for their disclosed purposes.
+________________
+
+
+43. DATA RETENTION
+Developer Applications should not retain API data longer than reasonably necessary.
+If user authorization ends, developers should delete or de-identify information where required by law, agreement, or applicable API terms.
+________________
+
+
+44. USER DELETION REQUESTS
+If a user requests deletion of information and applicable law requires you to comply, you are responsible for deleting information retained independently by your Developer Application.
+Deleting information from Husky Solutions LLC systems does not automatically delete copies stored by an independent Developer.
+________________
+
+
+45. LOCATION DATA
+If an API provides access to location information, including:
+* Approximate IP-derived location
+* Precise geolocation
+* Security-related location
+you must use that information only within the authorized purpose and applicable permissions.
+________________
+
+
+46. PRECISE GEOLOCATION
+Precise or close-pinpoint geolocation must be treated as sensitive information.
+Developers must not:
+* Collect it without required authorization
+* Repurpose it deceptively
+* Sell it contrary to applicable law or agreed restrictions
+* Use it for unauthorized surveillance
+* Publicly expose it without lawful authority
+________________
+
+
+47. SECURITY GEOLOCATION
+Geolocation provided for security, fraud-detection, or account-protection purposes may not be repurposed for unrelated advertising or commercial profiling unless expressly authorized and legally permitted.
+________________
+
+
+48. IP ADDRESS DATA
+APIs may expose or process IP addresses for security or operational purposes.
+Developers must handle IP information in accordance with:
+* Applicable law
+* Privacy disclosures
+* Security requirements
+________________
+
+
+49. RESTRICTED DATA
+Unless expressly authorized in writing, developers must not use Husky Solutions LLC APIs to process:
+* Protected health information governed by HIPAA
+* Actual CJIS-controlled information
+* Actual NCIC data
+* Classified information
+* Complete payment-card data
+* Other highly regulated information requiring specialized protections
+________________
+
+
+50. PAYMENT INFORMATION
+Developers must not transmit full payment-card data to an API unless the applicable endpoint is specifically designed and approved for that purpose.
+________________
+
+
+51. PASSWORDS
+Developers must not transmit ordinary user passwords to unrelated API fields or store Husky Solutions LLC credentials unnecessarily.
+________________
+
+
+52. BIOMETRIC INFORMATION
+Developers must not collect or transmit biometric identifiers through Husky Solutions LLC APIs unless expressly supported and legally authorized.
+________________
+
+
+53. WORKFORCE DATA
+Integrations involving PunchPal or workforce information must comply with applicable:
+* Employment laws
+* Privacy laws
+* Recordkeeping obligations
+* Customer authorization
+________________
+
+
+54. HUSKYCAD DATA
+Developers must not use HuskyCAD APIs to obtain unauthorized access to real:
+* NCIC
+* CJIS systems
+* DMV databases
+* Criminal-history databases
+* Government systems
+A simulated field does not provide actual government access.
+________________
+
+
+55. CUSTOMER AUTHORIZATION
+If you access an organization's data, you must have authorization from an appropriate organization administrator or other legally authorized party.
+________________
+
+
+56. DEVELOPER DATA USE
+You may use Developer Data only for purposes:
+* Authorized by the user or organization
+* Disclosed to affected users
+* Permitted by law
+* Permitted by these Developer Terms
+________________
+
+
+57. NO DATA BROKERING
+Unless expressly authorized in writing and permitted by applicable law, you may not use Husky Solutions LLC APIs primarily to:
+* Aggregate personal information for resale
+* Build unauthorized data-broker profiles
+* Sell customer account data
+* Sell precise security geolocation
+________________
+
+
+58. NO SURVEILLANCE MISUSE
+You may not use an API to conduct unlawful surveillance, tracking, or monitoring of individuals.
+________________
+
+
+59. NO USER PROFILING FOR UNDISCLOSED PURPOSES
+You may not secretly use API data to create materially unrelated profiles about users where such use conflicts with:
+* User consent
+* Your privacy disclosures
+* Applicable law
+________________
+
+
+60. API OUTPUT ACCURACY
+API responses may contain:
+* Errors
+* Delays
+* Incomplete data
+* Customer-entered information
+* Stale information
+Developers should not assume every API response is independently verified by Husky Solutions LLC.
+________________
+
+
+61. MISSION-CRITICAL USE
+Unless expressly authorized by written agreement, APIs must not be relied upon as the sole system for:
+* 911 operations
+* Life-safety decisions
+* Actual emergency dispatch
+* Critical infrastructure
+* Other high-risk functions
+________________
+
+
+62. CACHING
+Developers may cache API data only where permitted and reasonably necessary.
+Cached data should be:
+* Secured
+* Updated appropriately
+* Deleted when required
+________________
+
+
+63. DATA SYNCHRONIZATION
+Developers are responsible for designing integrations to appropriately manage:
+* Updates
+* Deletions
+* Conflicts
+* Duplicate records
+* Delayed events
+________________
+
+
+64. DATA EXPORT
+You may not use an API primarily to mass-export proprietary data in violation of applicable account or product restrictions.
+________________
+
+
+65. SCRAPING
+API access does not authorize unrelated scraping of Husky Solutions LLC websites or Services.
+Scraping remains governed by the Terms of Use and Acceptable Use Policy.
+________________
+
+
+66. INTELLECTUAL PROPERTY
+Husky Solutions LLC retains all rights in:
+* APIs
+* SDKs
+* Documentation
+* Schemas
+* Examples
+* Developer tools
+* Proprietary interfaces
+except rights expressly granted.
+________________
+
+
+67. SDK LICENSE
+If Husky Solutions LLC distributes an SDK, the SDK may be subject to additional licensing terms.
+The accompanying license controls where applicable.
+________________
+
+
+68. CODE SAMPLES
+Documentation may include example code.
+Unless otherwise stated, code samples are provided for convenience and should be reviewed and tested before production use.
+________________
+
+
+69. BRANDING
+Access to an API does not grant permission to use Husky Solutions LLC branding in a way that falsely implies:
+* Partnership
+* Sponsorship
+* Endorsement
+* Ownership
+________________
+
+
+70. INTEGRATION REPRESENTATIONS
+You must accurately describe your relationship with Husky Solutions LLC.
+You may state that your application “integrates with” a supported Husky Solutions Service where accurate.
+You may not falsely claim that your application is:
+* Official
+* Certified
+* Endorsed
+* Operated
+by Husky Solutions LLC unless expressly authorized.
+________________
+
+
+71. API RESELLING
+You may not resell raw API access unless expressly authorized by written agreement.
+________________
+
+
+72. VALUE-ADDED SERVICES
+An authorized Developer Application may charge users for its own legitimate products or services where permitted.
+Charging users for your application does not grant permission to redistribute or resell Husky Solutions LLC Services themselves.
+________________
+
+
+73. WHITE-LABEL USE
+White-label or embedded API use requires authorization where the applicable API or plan does not expressly permit it.
+________________
+
+
+74. COMMERCIAL USE
+Commercial API use may require:
+* Paid subscription
+* Business plan
+* Enterprise plan
+* Separate API agreement
+depending on the Service.
+________________
+
+
+75. API FEES
+Husky Solutions LLC may charge for API access based on:
+* Requests
+* Usage
+* Users
+* Data volume
+* Subscription plan
+* Custom pricing
+Applicable pricing will be disclosed before billing.
+________________
+
+
+76. USAGE METERING
+Husky Solutions LLC may meter API usage for:
+* Billing
+* Rate limits
+* Performance
+* Abuse prevention
+* Capacity planning
+________________
+
+
+77. USAGE RECORDS
+Usage records may include:
+* Request count
+* Endpoint
+* Timestamp
+* Credential identifier
+* Response status
+* IP address
+* Error information
+________________
+
+
+78. LOGGING
+Husky Solutions LLC may log API activity for:
+* Security
+* Billing
+* Support
+* Abuse prevention
+* Reliability
+* Compliance
+________________
+
+
+79. SECURITY MONITORING
+API activity may be monitored for indicators including:
+* Credential abuse
+* Unexpected geography
+* Excessive requests
+* Unauthorized endpoints
+* Attack patterns
+* Fraud
+________________
+
+
+80. SUSPICIOUS API USE
+Husky Solutions LLC may temporarily restrict API credentials where suspicious activity indicates:
+* Credential compromise
+* Active attack
+* Abuse
+* Unauthorized access
+* Severe rate-limit violations
+________________
+
+
+81. SUSPENSION
+API access may be suspended for reasons including:
+* Material breach
+* Nonpayment
+* Security threats
+* Fraud
+* Unauthorized data access
+* Serious infrastructure abuse
+________________
+
+
+82. EMERGENCY SUSPENSION
+Husky Solutions LLC may immediately suspend API access when reasonably necessary to stop:
+* Active attacks
+* Data exfiltration
+* Credential abuse
+* Severe system disruption
+* Other serious security threats
+________________
+
+
+83. TERMINATION
+Husky Solutions LLC may terminate developer access for material or repeated violations of these Developer Terms.
+________________
+
+
+84. EFFECT OF TERMINATION
+Upon termination, you must:
+* Stop accessing the API
+* Stop using revoked credentials
+* Delete restricted Developer Data where required
+* Stop representing your integration as active
+________________
+
+
+85. DATA FOLLOWING TERMINATION
+Certain records may be retained after termination for:
+* Security
+* Billing
+* Legal compliance
+* Fraud prevention
+* Dispute resolution
+according to the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+86. API AVAILABILITY
+Unless a written SLA provides otherwise, Husky Solutions LLC does not guarantee uninterrupted API availability.
+APIs may experience:
+* Maintenance
+* Downtime
+* Errors
+* Delays
+* Capacity limits
+* Third-party outages
+________________
+
+
+87. NO DEFAULT SLA
+Developer API access does not automatically include:
+* Uptime guarantees
+* Response-time guarantees
+* Dedicated support
+* Service credits
+unless expressly included in an applicable plan or written SLA.
+________________
+
+
+88. API SUPPORT
+Developer support may include assistance with:
+* Authentication
+* Documented endpoints
+* API errors
+* SDK issues
+* Integration questions
+Standard support does not include building your application for you unless separately purchased.
+________________
+
+
+89. DEBUGGING
+Husky Solutions LLC may request:
+* Request IDs
+* Error responses
+* Timestamps
+* Sanitized code examples
+to diagnose issues.
+Do not send production secrets unnecessarily.
+________________
+
+
+90. ERROR HANDLING
+Developer Applications should appropriately handle API errors.
+Applications should not assume that every request will succeed.
+________________
+
+
+91. RETRIES
+Developers should use reasonable retry strategies.
+Uncontrolled retry loops may:
+* Overload systems
+* Trigger rate limits
+* Cause duplicate operations
+________________
+
+
+92. IDEMPOTENCY
+Where supported, Developers should use documented idempotency mechanisms for operations that may otherwise be duplicated.
+________________
+
+
+93. SECURITY TESTING
+Developer access does not authorize penetration testing against Husky Solutions LLC infrastructure.
+Security testing is governed by the Husky Solutions LLC Security & Vulnerability Disclosure Policy.
+________________
+
+
+94. VULNERABILITY REPORTING
+Potential vulnerabilities should be reported to:
+[SECURITY EMAIL]
+________________
+
+
+95. THIRD-PARTY SERVICES
+Developer Applications may depend on third-party platforms.
+Husky Solutions LLC is not responsible for unrelated third-party:
+* Outages
+* API changes
+* Security failures
+* Terms
+* Pricing
+________________
+
+
+96. EXPORT CONTROLS
+Developers must comply with applicable:
+* Export-control laws
+* Sanctions
+* Trade restrictions
+________________
+
+
+97. COMPLIANCE
+Developers are responsible for laws applicable to their Developer Application.
+Husky Solutions LLC does not provide legal compliance certification simply because an API is available.
+________________
+
+
+98. AUDIT AND VERIFICATION
+Where Husky Solutions LLC reasonably suspects serious API abuse, we may request information reasonably necessary to verify compliance.
+This may include:
+* Application identity
+* Data-use practices
+* Security practices
+* Authorization scope
+________________
+
+
+99. PRIVACY REVIEW
+Applications requesting access to particularly sensitive data may be subject to additional privacy or security review.
+________________
+
+
+100. SECURITY REVIEW
+Husky Solutions LLC may require additional security review before granting:
+* Elevated permissions
+* High-volume access
+* Sensitive organization access
+* Enterprise integrations
+________________
+
+
+101. CERTIFICATION PROGRAMS
+If Husky Solutions LLC establishes a formal developer certification program, certification requirements will be separately published.
+No integration should be represented as “certified” merely because it can connect to an API.
+________________
+
+
+102. CHANGES TO THESE TERMS
+Husky Solutions LLC may update these Developer Terms.
+Material changes affecting active commercial integrations may be communicated where appropriate or required by law.
+________________
+
+
+103. GOVERNING LAW
+These Developer Terms are governed by the laws of the State of New York, subject to applicable federal law and rights that cannot legally be waived.
+________________
+
+
+104. DISPUTES
+Disputes relating to API access are governed by the applicable dispute provisions in the Husky Solutions LLC Terms of Service unless a separate signed API or enterprise agreement provides otherwise.
+________________
+
+
+105. RELATIONSHIP TO OTHER POLICIES
+These Developer Terms should be read together with:
+* Husky Solutions LLC Terms of Service
+* Terms of Use
+* Privacy Policy
+* Security Policy
+* Acceptable Use Policy
+* Data Retention & Deletion Policy
+* Account, Authentication & Identity Verification Policy
+* Product-specific API documentation
+* Applicable enterprise agreements
+________________
+
+
+106. DEVELOPER CONTACT
+Developer questions may be directed to:
+Husky Solutions LLC
+Developer Services
+Developer Email:
+[DEVELOPER EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+________________
+
+
+107. COMPANY CONTACT INFORMATION
+Husky Solutions LLC
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+108. EFFECTIVE DATE
+These API & Developer Terms are effective as of:
+October 12, 2026
+and remain effective until amended or replaced by Husky Solutions LLC.

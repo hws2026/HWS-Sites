@@ -6,7 +6,7 @@ import {endBrowserSession} from './auth';
 
 export function IdleGuard({path}:{path:string}){
  const [remaining,setRemaining]=useState<number|null>(null);
- const protectedPage=path==='/mobile'||path==='/admin'||path==='/portal'||path==='/'||path.startsWith('/editor/')&&!path.startsWith('/editor/demo-');
+ const protectedPage=path==='/onboarding'||path==='/team-workspace'||path==='/mobile'||path==='/admin'||path==='/portal'||path==='/'||path.startsWith('/editor/')&&!path.startsWith('/editor/demo-');
  useEffect(()=>{
   if(!protectedPage||!hasSession()){setRemaining(null);return;}
   let lastTouch=0;

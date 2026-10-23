@@ -1,0 +1,925 @@
+HUSKY SOLUTIONS LLC
+THIRD-PARTY SERVICES & SUBPROCESSOR POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Third-Party Services & Subprocessor Policy (“Third-Party Policy”) explains how Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) may rely on third-party vendors, service providers, subprocessors, platforms, infrastructure providers, integrations, and other external services in connection with Husky Solutions LLC products and services.
+This Policy applies, where relevant, to:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer portals
+* Hosting services
+* APIs
+* Developer systems
+* Billing systems
+* Authentication systems
+* Email services
+* Support systems
+* FiveM-related products and services
+* Websites
+* Other current or future Husky Solutions LLC Services
+This Policy supplements the:
+* Husky Solutions LLC Privacy Policy
+* Data Processing Addendum
+* Terms of Service
+* Security Policy
+* API & Developer Terms
+* Other applicable agreements
+________________
+
+
+1. PURPOSE
+Husky Solutions LLC may use third-party providers to help:
+* Host infrastructure
+* Store data
+* Process payments
+* Deliver email
+* Authenticate users
+* Operate databases
+* Provide security
+* Process support requests
+* Deliver content
+* Monitor performance
+* Provide analytics
+* Operate integrations
+* Provide other technical or business functions
+These providers may process information on behalf of Husky Solutions LLC or independently, depending on the nature of the service.
+________________
+
+
+2. DEFINITIONS
+For purposes of this Policy:
+“Third-Party Service” means a product, platform, service, integration, API, or provider that is not directly operated by Husky Solutions LLC.
+“Service Provider” means a third party providing services to Husky Solutions LLC.
+“Subprocessor” means a third party that processes Customer Personal Data on behalf of Husky Solutions LLC where Husky Solutions LLC acts as a processor for a Customer.
+“Integration” means a connection between a Husky Solutions LLC Service and another platform or service.
+________________
+
+
+3. USE OF THIRD-PARTY PROVIDERS
+Husky Solutions LLC may use third-party providers where reasonably necessary to:
+* Operate Services
+* Improve reliability
+* Maintain security
+* Support customers
+* Process transactions
+* Provide infrastructure
+* Deliver communications
+* Provide optional integrations
+Use of third parties does not automatically transfer responsibility for all aspects of those third parties' independent operations to Husky Solutions LLC.
+________________
+
+
+4. TYPES OF THIRD-PARTY PROVIDERS
+Third-party providers may include:
+* Cloud infrastructure providers
+* Web-hosting providers
+* Database providers
+* Payment processors
+* Email providers
+* Authentication providers
+* Security providers
+* Analytics providers
+* Content-delivery networks
+* Customer-support systems
+* Domain registrars
+* DNS providers
+* Monitoring providers
+* File-storage providers
+* Messaging providers
+* Communication platforms
+* API providers
+* Software vendors
+________________
+
+
+5. CLOUD INFRASTRUCTURE
+Husky Solutions LLC may rely on third-party cloud infrastructure for:
+* Compute
+* Storage
+* Networking
+* Databases
+* Backups
+* Application hosting
+* Content delivery
+Cloud providers may process or store information necessary to operate the Services.
+________________
+
+
+6. DATA CENTERS
+Third-party infrastructure may operate through data centers located in:
+* The United States
+* Other countries
+* Multiple geographic regions
+Specific data-residency commitments apply only when expressly agreed in writing.
+________________
+
+
+7. PAYMENT PROCESSORS
+Husky Solutions LLC may use third-party payment processors.
+Payment processors may independently collect or process:
+* Name
+* Billing address
+* Payment-card information
+* Transaction details
+* Fraud-prevention information
+Husky Solutions LLC generally does not intend to directly store full payment-card numbers or card security codes.
+________________
+
+
+8. PAYMENT PROCESSOR TERMS
+Payment processors may operate under their own:
+* Terms of service
+* Privacy policies
+* Security practices
+* Dispute procedures
+Customers may need to interact directly with a payment provider for certain payment-related issues.
+________________
+
+
+9. AUTHENTICATION PROVIDERS
+Husky Solutions LLC may use third-party authentication providers to support:
+* Login
+* Multifactor authentication
+* Passkeys
+* Identity verification
+* Social login
+* Security keys
+* Device authentication
+________________
+
+
+10. DEVICE BIOMETRIC AUTHENTICATION
+Where a third-party device or operating system performs biometric authentication, Husky Solutions LLC may receive only an authentication confirmation rather than the underlying biometric template.
+Further information is available in the Husky Solutions LLC Biometric Information & Authentication Policy.
+________________
+
+
+11. EMAIL PROVIDERS
+Husky Solutions LLC may use third-party email infrastructure to deliver:
+* Verification messages
+* Password resets
+* Security alerts
+* Billing notices
+* Transaction confirmations
+* Support messages
+* Marketing communications where permitted
+________________
+
+
+12. EMAIL DELIVERY DATA
+Email providers may process information such as:
+* Recipient address
+* Sender address
+* Subject
+* Message content
+* Delivery status
+* Bounce information
+* Open or interaction information where applicable
+depending on configuration.
+________________
+
+
+13. SECURITY PROVIDERS
+Husky Solutions LLC may use third-party security providers for functions including:
+* Threat detection
+* Fraud prevention
+* IP reputation
+* Bot protection
+* CAPTCHA
+* DDoS protection
+* Vulnerability scanning
+* Monitoring
+* Incident response
+________________
+
+
+14. SECURITY DATA
+Security providers may process information such as:
+* IP addresses
+* Network information
+* Browser information
+* Device information
+* Request metadata
+* Geolocation estimates
+* Threat indicators
+where reasonably necessary.
+________________
+
+
+15. PRECISE SECURITY GEOLOCATION
+Where Husky Solutions LLC uses a provider to support precise or close-pinpoint security geolocation, that provider may process location information subject to:
+* Appropriate user permissions
+* Applicable law
+* Husky Solutions LLC instructions
+* Contractual restrictions
+where required.
+________________
+
+
+16. NO UNRELATED COMMERCIAL USE OF SECURITY LOCATION DATA
+Husky Solutions LLC does not intend to authorize a security Subprocessor to independently use precise security geolocation for unrelated advertising or data-broker activity.
+________________
+
+
+17. ANALYTICS PROVIDERS
+Husky Solutions LLC may use analytics providers to understand:
+* Website usage
+* Product usage
+* Errors
+* Performance
+* General traffic
+* Feature adoption
+Analytics use is subject to applicable privacy disclosures and cookie choices.
+________________
+
+
+18. ANALYTICS DATA MINIMIZATION
+Where reasonably appropriate, Husky Solutions LLC may configure analytics providers to reduce unnecessary collection.
+________________
+
+
+19. CUSTOMER SUPPORT PROVIDERS
+Third-party support systems may process:
+* Customer name
+* Email address
+* Support messages
+* Attachments
+* Account information
+* Diagnostic information
+necessary to manage support requests.
+________________
+
+
+20. FILE STORAGE
+Husky Solutions LLC may use third-party storage providers to store:
+* Customer Content
+* Backups
+* Uploaded files
+* Media
+* Documents
+* Logs
+________________
+
+
+21. CONTENT DELIVERY NETWORKS
+Content-delivery networks may process network information such as:
+* IP address
+* Requested resource
+* Browser information
+* Request timing
+* Security information
+to deliver content efficiently and protect Services.
+________________
+
+
+22. DOMAIN AND DNS PROVIDERS
+Husky Solutions LLC may rely on third-party domain registrars or DNS providers.
+These providers may control:
+* Domain registration
+* DNS resolution
+* Certificate validation
+* Related internet infrastructure
+________________
+
+
+23. CUSTOMER DOMAINS
+Customers using their own domains remain responsible for:
+* Maintaining domain registration
+* Keeping registrar credentials secure
+* Paying registrar fees
+* Ensuring DNS configuration
+unless Husky Solutions LLC has expressly agreed to manage those responsibilities.
+________________
+
+
+24. COMMUNICATION PLATFORMS
+Husky Solutions LLC may use external communication platforms for:
+* Support
+* Community interaction
+* Development
+* Project communication
+* FiveM support
+Examples may include third-party messaging or community platforms.
+________________
+
+
+25. THIRD-PARTY COMMUNICATION PLATFORM AVAILABILITY
+Husky Solutions LLC does not control an unrelated platform's:
+* Availability
+* Account policies
+* Moderation
+* Security
+* Terms
+Support provided through a third-party platform is subject to that platform's operation.
+________________
+
+
+26. FIVEM AND CFX.RE
+Certain Husky Solutions LLC FiveM products may depend upon technologies, services, marketplaces, or licensing systems associated with FiveM or Cfx.re.
+Husky Solutions LLC does not control unrelated platform decisions.
+________________
+
+
+27. GAME PUBLISHERS
+Husky Solutions LLC may provide Services intended to work with third-party games.
+Unless expressly stated otherwise, Husky Solutions LLC is independent and is not owned, operated, or endorsed by unrelated game publishers.
+________________
+
+
+28. THIRD-PARTY APIs
+Husky Solutions LLC Services may integrate with external APIs.
+External APIs may:
+* Change
+* Become unavailable
+* Change pricing
+* Change authentication
+* Deprecate features
+* Impose new limits
+Such changes may affect Husky Solutions LLC functionality.
+________________
+
+
+29. INTEGRATION AVAILABILITY
+Husky Solutions LLC does not guarantee that every third-party integration will remain available indefinitely.
+We may:
+* Modify an integration
+* Replace it
+* Disable it
+* Discontinue it
+if the third party changes or the integration becomes impractical, insecure, unlawful, or unavailable.
+________________
+
+
+30. CUSTOMER-AUTHORIZED INTEGRATIONS
+Customers may be able to enable optional integrations.
+By enabling an integration, the customer authorizes necessary information exchange between Husky Solutions LLC and the relevant third party.
+________________
+
+
+31. CUSTOMER RESPONSIBILITY
+Customers are responsible for determining whether a third-party integration is appropriate for their:
+* Organization
+* Users
+* Data
+* Compliance requirements
+* Security needs
+________________
+
+
+32. THIRD-PARTY PRIVACY POLICIES
+Third-party services may independently determine how they process information.
+Users should review the applicable third party's privacy policy.
+The Husky Solutions LLC Privacy Policy does not govern information collected directly and independently by an unrelated third party.
+________________
+
+
+33. SUBPROCESSORS
+When Husky Solutions LLC processes Customer Personal Data on behalf of a business Customer, certain third-party providers may act as Subprocessors.
+Subprocessor relationships are further governed by the Husky Solutions LLC Data Processing Addendum where applicable.
+________________
+
+
+34. SUBPROCESSOR SELECTION
+When selecting material Subprocessors, Husky Solutions LLC may consider factors including:
+* Security
+* Privacy
+* Reliability
+* Availability
+* Technical capabilities
+* Contractual protections
+* Compliance requirements
+* Cost
+* Business continuity
+________________
+
+
+35. SUBPROCESSOR CONTRACTS
+Where required by applicable law, Husky Solutions LLC will enter into agreements with Subprocessors that impose appropriate obligations concerning:
+* Confidentiality
+* Security
+* Permitted processing
+* Data protection
+* Incident response
+________________
+
+
+36. SUBPROCESSOR ACCESS
+Subprocessors should receive access only to information reasonably necessary to provide the applicable service.
+________________
+
+
+37. SUBPROCESSOR LIST
+Husky Solutions LLC may maintain a current list of material Subprocessors at:
+[SUBPROCESSOR URL]
+The list may include:
+* Provider name
+* Purpose
+* Service category
+* Processing region or location where appropriate
+________________
+
+
+38. SUBPROCESSOR UPDATES
+The Subprocessor list may change as Husky Solutions LLC:
+* Adds providers
+* Replaces providers
+* Removes providers
+* Changes infrastructure
+________________
+
+
+39. NOTICE OF NEW SUBPROCESSORS
+Where applicable law or a signed Customer agreement requires advance notice of a new Subprocessor, Husky Solutions LLC will provide the required notice.
+Notice may be provided through:
+* Subprocessor webpage
+* Email
+* Customer portal
+* Other agreed method
+________________
+
+
+40. CUSTOMER OBJECTIONS
+Where Customer has a contractual or legal right to object to a new Subprocessor, objections must be based on reasonable data-protection grounds.
+The parties may attempt to identify an alternative solution.
+________________
+
+
+41. SUBPROCESSOR REMOVAL
+Husky Solutions LLC may discontinue use of a Subprocessor at any time.
+A provider may also be removed because of:
+* Security concerns
+* Reliability issues
+* Cost changes
+* Legal requirements
+* Service discontinuation
+* Product changes
+________________
+
+
+42. INTERNATIONAL PROCESSING
+Subprocessors may process information in countries outside the Customer's home jurisdiction.
+Where applicable law requires a transfer mechanism, Husky Solutions LLC will use an appropriate mechanism.
+________________
+
+
+43. INTERNATIONAL TRANSFER SAFEGUARDS
+Transfer mechanisms may include:
+* Adequacy decisions
+* Standard Contractual Clauses
+* UK transfer mechanisms
+* Other legally recognized safeguards
+where applicable.
+________________
+
+
+44. GOVERNMENT ACCESS
+Third-party providers may receive governmental or legal requests concerning information they hold.
+Such providers are responsible for responding under applicable law and their contracts.
+Where Husky Solutions LLC receives a governmental request directly, the Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy applies.
+________________
+
+
+45. THIRD-PARTY SECURITY INCIDENTS
+If a third-party provider experiences a Security Incident affecting Husky Solutions LLC information, Husky Solutions LLC may:
+* Investigate
+* Request information
+* Rotate credentials
+* Restrict access
+* Suspend an integration
+* Migrate providers
+* Notify affected Customers
+* Provide legally required notices
+________________
+
+
+46. SUBPROCESSOR SECURITY INCIDENTS
+Where a Subprocessor Security Incident affects Customer Personal Data, Husky Solutions LLC will handle Customer notification according to:
+* Applicable law
+* Data Processing Addendum
+* Applicable Customer agreement
+________________
+
+
+47. PROVIDER SECURITY REVIEW
+Husky Solutions LLC may periodically evaluate significant providers based on factors such as:
+* Security posture
+* Incident history
+* Contractual safeguards
+* Certifications
+* Product importance
+* Information sensitivity
+________________
+
+
+48. NO GUARANTEE OF THIRD-PARTY SECURITY
+Even reputable providers may experience:
+* Cyberattacks
+* Vulnerabilities
+* Outages
+* Data breaches
+Husky Solutions LLC cannot guarantee that an unrelated provider will never experience a security incident.
+________________
+
+
+49. PROVIDER ACCESS CONTROL
+Where appropriate, Husky Solutions LLC may seek to restrict provider access according to:
+* Role
+* Purpose
+* Service
+* Contract
+________________
+
+
+50. THIRD-PARTY EMPLOYEES
+Personnel of a provider may access information where reasonably necessary to provide the relevant service and permitted by applicable contractual terms.
+________________
+
+
+51. CONFIDENTIALITY
+Subprocessors handling non-public Customer Personal Data may be subject to appropriate confidentiality obligations.
+________________
+
+
+52. DATA MINIMIZATION
+Husky Solutions LLC seeks to provide third parties only the information reasonably necessary for their role where feasible.
+________________
+
+
+53. PAYMENT DATA MINIMIZATION
+Husky Solutions LLC generally seeks to minimize its direct handling of complete payment-card credentials by relying on specialized payment processors.
+________________
+
+
+54. LOCATION DATA MINIMIZATION
+Where precise location is processed by a provider, Husky Solutions LLC intends to limit processing to legitimate disclosed purposes.
+For security geolocation, retention and access restrictions may be applied as described in the Security and Data Retention Policies.
+________________
+
+
+55. BIOMETRIC PROVIDERS
+If Husky Solutions LLC uses a provider that directly processes biometric information, Husky Solutions LLC may require additional contractual and security protections.
+The Husky Solutions LLC Biometric Information & Authentication Policy also applies.
+________________
+
+
+56. AUTHENTICATION PROVIDER OUTAGE
+If an authentication provider becomes unavailable, users may temporarily be unable to:
+* Log in
+* Verify identity
+* Complete MFA
+* Use passkeys
+where the Service depends on that provider.
+Husky Solutions LLC may implement alternative authentication methods where available.
+________________
+
+
+57. PAYMENT PROVIDER OUTAGE
+A payment-provider outage may affect:
+* Purchases
+* Renewals
+* Refunds
+* Billing portal access
+Husky Solutions LLC may delay billing actions until the provider resumes service where appropriate.
+________________
+
+
+58. EMAIL PROVIDER OUTAGE
+An email-provider outage may delay:
+* Verification emails
+* Password resets
+* Billing notices
+* Security alerts
+* Support communications
+________________
+
+
+59. DNS OR DOMAIN OUTAGE
+A domain or DNS provider outage may temporarily affect website availability even where Husky Solutions LLC application infrastructure remains operational.
+________________
+
+
+60. CLOUD OUTAGE
+A significant cloud-provider outage may affect one or more Husky Solutions LLC Services.
+The Husky Solutions LLC Service Level & Support Policy governs general outage practices.
+________________
+
+
+61. BUSINESS CONTINUITY
+For significant providers, Husky Solutions LLC may consider:
+* Backup options
+* Alternative providers
+* Data exports
+* Recovery plans
+* Migration options
+where commercially appropriate.
+________________
+
+
+62. PROVIDER LOCK-IN
+Certain third-party services may make migration technically difficult.
+Husky Solutions LLC does not guarantee immediate migration from every provider.
+________________
+
+
+63. PROVIDER CHANGES
+Husky Solutions LLC may replace a provider when necessary because of:
+* Pricing
+* Performance
+* Security
+* Reliability
+* Legal requirements
+* Product strategy
+________________
+
+
+64. DATA MIGRATION
+When replacing a provider, Husky Solutions LLC may:
+* Export data
+* Transfer data
+* Reconfigure systems
+* Delete data from the prior provider
+according to applicable contracts and law.
+________________
+
+
+65. PROVIDER DATA DELETION
+When a provider relationship ends, Husky Solutions LLC may request:
+* Deletion
+* Return
+* Migration
+of applicable information where contractually and technically supported.
+________________
+
+
+66. PROVIDER BACKUPS
+A former provider may temporarily retain data in backups according to its backup and deletion schedule.
+Husky Solutions LLC may require applicable backup protections where appropriate.
+________________
+
+
+67. CUSTOMER-CONNECTED THIRD PARTIES
+A third-party service connected directly by the Customer may not be a Husky Solutions LLC Subprocessor.
+For example, if a Customer independently connects its own external service, that third party may process Customer data directly under the Customer's relationship with that provider.
+________________
+
+
+68. CUSTOMER-INSTALLED INTEGRATIONS
+Customers are responsible for reviewing third-party applications they install or authorize.
+Husky Solutions LLC is not responsible for an external application's independent use of information after the Customer intentionally grants access.
+________________
+
+
+69. REVOCATION OF INTEGRATIONS
+Where supported, Customers should revoke third-party access when:
+* The integration is no longer used
+* A provider is compromised
+* An employee leaves
+* Access is no longer required
+________________
+
+
+70. INTEGRATION TOKENS
+Tokens or credentials used for integrations should be protected.
+Compromise should be reported and credentials rotated where appropriate.
+________________
+
+
+71. API DEVELOPERS
+Third-party developers integrating through Husky Solutions LLC APIs are subject to the Husky Solutions LLC API & Developer Terms.
+________________
+
+
+72. THIRD-PARTY DEVELOPER RESPONSIBILITY
+Husky Solutions LLC does not automatically control how an independent Developer Application uses information after a Customer authorizes it.
+Developers remain responsible for their own legal obligations.
+________________
+
+
+73. MARKETPLACE SERVICES
+If Husky Solutions LLC offers or participates in a third-party marketplace, marketplace operators may independently control:
+* Payments
+* Delivery
+* Refund procedures
+* Accounts
+* Licensing
+depending on the platform.
+________________
+
+
+74. FIVEM MARKETPLACE TRANSACTIONS
+FiveM resources purchased through a third-party marketplace may also be subject to that marketplace's:
+* License
+* Delivery
+* Payment
+* Refund
+* Account
+rules.
+________________
+
+
+75. CUSTOMER SUPPORT THROUGH THIRD-PARTY PLATFORMS
+Husky Solutions LLC may use third-party platforms for customer support.
+Sensitive information should not be unnecessarily submitted through a public or shared support environment.
+________________
+
+
+76. DO NOT SHARE PASSWORDS
+Customers should not provide complete passwords, one-time login codes, session tokens, or full card information to third-party support platforms unless an authorized secure flow expressly requires it.
+________________
+
+
+77. EMBEDDED CONTENT
+Husky Solutions LLC websites may embed:
+* Videos
+* Forms
+* Maps
+* Payment interfaces
+* Widgets
+* Social content
+from third parties.
+These providers may independently process information when the embedded content loads or is used.
+________________
+
+
+78. COOKIE AND TRACKING TECHNOLOGIES
+Third-party services may place cookies or similar technologies.
+Such technologies are addressed in the Husky Solutions LLC Cookie Policy.
+________________
+
+
+79. OPTIONAL THIRD-PARTY TRACKING
+Where a third-party analytics or advertising technology is optional and applicable law requires consent, Husky Solutions LLC will seek to provide appropriate cookie or privacy controls.
+________________
+
+
+80. CUSTOMER WEBSITES
+Husky Suite customers may add their own third-party integrations to websites they create.
+The Customer is responsible for:
+* Selecting those services
+* Providing appropriate disclosures
+* Obtaining required consent
+* Ensuring lawful use
+________________
+
+
+81. CUSTOMER WEBSITE SUBPROCESSORS
+A third party selected independently by a Husky Suite Customer does not automatically become a Husky Solutions LLC Subprocessor.
+It may instead be the Customer's own vendor.
+________________
+
+
+82. NO ENDORSEMENT
+Reference to, integration with, or technical support for a third-party service does not necessarily mean Husky Solutions LLC:
+* Endorses the provider
+* Guarantees the provider
+* Controls the provider
+* Is affiliated with the provider
+________________
+
+
+83. THIRD-PARTY TRADEMARKS
+Names, logos, and marks belonging to third parties remain the property of their respective owners.
+________________
+
+
+84. THIRD-PARTY TERMS
+Use of a third-party service may require acceptance of separate terms.
+You are responsible for reviewing applicable third-party terms.
+________________
+
+
+85. THIRD-PARTY PRIVACY
+Information provided directly to an unrelated third-party service may be governed by that third party's privacy policy.
+________________
+
+
+86. THIRD-PARTY REFUNDS
+If a third-party provider directly charges a Customer, refund rights may be governed by that provider's terms.
+Husky Solutions LLC cannot necessarily issue refunds for charges collected and controlled exclusively by another provider.
+________________
+
+
+87. PROVIDER TERMINATION
+A third-party provider may terminate or restrict a Customer independently.
+Husky Solutions LLC may not be able to reverse such action.
+________________
+
+
+88. CONTENT MODERATION BY THIRD PARTIES
+External platforms may independently moderate:
+* Accounts
+* Content
+* Communities
+* Servers
+according to their rules.
+________________
+
+
+89. NO GUARANTEE OF CONTINUED THIRD-PARTY ACCESS
+Husky Solutions LLC cannot guarantee continued access to an unrelated platform.
+________________
+
+
+90. CUSTOMER DATA EXPORT
+Customers should export critical information from third-party integrations where appropriate.
+________________
+
+
+91. DUE DILIGENCE
+Organizations with significant:
+* Security
+* Privacy
+* Regulatory
+* Availability
+requirements should review relevant Subprocessor and provider information before deploying Husky Solutions LLC Services.
+________________
+
+
+92. ENTERPRISE REQUIREMENTS
+Enterprise Customers requiring specific restrictions concerning:
+* Approved Subprocessors
+* Data residency
+* Vendor security
+* International transfers
+* Notification periods
+should address those requirements in an applicable signed agreement.
+________________
+
+
+93. SUBPROCESSOR OBJECTION DOES NOT AUTOMATICALLY REMOVE A PROVIDER
+Where a Customer raises an objection, Husky Solutions LLC may evaluate commercially reasonable alternatives.
+We are not required to remove an essential provider solely because one Customer objects, except where applicable law or contract requires another result.
+________________
+
+
+94. SECURITY INCIDENT NOTIFICATION
+Subprocessor-related incident notifications will be made according to applicable:
+* Law
+* Data Processing Addendum
+* Enterprise agreement
+where notification is required.
+________________
+
+
+95. TRANSPARENCY
+Husky Solutions LLC intends to maintain reasonable transparency regarding material Subprocessors used to process Customer Personal Data.
+________________
+
+
+96. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Policy as:
+* Providers change
+* Products change
+* Infrastructure changes
+* Privacy law changes
+* Business operations change
+The “Last Updated” date identifies the current version.
+________________
+
+
+97. RELATIONSHIP TO OTHER POLICIES
+This Policy should be read together with:
+* Husky Solutions LLC Privacy Policy
+* Data Processing Addendum
+* Terms of Service
+* Security Policy
+* Cookie Policy
+* API & Developer Terms
+* Data Retention & Deletion Policy
+* Biometric Information & Authentication Policy
+* Government, Law Enforcement & Legal Requests Policy
+* Applicable enterprise agreements
+________________
+
+
+98. CONFLICT
+Where a signed Enterprise Agreement or negotiated DPA contains different Subprocessor terms, the signed agreement controls within its scope.
+________________
+
+
+99. CONTACT INFORMATION
+Questions regarding third-party providers or Subprocessors may be directed to:
+Husky Solutions LLC
+Privacy & Vendor Management
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Privacy Email:
+[PRIVACY EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Subprocessor List:
+[SUBPROCESSOR URL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+100. EFFECTIVE DATE
+This Third-Party Services & Subprocessor Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

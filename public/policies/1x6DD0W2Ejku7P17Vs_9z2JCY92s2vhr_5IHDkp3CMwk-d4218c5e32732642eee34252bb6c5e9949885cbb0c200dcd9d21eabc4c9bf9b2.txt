@@ -1,0 +1,807 @@
+HUSKY SOLUTIONS LLC
+ACCEPTABLE USE POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Acceptable Use Policy (“AUP”) governs use of the websites, applications, software, platforms, hosting infrastructure, APIs, integrations, digital products, and other services provided by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This AUP applies to all users of Husky Solutions LLC Services, including users of:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Website and hosting services
+* APIs
+* Customer portals
+* Organization accounts
+* Graphics and creative services
+* FiveM-related products and services
+* Digital products
+* Future Husky Solutions LLC products and platforms
+This AUP forms part of the Husky Solutions LLC Terms of Service.
+By accessing or using the Services, you agree to comply with this AUP.
+________________
+
+
+1. GENERAL REQUIREMENT
+You may use Husky Solutions LLC Services only for lawful, authorized, and legitimate purposes.
+You are responsible for ensuring that your use of the Services complies with:
+* Applicable laws
+* Regulations
+* Court orders
+* Contractual obligations
+* Third-party rights
+* Industry requirements applicable to you
+* Husky Solutions LLC policies
+The ability of a Service to technically perform an action does not mean that the action is permitted.
+________________
+
+
+2. ILLEGAL ACTIVITY
+You may not use the Services to commit, facilitate, promote, coordinate, or knowingly assist unlawful activity.
+Prohibited activity includes, without limitation:
+* Fraud
+* Theft
+* Identity theft
+* Extortion
+* Blackmail
+* Money laundering
+* Phishing
+* Unauthorized computer access
+* Illegal surveillance
+* Unlawful distribution of personal information
+* Trafficking in stolen information
+* Counterfeiting
+* Criminal impersonation
+* Illegal exploitation
+* Other conduct prohibited by applicable law
+________________
+
+
+3. FRAUD AND DECEPTION
+You may not use the Services to deceive another person for financial, personal, commercial, or other unlawful gain.
+You may not:
+* Create fraudulent accounts
+* Submit false payment information
+* Conduct phishing campaigns
+* Generate fake login pages
+* Steal credentials
+* Create deceptive invoices
+* Misrepresent transactions
+* Falsify business records
+* Falsify government records
+* Create deceptive official documents
+* Impersonate another person or organization
+* Misrepresent affiliation with Husky Solutions LLC
+________________
+
+
+4. UNAUTHORIZED ACCESS
+You may not attempt to access systems, accounts, databases, networks, applications, files, or information without authorization.
+This prohibition includes:
+* Credential stuffing
+* Password attacks
+* Brute-force attacks
+* Session hijacking
+* Authentication bypass
+* Privilege escalation
+* Unauthorized API access
+* Access-control bypass
+* Exploitation of vulnerabilities
+* Accessing another customer's information
+* Accessing organization data outside your assigned permissions
+The existence of a URL, endpoint, API, server, database field, or technical method of access does not constitute authorization.
+________________
+
+
+5. MALWARE AND MALICIOUS CODE
+You may not use Husky Solutions LLC Services to develop, host, transmit, distribute, deploy, or knowingly facilitate malicious software.
+Prohibited material includes:
+* Malware
+* Ransomware
+* Credential stealers
+* Keyloggers
+* Destructive code
+* Botnets
+* Backdoors
+* Unauthorized remote-access tools
+* Malicious browser extensions
+* Viruses
+* Worms
+* Trojans
+* Cryptojacking software
+* Software designed to compromise another system
+Legitimate cybersecurity tools may be permitted when used exclusively on systems you own or are expressly authorized to test.
+________________
+
+
+6. DENIAL OF SERVICE AND DISRUPTION
+You may not intentionally interfere with the availability, integrity, performance, or operation of Husky Solutions LLC Services or another person's systems.
+Prohibited conduct includes:
+* Denial-of-service attacks
+* Distributed denial-of-service attacks
+* Traffic flooding
+* Resource exhaustion
+* Intentional server overload
+* Database exhaustion
+* API abuse
+* Excessive automated requests
+* Deliberate service degradation
+________________
+
+
+7. SECURITY TESTING
+You may not conduct security testing against Husky Solutions LLC infrastructure without authorization.
+This includes:
+* Penetration testing
+* Vulnerability scanning
+* Port scanning
+* Exploit testing
+* Authentication testing
+* Password testing
+* Load testing
+* Denial-of-service testing
+* Automated security scanning
+If Husky Solutions LLC publishes a Vulnerability Disclosure Policy or Security Research Policy, good-faith researchers must comply with that policy.
+Potential vulnerabilities should be reported to:
+[SECURITY EMAIL]
+________________
+
+
+8. RATE LIMIT AND SECURITY CIRCUMVENTION
+You may not attempt to circumvent:
+* Rate limits
+* Access controls
+* Usage limits
+* Subscription limitations
+* API limits
+* Download limits
+* Licensing controls
+* Security protections
+* Authentication systems
+* Account restrictions
+* Billing restrictions
+You may not create multiple accounts for the primary purpose of avoiding restrictions imposed on another account.
+________________
+
+
+9. ACCOUNT ABUSE
+You may not:
+* Sell accounts without authorization
+* Rent accounts
+* Transfer accounts in violation of Service rules
+* Share credentials with unauthorized persons
+* Create accounts using stolen information
+* Use another person's account without permission
+* Maintain accounts primarily to evade enforcement
+* Create fraudulent organization accounts
+Husky Solutions LLC may require account verification where reasonably necessary.
+________________
+
+
+10. IMPERSONATION
+You may not falsely impersonate:
+* Another individual
+* A business
+* Husky Solutions LLC
+* A Husky Solutions LLC employee
+* A government agency
+* A police officer
+* A dispatcher
+* A firefighter
+* Emergency medical personnel
+* A court
+* A public official
+* Another organization
+This does not prohibit clearly fictional, entertainment, simulation, or roleplay uses where no reasonable person would believe the representation is real and where the activity is otherwise lawful.
+________________
+
+
+11. HUSKYCAD AND PUBLIC-SAFETY IMPERSONATION
+HuskyCAD may contain interfaces or functions resembling public-safety systems.
+You must not use HuskyCAD to:
+* Misrepresent yourself as an actual law-enforcement officer
+* Misrepresent yourself as an actual dispatcher
+* Misrepresent yourself as a government employee
+* Create fraudulent criminal-history records
+* Create fraudulent warrants for real-world use
+* Create false government credentials
+* Mislead another person into believing HuskyCAD is an actual NCIC connection
+* Mislead another person into believing HuskyCAD is an official government database
+* Obtain real restricted government data without authorization
+Simulation and roleplay use is permitted when lawful and clearly distinguishable from official government activity.
+________________
+
+
+12. GOVERNMENT SYSTEMS AND DATA
+You may not use the Services to obtain unauthorized access to:
+* NCIC
+* CJIS systems
+* DMV databases
+* Criminal-history databases
+* Government communications systems
+* Police databases
+* Court databases
+* Restricted government networks
+* Classified systems
+You may not upload actual restricted government information unless Husky Solutions LLC has expressly approved the use in writing and the applicable legal and technical requirements have been satisfied.
+________________
+
+
+13. EMERGENCY AND LIFE-SAFETY USE
+Unless Husky Solutions LLC expressly agrees otherwise in writing, you may not rely upon a standard Husky Solutions Service as the sole system for:
+* Emergency dispatch
+* 911 communications
+* Fire dispatch
+* Emergency medical dispatch
+* Police dispatch
+* Life-safety decisions
+* Critical emergency notifications
+* Critical infrastructure control
+Simulation or training uses may be permitted where clearly identified as such.
+________________
+
+
+14. HARASSMENT AND THREATS
+You may not use the Services to unlawfully:
+* Harass
+* Threaten
+* Stalk
+* Intimidate
+* Extort
+* Blackmail
+* Target
+* Abuse
+another person.
+You may not use the Services to coordinate credible threats of violence or unlawful harm.
+________________
+
+
+15. HATE-BASED UNLAWFUL CONDUCT
+You may not use the Services to unlawfully threaten, target, or facilitate violence against individuals or groups based on protected characteristics.
+This section does not prohibit lawful discussion, documentation, research, reporting, education, or historical content.
+________________
+
+
+16. CHILD SAFETY
+Husky Solutions LLC has zero tolerance for the sexual exploitation or abuse of minors.
+You may not use the Services to create, upload, store, transmit, distribute, request, solicit, advertise, promote, or facilitate:
+* Child sexual abuse material
+* Sexual exploitation of minors
+* Grooming
+* Sexual solicitation of minors
+* Sex trafficking involving minors
+* Content sexualizing children in violation of law
+Husky Solutions LLC may remove such material, preserve relevant information, suspend or terminate accounts, and report suspected violations to appropriate authorities when required by law.
+________________
+
+
+17. NON-CONSENSUAL INTIMATE CONTENT
+You may not use the Services to upload, distribute, publish, threaten to publish, or facilitate unlawful non-consensual intimate imagery.
+This includes intimate material distributed without legally required permission.
+________________
+
+
+18. PRIVACY VIOLATIONS
+You may not use Husky Solutions LLC Services to unlawfully collect, publish, access, disclose, or process another person's private information.
+Prohibited conduct may include:
+* Doxxing
+* Unauthorized surveillance
+* Unlawful interception
+* Publishing restricted personal information
+* Accessing private records without authorization
+* Obtaining credentials without permission
+* Tracking individuals unlawfully
+* Processing sensitive information without required authorization
+________________
+
+
+19. PERSONAL DATA
+If you use the Services to process personal information, you are responsible for obtaining all legally required:
+* Notices
+* Consents
+* Authorizations
+* Permissions
+* Agreements
+You must not use Husky Solutions LLC Services to evade applicable privacy or data-protection laws.
+________________
+
+
+20. BIOMETRIC INFORMATION
+If you use biometric or identity-verification functionality, you are responsible for determining whether applicable law requires:
+* Notice
+* Consent
+* Written authorization
+* Retention schedules
+* Deletion policies
+* Employee notice
+* Additional contractual protections
+You must not use Husky Solutions LLC Services to collect biometric information unlawfully.
+________________
+
+
+21. WORKFORCE AND EMPLOYEE DATA
+Organizations using PunchPal or another workforce-related Service must use employee information lawfully.
+You may not use the Services to:
+* Falsify time records
+* Intentionally manipulate payroll records unlawfully
+* Conceal legally required wage information
+* Falsify attendance records
+* Create fraudulent disciplinary records
+* Unlawfully monitor employees
+* Retaliate against employees for exercising legally protected rights
+Husky Solutions LLC does not determine whether a customer's employment policies comply with applicable law.
+________________
+
+
+22. HEALTH INFORMATION
+Unless expressly authorized by Husky Solutions LLC in a written agreement, the Services must not be used to store or process protected health information regulated by HIPAA.
+You must not assume that a standard Husky Solutions Service is HIPAA-compliant merely because a field can technically store health-related information.
+________________
+
+
+23. PAYMENT INFORMATION
+You must not use Husky Solutions LLC Services to store complete payment-card data unless the applicable Service has been specifically designed and approved for that purpose.
+You must not intentionally store:
+* Full credit-card numbers
+* Full debit-card numbers
+* Card security codes
+* PINs
+in ordinary text fields, notes, documents, or databases not intended for payment-card processing.
+________________
+
+
+24. HIGHLY SENSITIVE CREDENTIALS
+You may not knowingly store or distribute credentials you are not authorized to possess.
+This includes:
+* Stolen passwords
+* Stolen API keys
+* Stolen session cookies
+* Stolen authentication tokens
+* Government login credentials
+* Financial-account credentials
+________________
+
+
+25. INTELLECTUAL PROPERTY
+You may not use the Services to knowingly infringe:
+* Copyrights
+* Trademarks
+* Patents
+* Trade secrets
+* Publicity rights
+* Other intellectual-property rights
+Users uploading content are responsible for obtaining necessary rights and permissions.
+Copyright complaints may be handled under the Husky Solutions LLC Copyright and DMCA Policy.
+________________
+
+
+26. GRAPHICS AND CUSTOMER-PROVIDED ASSETS
+Customers requesting graphic, branding, website, broadcast, or creative work must have appropriate rights to materials they provide.
+This may include:
+* Logos
+* Team marks
+* League marks
+* Player photographs
+* Music
+* Video
+* Fonts
+* Brand graphics
+* Game assets
+* Third-party artwork
+Husky Solutions LLC's ability to technically edit or incorporate an asset does not constitute a determination that the customer has legal permission to use it.
+________________
+
+
+27. FIVEM AND GAMING CONTENT
+Users of FiveM-related or gaming Services are responsible for complying with applicable:
+* Platform terms
+* Game licenses
+* Publisher rules
+* Server rules
+* Copyright requirements
+* Trademark requirements
+You may not use Husky Solutions LLC Services to intentionally distribute pirated game content or other material you do not have the right to distribute.
+________________
+
+
+28. SPAM
+You may not use Husky Solutions LLC Services to send unlawful or abusive unsolicited communications.
+This includes:
+* Bulk spam
+* Phishing emails
+* Deceptive marketing
+* Unlawful automated messages
+* Fraudulent advertisements
+Where marketing communications are permitted, you are responsible for complying with applicable consent, identification, and opt-out requirements.
+________________
+
+
+29. EMAIL AND MESSAGE ABUSE
+You may not use Husky Solutions LLC infrastructure to:
+* Spoof sender identities unlawfully
+* Distribute malware
+* Conduct phishing
+* Evade spam protections
+* Harvest email addresses unlawfully
+* Send abusive bulk communications
+________________
+
+
+30. SCRAPING
+Automated collection of publicly accessible information may be restricted when it:
+* Violates law
+* Circumvents authentication
+* Circumvents technical restrictions
+* Extracts protected customer information
+* Materially burdens infrastructure
+* Copies substantial proprietary databases
+* Violates intellectual-property rights
+Husky Solutions LLC may use technical controls to restrict automated access.
+________________
+
+
+31. DATA MINING
+You may not systematically extract or reconstruct proprietary Husky Solutions LLC:
+* Databases
+* Customer lists
+* Pricing databases
+* Internal documentation
+* Source code
+* Private API information
+* Non-public data sets
+without authorization.
+________________
+
+
+32. REVERSE ENGINEERING
+Except where applicable law expressly prohibits such a restriction, you may not:
+* Reverse engineer
+* Decompile
+* Disassemble
+* Decode
+* Circumvent
+* Derive source code from
+Husky Solutions LLC proprietary software without written authorization.
+________________
+
+
+33. COMPETITIVE MISUSE
+You may not use unauthorized automated methods to substantially reproduce or clone:
+* Husky Solutions LLC proprietary interfaces
+* Private databases
+* Proprietary documentation
+* Software
+* Internal workflows
+* Protected design systems
+for the purpose of creating an unauthorized competing copy.
+Nothing in this provision restricts lawful competition or independently developed products.
+________________
+
+
+34. RESALE
+You may not:
+* Resell
+* Rent
+* Lease
+* White-label
+* Sublicense
+* Redistribute
+a Husky Solutions LLC Service unless your plan or written agreement expressly permits such activity.
+________________
+
+
+35. API USE
+If you access a Husky Solutions LLC API, you must:
+* Use valid credentials
+* Protect API keys
+* Follow documentation
+* Observe rate limits
+* Access only authorized information
+* Maintain reasonable security
+* Stop using credentials when authorization ends
+You may not:
+* Share API credentials publicly
+* Circumvent rate limits
+* Access unauthorized records
+* Intentionally overwhelm endpoints
+* Reverse engineer private APIs
+* Use an API for prohibited conduct
+________________
+
+
+36. HOSTING AND WEBSITE CONTENT
+Users of website-building or hosting Services may not knowingly host material that:
+* Violates applicable law
+* Contains malware
+* Facilitates phishing
+* Infringes intellectual-property rights
+* Facilitates fraud
+* Exploits minors
+* Violates privacy rights
+* Attempts unauthorized access to other systems
+Husky Solutions LLC may restrict or remove content when reasonably necessary.
+________________
+
+
+37. DOMAIN NAMES
+You may not use Services to register, configure, or operate domain names primarily for:
+* Phishing
+* Fraud
+* Trademark impersonation
+* Credential theft
+* Malware distribution
+* Other unlawful activity
+________________
+
+
+38. MISLEADING USE OF HUSKY SOLUTIONS BRANDING
+You may not falsely suggest that:
+* Husky Solutions LLC endorses you
+* Husky Solutions LLC operates your organization
+* You are an employee of Husky Solutions LLC
+* Your product is an official Husky Solutions LLC product
+* Husky Solutions LLC guarantees your service
+unless expressly authorized in writing.
+________________
+
+
+39. PLATFORM MANIPULATION
+You may not manipulate Husky Solutions LLC systems for the purpose of obtaining benefits you are not entitled to receive.
+This includes:
+* Creating duplicate accounts to obtain repeated trials
+* Manipulating referral programs
+* Faking usage
+* Circumventing plan limits
+* Exploiting billing errors
+* Abusing promotional credits
+* Misrepresenting organization size
+________________
+
+
+40. FRAUDULENT CHARGEBACKS
+You must not intentionally initiate a fraudulent chargeback for a valid charge.
+Nothing in this section prevents you from disputing a genuinely unauthorized or incorrect transaction with your financial institution.
+________________
+
+
+41. FREE TRIAL ABUSE
+If Husky Solutions LLC offers a free trial, you may not create multiple accounts primarily to repeatedly obtain trial access after your authorized trial expires.
+________________
+
+
+42. RESOURCE ABUSE
+You may not use the Services in a way that unreasonably consumes infrastructure resources or harms other users.
+Examples may include:
+* Extreme automated traffic
+* Excessive API calls
+* Storage abuse
+* Unapproved cryptocurrency mining
+* Bandwidth abuse
+* Automated account creation
+* Resource exhaustion
+Husky Solutions LLC may impose reasonable technical limits.
+________________
+
+
+43. MISUSE OF SUPPORT
+You may not use support channels to:
+* Threaten staff
+* Harass staff
+* Submit malicious files
+* Conduct social engineering
+* Obtain another customer's information
+* Fraudulently obtain account access
+Husky Solutions LLC may restrict access to support channels when they are abused.
+________________
+
+
+44. SOCIAL ENGINEERING
+You may not use the Services to facilitate social engineering intended to obtain unauthorized:
+* Passwords
+* Authentication codes
+* Recovery codes
+* Financial information
+* Private records
+* Account access
+* Confidential information
+________________
+
+
+45. FALSE EMERGENCY REPORTS
+You may not use Husky Solutions LLC Services to knowingly make or facilitate false real-world emergency reports.
+This includes false reports intended to cause:
+* Police response
+* SWAT response
+* Fire response
+* Emergency medical response
+Lawful fictional roleplay clearly confined to a game or simulation environment is not prohibited by this section.
+________________
+
+
+46. REAL-WORLD LAW-ENFORCEMENT MISUSE
+A user may not use HuskyCAD, graphics, websites, or other Services to create deceptive materials intended to convince a real person that the user possesses actual law-enforcement authority when they do not.
+This restriction does not prohibit:
+* Fiction
+* Entertainment
+* Roleplay
+* Training
+* Game servers
+* Clearly marked simulations
+where lawful.
+________________
+
+
+47. USER-GENERATED CONTENT
+You are responsible for content you create, upload, publish, or distribute.
+Husky Solutions LLC does not necessarily review or approve all user-generated content before publication.
+The availability of user content through a Husky Solutions LLC Service does not mean Husky Solutions LLC endorses that content.
+________________
+
+
+48. CONTENT REMOVAL
+Husky Solutions LLC may remove, disable, restrict, quarantine, or preserve content when reasonably necessary to:
+* Enforce this AUP
+* Comply with law
+* Protect security
+* Respond to valid intellectual-property complaints
+* Protect other users
+* Prevent fraud
+* Prevent harm
+* Investigate abuse
+________________
+
+
+49. INVESTIGATIONS
+Husky Solutions LLC may investigate suspected violations of this AUP.
+Investigations may involve reviewing relevant:
+* Account information
+* Access logs
+* Security logs
+* Transaction information
+* Customer Content
+* Support records
+* Technical information
+in accordance with the Husky Solutions LLC Privacy Policy and applicable law.
+________________
+
+
+50. COOPERATION WITH AUTHORITIES
+Husky Solutions LLC may preserve or disclose information when required by valid legal process or applicable law.
+We may also cooperate with appropriate authorities in circumstances permitted or required by law.
+Husky Solutions LLC does not automatically disclose customer information merely because someone requests it.
+________________
+
+
+51. EMERGENCY DISCLOSURE
+Where permitted by law, Husky Solutions LLC may disclose relevant information when we reasonably believe disclosure is necessary to address an emergency involving an imminent risk of death, serious physical injury, or another emergency recognized by applicable law.
+________________
+
+
+52. ENFORCEMENT ACTIONS
+If Husky Solutions LLC determines that a user has violated this AUP, we may take action proportionate to the circumstances.
+Actions may include:
+* Warning the user
+* Requiring corrective action
+* Removing content
+* Restricting a feature
+* Resetting credentials
+* Blocking an API key
+* Restricting network traffic
+* Suspending an account
+* Terminating an account
+* Terminating a Service
+* Preserving evidence
+* Referring conduct to appropriate authorities where legally required or appropriate
+________________
+
+
+53. IMMEDIATE SUSPENSION
+Husky Solutions LLC may take immediate action without advance notice where reasonably necessary to address:
+* Active cyberattacks
+* Malware
+* Child exploitation
+* Fraud
+* Serious security threats
+* Account compromise
+* Illegal activity
+* Imminent harm
+* Significant infrastructure abuse
+________________
+
+
+54. REPEATED VIOLATIONS
+Repeated violations may result in progressively stronger enforcement, including permanent account termination.
+A user whose account is terminated for serious abuse may not create another account to evade enforcement without permission from Husky Solutions LLC.
+________________
+
+
+55. APPEALS
+Where appropriate, users may request review of an enforcement decision.
+Appeals may be submitted to:
+[ABUSE/LEGAL EMAIL]
+An appeal should include:
+* Account information
+* The enforcement action
+* Why you believe the decision was incorrect
+* Relevant supporting information
+Submitting an appeal does not automatically restore access.
+Husky Solutions LLC may decline repeated, abusive, fraudulent, or duplicative appeals.
+________________
+
+
+56. REPORTING ABUSE
+Suspected violations of this Acceptable Use Policy may be reported to:
+Husky Solutions LLC
+Abuse & Safety
+Email: [ABUSE EMAIL]
+For security vulnerabilities:
+[SECURITY EMAIL]
+For copyright complaints:
+[DMCA EMAIL]
+For general legal matters:
+[LEGAL EMAIL]
+________________
+
+
+57. GOOD-FAITH REPORTS
+Users should not knowingly submit false or malicious abuse reports.
+Husky Solutions LLC may investigate reports and determine what action, if any, is appropriate.
+Submitting a report does not guarantee a particular enforcement outcome.
+________________
+
+
+58. CHANGES TO THIS POLICY
+Husky Solutions LLC may modify this Acceptable Use Policy as our Services, risks, or legal obligations evolve.
+The “Last Updated” date identifies the most recent version.
+Material changes may be communicated through:
+* Website notices
+* Email
+* Account notifications
+* Application notices
+where appropriate or required by law.
+________________
+
+
+59. RELATIONSHIP TO OTHER TERMS
+This Acceptable Use Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Terms of Use
+* Husky Solutions LLC Privacy Policy
+* Subscription & Billing Policy
+* Refund & Cancellation Policy
+* Copyright and DMCA Policy
+* Security Policy
+* Product-specific terms
+* Applicable written customer agreements
+If a separately signed agreement imposes stricter acceptable-use requirements, those requirements also apply.
+________________
+
+
+60. GOVERNING LAW
+This Acceptable Use Policy is governed by the laws of the State of New York, subject to applicable non-waivable laws and the dispute provisions contained in the Husky Solutions LLC Terms of Service.
+________________
+
+
+61. CONTACT INFORMATION
+Questions regarding this Acceptable Use Policy may be directed to:
+Husky Solutions LLC
+Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Legal Email:
+[LEGAL EMAIL]
+Abuse Email:
+[ABUSE EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+62. EFFECTIVE DATE
+This Acceptable Use Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

@@ -12,10 +12,13 @@ const {validateWebsite}=await import(resolve(root,'site-store.mjs'));
 const {WebsiteView}=await import(resolve(root,'website-view.mjs'));
 const referenceTemplates=registeredTemplates.filter(t=>t.id!=='paradis-photo-booths');
 let combinations=0,pagesRendered=0;
-const {searchWebsite}=await import(resolve(root,'website-navigation.mjs'));
+const {searchWebsite,resolveWebsitePage}=await import(resolve(root,'website-navigation.mjs'));
 
 const allTemplates=[...referenceTemplates.map(t=>({id:t.id,site:referenceTemplate(t.id)})),... ['school','business','general'].map(id=>({id,site:template(id)}))];
-for(const template of allTemplates){const site=template.site;const legacy=JSON.stringify(site);validateWebsite(site);for(const page of site.pages){const html=renderToStaticMarkup(React.createElement(WebsiteView,{site,page}));assert.ok(html.includes(site.name));assert.ok(html.includes('Admin'));assert.ok(html.includes('admin-mobile'));assert.ok(html.includes('admin-desktop'));pagesRendered++;}
+for(const template of allTemplates){const site=template.site;
+ for(const page of site.pages.filter(p=>p.slug)){assert.equal(resolveWebsitePage(site,'/'+page.slug+'?preview=1#content')?.id,page.id,'root-relative preview link');assert.equal(resolveWebsitePage(site,'https://school.example/'+page.slug,'https://school.example')?.id,page.id,'same-site absolute preview link');}
+ assert.equal(resolveWebsitePage(site,'/'),site.pages[0]);for(const external of ['https://other.example/about','//other.example/about','mailto:hello@example.test','/media/photo','#section'])assert.equal(resolveWebsitePage(site,external,'https://school.example'),undefined);
+const legacy=JSON.stringify(site);validateWebsite(site);for(const page of site.pages){const html=renderToStaticMarkup(React.createElement(WebsiteView,{site,page}));assert.ok(html.includes(site.name));assert.ok(html.includes('Admin'));assert.ok(html.includes('admin-mobile'));assert.ok(html.includes('admin-desktop'));pagesRendered++;}
  for(const mode of ['dropdown','mega']){const configured={...site,navigationStyle:mode,megaMenuLayout:'featured',searchEnabled:true,socialLinks:'Instagram|https://www.instagram.com/'};validateWebsite(configured);const menu=renderToStaticMarkup(React.createElement(WebsiteView,{site:configured,page:configured.pages[0]}));assert.ok(menu.includes('Search this website'));assert.ok(menu.includes('https://www.instagram.com/'));if(site.pages.some(p=>p.parentId))assert.ok(menu.includes(mode==='mega'?'mega-introduction':' overview'));}
 renderToStaticMarkup(React.createElement(WebsiteView,{site,page:site.pages[0]}));assert.equal(JSON.stringify(site),legacy,'Legacy content must remain unchanged');
  site.logo='/demo-campus.webp';site.announcement='Suite announcement';site.headerBackground='#112233';site.footerLinks='Contact|contact';

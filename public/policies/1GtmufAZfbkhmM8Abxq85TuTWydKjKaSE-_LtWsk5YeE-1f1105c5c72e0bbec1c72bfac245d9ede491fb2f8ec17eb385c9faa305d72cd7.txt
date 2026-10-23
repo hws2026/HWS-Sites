@@ -1,0 +1,818 @@
+HUSKY SOLUTIONS LLC
+PRIVACY CHOICES & STATE-SPECIFIC RIGHTS NOTICE
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Privacy Choices & State-Specific Rights Notice (“Privacy Rights Notice”) explains how individuals may exercise privacy rights concerning personal information processed by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This Notice supplements the Husky Solutions LLC Privacy Policy.
+Depending on where you reside, applicable privacy law may provide rights concerning:
+* Access to personal information
+* Confirmation of processing
+* Correction
+* Deletion
+* Data portability
+* Sale or sharing of personal information
+* Targeted advertising
+* Profiling
+* Sensitive personal information
+* Consent
+* Appeals
+* Authorized agents
+* Universal opt-out preference signals
+* Non-discrimination
+Not every right described below applies to every individual or every type of information.
+Rights depend on applicable law, Husky Solutions LLC's legal obligations, the context in which the information is processed, and applicable exemptions.
+________________
+
+
+1. PRIVACY RIGHTS REQUESTS
+You may submit an applicable privacy request through:
+Privacy Request Portal:
+[PRIVACY REQUEST URL]
+Privacy Email:
+[PRIVACY EMAIL]
+Telephone:
+[PRIVACY PHONE NUMBER]
+Mail:
+Husky Solutions LLC
+Privacy Department
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+________________
+
+
+2. RIGHT TO CONFIRM PROCESSING
+Where applicable law provides this right, you may request confirmation of whether Husky Solutions LLC processes personal information concerning you.
+________________
+
+
+3. RIGHT TO ACCESS
+Where applicable, you may request access to personal information Husky Solutions LLC maintains about you.
+Depending on applicable law, this may include:
+* Categories of personal information
+* Specific pieces of personal information
+* Sources of information
+* Processing purposes
+* Categories of recipients
+* Other information required by law
+________________
+
+
+4. RIGHT TO KNOW
+Certain laws may provide a right to know information concerning Husky Solutions LLC's data practices.
+This may include:
+* Categories of personal information collected
+* Categories of sources
+* Business or commercial purposes
+* Categories of information disclosed
+* Categories of third parties receiving information
+* Categories of information sold or shared, if applicable
+________________
+
+
+5. RIGHT TO CORRECTION
+Where provided by applicable law, you may request correction of inaccurate personal information.
+Husky Solutions LLC may consider:
+* Nature of the information
+* Purpose for which it is processed
+* Evidence provided
+* Applicable legal obligations
+when evaluating a correction request.
+________________
+
+
+6. RIGHT TO DELETION
+Where applicable, you may request deletion of personal information concerning you.
+Deletion rights may be subject to exceptions.
+For example, Husky Solutions LLC may be permitted or required to retain information for purposes including:
+* Completing transactions
+* Providing requested Services
+* Security
+* Fraud prevention
+* Debugging
+* Legal compliance
+* Maintaining business records
+* Exercising legal rights
+* Defending legal claims
+* Fulfilling contractual obligations
+________________
+
+
+7. ACCOUNT DELETION
+Where account-deletion functionality is available, users may be able to initiate account deletion directly through account settings.
+Account deletion and privacy deletion are not necessarily identical processes.
+Certain information may remain under applicable legal or retention exceptions.
+________________
+
+
+8. RIGHT TO DATA PORTABILITY
+Where applicable, you may request a portable copy of certain personal information.
+Where technically feasible and legally required, information may be provided in a:
+* Structured
+* Commonly used
+* Machine-readable
+* Readily usable
+format.
+________________
+
+
+9. PORTABILITY LIMITATIONS
+Portability rights may not require Husky Solutions LLC to disclose information that would:
+* Reveal another person's information
+* Compromise security
+* Reveal protected trade secrets
+* Violate applicable law
+________________
+
+
+10. RIGHT TO OPT OUT OF SALE
+Where applicable law provides a right to opt out of the “sale” of personal information, you may exercise that right through:
+Your Privacy Choices:
+[PRIVACY CHOICES URL]
+or:
+[PRIVACY EMAIL]
+Husky Solutions LLC does not intend to sell personal information for monetary consideration as part of our ordinary business model.
+However, certain laws define “sale” more broadly.
+________________
+
+
+11. RIGHT TO OPT OUT OF SHARING
+Where applicable law provides a right to opt out of “sharing” personal information for cross-context behavioral advertising or similar activity, you may exercise that right through:
+[PRIVACY CHOICES URL]
+________________
+
+
+12. TARGETED ADVERTISING
+Certain state privacy laws allow consumers to opt out of processing personal data for targeted advertising.
+Where Husky Solutions LLC engages in covered targeted advertising and applicable law grants an opt-out right, we will provide an appropriate mechanism.
+________________
+
+
+13. PROFILING
+Certain jurisdictions provide consumers with rights to opt out of profiling performed in furtherance of decisions producing legal or similarly significant effects.
+Where Husky Solutions LLC engages in such covered profiling, eligible consumers may exercise the applicable right.
+________________
+
+
+14. SIGNIFICANT AUTOMATED DECISIONS
+Husky Solutions LLC does not intend to make legally significant decisions about ordinary consumers solely through automated processing unless the applicable product specifically provides such functionality and appropriate disclosures are made.
+Automated security measures such as:
+* Fraud detection
+* Login risk assessment
+* Spam detection
+* Temporary account locking
+do not necessarily constitute legally significant profiling.
+________________
+
+
+15. SENSITIVE PERSONAL INFORMATION
+Certain laws provide additional protections for sensitive personal information.
+Depending on applicable law, sensitive information may include:
+* Precise geolocation
+* Biometric information
+* Government identifiers
+* Certain financial information
+* Racial or ethnic information
+* Religious information
+* Health information
+* Sexual orientation information
+* Citizenship or immigration information
+* Information concerning children
+Husky Solutions LLC will process covered sensitive information according to applicable legal requirements.
+________________
+
+
+16. PRECISE GEOLOCATION
+Precise or close-pinpoint geolocation may receive heightened protection under applicable privacy laws.
+Husky Solutions LLC may process precise location for authorized purposes including:
+* Account security
+* Fraud prevention
+* Suspected breach investigation
+* Confirmed breach investigation
+* Other disclosed functionality
+Where consent or another specific legal basis is required, Husky Solutions LLC will seek to implement that requirement.
+________________
+
+
+17. SECURITY LOCATION DATA
+A request concerning precise location collected during a suspected security breach will be evaluated according to:
+* Applicable privacy law
+* Security requirements
+* Data retention obligations
+* Fraud prevention needs
+* Legal preservation requirements
+Deletion may be denied or delayed where retaining the information remains legally permitted and reasonably necessary for an active security investigation.
+________________
+
+
+18. BIOMETRIC INFORMATION
+Rights concerning biometric information are further described in the:
+Husky Solutions LLC Biometric Information & Authentication Policy.
+Where biometric information is directly collected, additional consent, retention, and deletion rights may apply.
+________________
+
+
+19. RIGHT TO LIMIT CERTAIN SENSITIVE INFORMATION USES
+Where applicable law gives consumers the right to limit certain uses or disclosures of sensitive personal information, Husky Solutions LLC will provide an applicable mechanism when required.
+If Husky Solutions LLC uses sensitive personal information only for purposes exempt from such limitation rights, a separate limitation mechanism may not be required.
+________________
+
+
+20. WITHDRAWAL OF CONSENT
+Where Husky Solutions LLC relies upon your consent for processing and applicable law allows withdrawal, you may withdraw that consent.
+Withdrawal applies prospectively and generally does not make prior lawful processing invalid.
+________________
+
+
+21. MARKETING CHOICES
+You may unsubscribe from eligible promotional email communications through:
+* The unsubscribe link in the communication; or
+* An applicable account preference.
+You may still receive necessary:
+* Security notices
+* Billing notices
+* Legal notices
+* Account communications
+* Transactional messages
+________________
+
+
+22. COOKIE CHOICES
+Where available, optional cookie preferences may be managed through:
+Cookie Settings
+or:
+Privacy Choices
+on the applicable website.
+Additional information appears in the Husky Solutions LLC Cookie Policy.
+________________
+
+
+23. UNIVERSAL OPT-OUT PREFERENCE SIGNALS
+Certain privacy laws require covered businesses to recognize qualifying browser or device-based universal opt-out preference signals.
+Where applicable law requires Husky Solutions LLC to recognize such a signal, we will process supported signals accordingly.
+________________
+
+
+24. GLOBAL PRIVACY CONTROL
+Global Privacy Control (“GPC”) is a browser-based privacy preference signal.
+Where applicable law requires recognition of GPC, Husky Solutions LLC will treat a valid supported signal as an applicable request to opt out of covered processing, such as:
+* Sale of personal information
+* Sharing of personal information
+* Targeted advertising
+to the extent required by the applicable jurisdiction.
+________________
+
+
+25. GPC IS GENERALLY DEVICE OR BROWSER SPECIFIC
+A GPC signal may apply to the browser or device transmitting the signal.
+If you use multiple:
+* Browsers
+* Devices
+* Profiles
+you may need to enable the signal separately.
+________________
+
+
+26. ACCOUNT-LEVEL OPT-OUTS
+Where technically feasible and required by law, Husky Solutions LLC may associate a recognized privacy preference with an authenticated account.
+The exact operation depends on:
+* Applicable law
+* Technology
+* Whether the user is logged in
+* Nature of the request
+________________
+
+
+27. DO NOT TRACK
+Traditional browser “Do Not Track” signals are distinct from legally recognized universal opt-out mechanisms.
+Because there is no universally applicable standard requiring a particular response to every traditional DNT signal, Husky Solutions LLC may not respond to traditional DNT signals unless required by law.
+________________
+
+
+28. NON-DISCRIMINATION
+Where applicable law provides this protection, Husky Solutions LLC will not unlawfully discriminate against you because you exercised a privacy right.
+For example, we will not unlawfully:
+* Deny Services
+* Charge a different price
+* Provide a different level of service
+solely because you exercised a protected privacy right.
+________________
+
+
+29. LEGALLY PERMITTED DIFFERENCES
+Privacy laws may permit certain:
+* Loyalty programs
+* Financial incentives
+* Service differences
+when applicable statutory requirements are satisfied.
+If Husky Solutions LLC introduces such a program, appropriate disclosures will be provided.
+________________
+
+
+30. REQUEST VERIFICATION
+Husky Solutions LLC may verify the identity of a person submitting a privacy request before providing, correcting, or deleting information.
+Verification helps prevent:
+* Identity theft
+* Fraudulent deletion
+* Unauthorized disclosure
+* Account takeover
+________________
+
+
+31. VERIFICATION METHODS
+Verification may involve:
+* Logged-in account confirmation
+* Email verification
+* Multifactor authentication
+* Matching information associated with the account
+* Additional identity verification where appropriate
+The level of verification may depend on:
+* Sensitivity of information
+* Nature of request
+* Risk of harm
+________________
+
+
+32. SENSITIVE REQUESTS
+Requests for particularly sensitive information may require stronger verification than ordinary requests.
+For example, a request seeking:
+* Precise location
+* Security records
+* Sensitive account information
+may require heightened verification.
+________________
+
+
+33. GOVERNMENT IDENTIFICATION
+Husky Solutions LLC does not intend to request government-issued identification for every privacy request.
+Government identification may be requested where:
+* Reasonably necessary
+* Proportionate
+* Legally permitted
+and another verification method is insufficient.
+________________
+
+
+34. INFORMATION USED FOR VERIFICATION
+Information collected solely to verify a privacy request will be used primarily for:
+* Request verification
+* Fraud prevention
+* Compliance documentation
+* Security
+and handled according to the Privacy Policy.
+________________
+
+
+35. AUTHORIZED AGENTS
+Certain laws permit an authorized agent to submit a privacy request on another person's behalf.
+Where applicable, Husky Solutions LLC may request:
+* Signed authorization
+* Evidence of agency
+* Power of attorney
+* Direct confirmation from the consumer
+* Other legally permitted verification
+________________
+
+
+36. AUTHORIZED AGENT SECURITY
+Husky Solutions LLC may independently verify the identity of the consumer even when a request is submitted by an authorized agent, except where applicable law provides otherwise.
+________________
+
+
+37. PARENT OR GUARDIAN REQUESTS
+A parent or legal guardian may submit a request concerning a minor where legally authorized.
+Husky Solutions LLC may require reasonable verification of:
+* Guardian identity
+* Relationship
+* Legal authority
+________________
+
+
+38. ORGANIZATION-MANAGED ACCOUNTS
+If your information exists within an account controlled by your:
+* Employer
+* Business
+* Agency
+* Organization
+you may need to direct the request to that Organization.
+Husky Solutions LLC may process such information as a service provider or processor on the Organization's behalf.
+________________
+
+
+39. EMPLOYMENT INFORMATION
+Certain state comprehensive privacy laws exclude or differently regulate information processed in an employment or job-applicant context.
+Rights described in this Notice therefore may not apply identically to employee information.
+Other employment, biometric, or privacy laws may nevertheless apply.
+________________
+
+
+40. PROCESSOR DATA
+Where Husky Solutions LLC processes information only on behalf of a Customer organization, we may refer your request to the applicable Customer.
+This is further addressed in the Husky Solutions LLC Data Processing Addendum.
+________________
+
+
+41. RESPONSE PERIOD
+Husky Solutions LLC will respond to verified privacy requests within the time required by applicable law.
+Many U.S. state privacy laws generally establish an initial period of approximately 45 days, subject to legally permitted extensions.
+The exact deadline depends on applicable law.
+________________
+
+
+42. EXTENSIONS
+Where legally permitted, Husky Solutions LLC may extend a response deadline because of:
+* Request complexity
+* Number of requests
+* Verification issues
+* Other legally recognized circumstances
+If an extension applies, required notice will be provided.
+________________
+
+
+43. FEES
+Husky Solutions LLC generally does not charge a fee for legitimate privacy requests.
+Where applicable law allows a fee for requests that are:
+* Manifestly unfounded
+* Excessive
+* Repetitive
+Husky Solutions LLC may charge a reasonable fee or decline the request as permitted by law.
+________________
+
+
+44. REQUEST FREQUENCY
+Certain privacy laws limit how frequently specific categories of requests must be fulfilled without charge.
+Husky Solutions LLC will apply applicable statutory limits.
+________________
+
+
+45. DENIED REQUESTS
+A privacy request may be denied or limited where:
+* Identity cannot be verified
+* The request concerns another person
+* A legal exception applies
+* Information must be retained by law
+* The request would compromise security
+* Husky Solutions LLC does not possess the information
+* Another statutory exemption applies
+Where required, Husky Solutions LLC will explain the basis for denial.
+________________
+
+
+46. APPEAL RIGHTS
+Certain state privacy laws provide a right to appeal a denial of a privacy request.
+Where applicable, Husky Solutions LLC will provide instructions for submitting an appeal.
+________________
+
+
+47. SUBMITTING AN APPEAL
+Privacy appeals may be submitted to:
+[PRIVACY APPEAL EMAIL OR URL]
+Include:
+* Original request reference
+* Decision being appealed
+* Reason you believe the decision should be reconsidered
+________________
+
+
+48. APPEAL REVIEW
+An appeal may be reviewed by personnel different from those who made the original decision where appropriate.
+Husky Solutions LLC will respond within the period required by applicable law.
+________________
+
+
+49. REGULATOR COMPLAINT INFORMATION
+Where required by applicable law, an unsuccessful appeal response may include information concerning how to contact the applicable state Attorney General or other privacy regulator.
+________________
+
+
+50. CALIFORNIA PRIVACY RIGHTS
+To the extent the California Consumer Privacy Act (“CCPA”), as amended, applies to Husky Solutions LLC and the relevant processing, California consumers may have rights including:
+* Right to know
+* Right to access
+* Right to deletion
+* Right to correction
+* Right to opt out of sale
+* Right to opt out of sharing
+* Right to limit certain uses and disclosures of sensitive personal information
+* Right to non-discrimination
+California consumers may also use a legally recognized opt-out preference signal such as GPC for applicable sale or sharing opt-outs.
+________________
+
+
+51. CALIFORNIA CATEGORIES
+Depending on your interaction with Husky Solutions LLC, categories of personal information processed may include:
+* Identifiers
+* Customer records information
+* Commercial information
+* Internet or electronic network activity
+* Approximate geolocation
+* Precise geolocation where authorized
+* Professional or employment-related information
+* Customer Content
+* Inferences
+* Sensitive personal information where applicable
+The Husky Solutions LLC Privacy Policy provides additional detail.
+________________
+
+
+52. CALIFORNIA SALE AND SHARING
+Husky Solutions LLC does not intend to sell personal information for monetary consideration.
+If Husky Solutions LLC engages in activity legally defined as a “sale” or “sharing” requiring an opt-out, California consumers may exercise that right through:
+[PRIVACY CHOICES URL]
+________________
+
+
+53. CALIFORNIA SENSITIVE PERSONAL INFORMATION
+If Husky Solutions LLC uses or discloses sensitive personal information beyond purposes that do not trigger the CCPA limitation right, an applicable limitation mechanism will be provided.
+________________
+
+
+54. COLORADO PRIVACY RIGHTS
+Where the Colorado Privacy Act (“CPA”) applies, eligible Colorado consumers may have rights including:
+* Access
+* Correction
+* Deletion
+* Data portability
+* Opt-out of sale
+* Opt-out of targeted advertising
+* Opt-out of certain profiling
+Colorado law also recognizes qualifying universal opt-out mechanisms.
+________________
+
+
+55. COLORADO GLOBAL PRIVACY CONTROL
+Where Husky Solutions LLC is subject to the applicable Colorado requirement, a recognized universal opt-out signal such as GPC will be processed for covered:
+* Sale
+* Targeted advertising
+opt-outs.
+________________
+
+
+56. CONNECTICUT PRIVACY RIGHTS
+Where the Connecticut Data Privacy Act (“CTDPA”) applies, eligible Connecticut consumers may have rights including:
+* Confirmation and access
+* Correction
+* Deletion
+* Portability
+* Information concerning certain third-party sales
+* Opt-out of sale
+* Opt-out of targeted advertising
+* Opt-out of certain profiling
+________________
+
+
+57. CONNECTICUT OPT-OUT SIGNALS
+Where applicable, Husky Solutions LLC will honor qualifying universal opt-out preference signals from Connecticut consumers for covered sale or targeted-advertising processing.
+________________
+
+
+58. VIRGINIA PRIVACY RIGHTS
+Where the Virginia Consumer Data Protection Act (“VCDPA”) applies, eligible Virginia consumers may have rights including:
+* Confirmation and access
+* Correction
+* Deletion
+* Portability
+* Opt-out of targeted advertising
+* Opt-out of sale
+* Opt-out of certain profiling
+An appeal right may also apply.
+________________
+
+
+59. OTHER STATE COMPREHENSIVE PRIVACY LAWS
+Depending on applicability thresholds, exemptions, effective dates, and the particular processing involved, additional state comprehensive privacy laws may apply.
+Such jurisdictions include, without limitation:
+* Delaware
+* Florida
+* Indiana
+* Iowa
+* Kentucky
+* Maryland
+* Minnesota
+* Montana
+* Nebraska
+* New Hampshire
+* New Jersey
+* Oregon
+* Rhode Island
+* Tennessee
+* Texas
+* Utah
+and any other state that enacts an applicable privacy law.
+________________
+
+
+60. RIGHTS UNDER OTHER STATE LAWS
+Rights under these laws vary but may include combinations of:
+* Access
+* Confirmation
+* Correction
+* Deletion
+* Portability
+* Opt-out of sale
+* Opt-out of targeted advertising
+* Opt-out of profiling
+* Sensitive-data protections
+* Appeal rights
+Husky Solutions LLC will apply rights that legally apply to the relevant individual and processing.
+________________
+
+
+61. MARYLAND
+Where Maryland's applicable comprehensive privacy law applies, Husky Solutions LLC will provide eligible consumers the rights and protections required by that law.
+Maryland requirements may differ from other state privacy frameworks, including restrictions concerning collection and processing.
+________________
+
+
+62. OREGON
+Where Oregon's applicable privacy law applies, eligible consumers may exercise the rights provided under Oregon law.
+Certain disclosure and third-party information rights may differ from those in other jurisdictions.
+________________
+
+
+63. TEXAS
+Where the Texas Data Privacy and Security Act applies, eligible Texas consumers may exercise applicable rights concerning:
+* Access
+* Correction
+* Deletion
+* Portability
+* Sale
+* Targeted advertising
+* Profiling
+subject to statutory definitions and exemptions.
+________________
+
+
+64. UTAH
+Where the Utah Consumer Privacy Act applies, eligible Utah consumers may exercise rights provided under Utah law, subject to applicable statutory limitations and thresholds.
+________________
+
+
+65. PRIVACY LAWS CONTINUE TO CHANGE
+United States privacy law continues to evolve.
+Husky Solutions LLC may update:
+* This Notice
+* Available privacy controls
+* Request methods
+* State-specific sections
+as laws become effective or change.
+________________
+
+
+66. STATE RIGHTS MAY DIFFER
+The existence of a right in one state does not necessarily mean:
+* The same right exists in another state
+* The right applies to every business
+* The right applies to every category of information
+* The right applies to employment data
+* The right applies to every Husky Solutions LLC Service
+________________
+
+
+67. VOLUNTARY PRIVACY REQUESTS
+Husky Solutions LLC may choose to honor certain reasonable privacy requests even where a specific statutory right does not technically apply.
+Voluntary accommodation of a request does not mean Husky Solutions LLC concedes that a particular law applies.
+________________
+
+
+68. SECURITY EXCEPTIONS
+Privacy rights generally do not require Husky Solutions LLC to weaken account security.
+For example, we may retain information reasonably necessary to:
+* Detect fraud
+* Prevent account takeover
+* Investigate security breaches
+* Protect users
+* Maintain security logs
+where permitted by applicable law.
+________________
+
+
+69. FRAUD PREVENTION
+Husky Solutions LLC may retain limited records necessary to prevent a deleted or terminated fraudulent account from immediately being recreated.
+________________
+
+
+70. LEGAL OBLIGATIONS
+A deletion or opt-out request does not require Husky Solutions LLC to violate:
+* Tax requirements
+* Accounting obligations
+* Court orders
+* Preservation obligations
+* Other applicable law
+________________
+
+
+71. LAW-ENFORCEMENT PRESERVATION
+Information subject to a valid legal preservation obligation may be temporarily excluded from ordinary deletion processes.
+Preservation does not automatically authorize disclosure.
+________________
+
+
+72. DE-IDENTIFIED INFORMATION
+Privacy rights may not apply to information that has been lawfully de-identified and is no longer reasonably linked to an individual, subject to applicable law.
+________________
+
+
+73. AGGREGATED INFORMATION
+Aggregated statistics that do not reasonably identify an individual may fall outside certain privacy-rights requirements.
+________________
+
+
+74. PUBLICLY AVAILABLE INFORMATION
+Certain privacy laws exclude some categories of legally defined publicly available information.
+The applicable statutory definition controls.
+________________
+
+
+75. FEDERAL LAW EXEMPTIONS
+Certain information may be regulated primarily under specialized federal laws.
+Depending on circumstances, state privacy laws may provide exemptions concerning information regulated by laws such as:
+* HIPAA
+* GLBA
+* FCRA
+Husky Solutions LLC will apply relevant exemptions where appropriate.
+________________
+
+
+76. CHILDREN AND TEENS
+Additional privacy protections may apply to children or teenagers.
+Husky Solutions LLC Services are not directed to children under 13 unless a product expressly states otherwise and implements appropriate protections.
+________________
+
+
+77. MINOR SALE OR SHARING RIGHTS
+Certain jurisdictions provide enhanced opt-in or opt-out rules concerning sale, sharing, or advertising involving minors.
+Husky Solutions LLC will implement such requirements where applicable.
+________________
+
+
+78. FINANCIAL INCENTIVES
+If Husky Solutions LLC introduces a program that constitutes a legally regulated financial incentive or price/service difference involving personal information, appropriate notice will be provided.
+________________
+
+
+79. PRIVACY REQUEST RECORDS
+Husky Solutions LLC may retain records concerning privacy requests to demonstrate compliance.
+These may include:
+* Request type
+* Request date
+* Verification status
+* Response
+* Appeal
+Such records are handled according to the Data Retention & Deletion Policy.
+________________
+
+
+80. REQUEST SECURITY
+Do not include unnecessary:
+* Passwords
+* OTP codes
+* Authentication tokens
+* Full payment-card numbers
+when making a privacy request.
+________________
+
+
+81. QUESTIONS
+Questions concerning privacy rights may be directed to:
+[PRIVACY EMAIL]
+________________
+
+
+82. COMPANY CONTACT INFORMATION
+Husky Solutions LLC
+Privacy Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Privacy Email:
+[PRIVACY EMAIL]
+Privacy Request Portal:
+[PRIVACY REQUEST URL]
+Privacy Choices:
+[PRIVACY CHOICES URL]
+Privacy Appeals:
+[PRIVACY APPEAL EMAIL OR URL]
+Telephone:
+[PRIVACY PHONE NUMBER]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+83. CHANGES TO THIS NOTICE
+Husky Solutions LLC may update this Privacy Rights Notice to reflect:
+* New privacy laws
+* Changes in existing laws
+* New privacy rights
+* Changes in Company practices
+* New privacy-control technologies
+The “Last Updated” date identifies the current version.
+________________
+
+
+84. EFFECTIVE DATE
+This Privacy Choices & State-Specific Rights Notice is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

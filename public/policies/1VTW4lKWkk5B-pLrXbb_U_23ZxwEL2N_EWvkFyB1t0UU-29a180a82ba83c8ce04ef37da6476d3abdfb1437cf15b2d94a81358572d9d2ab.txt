@@ -1,0 +1,899 @@
+HUSKY SOLUTIONS LLC
+GOVERNMENT, LAW ENFORCEMENT & LEGAL REQUESTS POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Government, Law Enforcement & Legal Requests Policy (“Legal Requests Policy”) explains how Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) handles governmental requests, law-enforcement requests, subpoenas, warrants, court orders, preservation requests, emergency disclosure requests, civil legal process, and other legally authorized requests for information.
+Husky Solutions LLC respects both:
+1. The privacy and security of users; and
+2. Valid legal obligations imposed upon the Company.
+Husky Solutions LLC does not provide unrestricted access to customer information merely because an individual identifies themselves as a government or law-enforcement official.
+Requests for non-public customer information must have an appropriate legal basis.
+This Policy may apply to information associated with:
+* Husky Solutions LLC websites
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer accounts
+* Organization accounts
+* Hosting services
+* Customer websites
+* APIs
+* Billing systems
+* FiveM licensing systems
+* Security systems
+* Customer-support systems
+* Other current or future Husky Solutions LLC Services
+________________
+
+
+1. GENERAL POLICY
+Husky Solutions LLC evaluates governmental and legal requests for customer information according to:
+* Applicable law;
+* Nature of the requested information;
+* Jurisdiction;
+* Legal authority cited;
+* Scope of the request;
+* Validity of the legal process;
+* Privacy interests of affected users;
+* Security considerations;
+* Technical availability of the requested information.
+Husky Solutions LLC may require clarification, correction, additional process, or narrowing where appropriate.
+________________
+
+
+2. NO AUTOMATIC GOVERNMENT ACCESS
+Government agencies and law-enforcement agencies do not receive automatic or unrestricted access to Husky Solutions LLC systems merely because they are government entities.
+Husky Solutions LLC does not provide a standing governmental “backdoor” into ordinary customer accounts.
+Requests for non-public information must generally be made through legally appropriate channels.
+________________
+
+
+3. VALID LEGAL PROCESS
+Depending on the circumstances and applicable law, Husky Solutions LLC may require legal process such as:
+* Subpoena;
+* Search warrant;
+* Court order;
+* Statutory demand;
+* Administrative demand;
+* Other legally enforceable process.
+Different categories of information may require different forms of legal authority.
+Husky Solutions LLC may require more protective legal process for information where applicable law requires it.
+________________
+
+
+4. REQUESTS MUST IDENTIFY LEGAL AUTHORITY
+A request should identify the legal authority upon which it relies.
+Where applicable, a request should include:
+* Statutory authority;
+* Court jurisdiction;
+* Case or investigation number;
+* Applicable warrant, order, or subpoena;
+* Identity of requesting agency;
+* Contact information for the requesting official.
+________________
+
+
+5. REQUESTING AGENCY INFORMATION
+Government and law-enforcement requests should contain sufficient information to verify the requesting authority.
+This should ordinarily include:
+* Full agency name;
+* Requesting officer, agent, investigator, attorney, or official;
+* Official title or rank where applicable;
+* Government-issued email address;
+* Official telephone number;
+* Agency mailing address;
+* Case or investigation number;
+* Supervisory or prosecutorial contact where appropriate.
+Husky Solutions LLC may independently verify this information.
+________________
+
+
+6. REQUEST SPECIFICITY
+Requests should specifically identify the account or information sought.
+Useful identifiers may include:
+* Account email address;
+* Username;
+* Customer ID;
+* Organization ID;
+* Domain name;
+* IP address;
+* Transaction ID;
+* License ID;
+* User ID;
+* Relevant date range.
+Husky Solutions LLC may reject or seek clarification of requests that do not reasonably identify the information sought.
+________________
+
+
+7. REQUESTS SHOULD BE NARROWLY TAILORED
+Governmental requests should be appropriately limited to information relevant to the lawful purpose of the request.
+Husky Solutions LLC may seek narrowing of requests that appear:
+* Excessively broad;
+* Unduly burdensome;
+* Unrelated to the stated investigation;
+* Legally defective;
+* Insufficiently specific.
+________________
+
+
+8. AVAILABLE INFORMATION
+The information available to Husky Solutions LLC depends upon:
+* The Service used;
+* Account configuration;
+* Retention schedules;
+* Customer activity;
+* Whether information has been deleted;
+* Technical architecture.
+Husky Solutions LLC cannot provide information it does not possess or cannot reasonably retrieve.
+________________
+
+
+9. BASIC ACCOUNT INFORMATION
+Depending upon the Service, account information may include:
+* Name;
+* Username;
+* Email address;
+* Telephone number;
+* Account creation date;
+* Organization affiliation;
+* Subscription type;
+* Account status;
+* Internal account identifiers.
+Disclosure requires an appropriate lawful basis.
+________________
+
+
+10. BILLING INFORMATION
+Available billing information may include:
+* Billing name;
+* Billing address;
+* Transaction dates;
+* Transaction amounts;
+* Order numbers;
+* Subscription information;
+* Limited payment-method information;
+* Payment processor transaction identifiers.
+Husky Solutions LLC generally does not intend to directly store complete payment-card numbers or security codes.
+________________
+
+
+11. IP ADDRESS INFORMATION
+Husky Solutions LLC may maintain IP address information associated with activities such as:
+* Account creation;
+* Login;
+* Authentication;
+* Password resets;
+* Administrative access;
+* Security incidents;
+* API activity;
+* Transactions;
+* License validation.
+IP information may be disclosed when permitted or required by valid legal process or another lawful disclosure basis.
+________________
+
+
+12. LOGIN HISTORY
+Available login information may include:
+* Login date;
+* Login time;
+* IP address;
+* Device information;
+* Browser information;
+* Approximate geographic location;
+* Authentication result;
+* Security alerts.
+Retention periods are governed by the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+13. APPROXIMATE GEOLOCATION
+Husky Solutions LLC may derive approximate location information from IP addresses.
+Such information may identify an approximate:
+* Country;
+* State;
+* Region;
+* Metropolitan area;
+* City.
+IP-derived location should not be interpreted as guaranteed precise physical location.
+________________
+
+
+14. PRECISE AND CLOSE-PINPOINT SECURITY GEOLOCATION
+During certain suspected, attempted, active, or confirmed security incidents, Husky Solutions LLC may lawfully collect or process more precise location information when appropriate permissions or other lawful technical mechanisms allow.
+This may include location derived from:
+* Device location services;
+* Browser geolocation;
+* GPS;
+* Wi-Fi positioning;
+* Cellular-network positioning;
+* Application location services;
+* Other authorized location technologies.
+In some circumstances, such information may indicate a device's location with substantially greater precision than IP geolocation, potentially including relatively close or street-level geographic information.
+________________
+
+
+15. LAW-ENFORCEMENT ACCESS TO PRECISE SECURITY LOCATION DATA
+Precise or close-pinpoint geolocation collected for security purposes may be disclosed to an appropriate governmental entity when:
+* Disclosure is required by valid legal process;
+* Disclosure is otherwise authorized by applicable law;
+* The affected user lawfully consents;
+* A qualifying emergency disclosure is legally permitted; or
+* Another lawful disclosure basis applies.
+Husky Solutions LLC does not provide precise location information merely because an informal request is made.
+________________
+
+
+16. SECURITY INCIDENT INFORMATION
+During a suspected or confirmed security incident, Husky Solutions LLC may possess information such as:
+* IP addresses;
+* Login locations;
+* Precise geolocation;
+* Device information;
+* Authentication events;
+* Session identifiers;
+* Administrative actions;
+* API activity;
+* Access logs;
+* Fraud indicators;
+* Account changes;
+* Security alerts.
+Such information may be relevant to identifying:
+* Unauthorized access;
+* Account takeover;
+* Credential theft;
+* Fraud;
+* Cyberattacks;
+* Other unauthorized activity.
+________________
+
+
+17. SECURITY EVIDENCE
+Security evidence may be preserved for legitimate purposes including:
+* Incident investigation;
+* Fraud investigation;
+* Protection of users;
+* Internal security;
+* Legal proceedings;
+* Law-enforcement investigations;
+* Regulatory obligations.
+Applicable retention periods are described in the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+18. CUSTOMER CONTENT
+Depending on the Service, Husky Solutions LLC may store Customer Content such as:
+* Files;
+* Documents;
+* Website content;
+* Images;
+* Communications;
+* Organization records;
+* Uploaded materials;
+* Stored data.
+Requests seeking stored content may be subject to different or heightened legal requirements compared with requests seeking basic subscriber or account information.
+Husky Solutions LLC will evaluate the legal process presented before disclosing non-public Customer Content.
+________________
+
+
+19. CONTENT VS. NON-CONTENT INFORMATION
+Applicable law may distinguish between:
+Content information, such as the substance of stored communications or files; and
+Non-content information, such as account identifiers, certain subscriber information, connection records, or transaction records.
+The legal process required may differ depending on the type of information requested.
+Husky Solutions LLC reserves the right to require the legal process required by applicable law for the particular category of information.
+________________
+
+
+20. SEARCH WARRANTS
+Husky Solutions LLC may respond to a legally valid search warrant issued by a court with appropriate jurisdiction.
+A warrant should:
+* Identify the issuing court;
+* Identify the relevant legal authority;
+* Describe the information sought with sufficient particularity;
+* Identify the affected account or property;
+* Be properly issued and executed.
+________________
+
+
+21. SUBPOENAS
+Husky Solutions LLC may respond to valid subpoenas as required by applicable law.
+A subpoena does not necessarily authorize disclosure of every type of information maintained by Husky Solutions LLC.
+If the subpoena seeks information requiring a different form of legal process, Husky Solutions LLC may require the requesting party to obtain that process.
+________________
+
+
+22. COURT ORDERS
+Husky Solutions LLC may comply with valid court orders issued by courts with appropriate authority.
+The Company may seek clarification or modification of a court order where necessary.
+________________
+
+
+23. CIVIL SUBPOENAS
+Private parties involved in civil litigation may seek information from Husky Solutions LLC through legal process.
+Civil litigants do not receive unrestricted access to customer information.
+Husky Solutions LLC may:
+* Review jurisdiction;
+* Review service;
+* Evaluate privacy interests;
+* Seek narrowing;
+* Object to legally deficient requests;
+* Require appropriate court process.
+________________
+
+
+24. USER CONSENT
+Husky Solutions LLC may disclose information where a user has provided legally valid consent to disclosure.
+We may verify:
+* Identity;
+* Scope of consent;
+* Authenticity of authorization.
+Consent to disclose one category of information does not necessarily authorize disclosure of unrelated information.
+________________
+
+
+25. PRESERVATION REQUESTS
+Governmental entities may request preservation of records pending issuance of appropriate legal process where applicable law provides for such preservation.
+Husky Solutions LLC may preserve relevant records without disclosing them.
+Preservation and disclosure are separate actions.
+________________
+
+
+26. FEDERAL PRESERVATION REQUESTS
+Where 18 U.S.C. § 2703(f) applies, Husky Solutions LLC will preserve covered records and evidence in its possession as required by law.
+An applicable preservation request may require records to be preserved for 90 days.
+A qualifying renewed request may extend the preservation period for an additional 90 days.
+________________
+
+
+27. PRESERVATION DOES NOT EQUAL DISCLOSURE
+A preservation request does not automatically authorize Husky Solutions LLC to provide the preserved information to the requesting agency.
+Appropriate legal authority may still be required before disclosure.
+________________
+
+
+28. PRESERVATION REQUEST CONTENT
+A preservation request should identify:
+* Agency;
+* Requesting official;
+* Investigation;
+* Account or identifier;
+* Categories of information to preserve;
+* Applicable date range;
+* Statutory authority;
+* Contact information.
+________________
+
+
+29. EMERGENCY REQUESTS
+Husky Solutions LLC recognizes that emergencies may occur where delay could create a serious risk to human life or physical safety.
+Emergency disclosure requests will be evaluated individually.
+________________
+
+
+30. EMERGENCY DISCLOSURE STANDARD
+Where applicable law permits, Husky Solutions LLC may voluntarily disclose relevant information to a governmental entity when Husky Solutions LLC, in good faith, believes that an emergency involving danger of death or serious physical injury to a person requires disclosure without delay.
+An emergency request does not guarantee disclosure.
+Husky Solutions LLC determines whether an applicable emergency disclosure standard has been satisfied.
+________________
+
+
+31. INFORMATION THAT MAY BE RELEVANT DURING AN EMERGENCY
+Depending on the circumstances and information available, an emergency disclosure may potentially include information reasonably related to addressing the emergency, such as:
+* Account identifiers;
+* Contact information;
+* IP addresses;
+* Login records;
+* Approximate location;
+* Precise geolocation where lawfully available;
+* Relevant security information;
+* Other information legally permitted to be disclosed.
+Husky Solutions LLC will seek to limit an emergency disclosure to information reasonably related to the emergency.
+________________
+
+
+32. EMERGENCY GEOLOCATION
+Where Husky Solutions LLC possesses precise or close-pinpoint geolocation information collected through lawful security mechanisms, that information may be considered in responding to a qualifying emergency disclosure request where legally permitted.
+Husky Solutions LLC does not guarantee that precise geolocation is available for any particular account.
+________________
+
+
+33. INFORMATION REQUIRED FOR EMERGENCY REQUESTS
+An emergency request should include:
+* Requesting agency;
+* Requesting official;
+* Official contact information;
+* Nature of the emergency;
+* Person at risk;
+* Description of the danger;
+* Why disclosure is required without delay;
+* Specific information requested;
+* Explanation of how the information relates to the emergency;
+* Case or incident number where available.
+________________
+
+
+34. EMERGENCY REQUEST AUTHENTICATION
+Husky Solutions LLC may independently verify an emergency request.
+Verification may include:
+* Calling an agency's publicly listed number;
+* Contacting an agency supervisor;
+* Verifying an official government email domain;
+* Requesting additional documentation;
+* Confirming agency identity through another reliable method.
+Urgency does not automatically eliminate reasonable authentication measures.
+________________
+
+
+35. FALSE EMERGENCY REQUESTS
+Submitting a fraudulent emergency request is prohibited.
+Husky Solutions LLC may report suspected fraudulent government impersonation or false emergency requests to appropriate authorities.
+________________
+
+
+36. IMMINENT HARM IDENTIFIED BY HUSKY SOLUTIONS LLC
+Husky Solutions LLC may become aware of information suggesting an imminent danger of death or serious physical injury.
+Where permitted by applicable law, Husky Solutions LLC may voluntarily contact an appropriate governmental authority and disclose information reasonably necessary to address the emergency.
+________________
+
+
+37. CHILD SAFETY REPORTING
+Husky Solutions LLC will comply with legally applicable child-safety reporting obligations.
+Where legally required, apparent child sexual exploitation or child sexual abuse material may be reported to appropriate authorities or designated reporting organizations.
+________________
+
+
+38. FRAUD AND CYBERCRIME
+Husky Solutions LLC may report suspected:
+* Cyberattacks;
+* Account compromise;
+* Fraud;
+* Credential theft;
+* Malware;
+* Infrastructure attacks;
+* Serious security abuse
+to appropriate law-enforcement agencies where legally permitted or required.
+________________
+
+
+39. PROTECTION OF HUSKY SOLUTIONS LLC
+Applicable law may permit Husky Solutions LLC to use or disclose certain information where reasonably necessary to protect:
+* Company systems;
+* Company property;
+* Users;
+* Accounts;
+* Infrastructure;
+* Legal rights.
+Such disclosures will be evaluated under applicable law.
+________________
+
+
+40. REAL-TIME SURVEILLANCE
+Husky Solutions LLC does not voluntarily provide continuous real-time surveillance access to customer accounts merely upon informal government request.
+Requests seeking prospective or real-time information will be evaluated according to the legal authority applicable to the requested surveillance or disclosure.
+________________
+
+
+41. REAL-TIME LOCATION TRACKING
+Husky Solutions LLC does not promise law enforcement real-time GPS tracking capabilities.
+If a governmental entity requests prospective or real-time location information, Husky Solutions LLC will evaluate:
+* Applicable law;
+* Legal process;
+* Technical capability;
+* Scope of request.
+Husky Solutions LLC will not claim to possess tracking capability that the applicable Service does not actually provide.
+________________
+
+
+42. CREATION OF NEW DATA
+Unless required by applicable law, Husky Solutions LLC generally is not obligated to create records that do not already exist merely because a requester would find those records useful.
+This includes creating new location information that Husky Solutions LLC does not already possess.
+________________
+
+
+43. TECHNICAL ASSISTANCE
+Where applicable law validly requires technical assistance, Husky Solutions LLC will evaluate its obligations.
+Nothing in this Policy promises that Husky Solutions LLC can provide functionality that:
+* Does not exist;
+* Is technically impossible;
+* Would compromise unrelated users;
+* Is not legally required.
+________________
+
+
+44. REQUESTS FOR PASSWORDS
+Husky Solutions LLC does not intend to store user passwords in readable plain text.
+Accordingly, we generally cannot provide a user's plaintext password.
+Password hashes, authentication data, or other security information will be handled according to applicable law and security requirements.
+________________
+
+
+45. ENCRYPTED INFORMATION
+Some information may be encrypted.
+The technical ability of Husky Solutions LLC to access encrypted information varies depending on:
+* Service architecture;
+* Type of encryption;
+* Location of encryption keys;
+* Customer configuration.
+Husky Solutions LLC cannot disclose plaintext information it does not possess or cannot technically access.
+________________
+
+
+46. REQUESTS FOR DELETED INFORMATION
+Information that has already been permanently deleted may no longer be available.
+Husky Solutions LLC does not guarantee recovery of:
+* Deleted files;
+* Expired logs;
+* Deleted accounts;
+* Expired backups;
+* Purged security information.
+Preservation requests should therefore be submitted promptly where appropriate.
+________________
+
+
+47. RETENTION
+Husky Solutions LLC retains different categories of information for different periods.
+Retention practices are explained in the Husky Solutions LLC Data Retention & Deletion Policy.
+Husky Solutions LLC does not guarantee that information requested after expiration of the applicable retention period will remain available.
+________________
+
+
+48. LEGAL HOLDS
+Where required or appropriate, Husky Solutions LLC may suspend ordinary deletion of information subject to:
+* Litigation hold;
+* Preservation obligation;
+* Court order;
+* Government investigation;
+* Valid legal process;
+* Reasonably anticipated litigation.
+________________
+
+
+49. USER NOTICE
+Where permitted by law and appropriate under the circumstances, Husky Solutions LLC may notify an affected user that legal process seeking their information has been received.
+User notice may be delayed or withheld where:
+* Law prohibits notification;
+* A valid nondisclosure order applies;
+* Notification could create a danger;
+* Notification could compromise an investigation;
+* An emergency exists;
+* The account appears compromised;
+* Another lawful reason justifies withholding notice.
+________________
+
+
+50. NONDISCLOSURE ORDERS
+If Husky Solutions LLC receives a legally valid order prohibiting user notification, Husky Solutions LLC will comply with the order.
+Where legally appropriate, Husky Solutions LLC may evaluate whether a nondisclosure requirement remains valid, appropriately scoped, and supported by law.
+________________
+
+
+51. NO GUARANTEE OF USER NOTICE
+Nothing in this Policy creates an absolute contractual right to advance notice before disclosure.
+Circumstances may legally prohibit or practically prevent such notification.
+________________
+
+
+52. CHALLENGING LEGAL PROCESS
+Husky Solutions LLC reserves the right to challenge, object to, or seek modification of legal process that appears:
+* Invalid;
+* Overbroad;
+* Unduly burdensome;
+* Outside the issuing authority's jurisdiction;
+* Legally defective;
+* Inconsistent with applicable law.
+Husky Solutions LLC does not promise to challenge every request.
+________________
+
+
+53. COST REIMBURSEMENT
+Where permitted by applicable law, Husky Solutions LLC may seek reimbursement for reasonable costs incurred responding to governmental or legal requests.
+The availability and amount of reimbursement may depend on applicable law and the nature of the request.
+________________
+
+
+54. UNITED STATES REQUESTS
+United States federal, state, and local government requests will be evaluated according to applicable:
+* Federal law;
+* State law;
+* Constitutional requirements;
+* Procedural requirements;
+* Court authority.
+________________
+
+
+55. STATE AND LOCAL LAW ENFORCEMENT
+State and local agencies should obtain legal process recognized under applicable law and issued through a court or authority with appropriate jurisdiction.
+A request from a law-enforcement officer alone does not automatically authorize disclosure of every category of information.
+________________
+
+
+56. FOREIGN GOVERNMENT REQUESTS
+Foreign governments seeking information from Husky Solutions LLC must use legally appropriate mechanisms.
+Depending on applicable law and circumstances, this may include:
+* Appropriate U.S. legal process;
+* Mutual legal assistance procedures;
+* Applicable international agreements;
+* Other legally recognized mechanisms.
+Husky Solutions LLC may reject direct foreign requests that lack a sufficient legal basis.
+________________
+
+
+57. CROSS-BORDER ORDERS
+Where an applicable international agreement or legally valid cross-border mechanism authorizes a foreign governmental order, Husky Solutions LLC will evaluate that order under applicable law.
+________________
+
+
+58. CIVIL LITIGANTS OUTSIDE THE UNITED STATES
+Foreign private litigants seeking information from Husky Solutions LLC may be required to use legally recognized U.S. discovery or judicial procedures.
+________________
+
+
+59. TAX AND REGULATORY AUTHORITIES
+Husky Solutions LLC may respond to legally valid requests from tax, regulatory, administrative, or other governmental authorities.
+Such requests will be evaluated according to the legal authority applicable to the information sought.
+________________
+
+
+60. COURT-ORDERED ACCOUNT RESTRICTIONS
+If valid legal process requires Husky Solutions LLC to:
+* Restrict an account;
+* Preserve an account;
+* Disable access;
+* Remove content;
+* Maintain certain records,
+Husky Solutions LLC may take the legally required action.
+________________
+
+
+61. SEIZURE OF ASSETS OR FUNDS
+If Husky Solutions LLC receives legally valid process requiring action involving funds, accounts, or other property within the Company's control, the Company will evaluate and comply as required by law.
+________________
+
+
+62. CUSTOMER ORGANIZATIONS
+Where a request concerns information controlled primarily by a customer organization, Husky Solutions LLC may direct the requester to the organization when appropriate.
+However, this does not prevent Husky Solutions LLC from responding directly when legally required.
+________________
+
+
+63. HUSKYCAD RECORDS
+A law-enforcement-style interface in HuskyCAD does not mean records stored in HuskyCAD are actual government records.
+Unless separately authorized, HuskyCAD is not an NCIC system or direct government criminal-history database.
+Requests involving HuskyCAD data will be treated according to the actual nature and ownership of the information stored in the system.
+________________
+
+
+64. PUNCHPAL RECORDS
+Requests concerning employee or workforce information stored in PunchPal may involve information controlled by the customer organization.
+Where appropriate, Husky Solutions LLC may direct the requester to the employer or organization while preserving or producing information when legally required.
+________________
+
+
+65. HUSKY SUITE HOSTED CONTENT
+Husky Suite may host websites or content controlled by Husky Solutions LLC customers.
+Requests concerning hosted customer content will be evaluated according to:
+* Applicable law;
+* Nature of the content;
+* Applicable legal process;
+* Customer relationship;
+* Technical availability.
+________________
+
+
+66. FIVEM RECORDS
+Available FiveM-related information may include:
+* Purchase records;
+* License information;
+* Account identifiers;
+* License validation events;
+* IP information;
+* Delivery records.
+Husky Solutions LLC will disclose such information only where legally permitted or required.
+________________
+
+
+67. LAW-ENFORCEMENT REQUEST SUBMISSION
+Non-emergency governmental and law-enforcement requests should be submitted to:
+Husky Solutions LLC
+Legal Response Team
+Law Enforcement Email:
+[LAW ENFORCEMENT EMAIL]
+Mailing Address:
+[LEGAL PROCESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+________________
+
+
+68. EMERGENCY REQUEST SUBMISSION
+Emergency disclosure requests should be submitted through:
+Emergency Law Enforcement Email:
+[EMERGENCY REQUEST EMAIL]
+Subject line:
+EMERGENCY DISCLOSURE REQUEST — IMMINENT DANGER
+The message should clearly explain the nature of the emergency.
+________________
+
+
+69. EMERGENCY CONTACT INFORMATION
+Emergency requests should include a direct telephone number at which the requesting official can immediately be reached.
+Husky Solutions LLC may verify the requester through independently obtained agency contact information before disclosure.
+________________
+
+
+70. SERVICE OF LEGAL PROCESS
+Sending legal process to an ordinary support email address does not necessarily constitute valid legal service.
+Formal legal process should be served according to applicable law.
+Husky Solutions LLC may voluntarily accept certain electronic submissions for review, but doing so does not waive:
+* Service requirements;
+* Jurisdictional defenses;
+* Procedural objections;
+* Substantive objections.
+________________
+
+
+71. REQUESTS SENT TO CUSTOMER SUPPORT
+Customer-support personnel may forward legal requests to the appropriate Husky Solutions LLC personnel.
+Sending a request to Customer Support does not guarantee that the request has been formally served or accepted.
+________________
+
+
+72. CONFIDENTIALITY OF INVESTIGATIONS
+Husky Solutions LLC may restrict internal access to legal and governmental requests.
+Access may be limited to personnel who need the information for:
+* Legal review;
+* Security;
+* Technical retrieval;
+* Compliance;
+* Management.
+________________
+
+
+73. SECURITY OF DISCLOSURES
+Where practical, Husky Solutions LLC may use secure transmission methods for sensitive information provided in response to legal process.
+The requesting authority may be required to provide a secure delivery method.
+________________
+
+
+74. MINIMUM NECESSARY DISCLOSURE
+Where legally permissible, Husky Solutions LLC seeks to disclose information responsive to the valid request rather than unnecessarily disclosing unrelated information.
+________________
+
+
+75. ACCOUNT SECURITY AFTER DISCLOSURE
+Where a request relates to account compromise, Husky Solutions LLC may independently take security measures such as:
+* Resetting passwords;
+* Revoking sessions;
+* Disabling credentials;
+* Requiring MFA;
+* Restricting suspicious IP addresses;
+* Requiring identity verification.
+A law-enforcement investigation does not prevent Husky Solutions LLC from protecting its systems and users unless legally required otherwise.
+________________
+
+
+76. DATA INTEGRITY
+Husky Solutions LLC may provide records in the format reasonably available within our systems.
+Where appropriate, associated timestamps or technical metadata may be included.
+Husky Solutions LLC does not guarantee that all customer-created information is factually accurate merely because it exists in our systems.
+________________
+
+
+77. RECORD AUTHENTICATION
+Where legally appropriate, Husky Solutions LLC may provide a records certification or other business-record authentication supported by applicable law.
+Requests for certification should identify the applicable legal requirement.
+________________
+
+
+78. TESTIMONY
+Requests requiring employee testimony may require separate legal process.
+Husky Solutions LLC may object to testimony requests that are:
+* Unduly burdensome;
+* Duplicative;
+* Unnecessary;
+* Legally deficient.
+________________
+
+
+79. EXPERT TESTIMONY
+Husky Solutions LLC employees are not automatically available to provide expert testimony concerning unrelated customer disputes.
+Expert services, if ever provided, would require a separate written arrangement.
+________________
+
+
+80. TRANSPARENCY
+Husky Solutions LLC may publish aggregate information concerning government or legal requests where legally permitted.
+Such reporting may include general statistics without identifying affected customers.
+Nothing in this Policy requires publication of a transparency report.
+________________
+
+
+81. REQUEST LOGGING
+Husky Solutions LLC may maintain internal records regarding:
+* Legal requests received;
+* Requesting agencies;
+* Legal authority;
+* Information produced;
+* Preservation actions;
+* Emergency disclosures;
+* Objections or challenges.
+These records may be retained according to legitimate legal and compliance requirements.
+________________
+
+
+82. PRIVACY
+Government and legal requests are also subject to the principles described in the Husky Solutions LLC Privacy Policy.
+Information will not be disclosed merely because it is technically accessible to Husky Solutions LLC.
+________________
+
+
+83. SECURITY
+Security information, including IP addresses and geolocation data, is handled in accordance with the Husky Solutions LLC Security, Incident Response & Vulnerability Disclosure Policy.
+________________
+
+
+84. DATA RETENTION
+Availability of historical information depends upon the Husky Solutions LLC Data Retention & Deletion Policy.
+Submitting a request does not guarantee that historical data still exists.
+________________
+
+
+85. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Legal Requests Policy to reflect:
+* Changes in law;
+* Changes in legal procedures;
+* New Services;
+* New technologies;
+* Changes in Company operations.
+The “Last Updated” date identifies the current version.
+________________
+
+
+86. NO LEGAL ADVICE
+This Policy describes Husky Solutions LLC's general practices.
+It does not constitute legal advice to:
+* Users;
+* Law-enforcement officials;
+* Government agencies;
+* Attorneys;
+* Private litigants.
+Requesters should obtain their own legal advice concerning required process.
+________________
+
+
+87. NO CREATION OF ENFORCEABLE RIGHTS
+This Policy describes general operating practices and does not create rights beyond those provided by applicable law or contract.
+Husky Solutions LLC may adjust its response where required by the specific circumstances or applicable law.
+________________
+
+
+88. GOVERNING LAW
+This Policy is governed by applicable United States federal law and, where applicable, the laws of the State of New York.
+________________
+
+
+89. GENERAL LEGAL CONTACT
+Questions concerning legal process may be directed to:
+Husky Solutions LLC
+Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Legal Email:
+[LEGAL EMAIL]
+Law Enforcement Email:
+[LAW ENFORCEMENT EMAIL]
+Emergency Request Email:
+[EMERGENCY REQUEST EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+90. EFFECTIVE DATE
+This Government, Law Enforcement & Legal Requests Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

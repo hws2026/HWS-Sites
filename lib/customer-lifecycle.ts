@@ -41,10 +41,11 @@ export async function customerLifecycle(input:Record<string,unknown>,owner:strin
  const files=await db.prepare(`SELECT key FROM media WHERE site_id IN (${siteIds})`).bind(id,owner).all<{key:string}>();
  const keys=[...new Set(files.results.map(row=>row.key))];
  for(let i=0;i<keys.length;i+=100)await deleteMediaObjects(env,keys.slice(i,i+100));
- const statements=['form_attachments','form_submissions','site_access','site_domains','site_publications','media','activity'].map(table=>db.prepare(`DELETE FROM ${table} WHERE site_id IN (${siteIds})`).bind(id,owner));
+ const statements=['form_attachments','form_submissions','site_access','site_domains','site_publications','media','activity','honeybook_links'].map(table=>db.prepare(`DELETE FROM ${table} WHERE site_id IN (${siteIds})`).bind(id,owner));
  statements.push(db.prepare(`DELETE FROM form_rate_limits WHERE EXISTS (SELECT 1 FROM client_sites s WHERE s.customer_id=? AND s.owner=? AND substr(form_rate_limits.key,1,length(s.id)+1)=s.id||':')`).bind(id,owner));
  statements.push(db.prepare('DELETE FROM reminder_deliveries WHERE reminder_id IN (SELECT id FROM reminders WHERE customer_id=? AND owner=?)').bind(id,owner));
  for(const table of ['website_payments','website_orders','payment_offers','merchant_accounts','reminders','billing_payments','billing_agreements','billing_accounts','client_sites'])statements.push(db.prepare(`DELETE FROM ${table} WHERE customer_id=? AND owner=?`).bind(id,owner));
+ statements.push(db.prepare('DELETE FROM support_messages WHERE thread_id IN (SELECT id FROM support_threads WHERE customer_id=? AND owner=?)').bind(id,owner),db.prepare('DELETE FROM support_threads WHERE customer_id=? AND owner=?').bind(id,owner),db.prepare('DELETE FROM customer_templates WHERE customer_id=?').bind(id),db.prepare('DELETE FROM customer_accounts WHERE customer_id=? AND owner=?').bind(id,owner));
  statements.push(db.prepare('DELETE FROM customers WHERE id=? AND owner=? AND archived=2').bind(id,owner),logStatement(owner,'Permanently deleted customer '+customer.name+' and their websites'));
  await db.batch(statements);
  return Response.json({ok:true});

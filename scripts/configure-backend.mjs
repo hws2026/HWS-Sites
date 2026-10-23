@@ -10,7 +10,7 @@ config.vars.ADMIN_SUPABASE_USER_IDS=admins;
 const databaseId=process.env.HWS_D1_ID||config.d1_databases[0].database_id;
 if(!uuid.test(databaseId??''))throw new Error('Create the Cloudflare D1 database and set HWS_D1_ID to its database UUID.');
 config.d1_databases[0].database_id=databaseId;
-for(const name of ['SUPABASE_PUBLISHABLE_KEY','SUPABASE_STORAGE_BUCKET','CUSTOM_DOMAIN_ACCOUNT_ID','CUSTOM_DOMAIN_PROJECT','CUSTOM_DOMAIN_TARGET','STRIPE_PORTAL_CONFIGURATION_ID','EMAIL_FROM'])if(process.env[name])config.vars[name]=process.env[name];
+for(const name of ['SUPABASE_PUBLISHABLE_KEY','SUPABASE_STORAGE_BUCKET','CUSTOM_DOMAIN_ACCOUNT_ID','CUSTOM_DOMAIN_PROJECT','CUSTOM_DOMAIN_TARGET','STRIPE_PORTAL_CONFIGURATION_ID','EMAIL_FROM','HWS_ONBOARDING_ENABLED'])if(process.env[name])config.vars[name]=process.env[name];
 if(config.vars.MEDIA_STORAGE==='supabase'&&!/^[a-zA-Z0-9_-]+$/.test(config.vars.SUPABASE_STORAGE_BUCKET??''))throw new Error('Configure the private Supabase Storage bucket name.');
 if(config.vars.CUSTOM_DOMAIN_ACCOUNT_ID&&!/^[a-f0-9]{32}$/i.test(config.vars.CUSTOM_DOMAIN_ACCOUNT_ID))throw new Error('CUSTOM_DOMAIN_ACCOUNT_ID must be the Cloudflare account ID.');
 if(config.vars.CUSTOM_DOMAIN_PROJECT&&!/^[a-z0-9-]+$/.test(config.vars.CUSTOM_DOMAIN_PROJECT))throw new Error('CUSTOM_DOMAIN_PROJECT must be the Pages project name.');

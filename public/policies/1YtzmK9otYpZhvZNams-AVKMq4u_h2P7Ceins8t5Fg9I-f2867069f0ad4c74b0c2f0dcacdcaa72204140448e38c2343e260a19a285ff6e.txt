@@ -1,0 +1,840 @@
+HUSKY SOLUTIONS LLC
+PRODUCT LICENSING & DIGITAL GOODS LICENSE AGREEMENT
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Product Licensing & Digital Goods License Agreement (“License Agreement”) governs the purchase, access, installation, activation, and use of digital products provided by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This License Agreement applies, where applicable, to digital products including:
+* FiveM scripts
+* FiveM resources
+* Server systems
+* Plugins
+* Configurations
+* User interfaces
+* Templates
+* Downloadable software
+* Software utilities
+* Website templates
+* Graphics packages
+* Broadcast graphics packages
+* Digital design assets
+* Source packages where expressly included
+* Other downloadable or licensed digital products
+This License Agreement supplements the:
+* Husky Solutions LLC Terms of Service
+* Refund & Cancellation Policy
+* Copyright & DMCA Policy
+* Acceptable Use Policy
+* Applicable product-specific terms
+By purchasing, downloading, installing, activating, accessing, or using a Licensed Product, you agree to this License Agreement.
+________________
+
+
+1. DEFINITIONS
+For purposes of this Agreement:
+“Licensed Product” means a digital product, software resource, script, package, file, or other licensed material provided by Husky Solutions LLC.
+“Customer” or “you” means the individual or organization that lawfully purchased or received the applicable license.
+“License” means the limited rights granted by Husky Solutions LLC to use a Licensed Product.
+“Production Environment” means the primary live environment in which a Licensed Product is used.
+“Development Environment” means a private testing, staging, or development environment not intended for ordinary public production use.
+________________
+
+
+2. LICENSE, NOT SALE
+Unless Husky Solutions LLC expressly states otherwise in writing, Licensed Products are licensed, not sold.
+Purchasing a Licensed Product gives you the right to use that product according to this Agreement.
+Your purchase does not transfer:
+* Copyright ownership
+* Source-code ownership
+* Trademark ownership
+* Intellectual-property ownership
+* Redistribution rights
+* Resale rights
+except where those rights are expressly granted in writing.
+________________
+
+
+3. LICENSE GRANT
+Subject to payment of all required fees and compliance with this Agreement, Husky Solutions LLC grants you a:
+* Limited
+* Non-exclusive
+* Revocable
+* Non-transferable
+* Non-sublicensable
+license to use the applicable Licensed Product for its intended purpose.
+The exact scope may be modified by product-specific terms displayed at purchase.
+________________
+
+
+4. DEFAULT LICENSE SCOPE
+Unless the applicable product page, invoice, order form, or written agreement states otherwise, a license is granted only to the purchasing customer or organization.
+You may use the Licensed Product only within the number of:
+* Servers
+* Websites
+* Accounts
+* Organizations
+* Projects
+* Installations
+authorized by the applicable product license.
+If a specific usage limit is displayed at checkout, that limit controls.
+________________
+
+
+5. FIVEM LICENSES
+A FiveM resource license permits lawful use of the applicable resource within the scope purchased.
+Unless otherwise stated, a FiveM license does not permit you to:
+* Resell the resource
+* Redistribute the resource
+* Give the resource to another server owner
+* Upload the resource to a public repository
+* Publish source code publicly
+* Sell modified versions containing proprietary Husky Solutions LLC code
+* Share license credentials
+* Bypass license protections
+________________
+
+
+6. CUSTOMER-SPECIFIC LICENSE
+Where a license is issued to a specific:
+* Customer
+* Organization
+* Server
+* Account
+* Marketplace account
+* License identifier
+the license may be limited to that customer or authorized environment.
+A license may not automatically follow a sale or transfer of a FiveM server or business unless Husky Solutions LLC approves the transfer.
+________________
+
+
+7. SERVER TRANSFERS
+If you permanently move an authorized FiveM resource from one server to another, Husky Solutions LLC may permit the license to be reassigned where supported.
+Husky Solutions LLC may require:
+* Verification of purchase
+* Removal from the prior server
+* New server identifiers
+* License reactivation
+A license may not be duplicated across unauthorized production servers.
+________________
+
+
+8. DEVELOPMENT AND TESTING
+Where technically supported, Husky Solutions LLC may permit use of a Licensed Product in a private development or testing environment associated with the authorized customer.
+Development environments must not be used to circumvent production-license limits.
+For example, a development environment may not be operated as a second public production server merely because it is labeled “development.”
+________________
+
+
+9. ORGANIZATION LICENSES
+If a Licensed Product is purchased on behalf of an organization, authorized employees or contractors may use the Licensed Product solely for the organization's authorized purposes.
+The organization remains responsible for ensuring that:
+* Users comply with this Agreement
+* Files are not redistributed
+* Former personnel no longer retain unauthorized copies
+* License credentials remain protected
+________________
+
+
+10. CONTRACTORS AND DEVELOPERS
+You may permit a legitimate contractor or developer working for you to access a Licensed Product only when reasonably necessary to perform authorized work for your project.
+The contractor may not:
+* Retain the resource for unrelated use
+* Reuse it for another customer
+* Sell it
+* Redistribute it
+* Add it to a personal resource library
+* Publish it
+You remain responsible for access you provide to contractors.
+________________
+
+
+11. NO REDISTRIBUTION
+You may not distribute a Licensed Product to another person or organization except where expressly authorized.
+Prohibited redistribution includes:
+* Uploading files publicly
+* Sending files to unrelated users
+* Sharing through Discord
+* Sharing through cloud storage
+* Posting files to forums
+* Uploading to GitHub or another public repository
+* Uploading to leak websites
+* Sharing through file-hosting services
+________________
+
+
+12. NO LEAKING
+Leaking or knowingly facilitating unauthorized distribution of paid Husky Solutions LLC products is prohibited.
+This includes posting:
+* Full resources
+* Partial proprietary resources
+* Decrypted resources
+* Source code
+* License files
+* Proprietary documentation
+for unauthorized use.
+________________
+
+
+13. NO RESALE
+Unless your license expressly includes resale rights, you may not:
+* Resell
+* Repackage
+* Sub-license
+* Rent
+* Lease
+* White-label
+a Licensed Product.
+A modified product remains subject to this restriction if it contains substantial proprietary Husky Solutions LLC material.
+________________
+
+
+14. NO LICENSE SHARING
+License keys, authentication credentials, download links, customer portal access, or other licensing mechanisms may not be shared with unauthorized persons.
+You are responsible for protecting your licensing information.
+________________
+
+
+15. SOURCE CODE ACCESS
+Some Licensed Products may provide source-code access.
+Access to source code does not mean:
+* Copyright ownership transfers
+* Redistribution is permitted
+* Resale is permitted
+* The code becomes open source
+Unless expressly stated otherwise, source code remains proprietary to Husky Solutions LLC.
+________________
+
+
+16. ESCROWED OR PROTECTED CODE
+Some products may use:
+* Encryption
+* Escrow systems
+* Compiled components
+* Obfuscation
+* Remote license verification
+* Other code-protection methods
+You may not intentionally bypass, defeat, decrypt, or circumvent such protections except where applicable law expressly permits such activity notwithstanding this Agreement.
+________________
+
+
+17. MODIFICATION
+Where source files are provided, customers may be permitted to modify the Licensed Product for their own authorized use.
+Permitted modification does not automatically permit:
+* Redistribution
+* Resale
+* Public release
+* Commercial sublicensing
+of the modified product.
+________________
+
+
+18. DERIVATIVE WORKS
+A derivative or modified version containing proprietary Husky Solutions LLC code remains subject to this License Agreement.
+Modification does not remove the Company's rights in the original proprietary material.
+________________
+
+
+19. CUSTOMER-OWNED ADDITIONS
+You retain ownership of original code or content you independently create that does not incorporate Husky Solutions LLC proprietary material, subject to any applicable third-party rights.
+________________
+
+
+20. OPEN-SOURCE COMPONENTS
+A Licensed Product may contain open-source components.
+Open-source components remain subject to their respective licenses.
+Nothing in this Agreement is intended to restrict rights granted directly by an applicable open-source license.
+________________
+
+
+21. THIRD-PARTY COMPONENTS
+Licensed Products may depend on or interact with third-party components.
+Examples include:
+* FiveM
+* Game frameworks
+* Databases
+* APIs
+* Libraries
+* Hosting environments
+* Other scripts
+Third-party components remain governed by their own terms.
+________________
+
+
+22. PRODUCT REQUIREMENTS
+You are responsible for reviewing disclosed requirements before purchase.
+These may include:
+* Framework requirements
+* Database requirements
+* Game build requirements
+* Server requirements
+* Hosting requirements
+* Dependencies
+* Software versions
+* Hardware requirements
+________________
+
+
+23. COMPATIBILITY
+Husky Solutions LLC does not guarantee universal compatibility with every:
+* Server
+* Framework
+* Script
+* Plugin
+* Game build
+* Hosting provider
+* Third-party modification
+Compatibility claims apply only to configurations specifically represented as supported.
+________________
+
+
+24. INSTALLATION
+Customers are responsible for installing Licensed Products according to provided instructions unless installation services were separately purchased.
+Incorrect installation does not transfer responsibility for customer configuration to Husky Solutions LLC.
+________________
+
+
+25. CUSTOM INSTALLATION SERVICES
+If Husky Solutions LLC provides installation, such installation does not mean the Company assumes permanent responsibility for the customer's:
+* Server
+* Infrastructure
+* Third-party scripts
+* Hosting
+* Security
+unless expressly stated in writing.
+________________
+
+
+26. LICENSE VALIDATION
+Husky Solutions LLC may use reasonable technical mechanisms to confirm whether a Licensed Product is being used under a valid license.
+License validation may involve information such as:
+* License identifier
+* Customer identifier
+* Server identifier
+* Resource identifier
+* IP address
+* Product version
+* Authentication status
+Relevant information will be handled in accordance with the Husky Solutions LLC Privacy Policy.
+________________
+
+
+27. LICENSE SECURITY
+You must not knowingly:
+* Forge license data
+* Duplicate licensing credentials
+* Manipulate authorization checks
+* Bypass activation
+* Spoof authorized server identifiers
+* Circumvent license limits
+________________
+
+
+28. OFFLINE OR REMOTE LICENSING
+Some Licensed Products may require periodic communication with a Husky Solutions LLC licensing service.
+Temporary interruptions may affect:
+* License verification
+* Updates
+* Product functionality
+The applicable product page may provide additional information regarding licensing requirements.
+________________
+
+
+29. LICENSE REVOCATION
+Husky Solutions LLC may suspend or revoke a license where reasonably necessary because of:
+* Piracy
+* Unauthorized resale
+* Unauthorized redistribution
+* License sharing
+* Fraud
+* Chargeback of a valid completed purchase
+* License circumvention
+* Material breach of this Agreement
+Revocation will be subject to applicable law.
+________________
+
+
+30. REFUNDED PRODUCTS
+If the purchase price for a Licensed Product is lawfully refunded or reversed, the corresponding license may be terminated or deactivated.
+A customer is not entitled to continue using a paid license after receiving a full refund for that license unless otherwise required by law or expressly authorized by Husky Solutions LLC.
+________________
+
+
+31. CHARGEBACKS
+If a customer initiates a payment dispute, Husky Solutions LLC may temporarily restrict the corresponding license while the transaction is investigated where reasonably appropriate.
+A legitimate chargeback right is not prohibited.
+However, knowingly filing a fraudulent chargeback while retaining and using the Licensed Product may violate this Agreement.
+________________
+
+
+32. ONE-TIME PURCHASES
+A one-time-payment digital product provides the applicable license without recurring subscription fees unless the purchase specifically states otherwise.
+“One-time payment” does not necessarily mean:
+* Lifetime updates
+* Lifetime support
+* Permanent compatibility with all future third-party systems
+* Ownership of intellectual property
+The rights included are those stated in the product terms.
+________________
+
+
+33. FIVEM ONE-TIME SCRIPT REFUNDS
+One-time-payment FiveM scripts and resources are subject to the Husky Solutions LLC Refund & Cancellation Policy.
+Unless otherwise required by law:
+ONE-TIME-PAYMENT FIVEM SCRIPTS AND DIGITAL RESOURCES ARE FINAL SALE AND NON-REFUNDABLE AFTER DELIVERY OR ACCESS IS GRANTED.
+________________
+
+
+34. DELIVERY
+A digital product may be considered delivered when:
+* Download access is granted
+* Files are sent
+* A license is issued
+* Portal access is granted
+* Marketplace access is granted
+* Repository access is granted
+* Software is installed
+* Another authorized delivery method is completed
+Actual downloading is not required if usable access has already been provided.
+________________
+
+
+35. UPDATES
+Certain products may receive updates.
+Unless expressly stated otherwise, Husky Solutions LLC does not guarantee that every one-time-payment product will receive updates indefinitely.
+Updates may include:
+* Bug fixes
+* Compatibility updates
+* Security updates
+* Performance improvements
+* New features
+________________
+
+
+36. UPDATE ELIGIBILITY
+Eligibility for updates may depend on:
+* Product
+* License type
+* Purchase date
+* Product support status
+* Applicable maintenance plan
+Update rights should be stated on the applicable product page where material.
+________________
+
+
+37. MAJOR VERSIONS
+Husky Solutions LLC may treat a major new version as:
+* A free update
+* A discounted upgrade
+* A separately licensed product
+depending on the product.
+A license to one version does not automatically guarantee access to every future major version.
+________________
+
+
+38. PRODUCT DISCONTINUATION
+Husky Solutions LLC may discontinue a digital product.
+Following discontinuation:
+* Existing licenses may continue functioning where technically possible
+* Support may become limited
+* Updates may stop
+* Compatibility with future third-party systems may not be guaranteed
+Any specific commitments will be governed by applicable product terms.
+________________
+
+
+39. SUPPORT
+Support provided with a Licensed Product may include assistance with:
+* Installation
+* Configuration
+* Product defects
+* Documentation questions
+Support does not automatically include:
+* Custom coding
+* Server administration
+* Third-party script repair
+* Framework modification
+* Unrelated hosting support
+unless separately purchased.
+________________
+
+
+40. SUPPORT DURATION
+Unless a product expressly includes a defined support period, Husky Solutions LLC may determine reasonable support availability based on:
+* Product age
+* Product status
+* Technical feasibility
+* License status
+________________
+
+
+41. CUSTOMER MODIFICATIONS
+Support may be limited when a customer or third party materially modifies a Licensed Product.
+Husky Solutions LLC may require reproduction of an issue using the original supported version before diagnosing a claimed defect.
+________________
+
+
+42. THIRD-PARTY CHANGES
+A third party may change:
+* FiveM
+* A game
+* A framework
+* An API
+* An operating system
+* A dependency
+* Hosting infrastructure
+in a way that affects the Licensed Product.
+Husky Solutions LLC is not responsible for third-party changes outside our reasonable control.
+________________
+
+
+43. BACKUPS
+Customers should maintain lawful backup copies of Licensed Products where permitted.
+Husky Solutions LLC does not guarantee indefinite redownload availability.
+________________
+
+
+44. BACKUP COPIES
+Where permitted by the applicable license, a customer may maintain reasonable backup copies solely for restoring their own authorized installation.
+Backup copies may not be distributed.
+________________
+
+
+45. DOWNLOAD ACCESS
+Husky Solutions LLC may provide continuing access to purchased downloads through a customer portal or marketplace.
+Continuing download access is a convenience and is not guaranteed indefinitely unless expressly promised.
+________________
+
+
+46. LOST FILES
+Loss or deletion of customer files does not automatically entitle the customer to:
+* A refund
+* A new license
+Husky Solutions LLC may restore download access where reasonably available.
+________________
+
+
+47. INTELLECTUAL PROPERTY
+All intellectual-property rights not expressly granted remain with Husky Solutions LLC or the applicable licensor.
+This includes rights in:
+* Code
+* Designs
+* Graphics
+* Documentation
+* Branding
+* Interfaces
+* Templates
+* Product architecture
+________________
+
+
+48. COPYRIGHT NOTICES
+You may not intentionally remove or obscure copyright, licensing, or proprietary notices embedded in a Licensed Product except where expressly authorized.
+________________
+
+
+49. TRADEMARKS
+This License does not grant permission to use Husky Solutions LLC trademarks in a manner that suggests:
+* Endorsement
+* Sponsorship
+* Partnership
+* Affiliation
+unless authorized in writing.
+________________
+
+
+50. GRAPHICS PACKAGES
+A purchased graphics package may include permission to use supplied graphics in the customer's authorized project.
+Unless otherwise stated, a graphics-package purchase does not permit:
+* Resale of individual assets
+* Redistribution of raw files
+* Sale of the package as a template
+* Public distribution of editable source files
+________________
+
+
+51. CUSTOM GRAPHICS
+Rights to fully custom graphics may be governed by the applicable:
+* Quote
+* Invoice
+* Statement of work
+* Project agreement
+Product-specific terms control if they provide broader rights.
+________________
+
+
+52. TEMPLATES
+Templates may be customized for the customer's own authorized use.
+Unless expressly authorized, customers may not commercially redistribute the original or modified template as a competing template product.
+________________
+
+
+53. WEBSITE TEMPLATES
+Website templates may be licensed for use on the number of websites authorized by the applicable product license.
+A single-site license may not be reused across multiple unrelated customer websites.
+________________
+
+
+54. DIGITAL ASSET PACKAGES
+Digital asset packs may contain:
+* Images
+* Icons
+* Graphics
+* Components
+* Templates
+Use is limited to the scope described in the applicable license.
+________________
+
+
+55. NO IMPLIED EXCLUSIVITY
+Unless the product or agreement expressly states that a license is exclusive, all licenses are non-exclusive.
+Husky Solutions LLC may license the same or similar product to other customers.
+________________
+
+
+56. EXCLUSIVE CUSTOM PRODUCTS
+If Husky Solutions LLC agrees in writing to provide an exclusive product or deliverable, the scope of exclusivity must be stated in the applicable agreement.
+Exclusivity will not be implied merely because a product was custom-created.
+________________
+
+
+57. TRANSFER OF LICENSE
+You may not transfer a license to another person or organization without authorization unless the applicable product terms expressly permit transfer.
+Husky Solutions LLC may approve legitimate transfer requests at its discretion where technically and contractually appropriate.
+________________
+
+
+58. SALE OF BUSINESS OR SERVER
+Sale of a:
+* Business
+* FiveM server
+* Website
+* Digital project
+does not automatically transfer Husky Solutions LLC licenses to the buyer.
+A new or transferred license may be required.
+________________
+
+
+59. MERGERS AND REORGANIZATIONS
+Business customers undergoing a legitimate merger, acquisition, or corporate reorganization may contact Husky Solutions LLC regarding transfer of applicable licenses.
+________________
+
+
+60. TERRITORY
+Unless otherwise restricted by applicable law, sanctions requirements, or product-specific terms, licenses may generally be used in locations where Husky Solutions LLC lawfully offers the applicable product.
+________________
+
+
+61. EXPORT AND SANCTIONS
+Licensed Products may be subject to applicable:
+* Export-control laws
+* Sanctions laws
+* Trade restrictions
+Customers must not use, export, or transfer Licensed Products in violation of applicable law.
+________________
+
+
+62. ILLEGAL USE
+A Licensed Product may not be used to facilitate illegal activity.
+Use must comply with the Husky Solutions LLC Acceptable Use Policy.
+________________
+
+
+63. SECURITY RESEARCH
+A software license does not automatically authorize security testing against Husky Solutions LLC infrastructure.
+Security research is governed by the Husky Solutions LLC Security & Vulnerability Disclosure Policy.
+________________
+
+
+64. NO WARRANTY OF UNIVERSAL FITNESS
+A digital product is licensed for the functionality described in its applicable product materials.
+Husky Solutions LLC does not guarantee suitability for every customer's unique environment.
+________________
+
+
+65. WARRANTIES
+Licensed Products are subject to the warranty disclaimers contained in the Husky Solutions LLC Terms of Service and General Disclaimers Policy.
+To the maximum extent permitted by law, products may be provided on an:
+“AS IS” and “AS AVAILABLE” basis.
+________________
+
+
+66. DEFECT REPORTS
+Customers who believe a product contains a reproducible defect should contact:
+[SUPPORT EMAIL]
+Where appropriate, Husky Solutions LLC may:
+* Investigate
+* Troubleshoot
+* Repair
+* Patch
+* Replace files
+* Provide configuration assistance
+________________
+
+
+67. NO REFUND FOR SUPPORTABLE DEFECT ALONE
+A correctable technical issue does not automatically create a refund right for a final-sale digital product.
+Husky Solutions LLC may first attempt to provide a reasonable technical remedy.
+Nothing in this provision overrides rights that cannot legally be waived.
+________________
+
+
+68. TERMINATION BY CUSTOMER
+You may stop using a Licensed Product at any time.
+Stopping use does not automatically:
+* Create a refund
+* Transfer the license
+* Cancel amounts already owed
+________________
+
+
+69. TERMINATION BY HUSKY SOLUTIONS LLC
+Husky Solutions LLC may terminate a License for material breach of this Agreement.
+Grounds may include:
+* Piracy
+* Unauthorized redistribution
+* Unauthorized resale
+* License circumvention
+* Fraud
+* Repeated license sharing
+where permitted by applicable law.
+________________
+
+
+70. NOTICE OF BREACH
+For violations that may reasonably be corrected, Husky Solutions LLC may provide notice and an opportunity to cure before termination.
+Immediate suspension or termination may occur in cases involving:
+* Active piracy
+* Deliberate leaking
+* Fraud
+* Serious security abuse
+* Intentional license circumvention
+________________
+
+
+71. EFFECT OF TERMINATION
+Upon termination of a License, you must stop unauthorized use of the applicable Licensed Product.
+Where reasonably applicable, you may be required to:
+* Remove installed copies
+* Delete unauthorized copies
+* Stop distributing the product
+* Stop using licensing credentials
+Termination does not waive claims arising from prior violations.
+________________
+
+
+72. LICENSE AUDIT
+Where there is a reasonable basis to suspect material license abuse, Husky Solutions LLC may review licensing records reasonably necessary to determine compliance.
+Any such review will be limited by applicable privacy law and the Husky Solutions LLC Privacy Policy.
+________________
+
+
+73. PRIVACY
+Information processed for:
+* Licensing
+* Fraud detection
+* Product delivery
+* Security
+* Customer support
+is handled according to the Husky Solutions LLC Privacy Policy.
+________________
+
+
+74. GOVERNMENT AND LEGAL REQUESTS
+Licensing or customer information may be preserved or disclosed when required or permitted by law as described in the Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy.
+________________
+
+
+75. LIMITATION OF LIABILITY
+Limitations of liability relating to Licensed Products are governed by the Husky Solutions LLC Terms of Service.
+Nothing in this License Agreement expands liability beyond applicable law or the governing Terms.
+________________
+
+
+76. INDEMNIFICATION
+Applicable indemnification obligations are governed by the Husky Solutions LLC Terms of Service.
+________________
+
+
+77. NO WAIVER
+Failure by Husky Solutions LLC to enforce a license restriction does not waive the right to enforce it later.
+________________
+
+
+78. SEVERABILITY
+If a provision of this Agreement is found unenforceable, the remaining provisions will continue in effect to the maximum extent permitted by law.
+________________
+
+
+79. GOVERNING LAW
+This License Agreement is governed by the laws of the State of New York, without regard to conflict-of-law principles, except where applicable law requires otherwise.
+________________
+
+
+80. VENUE
+Subject to rights that cannot legally be waived, disputes concerning this License Agreement will be governed by the dispute provisions contained in the Husky Solutions LLC Terms of Service.
+________________
+
+
+81. PRODUCT-SPECIFIC TERMS
+A product may include additional licensing terms.
+Product-specific terms may specify matters such as:
+* Number of servers
+* Number of websites
+* Number of users
+* Commercial-use rights
+* Source-code access
+* Resale rights
+* Update eligibility
+* Support duration
+Where those terms conflict with this Agreement, the product-specific terms control for that issue.
+________________
+
+
+82. MARKETPLACE TERMS
+Products sold through a third-party marketplace may also be governed by the marketplace's rules.
+Customers must comply with both:
+* Applicable marketplace rules
+* This License Agreement
+to the extent they do not conflict with controlling law or mandatory marketplace terms.
+________________
+
+
+83. CHANGES TO THIS AGREEMENT
+Husky Solutions LLC may update this License Agreement for future purchases.
+The terms applicable to an existing purchase will be governed by the agreement applicable at purchase, subject to lawful updates and separately accepted terms.
+________________
+
+
+84. ENTIRE LICENSE AGREEMENT
+This License Agreement, together with:
+* Product-specific terms
+* Terms of Service
+* Refund & Cancellation Policy
+* Applicable order forms
+* Applicable written agreements
+constitutes the applicable license terms for the Licensed Product.
+________________
+
+
+85. CONTACT INFORMATION
+Licensing questions may be directed to:
+Husky Solutions LLC
+Licensing & Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Licensing Email:
+[LICENSING EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+86. EFFECTIVE DATE
+This Product Licensing & Digital Goods License Agreement is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

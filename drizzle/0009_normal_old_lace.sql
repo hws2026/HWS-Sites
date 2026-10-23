@@ -1,0 +1,1 @@
+ALTER TABLE `customer_accounts` ADD `sending_at` text;

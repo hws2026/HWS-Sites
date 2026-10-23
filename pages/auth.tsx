@@ -11,6 +11,7 @@ const authStorageKey='sb-'+(url?new URL(url).hostname.split('.')[0]:'')+'-auth-t
 let ending:Promise<void>|null=null;
 export function endBrowserSession(reason:'inactive'|'signout'='signout'){
  if(ending)return ending;
+ if(reason==='signout'&&idleSession.remaining()>0)void apiFetch('/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reason})}).catch(()=>{});
  window.dispatchEvent(new Event('hws-session-ending'));
  const expiredSession=idleSession.read()?.session;
  idleSession.expire();setSessionToken('');setSessionUser('');
@@ -64,10 +65,10 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
     setMessage('If this email has an account, a reset link will arrive shortly.');
    }else{
     if(ending)await ending;
-    const {data,error}=await supabase.auth.signInWithPassword({email,password});
-    if(error)throw new Error(siteId?'Invalid email or password for this website.':error.message);
+    const loginResponse=await apiFetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});const login=await loginResponse.json() as {error?:string;access_token:string;refresh_token:string};if(!loginResponse.ok)throw new Error(login.error??'Sign-in failed.');const {data,error}=await supabase.auth.setSession({access_token:login.access_token,refresh_token:login.refresh_token});if(error)throw error;
     if(data.session){idleSession.start(sessionIdentity(data.session.access_token,data.session.user.id),data.session.user.id);setSessionUser(data.session.user.id);}
     setSessionToken(data.session?.access_token??'');window.dispatchEvent(new Event('hws-auth-changed'));
+    const setupResponse=await apiFetch('/api/me');const setup=await setupResponse.json() as {onboardingRequired?:boolean;role?:string;error?:string};if(!setupResponse.ok)throw new Error(setup.error??'Could not verify account setup.');if(setup.onboardingRequired){window.location.hash='/onboarding';return;}if(setup.role==='support'||setup.role==='billing'){window.location.hash='/team-workspace';return;}
     if(siteId){
      try{
       const response=await apiFetch('/api/site-login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:siteId})});
@@ -94,7 +95,7 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
    <p>{reset?'Choose a password of at least 12 characters.':siteId?'Sign in with an account assigned to this website.':isMobileBrowser()?'Sign in to manage Billing, Forms, and Events.':'Your websites and workspace, in one place.'}</p>
    {!reset&&new URLSearchParams(window.location.hash.split('?')[1]??'').get('reason')==='inactive'&&<p role="status">You were signed out after 30 minutes of inactivity. Sign in again to continue. Any unsaved website draft can be recovered in its editor in this tab.</p>}
    {!supabase&&<p role="status">Sign-in is not configured yet.</p>}
-   <form onSubmit={submit}>
+   <p className="auth-scope-note">For account security, sign-in attempts are recorded with your IP address, approximate location, and device information. <a href="https://www.huskysol.com/legal" target="_blank" rel="noopener noreferrer">Privacy and account policies</a></p><form onSubmit={submit}>
     {!reset&&<label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>}
     {(reset||mode!=='forgot')&&<label>Password<input type="password" autoComplete={reset?'new-password':'current-password'} minLength={reset?12:1} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}
     {reset&&<label>Confirm password<input type="password" autoComplete="new-password" minLength={12} value={confirm} onChange={e=>setConfirm(e.target.value)} required/></label>}

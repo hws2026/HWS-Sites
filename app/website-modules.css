@@ -271,3 +271,8 @@
 .website .footer-legal{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;min-width:0;max-width:100%;overflow-wrap:anywhere}.website .footer-legal a{text-decoration:underline;text-underline-offset:3px}.website .footer-legal a:hover{text-decoration-thickness:2px}
 
 .website-payment{display:grid;gap:18px;max-width:640px}.website-payment .website-payment-amount{font-size:36px;line-height:1.2}.website-payment-amount small{font-size:15px;font-weight:400}.website-payment>small{font-size:12px;opacity:.75}.website-payment .module-button{justify-self:start}.website-payment button:disabled{opacity:.55;cursor:not-allowed}
+
+/* Overview links remain available when a desktop column menu becomes a phone list. */
+.website-nav .mobile-menu-overview{display:none!important}
+.website-mobile-menu .mobile-menu-overview{display:block;min-height:44px;padding:12px 14px}
+.website-mobile-menu :is(a,summary){overflow-wrap:anywhere;white-space:normal}

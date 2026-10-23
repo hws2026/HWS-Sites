@@ -1,0 +1,1073 @@
+HUSKY SOLUTIONS LLC
+FIVEM RESOURCE TERMS & LICENSE POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+These FiveM Resource Terms & License Policy (“FiveM Terms”) govern the purchase, licensing, installation, access, modification, use, support, transfer, and distribution of FiveM-related products provided by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+These FiveM Terms apply to products including:
+* FiveM scripts
+* FiveM resources
+* Server systems
+* User interfaces
+* Plugins
+* Utilities
+* Configurations
+* Framework integrations
+* Server tools
+* Digital packages
+* Templates
+* Custom FiveM development
+* FiveM websites or dashboards
+* Related digital products
+These FiveM Terms supplement the:
+* Husky Solutions LLC Terms of Service
+* Product Licensing & Digital Goods License Agreement
+* Refund & Cancellation Policy
+* Acceptable Use Policy
+* Copyright & DMCA Policy
+* Privacy Policy
+* Security Policy
+By purchasing, downloading, installing, activating, accessing, or using a Husky Solutions LLC FiveM resource, you agree to these FiveM Terms.
+________________
+
+
+1. FIVEM RESOURCES ARE LICENSED, NOT SOLD
+Unless expressly stated otherwise in writing, Husky Solutions LLC FiveM resources are licensed, not sold.
+Purchasing a FiveM resource grants you limited rights to use the resource according to these Terms.
+Your purchase does not transfer:
+* Copyright ownership
+* Source-code ownership
+* Resale rights
+* Redistribution rights
+* Trademark ownership
+* Intellectual-property ownership
+unless expressly stated in a written agreement.
+________________
+
+
+2. ONE-TIME PURCHASE DOES NOT TRANSFER OWNERSHIP
+A FiveM resource sold for a one-time payment gives the customer the applicable license without recurring license fees unless otherwise stated.
+A one-time payment does not automatically mean:
+* Ownership of the source code
+* Ownership of copyright
+* Unlimited server installations
+* Unlimited transfers
+* Lifetime support
+* Lifetime updates
+* Permanent compatibility with every future FiveM version
+* Permission to redistribute the resource
+________________
+
+
+3. DEFAULT LICENSE
+Unless the applicable product page expressly states otherwise, a FiveM resource license is:
+* Limited
+* Non-exclusive
+* Revocable for material breach
+* Non-transferable without permission
+* Non-sublicensable
+and is granted to the customer or organization that purchased the resource.
+________________
+
+
+4. AUTHORIZED SERVER USE
+The number of production servers permitted under a license will be stated on the applicable product page, checkout page, invoice, license description, or customer account.
+If no number is expressly stated, the default license permits use on:
+One (1) production FiveM server.
+Additional server usage may require additional licenses.
+________________
+
+
+5. DEVELOPMENT SERVER
+Where reasonably necessary, a customer may use the resource on one private development or staging server associated with the licensed production server.
+The development server:
+* Must be controlled by the same customer or organization;
+* Must be used primarily for testing or development;
+* Must not operate as an independent public production server;
+* Must not be used to avoid purchasing another license.
+________________
+
+
+6. MULTIPLE SERVERS
+If you operate multiple independent production FiveM servers, each server may require its own license unless the applicable product provides:
+* Multi-server licensing;
+* Enterprise licensing;
+* Network licensing; or
+* Another expressly authorized license type.
+________________
+
+
+7. SERVER NETWORKS
+A FiveM community operating multiple servers under one brand or network is not automatically entitled to use one license across all servers.
+A network license must be expressly granted.
+________________
+
+
+8. OWNERSHIP OF SERVER DOES NOT MATTER
+A resource license applies according to the purchased license scope.
+The fact that multiple servers are owned by the same person does not automatically permit unlimited installations.
+________________
+
+
+9. LICENSE IDENTIFIERS
+Husky Solutions LLC may associate a license with information such as:
+* Customer account
+* Order number
+* Server identifier
+* Cfx.re-related identifier
+* License key
+* Marketplace account
+* Customer organization
+* Resource identifier
+* Server IP address where technically appropriate
+These identifiers may be used to administer and protect the license.
+________________
+
+
+10. LICENSE VERIFICATION
+Certain resources may use technical licensing systems.
+These may be used to:
+* Confirm legitimate purchase
+* Confirm authorized server usage
+* Prevent unauthorized redistribution
+* Prevent piracy
+* Detect duplicate unauthorized installations
+* Manage license transfers
+License verification data is handled according to the Husky Solutions LLC Privacy Policy.
+________________
+
+
+11. ASSET ESCROW AND PROTECTED FILES
+Certain FiveM resources may use Cfx.re Asset Escrow or another supported code-protection or licensing system.
+Protected files may be:
+* Encrypted
+* Escrowed
+* Compiled
+* Obfuscated
+* Locked from ordinary modification
+You must not intentionally bypass, crack, decrypt, defeat, or circumvent lawful code-protection or license-verification systems except where applicable law expressly grants a right that cannot be waived.
+________________
+
+
+12. ESCROWED CODE
+If a resource uses Asset Escrow, the customer receives access to the resource according to the files and functionality intentionally made available.
+The customer is not automatically entitled to:
+* Unencrypted source code
+* Internal development files
+* Build systems
+* Protected libraries
+* Proprietary source components
+merely because the resource was purchased.
+________________
+
+
+13. OPEN CONFIGURATION FILES
+Resources may include editable files such as:
+* Config files
+* Localization files
+* HTML
+* CSS
+* JavaScript
+* SQL
+* Other customer-editable files
+The exact files made editable depend on the product.
+The existence of editable files does not transfer ownership of the underlying resource.
+________________
+
+
+14. MODIFICATIONS
+Where a resource permits modification, you may modify it for your own authorized server use.
+You may not use modification as a means to:
+* Redistribute the resource
+* Resell the resource
+* Remove licensing protections
+* Publish proprietary code
+* Create an unauthorized competing product using substantial Husky Solutions LLC code
+________________
+
+
+15. DERIVATIVE VERSIONS
+A modified version containing proprietary Husky Solutions LLC code remains subject to these Terms.
+Modification does not eliminate Husky Solutions LLC's ownership rights in the underlying proprietary code.
+________________
+
+
+16. CUSTOMER-CREATED ADDITIONS
+Code you independently create remains yours to the extent it does not incorporate Husky Solutions LLC proprietary material.
+Nothing in these Terms claims ownership over code independently developed by the customer.
+________________
+
+
+17. CONTRACTOR ACCESS
+You may permit a legitimate developer or contractor to access the resource solely where necessary to perform authorized work on your licensed server.
+The contractor may not:
+* Keep the resource for unrelated use
+* Use it for another customer
+* Resell it
+* Redistribute it
+* Publish it
+* Add it to a personal resource library
+You remain responsible for access you provide.
+________________
+
+
+18. NO SHARING WITH OTHER SERVERS
+You may not give, loan, share, or provide a purchased resource to:
+* Another FiveM server owner
+* Another community
+* Another developer for unrelated use
+* Friends
+* Other Discord communities
+* Unrelated organizations
+unless Husky Solutions LLC expressly authorizes the transfer.
+________________
+
+
+19. NO REDISTRIBUTION
+You may not redistribute Husky Solutions LLC FiveM resources through:
+* Discord
+* GitHub
+* GitLab
+* Cloud storage
+* File-sharing sites
+* Forums
+* Leak sites
+* Resource marketplaces
+* Direct messages
+* Peer-to-peer sharing
+* Other distribution methods
+unless expressly authorized.
+________________
+
+
+20. NO LEAKING
+Uploading, publishing, transmitting, or otherwise providing unauthorized copies of paid Husky Solutions LLC FiveM resources is prohibited.
+This includes:
+* Complete resources
+* Partial proprietary code
+* Decrypted code
+* Escrow-bypassed files
+* License data
+* Proprietary documentation
+* Internal files
+________________
+
+
+21. NO RESELLING
+You may not sell a Husky Solutions LLC resource to another person or community unless resale rights are expressly granted in writing.
+This applies even if:
+* You no longer use the resource;
+* Your server closes;
+* You sell your FiveM community;
+* You modified the resource.
+________________
+
+
+22. SALE OF A FIVEM SERVER
+Selling or transferring ownership of your FiveM server does not automatically transfer Husky Solutions LLC licenses to the new owner.
+The new owner may be required to:
+* Purchase a new license; or
+* Request an approved license transfer.
+________________
+
+
+23. LICENSE TRANSFERS
+Husky Solutions LLC may permit legitimate license transfers where supported.
+A transfer may require:
+* Verification of the original purchase;
+* Verification of the current owner;
+* Removal from the prior server;
+* Identification of the new server;
+* Payment of a transfer fee if disclosed in advance;
+* Other reasonable anti-fraud verification.
+License transfers are not guaranteed unless expressly included with the product.
+________________
+
+
+24. SERVER MIGRATIONS
+Moving your own licensed server to a new:
+* Host
+* Machine
+* IP address
+* Infrastructure provider
+does not necessarily require a new purchase.
+Where license reconfiguration is required, contact Husky Solutions LLC Support.
+________________
+
+
+25. HOSTING PROVIDER CHANGES
+A change in hosting provider does not automatically terminate your license.
+Husky Solutions LLC may require verification before updating associated server identifiers.
+________________
+
+
+26. FRAMEWORK SUPPORT
+A resource may support frameworks such as:
+* QBCore
+* Qbox
+* ESX
+* Standalone
+* Other frameworks
+only where expressly identified in product documentation.
+Do not assume a resource supports every framework.
+________________
+
+
+27. DEPENDENCIES
+Certain resources may depend on third-party resources, libraries, or services.
+Customers are responsible for installing and maintaining required dependencies.
+Dependencies should be identified where material.
+________________
+
+
+28. THIRD-PARTY RESOURCE CONFLICTS
+Husky Solutions LLC cannot guarantee compatibility with every unrelated FiveM resource.
+Conflicts may arise from:
+* Competing scripts
+* Modified frameworks
+* Duplicate event names
+* Database changes
+* Improper load order
+* Resource overrides
+* Third-party modifications
+A third-party conflict does not automatically mean the Husky Solutions LLC resource is defective.
+________________
+
+
+29. SYSTEM REQUIREMENTS
+Customers are responsible for reviewing technical requirements before purchase.
+Requirements may include:
+* FiveM artifact version
+* Framework
+* Database
+* Dependencies
+* Runtime
+* Hosting environment
+* Required permissions
+________________
+
+
+30. INSTALLATION RESPONSIBILITY
+Unless installation services are included, the customer is responsible for correctly installing the resource.
+Customers should follow:
+* Documentation
+* README files
+* SQL instructions
+* Configuration instructions
+* Dependency requirements
+________________
+
+
+31. SUPPORT FOR INSTALLATION
+Where support is included, Husky Solutions LLC may assist with reasonable installation problems.
+Support does not automatically include:
+* Full server setup
+* Repair of unrelated scripts
+* Custom programming
+* Framework conversion
+* Database repair
+* Hosting administration
+unless separately purchased.
+________________
+
+
+32. CUSTOMER MODIFICATIONS AND SUPPORT
+If a customer modifies the resource and creates a problem, Husky Solutions LLC may require the customer to test the unmodified supported version before further troubleshooting.
+Support may be limited for heavily modified resources.
+________________
+
+
+33. CUSTOM DEVELOPMENT
+Custom FiveM development may be governed by separate:
+* Project agreements
+* Statements of work
+* Quotes
+* Invoices
+Those documents may establish different ownership, licensing, update, and support rights.
+________________
+
+
+34. CUSTOM DOES NOT AUTOMATICALLY MEAN EXCLUSIVE
+A resource created specifically for one customer is not automatically exclusive unless the written agreement expressly grants exclusivity.
+Husky Solutions LLC may retain rights in:
+* Reusable libraries
+* Generic systems
+* Frameworks
+* Utilities
+* Development methods
+* Pre-existing code
+unless otherwise agreed.
+________________
+
+
+35. ONE-TIME PAYMENT POLICY
+Unless the product page states otherwise, a one-time-payment FiveM script is purchased through a single non-recurring payment.
+No additional recurring fee will be charged solely for continued use of that purchased license unless the customer separately purchases another subscription or service.
+________________
+
+
+36. NO REFUNDS FOR ONE-TIME FIVEM RESOURCES
+ALL ONE-TIME-PAYMENT FIVEM SCRIPTS AND DIGITAL RESOURCES ARE FINAL SALE AND NON-REFUNDABLE AFTER DELIVERY, DOWNLOAD ACCESS, LICENSE ISSUANCE, INSTALLATION, OR OTHER ACCESS IS PROVIDED, EXCEPT WHERE APPLICABLE LAW REQUIRES OTHERWISE.
+________________
+
+
+37. WHY DIGITAL FIVEM SALES ARE FINAL
+FiveM resources are digital products capable of being:
+* Downloaded
+* Copied
+* Installed
+* Inspected
+* Modified
+* Retained
+after delivery.
+Once access is provided, Husky Solutions LLC cannot reliably confirm that all copies have been returned or deleted.
+For this reason, one-time digital-resource purchases are final sale after delivery.
+________________
+
+
+38. CHANGE OF MIND
+A refund will not ordinarily be provided because:
+* You changed your mind
+* You no longer operate your server
+* Your community closed
+* You purchased another resource
+* You no longer need the product
+* Your project changed direction
+* You expected an unadvertised feature
+________________
+
+
+39. FAILURE TO READ REQUIREMENTS
+Failure to review:
+* Product description
+* Framework requirements
+* Dependencies
+* Compatibility information
+* License terms
+does not ordinarily create a refund right after delivery.
+________________
+
+
+40. INSTALLATION PROBLEMS
+An installation problem does not automatically create a refund right.
+Where appropriate, Husky Solutions LLC may first provide:
+* Troubleshooting
+* Documentation
+* Replacement files
+* Configuration assistance
+________________
+
+
+41. DEFECTIVE RESOURCE
+If a resource contains a reproducible defect preventing it from substantially performing the functionality expressly advertised, contact Support.
+Husky Solutions LLC may attempt to:
+* Diagnose the issue
+* Repair the resource
+* Provide an update
+* Provide replacement files
+* Provide another reasonable remedy
+A correctable defect does not automatically create a refund right except where required by law.
+________________
+
+
+42. FAILURE TO DELIVER
+The final-sale policy does not permit Husky Solutions LLC to take payment and intentionally fail to provide the purchased resource.
+If payment is completed but access cannot be provided, Husky Solutions LLC may:
+* Restore access
+* Complete delivery
+* Provide replacement access
+* Issue an appropriate refund if delivery cannot reasonably be completed
+________________
+
+
+43. DUPLICATE CHARGES
+Verified accidental duplicate charges may be refunded.
+The valid original purchase remains subject to the no-refund policy.
+________________
+
+
+44. CHARGEBACKS
+Customers retain legitimate rights to dispute unauthorized or incorrect transactions.
+However, knowingly initiating a fraudulent chargeback for an authorized purchase while retaining the FiveM resource may constitute a material violation of these Terms.
+________________
+
+
+45. LICENSE STATUS DURING PAYMENT DISPUTE
+Where appropriate, Husky Solutions LLC may temporarily suspend a license associated with a disputed payment while the payment dispute is pending.
+________________
+
+
+46. REFUNDED OR REVERSED PURCHASES
+If payment for a resource is lawfully refunded or reversed, the corresponding license may be deactivated.
+The customer must stop using the resource after receiving a full return of the purchase price unless otherwise required by law.
+________________
+
+
+47. UPDATES
+Husky Solutions LLC may provide updates for FiveM resources.
+Updates may include:
+* Bug fixes
+* Security changes
+* Compatibility fixes
+* Performance improvements
+* Feature improvements
+________________
+
+
+48. NO LIFETIME UPDATE GUARANTEE
+Unless expressly stated on the product page, purchase of a FiveM resource does not guarantee updates forever.
+A one-time purchase is a license to use the applicable product, not a guarantee that the product will be actively developed indefinitely.
+________________
+
+
+49. MAJOR VERSION UPGRADES
+A major rewrite or new generation of a resource may be offered as:
+* A free update
+* Discounted upgrade
+* Separate product
+at Husky Solutions LLC's discretion unless prior product terms state otherwise.
+________________
+
+
+50. SECURITY UPDATES
+Husky Solutions LLC may issue security-related updates where appropriate.
+Customers may be required to update a resource to continue receiving support.
+________________
+
+
+51. OUTDATED VERSIONS
+Husky Solutions LLC may discontinue support for outdated versions.
+A customer may be required to update before technical support is provided.
+________________
+
+
+52. PRODUCT DISCONTINUATION
+Husky Solutions LLC may discontinue a FiveM resource.
+Discontinuation may result in:
+* End of future updates
+* Reduced support
+* Removal from new sales
+* End of compatibility maintenance
+Existing licenses may continue to function where technically possible.
+________________
+
+
+53. NO GUARANTEE AGAINST THIRD-PARTY CHANGES
+Husky Solutions LLC cannot guarantee that a resource will continue working forever following changes by:
+* Cfx.re
+* Rockstar Games
+* Take-Two Interactive
+* FiveM frameworks
+* Third-party dependencies
+* Hosting providers
+* Database software
+* Other unrelated systems
+________________
+
+
+54. THIRD-PARTY PLATFORM DISCLAIMER
+Unless expressly stated otherwise, Husky Solutions LLC is independent and is not sponsored, operated, or endorsed by:
+* Cfx.re
+* Rockstar Games
+* Take-Two Interactive
+or other unrelated game/platform companies.
+All third-party marks belong to their respective owners.
+________________
+
+
+55. SERVER OR ACCOUNT BANS
+Husky Solutions LLC is not responsible for a customer receiving:
+* FiveM server suspension
+* Cfx.re account suspension
+* Platform restriction
+* Game ban
+* Community enforcement
+caused by the customer's actions or a third party's enforcement decisions.
+Such enforcement does not automatically create a refund right.
+________________
+
+
+56. CUSTOMER COMPLIANCE
+Customers are responsible for complying with:
+* Cfx.re terms
+* FiveM rules
+* Rockstar or Take-Two policies where applicable
+* Framework licenses
+* Applicable laws
+* Third-party licenses
+________________
+
+
+57. PROHIBITED MALICIOUS USE
+FiveM resources may not be used to:
+* Steal credentials
+* Distribute malware
+* Attack servers
+* Gain unauthorized system access
+* Facilitate illegal activity
+Use must comply with the Husky Solutions LLC Acceptable Use Policy.
+________________
+
+
+58. INTELLECTUAL PROPERTY
+Husky Solutions LLC retains ownership of its proprietary:
+* Code
+* Scripts
+* Interfaces
+* Documentation
+* Resource structures
+* Branding
+* Designs
+* Development systems
+except where rights are expressly transferred.
+________________
+
+
+59. COPYRIGHT
+Unauthorized copying or redistribution may constitute copyright infringement in addition to violating these Terms.
+________________
+
+
+60. REMOVAL OF COPYRIGHT NOTICES
+You may not intentionally remove or alter copyright or proprietary notices where they are included as part of a Licensed Product, except where Husky Solutions LLC expressly permits customization.
+________________
+
+
+61. HUSKY SOLUTIONS BRANDING
+A resource license does not grant permission to represent your server as:
+* Owned by Husky Solutions LLC
+* Officially operated by Husky Solutions LLC
+* Sponsored by Husky Solutions LLC
+* Endorsed by Husky Solutions LLC
+unless expressly authorized.
+________________
+
+
+62. PRODUCT BRANDING REMOVAL
+Whether visible “Husky Solutions” branding may be removed depends on the applicable product.
+If branding removal is allowed, that does not remove copyright ownership or licensing restrictions.
+________________
+
+
+63. PIRACY INVESTIGATIONS
+Husky Solutions LLC may investigate suspected resource piracy.
+Investigation may include review of relevant:
+* License records
+* Order information
+* Server identifiers
+* Authentication records
+* IP information
+* Download records
+in accordance with applicable law and the Privacy Policy.
+________________
+
+
+64. PIRACY ENFORCEMENT
+Where Husky Solutions LLC reasonably determines that a resource has been unlawfully redistributed, it may take action including:
+* License termination
+* Account suspension
+* Marketplace complaint
+* Hosting complaint
+* DMCA notice
+* Other appropriate legal remedies
+________________
+
+
+65. FALSE PIRACY ALLEGATIONS
+Husky Solutions LLC will not knowingly terminate licenses solely because an unsupported accusation is made.
+Available evidence and relevant circumstances may be reviewed before enforcement where appropriate.
+________________
+
+
+66. LICENSE EVASION
+You may not evade license enforcement by:
+* Creating replacement accounts
+* Changing server identifiers
+* Using another person's license
+* Spoofing identifiers
+* Circumventing activation
+________________
+
+
+67. ACCOUNT TERMINATION
+Serious or repeated violations may result in termination of access to Husky Solutions LLC FiveM products.
+Examples include:
+* Repeated piracy
+* Intentional leaking
+* Unauthorized resale
+* Fraud
+* Serious security abuse
+________________
+
+
+68. SUPPORT ELIGIBILITY
+Support is available only for legitimate licensed copies of Husky Solutions LLC FiveM products.
+Husky Solutions LLC is not required to provide support for:
+* Pirated copies
+* Unauthorized redistributed copies
+* Illegitimate licenses
+* Resources obtained through leak sites
+________________
+
+
+69. SUPPORT CHANNELS
+FiveM support may be available through:
+* Support tickets
+* Email
+* Discord
+* Customer portal
+* Documentation
+depending on the product.
+Official support channels may change.
+________________
+
+
+70. SUPPORT RESPONSE TIMES
+Unless a written support agreement states otherwise, response times are targets and not guaranteed resolution times.
+________________
+
+
+71. SUPPORT ABUSE
+Husky Solutions LLC may restrict support access for users who:
+* Threaten staff
+* Harass staff
+* Intentionally submit malicious files
+* Repeatedly abuse support systems
+* Attempt social engineering
+Restriction of support does not automatically terminate a valid product license unless another violation exists.
+________________
+
+
+72. SERVER BACKUPS
+Customers should maintain appropriate backups before:
+* Installing resources
+* Updating resources
+* Modifying resources
+* Changing databases
+* Changing frameworks
+Husky Solutions LLC is not responsible for customer data loss caused by failure to maintain reasonable backups where the loss is outside our control.
+________________
+
+
+73. DATABASE CHANGES
+Resources may require database migrations or SQL changes.
+Customers should back up databases before making significant changes.
+________________
+
+
+74. PERFORMANCE
+Resource performance may depend on:
+* Server hardware
+* Number of players
+* Other resources
+* Database performance
+* Network conditions
+* Configuration
+Husky Solutions LLC does not guarantee identical performance across every server.
+________________
+
+
+75. PLAYER COUNTS
+Unless expressly stated, a resource is not guaranteed to perform identically at every player count or infrastructure size.
+Customers operating high-volume servers should evaluate product requirements.
+________________
+
+
+76. CUSTOM CONFIGURATION
+Configuration assistance may be limited to settings supported by the product.
+Complex custom behavior may require paid development services.
+________________
+
+
+77. CUSTOM FEATURE REQUESTS
+Purchase of a resource does not guarantee that future feature requests will be implemented.
+Husky Solutions LLC may consider feature requests at its discretion.
+________________
+
+
+78. FEEDBACK
+Customers may submit suggestions or feature requests.
+Feedback rights are governed by the Husky Solutions LLC Terms of Service.
+________________
+
+
+79. CUSTOMER DATA
+If a FiveM resource processes customer or player information, the customer is responsible for complying with laws applicable to their server and community.
+Husky Solutions LLC does not automatically become responsible for the customer's privacy obligations merely because our software is used.
+________________
+
+
+80. LOGGING
+Resources may create operational or security logs.
+Such logs may include:
+* Errors
+* Resource events
+* Authentication events
+* License checks
+* Security events
+Customers should review applicable product documentation.
+________________
+
+
+81. TELEMETRY
+If a FiveM resource transmits telemetry to Husky Solutions LLC, the collection and purpose should be disclosed through applicable product documentation or privacy notices.
+Telemetry may be used for:
+* Licensing
+* Error detection
+* Security
+* Product reliability
+________________
+
+
+82. NO SECRET DATA COLLECTION
+Husky Solutions LLC will not intentionally market a resource as collecting no remote information while secretly collecting extensive unrelated player data.
+Collection will be governed by applicable disclosures and law.
+________________
+
+
+83. CUSTOMERS' PLAYER DATA
+Customers are responsible for determining whether they need:
+* Privacy notices
+* Consent
+* Data-retention rules
+* Community policies
+for information they collect from their own FiveM users.
+________________
+
+
+84. PRODUCT DOCUMENTATION
+Customers should use the current official documentation where available.
+Unofficial tutorials or modifications created by third parties are not controlled by Husky Solutions LLC.
+________________
+
+
+85. SCREENSHOTS AND DEMONSTRATIONS
+Product screenshots and demos may contain:
+* Example data
+* Test accounts
+* Development content
+* Example configurations
+Actual appearance may vary depending on configuration and updates.
+________________
+
+
+86. NO PROMISE OF FUTURE FEATURES
+A purchase should be based on the functionality available or expressly promised at the time of purchase.
+Roadmap ideas or suggested features are not guaranteed unless contractually committed.
+________________
+
+
+87. BETA RESOURCES
+Beta, preview, or early-access resources may:
+* Contain bugs
+* Change substantially
+* Lose compatibility
+* Be discontinued
+Customers should avoid relying on beta resources for critical production systems unless they accept those risks.
+________________
+
+
+88. MARKETPLACE SALES
+A FiveM resource sold through an authorized marketplace may also be subject to that marketplace's mandatory:
+* Terms
+* Licensing system
+* Refund procedures
+* Delivery mechanisms
+Where a marketplace controls a transaction, customers may need to manage certain issues through that marketplace.
+________________
+
+
+89. DIRECT SALES
+Resources sold directly by Husky Solutions LLC are governed by these Terms and the applicable Husky Solutions LLC policies.
+________________
+
+
+90. ORDER RECORDS
+Husky Solutions LLC may retain records demonstrating:
+* Purchase
+* Delivery
+* License issuance
+* Activation
+* Authorized transfers
+* Refunds
+* Chargebacks
+in accordance with the Data Retention & Deletion Policy.
+________________
+
+
+91. TRANSFER AFTER BUSINESS SALE
+If a customer sells an entire business or FiveM community, Husky Solutions LLC may consider transfer of associated licenses upon request.
+Approval may depend on:
+* Verification of transaction
+* Existing licensing restrictions
+* Product type
+* Marketplace limitations
+________________
+
+
+92. DECEASED OR INCAPACITATED OWNER
+In unusual circumstances involving a sole server owner's death or legal incapacity, Husky Solutions LLC may evaluate transfer requests from an authorized representative.
+Reasonable documentation may be required.
+________________
+
+
+93. NO RENTAL
+You may not rent access to a Licensed Product to another server or organization unless expressly authorized.
+________________
+
+
+94. NO SOFTWARE-AS-A-SERVICE RESALE
+You may not use a purchased FiveM resource as the basis for reselling access to the resource itself as a hosted service unless the applicable license expressly permits it.
+This does not prohibit ordinary operation of your own FiveM server using the resource.
+________________
+
+
+95. CLIENT WORK
+Developers building a server for a client must ensure the appropriate party owns or receives the required resource license.
+A developer's personal license may not be reused across multiple clients.
+________________
+
+
+96. DEVELOPMENT AGENCIES
+Agencies or developers that repeatedly deploy Husky Solutions LLC resources for different customers may require separate licenses for each customer unless an agency license is expressly offered.
+________________
+
+
+97. FREE RESOURCES
+Free Husky Solutions LLC resources may be subject to different license terms.
+The license distributed with the applicable free resource controls.
+________________
+
+
+98. OPEN-SOURCE FIVEM RESOURCES
+If Husky Solutions LLC releases a resource under an open-source license, that open-source license governs the rights specifically granted under it.
+These FiveM Terms do not override rights that the open-source license expressly grants.
+________________
+
+
+99. SANCTIONS AND EXPORT RESTRICTIONS
+Customers may not obtain or use FiveM resources in violation of applicable:
+* Sanctions laws
+* Export restrictions
+* Trade laws
+________________
+
+
+100. DISCLAIMER OF WARRANTIES
+To the maximum extent permitted by law, FiveM resources are provided:
+“AS IS” and “AS AVAILABLE.”
+Husky Solutions LLC does not guarantee that a resource will:
+* Work with every server;
+* Remain compatible forever;
+* Never contain errors;
+* Never experience downtime;
+* Meet every customer's unique expectation.
+Additional warranty disclaimers are contained in the Husky Solutions LLC Terms of Service.
+________________
+
+
+101. LIMITATION OF LIABILITY
+Limitations of liability applicable to FiveM resources are governed by the Husky Solutions LLC Terms of Service.
+________________
+
+
+102. TERMINATION OF LICENSE
+Husky Solutions LLC may terminate or suspend a license for material violation of these Terms where permitted by law.
+Following termination, the customer must stop unauthorized use.
+________________
+
+
+103. SURVIVING OBLIGATIONS
+Termination does not eliminate obligations concerning:
+* Copyright
+* Redistribution
+* Confidentiality where applicable
+* Payment obligations
+* Prior infringement
+* Liability provisions
+that by their nature should survive.
+________________
+
+
+104. SEVERABILITY
+If any provision of these Terms is held unenforceable, the remaining provisions will remain effective to the maximum extent permitted by law.
+________________
+
+
+105. NO WAIVER
+Failure by Husky Solutions LLC to enforce a violation does not waive the right to enforce future or continuing violations.
+________________
+
+
+106. GOVERNING LAW
+These FiveM Terms are governed by the laws of the State of New York, without regard to conflict-of-law principles, except where applicable law requires otherwise.
+________________
+
+
+107. DISPUTES
+Disputes are governed by the applicable dispute provisions in the Husky Solutions LLC Terms of Service.
+________________
+
+
+108. PRODUCT-SPECIFIC TERMS
+Individual FiveM resources may have additional terms regarding:
+* Number of servers
+* Source access
+* Modifications
+* Updates
+* Support
+* Transfers
+* Commercial use
+Those specific terms control where they directly conflict with these general FiveM Terms.
+________________
+
+
+109. CHANGES TO THESE TERMS
+Husky Solutions LLC may update these Terms for future transactions.
+Existing purchases remain subject to applicable legal protections and any specific license terms agreed at the time of purchase.
+________________
+
+
+110. CUSTOMER ACKNOWLEDGMENT
+Before completing a one-time FiveM resource purchase, Husky Solutions LLC may require acknowledgment substantially similar to:
+“I understand that I am purchasing a license to a digital FiveM resource, not ownership of the underlying intellectual property. I understand that once the resource is delivered or access is granted, the purchase is final and non-refundable except where required by law. I agree not to leak, resell, redistribute, or share the resource outside the scope of my license.”
+________________
+
+
+111. RECOMMENDED PRODUCT-PAGE NOTICE
+Each paid one-time FiveM resource page should prominently state:
+DIGITAL FIVEM RESOURCE — LICENSED PRODUCT
+This is a one-time-payment digital product. You are purchasing a license to use the resource, not ownership of the source code or copyright. Once delivered or access is granted, the purchase is final and non-refundable except where required by law. Redistribution, leaking, resale, license sharing, and unauthorized multi-server use are prohibited.
+________________
+
+
+112. SUPPORT CONTACT
+FiveM product support may be directed to:
+Husky Solutions LLC
+FiveM Support
+Support Email:
+[FIVEM SUPPORT EMAIL]
+Licensing Email:
+[LICENSING EMAIL]
+Security Email:
+[SECURITY EMAIL]
+________________
+
+
+113. LEGAL CONTACT
+Husky Solutions LLC
+Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Legal Email:
+[LEGAL EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+114. EFFECTIVE DATE
+These FiveM Resource Terms & License Policy are effective as of:
+October 12, 2026
+and remain effective until amended or replaced by Husky Solutions LLC.

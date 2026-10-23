@@ -1,3 +1,6 @@
+import {Onboarding} from './onboarding';
+import {StaffWorkspace} from '@/app/admin/customer-center';
+import '@/app/customer-services.css';
 import {MobileWorkspace} from './mobile-workspace';
 import {IdleGuard} from './idle-guard';
 import {isMobileBrowser} from '@/lib/device-access';
@@ -33,7 +36,7 @@ function AccountHome(){
    if(response.status===401){setSessionToken('');setDestination('/signin');return;}
    const account=await response.json() as {role?:string;error?:string};
    if(!response.ok)throw new Error(account.error??'Unable to load your account.');
-   setDestination(isMobileBrowser()?'/mobile':account.role==='admin'?'/admin':'/portal');
+   setDestination(account.role==='support'||account.role==='billing'?'/team-workspace':isMobileBrowser()?'/mobile':account.role==='admin'?'/admin':'/portal');
   }).catch(error=>{if(!abort.signal.aborted)setError(error instanceof Error?error.message:'Unable to load your account.');});
   return()=>abort.abort();
  },[attempt]);
@@ -44,6 +47,8 @@ function AccountHome(){
 function RoutedApp({route}:{route:string}){
  const path=route.split('?')[0];
  if(path==='/')return <AccountHome/>;
+ if(path==='/onboarding')return hasSession()?<Onboarding/>:<Redirect to='/signin'/>;
+ if(path==='/team-workspace')return hasSession()?<StaffWorkspace/>:<Redirect to='/signin'/>;
  if(path==='/signout')return <SignOut/>;
  if(path.startsWith('/site-admin/'))return <AuthScreen key={path} siteId={decodeURIComponent(path.slice(12))}/>;
  if(path==='/signin')return <AuthScreen/>;
@@ -64,10 +69,17 @@ function RoutedApp({route}:{route:string}){
  }
  return <main className="publication-empty"><h1>Page not found</h1><a href={appHref('/')}>Return to sign in</a></main>;
 }
+function AccessGate({route,children}:{route:string;children:React.ReactNode}){
+ const path=route.split('?')[0],protectedRoute=['/','/admin','/portal','/mobile','/team-workspace'].includes(path)||path.startsWith('/editor/')&&!path.startsWith('/editor/demo-');
+ const [checked,setChecked]=useState(''),[error,setError]=useState('');
+ useEffect(()=>{if(!protectedRoute||!hasSession())return;let live=true;setError('');void apiFetch('/api/me').then(async r=>{const d=await r.json() as {error?:string;onboardingRequired?:boolean;role:string};if(!r.ok)throw new Error(d.error??'Account verification failed.');if(!live)return;if(d.onboardingRequired){window.location.hash='/onboarding';return;}if((d.role==='support'||d.role==='billing')&&path!=='/team-workspace'){window.location.hash='/team-workspace';return;}setChecked(route);}).catch(e=>{if(live)setError(e.message);});return()=>{live=false;};},[route,protectedRoute,path]);
+ if(protectedRoute&&hasSession()&&checked!==route)return <main className="publication-empty">{error?<><p role="alert">{error}</p><a href={appHref('/signin')}>Sign in again</a></>:<p role="status">Verifying account access…</p>}</main>;
+ return children;
+}
 function App(){
  const [route,setRoute]=useState(window.location.hash.slice(1)||'/');const [,refresh]=useState(0);
  useEffect(()=>{const onHash=()=>setRoute(window.location.hash.slice(1)||'/'),onAuth=()=>refresh(n=>n+1);window.addEventListener('hashchange',onHash);window.addEventListener('hws-auth-changed',onAuth);return()=>{window.removeEventListener('hashchange',onHash);window.removeEventListener('hws-auth-changed',onAuth);};},[]);
- return <><RoutedApp route={route}/><IdleGuard path={route.split('?')[0]}/></>;
+ return <><AccessGate route={route}><RoutedApp route={route}/></AccessGate><IdleGuard path={route.split('?')[0]}/></>;
 }
 function SignOut(){useEffect(()=>{void endBrowserSession();},[]);return <main className="publication-empty">Signing out…</main>;}
 

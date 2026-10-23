@@ -1,0 +1,779 @@
+HUSKY SOLUTIONS LLC
+SUBSCRIPTION & BILLING POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Subscription & Billing Policy (“Billing Policy”) governs subscriptions, recurring payments, billing, payment methods, renewals, plan changes, cancellations, trials, promotional pricing, and other payment-related matters for products and services offered by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This Billing Policy supplements the Husky Solutions LLC Terms of Service.
+It applies to recurring and paid Services offered by Husky Solutions LLC, including, where applicable:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Website and hosting services
+* Software subscriptions
+* Digital services
+* Graphics and creative services
+* FiveM-related services
+* Add-ons
+* Organization accounts
+* Business plans
+* Enterprise plans
+* Other current or future paid Husky Solutions LLC Services
+Certain Services may have additional pricing or billing terms presented during checkout, in an order form, statement of work, invoice, quote, or separately signed agreement.
+If those specific terms conflict with this Billing Policy, the more specific terms will control for the applicable purchase.
+________________
+
+
+1. PRICING
+Husky Solutions LLC may offer Services using pricing structures including:
+* Monthly subscriptions
+* Annual subscriptions
+* One-time payments
+* Per-user pricing
+* Per-location pricing
+* Usage-based pricing
+* Project-based pricing
+* Add-on pricing
+* Custom pricing
+* Enterprise pricing
+* Promotional pricing
+The applicable price will be disclosed before you complete your purchase.
+Unless otherwise stated, prices are displayed in United States dollars.
+________________
+
+
+2. TAXES
+Displayed prices may not include applicable taxes.
+Husky Solutions LLC may collect taxes where legally required, including:
+* Sales tax
+* Use tax
+* Value-added tax
+* Similar transaction-based taxes
+Taxes may vary based on your location, billing address, type of Service, and applicable law.
+You are responsible for providing accurate billing information necessary to determine applicable taxes.
+________________
+
+
+3. SUBSCRIPTIONS
+Certain Husky Solutions LLC Services are offered through recurring subscriptions.
+A subscription may renew:
+* Monthly
+* Annually
+* At another interval expressly disclosed before purchase
+The applicable billing frequency will be clearly disclosed before you authorize the subscription.
+________________
+
+
+4. AUTOMATIC RENEWAL
+If a Service is identified as automatically renewing, your subscription will continue and renew until canceled in accordance with this Billing Policy.
+By affirmatively purchasing an automatically renewing subscription, you authorize Husky Solutions LLC or its authorized payment processor to charge the applicable payment method at each renewal interval until the subscription is canceled.
+Husky Solutions LLC will not treat silence, inactivity, or a pre-selected option alone as affirmative consent where affirmative consent is required by applicable law.
+________________
+
+
+5. AUTOMATIC-RENEWAL DISCLOSURES
+Before requesting your consent or billing information for an automatically renewing or continuous Service, Husky Solutions LLC will clearly disclose applicable material terms.
+Depending on the Service, these may include:
+* The product or Service being purchased
+* The amount you will be charged
+* How frequently you will be charged
+* Whether the subscription automatically renews
+* The length of the subscription or renewal period
+* Any minimum purchase obligation
+* The deadline by which you must cancel to avoid a future charge
+* Available cancellation methods
+* Any temporary or promotional pricing
+* The price that will apply after promotional pricing ends
+* The price that will apply after a free or discounted trial
+Automatic-renewal disclosures will be presented in a manner intended to make the recurring nature of the transaction reasonably apparent before purchase.
+________________
+
+
+6. AFFIRMATIVE CONSENT
+Where required, Husky Solutions LLC will obtain your affirmative consent to automatic-renewal or continuous-service terms before charging you.
+Affirmative consent may be obtained through an appropriate action such as:
+* Selecting a checkbox
+* Clicking a purchase or subscription button accompanied by appropriate disclosures
+* Electronically accepting subscription terms
+* Signing an applicable agreement
+* Another affirmative method permitted by law
+Husky Solutions LLC will maintain records of consent where reasonably necessary for billing, security, dispute resolution, and legal compliance.
+________________
+
+
+7. SUBSCRIPTION CONFIRMATION
+Following enrollment in an automatically renewing Service, Husky Solutions LLC will provide an acknowledgment or confirmation in a form that can reasonably be retained by the customer where required by law.
+The confirmation may be provided through:
+* Email
+* Downloadable receipt
+* Customer account
+* Electronic document
+* Other durable electronic format
+The acknowledgment may include:
+* Subscription name
+* Applicable price
+* Billing frequency
+* Renewal terms
+* Cancellation deadline
+* Cancellation instructions
+* Applicable trial information
+* Other material subscription terms
+You should retain this information for your records.
+________________
+
+
+8. BILLING DATE
+Your initial billing date will generally be the date your paid subscription begins unless another date is disclosed.
+Future recurring charges will generally occur on or near the corresponding renewal date.
+For example, a monthly subscription beginning on the 12th of a month may generally renew on or around the 12th of each following month.
+Exact dates may vary because of:
+* Different month lengths
+* Payment-processing delays
+* Weekends
+* Banking delays
+* Leap years
+* Time zones
+* Technical issues
+________________
+
+
+9. MONTHLY SUBSCRIPTIONS
+A monthly subscription generally renews once each month until canceled.
+Unless otherwise stated, cancellation prevents future renewal charges but does not immediately terminate access for the remainder of a billing period already paid.
+________________
+
+
+10. ANNUAL SUBSCRIPTIONS
+An annual subscription generally renews once each year until canceled.
+Annual pricing may represent a discounted rate compared with monthly pricing.
+Cancellation of an annual subscription generally prevents the next annual renewal but does not automatically entitle you to a refund for the unused portion of the current annual term.
+Applicable law and the Husky Solutions LLC Refund & Cancellation Policy may provide additional rights.
+________________
+
+
+11. RENEWAL NOTICES
+Husky Solutions LLC will provide advance renewal notices where required by applicable law.
+For New York consumers, where an automatic-renewal arrangement has an initial paid term of one year or longer and renews for a paid term of six months or longer, Husky Solutions LLC will provide the legally required renewal notice before the applicable cancellation deadline.
+Such notices may be delivered through a communication method selected or permitted for the account, including:
+* Email
+* Text message
+* Application notification
+* Account notification
+* Another supported notification method
+The notice will include information regarding how to cancel the renewal where required.
+________________
+
+
+12. PAYMENT AUTHORIZATION
+By submitting a payment method and authorizing a purchase, you authorize Husky Solutions LLC and its payment processors to charge that payment method for amounts associated with the transaction.
+For recurring Services, this authorization continues until the subscription is canceled or otherwise terminated.
+Charges may include:
+* Subscription fees
+* Approved add-ons
+* Usage-based charges
+* Taxes
+* Other charges expressly authorized by you
+Husky Solutions LLC will not knowingly add unauthorized recurring charges to your account.
+________________
+
+
+13. PAYMENT PROCESSORS
+Husky Solutions LLC may use third-party payment processors to process payments.
+Payment processors may receive information necessary to complete a transaction.
+Such information may include:
+* Name
+* Billing address
+* Payment-card information
+* Transaction amount
+* Customer identifiers
+* Fraud-prevention information
+Payment processors operate under their own terms and privacy practices.
+Unless expressly stated otherwise, Husky Solutions LLC does not intend to directly store complete payment-card numbers or card security codes.
+________________
+
+
+14. PAYMENT METHODS
+Accepted payment methods may vary by Service.
+Available methods may include:
+* Credit cards
+* Debit cards
+* Digital payment services
+* Electronic payment platforms
+* Other payment methods supported during checkout
+Husky Solutions LLC may add or discontinue supported payment methods.
+________________
+
+
+15. PAYMENT-METHOD ACCURACY
+You are responsible for maintaining accurate and current payment information.
+You agree to promptly update your payment method if:
+* Your card expires
+* Your account closes
+* Your billing address changes
+* Your payment information becomes invalid
+* You are no longer authorized to use the payment method
+You must not knowingly provide payment information that you are not authorized to use.
+________________
+
+
+16. PAYMENT-METHOD UPDATES
+In some circumstances, payment networks or processors may automatically provide updated payment-card information when a card is replaced or renewed.
+Where legally permitted, Husky Solutions LLC may continue processing an authorized recurring subscription using updated payment credentials supplied through those services.
+You may cancel the subscription at any time using the applicable cancellation method.
+________________
+
+
+17. FAILED PAYMENTS
+If we cannot successfully process a payment, Husky Solutions LLC may:
+* Retry the payment
+* Notify you
+* Request an updated payment method
+* Temporarily limit paid functionality
+* Suspend the subscription
+* Downgrade the account
+* Terminate the subscription
+We may make reasonable attempts to collect a valid outstanding balance.
+________________
+
+
+18. PAYMENT RETRIES
+An unsuccessful recurring payment may be retried through our payment processor.
+The timing and number of retries may vary depending on the payment provider and applicable Service.
+Payment retries do not change your ability to cancel the applicable subscription.
+________________
+
+
+19. GRACE PERIODS
+Husky Solutions LLC may provide a temporary grace period following a failed payment.
+Unless expressly promised in a written agreement, a grace period is not guaranteed.
+If a grace period expires without successful payment, access to paid features may be suspended or terminated.
+________________
+
+
+20. ACCOUNT SUSPENSION FOR NONPAYMENT
+Husky Solutions LLC may restrict or suspend a paid Service when required fees remain unpaid.
+Suspension may affect:
+* Account access
+* Premium functionality
+* Hosted websites
+* Administrative controls
+* Integrations
+* Storage
+* Organization users
+* Other paid features
+Husky Solutions LLC may restore access after outstanding charges are resolved.
+________________
+
+
+21. FREE TRIALS
+Husky Solutions LLC may offer free trials.
+Before enrolling in a trial that automatically converts into a paid subscription, applicable information will be disclosed, including:
+* Length of the trial
+* Price after the trial
+* Billing frequency after the trial
+* Whether automatic billing will begin
+* How to cancel
+If you do not cancel before the applicable deadline, the trial may automatically convert into a paid subscription according to the disclosed terms.
+________________
+
+
+22. EXTENDED FREE TRIAL NOTICES
+Where required by applicable law, Husky Solutions LLC will provide advance notice before the first charge following an extended free trial.
+For qualifying New York consumer subscriptions involving a free gift or trial lasting more than one month, the required notice will be provided within the legally required period before the applicable cancellation deadline.
+The notice will include instructions for cancellation.
+________________
+
+
+23. PROMOTIONAL PRICING
+Husky Solutions LLC may offer temporary or introductory pricing.
+Before purchase, we will disclose material promotional terms, which may include:
+* Promotional price
+* Promotional period
+* Normal price following the promotion
+* Renewal frequency
+* Cancellation requirements
+At the end of the promotional period, the subscription may renew at the disclosed standard price unless canceled.
+________________
+
+
+24. DISCOUNT CODES
+Promotional codes, coupons, or discounts may be subject to:
+* Expiration dates
+* Eligibility requirements
+* Product restrictions
+* Usage limits
+* Customer restrictions
+* Geographic restrictions
+Unless expressly stated otherwise, promotional offers:
+* Have no cash value
+* May not be combined with other offers
+* May not be transferred
+* May not be sold
+Husky Solutions LLC may refuse fraudulent or unauthorized promotional-code use.
+________________
+
+
+25. PRICE CHANGES
+Husky Solutions LLC may change prices for future subscription periods.
+When applicable, we will notify existing subscribers before a new price becomes effective.
+The notice may identify:
+* Current price
+* New price
+* Effective date
+* Cancellation options
+Where applicable law requires affirmative consent to a price increase, Husky Solutions LLC will obtain such consent before imposing the increased charge or will provide any alternative cancellation and refund rights required by law.
+________________
+
+
+26. NEW YORK PRICE-INCREASE RIGHTS
+For New York consumers where applicable law requires additional protection following a subscription price increase, Husky Solutions LLC will comply with the applicable requirements.
+Depending on the circumstances, this may include either:
+* Obtaining affirmative consent before charging the increased price; or
+* Providing the legally required period after the increased charge during which the consumer may cancel and receive any required prorated refund for the remaining subscription term.
+Nothing in this Policy limits rights provided by New York law.
+________________
+
+
+27. MATERIAL CHANGES TO SUBSCRIPTION TERMS
+Husky Solutions LLC may modify subscription terms.
+Where required by applicable law, we will provide advance notice of a material change.
+For covered New York consumer subscriptions, required notice of material changes will be provided during the applicable statutory notice period.
+The notice may be provided through:
+* Email
+* Text
+* Application notification
+* Account notification
+* Another supported notification channel
+________________
+
+
+28. UPGRADES
+You may be able to upgrade your subscription.
+Depending on the applicable Service, an upgrade may:
+* Take effect immediately
+* Increase available features immediately
+* Increase user limits
+* Increase storage
+* Create a prorated charge
+* Begin a new billing term
+* Apply at the next renewal
+Applicable charges will be disclosed before an upgrade is finalized.
+________________
+
+
+29. DOWNGRADES
+You may be able to downgrade your subscription.
+Unless otherwise stated, a downgrade may take effect at the end of the current paid billing period.
+A downgrade may reduce:
+* Storage
+* User limits
+* Features
+* Integrations
+* Administrative capabilities
+* Hosting limits
+* Usage allowances
+You are responsible for exporting or removing information that may exceed the limits of the downgraded plan.
+________________
+
+
+30. DATA AND DOWNGRADES
+If a plan downgrade causes your account to exceed applicable limits, Husky Solutions LLC may:
+* Restrict new uploads
+* Restrict new records
+* Disable certain premium functionality
+* Require removal of excess information
+* Provide a period to export information
+Husky Solutions LLC will not intentionally delete important customer information solely because of a downgrade without applying the applicable Service's retention procedures.
+________________
+
+
+31. ADD-ONS
+Certain Services may offer optional paid add-ons.
+Add-ons may be:
+* One-time purchases
+* Monthly recurring purchases
+* Annual recurring purchases
+* Usage-based purchases
+The applicable billing terms will be disclosed before purchase.
+A recurring add-on may renew until separately canceled.
+Canceling a primary subscription may also terminate dependent add-ons.
+________________
+
+
+32. PER-USER BILLING
+Certain organization plans may be billed based on the number of users, seats, employees, locations, or other units.
+The applicable method of calculating charges will be disclosed in the plan information or agreement.
+Adding users or other billable units may result in additional charges.
+Removing users may reduce future charges according to the applicable plan terms.
+________________
+
+
+33. USAGE-BASED BILLING
+Certain Services may charge based on actual usage.
+Examples could include:
+* Storage
+* Bandwidth
+* API usage
+* Messages
+* Transactions
+* Processing volume
+* Other measurable resources
+If usage-based billing applies, the applicable rates or calculation method will be disclosed.
+You are responsible for monitoring usage associated with your account.
+________________
+
+
+34. ORGANIZATION ACCOUNTS
+An organization account may designate one or more authorized billing administrators.
+Billing administrators may be authorized to:
+* Purchase subscriptions
+* Add users
+* Change plans
+* Buy add-ons
+* Update payment methods
+* Access invoices
+* Cancel subscriptions
+Organizations are responsible for controlling who receives billing authority.
+Husky Solutions LLC may rely on actions taken by authorized administrators unless we have reason to believe the account has been compromised.
+________________
+
+
+35. INVOICES
+Husky Solutions LLC may provide invoices or billing statements electronically.
+Invoices may include:
+* Customer or organization name
+* Invoice number
+* Billing period
+* Products or Services
+* Amount due
+* Taxes
+* Credits
+* Payment status
+Invoices may be available through email, an account portal, or another electronic method.
+________________
+
+
+36. RECEIPTS
+A receipt or transaction confirmation may be provided following a successful payment.
+Customers should retain receipts for their records.
+________________
+
+
+37. ENTERPRISE BILLING
+Enterprise customers may be billed under a separately negotiated agreement.
+Enterprise billing arrangements may include:
+* Purchase orders
+* Net payment terms
+* Invoicing
+* Annual commitments
+* Minimum spending commitments
+* Custom user counts
+* Usage commitments
+* Custom renewal terms
+* Service credits
+A signed enterprise agreement controls where it directly conflicts with this general Billing Policy.
+________________
+
+
+38. CUSTOM PROJECT BILLING
+Custom development, graphics, website projects, integrations, or other professional services may use project-specific billing.
+This may include:
+* Deposits
+* Milestone payments
+* Final payments
+* Hourly charges
+* Fixed project fees
+Applicable payment requirements will be identified in the quote, invoice, statement of work, or project agreement.
+________________
+
+
+39. DEPOSITS
+Certain custom projects may require a deposit before work begins.
+The applicable order terms will state whether a deposit is:
+* Refundable
+* Partially refundable
+* Non-refundable after work begins
+* Credited toward the final project price
+The Husky Solutions LLC Refund & Cancellation Policy may also apply.
+________________
+
+
+40. CANCELLING A SUBSCRIPTION
+You may cancel an automatically renewing subscription at any time, subject to the applicable billing cycle and specific product terms.
+Husky Solutions LLC intends to provide a simple cancellation mechanism.
+Where required by applicable law, cancellation will be available through a method that is at least as easy to use as the method used to enroll.
+________________
+
+
+41. ONLINE CANCELLATION
+If Husky Solutions LLC permits customers to enroll in a subscription online, an appropriate electronic cancellation method will be made available where required by applicable law.
+Depending on the Service, this may be available through:
+Account → Billing → Subscription → Cancel Subscription
+or another clearly identified electronic cancellation mechanism.
+Where cancellation functionality is temporarily unavailable because of a technical problem, customers may contact:
+[BILLING EMAIL]
+________________
+
+
+42. SAME-MEDIUM CANCELLATION
+Where required by law, Husky Solutions LLC will allow customers to cancel through the same medium used to provide subscription consent.
+If multiple methods are offered for enrolling in a subscription, cancellation methods will be provided as required by applicable law.
+Where consent was provided in person and an equivalent in-person cancellation method is impractical, Husky Solutions LLC will provide an alternative method as required by law, which may include online or telephone cancellation.
+________________
+
+
+43. NO UNREASONABLE CANCELLATION BARRIERS
+Husky Solutions LLC will not intentionally create unreasonable barriers designed to prevent a customer from canceling.
+We will not knowingly:
+* Falsely state that cancellation is unavailable
+* Misrepresent the consequences of cancellation
+* Intentionally ignore a valid cancellation request
+* Unreasonably delay a valid cancellation
+* Require unnecessary steps solely to frustrate cancellation
+* Require payment of charges not legitimately owed as a condition of requesting cancellation
+We may take reasonable steps to:
+* Authenticate the customer
+* Confirm which subscription is being canceled
+* Explain the effect of cancellation
+* Prevent fraudulent cancellations
+________________
+
+
+44. RETENTION OFFERS
+When you request cancellation, Husky Solutions LLC may offer:
+* A discount
+* A different subscription
+* A lower-cost plan
+* A temporary benefit
+* Information concerning features you will lose
+You are not required to accept such an offer.
+Declining a retention offer will not prevent you from completing a valid cancellation request.
+________________
+
+
+45. CANCELLATION CONFIRMATION
+Following a successful cancellation, Husky Solutions LLC may provide a confirmation by:
+* Email
+* Account notification
+* Confirmation page
+* Other electronic method
+You should retain the cancellation confirmation for your records.
+________________
+
+
+46. EFFECTIVE DATE OF CANCELLATION
+Unless otherwise stated, cancellation of a paid subscription generally becomes effective at the end of the current paid billing period.
+You may generally continue using paid features until that period ends.
+After the period ends, the account may:
+* Convert to a free plan, if available
+* Lose paid features
+* Become limited
+* Become inactive
+* Be terminated according to applicable product terms
+________________
+
+
+47. IMMEDIATE CANCELLATION
+Certain Services may allow immediate termination.
+If you choose immediate termination, you may lose access to paid functionality before the end of the billing period.
+Immediate termination does not automatically create a right to a refund unless required by law or expressly stated otherwise.
+________________
+
+
+48. REFUNDS
+Eligibility for refunds is governed by the Husky Solutions LLC Refund & Cancellation Policy.
+Unless otherwise stated or required by law, cancellation alone does not automatically entitle a customer to a full or prorated refund for a billing period that has already begun.
+Nothing in this section limits legally required refund rights.
+________________
+
+
+49. DUPLICATE CHARGES
+If you believe you were accidentally charged more than once for the same transaction, contact:
+[BILLING EMAIL]
+Husky Solutions LLC will investigate legitimate duplicate-charge reports and correct verified billing errors.
+________________
+
+
+50. UNAUTHORIZED CHARGES
+If you believe your account or payment method was used without authorization, contact Husky Solutions LLC promptly at:
+[BILLING/SECURITY EMAIL]
+You should also take appropriate steps to protect your account and payment method.
+Husky Solutions LLC may investigate the transaction and require reasonable identity verification.
+________________
+
+
+51. BILLING DISPUTES
+If you believe an invoice or charge is incorrect, contact:
+[BILLING EMAIL]
+Include, where available:
+* Account email
+* Invoice or order number
+* Transaction date
+* Amount
+* Description of the issue
+Do not send complete payment-card numbers or security codes by email.
+________________
+
+
+52. CHARGEBACKS
+Nothing in this Billing Policy prevents you from exercising legitimate rights provided by your bank, card issuer, payment provider, or applicable law.
+However, knowingly filing a fraudulent chargeback for a valid authorized transaction may constitute a violation of the Husky Solutions LLC Terms of Service.
+When a chargeback occurs, Husky Solutions LLC may provide relevant transaction documentation to the applicable payment processor or financial institution.
+________________
+
+
+53. BILLING ERRORS BY HUSKY SOLUTIONS LLC
+If Husky Solutions LLC discovers a billing error, we may take appropriate corrective action.
+This may include:
+* Issuing a refund
+* Applying account credit
+* Correcting an invoice
+* Reversing an incorrect charge
+* Correcting future billing
+Customers will not knowingly be required to pay amounts resulting solely from an erroneous duplicate charge.
+________________
+
+
+54. OVERPAYMENTS
+If an account is overpaid because of an identified billing error, Husky Solutions LLC may:
+* Refund the overpayment
+* Apply an account credit with the customer's agreement where appropriate
+* Use another lawful corrective method
+________________
+
+
+55. THIRD-PARTY PURCHASES
+If you purchase a Husky Solutions LLC Service through an authorized third-party marketplace or platform, that platform may control aspects of:
+* Payment processing
+* Billing
+* Cancellation
+* Refunds
+* Taxes
+Where applicable, you may need to manage the subscription through that third party.
+Husky Solutions LLC cannot override billing rules controlled exclusively by an unrelated third-party platform.
+________________
+
+
+56. SERVICE DISCONTINUATION
+If Husky Solutions LLC permanently discontinues a paid Service, we may:
+* Provide advance notice
+* Allow customers to export information
+* Offer a replacement Service
+* Provide account credit
+* Provide an appropriate refund where required
+* Allow access through the remainder of an existing paid term
+The appropriate remedy will depend on the circumstances and applicable law.
+________________
+
+
+57. CURRENCY
+Unless another currency is expressly displayed during checkout, charges are denominated in United States dollars (USD).
+Your bank or payment provider may impose:
+* Currency-conversion charges
+* Foreign-transaction fees
+* Other financial-institution fees
+Such fees are controlled by the financial institution and are not charges imposed by Husky Solutions LLC.
+________________
+
+
+58. NO CASH VALUE OF ACCOUNT CREDITS
+Unless expressly stated otherwise, promotional or courtesy account credits:
+* Are not cash
+* Are not redeemable for cash
+* May be limited to eligible Services
+* May expire if disclosed when issued
+* May be non-transferable
+This does not apply to money that applicable law requires Husky Solutions LLC to refund.
+________________
+
+
+59. FRAUD PREVENTION
+Husky Solutions LLC may review transactions for potential fraud.
+We may delay, reject, or request verification for a transaction presenting reasonable indicators of:
+* Payment fraud
+* Identity theft
+* Unauthorized payment-method use
+* Account compromise
+* Promotional abuse
+Legitimate customers may be asked to complete reasonable verification.
+________________
+
+
+60. RECORDS
+Husky Solutions LLC may retain records concerning:
+* Purchases
+* Subscription consent
+* Renewals
+* Cancellations
+* Payment status
+* Invoices
+* Refunds
+* Billing communications
+* Transaction identifiers
+Records will be handled in accordance with the Husky Solutions LLC Privacy Policy and applicable law.
+________________
+
+
+61. CONSUMER RIGHTS
+Nothing in this Billing Policy waives or restricts consumer rights that cannot lawfully be waived.
+If applicable law provides you with rights more favorable than this Policy, the applicable law controls.
+________________
+
+
+62. NEW YORK CONSUMERS
+Husky Solutions LLC will administer automatic-renewal and continuous-service offers to New York consumers in accordance with applicable New York requirements.
+This includes, where legally required:
+* Clear and conspicuous disclosure of material renewal terms
+* Affirmative consent before charging
+* A retainable post-purchase acknowledgment
+* Simple cancellation
+* Cancellation through required enrollment mediums
+* Applicable annual or long-term renewal notices
+* Applicable trial-conversion notices
+* Applicable notices of material changes
+* Applicable price-increase protections
+________________
+
+
+63. CHANGES TO THIS BILLING POLICY
+Husky Solutions LLC may update this Billing Policy.
+The “Last Updated” date identifies the current version.
+Material changes affecting an existing recurring subscription will be communicated when required by applicable law.
+A change to this Billing Policy does not authorize Husky Solutions LLC to impose a new recurring charge that requires separate affirmative consent without obtaining that consent where required.
+________________
+
+
+64. RELATIONSHIP TO OTHER HUSKY SOLUTIONS POLICIES
+This Billing Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Terms of Use
+* Husky Solutions LLC Privacy Policy
+* Husky Solutions LLC Acceptable Use Policy
+* Husky Solutions LLC Refund & Cancellation Policy
+* Applicable product-specific terms
+* Applicable order forms
+* Applicable statements of work
+A separately signed customer agreement may establish different billing terms for matters within its scope.
+________________
+
+
+65. CONTACT INFORMATION
+Questions, billing disputes, cancellation issues, or payment concerns may be directed to:
+Husky Solutions LLC
+Billing Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Billing Email:
+[BILLING EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+66. EFFECTIVE DATE
+This Subscription & Billing Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

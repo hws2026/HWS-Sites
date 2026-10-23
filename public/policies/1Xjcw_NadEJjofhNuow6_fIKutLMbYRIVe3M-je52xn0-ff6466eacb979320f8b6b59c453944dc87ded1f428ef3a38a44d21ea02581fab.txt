@@ -1,0 +1,668 @@
+HUSKY SOLUTIONS LLC
+ACCESSIBILITY STATEMENT & ACCESSIBILITY POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) is committed to improving the accessibility and usability of our websites, software, applications, digital products, and online services for individuals with disabilities.
+This Accessibility Statement & Policy (“Accessibility Policy”) describes our accessibility goals, practices, limitations, feedback procedures, and accommodation process.
+This Policy may apply to:
+* Husky Solutions LLC websites
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer portals
+* Administrative dashboards
+* Billing portals
+* Support systems
+* Documentation
+* Digital products
+* FiveM-related websites and customer interfaces
+* Other current or future Husky Solutions LLC Services
+________________
+
+
+1. ACCESSIBILITY COMMITMENT
+Husky Solutions LLC seeks to provide digital experiences that can be used by as many people as reasonably possible, including individuals who use assistive technologies.
+We recognize that users may access our Services using technologies including:
+* Screen readers
+* Screen magnification
+* Keyboard-only navigation
+* Voice-control software
+* Switch devices
+* Alternative input devices
+* Speech recognition
+* Browser accessibility features
+* Operating-system accessibility features
+Accessibility is an ongoing process rather than a one-time project.
+________________
+
+
+2. ACCESSIBILITY STANDARD
+Husky Solutions LLC generally aims to design and improve applicable public-facing digital experiences with reference to the Web Content Accessibility Guidelines (“WCAG”) 2.2 Level AA where reasonably practicable.
+WCAG is developed by the World Wide Web Consortium (“W3C”) and provides internationally recognized guidance concerning accessible web content.
+WCAG is generally organized around four principles:
+1. Perceivable
+2. Operable
+3. Understandable
+4. Robust
+Use of WCAG as a development target does not constitute a representation that every page, component, application, or Service currently conforms to every WCAG 2.2 Level AA success criterion.
+________________
+
+
+3. ONGOING ACCESSIBILITY
+Husky Solutions LLC may continue improving accessibility as:
+* Products are developed
+* Existing Services are updated
+* Accessibility issues are discovered
+* Technologies change
+* Assistive technologies evolve
+* Applicable legal requirements change
+* Users provide feedback
+Accessibility improvements may be introduced over time rather than simultaneously across every Service.
+________________
+
+
+4. ACCESSIBLE DESIGN PRACTICES
+Where reasonably practicable, Husky Solutions LLC may consider accessibility during:
+* User-interface design
+* Front-end development
+* Website development
+* Product testing
+* Content creation
+* Navigation design
+* Form design
+* Documentation development
+* Product updates
+________________
+
+
+5. KEYBOARD ACCESSIBILITY
+Where reasonably practicable, important website and application functionality should be accessible using a keyboard without requiring a mouse.
+This may include:
+* Navigation
+* Buttons
+* Forms
+* Menus
+* Dialogs
+* Account controls
+* Checkout
+* Other interactive elements
+Keyboard focus should be reasonably visible where appropriate.
+________________
+
+
+6. FOCUS MANAGEMENT
+Husky Solutions LLC may implement focus-management practices intended to assist users navigating with:
+* Keyboards
+* Screen readers
+* Alternative input devices
+Interactive interfaces should avoid unnecessarily trapping keyboard focus.
+Modal windows, dialogs, and similar components may use controlled focus where appropriate.
+________________
+
+
+7. SCREEN-READER SUPPORT
+Where reasonably practicable, Husky Solutions LLC may design content to work with commonly used screen readers and accessibility APIs.
+Measures may include:
+* Semantic HTML
+* Accessible names
+* Appropriate labels
+* Form descriptions
+* Heading structures
+* ARIA attributes where appropriate
+* Descriptive controls
+________________
+
+
+8. ALTERNATIVE TEXT
+Meaningful images should generally include appropriate text alternatives where reasonably practicable.
+Alternative text may not be necessary for purely decorative imagery.
+Complex graphics may require additional descriptions where appropriate.
+________________
+
+
+9. FORMS
+Husky Solutions LLC may seek to make forms accessible by providing, where appropriate:
+* Programmatically associated labels
+* Clear instructions
+* Error identification
+* Validation messages
+* Accessible required-field indicators
+* Keyboard access
+Users should be able to understand what information a form requests.
+________________
+
+
+10. ERROR MESSAGES
+Where reasonably practicable, errors should be communicated in a way that does not rely exclusively on:
+* Color
+* Visual position
+* Audio
+Error messages may provide information explaining what should be corrected.
+________________
+
+
+11. COLOR AND CONTRAST
+Husky Solutions LLC may seek to maintain appropriate contrast between text and backgrounds in accordance with applicable accessibility targets.
+Information should not rely exclusively on color where another indicator is reasonably necessary to understand it.
+________________
+
+
+12. TEXT RESIZING
+Public-facing content should, where reasonably practicable, support browser zoom and text enlargement without unnecessarily preventing users from accessing important information.
+________________
+
+
+13. RESPONSIVE DESIGN
+Husky Solutions LLC may design interfaces to operate across:
+* Desktop computers
+* Laptops
+* Tablets
+* Mobile devices
+Responsive layouts may also assist users who require enlarged content.
+________________
+
+
+14. PAGE STRUCTURE
+Where reasonably practicable, websites may use meaningful structural elements such as:
+* Headings
+* Lists
+* Landmarks
+* Sections
+* Navigation regions
+to improve navigation for assistive technologies.
+________________
+
+
+15. LINK TEXT
+Links should, where reasonably practicable, provide enough context for users to understand their purpose.
+Husky Solutions LLC may avoid excessive use of ambiguous link labels where context is unavailable.
+________________
+
+
+16. NAVIGATION
+We may seek to provide predictable navigation across major sections of our websites and applications.
+Navigation mechanisms may include:
+* Menus
+* Breadcrumbs
+* Search
+* Headings
+* Skip links
+* Other navigation tools
+depending on the Service.
+________________
+
+
+17. SKIP NAVIGATION
+Where appropriate, Husky Solutions LLC may provide mechanisms allowing keyboard or assistive-technology users to bypass repetitive navigation and reach primary page content.
+________________
+
+
+18. MEDIA
+Where Husky Solutions LLC publishes prerecorded multimedia containing meaningful spoken content, accessibility measures may include:
+* Captions
+* Transcripts
+* Text descriptions
+where reasonably appropriate.
+________________
+
+
+19. CAPTIONS
+Videos containing spoken information may include captions where reasonably practicable.
+Automatically generated captions may occasionally contain errors.
+Husky Solutions LLC may correct significant captioning errors when identified.
+________________
+
+
+20. AUDIO DESCRIPTIONS
+Where visual information in video is essential to understanding content and is not otherwise conveyed through audio, Husky Solutions LLC may consider additional descriptions where reasonably practicable.
+________________
+
+
+21. FLASHING CONTENT
+Husky Solutions LLC seeks to avoid content that flashes or changes in a manner known to create unnecessary seizure or physical-reaction risks.
+________________
+
+
+22. MOTION AND ANIMATION
+Where appropriate, users may be able to benefit from operating-system or browser preferences such as reduced motion.
+Husky Solutions LLC may attempt to respect supported reduced-motion preferences in applicable interfaces.
+________________
+
+
+23. TIME LIMITS
+Where a Service imposes time limits for security or operational reasons, Husky Solutions LLC may provide:
+* Warnings
+* Extensions
+* Session renewal options
+where reasonably possible without undermining security.
+Some security-sensitive sessions may still require expiration.
+________________
+
+
+24. AUTHENTICATION
+Husky Solutions LLC seeks to balance accessibility and account security.
+Authentication may involve:
+* Passwords
+* One-time codes
+* Multifactor authentication
+* Device verification
+* Security keys
+* Other mechanisms
+If a user experiences an accessibility barrier during authentication, the user may contact Support for available alternative assistance where reasonably possible.
+________________
+
+
+25. CAPTCHA AND BOT PROTECTION
+Husky Solutions LLC may use automated bot-detection or CAPTCHA systems for security.
+Where practical, systems should provide accessible alternatives or other methods of verification.
+Security requirements may limit the alternatives available in certain circumstances.
+________________
+
+
+26. ACCESSIBILITY AND SECURITY
+Accessibility accommodations will not require Husky Solutions LLC to disable reasonable security safeguards.
+Where a particular security mechanism presents an accessibility barrier, we may attempt to provide an alternative verification method that maintains appropriate account security.
+________________
+
+
+27. ACCESSIBLE DOCUMENTS
+Husky Solutions LLC may publish:
+* PDF files
+* Documentation
+* Guides
+* Policies
+* Reports
+* Other downloadable materials
+We may seek to improve accessibility of important public documents over time.
+Some older, third-party, automatically generated, or archived documents may contain accessibility limitations.
+________________
+
+
+28. ALTERNATIVE DOCUMENT FORMATS
+If you experience difficulty accessing a Husky Solutions LLC document, you may request an alternative accessible format.
+Where reasonably possible, we may provide information through:
+* Accessible HTML
+* Plain text
+* Accessible document formats
+* Another reasonable alternative
+depending on the nature of the information.
+________________
+
+
+29. THIRD-PARTY CONTENT
+Husky Solutions LLC Services may contain or integrate third-party:
+* Payment systems
+* Videos
+* Maps
+* Authentication providers
+* Plugins
+* Widgets
+* Customer-support tools
+* APIs
+* Software
+* Websites
+We do not control the accessibility of unrelated third-party services.
+We may consider accessibility when selecting or configuring significant third-party components where reasonably practicable.
+________________
+
+
+30. THIRD-PARTY LINKS
+Links to third-party websites do not mean Husky Solutions LLC controls those websites.
+Accessibility issues on an unrelated third-party website should generally be directed to the operator of that website.
+________________
+
+
+31. CUSTOMER-GENERATED CONTENT
+Certain Husky Solutions LLC Services allow customers to create or publish their own content.
+Examples may include:
+* Husky Suite websites
+* Images
+* Documents
+* Videos
+* Custom pages
+* Uploaded media
+* Organization content
+Husky Solutions LLC may provide tools capable of supporting accessible content, but customers remain responsible for the accessibility of content they independently create, upload, or publish.
+________________
+
+
+32. HUSKY SUITE ACCESSIBILITY
+Husky Suite may provide website creation and editing tools.
+Husky Solutions LLC may seek to develop editor components and output capable of supporting accessible websites.
+However, accessibility of a website created with Husky Suite may also depend on choices made by the website owner, including:
+* Color selections
+* Font sizes
+* Alternative text
+* Heading structure
+* Video captions
+* Custom code
+* Third-party integrations
+* Navigation structure
+* Uploaded documents
+Customers using Husky Suite are responsible for evaluating the accessibility requirements applicable to their own websites.
+________________
+
+
+33. HUSKYCAD ACCESSIBILITY
+HuskyCAD may contain complex dashboards, maps, records, tables, status indicators, or public-safety-style workflows.
+Husky Solutions LLC may progressively improve accessibility of these interfaces.
+Certain complex visual interfaces may present accessibility challenges that require alternative approaches.
+Users encountering barriers should report them so appropriate improvements or accommodations can be evaluated.
+________________
+
+
+34. PUNCHPAL ACCESSIBILITY
+PunchPal may include:
+* Timekeeping
+* Scheduling
+* Workforce-management
+* Authentication
+* Administrative
+* Document
+interfaces.
+Husky Solutions LLC may seek to make employee-facing and administrator-facing functionality usable with assistive technologies where reasonably practicable.
+Customer organizations should also consider accessibility obligations applicable to their workforce.
+________________
+
+
+35. GRAPHICS AND ACCESSIBILITY
+Custom graphics, broadcast graphics, content graphics, or creative assets may not inherently be accessible when viewed as standalone images.
+Customers publishing these materials may need to provide:
+* Alternative text
+* Captions
+* Text descriptions
+* Accessible equivalents
+depending on where and how the material is used.
+________________
+
+
+36. MOBILE ACCESSIBILITY
+If Husky Solutions LLC provides mobile applications, we may consider accessibility features supported by major mobile operating systems.
+These may include compatibility with:
+* Screen readers
+* Dynamic text sizing
+* Voice control
+* Reduced motion
+* High-contrast features
+* Alternative input methods
+________________
+
+
+37. KNOWN LIMITATIONS
+Husky Solutions LLC does not represent that every portion of every Service is currently free from accessibility barriers.
+Potential limitations may occur in:
+* Older content
+* Legacy interfaces
+* Third-party integrations
+* Customer-generated content
+* Complex visual dashboards
+* Early-access functionality
+* Beta features
+* Archived documents
+* Embedded third-party media
+We welcome reports identifying specific barriers.
+________________
+
+
+38. BETA AND EXPERIMENTAL PRODUCTS
+Beta, preview, early-access, and experimental features may not initially provide the same accessibility maturity as established production functionality.
+Accessibility improvements may be incorporated during continued development.
+________________
+
+
+39. ACCESSIBILITY TESTING
+Husky Solutions LLC may evaluate accessibility through methods such as:
+* Automated testing
+* Keyboard testing
+* Screen-reader testing
+* Manual interface review
+* Browser accessibility tools
+* User feedback
+Automated testing alone cannot identify every accessibility issue.
+________________
+
+
+40. USER FEEDBACK
+Users are encouraged to report accessibility barriers.
+Useful reports may include:
+* The affected page or Service
+* URL, if applicable
+* Description of the barrier
+* Device
+* Browser
+* Operating system
+* Assistive technology being used
+* Steps that produce the problem
+* Requested accommodation, if applicable
+You are not required to disclose a medical diagnosis to report an accessibility problem.
+________________
+
+
+41. ACCESSIBILITY CONTACT
+Accessibility concerns may be submitted to:
+Husky Solutions LLC
+Accessibility Team
+Email:
+[ACCESSIBILITY EMAIL]
+Support:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+42. ACCOMMODATION REQUESTS
+If a digital accessibility barrier prevents you from accessing information, functionality, a product, or a Service, you may request reasonable assistance.
+Depending on the circumstances, Husky Solutions LLC may consider alternatives such as:
+* Providing information in another format
+* Assisting with navigation
+* Providing an alternative method of completing an action
+* Providing accessible documentation
+* Correcting an identified technical barrier
+Availability of a particular accommodation depends on the nature of the request, Service, security requirements, and technical feasibility.
+________________
+
+
+43. NO MEDICAL DOCUMENTATION REQUIRED FOR ORDINARY REPORTS
+Husky Solutions LLC generally does not require medical documentation merely to report an accessibility issue or request basic digital-accessibility assistance.
+Additional information may be requested only when reasonably necessary to understand or address a particular request.
+________________
+
+
+44. RESPONSE TO ACCESSIBILITY REPORTS
+When Husky Solutions LLC receives a meaningful accessibility report, we may:
+1. Review the reported barrier;
+2. Attempt to reproduce the issue;
+3. Determine the affected Service;
+4. Evaluate severity;
+5. Identify a temporary workaround where available;
+6. Evaluate a permanent correction;
+7. Provide an appropriate response.
+Some problems may require coordination with a third-party service provider.
+________________
+
+
+45. PRIORITIZATION
+Accessibility issues may be prioritized based on factors including:
+* Severity of the barrier
+* Importance of the affected functionality
+* Number of affected users
+* Availability of alternatives
+* Security requirements
+* Technical complexity
+* Whether the affected feature is actively supported
+Barriers preventing access to essential functionality may receive higher priority.
+________________
+
+
+46. ACCESSIBILITY DOES NOT REQUIRE FUNDAMENTAL PRODUCT ALTERATION
+Husky Solutions LLC will evaluate accessibility improvements and accommodations in light of applicable law and technical feasibility.
+Nothing in this Policy should be interpreted as voluntarily requiring a modification that would:
+* Fundamentally alter a Service;
+* Create an unreasonable security risk; or
+* Be technically impossible.
+This provision does not limit obligations imposed by applicable law.
+________________
+
+
+47. CUSTOMER RESPONSIBILITY
+Businesses and organizations using Husky Solutions LLC Services remain responsible for determining their own accessibility obligations.
+For example, a customer operating a website through Husky Suite may be responsible for:
+* Its published content;
+* Uploaded media;
+* Custom HTML;
+* Third-party plugins;
+* Alternative text;
+* Captions;
+* Accessibility policies;
+* Compliance applicable to that customer's organization.
+________________
+
+
+48. NO ACCESSIBILITY CERTIFICATION CLAIM
+Unless Husky Solutions LLC expressly publishes a specific certification or independent audit result, references to:
+* WCAG
+* Accessibility
+* Accessible development
+* Accessibility testing
+should not be interpreted as a certification that every Service fully conforms to every accessibility standard.
+________________
+
+
+49. ACCESSIBILITY ROADMAP
+Husky Solutions LLC may maintain internal accessibility goals for:
+* New product development
+* Existing product remediation
+* Documentation
+* Design-system components
+* Testing
+* Staff awareness
+Priorities may change as Services evolve.
+________________
+
+
+50. DESIGN SYSTEMS
+Where practical, Husky Solutions LLC may develop reusable interface components intended to promote consistent accessibility.
+These may include:
+* Buttons
+* Forms
+* Modal dialogs
+* Menus
+* Notifications
+* Navigation components
+* Input fields
+* Tables
+Improving shared components can improve accessibility across multiple products.
+________________
+
+
+51. ACCESSIBLE PROCUREMENT
+When selecting significant third-party technologies, Husky Solutions LLC may consider accessibility along with factors including:
+* Security
+* Reliability
+* Cost
+* Compatibility
+* Functionality
+Not every third-party product offers the same level of accessibility.
+________________
+
+
+52. EMPLOYEE AND CONTRACTOR AWARENESS
+Personnel involved in product design or development may be provided accessibility resources, guidance, or standards appropriate to their responsibilities.
+________________
+
+
+53. ACCESSIBILITY AND PRIVACY
+Accessibility-related communications may contain personal information.
+Husky Solutions LLC will process such information according to the Husky Solutions LLC Privacy Policy.
+Users are not required to disclose more personal information than reasonably necessary to describe an accessibility issue.
+________________
+
+
+54. ACCESSIBILITY AND SECURITY INFORMATION
+Do not include unnecessary:
+* Passwords
+* Authentication codes
+* Session tokens
+* Full payment-card numbers
+* Other sensitive credentials
+when submitting an accessibility report.
+________________
+
+
+55. UNITED STATES ACCESSIBILITY
+Husky Solutions LLC seeks to operate its applicable public-facing digital Services consistent with accessibility obligations that apply to the Company.
+Applicable requirements may vary according to:
+* Nature of the Service
+* Nature of the business
+* Customer type
+* Jurisdiction
+* Applicable law
+This Policy is not intended to provide legal advice to customers concerning their own accessibility obligations.
+________________
+
+
+56. ACCESSIBILITY OUTSIDE THE UNITED STATES
+Additional accessibility requirements may apply in other jurisdictions.
+Where Husky Solutions LLC offers Services in a jurisdiction subject to additional requirements, we may evaluate those requirements as appropriate.
+________________
+
+
+57. CONTINUOUS IMPROVEMENT
+Accessibility standards, technologies, and user needs evolve.
+Husky Solutions LLC may therefore continue refining:
+* Design standards
+* Development practices
+* Testing
+* Documentation
+* User interfaces
+* Feedback procedures
+over time.
+________________
+
+
+58. CHANGES TO THIS POLICY
+Husky Solutions LLC may update this Accessibility Policy as:
+* Products change
+* Accessibility standards change
+* Technologies change
+* Applicable laws change
+* Accessibility practices improve
+The “Last Updated” date identifies the current version.
+________________
+
+
+59. RELATIONSHIP TO OTHER POLICIES
+This Accessibility Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Terms of Use
+* Husky Solutions LLC Privacy Policy
+* Husky Solutions LLC Acceptable Use Policy
+* Husky Solutions LLC Security Policy
+* Applicable product-specific terms
+________________
+
+
+60. CONTACT INFORMATION
+Accessibility questions, reports, or accommodation requests may be directed to:
+Husky Solutions LLC
+Accessibility Team
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Accessibility Email:
+[ACCESSIBILITY EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+61. EFFECTIVE DATE
+This Accessibility Statement & Accessibility Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

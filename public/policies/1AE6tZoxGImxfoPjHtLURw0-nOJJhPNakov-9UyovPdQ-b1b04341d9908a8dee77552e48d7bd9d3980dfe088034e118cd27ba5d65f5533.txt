@@ -1,0 +1,830 @@
+HUSKY SOLUTIONS LLC
+USER CONTENT & COMMUNITY STANDARDS POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This User Content & Community Standards Policy (“Content Policy”) governs content created, uploaded, submitted, published, transmitted, hosted, stored, displayed, shared, or otherwise made available through services operated by Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+This Policy applies where applicable to:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer websites
+* Hosted websites
+* Organization portals
+* User profiles
+* Customer portals
+* File uploads
+* Forms
+* Community features
+* Public pages
+* FiveM-related services
+* Support systems
+* Other current or future Husky Solutions LLC Services
+This Policy supplements the Husky Solutions LLC Terms of Service and Acceptable Use Policy.
+________________
+
+
+1. USER CONTENT
+“User Content” means content submitted, created, stored, transmitted, published, or otherwise provided by a user through a Husky Solutions LLC Service.
+User Content may include:
+* Text
+* Images
+* Videos
+* Audio
+* Logos
+* Graphics
+* Documents
+* Websites
+* Files
+* Code
+* Scripts
+* Comments
+* Messages
+* Profiles
+* Forms
+* Records
+* Databases
+* Links
+* Uploaded media
+* Other digital material
+________________
+
+
+2. OWNERSHIP OF USER CONTENT
+As between you and Husky Solutions LLC, you retain ownership of User Content that you lawfully own.
+Submitting User Content does not automatically transfer copyright ownership to Husky Solutions LLC.
+However, you grant Husky Solutions LLC the limited rights necessary to operate the applicable Service as described in the Terms of Service.
+________________
+
+
+3. LICENSE TO OPERATE THE SERVICE
+By submitting User Content, you grant Husky Solutions LLC a limited, worldwide, non-exclusive license to:
+* Host
+* Store
+* Copy
+* Process
+* Transmit
+* Display
+* Format
+* Resize
+* Convert
+* Back up
+* Technically modify
+the User Content as reasonably necessary to:
+* Provide the Service
+* Display your content
+* Publish requested content
+* Maintain infrastructure
+* Provide backups
+* Protect security
+* Prevent abuse
+* Provide technical support
+* Comply with law
+* Enforce applicable policies
+This license does not give Husky Solutions LLC ownership of your User Content.
+________________
+
+
+4. YOUR RESPONSIBILITY
+You are responsible for User Content submitted through your account.
+You represent that you have the rights, licenses, permissions, and authority necessary to submit and use that content.
+You must not submit content merely because you are technically able to upload it.
+________________
+
+
+5. PUBLIC CONTENT
+Certain Services may allow User Content to be published publicly.
+Public User Content may be accessible to:
+* Other users
+* Website visitors
+* Search engines
+* Social-media platforms
+* Third-party services
+* Members of the general public
+You should not publish information publicly that you intend to remain confidential.
+________________
+
+
+6. PRIVATE CONTENT
+Some User Content may be stored in private or organization-restricted areas.
+Access may depend on:
+* Account permissions
+* Organization roles
+* Workspace settings
+* Administrative privileges
+* Sharing settings
+Users are responsible for appropriately configuring available privacy and sharing controls.
+________________
+
+
+7. ORGANIZATION CONTENT
+Content submitted to an organization-managed account may be controlled by the applicable organization.
+Authorized organization administrators may be able to:
+* Access content
+* Modify content
+* Export content
+* Delete content
+* Restrict content
+* Change permissions
+Users should understand the policies of the organization managing their account.
+________________
+
+
+8. HUSKY SOLUTIONS DOES NOT ENDORSE USER CONTENT
+The availability of User Content through a Husky Solutions LLC Service does not mean Husky Solutions LLC:
+* Created the content
+* Verified the content
+* Approved the content
+* Endorses the content
+* Agrees with the content
+* Guarantees the content is accurate
+Users are responsible for evaluating third-party User Content.
+________________
+
+
+9. NO GUARANTEE OF PRE-PUBLICATION REVIEW
+Husky Solutions LLC does not necessarily review or approve every item of User Content before it is:
+* Uploaded
+* Published
+* Shared
+* Displayed
+* Stored
+Moderation may occur after publication or after a report is received.
+________________
+
+
+10. ILLEGAL CONTENT
+You may not use Husky Solutions LLC Services to create, upload, store, publish, distribute, or facilitate content that violates applicable law.
+________________
+
+
+11. FRAUDULENT CONTENT
+You may not publish content intended to facilitate:
+* Fraud
+* Phishing
+* Identity theft
+* Credential theft
+* Financial scams
+* False billing
+* Deceptive impersonation
+* Other unlawful deception
+________________
+
+
+12. MALWARE
+User Content must not contain or distribute:
+* Malware
+* Ransomware
+* Viruses
+* Trojans
+* Credential stealers
+* Keyloggers
+* Destructive code
+* Malicious browser scripts
+* Other harmful software
+unless specifically authorized for legitimate security research in an approved environment.
+________________
+
+
+13. CHILD SEXUAL EXPLOITATION
+Husky Solutions LLC has zero tolerance for child sexual exploitation.
+You may not use the Services to create, upload, request, solicit, store, distribute, promote, or facilitate:
+* Child sexual abuse material
+* Sexual exploitation of minors
+* Grooming of minors
+* Sexual solicitation of minors
+* Sex trafficking involving minors
+* Other unlawful sexual content involving minors
+Husky Solutions LLC may remove such content, suspend or terminate accounts, preserve relevant information, and make reports required by law.
+________________
+
+
+14. NON-CONSENSUAL INTIMATE CONTENT
+You may not publish or distribute intimate imagery without the legally required authorization of the person depicted.
+This includes unlawful:
+* Revenge pornography
+* Non-consensual intimate images
+* Secretly recorded intimate content
+* Threats to distribute intimate material
+________________
+
+
+15. PRIVACY VIOLATIONS
+User Content must not unlawfully disclose another person's private or sensitive information.
+This may include:
+* Home address
+* Private telephone numbers
+* Financial information
+* Authentication credentials
+* Social Security numbers
+* Private medical information
+* Restricted government information
+* Private account information
+where disclosure is unlawful or unauthorized.
+________________
+
+
+16. DOXXING
+You may not use Husky Solutions LLC Services to unlawfully publish or coordinate the publication of private identifying information for purposes of:
+* Harassment
+* Threats
+* Intimidation
+* Stalking
+* Retaliation
+* Unlawful targeting
+________________
+
+
+17. HARASSMENT
+You may not use User Content to unlawfully:
+* Harass
+* Threaten
+* Stalk
+* Intimidate
+* Blackmail
+* Extort
+* Target
+another person.
+________________
+
+
+18. THREATS OF VIOLENCE
+You may not use the Services to publish credible unlawful threats of violence or to coordinate unlawful violent activity.
+Husky Solutions LLC may take immediate action when content appears to present a serious or imminent safety risk.
+________________
+
+
+19. HATE-BASED VIOLENCE
+User Content must not unlawfully threaten or facilitate violence targeting people based on protected characteristics.
+Educational, documentary, historical, journalistic, or counterspeech content may be treated differently where lawful and contextually appropriate.
+________________
+
+
+20. EXTREMIST AND TERRORIST ACTIVITY
+You may not use Husky Solutions LLC Services to knowingly provide unlawful material support for terrorist activity or to coordinate unlawful extremist violence.
+This does not prohibit lawful:
+* News reporting
+* Academic research
+* Historical discussion
+* Documentary material
+* Counter-extremism content
+________________
+
+
+21. SELF-HARM CONTENT
+Husky Solutions LLC may restrict content that actively encourages, coordinates, or instructs another person to engage in imminent self-harm where intervention is appropriate.
+General discussion, recovery content, personal experiences, prevention material, and educational content are not automatically prohibited.
+________________
+
+
+22. IMPERSONATION
+You may not use User Content to falsely impersonate another person or organization in a deceptive or unlawful manner.
+This includes impersonation of:
+* Husky Solutions LLC
+* Businesses
+* Government agencies
+* Law-enforcement agencies
+* Public officials
+* Emergency-service personnel
+* Private individuals
+Clearly labeled parody, fiction, simulation, or roleplay may be permitted where lawful and not materially deceptive.
+________________
+
+
+23. PUBLIC-SAFETY IMPERSONATION
+HuskyCAD, graphics, websites, or other Services must not be used to mislead real-world individuals into believing that a user has actual government or law-enforcement authority when they do not.
+This does not prohibit clearly fictional:
+* FiveM roleplay
+* Simulations
+* Training environments
+* Entertainment
+* Game communities
+________________
+
+
+24. FALSE OFFICIAL RECORDS
+You may not use Husky Solutions LLC Services to create fraudulent documents intended for unlawful real-world use, including false:
+* Warrants
+* Government credentials
+* Criminal-history records
+* Police records
+* Court documents
+* Identification cards
+* Licenses
+* Certifications
+Fictional material clearly used for lawful entertainment or roleplay may be permitted.
+________________
+
+
+25. INTELLECTUAL PROPERTY
+You must have the necessary rights to content you upload.
+You may not knowingly infringe another person's:
+* Copyright
+* Trademark
+* Patent
+* Trade secret
+* Publicity right
+* Other intellectual-property right
+Copyright complaints may be handled pursuant to the Husky Solutions LLC Copyright & DMCA Policy.
+________________
+
+
+26. SPORTS AND ENTERTAINMENT ASSETS
+If you upload or request use of:
+* Team logos
+* League logos
+* Athlete images
+* Broadcast material
+* Music
+* Movie content
+* Game assets
+* Other third-party media
+you are responsible for ensuring that your use is legally permitted.
+Husky Solutions LLC's technical ability to process the material does not constitute legal clearance.
+________________
+
+
+27. FIVE M / FIVEM CONTENT
+Users of FiveM-related Services are responsible for complying with:
+* Cfx.re requirements
+* Applicable game licenses
+* Server rules
+* Third-party asset licenses
+* Copyright law
+* Trademark law
+Users must not upload pirated Husky Solutions LLC resources or other unlawfully distributed scripts.
+________________
+
+
+28. PIRATED SOFTWARE
+You may not use Husky Solutions LLC Services to knowingly host or distribute:
+* Pirated software
+* Cracked software
+* Stolen license keys
+* Unauthorized commercial scripts
+* Leaked source code
+* Copyrighted software obtained unlawfully
+________________
+
+
+29. UNAUTHORIZED HUSKY SOLUTIONS RESOURCES
+You may not publish, leak, redistribute, or sell unauthorized copies of Husky Solutions LLC:
+* FiveM scripts
+* Software
+* Templates
+* Graphics packages
+* Source code
+* Proprietary documentation
+* Other paid digital resources
+________________
+
+
+30. SPAM
+You may not use user-generated content features for unlawful or abusive spam.
+This may include:
+* Mass unsolicited advertising
+* Fraudulent marketing
+* Repeated disruptive posting
+* Phishing messages
+* Automated junk submissions
+________________
+
+
+31. DECEPTIVE LINKS
+You may not knowingly publish links designed to:
+* Steal credentials
+* Install malware
+* Defraud users
+* Misrepresent their destination
+* Facilitate unlawful activity
+________________
+
+
+32. DANGEROUS DOWNLOADS
+Files offered for download must not intentionally contain undisclosed malicious functionality.
+If a file has legitimate security or administrative functionality that may trigger security software, it should be appropriately described where relevant.
+________________
+
+
+33. SEXUALLY EXPLICIT CONTENT
+Husky Solutions LLC may restrict sexually explicit content depending on:
+* Applicable Service
+* Hosting provider rules
+* Payment processor requirements
+* Applicable law
+* Product purpose
+Sexually explicit content involving minors is strictly prohibited.
+Husky Solutions LLC may designate certain Services as inappropriate for adult content even where that content would otherwise be lawful.
+________________
+
+
+34. GRAPHIC VIOLENCE
+Husky Solutions LLC may restrict extremely graphic violent content when necessary because of:
+* Applicable law
+* Service purpose
+* User safety
+* Hosting restrictions
+* Other operational requirements
+Educational, documentary, journalistic, historical, or fictional context may be considered.
+________________
+
+
+35. REGULATED GOODS AND SERVICES
+Users are responsible for ensuring content involving regulated goods or services complies with applicable law.
+Husky Solutions LLC may restrict content facilitating unlawful transactions involving regulated products or activities.
+________________
+
+
+36. FALSE OR MISLEADING BUSINESS REPRESENTATIONS
+Businesses using Husky Solutions LLC Services must not knowingly make materially fraudulent representations concerning:
+* Products
+* Services
+* Prices
+* Availability
+* Certifications
+* Licenses
+* Affiliations
+* Guarantees
+________________
+
+
+37. MISUSE OF CUSTOMER REVIEWS
+If review functionality is offered, users must not knowingly:
+* Fabricate reviews
+* Impersonate customers
+* Manipulate review systems fraudulently
+* Offer unlawful compensation for deceptive reviews
+________________
+
+
+38. AI-GENERATED OR SYNTHETIC CONTENT
+If a Service allows AI-generated or synthetic content, users remain responsible for ensuring that such content complies with:
+* Applicable law
+* Intellectual-property rights
+* Privacy rights
+* This Content Policy
+Husky Solutions LLC may require disclosure of synthetic content in circumstances where necessary to prevent material deception.
+________________
+
+
+39. DECEPTIVE SYNTHETIC MEDIA
+You may not use synthetic or manipulated media to unlawfully:
+* Defraud another person
+* Falsely impersonate an official
+* Create non-consensual intimate content
+* Falsify evidence
+* Facilitate identity theft
+________________
+
+
+40. CUSTOMER WEBSITES
+Customers using Husky Suite or hosting services are responsible for content published through their websites.
+Website owners are responsible for maintaining:
+* Appropriate legal notices
+* Copyright permissions
+* Privacy disclosures
+* Accessibility practices
+* Content permissions
+* Required consumer disclosures
+applicable to their websites.
+________________
+
+
+41. COMMUNITY FEATURES
+If Husky Solutions LLC introduces forums, comments, chats, communities, or similar features, users must interact in a manner consistent with this Policy.
+Husky Solutions LLC may establish additional community-specific rules.
+________________
+
+
+42. USERNAMES AND PROFILE INFORMATION
+Usernames, display names, profile images, and profile descriptions must not be used to:
+* Commit fraud
+* Impersonate another person unlawfully
+* Facilitate phishing
+* Misrepresent affiliation with Husky Solutions LLC
+________________
+
+
+43. LINKS TO THIRD-PARTY CONTENT
+Users may link to third-party content where lawful.
+Husky Solutions LLC does not necessarily endorse third-party websites merely because users link to them.
+________________
+
+
+44. CONTENT MODERATION
+Husky Solutions LLC may moderate User Content using:
+* User reports
+* Automated tools
+* Manual review
+* Security systems
+* Abuse detection
+* Legal notices
+Husky Solutions LLC does not guarantee that every violation will be detected.
+________________
+
+
+45. AUTOMATED MODERATION
+Automated systems may be used to detect or flag content involving:
+* Spam
+* Malware
+* Fraud
+* Security threats
+* Abuse
+* Other policy violations
+Automated systems may occasionally produce inaccurate results.
+Where appropriate, moderation decisions may be reviewed manually.
+________________
+
+
+46. CONTENT REMOVAL
+Husky Solutions LLC may remove, disable, restrict, or quarantine User Content when reasonably necessary because of:
+* Violation of this Policy
+* Violation of the Acceptable Use Policy
+* Legal requirements
+* Security risk
+* Copyright complaints
+* Fraud
+* Abuse
+* Threats to users
+* Platform requirements
+________________
+
+
+47. ACCOUNT RESTRICTIONS
+Content violations may result in:
+* Warning
+* Content removal
+* Feature limitation
+* Upload restriction
+* Temporary suspension
+* Permanent termination
+The appropriate action depends on the severity and circumstances.
+________________
+
+
+48. IMMEDIATE ACTION
+Husky Solutions LLC may take immediate action without advance warning when content appears to involve:
+* Child exploitation
+* Active malware
+* Serious cyberattacks
+* Fraud
+* Imminent violence
+* Significant account compromise
+* Other serious unlawful activity
+________________
+
+
+49. REPEAT VIOLATIONS
+Repeated violations may result in progressively stronger enforcement.
+Accounts repeatedly used to violate this Policy may be permanently terminated.
+________________
+
+
+50. EVASION
+Users may not create replacement accounts primarily to evade:
+* Content restrictions
+* Account suspensions
+* Terminations
+* Other enforcement actions
+Husky Solutions LLC may restrict related accounts where appropriate.
+________________
+
+
+51. CONTENT PRESERVATION
+Content removed from public access may be preserved where reasonably necessary for:
+* Security investigation
+* Legal compliance
+* Fraud investigation
+* Abuse investigation
+* Intellectual-property disputes
+* Law-enforcement preservation
+* Legal claims
+Preservation does not mean the content will remain publicly available.
+________________
+
+
+52. LAW-ENFORCEMENT AND LEGAL REQUESTS
+User Content may be preserved or disclosed where required or legally permitted under the Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy.
+Husky Solutions LLC does not disclose User Content merely because an informal request is made.
+________________
+
+
+53. EMERGENCY SITUATIONS
+Where permitted by law, Husky Solutions LLC may disclose relevant information to appropriate authorities if we reasonably believe an emergency involving danger of death or serious physical injury requires disclosure without delay.
+________________
+
+
+54. REPORTING CONTENT
+Users may report content they believe violates this Policy.
+Reports should be submitted to:
+[ABUSE EMAIL]
+Include where possible:
+* URL
+* Account name
+* Description of the content
+* Reason for the report
+* Screenshots or supporting information
+Do not submit false or malicious reports.
+________________
+
+
+55. COPYRIGHT REPORTS
+Copyright infringement claims should be submitted through the procedures described in the Husky Solutions LLC Copyright & DMCA Policy.
+DMCA requests should be sent to:
+[DMCA EMAIL]
+________________
+
+
+56. SECURITY REPORTS
+Malware, vulnerabilities, phishing, credential theft, or other security concerns should be reported to:
+[SECURITY EMAIL]
+________________
+
+
+57. APPEALS
+Where appropriate, users may appeal a content-moderation or enforcement decision.
+Appeals should be sent to:
+[APPEALS/ABUSE EMAIL]
+Include:
+* Account information
+* Content at issue
+* Enforcement action
+* Reason you believe the decision was incorrect
+* Relevant context
+An appeal does not guarantee reversal.
+________________
+
+
+58. REPEATED OR ABUSIVE APPEALS
+Husky Solutions LLC may limit repeated appeals that are:
+* Duplicative
+* Fraudulent
+* Threatening
+* Abusive
+* Clearly unrelated to the enforcement decision
+________________
+
+
+59. CONTENT RESTORATION
+If Husky Solutions LLC determines that content was removed incorrectly, we may restore the content or account where appropriate.
+Restoration may not be possible if:
+* The user deleted the content
+* The account was independently terminated
+* The content is no longer technically available
+* A legal order prevents restoration
+________________
+
+
+60. NO GUARANTEE OF CONTENT STORAGE
+Husky Solutions LLC does not guarantee permanent storage of User Content.
+Users should maintain independent backups of important content.
+Retention and deletion are governed by the Husky Solutions LLC Data Retention & Deletion Policy.
+________________
+
+
+61. CONTENT FOLLOWING ACCOUNT TERMINATION
+After account termination, User Content may become inaccessible.
+Husky Solutions LLC may delete User Content according to applicable retention practices.
+Some information may remain where required for:
+* Legal compliance
+* Security
+* Fraud prevention
+* Intellectual-property enforcement
+* Backup integrity
+________________
+
+
+62. CUSTOMER EXPORTS
+Where export functionality is available, customers should export important information before:
+* Deleting an account
+* Canceling a Service
+* Ending an organization account
+* Allowing a subscription to expire
+________________
+
+
+63. NO PAYMENT FOR USER CONTENT
+Unless Husky Solutions LLC separately agrees otherwise in writing, users are not entitled to compensation merely because their User Content is hosted, displayed, or processed through a Husky Solutions LLC Service.
+________________
+
+
+64. FEEDBACK
+Suggestions, feature ideas, and general product feedback are governed by the feedback provisions in the Husky Solutions LLC Terms of Service.
+Feedback should not be confused with Customer Content submitted for storage or publication.
+________________
+
+
+65. CONTENT PRIVACY
+Information contained in User Content may constitute personal information.
+Such information is handled in accordance with the Husky Solutions LLC Privacy Policy.
+Users remain responsible for ensuring that they have authority to submit personal information belonging to others.
+________________
+
+
+66. SENSITIVE INFORMATION
+Users should avoid publishing sensitive information publicly unless publication is lawful and intentional.
+Sensitive information may include:
+* Passwords
+* Authentication tokens
+* Payment information
+* Government identifiers
+* Precise location
+* Private employment records
+* Confidential business information
+________________
+
+
+67. PRECISE LOCATION CONTENT
+Users should not publicly publish another person's precise or close-pinpoint location without lawful authority where doing so would violate privacy, safety, or other applicable laws.
+This restriction does not prevent Husky Solutions LLC from using authorized location information internally for security purposes as described in its Privacy and Security Policies.
+________________
+
+
+68. CUSTOMER MODERATION
+Customer organizations may be permitted to moderate content within their own organization or hosted website.
+Organization administrators may have authority to:
+* Remove content
+* Restrict users
+* Review organization records
+* Configure permissions
+Such actions are separate from Husky Solutions LLC's platform-level enforcement.
+________________
+
+
+69. CUSTOMER COMMUNITY RULES
+Customers may establish additional content or community rules for their own hosted communities provided those rules do not authorize violations of Husky Solutions LLC policies or applicable law.
+________________
+
+
+70. THIRD-PARTY PLATFORM RULES
+Some User Content may also be governed by third-party platforms or integrations.
+For example, FiveM or other gaming resources may be subject to third-party platform rules.
+Users are responsible for complying with those requirements.
+________________
+
+
+71. PRODUCT-SPECIFIC STANDARDS
+Husky Solutions LLC may establish stricter content standards for individual products.
+For example, a workforce or business Service may prohibit content that might otherwise be lawful but inappropriate for that product's intended use.
+Product-specific standards supplement this Policy.
+________________
+
+
+72. NO OBLIGATION TO HOST ALL LAWFUL CONTENT
+Husky Solutions LLC is not required to host every category of content merely because the content may be lawful.
+Husky Solutions LLC may establish reasonable platform rules concerning the types of content appropriate for its Services.
+________________
+
+
+73. CHANGES TO THIS POLICY
+Husky Solutions LLC may modify this Content Policy as:
+* Products change
+* New community features are added
+* Abuse patterns evolve
+* Technology changes
+* Applicable law changes
+The “Last Updated” date identifies the current version.
+________________
+
+
+74. RELATIONSHIP TO OTHER POLICIES
+This Policy should be read together with:
+* Husky Solutions LLC Terms of Service
+* Husky Solutions LLC Terms of Use
+* Husky Solutions LLC Acceptable Use Policy
+* Husky Solutions LLC Privacy Policy
+* Husky Solutions LLC Security Policy
+* Husky Solutions LLC Copyright & DMCA Policy
+* Husky Solutions LLC Government, Law Enforcement & Legal Requests Policy
+* Husky Solutions LLC Data Retention & Deletion Policy
+* Product-specific terms
+If another applicable policy imposes a stricter requirement, both requirements apply where they can reasonably be interpreted together.
+________________
+
+
+75. CONTACT INFORMATION
+Questions or reports concerning User Content may be directed to:
+Husky Solutions LLC
+Trust, Safety & Abuse
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Abuse Email:
+[ABUSE EMAIL]
+Security Email:
+[SECURITY EMAIL]
+DMCA Email:
+[DMCA EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+76. EFFECTIVE DATE
+This User Content & Community Standards Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

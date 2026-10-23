@@ -64,6 +64,7 @@ export async function createSiteRecord(body:Record<string,unknown>,user:{id:stri
  validateWebsite(draft);const serialized=JSON.stringify(draft);
  if(new TextEncoder().encode(serialized).byteLength>900000)throw new CreationError('This starting website exceeds the 900 KB draft limit. Choose its outline or reduce its content.',413);
  statements.unshift(db.prepare('INSERT INTO client_sites (id,owner,customer_id,title,slug,template_id,draft,revision,archived,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)').bind(id,owner,customerId,title,draft.slug,templateId,serialized,1,0,new Date().toISOString()));
+ if(customerId&&!portal){const contact=await db.prepare('SELECT email FROM customers WHERE id=? AND owner=?').bind(customerId,owner).first<{email:string}>();if(contact)statements.push(db.prepare("INSERT INTO site_access (id,owner,site_id,email,role) VALUES (?,?,?,?,'editor')").bind(crypto.randomUUID(),owner,id,contact.email.toLowerCase()));}
  if(portal&&owner!==user.id)statements.push(db.prepare('INSERT INTO site_access (id,owner,site_id,email,user_id,role) VALUES (?,?,?,?,?,?)').bind(crypto.randomUUID(),owner,id,user.email,user.id,'editor'));
  statements.push(logStatement(owner,`Created website ${title}${sourceRow?' from '+sourceRow.title:''}`,id));
  await db.batch(statements);

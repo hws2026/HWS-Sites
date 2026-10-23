@@ -1,0 +1,869 @@
+HUSKY SOLUTIONS LLC
+DATA RETENTION & DELETION POLICY
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+This Data Retention & Deletion Policy (“Retention Policy”) explains how Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”) determines how long information is retained and how information is deleted, anonymized, de-identified, archived, or otherwise disposed of when it is no longer reasonably necessary.
+This Policy applies, where applicable, to information processed through:
+* Husky Solutions LLC websites
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Customer portals
+* Administrative systems
+* Hosting services
+* APIs
+* Billing systems
+* Support systems
+* FiveM licensing and resource systems
+* Security systems
+* Graphics and creative services
+* Other current or future Husky Solutions LLC Services
+This Policy should be read together with the:
+* Husky Solutions LLC Privacy Policy
+* Security, Incident Response & Vulnerability Disclosure Policy
+* Terms of Service
+* Applicable product-specific terms
+________________
+
+
+1. RETENTION PRINCIPLE
+Husky Solutions LLC does not intend to retain personal information indefinitely merely because we have the technical ability to do so.
+We seek to retain information only for as long as reasonably necessary for legitimate purposes including:
+* Providing Services
+* Maintaining accounts
+* Processing transactions
+* Protecting security
+* Preventing fraud
+* Providing customer support
+* Maintaining software licenses
+* Operating customer organizations
+* Resolving disputes
+* Enforcing agreements
+* Maintaining business records
+* Complying with applicable law
+* Establishing or defending legal claims
+When information is no longer reasonably necessary, Husky Solutions LLC may:
+* Delete it
+* Destroy it
+* Anonymize it
+* De-identify it
+* Aggregate it
+* Render it inaccessible
+* Securely dispose of it
+as appropriate.
+________________
+
+
+2. RETENTION IS BASED ON PURPOSE
+Retention periods may depend on:
+* Type of information
+* Sensitivity of information
+* Applicable product
+* Customer relationship
+* Account status
+* Legal requirements
+* Security risk
+* Contractual requirements
+* Whether an investigation is pending
+* Whether a dispute exists
+* Whether litigation is reasonably anticipated
+* Technical limitations
+* Backup schedules
+Not every category of information is retained for the same period.
+________________
+
+
+3. DEFAULT RETENTION SCHEDULE
+Unless a different period applies under law, contract, product-specific terms, or a legitimate business need, Husky Solutions LLC generally intends to use the following retention targets.
+Information Category
+	General Retention Target
+	Active account information
+	Duration of the active account
+	Deleted account information
+	Generally up to 90 days after account deletion, subject to exceptions
+	Customer Content
+	Duration of Service plus generally up to 30–90 days following termination
+	Authentication logs
+	Generally up to 24 months
+	Security logs
+	Generally up to 24 months
+	IP address security records
+	Generally up to 24 months
+	Ordinary precise security-location records
+	Generally up to 90 days unless connected to a security incident
+	Geolocation tied to suspected or confirmed security breach
+	Generally up to 2 years after incident closure
+	Security incident evidence
+	Generally up to 2 years after incident closure or longer if legally necessary
+	Fraud investigation records
+	Generally up to 5 years
+	Billing and transaction records
+	Generally up to 7 years
+	Invoices and accounting records
+	Generally up to 7 years
+	Contracts and order records
+	Generally up to 7 years after termination or completion
+	Support communications
+	Generally up to 3 years after resolution
+	Privacy-rights request records
+	Generally up to 5 years
+	Abuse reports
+	Generally up to 5 years
+	DMCA and intellectual-property records
+	Generally up to 7 years
+	FiveM purchase/license records
+	Duration of license plus generally up to 7 years
+	Marketing consent and opt-out records
+	As long as reasonably necessary to honor the preference
+	Backup copies
+	Generally overwritten or expired within approximately 90 days
+	De-identified or aggregated information
+	May be retained longer where it no longer reasonably identifies an individual
+	These periods are general operational targets and not guarantees that every individual record will exist for exactly that amount of time.
+Information may be deleted earlier where appropriate.
+Information may also be retained longer where permitted or required for a legitimate legal, security, contractual, or operational purpose.
+________________
+
+
+4. ACTIVE ACCOUNT INFORMATION
+Information necessary to maintain an active account may generally be retained for as long as the account remains active.
+This may include:
+* Name
+* Email address
+* Username
+* Organization membership
+* Account role
+* Preferences
+* Authentication settings
+* Subscription status
+* Account configuration
+When an account is deleted or terminated, applicable deletion procedures will begin.
+________________
+
+
+5. ACCOUNT DELETION
+Users may be permitted to request deletion of their account.
+Account deletion may cause:
+* Loss of account access
+* Loss of stored Customer Content
+* Loss of settings
+* Loss of organization access
+* Loss of subscriptions or licenses where applicable
+* Removal of profile information
+Deleting an account does not necessarily result in immediate deletion of every record associated with the user.
+Certain information may remain temporarily or longer as described in this Policy.
+________________
+
+
+6. POST-DELETION PROCESSING PERIOD
+Following an account deletion request, Husky Solutions LLC may maintain certain account information for a limited processing period.
+This period may be used to:
+* Complete deletion workflows
+* Prevent accidental data loss
+* Detect fraudulent deletion requests
+* Restore accounts where legally permitted and requested
+* Process remaining transactions
+* Synchronize deletion across systems
+Ordinary account information targeted for deletion will generally be removed from active production systems within approximately 90 days, unless an exception applies.
+________________
+
+
+7. CUSTOMER CONTENT
+Customer Content may include:
+* Files
+* Images
+* Websites
+* Records
+* Documents
+* Graphics
+* Databases
+* Configurations
+* Uploaded content
+* Organization content
+Customer Content will generally be maintained while the applicable Service remains active.
+Following termination, Husky Solutions LLC may maintain Customer Content for a limited period to permit:
+* Export
+* Recovery
+* Account restoration
+* Dispute resolution
+* Technical processing
+Unless another period applies, Customer Content may generally be deleted from active systems within 30 to 90 days following termination.
+________________
+
+
+8. CUSTOMER RESPONSIBILITY FOR EXPORTS
+Customers should export important information before:
+* Canceling a Service
+* Deleting an account
+* Downgrading an account
+* Ending an organization subscription
+where export functionality is available.
+Husky Solutions LLC does not guarantee indefinite storage after termination.
+________________
+
+
+9. ORGANIZATION-CONTROLLED INFORMATION
+Certain Services process information on behalf of customer organizations.
+This may include information associated with:
+* Employees
+* Organization members
+* Administrators
+* Departments
+* Workforce records
+* Scheduling
+* Attendance
+* Internal records
+Where Husky Solutions LLC acts on behalf of the organization, the organization's instructions or applicable customer agreement may determine the appropriate retention period.
+________________
+
+
+10. FORMER ORGANIZATION USERS
+Removing a user from an organization does not necessarily require deletion of every record associated with that user.
+An organization may have a legitimate need to retain records such as:
+* Timekeeping records
+* Audit logs
+* Business records
+* Organizational actions
+* Historical records
+Husky Solutions LLC may maintain those records according to the organization's applicable retention settings, instructions, contract, and applicable law.
+________________
+
+
+11. PUNCHPAL RECORDS
+PunchPal may process workforce-related information.
+Records may include:
+* Time entries
+* Attendance
+* Scheduling
+* User accounts
+* Organization roles
+* Workplace records
+* Administrative records
+Customer organizations are responsible for establishing legally appropriate retention requirements for their workforce records.
+Husky Solutions LLC may retain such information according to:
+* Customer instructions
+* Product configuration
+* Applicable contracts
+* Applicable law
+________________
+
+
+12. HUSKYCAD RECORDS
+HuskyCAD may process records associated with simulations, organizations, public-safety workflows, records management, or other authorized uses.
+Retention periods may vary depending on whether the system is being used for:
+* Roleplay
+* Simulation
+* Training
+* Commercial organizational use
+* Another authorized use
+Actual government or regulated information must not be stored unless specifically authorized by Husky Solutions LLC and governed by applicable agreements.
+________________
+
+
+13. HUSKY SUITE DATA
+Husky Suite may retain:
+* Website projects
+* Site configurations
+* Media
+* Account settings
+* Publishing information
+* Domain configurations
+* Version information
+while the applicable Service remains active.
+Following cancellation, website information may be deleted according to the applicable account and hosting retention schedule.
+Customers should maintain independent copies of critical website content.
+________________
+
+
+14. BILLING AND TRANSACTION RECORDS
+Husky Solutions LLC may retain billing and transaction records for generally up to seven years or another period reasonably necessary for:
+* Accounting
+* Tax administration
+* Fraud prevention
+* Chargebacks
+* Payment disputes
+* Auditing
+* Contract enforcement
+* Legal compliance
+These records may include:
+* Transaction date
+* Amount
+* Invoice
+* Order number
+* Customer identity
+* Product purchased
+* Payment status
+* Refund status
+* Payment processor identifier
+________________
+
+
+15. PAYMENT-CARD INFORMATION
+Unless expressly stated otherwise, Husky Solutions LLC does not intend to retain complete payment-card numbers or card security codes directly.
+Payment processors may retain payment credentials under their own retention and security requirements.
+Husky Solutions LLC may retain limited information such as:
+* Card brand
+* Last four digits
+* Expiration information where appropriate
+* Payment processor customer identifier
+* Transaction identifier
+as reasonably necessary.
+________________
+
+
+16. CONTRACTS AND BUSINESS RECORDS
+Contracts, agreements, order forms, statements of work, invoices, and related business records may generally be retained for up to seven years after:
+* Completion
+* Expiration
+* Termination
+or longer when reasonably necessary for legal or contractual purposes.
+________________
+
+
+17. SUPPORT RECORDS
+Customer-support records may include:
+* Support tickets
+* Emails
+* Attachments
+* Troubleshooting information
+* Account information
+* Resolution information
+Support records may generally be retained for up to three years after resolution.
+Certain records may be retained longer when related to:
+* Fraud
+* Security incidents
+* Billing disputes
+* Litigation
+* Repeated technical problems
+________________
+
+
+18. AUTHENTICATION LOGS
+Authentication logs may include:
+* Successful logins
+* Failed logins
+* Logout events
+* Password-reset events
+* MFA events
+* Device information
+* IP addresses
+* Approximate geolocation
+* Session information
+These records may generally be retained for up to 24 months for security and fraud-prevention purposes.
+________________
+
+
+19. IP ADDRESS RETENTION
+IP addresses may be retained where reasonably necessary for:
+* Security
+* Fraud detection
+* Abuse prevention
+* Incident investigation
+* Account protection
+* Rate limiting
+* Legal compliance
+Ordinary security-related IP logs may generally be retained for up to 24 months.
+IP records connected to a serious security incident may be retained under the longer incident-evidence rules in this Policy.
+________________
+
+
+20. APPROXIMATE GEOLOCATION
+Husky Solutions LLC may derive approximate location information from IP addresses.
+This may include:
+* Country
+* State
+* Region
+* City
+* Network provider
+Approximate geolocation included in ordinary security logs may generally follow the same retention period as the underlying security log.
+________________
+
+
+21. PRECISE GEOLOCATION
+Where authorized and technically available, Husky Solutions LLC may process more precise geolocation for security purposes.
+This may include location derived from:
+* Device location services
+* Browser geolocation
+* GPS
+* Wi-Fi positioning
+* Cellular positioning
+* Other authorized location technologies
+Because precise location information is sensitive, Husky Solutions LLC intends to retain it only for as long as reasonably necessary for the applicable security purpose.
+________________
+
+
+22. ORDINARY PRECISE SECURITY LOCATION
+Precise location used solely for routine security verification and not associated with a suspected or confirmed breach will generally be targeted for deletion or de-identification within 90 days.
+A shorter period may be used where appropriate.
+________________
+
+
+23. SUSPECTED SECURITY BREACH GEOLOCATION
+Where precise, close-pinpoint, or other enhanced geolocation is associated with a suspected security breach, Husky Solutions LLC may retain the information for the duration of the investigation.
+If the investigation determines no meaningful security incident occurred, the information may be deleted or returned to the ordinary security-location retention schedule.
+________________
+
+
+24. CONFIRMED SECURITY BREACH GEOLOCATION
+If geolocation information is relevant to a confirmed:
+* Account takeover
+* Unauthorized login
+* Data breach
+* Credential theft
+* Administrative compromise
+* Fraud event
+* Cyberattack
+* Other significant security incident
+Husky Solutions LLC may retain the information as security evidence.
+Such information may generally be retained for up to two years after the incident is closed.
+________________
+
+
+25. EXTENDED SECURITY-INCIDENT RETENTION
+Security information may be retained longer than two years when reasonably necessary because of:
+* Continuing investigation
+* Criminal investigation
+* Law-enforcement request
+* Legal hold
+* Litigation
+* Insurance claim
+* Regulatory investigation
+* Repeated related attacks
+* Continuing threat activity
+* Enforcement of Husky Solutions LLC agreements
+Once the extended need ends, the information will return to the applicable deletion process.
+________________
+
+
+26. SECURITY INCIDENT EVIDENCE
+Security incident evidence may include:
+* IP addresses
+* Precise geolocation
+* Approximate geolocation
+* Login records
+* Authentication records
+* Session identifiers
+* Device information
+* Access logs
+* API logs
+* Administrative activity
+* Relevant communications
+* Technical forensic information
+Husky Solutions LLC may retain only the evidence reasonably relevant to investigation and response.
+________________
+
+
+27. FRAUD INVESTIGATION RECORDS
+Records relating to suspected or confirmed fraud may generally be retained for up to five years after resolution.
+Longer retention may apply where the information remains relevant to:
+* Repeated fraud
+* Payment disputes
+* Law enforcement
+* Litigation
+* Threat prevention
+________________
+
+
+28. ABUSE AND ENFORCEMENT RECORDS
+Records relating to violations of the Husky Solutions LLC Acceptable Use Policy may generally be retained for up to five years.
+This may include information necessary to prevent a terminated user from immediately evading enforcement.
+________________
+
+
+29. FIVEM LICENSE RECORDS
+For purchased FiveM scripts or resources, Husky Solutions LLC may retain records concerning:
+* Customer account
+* Order
+* License
+* Product
+* License activation
+* Authorized server or account
+* Delivery
+* Fraud indicators
+* License enforcement
+for the duration of the applicable license and generally up to seven years thereafter where reasonably necessary.
+________________
+
+
+30. FIVEM DOWNLOAD AND DELIVERY RECORDS
+Husky Solutions LLC may retain information showing that a digital FiveM resource was:
+* Purchased
+* Delivered
+* Made available
+* Downloaded
+* Licensed
+* Activated
+where reasonably necessary to:
+* Administer the license
+* Prevent piracy
+* Resolve refund disputes
+* Respond to chargebacks
+* Protect intellectual property
+________________
+
+
+31. COPYRIGHT AND DMCA RECORDS
+Records relating to:
+* DMCA notices
+* Counter-notifications
+* Copyright complaints
+* Repeat-infringer enforcement
+* Trademark complaints
+may generally be retained for up to seven years or longer where reasonably necessary to manage an ongoing dispute or legal proceeding.
+________________
+
+
+32. PRIVACY REQUEST RECORDS
+Husky Solutions LLC may retain records showing that it received and responded to a privacy request.
+These records may include:
+* Request date
+* Request type
+* Verification status
+* Response date
+* Outcome
+Privacy-request records may generally be retained for up to five years to document compliance and prevent fraudulent requests.
+________________
+
+
+33. MARKETING PREFERENCES
+If a user opts out of marketing communications, Husky Solutions LLC may retain limited information necessary to remember and honor that preference.
+For example, we may maintain an email address on a suppression list.
+This information may remain stored for as long as reasonably necessary to avoid accidentally sending communications the user has opted out of receiving.
+________________
+
+
+34. CONSENT RECORDS
+Where user consent is relevant, Husky Solutions LLC may maintain information showing:
+* What the user consented to
+* When consent was provided
+* How consent was provided
+* Applicable version of terms or disclosures
+Consent records may be retained for as long as reasonably necessary to document the transaction, relationship, or compliance obligation.
+________________
+
+
+35. COOKIE DATA
+Cookie and browser-storage information may have shorter retention periods based on the purpose of the applicable technology.
+Cookie retention is further described in the Husky Solutions LLC Cookie Policy.
+________________
+
+
+36. SESSION TOKENS
+Active authentication tokens are generally retained only as long as necessary to maintain the applicable session or authorized remembered login.
+Tokens may be invalidated earlier because of:
+* Logout
+* Password change
+* Account compromise
+* Security response
+* Account deletion
+* Administrative action
+________________
+
+
+37. PASSWORDS
+Passwords should not be retained in readable plain text.
+Password hashes or related authentication data may remain for as long as necessary to maintain the applicable account.
+When a password is reset, obsolete credentials may be invalidated according to the applicable authentication architecture.
+________________
+
+
+38. MULTIFACTOR AUTHENTICATION INFORMATION
+MFA enrollment information may be retained while the applicable authentication method remains enabled.
+When MFA is removed or replaced, obsolete authentication information may be deleted or invalidated.
+Certain security logs showing historical MFA activity may remain according to the security-log retention schedule.
+________________
+
+
+39. BACKUPS
+Information deleted from active systems may continue to exist temporarily in encrypted or otherwise protected backups.
+Backups may be maintained for:
+* Disaster recovery
+* Business continuity
+* System restoration
+* Security recovery
+Husky Solutions LLC generally intends for ordinary backup cycles containing deleted information to expire or be overwritten within approximately 90 days.
+________________
+
+
+40. DELETION FROM BACKUPS
+Husky Solutions LLC may not immediately modify every historical backup when an individual record is deleted.
+Instead, deleted information may remain inaccessible in a backup until the backup:
+* Expires
+* Is overwritten
+* Is securely destroyed
+If a backup is restored, Husky Solutions LLC may reapply applicable deletion records where technically appropriate.
+________________
+
+
+41. LEGAL HOLDS
+Normal deletion schedules may be suspended when information is subject to a legal hold.
+A legal hold may be appropriate when:
+* Litigation exists
+* Litigation is reasonably anticipated
+* A government investigation exists
+* A subpoena applies
+* A court order applies
+* A preservation request applies
+* A contractual dispute exists
+Information subject to a valid legal hold will be preserved for as long as reasonably necessary.
+________________
+
+
+42. LAW-ENFORCEMENT PRESERVATION
+Where legally appropriate, Husky Solutions LLC may preserve records requested by law enforcement or another governmental authority.
+Preservation does not necessarily mean the information will be disclosed.
+Any disclosure remains subject to applicable law and the Husky Solutions LLC Privacy Policy.
+________________
+
+
+43. DELETION REQUEST EXCEPTIONS
+A user deletion request may not require deletion of information that Husky Solutions LLC is permitted or required to retain for purposes including:
+* Completing a transaction
+* Detecting security incidents
+* Preventing fraud
+* Maintaining legal records
+* Exercising legal rights
+* Defending legal claims
+* Complying with applicable law
+* Protecting against malicious activity
+* Maintaining required financial records
+* Honoring another person's rights
+Where possible, retained information may be limited to what is reasonably necessary for the applicable exception.
+________________
+
+
+44. DE-IDENTIFIED INFORMATION
+Instead of deleting information completely, Husky Solutions LLC may de-identify information where appropriate.
+De-identified information should not reasonably identify or be linked to a particular individual.
+Husky Solutions LLC may retain genuinely de-identified information for:
+* Analytics
+* Security research
+* Product improvement
+* Performance analysis
+* Business planning
+for longer periods.
+________________
+
+
+45. AGGREGATED INFORMATION
+Aggregated statistics that do not reasonably identify individual users may be retained indefinitely.
+Examples may include:
+* Total number of users
+* Aggregate product usage
+* Anonymous performance statistics
+* General traffic trends
+________________
+
+
+46. BIOMETRIC INFORMATION
+Husky Solutions LLC does not intend to retain underlying biometric templates when authentication is performed entirely by a user's device or operating-system provider.
+If Husky Solutions LLC directly collects biometric information in the future, a specific biometric retention and destruction schedule will be established before such collection where required by law.
+________________
+
+
+47. CHILDREN'S INFORMATION
+Husky Solutions LLC Services are not directed to children under 13.
+If Husky Solutions LLC determines that personal information was improperly collected from a child under 13, we may delete the information as reasonably practicable, subject to any legally required preservation.
+________________
+
+
+48. TERMINATED ACCOUNTS FOR ABUSE
+Where an account is terminated for:
+* Fraud
+* Cybersecurity abuse
+* Piracy
+* Repeated infringement
+* Serious Acceptable Use Policy violations
+Husky Solutions LLC may retain limited information concerning the terminated account to:
+* Prevent immediate enforcement evasion
+* Identify repeated abuse
+* Defend legal claims
+* Protect users and systems
+This does not mean every piece of Customer Content must be retained.
+________________
+
+
+49. ACCOUNT-BAN RECORDS
+A limited ban record may contain information such as:
+* Account identifier
+* Email address
+* Reason for termination
+* Relevant security identifiers
+* Date of action
+where reasonably necessary to enforce legitimate restrictions.
+Such records may be retained longer than ordinary deleted-account information where justified by continuing security or abuse-prevention needs.
+________________
+
+
+50. SERVICE PROVIDERS
+Husky Solutions LLC may use service providers that store information on our behalf.
+We may require service providers to:
+* Maintain appropriate safeguards
+* Process information for authorized purposes
+* Delete or return information when appropriate
+* Follow applicable contractual requirements
+Actual deletion timing may depend in part on a provider's technically supported deletion process.
+________________
+
+
+51. TERMINATION OF SERVICE PROVIDERS
+When Husky Solutions LLC stops using a service provider, we may request deletion, return, or migration of Husky Solutions LLC information in accordance with:
+* Applicable contracts
+* Technical capabilities
+* Legal requirements
+________________
+
+
+52. SECURE DISPOSAL
+Where appropriate, Husky Solutions LLC may dispose of information through methods such as:
+* Secure deletion
+* Cryptographic erasure
+* Overwriting
+* Destruction of storage media
+* Destruction of encryption keys
+* Provider-supported permanent deletion
+* Physical destruction of media
+The appropriate method depends on the technology involved.
+________________
+
+
+53. PAPER RECORDS
+If Husky Solutions LLC maintains sensitive information in paper form, it may be disposed of through appropriate destruction methods such as:
+* Cross-cut shredding
+* Secure destruction services
+* Another method intended to make reconstruction impractical
+________________
+
+
+54. NEW YORK DATA DISPOSAL
+Husky Solutions LLC intends to dispose of covered private information within a reasonable period after the information is no longer needed for legitimate business purposes.
+Electronic information subject to secure disposal should be erased or otherwise disposed of in a manner reasonably intended to prevent unauthorized reading or reconstruction.
+________________
+
+
+55. CALIFORNIA RETENTION PRINCIPLE
+Where applicable California privacy law governs Husky Solutions LLC, retention of personal information will be limited to what is reasonably necessary and proportionate to:
+* The purpose for which the information was collected;
+* The disclosed processing purpose; or
+* Another legally permitted compatible purpose.
+________________
+
+
+56. INTERNATIONAL REQUIREMENTS
+If privacy laws outside the United States apply to a particular user or processing activity, Husky Solutions LLC may apply additional retention restrictions required by those laws.
+________________
+
+
+57. USER DATA EXPORT
+Where a Service supports export functionality, customers are encouraged to export information they wish to retain before account deletion.
+Export options may vary by product and plan.
+________________
+
+
+58. DELETION VERIFICATION
+For security reasons, Husky Solutions LLC may verify identity before processing certain deletion requests.
+Verification may involve:
+* Logged-in account confirmation
+* Email verification
+* Multifactor authentication
+* Organization administrator confirmation
+* Other reasonable verification
+This helps prevent unauthorized users from deleting another person's information.
+________________
+
+
+59. ORGANIZATION DELETION REQUESTS
+An authorized organization administrator may request deletion of an organization account.
+Husky Solutions LLC may verify:
+* Administrator authority
+* Organization identity
+* Account ownership
+before processing a potentially irreversible deletion.
+________________
+
+
+60. IRREVERSIBLE DELETION
+Once information has been permanently deleted from active systems and applicable backups have expired, Husky Solutions LLC may not be able to recover it.
+Customers should ensure they possess necessary copies before requesting permanent deletion.
+________________
+
+
+61. DELETION DOES NOT CANCEL FINANCIAL OBLIGATIONS
+Deleting information or an account does not automatically:
+* Cancel outstanding invoices
+* Reverse completed purchases
+* Create a refund
+* Cancel legally owed amounts
+Billing and refund matters are governed by the applicable Husky Solutions LLC billing and refund policies.
+________________
+
+
+62. INTERNAL RETENTION CONTROLS
+Husky Solutions LLC may maintain internal retention schedules, automated lifecycle rules, or administrative procedures to implement this Policy.
+These controls may include:
+* Automated deletion
+* Database expiration rules
+* Backup rotation
+* Log expiration
+* Account-deletion workflows
+* Manual review
+________________
+
+
+63. PERIODIC REVIEW
+Husky Solutions LLC may periodically review its retention practices to determine whether information:
+* Remains necessary
+* Should be deleted
+* Should be de-identified
+* Requires a longer retention period
+* Is subject to a legal hold
+________________
+
+
+64. CHANGES TO RETENTION PERIODS
+Husky Solutions LLC may modify retention periods as:
+* Services change
+* Technology changes
+* Security risks change
+* Legal requirements change
+* Operational needs change
+Material changes affecting privacy practices will be reflected in appropriate public disclosures where required.
+________________
+
+
+65. PRIVACY REQUESTS
+Questions or requests concerning retention or deletion may be sent to:
+[PRIVACY EMAIL]
+A request should include sufficient information to identify:
+* The requester
+* The account
+* The applicable Service
+* The information involved
+Do not send passwords, authentication tokens, or complete payment-card information.
+________________
+
+
+66. CONTACT INFORMATION
+Husky Solutions LLC
+Privacy & Data Protection
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Privacy Email:
+[PRIVACY EMAIL]
+Security Email:
+[SECURITY EMAIL]
+Legal Email:
+[LEGAL EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+67. EFFECTIVE DATE
+This Data Retention & Deletion Policy is effective as of:
+October 12, 2026
+and remains effective until amended or replaced by Husky Solutions LLC.

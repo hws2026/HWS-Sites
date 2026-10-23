@@ -51,6 +51,8 @@ check(await req('/api/admin','POST',{action:'access',siteId,email:'customer@exam
 
 check(await req('/api/site-login','POST',{id:siteId},'customer-token'),200,'site admin login accepts the assigned editor');
 
+check(await req('/api/site-login','POST',{id:secondSiteId},'customer-token'),200,'customer contact automatically receives its second website');
+await db.prepare('DELETE FROM site_access WHERE site_id=? AND email=?').bind(secondSiteId,'customer@example.com').run();
 const crossLogin=check(await req('/api/site-login','POST',{id:secondSiteId},'customer-token'),403,'another website rejects the same authenticated account');assert.equal(crossLogin.site,null);
 const missingLogin=check(await req('/api/site-login','POST',{id:'missing-site'},'customer-token'),403,'unknown website uses the same invalid response');assert.equal(missingLogin.site,null);
 check(await req('/api/site-login','POST',{id:siteId},null),401,'site login requires verified authentication');

@@ -1,0 +1,972 @@
+HUSKY SOLUTIONS LLC
+TERMS OF SERVICE
+Effective Date: October 12, 2026
+Last Updated: October 12, 2026
+These Terms of Service (“Terms”) constitute a legally binding agreement between you and Husky Solutions LLC (“Husky Solutions,” “Husky,” “Company,” “we,” “us,” or “our”).
+These Terms govern your access to and use of websites, applications, software, platforms, subscriptions, digital products, custom services, account systems, administrative portals, APIs, integrations, and other products and services provided by Husky Solutions LLC (collectively, the “Services”).
+The Services may include, without limitation:
+* Husky Suite
+* HuskyCAD
+* PunchPal
+* Website and hosting services
+* Graphics and creative services
+* Broadcast and content graphics
+* Digital products
+* FiveM-related products and services
+* Administrative portals
+* APIs and integrations
+* Other current or future Husky Solutions LLC products and services
+Certain Services may be subject to additional product-specific terms, order forms, statements of work, policies, or agreements.
+If supplemental terms conflict with these Terms, the supplemental terms will control solely with respect to the applicable Service and subject matter.
+________________
+
+
+1. ACCEPTANCE OF THESE TERMS
+By accessing or using a Service, creating an account, purchasing a product or service, clicking a button indicating acceptance, signing an order or agreement, or otherwise using Husky Solutions LLC Services, you agree to be bound by these Terms.
+If you do not agree to these Terms, you must not access or use the Services.
+If you use the Services on behalf of a business, agency, organization, department, school, company, or other legal entity, you represent and warrant that you have authority to bind that entity to these Terms.
+In that circumstance, references to “you” include both you and the entity you represent.
+________________
+
+
+2. ELIGIBILITY
+You must be legally capable of entering into a binding agreement to use the Services.
+The Services are not directed to children under 13 years of age.
+If you are between 13 years of age and the age of legal majority where you live, you may use the Services only with the authorization of a parent or legal guardian where required by applicable law.
+Certain products, features, transactions, or organization accounts may impose additional eligibility requirements.
+________________
+
+
+3. ACCOUNT REGISTRATION
+Certain Services require a Husky Solutions LLC account.
+When creating or maintaining an account, you agree to provide accurate, complete, and current information.
+You may be required to provide information such as:
+* Your name
+* Email address
+* Username
+* Organization affiliation
+* Account role
+* Telephone number
+* Billing information
+* Authentication information
+You are responsible for keeping account information current.
+Husky Solutions LLC may reject, suspend, rename, or require modification of account information that is:
+* False
+* Misleading
+* Fraudulent
+* Impersonating another person
+* Infringing third-party rights
+* Abusive
+* Unlawful
+* Technically harmful
+________________
+
+
+4. ACCOUNT SECURITY
+You are responsible for maintaining the security of your account.
+You agree to:
+* Use a strong password
+* Protect your password from unauthorized disclosure
+* Protect multifactor authentication codes
+* Protect account recovery codes
+* Maintain control over devices used to access your account
+* Promptly report suspected unauthorized access
+* Keep account recovery information current
+You must not knowingly allow an unauthorized person to use your account.
+Husky Solutions LLC may require security measures including:
+* Email verification
+* Multifactor authentication
+* One-time passcodes
+* Password resets
+* Identity verification
+* Administrator approval
+* Device verification
+* Other reasonable authentication mechanisms
+Husky Solutions LLC may temporarily restrict account access when reasonably necessary to investigate suspected:
+* Unauthorized access
+* Account compromise
+* Fraud
+* Abuse
+* Security incidents
+* Violations of these Terms
+________________
+
+
+5. ORGANIZATION-MANAGED ACCOUNTS
+Certain Services allow businesses, agencies, departments, teams, or other organizations to manage users through organization accounts.
+Authorized organization administrators may have the ability to:
+* Create accounts
+* Invite users
+* Remove users
+* Assign roles
+* Change permissions
+* Access organization-controlled information
+* Reset credentials
+* Configure integrations
+* Manage subscriptions
+* Review activity logs
+* Suspend accounts
+* Export organizational information
+* Modify organization settings
+If your account is controlled by an organization, you understand that authorized organization administrators may have access to information associated with that organization account.
+Husky Solutions LLC is not responsible for an organization's independent decisions regarding:
+* Employment
+* Discipline
+* Scheduling
+* Payroll
+* User permissions
+* Account removal
+* Internal policies
+* Management decisions
+* Organization-controlled data
+Your relationship with the organization is separate from your relationship with Husky Solutions LLC.
+________________
+
+
+6. LICENSE TO USE THE SERVICES
+Subject to these Terms, applicable product-specific terms, and payment of required fees, Husky Solutions LLC grants you a limited, non-exclusive, non-transferable, non-sublicensable, and revocable license to access and use the Services for their intended purposes.
+This license does not transfer ownership of any Husky Solutions LLC intellectual property.
+Except where expressly authorized, you may not:
+* Sell access to the Services
+* Rent access to the Services
+* Sublicense the Services
+* Copy proprietary software
+* Redistribute proprietary software
+* Reverse engineer the Services
+* Circumvent licensing controls
+* Circumvent access restrictions
+* Remove intellectual-property notices
+* Use Husky Solutions LLC intellectual property to create a confusingly similar product or service
+All rights not expressly granted are reserved by Husky Solutions LLC and its licensors.
+________________
+
+
+7. HUSKY SUITE
+Husky Suite may provide tools allowing users to create, edit, host, manage, or publish websites and digital content.
+Users are responsible for content they create, upload, import, publish, or distribute using Husky Suite.
+You are responsible for ensuring you possess all necessary rights to use:
+* Images
+* Logos
+* Videos
+* Fonts
+* Text
+* Code
+* Music
+* Trademarks
+* Designs
+* Domains
+* Other content
+Husky Solutions LLC does not endorse content merely because it is created, hosted, or published through Husky Suite.
+You are responsible for maintaining independent copies or backups of important content unless your specific subscription or written agreement expressly provides otherwise.
+Third-party services such as domain providers, hosting infrastructure, APIs, or integrations may affect certain Husky Suite functionality.
+________________
+
+
+8. HUSKYCAD
+HuskyCAD may provide functionality relating to:
+* Computer-aided dispatch concepts
+* Unit management
+* Calls for service
+* Incident management
+* Records
+* Communications
+* Organization management
+* Public-safety workflows
+* Simulations
+* Roleplay
+* Related administrative functionality
+Unless Husky Solutions LLC expressly agrees otherwise in a written agreement, HuskyCAD must not be represented as:
+* An official government system
+* An official law-enforcement database
+* A direct connection to NCIC
+* A direct connection to criminal-history databases
+* A direct connection to DMV records
+* A government-operated service
+* A CJIS-certified system
+* An emergency communications replacement
+* A guaranteed life-safety system
+You may not use HuskyCAD to obtain or attempt to obtain unauthorized access to government systems or restricted information.
+You may not use HuskyCAD to unlawfully impersonate:
+* Law-enforcement officers
+* Dispatchers
+* Government employees
+* Emergency-service personnel
+* Public officials
+Unless expressly authorized through a written agreement with Husky Solutions LLC, you must not store actual CJIS-controlled, NCIC-controlled, classified, or similarly restricted governmental information within HuskyCAD.
+Actual public-safety organizations may require additional contracts, technical safeguards, compliance reviews, security requirements, audits, and service-level agreements before using HuskyCAD for operational purposes.
+________________
+
+
+9. PUNCHPAL
+PunchPal may provide functionality relating to:
+* Timekeeping
+* Scheduling
+* Attendance
+* Workforce management
+* User authentication
+* Organization management
+* Documents
+* Employee records
+* Workflows
+* Internal communications
+* Related business processes
+Unless Husky Solutions LLC expressly agrees otherwise in writing, PunchPal is not:
+* A payroll processor
+* A professional employer organization
+* A tax adviser
+* An employment-law adviser
+* A labor-law compliance service
+Employers and organizations remain responsible for complying with laws applicable to:
+* Wages
+* Overtime
+* Breaks
+* Scheduling
+* Attendance
+* Payroll
+* Recordkeeping
+* Employment
+* Labor
+* Employee privacy
+* Biometric information
+Customers should independently verify timekeeping and related records before relying upon them for payroll, disciplinary, legal, or other material decisions.
+Configuration of PunchPal does not constitute legal advice regarding whether a customer's workplace policies comply with applicable law.
+________________
+
+
+10. BIOMETRIC AND DEVICE AUTHENTICATION
+Certain Services may support device-level biometric authentication or related identity-verification functionality.
+If biometric authentication is performed by a user's device or operating system, Husky Solutions LLC may receive confirmation of successful authentication without receiving the underlying biometric template.
+Organizations using biometric or identity-verification features are responsible for obtaining legally required notices, permissions, or consents.
+Nothing in these Terms authorizes a customer to collect or process biometric information unlawfully.
+________________
+
+
+11. GRAPHICS AND CREATIVE SERVICES
+Husky Solutions LLC may provide:
+* Broadcast graphics
+* Content graphics
+* Social-media graphics
+* Website graphics
+* Branding
+* Logos
+* Templates
+* Player cards
+* Animations
+* Motion graphics
+* Custom designs
+* Other creative services
+Specific orders may be subject to additional terms contained in:
+* Quotes
+* Invoices
+* Proposals
+* Order forms
+* Statements of work
+* Project agreements
+These may establish requirements concerning:
+* Payment
+* Deposits
+* Revisions
+* Delivery
+* Turnaround
+* Licensing
+* Ownership
+* Source files
+* Cancellation
+* Refunds
+Unless expressly stated otherwise in writing, purchasing a final creative deliverable does not transfer ownership of Husky Solutions LLC's pre-existing:
+* Templates
+* Source systems
+* Internal project files
+* Scripts
+* Frameworks
+* Libraries
+* Production processes
+* Design systems
+* Reusable components
+* Tools
+* Know-how
+Rights to final deliverables will be governed by the applicable order or written agreement.
+Source or editable project files are included only when expressly identified as part of the purchase.
+________________
+
+
+12. FIVEM AND GAMING SERVICES
+Husky Solutions LLC may provide FiveM or gaming-related:
+* Scripts
+* Websites
+* Server resources
+* Graphics
+* Logos
+* Liveries
+* Configurations
+* Discord materials
+* Rosters
+* Templates
+* Other digital services
+Unless expressly stated otherwise, Husky Solutions LLC is independent and is not sponsored, operated, approved, or endorsed by unrelated game developers, publishers, or platform operators.
+Third-party trademarks, game assets, and intellectual property remain the property of their respective owners.
+You are responsible for ensuring your use complies with applicable:
+* Platform rules
+* Game licenses
+* Server rules
+* Copyright requirements
+* Trademark requirements
+* Third-party terms
+________________
+
+
+13. CUSTOMER CONTENT
+“Customer Content” means files, information, text, graphics, images, videos, websites, records, configurations, communications, databases, or other material that you upload, create, submit, transmit, or store through the Services.
+As between you and Husky Solutions LLC, you retain ownership of Customer Content that you lawfully own.
+You grant Husky Solutions LLC a limited, worldwide, non-exclusive license to:
+* Host
+* Store
+* Copy
+* Process
+* Transmit
+* Display
+* Technically modify
+* Back up
+Customer Content only as reasonably necessary to:
+* Operate the Services
+* Provide requested functionality
+* Maintain infrastructure
+* Provide customer support
+* Protect security
+* Prevent abuse
+* Maintain backups
+* Comply with law
+* Enforce our agreements
+You represent and warrant that you possess all necessary rights, licenses, permissions, and authority to provide Customer Content to Husky Solutions LLC.
+________________
+
+
+14. CUSTOMER RESPONSIBILITY FOR CONTENT
+You are responsible for Customer Content submitted through your account.
+You must not knowingly submit content that:
+* Violates applicable law
+* Infringes intellectual-property rights
+* Violates privacy rights
+* Contains malicious software
+* Was obtained unlawfully
+* You are prohibited from possessing
+* You lack authority to process
+* Violates the Husky Solutions LLC Acceptable Use Policy
+Husky Solutions LLC may remove or restrict access to Customer Content where reasonably necessary to enforce these Terms, protect security, address legal requirements, or prevent harm.
+________________
+
+
+15. RESTRICTED INFORMATION
+Unless Husky Solutions LLC expressly authorizes the applicable use in writing, you must not use the Services to store or process information requiring specialized regulatory, governmental, or contractual protections.
+Examples may include:
+* Actual CJIS-controlled data
+* Actual NCIC information
+* Classified government information
+* Protected health information subject to HIPAA
+* Complete payment-card data
+* Government system credentials
+* Highly sensitive authentication credentials
+* Information you are legally prohibited from possessing
+The existence of a text field, upload field, database field, API, or other technical mechanism capable of accepting information does not constitute authorization to submit regulated information.
+________________
+
+
+16. ACCEPTABLE USE
+Your use of the Services must comply with the Husky Solutions LLC Acceptable Use Policy, which is incorporated into these Terms by reference once published.
+Without limiting that policy, you may not use the Services to:
+* Violate applicable law
+* Commit fraud
+* Conduct phishing
+* Distribute malware
+* Gain unauthorized access to systems
+* Interfere with Service operation
+* Harass or unlawfully threaten another person
+* Exploit children
+* Violate intellectual-property rights
+* Engage in unlawful surveillance
+* Impersonate Husky Solutions LLC
+* Circumvent payment restrictions
+* Circumvent account or security controls
+* Resell Services without authorization
+* Obtain unauthorized access to government databases
+* Facilitate unlawful activity
+________________
+
+
+17. SECURITY TESTING
+You may not perform unauthorized:
+* Penetration testing
+* Vulnerability scanning
+* Denial-of-service testing
+* Credential attacks
+* Exploit testing
+* Automated security testing
+against Husky Solutions LLC systems.
+Good-faith security research must comply with any published Husky Solutions LLC Vulnerability Disclosure or Security Policy.
+Security vulnerabilities should be reported to:
+[SECURITY EMAIL]
+________________
+
+
+18. SERVICE AVAILABILITY
+Husky Solutions LLC works to maintain reliable Services.
+However, unless a written Service Level Agreement states otherwise, we do not guarantee that a Service will be:
+* Continuously available
+* Error-free
+* Uninterrupted
+* Free from delays
+* Free from security incidents
+* Compatible with every device
+* Compatible with every third-party service
+Service interruptions may occur because of:
+* Maintenance
+* Software updates
+* Hardware failures
+* Cloud-provider failures
+* Internet failures
+* Cyberattacks
+* Security incidents
+* Third-party outages
+* Legal requirements
+* Force majeure events
+* Other circumstances
+________________
+
+
+19. MAINTENANCE
+Husky Solutions LLC may perform scheduled or emergency maintenance.
+When commercially reasonable, we may provide advance notice of maintenance expected to cause significant interruption.
+Emergency or security-related maintenance may occur without advance notice.
+________________
+
+
+20. SERVICE MODIFICATIONS
+We may:
+* Add features
+* Modify features
+* Remove features
+* Replace features
+* Update software
+* Modify interfaces
+* Change technical requirements
+* Discontinue Services
+Where a material change significantly affects an existing paid Service, Husky Solutions LLC will provide notice where commercially reasonable or legally required.
+We do not guarantee that every feature will remain available indefinitely.
+________________
+
+
+21. BETA AND PREVIEW FEATURES
+Husky Solutions LLC may make certain products or features available as:
+* Beta
+* Preview
+* Early access
+* Experimental
+* Development
+* Test functionality
+These features may:
+* Contain errors
+* Be incomplete
+* Change substantially
+* Experience downtime
+* Lose data
+* Be discontinued
+You should not rely upon experimental functionality for mission-critical operations unless Husky Solutions LLC expressly agrees otherwise in writing.
+________________
+
+
+22. THIRD-PARTY SERVICES
+The Services may integrate with, link to, or rely upon third-party products or services.
+Examples may include:
+* Hosting providers
+* Payment processors
+* Email providers
+* Cloud platforms
+* Authentication providers
+* APIs
+* Domain registrars
+* Analytics providers
+* Content-delivery networks
+* Game platforms
+* Other integrations
+Third-party products are governed by the terms and policies of their respective providers.
+Husky Solutions LLC is not responsible for the operation, security, availability, or conduct of unrelated third-party services.
+If a third-party service changes, restricts access, increases prices, discontinues functionality, or becomes unavailable, Husky Solutions LLC may modify or discontinue an affected integration.
+________________
+
+
+23. FEES AND PAYMENT
+Certain Services require payment.
+You agree to pay all fees disclosed before completing a purchase.
+Pricing may be structured as:
+* One-time fees
+* Monthly subscriptions
+* Annual subscriptions
+* Per-user fees
+* Usage-based fees
+* Project fees
+* Custom pricing
+* Enterprise pricing
+* Other pricing disclosed before purchase
+You authorize Husky Solutions LLC and its authorized payment processors to charge your selected payment method for amounts you agree to pay.
+________________
+
+
+24. SUBSCRIPTIONS
+Certain Services may be offered as recurring subscriptions.
+If you purchase an automatically renewing subscription, material subscription terms will be disclosed during or before checkout as required by applicable law.
+These may include:
+* Price
+* Billing frequency
+* Renewal frequency
+* Minimum term, if any
+* Cancellation terms
+* Trial terms, if applicable
+Unless otherwise disclosed, recurring subscriptions continue until canceled.
+Detailed rules are contained in the Husky Solutions LLC Subscription & Billing Policy.
+________________
+
+
+25. CANCELLATION
+You may cancel a recurring subscription using the cancellation mechanism provided for the applicable Service.
+Unless otherwise stated, cancellation ordinarily prevents the next renewal but does not immediately terminate access for a billing period that has already been paid.
+Cancellation does not automatically create a right to a refund.
+Refund eligibility is governed by the Husky Solutions LLC Refund & Cancellation Policy, applicable order terms, and applicable law.
+________________
+
+
+26. PRICE CHANGES
+Husky Solutions LLC may change prices.
+Price changes affecting existing recurring subscriptions will apply in accordance with applicable law and any notice provided to the customer.
+You may cancel before a new renewal price becomes effective.
+________________
+
+
+27. TAXES
+Prices may exclude applicable taxes unless otherwise stated.
+Husky Solutions LLC may collect:
+* Sales tax
+* Use tax
+* Value-added tax
+* Similar transactional taxes
+where required by law.
+You are responsible for applicable taxes associated with your purchase except taxes imposed on Husky Solutions LLC's income.
+________________
+
+
+28. FAILED PAYMENTS
+If a required payment fails, Husky Solutions LLC may:
+* Retry the payment
+* Request an updated payment method
+* Restrict paid features
+* Suspend the Service
+* Downgrade the account
+* Terminate the applicable subscription
+Outstanding amounts remain payable where legally enforceable.
+________________
+
+
+29. REFUNDS
+Refunds are governed by:
+* The Husky Solutions LLC Refund & Cancellation Policy
+* Product-specific terms
+* Applicable order forms
+* Statements of work
+* Applicable law
+Nothing in these Terms eliminates refund rights that cannot legally be waived.
+________________
+
+
+30. HUSKY SOLUTIONS LLC INTELLECTUAL PROPERTY
+Husky Solutions LLC and its licensors retain all ownership rights in the Services and related intellectual property.
+This may include:
+* Software
+* Source code
+* Object code
+* Databases
+* Interfaces
+* Workflows
+* Designs
+* Documentation
+* Graphics
+* Templates
+* Websites
+* Logos
+* Product names
+* Trademarks
+* Service marks
+* Internal tools
+* APIs
+* Design systems
+* Business methods
+* Proprietary technology
+Except for rights expressly granted under these Terms, no intellectual-property rights are transferred to you.
+________________
+
+
+31. TRADEMARKS
+The Husky Solutions LLC name, product names, logos, designs, and related branding may constitute trademarks or service marks.
+You may not use Husky Solutions LLC branding in a way that:
+* Falsely implies sponsorship
+* Falsely implies endorsement
+* Creates confusion
+* Misrepresents an affiliation
+* Impersonates Husky Solutions LLC
+Permission to use specific Husky Solutions LLC branding may be granted separately in writing.
+________________
+
+
+32. COPYRIGHT
+Husky Solutions LLC respects the intellectual-property rights of others.
+Users must not knowingly use the Services to infringe copyright.
+Copyright complaints will be handled pursuant to the Husky Solutions LLC Copyright and DMCA Policy when applicable.
+________________
+
+
+33. FEEDBACK
+If you voluntarily provide Husky Solutions LLC with:
+* Suggestions
+* Ideas
+* Recommendations
+* Feature requests
+* Improvements
+* Feedback
+regarding the Services, you grant Husky Solutions LLC a worldwide, perpetual, irrevocable, transferable, sublicensable, royalty-free right to use that feedback for any lawful purpose without compensation or attribution.
+This section does not transfer ownership of Customer Content merely because you provide it through a Service.
+________________
+
+
+34. CONFIDENTIAL INFORMATION
+Certain business or enterprise relationships may involve confidential information.
+Any separate:
+* Non-disclosure agreement
+* Enterprise agreement
+* Business associate agreement
+* Data-processing agreement
+* Confidentiality agreement
+will govern information within its scope.
+These Terms alone do not create an obligation to treat publicly submitted feedback or public Customer Content as confidential.
+________________
+
+
+35. SUPPORT
+Available support methods may vary by:
+* Service
+* Subscription tier
+* Customer type
+* Enterprise agreement
+Support may be provided through:
+* Email
+* Support tickets
+* Administrative portals
+* Other published channels
+Unless expressly identified as a binding Service Level Agreement, estimated response times are targets rather than guaranteed resolution times.
+________________
+
+
+36. SUSPENSION
+Husky Solutions LLC may temporarily suspend access to all or part of a Service when reasonably necessary because of:
+* Nonpayment
+* Material violation of these Terms
+* Security risk
+* Account compromise
+* Fraud
+* Abuse
+* Unlawful activity
+* Excessive impact on infrastructure
+* Legal requirements
+* Threats to other users or systems
+Where reasonable under the circumstances, Husky Solutions LLC may provide notice before or shortly after suspension.
+Immediate action may be taken when required to address an urgent security, legal, fraud, or safety risk.
+________________
+
+
+37. TERMINATION BY YOU
+You may stop using the Services at any time.
+You may terminate or cancel an account using available account controls or by contacting Husky Solutions LLC where applicable.
+Termination does not automatically:
+* Cancel amounts already owed
+* Create a refund
+* Remove records that must legally be retained
+You should export important Customer Content before terminating an account where export functionality is available.
+________________
+
+
+38. TERMINATION BY HUSKY SOLUTIONS LLC
+Husky Solutions LLC may terminate an account or Service for legitimate reasons including:
+* Material breach of these Terms
+* Repeated violations
+* Fraud
+* Illegal activity
+* Security threats
+* Abuse
+* Nonpayment
+* Unauthorized resale
+* Serious interference with the Services
+Where commercially reasonable, Husky Solutions LLC will provide notice before termination.
+Notice may not be provided before immediate termination when reasonably necessary because of:
+* Fraud
+* Serious abuse
+* Illegal activity
+* Cybersecurity threats
+* Emergency circumstances
+* Legal requirements
+________________
+
+
+39. EFFECT OF TERMINATION
+When a Service terminates:
+* Your right to use that Service ends
+* Access to associated features may end
+* Customer Content may become inaccessible
+* Outstanding charges remain payable where applicable
+* Information may be retained according to the Privacy Policy and applicable law
+Husky Solutions LLC may delete Customer Content following termination according to applicable retention practices.
+Sections of these Terms that by their nature should survive termination will continue to apply.
+________________
+
+
+40. NO PROFESSIONAL ADVICE
+Unless expressly agreed otherwise in writing, Husky Solutions LLC does not provide:
+* Legal advice
+* Tax advice
+* Accounting advice
+* Financial advice
+* Medical advice
+* Employment-law advice
+* Law-enforcement legal advice
+* Emergency-services advice
+Information or functionality provided through a Service should not be treated as professional advice merely because it relates to a particular industry.
+You are responsible for obtaining appropriate professional advice for your circumstances.
+________________
+
+
+41. NO EMERGENCY SERVICES
+Unless Husky Solutions LLC has entered into a written agreement expressly providing otherwise, the Services must not be relied upon as the sole method for:
+* Calling emergency services
+* Dispatching emergency responders
+* Communicating life-safety information
+* Making emergency medical decisions
+* Making law-enforcement decisions
+* Operating critical infrastructure
+If you are experiencing an actual emergency, contact the appropriate emergency authority using an established emergency communications method.
+________________
+
+
+42. DISCLAIMER OF WARRANTIES
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICES ARE PROVIDED:
+“AS IS” AND “AS AVAILABLE.”
+HUSKY SOLUTIONS LLC DISCLAIMS ALL WARRANTIES THAT MAY LAWFULLY BE DISCLAIMED, INCLUDING IMPLIED WARRANTIES OF:
+* MERCHANTABILITY
+* FITNESS FOR A PARTICULAR PURPOSE
+* TITLE
+* NON-INFRINGEMENT
+HUSKY SOLUTIONS LLC DOES NOT WARRANT THAT:
+* THE SERVICES WILL ALWAYS BE AVAILABLE;
+* THE SERVICES WILL ALWAYS BE ERROR-FREE;
+* EVERY DEFECT WILL BE CORRECTED;
+* DATA LOSS WILL NEVER OCCUR;
+* EVERY SECURITY INCIDENT CAN BE PREVENTED;
+* THIRD-PARTY INTEGRATIONS WILL REMAIN AVAILABLE;
+* EVERY SERVICE WILL MEET EVERY CUSTOMER'S PARTICULAR REQUIREMENTS; OR
+* THE SERVICES SATISFY A SPECIALIZED REGULATORY REQUIREMENT UNLESS EXPRESSLY STATED IN A WRITTEN AGREEMENT.
+SOME JURISDICTIONS DO NOT ALLOW CERTAIN WARRANTY EXCLUSIONS.
+IN THOSE JURISDICTIONS, THESE EXCLUSIONS APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY LAW.
+________________
+
+
+43. LIMITATION OF LIABILITY
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HUSKY SOLUTIONS LLC AND ITS OWNERS, OFFICERS, EMPLOYEES, CONTRACTORS, AND AFFILIATES WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATING TO THE SERVICES.
+THIS INCLUDES, WHERE PERMITTED BY LAW, DAMAGES FOR:
+* LOST PROFITS
+* LOST REVENUE
+* LOST BUSINESS
+* LOST DATA
+* LOSS OF GOODWILL
+* BUSINESS INTERRUPTION
+* LOSS OF OPPORTUNITY
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE TOTAL AGGREGATE LIABILITY OF HUSKY SOLUTIONS LLC ARISING FROM OR RELATING TO A PARTICULAR SERVICE WILL NOT EXCEED THE GREATER OF:
+(A) THE TOTAL AMOUNT YOU PAID HUSKY SOLUTIONS LLC FOR THAT SERVICE DURING THE TWELVE MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM; OR
+(B) ONE HUNDRED U.S. DOLLARS ($100) IF YOU DID NOT PAY FOR THE SERVICE.
+THESE LIMITATIONS DO NOT APPLY TO LIABILITY THAT CANNOT LAWFULLY BE EXCLUDED OR LIMITED.
+________________
+
+
+44. INDEMNIFICATION
+To the extent permitted by applicable law, you agree to defend, indemnify, and hold harmless Husky Solutions LLC and its owners, officers, employees, contractors, agents, and affiliates from third-party claims, damages, liabilities, losses, judgments, and reasonable costs arising from:
+* Your unlawful use of the Services
+* Customer Content you provide
+* Your material violation of these Terms
+* Your infringement of third-party rights
+* Your misuse of another person's information
+* Your unauthorized use of regulated information
+This section does not require you to indemnify Husky Solutions LLC for liability caused solely by Husky Solutions LLC where such indemnification would be prohibited by law.
+________________
+
+
+45. FORCE MAJEURE
+Husky Solutions LLC will not be responsible for failure or delay caused by circumstances reasonably outside our control.
+These circumstances may include:
+* Natural disasters
+* Severe weather
+* Fires
+* Floods
+* War
+* Terrorism
+* Civil unrest
+* Government actions
+* Labor disruptions
+* Utility failures
+* Telecommunications failures
+* Internet outages
+* Cloud-provider outages
+* Cyberattacks
+* Epidemics
+* Pandemics
+* Other comparable events
+________________
+
+
+46. GOVERNING LAW
+These Terms are governed by the laws of the State of New York, without regard to principles concerning conflicts of law, except where applicable law requires otherwise.
+________________
+
+
+47. DISPUTE VENUE
+Subject to rights that cannot legally be waived, any legal action arising from or relating to these Terms or the Services will be brought in:
+* A state court of competent jurisdiction located in Monroe County, New York; or
+* The applicable United States federal court with jurisdiction over Monroe County, New York.
+Nothing in these Terms prevents an eligible party from pursuing a claim in an appropriate small-claims court.
+Nothing in this section eliminates mandatory consumer rights provided by applicable law.
+________________
+
+
+48. NO CLASS-ACTION WAIVER IN THESE TERMS
+These Terms do not independently require arbitration or impose a class-action waiver.
+If Husky Solutions LLC and a particular customer later enter into a separate written agreement containing dispute-resolution provisions, that agreement may govern disputes within its scope.
+________________
+
+
+49. ELECTRONIC COMMUNICATIONS
+By conducting transactions electronically with Husky Solutions LLC, you consent to receiving agreements, notices, disclosures, transaction confirmations, and other communications electronically to the extent permitted by law.
+Electronic communications may be provided through:
+* Email
+* Account notifications
+* Website notices
+* Application notifications
+* Other electronic methods
+You are responsible for maintaining accurate contact information.
+________________
+
+
+50. CHANGES TO THESE TERMS
+Husky Solutions LLC may modify these Terms as our Services, business, or legal obligations change.
+The “Last Updated” date identifies the most recent version.
+If a change materially affects existing customers, Husky Solutions LLC may provide additional notice where legally required or commercially appropriate.
+Notice may be provided through:
+* Email
+* Website notification
+* Account notification
+* Application notification
+Material changes will become effective as permitted by applicable law.
+Continued use of the Services after updated Terms become effective constitutes acceptance of those Terms to the extent permitted by law.
+________________
+
+
+51. NO WAIVER
+Failure by Husky Solutions LLC to enforce a provision of these Terms does not waive our right to enforce that provision later.
+A waiver of one violation does not constitute a waiver of another violation.
+________________
+
+
+52. SEVERABILITY
+If a court determines that a provision of these Terms is invalid or unenforceable, the provision will be modified to the minimum extent necessary to make it enforceable where legally possible.
+If modification is not possible, the invalid provision will be severed.
+The remaining provisions will continue in effect.
+________________
+
+
+53. ASSIGNMENT
+You may not transfer or assign your rights or obligations under these Terms without prior written consent from Husky Solutions LLC.
+Husky Solutions LLC may assign or transfer these Terms in connection with:
+* A merger
+* Acquisition
+* Corporate restructuring
+* Financing
+* Reorganization
+* Sale of assets
+* Transfer of a business or product line
+subject to applicable law.
+________________
+
+
+54. NO AGENCY RELATIONSHIP
+These Terms do not create a:
+* Partnership
+* Joint venture
+* Employment relationship
+* Franchise
+* Agency relationship
+between you and Husky Solutions LLC merely because you use the Services.
+________________
+
+
+55. THIRD-PARTY BENEFICIARIES
+Except where expressly stated otherwise, these Terms do not create enforceable rights for persons or entities that are not parties to them.
+________________
+
+
+56. ENTIRE AGREEMENT
+These Terms, together with any applicable:
+* Privacy Policy
+* Acceptable Use Policy
+* Subscription & Billing Policy
+* Refund & Cancellation Policy
+* Cookie Policy
+* Copyright and DMCA Policy
+* Product-specific terms
+* Order forms
+* Statements of work
+* Signed agreements
+constitute the applicable agreement between you and Husky Solutions LLC concerning the Services.
+A separately signed agreement may supersede these Terms with respect to matters expressly covered by that agreement.
+________________
+
+
+57. ORDER OF PRECEDENCE
+If multiple agreements apply and directly conflict, the following order generally controls unless expressly stated otherwise:
+1. A signed negotiated agreement between Husky Solutions LLC and the customer
+2. An applicable statement of work or order form
+3. Product-specific supplemental terms
+4. Subscription and Billing Policy
+5. These Terms of Service
+6. Other generally applicable Husky Solutions LLC policies
+Applicable laws and non-waivable legal rights remain controlling regardless of this order.
+________________
+
+
+58. HEADINGS
+Section headings are provided for convenience and do not independently affect the interpretation of these Terms.
+________________
+
+
+59. CONTACT INFORMATION
+Questions regarding these Terms may be directed to:
+Husky Solutions LLC
+Legal Department
+Mailing Address:
+[BUSINESS MAILING ADDRESS]
+Rochester, New York [ZIP CODE]
+United States
+Legal Email:
+[LEGAL EMAIL]
+Support Email:
+[SUPPORT EMAIL]
+Website:
+[HUSKY SOLUTIONS WEBSITE]
+________________
+
+
+60. EFFECTIVE DATE
+These Terms of Service are effective as of:
+October 12, 2026
+and remain effective until amended or replaced by Husky Solutions LLC.

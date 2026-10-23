@@ -1,5 +1,9 @@
 HUSKY SUITE — COMPLETE SOURCE UPLOAD
 
+OCTOBER 23 CUSTOMER SERVICES UPDATE: the Cloudflare backend and database are
+already updated. Upload the frontend source below, then see CUSTOMER-SETUP-README.txt
+for the owner-only Enable customer setup step and policy-document readiness notes.
+
 Use HWS-Sites-COMPLETE.zip for folder-based uploads. Update-only ZIPs do not
 contain the whole application and must never replace a repository folder.
 
