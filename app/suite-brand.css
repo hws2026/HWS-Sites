@@ -38,3 +38,34 @@
 
 /* Social profile controls shared by native and imported template footers. */
 .social-links-editor{border-bottom:1px solid #d9d9ee;padding-bottom:16px;margin-bottom:22px;min-width:0}.social-links-empty{font-size:12px;color:#666;background:#f5f5fb;padding:14px;border-radius:8px}.social-link-row{border:1px solid #d9d9ee;border-radius:10px;padding:12px;margin:12px 0;background:#fff;min-width:0}.social-link-row-heading{display:flex;align-items:center;gap:8px;margin-bottom:12px;min-width:0}.social-link-row-heading>strong{font-size:12px;flex:1;min-width:0;overflow-wrap:anywhere}.social-logo-preview{display:grid;place-items:center;width:30px;height:30px;flex-shrink:0;color:#2020b7;background:#eeeefe;border-radius:7px}.social-link-actions{display:flex;gap:2px;flex-shrink:0}.social-link-actions button{display:grid;place-items:center;width:25px;height:28px;padding:0;border:0;border-radius:5px;background:transparent;color:#333333;cursor:pointer}.social-link-actions button:hover:not(:disabled){background:#eeeefe;color:#2020b7}.social-link-actions button:disabled{opacity:.3;cursor:default}.social-link-actions button:focus-visible{outline:2px solid #2020b7;outline-offset:1px}.social-link-row label{display:flex;flex-direction:column;gap:6px;margin:10px 0;font-size:12px;font-weight:500}.social-link-row input,.social-link-row select{box-sizing:border-box;min-width:0;width:100%}.social-link-row .field-help{font-size:11px;margin:6px 0 0}.social-link-row .social-link-error{color:#ac2020}.social-link-row input[aria-invalid=true]{border-color:#ac2020}.social-link-add{width:100%;justify-content:center}
+
+/* Keep all desktop navigation visible at ordinary laptop heights. Tiny/zoomed
+   windows retain accessible scrolling instead of clipping account controls. */
+.suite-sidebar [data-slot=sidebar-inner]{padding:10px 12px}
+.suite-sidebar [data-slot=sidebar-header]{padding:4px;gap:6px;flex-shrink:0}
+.suite-sidebar .suite-brand{padding:0;min-height:0}
+.suite-sidebar .suite-brand .husky-suite-logo{width:100px;height:96px}
+.suite-sidebar .profile-trigger{padding:7px 8px;gap:8px;border-radius:8px}
+.suite-sidebar .profile-avatar{width:32px;height:32px;flex-basis:32px}
+.suite-sidebar [data-slot=sidebar-group]{padding:4px}
+.suite-sidebar [data-slot=sidebar-group-label]{height:20px;margin:0 0 4px}
+.suite-sidebar [data-slot=sidebar-menu]{gap:2px}
+.suite-sidebar .suite-menu-button{height:36px;min-height:36px;margin:0;padding:0 10px;font-size:13px;gap:10px}
+.suite-sidebar [data-slot=sidebar-footer]{padding:4px;flex-shrink:0}
+.suite-sidebar .portal-link{margin:0;padding:8px 10px;font-size:12px;min-height:34px}
+@media(min-width:768px) and (max-height:820px){
+ .suite-sidebar [data-slot=sidebar-inner]{padding:8px 12px}
+ .suite-sidebar .suite-brand .husky-suite-logo{width:84px;height:80px}
+ .suite-sidebar .suite-menu-button{height:32px;min-height:32px}
+}
+@media(min-width:768px) and (max-height:690px){
+ .suite-sidebar [data-slot=sidebar-inner]{padding:6px 10px}
+ .suite-sidebar [data-slot=sidebar-header]{gap:4px;padding:2px 4px}
+ .suite-sidebar .suite-brand .husky-suite-logo{width:64px;height:60px}
+ .suite-sidebar .profile-trigger{padding:5px 7px}
+ .suite-sidebar [data-slot=sidebar-menu]{gap:1px}
+ .suite-sidebar .suite-menu-button{height:29px;min-height:29px;font-size:12px}
+ .suite-sidebar .portal-link{padding:6px 10px;min-height:30px}
+}
+
+.signin-location{padding:12px 0;border-top:1px solid #e1e1eb;margin-top:4px}.auth-card .signin-location .button{background:transparent;border:1px solid #c9c9dd;color:#333333;width:auto;font-size:12px;padding:8px 10px}.auth-card .signin-location p{font-size:11px;line-height:1.5;margin:8px 0;color:#586171}.signin-location a,.signin-location-remove{color:#2020b7;text-decoration:underline}.signin-location-remove{background:none;border:0;font-size:inherit;padding:0;cursor:pointer}

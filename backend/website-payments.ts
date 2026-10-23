@@ -1,3 +1,4 @@
+import {publicHoneyBookLink,honeybookEditorLinks} from './honeybook';
 import {boundedBytes,RequestSizeError} from '../lib/request-size';
 import {database,sitePermission} from '../lib/suite-store';
 import {visibleBlocks,type Website} from '../lib/editor-model';
@@ -5,7 +6,7 @@ import {amountInMinorUnits,billingCurrencies} from '../lib/commerce-model';
 import {stripe,validSignature,type BillingEnv} from './billing';
 import {body,CommerceError,failure,field,json,providerUrl,type CommerceUser} from './commerce-utils';
 
-export type MerchantEnv=BillingEnv&{STRIPE_CONNECT_WEBHOOK_SECRET?:string};
+export type MerchantEnv=BillingEnv&{STRIPE_CONNECT_WEBHOOK_SECRET?:string;HWS_DATA_KEY?:string};
 type Customer={id:string;owner:string;email:string;archived:number;status:string};
 type Merchant={customer_id:string;owner:string;account_id:string|null;live:number;charges_enabled:number;details_submitted:number;disconnected:number};
 type Account={id:string;charges_enabled:boolean;details_submitted:boolean};
@@ -25,7 +26,7 @@ export async function websitePaymentsRoute(request:Request,env:MerchantEnv,user:
  const db=database(),url=new URL(request.url);
  if(request.method==='GET'){
   const siteId=url.searchParams.get('siteId');
-  if(siteId){if(!await sitePermission(siteId,user.id))throw new CommerceError('Website not found.',404);const rows=await db.prepare('SELECT id,label,amount,currency,interval,enabled FROM payment_offers WHERE site_id=? ORDER BY updated_at DESC').bind(siteId).all();return json({offers:rows.results});}
+  if(siteId){if(!await sitePermission(siteId,user.id))throw new CommerceError('Website not found.',404);if(url.searchParams.get('provider')==='honeybook')return json({links:await honeybookEditorLinks(env,siteId)});const rows=await db.prepare('SELECT id,label,amount,currency,interval,enabled FROM payment_offers WHERE site_id=? ORDER BY updated_at DESC').bind(siteId).all();return json({offers:rows.results});}
   const condition=user.isAdmin?'c.owner=?':'lower(c.email)=?',identity=user.isAdmin?user.id:user.email;
   const [customers,sites,accounts,offers,orders,payments]=await Promise.all([
    db.prepare(`SELECT c.id,c.name,c.email,c.archived FROM customers c WHERE ${condition}`).bind(identity).all(),
@@ -83,6 +84,7 @@ export async function publicPayment(request:Request,env:MerchantEnv,siteId:strin
  if(request.method==='GET'&&url.searchParams.has('order')){const order=await db.prepare('SELECT status,subscription_status,offer_id FROM website_orders WHERE id=? AND site_id=?').bind(field(url.searchParams.get('order')),siteId).first();if(!order)throw new CommerceError('Payment not found.',404);return json(order);}
  if(!['GET','POST'].includes(request.method))return json({error:'Method not allowed.'},405);
  const input=request.method==='POST'?await body(request):Object.fromEntries(url.searchParams),page=site.pages.find(p=>p.id===input.pageId),block=page&&visibleBlocks(page.blocks).find(b=>b.id===input.blockId&&b.type==='payment');
+ if(page&&block?.paymentProvider==='honeybook'&&block.honeybookLinkId){if(request.method!=='GET')return json({error:'Open the HoneyBook form to continue.'},405);return json(await publicHoneyBookLink(env,siteId,block.honeybookLinkId));}
  if(!page||!block?.paymentOfferId)throw new CommerceError('This payment section is unavailable.',404);
  const offer=await db.prepare('SELECT o.* FROM payment_offers o JOIN client_sites s ON s.id=o.site_id AND s.customer_id=o.customer_id JOIN customers c ON c.id=o.customer_id WHERE o.id=? AND o.site_id=? AND o.enabled=1 AND c.archived=0 AND c.status!=?').bind(block.paymentOfferId,siteId,'Paused').first<Offer>();if(!offer)throw new CommerceError('This payment offer is no longer available.',404);
  const m=await merchant(offer.customer_id,env);

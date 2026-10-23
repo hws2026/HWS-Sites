@@ -10,6 +10,8 @@ export async function sourceFiles(root=projectRoot){
  for(const name of files)if(name.startsWith('/')||name.includes('\\')||name.split('/').some(p=>['.','..','.git','node_modules','.env','.local-secrets'].includes(p))||name.split('/').some(p=>p.startsWith('.env')||p.startsWith('.dev.vars'))||!/^[-a-zA-Z0-9_./\[\] ]+$/.test(name))throw new Error('Unsafe source entry: '+name);
  const missing=[];for(const name of files){try{if(!(await stat(resolve(root,name))).isFile())missing.push(name);}catch{missing.push(name);}}
  if(missing.length)throw new Error(`Incomplete source upload: ${missing.length} required files are missing.\n${missing.map(p=>'  - '+p).join('\n')}\nUse the COMPLETE project ZIP and merge its contents into the repository root. Keep .git. Do not replace the project with a partial update or force-push an older checkout.`);
+ const pages=await readFile(resolve(root,'.github/workflows/github-pages.yml'),'utf8'),backend=await readFile(resolve(root,'.github/workflows/cloudflare-backend.yml'),'utf8');
+ if(!pages.includes('uses: ./.github/workflows/cloudflare-backend.yml')||!pages.includes('needs: [build, backend]')||!backend.includes('workflow_call:'))throw new Error('Deployment workflows are outdated. Copy the hidden .github folder from this COMPLETE ZIP too. Pages must wait for the matching backend/database deployment before publishing the frontend.');
  return files;
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){

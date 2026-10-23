@@ -1,3 +1,66 @@
+FINAL MORNING EDITS — SIDEBAR, POLICY HISTORY & OPTIONAL LOCATION
+
+- The sidebar logo and spacing adapt to screen height. Removed the duplicate
+  template promotion; all 14 navigation items and Customer portal remain visible
+  at tested 1366x720 and 1366x640 desktop viewports. Very small/zoomed windows can
+  still scroll so controls are never clipped or hidden.
+- Policy acceptance history starts with a customer selector. Choose a customer
+  to see their policy versions, timestamps, signer details and IP. Selected
+  history is queried on the server and paginated. Archived/deleted account
+  history remains reviewable. The selection survives refresh.
+- Sign-in now offers Share device location (optional). It asks the browser only
+  after the user clicks. The user can remove it; permission denial does not
+  prevent sign-in. Reports are one-time, expire after five minutes, are cleared
+  after the attempt, and are stored encrypted in the audit record.
+- Device-reported coordinates retain six decimal places for display and a
+  reported accuracy in metres. The map can show a pin at the reported location.
+  Device reports are unverified telemetry, never authorization evidence. GPS,
+  Wi-Fi and cell-tower accuracy vary; neither they nor IP lookup guarantee an
+  exact address. Older IP-only records remain broad network estimates.
+- Maps load only after the administrator clicks, with notice that the displayed
+  location is shared with OpenStreetMap. No real device location was collected
+  for verification; browser tests used an explicitly simulated location.
+
+VERIFICATION FOR THIS PACKAGE
+- TypeScript, production frontend and backend build checks passed.
+- 111 customer/security checks, 87 HoneyBook checks, 157 backend checks,
+  44 mobile checks, 42 existing Stripe payment checks, 34 publication checks
+  and 26 website-creation checks passed using isolated fixtures.
+- 403 native template/section combinations and 1,356 template pages rendered;
+  HoneyBook sections also validated in all 13 native templates. Imported-template
+  compatibility passed and all 74 original photo-booth files remain unchanged.
+- Browser checks covered HoneyBook desktop/mobile (390px), editor form selection,
+  compact sidebar at 720px/640px heights, customer policy selection/refresh and a
+  simulated device pin. No real device coordinates or customer payment data used.
+- Archive contents are checked against SOURCE-FILES.txt and ZIP checksums.
+
+HONEYBOOK OPTIONS & COORDINATED DEPLOYMENT — OCTOBER 23, 2026
+
+SOURCE UPDATE — NOT DEPLOYED LIVE OR CONNECTED TO A CUSTOMER ACCOUNT.
+See UPLOAD-README.txt. The coordinated Pages workflow now applies pending backend
+migrations and deploys the Worker before publishing the matching frontend. Copy
+hidden .github too; the source verifier rejects the old workflow arrangement.
+
+- HoneyBook and Stripe can be selected separately in Website payments.
+- Private client invoice links and public booking/payment lead forms are separate.
+  Only public forms are selectable in any template's Payment checkout section.
+- Visitors can open a published HoneyBook form without signing into Husky Suite.
+- Manual payment history works without an additional automation subscription.
+  Records can be voided/corrected, with history retained; no charge/refund occurs.
+- Optional per-website automatic payment events support the customer's HoneyBook
+  and Zapier accounts. Setup, test timestamps, key replacement, disconnection and
+  understandable errors are in the suite. See HONEYBOOK-SETUP.txt for requirements.
+- Details/URLs are encrypted; sync keys are hashed and shown once. Customer/site
+  permissions protect payer data. Duplicate deliveries do not duplicate payments.
+- Customer archive/deletion and copied-site payment destination protections apply.
+- Billing staff and mobile billing can access the HoneyBook workspace. Its open
+  website and tab survive refresh through the URL.
+- Migration 0014 adds connection/history tables; existing links stay private.
+- No HoneyBook account, Zap, subscription or live financial transaction was created.
+  Sync is successful-payment activity, not full invoice/refund/balance synchronization.
+
+EARLIER RELEASE NOTES (HISTORICAL DEPLOYMENT INSTRUCTIONS ARE SUPERSEDED ABOVE)
+
 SECURITY SAFEGUARDS & PRICING LIBRARY — OCTOBER 23, 2026
 
 SOURCE UPDATE ONLY — NOT DEPLOYED LIVE.
@@ -27,7 +90,7 @@ secrets must be preserved. No paid service or new secret was added.
   This display content does not create payments or change account allowances.
 - All earlier profile, onboarding, audit, refresh and template work remains.
   Original photo-booth files were not changed. Private audit exports are excluded.
-- HoneyBook sync is ON HOLD. Stop after delivering this ZIP until the owner asks.
+- HoneyBook was deferred in this earlier release; the update above now adds it.
 
 PRIOR UPDATE DETAILS FOLLOW
 

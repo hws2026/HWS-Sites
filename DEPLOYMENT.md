@@ -1,3 +1,13 @@
+# October 23 HoneyBook update — current deployment instructions
+
+This source update has not been deployed. Follow `UPLOAD-README.txt`. Upload the complete `.github` folder: the Pages workflow now calls the backend workflow for the same commit and waits for its success before publishing the frontend. It automatically applies pending migration `0014_honeybook_payment_sync.sql`, then deploys the Worker with existing secrets preserved. No new global secret or subscription is needed. `CLOUDFLARE_API_TOKEN` remains required in repository Actions secrets or the `production` environment. A backend failure blocks the new frontend while leaving the previous Pages deployment live.
+
+Earlier migrations 0012/0013 were successfully applied by GitHub Actions run 39913971103 before this HoneyBook work; Wrangler skips applied migrations. This package adds 0014. The source verifier detects an outdated hidden workflow folder. Start a new Pages workflow from latest main when retrying; do not deploy an old revision. The separate backend workflow still supports manual maintenance.
+
+After deployment, use Website payments → HoneyBook. See `HONEYBOOK-SETUP.txt` for links/manual history and optional customer-owned payment-event automation. No live customer HoneyBook connection has been configured or verified. Optional automatic sync requires supported customer plans; manual records/public links remain available without an extra integration subscription.
+
+The following sections are historical deployment/reference notes; current instructions above take precedence.
+
 # October 23 security safeguards and pricing library update
 
 This package is **not deployed**. Follow UPLOAD-README.txt. Run a **new** backend workflow from the latest main commit and confirm Pages is green for that same commit. Pending migrations include `0012_wealthy_rafael_vega.sql` and `0013_careless_zarda.sql`. The pricing module requires the matching backend validator.
@@ -14,7 +24,7 @@ This source package has **not** been deployed. Deploy its backend and frontend t
 
 Migration `0012_wealthy_rafael_vega.sql` adds encrypted account profiles and onboarding completion timestamps. The backend workflow applies it automatically. No new secrets are needed. The existing GitHub deployment credential is `CLOUDFLARE_API_TOKEN`; Worker secrets are separate and must be preserved.
 
-The current local Wrangler credential was denied database inspection with Cloudflare code 7403, so no live database migration or new Worker deployment was attempted for this package. Backend tests used an isolated local database. HoneyBook sync remains on hold.
+The current local Wrangler credential was denied database inspection with Cloudflare code 7403, so no live database migration or new Worker deployment was attempted for this package. Backend tests used an isolated local database. HoneyBook was deferred in that earlier package; see the current update above.
 
 # Existing deployment reference
 

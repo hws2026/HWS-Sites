@@ -1,3 +1,4 @@
+import {validSignInLocation,type SignInLocation} from '../lib/signin-location';
 import {boundedBytes,RequestSizeError} from '../lib/request-size';
 import {accessHold,holdResponse} from './incidents';
 import {database} from '../lib/suite-store';
@@ -17,9 +18,9 @@ const bytes=(v:string)=>Uint8Array.from(atob(v),c=>c.charCodeAt(0));
 export async function seal(env:Env,value:unknown,purpose:string){const iv=crypto.getRandomValues(new Uint8Array(12));const ciphertext=await crypto.subtle.encrypt({name:'AES-GCM',iv,additionalData:enc.encode(purpose)},await key(env),enc.encode(JSON.stringify(value)));return 'v1.'+b64(iv)+'.'+b64(new Uint8Array(ciphertext));}
 export async function unseal<T>(env:Env,value:string,purpose:string):Promise<T>{const [version,iv,ciphertext]=value.split('.');if(version!=='v1')throw new Error('Unsupported encrypted record.');return JSON.parse(dec.decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(iv),additionalData:enc.encode(purpose)},await key(env),bytes(ciphertext)))) as T;}
 export function requestContext(request:Request){const cf=request.cf as Record<string,unknown>|undefined;const number=(v:unknown,min:number,max:number)=>(typeof v==='string'&&v.trim()!=='')||typeof v==='number'?Number.isFinite(Number(v))&&Number(v)>=min&&Number(v)<=max?Number(v):null:null;return {ip:request.headers.get('CF-Connecting-IP')||'unavailable',city:typeof cf?.city==='string'?cf.city:'',region:typeof cf?.region==='string'?cf.region:'',country:typeof cf?.country==='string'?cf.country:'',latitude:number(cf?.latitude,-90,90),longitude:number(cf?.longitude,-180,180),approximate:true,userAgent:(request.headers.get('user-agent')||'').slice(0,500)};}
-export async function audit(request:Request,env:Env,p:Pick<Principal,'id'|'email'|'owner'>,event:string,outcome:string,status=200,target=''){
+export async function audit(request:Request,env:Env,p:Pick<Principal,'id'|'email'|'owner'>,event:string,outcome:string,status=200,target='',deviceLocation?:SignInLocation){
  if(!env.HWS_DATA_KEY)return; // Legacy deployments remain available until encryption is installed.
- const id=crypto.randomUUID();const context=await seal(env,{...requestContext(request),email:p.email},'audit:'+id);
+ const id=crypto.randomUUID();const context=await seal(env,{...requestContext(request),email:p.email,...(deviceLocation?{deviceLocation}:{})},'audit:'+id);
  await database().prepare('INSERT INTO security_events (id,owner,actor,event,outcome,target,status,created_at,context) VALUES (?,?,?,?,?,?,?,?,?)').bind(id,p.owner,p.id,event,outcome,target.slice(0,300),status,now(),context).run();
 }
 export async function principal(user:{id:string;email:string},env:Env):Promise<Principal>{
@@ -30,7 +31,7 @@ export async function principal(user:{id:string;email:string},env:Env):Promise<P
  const staff=await database().prepare('SELECT owner,role FROM team_members WHERE user_id=? AND active=1').bind(user.id).first<{owner:string;role:AccountRole}>();
  return {...user,owner:staff?.owner??platformOwner(env),role:staff?.role??'customer'};
 }
-export const staffAllowed=(role:AccountRole,path:string)=>role==='owner'||role==='admin'&&path!=='/api/team'||role==='support'&&['/api/me','/api/profile','/api/support','/api/onboarding','/api/account-password','/api/session'].includes(path)||role==='billing'&&['/api/me','/api/profile','/api/billing','/api/onboarding','/api/account-password','/api/session'].includes(path)||role==='customer';
+export const staffAllowed=(role:AccountRole,path:string)=>role==='owner'||role==='admin'&&path!=='/api/team'||role==='support'&&['/api/me','/api/profile','/api/support','/api/onboarding','/api/account-password','/api/session'].includes(path)||role==='billing'&&['/api/me','/api/profile','/api/billing','/api/honeybook','/api/onboarding','/api/account-password','/api/session'].includes(path)||role==='customer';
 export async function onboardingEnabled(env:Env,p:Pick<Principal,'owner'>){if(env.HWS_ONBOARDING_ENABLED==='true')return true;return Boolean((await database().prepare('SELECT onboarding_enabled FROM suite_security_settings WHERE owner=?').bind(p.owner).first<{onboarding_enabled:number}>())?.onboarding_enabled);}
 const requiredPolicies=JSON.stringify(policies.map(({id,version})=>({id,version})));
 // Check actual current acceptance records, including on older accounts whose UI
@@ -49,20 +50,21 @@ async function consumeLimit(label:string,limit:number,windowMs:number){const buc
 export async function login(request:Request,env:Env){
  if(request.method!=='POST')return json({error:'Method not allowed.'},405);
  let raw:string;try{raw=new TextDecoder().decode(await boundedBytes(request,12000));}catch(error){if(error instanceof RequestSizeError)return json({error:error.message},413);throw error;}
- let b:{email?:unknown;password?:unknown};try{b=JSON.parse(raw);if(!b||typeof b!=='object'||Array.isArray(b))throw new Error('Invalid request');}catch{return json({error:'Invalid request.'},400);}
+ let b:{email?:unknown;password?:unknown;deviceLocation?:unknown};try{b=JSON.parse(raw);if(!b||typeof b!=='object'||Array.isArray(b))throw new Error('Invalid request');}catch{return json({error:'Invalid request.'},400);}
  const email=typeof b.email==='string'?b.email.trim().toLowerCase():'';const password=typeof b.password==='string'?b.password:'';
  if(!email||email.length>254||!password||password.length>4096)return json({error:'Enter your email and password.'},400);
+ const deviceLocation=validSignInLocation(b.deviceLocation);
  const who={id:'anonymous',email,owner:platformOwner(env)};const ip=requestContext(request).ip;
  if(!await consumeLimit('ip:'+ip,100,900000)||!await consumeLimit('login:'+ip+':'+email,8,900000)){
-  await audit(request,env,who,'login','rate_limited',429);return json({error:'Too many sign-in attempts. This attempt was logged. Wait up to 15 minutes before trying again.',logged:Boolean(env.HWS_DATA_KEY)},429);
+  await audit(request,env,who,'login','rate_limited',429,'',deviceLocation);return json({error:'Too many sign-in attempts. This attempt was logged. Wait up to 15 minutes before trying again.',logged:Boolean(env.HWS_DATA_KEY)},429);
  }
  const r=await fetch(env.SUPABASE_URL+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:env.SUPABASE_PUBLISHABLE_KEY,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
  const data=await r.json() as {user?:{id:string;email:string};access_token?:string;refresh_token?:string};
- if(!r.ok||!data.user||!data.access_token){await audit(request,env,who,'login','failed',401);return json({error:'Invalid email or password. '+(env.HWS_DATA_KEY?'This sign-in attempt was logged.':''),logged:Boolean(env.HWS_DATA_KEY)},401);}
+ if(!r.ok||!data.user||!data.access_token){await audit(request,env,who,'login','failed',401,'',deviceLocation);return json({error:'Invalid email or password. '+(env.HWS_DATA_KEY?'This sign-in attempt was logged.':''),logged:Boolean(env.HWS_DATA_KEY)},401);}
  const hold=await accessHold(env,data.user.id);if(hold)return holdResponse(hold.scope);
  const expired=await database().prepare('SELECT customer_id FROM customer_accounts WHERE user_id=? AND must_change=1 AND expires_at<?').bind(data.user.id,now()).first();
- if(expired){await audit(request,env,{...who,id:data.user.id},'login','temporary_password_expired',403);return json({error:'Your temporary password has expired. Ask your administrator to resend your invitation.'},403);}
- await audit(request,env,{...who,id:data.user.id},'login','success');return json(data);
+ if(expired){await audit(request,env,{...who,id:data.user.id},'login','temporary_password_expired',403,'',deviceLocation);return json({error:'Your temporary password has expired. Ask your administrator to resend your invitation.'},403);}
+ await audit(request,env,{...who,id:data.user.id},'login','success',200,'',deviceLocation);return json(data);
 }
 export async function onboarding(request:Request,env:Env,p:Principal){
  if(request.method==='GET'){await reconcileOnboarding(request,env,p,p.id);return json(await onboardingState(p));}if(request.method!=='POST')return json({error:'Method not allowed.'},405);
@@ -110,7 +112,9 @@ export async function securityLog(request:Request,env:Env,p:Principal){
   return json({error:'Unknown audit action.'},400);
  }
  if(request.method!=='GET')return json({error:'Method not allowed.'},405);
- const url=new URL(request.url),cursor=url.searchParams.get('before')??'9999|~',[at,id='~']=cursor.split('|');
+ const url=new URL(request.url);
+ if(url.searchParams.get('policyView')==='customers'||url.searchParams.has('policyCustomer'))return policyHistory(request,env,p);
+ const cursor=url.searchParams.get('before')??'9999|~',[at,id='~']=cursor.split('|');
  const category=url.searchParams.get('category')??'all';
  const eventFilter=category==='failed-logins'?" AND ((event='login' AND outcome!='success') OR (event='POST /api/site-login' AND status>=400))":category==='logins'?" AND (event='login' OR event='POST /api/site-login')":'';
  const events=await db.prepare('SELECT * FROM security_events WHERE owner=?'+eventFilter+' AND (created_at<? OR (created_at=? AND id<?)) ORDER BY created_at DESC,id DESC LIMIT 100').bind(p.owner,at,at,id).all<{id:string;context:string;created_at:string}>();
@@ -118,7 +122,38 @@ export async function securityLog(request:Request,env:Env,p:Principal){
  const readContext=async(value:string,purpose:string)=>{try{return await unseal(env,value,purpose);}catch{unreadableRecords++;return {email:'Encrypted details unavailable',ip:'Unavailable',city:'',region:'',country:'',latitude:null,longitude:null,userAgent:'Unavailable'};}};
  const rows=await Promise.all(events.results.map(async row=>({...row,context:await readContext(row.context,'audit:'+row.id)})));
  const [acceptAt,acceptId='~']=(url.searchParams.get('acceptancesBefore')??'9999|~').split('|');
- const accepted=await database().prepare('SELECT * FROM policy_acceptances WHERE owner=? AND (accepted_at<? OR (accepted_at=? AND id<?)) ORDER BY accepted_at DESC,id DESC LIMIT 500').bind(p.owner,acceptAt,acceptAt,acceptId).all<{id:string;accepted_at:string;user_id:string;policy_id:string;version:string;context:string}>();
+ const accepted=url.searchParams.get('acceptances')==='none'?{results:[]}:await database().prepare('SELECT * FROM policy_acceptances WHERE owner=? AND (accepted_at<? OR (accepted_at=? AND id<?)) ORDER BY accepted_at DESC,id DESC LIMIT 500').bind(p.owner,acceptAt,acceptAt,acceptId).all<{id:string;accepted_at:string;user_id:string;policy_id:string;version:string;context:string}>();
  const acceptances=await Promise.all(accepted.results.map(async row=>({...row,context:await readContext(row.context,'policy:'+row.user_id+':'+row.policy_id+':'+row.version)})));
  return json({events:rows,acceptances,policies,canDelete:p.role==='owner'&&p.id===platformOwner(env),snapshotAt:now(),unreadableRecords,acceptancesNext:accepted.results.length===500?accepted.results.at(-1)!.accepted_at+'|'+accepted.results.at(-1)!.id:null,next:events.results.length===100?events.results.at(-1)!.created_at+'|'+events.results.at(-1)!.id:null,encryptionConfigured:Boolean(env.HWS_DATA_KEY)});
+}
+
+async function policyHistory(request:Request,env:Env,p:Principal){
+ const db=database(),url=new URL(request.url),selected=url.searchParams.get('policyCustomer');
+ type AcceptanceRow={id:string;user_id:string;policy_id:string;version:string;accepted_at:string;context:string};
+ if(selected){
+  let userId:string|null=null;
+  if(selected.startsWith('customer:')){
+   const customer=await db.prepare('SELECT a.user_id FROM customers c LEFT JOIN customer_accounts a ON a.customer_id=c.id AND a.owner=c.owner WHERE c.id=? AND c.owner=?').bind(selected.slice(9),p.owner).first<{user_id:string|null}>();
+   if(!customer)return json({error:'Customer history not found.'},404);userId=customer.user_id;
+  }else if(selected.startsWith('account:')){
+   const account=await db.prepare('SELECT user_id FROM policy_acceptances WHERE owner=? AND user_id=? LIMIT 1').bind(p.owner,selected.slice(8)).first<{user_id:string}>();if(!account)return json({error:'Customer history not found.'},404);userId=account.user_id;
+  }else return json({error:'Choose a customer.'},400);
+  const cursor=url.searchParams.get('before');let at='9999',id='~';if(cursor){const parts=cursor.split('|');if(parts.length!==2||!Number.isFinite(Date.parse(parts[0]))||!/^[a-f0-9-]{36}$/.test(parts[1]))return json({error:'Invalid policy history cursor.'},400);[at,id]=parts;}
+  const result=userId?await db.prepare('SELECT * FROM policy_acceptances WHERE owner=? AND user_id=? AND (accepted_at<? OR (accepted_at=? AND id<?)) ORDER BY accepted_at DESC,id DESC LIMIT 101').bind(p.owner,userId,at,at,id).all<AcceptanceRow>():{results:[]};
+  let unreadable=0;const rows=result.results.slice(0,100),last=rows.at(-1);
+  const acceptances=await Promise.all(rows.map(async ({context,...row})=>{try{return {...row,context:await unseal<{email:string}>(env,context,'policy:'+row.user_id+':'+row.policy_id+':'+row.version)};}catch{unreadable++;return {...row,context:{email:'Encrypted details unavailable'}};}}));
+  return json({acceptances,policies,next:result.results.length>100&&last?last.accepted_at+'|'+last.id:null,unreadable});
+ }
+ const [groups,current]=await Promise.all([
+  db.prepare('SELECT user_id,COUNT(*) count,MAX(accepted_at) last_accepted_at FROM policy_acceptances WHERE owner=? GROUP BY user_id').bind(p.owner).all<{user_id:string;count:number;last_accepted_at:string}>(),
+  db.prepare('SELECT c.id,c.name,c.email,c.archived,a.user_id FROM customers c LEFT JOIN customer_accounts a ON a.customer_id=c.id AND a.owner=c.owner WHERE c.owner=? ORDER BY lower(c.name),c.id').bind(p.owner).all<{id:string;name:string;email:string;archived:number;user_id:string|null}>()
+ ]);
+ const byUser=new Map(groups.results.map(g=>[g.user_id,g])),known=new Set(current.results.map(c=>c.user_id));
+ const customers=current.results.map(c=>({id:'customer:'+c.id,name:c.name,email:c.email,archived:Boolean(c.archived),retained:false,count:byUser.get(c.user_id??'')?.count??0,lastAcceptedAt:byUser.get(c.user_id??'')?.last_accepted_at??null}));
+ for(const group of groups.results.filter(g=>!known.has(g.user_id))){
+  const row=await db.prepare('SELECT * FROM policy_acceptances WHERE owner=? AND user_id=? ORDER BY accepted_at DESC,id DESC LIMIT 1').bind(p.owner,group.user_id).first<AcceptanceRow>();let email='Account details unavailable';
+  if(row)try{email=(await unseal<{email:string}>(env,row.context,'policy:'+row.user_id+':'+row.policy_id+':'+row.version)).email;}catch{/* Preserve access to timestamps if old encrypted identity is unreadable. */}
+  customers.push({id:'account:'+group.user_id,name:'Retained account history',email,archived:false,retained:true,count:group.count,lastAcceptedAt:group.last_accepted_at});
+ }
+ return json({customers});
 }

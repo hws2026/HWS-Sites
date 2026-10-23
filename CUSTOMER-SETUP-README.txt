@@ -1,3 +1,19 @@
+FINAL MORNING UI UPDATE
+Security & audit -> Policy acceptance history -> Select a customer now opens
+only that customer's acceptance records and dates. The selected customer is
+preserved on refresh. The sidebar is compact at laptop heights.
+The login form optionally asks the user to share a one-time browser location.
+It is not required for access; device accuracy varies, especially for carriers
+and VPNs. Reports are labeled separately from IP-based network estimates.
+
+HONEYBOOK PAYMENT OPTIONS — OCTOBER 23, 2026
+Customers can keep HoneyBook. Website payments -> HoneyBook includes private
+invoice links, public lead/payment forms, manual payment history and optional
+per-website payment-event automation. See HONEYBOOK-SETUP.txt. Links/manual records
+need no extra integration subscription. Automatic syncing requires supported
+customer HoneyBook/Zapier plans and their own connection. No account was connected
+or upgraded while preparing this source update.
+
 SECURITY & PRICING UPDATE — OCTOBER 23, 2026
 Read UPLOAD-README.txt and SECURITY-REVIEW.txt first. Deploy BOTH services from
 this commit. Pending migrations include 0012 (profiles) and 0013 (incidents).

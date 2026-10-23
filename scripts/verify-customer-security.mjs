@@ -6,7 +6,7 @@ const mock=createFetchMock();mock.disableNetConnect();let loginSucceeds=true;
 for(const id of ['owner','customer','other','support','billing','manager'])mock.get('https://auth.test').intercept({path:'/auth/v1/user',headers:{authorization:'Bearer '+id}}).reply(200,{id,email:id+'@example.test',email_confirmed_at:'2026-10-01'}).persist();
 mock.get('https://auth.test').intercept({path:'/auth/v1/token?grant_type=password',method:'POST'}).reply(()=>{return loginSucceeds?{statusCode:200,data:JSON.stringify({user:{id:'customer',email:'customer@example.test'},access_token:'customer',refresh_token:'refresh-customer'})}:{statusCode:400,data:JSON.stringify({error:'invalid_grant'})};}).persist();
 mock.get('https://auth.test').intercept({path:'/auth/v1/user',method:'PUT'}).reply(200,{id:'customer'}).persist();
-const options={modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],fetchMock:mock,bindings:{FRONTEND_URL:'https://front.test/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'public-test',ADMIN_SUPABASE_USER_IDS:'owner',HWS_DATA_KEY:'19'.repeat(32),HWS_ONBOARDING_ENABLED:'true'}};const mf=new Miniflare(options);
+const options={cf:false,modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],fetchMock:mock,bindings:{FRONTEND_URL:'https://front.test/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'public-test',ADMIN_SUPABASE_USER_IDS:'owner',HWS_DATA_KEY:'19'.repeat(32),HWS_ONBOARDING_ENABLED:'true'}};const mf=new Miniflare(options);
 let emailAccepted=true,createdAccounts=0;
 mock.get('https://auth.test').intercept({path:'/auth/v1/admin/users',method:'POST'}).reply(()=>{createdAccounts++;return {statusCode:200,data:JSON.stringify({id:'510cd3c3-4713-4ca0-ac5a-09935f446adf',email:'invited@example.test',email_confirmed_at:'2026-10-21'})};}).persist();
 mock.get('https://auth.test').intercept({path:'/auth/v1/admin/users/510cd3c3-4713-4ca0-ac5a-09935f446adf',method:'PUT'}).reply(200,{id:'510cd3c3-4713-4ca0-ac5a-09935f446adf',email:'invited@example.test'}).persist();
@@ -14,7 +14,7 @@ mock.get('https://api.resend.com').intercept({path:'/emails',method:'POST'}).rep
 let checks=0;
 try{
  let db=await mf.getD1Database('DB');for(const f of (await readdir('drizzle')).filter(f=>f.endsWith('.sql')).sort())for(const sql of (await readFile('drizzle/'+f,'utf8')).replaceAll(/-->[^\n]*/g,'').split(';').filter(s=>s.trim()))await db.prepare(sql).run();
- const req=async(path,method='GET',body,who='owner',ip='192.0.2.20')=>{const r=await mf.dispatchFetch('https://api.test'+path,{method,headers:{Origin:'https://front.test',...(who?{Authorization:'Bearer '+who}:{}),'Content-Type':'application/json','CF-Connecting-IP':ip,'user-agent':'Security test browser'},body:body?JSON.stringify(body):undefined});return {status:r.status,data:await r.json()};};
+ const req=async(path,method='GET',body,who='owner',ip='192.0.2.20')=>{const r=await mf.dispatchFetch('https://api.test'+path,{method,headers:{Origin:'https://front.test',...(who?{Authorization:'Bearer '+who}:{}),'Content-Type':'application/json','CF-Connecting-IP':ip,'user-agent':'Security test browser'},body:body?JSON.stringify(body):undefined,cf:{latitude:'',longitude:'',city:'Fixture network',region:'Example',country:'US'}});return {status:r.status,data:await r.json()};};
  const check=(r,status,label)=>{assert.equal(r.status,status,label+': '+JSON.stringify(r.data));checks++;console.log('PASS '+label);return r.data;};
  check(await req('/api/admin','POST',{action:'initialize'}),200,'owner can initialize without accepting customer policies');
  const c=check(await req('/api/admin','POST',{action:'customer',name:'Test customer',email:'customer@example.test',status:'Onboarding'}),200,'customer saved when email connection is missing');assert.equal(c.emailSent,false);assert.match(c.message,/pending/);
@@ -90,6 +90,11 @@ try{
  check(await req('/api/account-password','POST',{password:'a-long-new-password-123'},'customer'),200,'server clears temporary requirement only after provider success');
  assert.equal((await req('/api/me','GET',undefined,'customer')).data.onboardingRequired,false);
  const audit=check(await req('/api/security'),200,'owner reads encrypted audit and acceptance records');assert.ok(audit.events.some(e=>e.event==='login'&&e.outcome==='failed'&&e.context.ip==='192.0.2.22'));assert.ok(audit.acceptances.length>=25);assert.ok(audit.acceptances.every(a=>a.accepted_at&&a.version.length===64));
+ const customerChoices=check(await req('/api/security?policyView=customers'),200,'policy history starts with customer choices');assert.ok(customerChoices.customers.some(x=>x.id==='customer:'+c.id&&x.count===25));assert.equal(customerChoices.acceptances,undefined);
+ const ownPolicies=check(await req('/api/security?policyCustomer=customer:'+c.id),200,'selected customer policy history is complete and isolated');assert.equal(ownPolicies.acceptances.length,25);assert.ok(ownPolicies.acceptances.every(a=>a.user_id==='customer'));
+ check(await req('/api/security?policyCustomer=customer:missing'),404,'unknown or foreign customer history is rejected');
+ check(await req('/api/security?policyView=customers','GET',undefined,'customer'),403,'customers cannot browse others policy records');
+ assert.equal((await req('/api/security?acceptances=none')).data.acceptances.length,0);checks++;console.log('PASS main audit view omits bulk policy records');
  const raw=await db.prepare('SELECT context FROM security_events LIMIT 1').first();assert.match(raw.context,/^v1\./);assert.ok(!raw.context.includes('@'));checks++;console.log('PASS audit PII encrypted at rest; passwords and bearer tokens absent');
  const messageRow=await db.prepare('SELECT id,payload FROM support_messages LIMIT 1').first();await db.prepare('UPDATE support_messages SET payload=? WHERE id=?').bind(messageRow.payload.slice(0,-5)+'AAAAA',messageRow.id).run();check(await req('/api/support?thread='+thread.threadId),503,'tampered ciphertext cannot decrypt');
 
@@ -111,6 +116,9 @@ try{
  check(await req('/api/admin','POST',{action:'delete-customer',id:other.id,confirmName:'Other customer'}),200,'delete disposable customer');
  assert.ok((await req('/api/security')).data.acceptances.some(a=>a.context.email==='other@example.test'));checks++;console.log('PASS policy history remains available after customer deletion');
 
+ const retainedChoices=check(await req('/api/security?policyView=customers'),200,'deleted customer remains selectable through retained history');assert.ok(retainedChoices.customers.some(x=>x.id==='account:other'&&x.retained));
+ const retainedPolicies=check(await req('/api/security?policyCustomer=account:other'),200,'retained history returns only the deleted account');assert.ok(retainedPolicies.acceptances.every(a=>a.user_id==='other'));assert.ok(retainedPolicies.acceptances.length);
+ check(await req('/api/security?policyCustomer=account:foreign'),404,'foreign retained account history is denied');
  const managerLog=check(await req('/api/security','GET',undefined,'manager'),200,'other administrators can view audit log');assert.equal(managerLog.canDelete,false);
  check(await req('/api/security','POST',{action:'purge',confirmation:'PURGE AUDIT LOG',before:new Date().toISOString()},'manager'),403,'other administrators cannot purge audit log');
  const loginRow=await db.prepare("SELECT id FROM security_events WHERE event='login' AND outcome='failed' LIMIT 1").first();
@@ -131,5 +139,10 @@ try{
  loginSucceeds=false;
  await mf.dispatchFetch('https://api.test/api/login',{method:'POST',headers:{Origin:'https://front.test','Content-Type':'application/json','CF-Connecting-IP':'192.0.2.101'},body:JSON.stringify({email:'geo-check@example.test',password:'invalid-only'}),cf:{latitude:'',longitude:'',city:'Network estimate',region:'Example',country:'US'}});
  const geo=check(await req('/api/security?category=failed-logins'),200,'failed login remains visible after purge');const geoEvent=geo.events.find(e=>e.context.email==='geo-check@example.test');assert.ok(geoEvent);assert.equal(geoEvent.context.latitude,null);assert.equal(geoEvent.context.longitude,null);checks++;console.log('PASS absent coordinates are not falsely converted to a location at zero degrees');
+ const report={latitude:43.212345,longitude:-77.712345,accuracy:24.6,capturedAt:new Date().toISOString(),consent:true};
+ check(await req('/api/login','POST',{email:'location@example.test',password:'invalid-only',deviceLocation:report},null,'192.0.2.102'),401,'failed login can record explicitly shared device location');
+ let locationLog=(await req('/api/security?category=failed-logins')).data.events.find(e=>e.context.email==='location@example.test');assert.deepEqual(locationLog.context.deviceLocation,report);assert.equal(locationLog.context.latitude,null);checks++;console.log('PASS device report is encrypted separately from server network location');
+ for(const [label,deviceLocation] of [['denied',{...report,consent:false}],['stale',{...report,capturedAt:'2000-01-01T00:00:00Z'}],['invalid',{...report,latitude:100}],['coerced',{...report,accuracy:'24'}]]){await req('/api/login','POST',{email:label+'-location@example.test',password:'invalid-only',deviceLocation},null,'192.0.2.103');const e=(await req('/api/security?category=failed-logins')).data.events.find(e=>e.context.email===label+'-location@example.test');assert.ok(e);assert.equal(e.context.deviceLocation,undefined);checks++;console.log('PASS '+label+' device location discarded without blocking sign-in');}
+ const encryptedLocation=await db.prepare('SELECT context FROM security_events WHERE id=?').bind(locationLog.id).first();assert.ok(!encryptedLocation.context.includes('43.212345'));checks++;console.log('PASS precise device coordinates are not plaintext in stored audit context');
  console.log(`PASS: ${checks} customer security checks; identity, email, payment, and network calls are isolated mocks.`);
 }finally{await mf.dispose();}

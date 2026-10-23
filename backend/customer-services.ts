@@ -86,16 +86,3 @@ export async function support(request:Request,env:Env,p:Principal){
  if(t.status==='closed')return json({error:'This conversation is closed. Start a new conversation or ask support to reopen it.'},409);
  statements.push(db.prepare('INSERT INTO support_messages (id,thread_id,actor,payload,created_at) VALUES (?,?,?,?,?)').bind(id,t.id,p.id,await seal(env,{message,email:p.email,staff:p.role!=='customer'},'message:'+id),at),db.prepare('UPDATE support_threads SET updated_at=? WHERE id=?').bind(at,t.id));await db.batch(statements);await audit(request,env,p,'support.message','success',200,t.id);return json({ok:true,threadId:t.id});
 }
-export async function honeybook(request:Request,env:Env,p:Principal){
- const db=database();if(!['owner','admin','customer'].includes(p.role))return json({error:'Website billing access required.'},403);
- if(request.method==='GET'){
-  const sites=(await db.prepare(p.role==='customer'?"SELECT DISTINCT s.id,s.title FROM client_sites s JOIN customers c ON c.id=s.customer_id LEFT JOIN site_access a ON a.site_id=s.id WHERE s.archived=0 AND c.archived=0 AND (lower(c.email)=? OR (a.user_id=? AND a.role!='viewer'))":'SELECT id,title FROM client_sites WHERE owner=? AND archived=0').bind(...(p.role==='customer'?[p.email,p.id]:[p.owner])).all<{id:string;title:string}>()).results;
-  const links=(await db.prepare('SELECT * FROM honeybook_links WHERE owner=? ORDER BY created_at DESC').bind(p.owner).all<{id:string;site_id:string;label:string;url:string}>()).results.filter(l=>sites.some(s=>s.id===l.site_id));return json({sites,links:await Promise.all(links.map(async l=>({...l,...await unseal<{label:string;url:string}>(env,l.url,'honeybook:'+l.id)})))});
- }
- if(request.method!=='POST')return json({error:'Method not allowed.'},405);
- const b=await request.json() as Record<string,unknown>,siteId=text(b.siteId);const s=await db.prepare('SELECT customer_id,owner FROM client_sites WHERE id=? AND archived=0').bind(siteId).first<{customer_id:string;owner:string}>();if(!s||!await customerAccess(s.customer_id,p))return json({error:'Website billing access denied.'},403);
- if(b.action==='toggle'){await db.prepare('UPDATE honeybook_links SET enabled=? WHERE id=? AND site_id=?').bind(b.enabled===true?1:0,text(b.id),siteId).run();return json({ok:true});}
- const label=text(b.label,160),value=text(b.url,2000);let url:URL;try{url=new URL(value);}catch{return json({error:'Enter the complete HoneyBook HTTPS payment link.'},400);}
- if(!label||url.protocol!=='https:'||url.username||url.password||!(url.hostname==='honeybook.com'||url.hostname.endsWith('.honeybook.com')))return json({error:'Use a secure link from honeybook.com. Custom domains must be verified in HoneyBook separately.'},400);
- const id=crypto.randomUUID();await db.prepare('INSERT INTO honeybook_links (id,owner,site_id,label,url,enabled,created_at) VALUES (?,?,?,?,?,1,?)').bind(id,s.owner,siteId,'Encrypted payment link',await seal(env,{label,url:url.href},'honeybook:'+id),now()).run();await audit(request,env,p,'honeybook.link','success',200,siteId);return json({ok:true});
-}

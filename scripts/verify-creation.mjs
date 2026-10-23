@@ -96,4 +96,10 @@ check('whole-site copies keep sections and isolate later edits',()=>{validateWeb
 const designOnly=startFromWebsite(original,'design');
 check('design-only copy keeps branding and starts with one empty Home page',()=>{validateWebsite(designOnly);assert.equal(designOnly.pages.length,1);assert.deepEqual(designOnly.pages[0].blocks,[]);assert.equal(designOnly.templateId,original.templateId);assert.equal(designOnly.accent,original.accent);assert.deepEqual(designOnly.headerMenus,[]);});
 
+const withPayments=blankWebsite();
+withPayments.pages[0].blocks=[{id:'payment-copy',type:'payment',paymentProvider:'honeybook',honeybookLinkId:'private-site-link',paymentOfferId:'private-site-offer'}];
+withPayments.library=[{id:'payment-library',name:'Payment',block:structuredClone(withPayments.pages[0].blocks[0])}];
+const paymentCopy=startFromWebsite(withPayments,'full');
+check('new websites cannot inherit another website payment destinations',()=>{assert.equal(paymentCopy.pages[0].blocks[0].paymentProvider,'honeybook');assert.equal(paymentCopy.pages[0].blocks[0].honeybookLinkId,undefined);assert.equal(paymentCopy.pages[0].blocks[0].paymentOfferId,undefined);assert.ok(!JSON.stringify(paymentCopy.library).includes('private-site'));assert.equal(withPayments.pages[0].blocks[0].honeybookLinkId,'private-site-link');});
+
 console.log(`PASS: ${checks} website-creation checks; all requests used in-memory test fixtures.`);

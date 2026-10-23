@@ -40,7 +40,8 @@
     "verify:customer-security": "node scripts/verify-customer-security.mjs",
     "verify:security-hardening": "node scripts/verify-security-hardening.mjs",
     "postinstall": "node scripts/harden-build-dependencies.mjs",
-    "verify:build-security": "node scripts/verify-build-security.mjs"
+    "verify:build-security": "node scripts/verify-build-security.mjs",
+    "verify:honeybook": "node scripts/verify-honeybook.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

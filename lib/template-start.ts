@@ -19,6 +19,9 @@ export function blankWebsite():Website{
 /** A new draft owns its page/section IDs; slug links keep pointing to the copied pages. */
 export function startFromWebsite(source:Website,mode:'outline'|'design'|'full'):Website{
  const site=structuredClone(source);
+ // A new website must select its own payment destinations, including in saved sections.
+ const clearPayments=(block:import('./editor-model').Block)=>{delete block.paymentOfferId;delete block.honeybookLinkId;block.children?.forEach(clearPayments);block.items?.forEach(item=>item.children?.forEach(clearPayments));};
+ site.pages.forEach(page=>page.blocks.forEach(clearPayments));site.library?.forEach(entry=>clearPayments(entry.block));
  if(mode==='design')return {...site,legalLinks:undefined,calendarEvents:[],library:[],announcement:'',announcementLink:'',utilityLinks:'',headerLinks:'',headerMenus:[],footerLinks:'',heroLinks:'',directoryMenu:undefined,pages:[{id:uid(),name:'Home',slug:'home',blocks:[]}]};
  const pageIds=new Map(site.pages.map(page=>[page.id,uid()]));
  return {...site,calendarEvents:mode==='outline'?[]:site.calendarEvents?.map(event=>({...event,id:uid()})),

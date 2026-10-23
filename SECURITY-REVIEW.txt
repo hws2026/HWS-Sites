@@ -1,3 +1,37 @@
+FINAL MORNING ADDENDUM — POLICY ACCESS AND OPTIONAL DEVICE LOCATION
+
+Policy customer lists and selected histories are restricted to the same owner
+and existing administrator roles. Customers/support cannot browse this endpoint.
+Retained history survives customer deletion. Audit purging does not delete it.
+
+Optional browser geolocation is requested only by an explicit user action.
+The sign-in page explains the administrator security-log purpose before asking.
+Reports require an affirmative consent flag, valid coordinate/accuracy ranges and
+fresh timestamp. They are encrypted alongside login telemetry; IP data remains
+separate. Invalid/stale/absent location is ignored and never blocks sign-in.
+Nothing watches position continuously or reverse-geocodes home addresses. A pin
+represents what the device reports, not trusted proof of where a person is.
+Locations can be imprecise/spoofed; they never grant access or trigger lockouts.
+The optional map request shares its area/pin with OpenStreetMap after a click.
+
+HONEYBOOK ADDENDUM — OCTOBER 23, 2026
+
+Source/local-test verification only; no live HoneyBook account was connected.
+Private URLs and payment/payer fields use existing authenticated AES-GCM storage.
+Per-website sync credentials use random 256-bit secrets, stored as SHA-256 hashes.
+Keys cannot read data or move money. Customer/site permissions, constant-time
+hash comparison, server-only JSON ingestion, 16 KB body limits, 1,000 requests/hour,
+duplicate protection and conflict rejection are enforced. Existing encryption key
+loss would make data unreadable; keep its secure backup. No card/bank data is stored.
+Public form classification requires acknowledgement and is enforced by the server.
+The editor cannot expose a private invoice by changing a block ID. New copied
+sites clear payment bindings. Manual voids retain history and allow corrections.
+External automation is trusted to report the customer's payments accurately;
+HWS cannot independently attest to a HoneyBook event or reconcile a refund/balance.
+Only configure a key in the intended customer's own trusted automation account.
+
+The earlier broader security review follows. Its limits still apply.
+
 HUSKY SUITE — SECURITY REVIEW AND UPDATE
 Prepared October 23, 2026
 

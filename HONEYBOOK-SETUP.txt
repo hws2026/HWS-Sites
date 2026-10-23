@@ -1,0 +1,104 @@
+HUSKY SUITE — HONEYBOOK OPTIONS
+October 23, 2026
+
+WHAT THIS UPDATE ADDS
+Open Website payments -> HoneyBook. Select the customer's website. The same
+workspace is available in mobile billing and to authorized billing staff.
+Customers keep their own HoneyBook account and payment processing. Stripe is
+optional. No subscription, provider account, or live payment was created here.
+
+OPTION 1: LINKS AND MANUAL HISTORY — NO EXTRA INTEGRATION SUBSCRIPTION
+1. Payment links: save either a private client invoice/pay link or a public
+   HoneyBook booking/payment lead form. Confirm a public form contains no private
+   client or invoice information before making it available to visitors.
+2. Private invoice links: copy and share only with the intended payer. They are
+   never offered in the website editor. HoneyBook pay links may expire; open
+   HoneyBook to manage the invoice and check its actual status.
+3. Public form: in the website editor add Content library -> Payment checkout.
+   In the section settings select HoneyBook public form, then the saved form.
+   Save and publish. Visitors open HoneyBook without signing in to Husky Suite.
+   Button text and section design stay editable. Repeat for any template.
+4. Payment history: expand Record a payment manually. Enter an actual payment
+   verified in HoneyBook, its unique payment ID, amount, currency and payment date.
+   This records information only; it never charges the client. Mistakes can be
+   voided and re-entered while preserving the original history.
+
+Existing HoneyBook account/processing charges still belong to HoneyBook. This
+option does not require Zapier or an additional HWS integration subscription.
+Public lead forms must be configured to collect payment in HoneyBook itself.
+
+OPTION 2: AUTOMATIC PAYMENT UPDATES — CUSTOMER-OWNED AUTOMATION
+HoneyBook currently requires Essentials/Premium for its Zapier integration.
+Sending Webhooks by Zapier requires a paid Zapier plan that supports that action.
+Customers without those plans can keep using option 1. Husky Suite will not
+purchase or upgrade anything. This is a scoped payment-event receiver, not a
+HoneyBook OAuth login or a promise of full two-way invoice synchronization.
+
+1. In Automatic sync, create a connection for the selected website. Copy the
+   one-time Authorization header and webhook destination into the customer's
+   private automation settings. Never put the key in a webpage, URL, or chat.
+2. In the customer's Zapier account, connect their HoneyBook account. Keep the
+   HoneyBook API key in Zapier; Husky Suite does not request or store it.
+3. Trigger: HoneyBook -> New Payment Paid. Use a real sample payment. If one
+   HoneyBook account serves multiple websites, filter each project's payments
+   to the correct website connection before posting; do not broadcast to all sites.
+4. Action: Webhooks by Zapier -> POST. Destination: the website-specific endpoint
+   shown in the suite. Payload type: JSON. Headers:
+   Authorization: the entire copied Bearer value
+   Content-Type: application/json
+5. Test the connection with {"type":"test"}. Refresh the suite and check that
+   Last connection test has a timestamp. The test does not create a payment.
+6. Replace the test payload with these mapped fields:
+   type: literal payment.paid
+   paymentId: unique HoneyBook PAYMENT ID (not invoice/project ID)
+   label: payment/invoice title
+   amount: received amount in major units, such as 125.00, not 12500 cents
+   currency: USD or CAD
+   paidAt: actual payment timestamp with timezone, e.g. 2026-10-23T14:30:00Z
+   Optional: clientName, clientEmail, project, invoiceUrl
+   invoiceUrl must be an HTTPS HoneyBook link. Do not send card/bank data.
+7. Check field units/timezone in the sample. If the trigger does not expose a
+   stable payment ID or actual payment time, do not guess them: use manual
+   recording until the customer's mapping can supply them reliably.
+8. Enable the Zap in the customer's account. Refresh Payment history after the
+   next payment and verify the amount, currency, date and project match HoneyBook.
+   Review failed Zap runs and retry after correcting any mapping error.
+
+SUPPORTED SYNC CONTRACT
+Only successful payment events are accepted. HoneyBook may also emit New Payment
+Paid when a payment is manually marked paid there. A deposit/installment is not
+proof an entire invoice is paid. Refunds, disputes, balances, payouts, edits and
+historical imports are managed in HoneyBook; they are not automatically synced.
+A return from a payment page never marks an invoice paid in Husky Suite.
+Repeated deliveries of the same ID are ignored; conflicting amounts/currencies
+are rejected rather than overwriting money records. History is paginated.
+The endpoint accepts up to 16 KB/request and 1,000 requests/hour per website.
+429 responses include Retry-After. Do not repeatedly retry validation errors.
+
+CONNECTION SECURITY
+Every key belongs to one website and can only submit payment events. It cannot
+read billing, sign in, charge/refund a card or edit HoneyBook. Only its hash is
+stored. Replacing/disconnecting it immediately invalidates the old key. Public
+forms and existing history remain available when automatic sync is disconnected.
+Private link labels/URLs and payment details use authenticated AES-GCM encryption
+with the existing HWS_DATA_KEY. Site/customer ownership and source are protected
+by server authorization. Content editors see only public form choices; they
+cannot read private payer data. Access remains subject to account policies.
+Archived websites/customers reject sync. Customer deletion removes their stored
+HoneyBook records. New copied websites must select their own payment destination.
+Key changes, link changes, received/manual payments and voids appear in Audit.
+
+DEPLOYMENT
+Upload the COMPLETE ZIP including hidden .github. The Pages workflow now invokes
+the backend workflow and waits for its successful migration/deployment before
+publishing the frontend. Migration 0014 adds HoneyBook connections/history and
+classifies all older saved links as private invoices. Existing server secrets
+are preserved. No new global secret is needed. Customer connections are created
+after deployment and must be tested from their own automation.
+
+OFFICIAL REFERENCES
+https://help.honeybook.com/en/articles/2209205-automate-tasks-with-zapier
+https://zapier.com/apps/honeybook/integrations
+https://help.zapier.com/hc/en-us/articles/8496326446989-Send-webhooks-in-Zaps
+https://help.honeybook.com/en/articles/11067573-create-and-share-pay-links-in-honeybook
+https://help.honeybook.com/en/articles/9472515-make-a-lead-form-to-sell-digital-products

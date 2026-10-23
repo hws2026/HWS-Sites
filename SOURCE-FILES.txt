@@ -7,6 +7,7 @@
 .openai/hosting.json
 CUSTOMER-SETUP-README.txt
 DEPLOYMENT.md
+HONEYBOOK-SETUP.txt
 README.md
 SECURITY-REVIEW.txt
 SOURCE-FILES.txt
@@ -14,6 +15,7 @@ UPDATE-NOTES.txt
 UPLOAD-README.txt
 app/account-profile.css
 app/account-profile.tsx
+app/admin/audit-location.tsx
 app/admin/billing-panel.tsx
 app/admin/customer-center.tsx
 app/admin/customers-panel.tsx
@@ -21,6 +23,7 @@ app/admin/domains-panel.tsx
 app/admin/honeybook-panel.tsx
 app/admin/incident-panel.tsx
 app/admin/page.tsx
+app/admin/policy-history.tsx
 app/admin/reminders-panel.tsx
 app/admin/security-panel.tsx
 app/admin/site-start-fields.tsx
@@ -90,6 +93,7 @@ backend/commerce-utils.ts
 backend/customer-services.ts
 backend/domains.ts
 backend/forms.ts
+backend/honeybook.ts
 backend/http.ts
 backend/incidents.ts
 backend/mobile.ts
@@ -189,6 +193,7 @@ drizzle/0010_dashing_monster_badoon.sql
 drizzle/0011_amusing_hellion.sql
 drizzle/0012_wealthy_rafael_vega.sql
 drizzle/0013_careless_zarda.sql
+drizzle/0014_honeybook_payment_sync.sql
 drizzle/meta/0000_snapshot.json
 drizzle/meta/0001_snapshot.json
 drizzle/meta/0002_snapshot.json
@@ -203,6 +208,7 @@ drizzle/meta/0010_snapshot.json
 drizzle/meta/0011_snapshot.json
 drizzle/meta/0012_snapshot.json
 drizzle/meta/0013_snapshot.json
+drizzle/meta/0014_snapshot.json
 drizzle/meta/_journal.json
 eslint.config.mjs
 examples/d1/app/api/notes/route.ts
@@ -223,6 +229,7 @@ lib/device-access.ts
 lib/draft-recovery.ts
 lib/editor-model.ts
 lib/form-model.ts
+lib/honeybook-model.ts
 lib/icon-catalog.ts
 lib/idle-session.ts
 lib/image-sizing.ts
@@ -243,6 +250,7 @@ lib/request-guard.ts
 lib/request-size.ts
 lib/school-navigation.ts
 lib/server-context.ts
+lib/signin-location.ts
 lib/site-calendar.ts
 lib/site-colors.ts
 lib/site-creation-store.ts
@@ -271,6 +279,7 @@ pages/mobile-workspace.css
 pages/mobile-workspace.tsx
 pages/onboarding.tsx
 pages/public-config.ts
+pages/signin-location.tsx
 pages/template-review.html
 pages/template-review.tsx
 pages/visitor.html
@@ -421,6 +430,9 @@ scripts/verify-device-browser.html
 scripts/verify-editor-options.html
 scripts/verify-editor-options.tsx
 scripts/verify-forms.mjs
+scripts/verify-honeybook-ui.html
+scripts/verify-honeybook-ui.tsx
+scripts/verify-honeybook.mjs
 scripts/verify-idle-media-footer.mjs
 scripts/verify-image-upload.html
 scripts/verify-imported-template.html

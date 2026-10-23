@@ -1,0 +1,11 @@
+import {useEffect,useRef,useState} from 'react';
+import {validSignInLocation,type SignInLocation} from '@/lib/signin-location';
+export function SignInLocationOption({value,onChange,disabled}:{value:SignInLocation|undefined;onChange:(value:SignInLocation|undefined)=>void;disabled:boolean}){
+ const [loading,setLoading]=useState(false),[message,setMessage]=useState('');const sequence=useRef(0);useEffect(()=>()=>{sequence.current++;},[]);
+ function capture(){
+  setMessage('');if(!navigator.geolocation){setMessage('Device location is unavailable. You can still sign in.');return;}
+  const version=++sequence.current;setLoading(true);
+  navigator.geolocation.getCurrentPosition(position=>{if(version!==sequence.current)return;setLoading(false);const location=validSignInLocation({latitude:position.coords.latitude,longitude:position.coords.longitude,accuracy:position.coords.accuracy,capturedAt:new Date(position.timestamp).toISOString(),consent:true});if(location){onChange(location);setMessage('Location ready for your next sign-in attempt.');}else setMessage('A fresh location was not available. You can still sign in.');},error=>{if(version!==sequence.current)return;setLoading(false);setMessage(error.code===1?'Location permission was denied. Sign-in still works without it.':'Device location could not be obtained. You can still sign in.');},{enableHighAccuracy:true,maximumAge:0,timeout:12000});
+ }
+ return <div className="signin-location"><button type="button" className="button" disabled={disabled||loading} onClick={capture}>{loading?'Requesting device location…':value?'Update shared location':'Share device location (optional)'}</button><p>With your permission, Husky Suite stores this one-time device location with your next sign-in attempt for your administrator’s security log. It is not continuous tracking. <a href="https://www.huskysol.com/legal" target="_blank" rel="noopener noreferrer">Privacy and account policies</a></p>{value&&<p>Reported accuracy: ±{Math.ceil(value.accuracy).toLocaleString()} metres. This is not a guaranteed exact address. <button type="button" className="signin-location-remove" onClick={()=>{sequence.current++;onChange(undefined);setLoading(false);setMessage('Location removed.');}}>Remove location</button></p>}{message&&<p role="status">{message}</p>}</div>;
+}

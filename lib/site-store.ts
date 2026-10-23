@@ -28,6 +28,8 @@ if(typeof b.id!=='string'||blockIds.has(b.id)||!blockTypes.includes(b.type)||!['
  if(b.filterable!==undefined&&typeof b.filterable!=='boolean')throw new Error('Invalid filter setting.');
  if(b.tableGroups!==undefined&&(!Array.isArray(b.tableGroups)||b.tableGroups.length>12||b.tableGroups.some(g=>!g||typeof g.label!=='string'||g.label.length>150||!Number.isInteger(g.span)||g.span<1||g.span>12)||b.tableGroups.reduce((n,g)=>n+g.span,0)>(b.tableColumns?.length??0)))throw new Error('Invalid table column groups.');
  if(b.tableColumns!==undefined&&(!Array.isArray(b.tableColumns)||b.tableColumns.length>12||b.tableColumns.some(c=>typeof c!=='string'||c.length>150)))throw new Error('Use up to 12 table columns.');
+ if(b.paymentProvider!==undefined&&!['stripe','honeybook'].includes(b.paymentProvider))throw new Error('Invalid payment provider.');
+ if(b.honeybookLinkId!==undefined&&(typeof b.honeybookLinkId!=='string'||b.honeybookLinkId.length>100))throw new Error('Invalid HoneyBook form.');
  if(b.paymentOfferId!==undefined&&(typeof b.paymentOfferId!=='string'||b.paymentOfferId.length>100))throw new Error('Invalid payment offer.');
  if(b.formEnabled!==undefined&&typeof b.formEnabled!=='boolean')throw new Error('Invalid form accepting-responses setting.');
  for(const key of ['formSuccessMessage','formPrivacyText'] as const)if(b[key]!==undefined&&(typeof b[key]!=='string'||b[key]!.length>1000))throw new Error('Form messages must be 1,000 characters or fewer.');

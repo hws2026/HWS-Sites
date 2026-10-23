@@ -2,7 +2,8 @@ import {login,principal,staffAllowed,onboardingEnabled,onboardingState,onboardin
 import {accessHold,holdResponse,suiteLocked,incidentRoute,observeDenial,sendSecurityAlerts,isRecoveryOwner} from './incidents';
 import {boundedBytes,RequestSizeError} from '../lib/request-size';
 import {profile} from './profile';
-import {customerServices,team,support,honeybook,inviteCustomer} from './customer-services';
+import {honeybook,honeybookEvent} from './honeybook';
+import {customerServices,team,support,inviteCustomer} from './customer-services';
 import {websitePaymentsRoute,merchantWebhook,type MerchantEnv} from './website-payments';
 import {isMobileRequest,isMobileApiAllowed,DESKTOP_REQUIRED_MESSAGE} from '../lib/device-access';
 import {mobileWorkspace,mobileEvents} from './mobile';
@@ -26,6 +27,8 @@ export async function authenticate(request:Request,env:Env,fetcher:typeof fetch=
 export default {
  async fetch(request:Request,env:Env){const origin=request.headers.get('origin');const allowed=env.FRONTEND_URL?new URL(env.FRONTEND_URL).origin:'';const cors=(response:Response)=>{const headers=new Headers(response.headers);headers.set('Cache-Control','no-store');headers.set('X-Content-Type-Options','nosniff');headers.set('Referrer-Policy','no-referrer');headers.set('Strict-Transport-Security','max-age=31536000');if(origin===allowed){headers.set('Access-Control-Allow-Origin',allowed);headers.set('Vary','Origin');headers.set('Access-Control-Allow-Headers','Authorization, Content-Type, Range, X-HWS-Device');headers.set('Access-Control-Expose-Headers','Content-Disposition, Content-Range, Accept-Ranges');headers.set('Access-Control-Allow-Methods','GET, POST, PUT, OPTIONS');}return new Response(response.body,{status:response.status,headers});};
  const url=new URL(request.url);
+ const honeybookHook=url.pathname.match(/^\/api\/honeybook\/events\/([a-f0-9-]{36})$/);
+ if(honeybookHook)return cors(await withBackendEnv(env,()=>honeybookEvent(request,env,honeybookHook[1])));
  if(url.pathname==='/api/stripe/connect-webhook')return withBackendEnv(env,()=>merchantWebhook(request,env));
  if(url.pathname==='/api/stripe/webhook')return withBackendEnv(env,()=>stripeWebhook(request,env));
  try{const visitor=await withBackendEnv(env,()=>publicSite(request,env));if(visitor)return visitor;}catch(error){console.error('Public routing unavailable',error instanceof Error?error.message:'Unknown failure');return cors(json({error:'Website service unavailable.'},503));}
