@@ -52,3 +52,6 @@ next-env.d.ts
 
 # Local delivery archives and verification artifacts
 /exports/
+
+# Private encryption-key recovery copy; never package or commit.
+.local-secrets/
