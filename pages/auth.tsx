@@ -48,12 +48,13 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
  const [mode,setMode]=useState<'login'|'forgot'>(window.location.hash.includes('mode=forgot')?'forgot':'login');
  const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[confirm,setConfirm]=useState('');
  const [message,setMessage]=useState(''),[busy,setBusy]=useState(false),[failed,setFailed]=useState(false);
+ const [invalidLogin,setInvalidLogin]=useState(false);
  const demo=siteId?.startsWith('demo-')?referenceTemplates.find(t=>t.id===siteId.slice(5)):undefined;
  const [site,setSite]=useState<LoginSite|null>(demo?{id:siteId!,name:demo.name,accent:demo.accent}:null);
  const root=window.location.origin+window.location.pathname;
  useEffect(()=>{if(!siteId||demo)return;const abort=new AbortController();void apiFetch('/api/site-login?id='+encodeURIComponent(siteId),{signal:abort.signal}).then(async response=>{if(response.ok){const data=await response.json() as {site:LoginSite};setSite(data.site);}}).catch(()=>{});return()=>abort.abort();},[siteId,demo]);
  async function submit(e:React.FormEvent){
-  e.preventDefault();if(!supabase)return;setBusy(true);setMessage('');setFailed(false);
+  e.preventDefault();if(!supabase)return;setBusy(true);setMessage('');setFailed(false);setInvalidLogin(false);
   try{
    if(demo)throw new Error('This is a template preview. Create a customer website and assign its administrators before signing in.');
    if(reset){
@@ -65,7 +66,7 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
     setMessage('If this email has an account, a reset link will arrive shortly.');
    }else{
     if(ending)await ending;
-    const loginResponse=await apiFetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});const login=await loginResponse.json() as {error?:string;access_token:string;refresh_token:string};if(!loginResponse.ok)throw new Error(login.error??'Sign-in failed.');const {data,error}=await supabase.auth.setSession({access_token:login.access_token,refresh_token:login.refresh_token});if(error)throw error;
+    const loginResponse=await apiFetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});const login=await loginResponse.json() as {error?:string;access_token:string;refresh_token:string};if(!loginResponse.ok){setInvalidLogin(loginResponse.status===401);throw new Error(login.error??'Sign-in failed.');}const {data,error}=await supabase.auth.setSession({access_token:login.access_token,refresh_token:login.refresh_token});if(error)throw error;
     if(data.session){idleSession.start(sessionIdentity(data.session.access_token,data.session.user.id),data.session.user.id);setSessionUser(data.session.user.id);}
     setSessionToken(data.session?.access_token??'');window.dispatchEvent(new Event('hws-auth-changed'));
     const setupResponse=await apiFetch('/api/me');const setup=await setupResponse.json() as {onboardingRequired?:boolean;role?:string;error?:string};if(!setupResponse.ok)throw new Error(setup.error??'Could not verify account setup.');if(setup.onboardingRequired){window.location.hash='/onboarding';return;}if(setup.role==='support'||setup.role==='billing'){window.location.hash='/team-workspace';return;}
@@ -95,16 +96,16 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
    <p>{reset?'Choose a password of at least 12 characters.':siteId?'Sign in with an account assigned to this website.':isMobileBrowser()?'Sign in to manage Billing, Forms, and Events.':'Your websites and workspace, in one place.'}</p>
    {!reset&&new URLSearchParams(window.location.hash.split('?')[1]??'').get('reason')==='inactive'&&<p role="status">You were signed out after 30 minutes of inactivity. Sign in again to continue. Any unsaved website draft can be recovered in its editor in this tab.</p>}
    {!supabase&&<p role="status">Sign-in is not configured yet.</p>}
-   <p className="auth-scope-note">For account security, sign-in attempts are recorded with your IP address, approximate location, and device information. <a href="https://www.huskysol.com/legal" target="_blank" rel="noopener noreferrer">Privacy and account policies</a></p><form onSubmit={submit}>
+   <form onSubmit={submit}>
     {!reset&&<label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>}
     {(reset||mode!=='forgot')&&<label>Password<input type="password" autoComplete={reset?'new-password':'current-password'} minLength={reset?12:1} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}
     {reset&&<label>Confirm password<input type="password" autoComplete="new-password" minLength={12} value={confirm} onChange={e=>setConfirm(e.target.value)} required/></label>}
     <button className="button primary" disabled={busy||!supabase}>{busy?'Please wait…':reset?'Update password':mode==='forgot'?'Send reset email':'Sign in'}</button>
    </form>
-   {message&&<p role={failed?'alert':'status'} className={failed?'auth-error':''}>{message}</p>}
+   {invalidLogin&&!reset&&mode==='login'?<p role="alert" className="auth-error auth-login-error">Login failed, please make sure your username and password are correct. For security reasons, your attempt will be logged, for more information please visit: <a href="https://www.huskysol.com/legal" target="_blank" rel="noopener noreferrer">Privacy and account policies</a></p>:message&&<p role={failed?'alert':'status'} className={failed?'auth-error':''}>{message}</p>}
    {!reset&&<div className="auth-links">
-    {mode==='forgot'&&<button onClick={()=>{setMode('login');setMessage('');}}>Back to sign in</button>}
-    {mode==='login'&&<button onClick={()=>{setMode('forgot');setMessage('');}}>Forgot password?</button>}
+    {mode==='forgot'&&<button onClick={()=>{setMode('login');setMessage('');setInvalidLogin(false);}}>Back to sign in</button>}
+    {mode==='login'&&<button onClick={()=>{setMode('forgot');setMessage('');setInvalidLogin(false);}}>Forgot password?</button>}
    </div>}
    {reset?<a href={returnLink}>Return to sign in</a>:siteId?<p className="auth-scope-note">Access to another customer’s website does not grant access here.</p>:<p className="auth-scope-note">Accounts are provided by your administrator. Sign in to access your workspace.</p>}
   </div>

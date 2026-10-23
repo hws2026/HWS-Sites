@@ -1,5 +1,15 @@
 CUSTOMER SERVICES UPDATE — OCTOBER 23, 2026
 
+LOGIN NOTICE: The always-visible security notice has been removed. Invalid
+credentials now show the requested red message below Sign in with an underlined
+Privacy and account policies link. Password recovery, temporary lockouts, and
+connection errors keep their own messages. Security logging is unchanged.
+
+BACKEND WORKFLOW SETUP FIX: Missing GitHub deployment credentials are detected
+before installation/build instead of failing at database migration. The account
+ID defaults to backend/wrangler.json; only the Cloudflare deployment token must
+be added as an Actions secret. This package does not contain any secret token.
+
 See CUSTOMER-SETUP-README.txt for the complete change list and activation steps.
 Includes verified Resend onboarding, temporary passwords, policy version history,
 security logs, encrypted support conversations, staff roles, HoneyBook links,

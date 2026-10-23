@@ -4,6 +4,13 @@ OCTOBER 23 CUSTOMER SERVICES UPDATE: the Cloudflare backend and database are
 already updated. Upload the frontend source below, then see CUSTOMER-SETUP-README.txt
 for the owner-only Enable customer setup step and policy-document readiness notes.
 
+The manual "Deploy Cloudflare backend" workflow also needs a separate GitHub
+Actions secret named CLOUDFLARE_API_TOKEN. Backend secrets saved in Cloudflare
+do not sign GitHub in. The corrected workflow checks this before installing or
+building, and reads the public account ID from the included configuration.
+For this release the backend/database are already updated; deploy the frontend
+with "Deploy suite to GitHub Pages". See DEPLOYMENT.md for future backend setup.
+
 Use HWS-Sites-COMPLETE.zip for folder-based uploads. Update-only ZIPs do not
 contain the whole application and must never replace a repository folder.
 

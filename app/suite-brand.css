@@ -24,6 +24,9 @@
 .simple-template-preview{background:#eeeefe;color:#2020b7}
 .site-creation-fields select,.list-toolbar label select{color:#333333}
 .site-creation-fields select:focus,.suite-form input:focus,.auth-card input:focus{outline-color:#2020b7;border-color:#2020b7}
+.auth-card .auth-login-error{color:#b42318;margin:16px 0 0;font-size:14px;line-height:1.6}
+.auth-login-error a{color:inherit;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.auth-login-error a:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
 .calendar-manager-list>button[aria-pressed=true],.forms-response-list>button.active{border-color:#2020b7;background:#eeeefe}
 .calendar-manager-note{background:#f3f3fc}.calendar-manager-note svg{color:#2020b7}
 
