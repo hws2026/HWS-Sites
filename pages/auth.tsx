@@ -1,5 +1,3 @@
-import {SignInLocationOption} from './signin-location';
-import {validSignInLocation,type SignInLocation} from '@/lib/signin-location';
 import {idleSession,sessionIdentity} from '@/lib/idle-session';
 import {isMobileBrowser,isPublicSuitePath} from '@/lib/device-access';
 import {supabaseUrl,supabasePublishableKey} from './public-config';
@@ -51,8 +49,6 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
  const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[confirm,setConfirm]=useState('');
  const [message,setMessage]=useState(''),[busy,setBusy]=useState(false),[failed,setFailed]=useState(false);
  const [invalidLogin,setInvalidLogin]=useState(false);
- const [deviceLocation,setDeviceLocation]=useState<SignInLocation>();
- useEffect(()=>{setDeviceLocation(undefined);},[email,mode,reset]);
  const demo=siteId?.startsWith('demo-')?referenceTemplates.find(t=>t.id===siteId.slice(5)):undefined;
  const [site,setSite]=useState<LoginSite|null>(demo?{id:siteId!,name:demo.name,accent:demo.accent}:null);
  const root=window.location.origin+window.location.pathname;
@@ -70,7 +66,7 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
     setMessage('If this email has an account, a reset link will arrive shortly.');
    }else{
     if(ending)await ending;
-    const loginResponse=await apiFetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password,deviceLocation:validSignInLocation(deviceLocation)})});const login=await loginResponse.json() as {error?:string;access_token:string;refresh_token:string};if(!loginResponse.ok){setInvalidLogin(loginResponse.status===401);throw new Error(login.error??'Sign-in failed.');}const {data,error}=await supabase.auth.setSession({access_token:login.access_token,refresh_token:login.refresh_token});if(error)throw error;
+    const loginResponse=await apiFetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password})});const login=await loginResponse.json() as {error?:string;access_token:string;refresh_token:string};if(!loginResponse.ok){setInvalidLogin(loginResponse.status===401);throw new Error(login.error??'Sign-in failed.');}const {data,error}=await supabase.auth.setSession({access_token:login.access_token,refresh_token:login.refresh_token});if(error)throw error;
     if(data.session){idleSession.start(sessionIdentity(data.session.access_token,data.session.user.id),data.session.user.id);setSessionUser(data.session.user.id);}
     setSessionToken(data.session?.access_token??'');window.dispatchEvent(new Event('hws-auth-changed'));
     const setupResponse=await apiFetch('/api/me');const setup=await setupResponse.json() as {onboardingRequired?:boolean;role?:string;error?:string};if(!setupResponse.ok)throw new Error(setup.error??'Could not verify account setup.');if(setup.onboardingRequired){window.location.hash='/onboarding';return;}if(setup.role==='support'||setup.role==='billing'){window.location.hash='/team-workspace';return;}
@@ -89,7 +85,7 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
      window.location.hash=isMobileBrowser()?'/mobile':validTarget&&(targetPath!=='/admin'||account.role==='admin')?target:account.role==='admin'?'/admin':'/portal';
     }
    }
-  }catch(e){setFailed(true);setMessage(e instanceof Error?e.message:'Please try again.');}finally{setBusy(false);setDeviceLocation(undefined);}
+  }catch(e){setFailed(true);setMessage(e instanceof Error?e.message:'Please try again.');}finally{setBusy(false);}
  }
  const returnLink=siteId?appHref('/site-admin/'+encodeURIComponent(siteId)):appHref('/signin');
  return <main className={'auth-screen'+(siteId?' site-auth-screen':'')} style={site?{'--login-accent':site.accent} as React.CSSProperties:undefined}>
@@ -104,7 +100,6 @@ export function AuthScreen({reset=false,siteId}:{reset?:boolean;siteId?:string})
     {!reset&&<label>Email<input type="email" autoComplete="email" value={email} onChange={e=>setEmail(e.target.value)} required/></label>}
     {(reset||mode!=='forgot')&&<label>Password<input type="password" autoComplete={reset?'new-password':'current-password'} minLength={reset?12:1} value={password} onChange={e=>setPassword(e.target.value)} required/></label>}
     {reset&&<label>Confirm password<input type="password" autoComplete="new-password" minLength={12} value={confirm} onChange={e=>setConfirm(e.target.value)} required/></label>}
-    {!reset&&mode==='login'&&!demo&&<SignInLocationOption key={email} value={deviceLocation} onChange={setDeviceLocation} disabled={busy}/>}
     <button className="button primary" disabled={busy||!supabase}>{busy?'Please wait…':reset?'Update password':mode==='forgot'?'Send reset email':'Sign in'}</button>
    </form>
    {invalidLogin&&!reset&&mode==='login'?<p role="alert" className="auth-error auth-login-error">Login failed, please make sure your username and password are correct. For security reasons, your attempt will be logged, for more information please visit: <a href="https://www.huskysol.com/legal" target="_blank" rel="noopener noreferrer">Privacy and account policies</a></p>:message&&<p role={failed?'alert':'status'} className={failed?'auth-error':''}>{message}</p>}
