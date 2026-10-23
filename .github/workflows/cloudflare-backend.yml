@@ -1,6 +1,7 @@
 name: Deploy Cloudflare backend
 on:
   workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:
@@ -9,6 +10,36 @@ jobs:
     environment: production
     steps:
       - uses: actions/checkout@v4
+      - name: Check Cloudflare deployment credentials
+        id: cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync, appendFileSync } from 'node:fs';
+          function fail(message) {
+            console.error('::error title=Cloudflare deployment setup required::' + message);
+            if (process.env.GITHUB_STEP_SUMMARY) {
+              appendFileSync(process.env.GITHUB_STEP_SUMMARY, '## Backend deployment paused\n\n' + message + '\n\nNo database migrations or Worker deployment were attempted. The coordinated Pages workflow will keep the previous frontend live until the backend succeeds.\n');
+            }
+            process.exit(1);
+          }
+          const token = process.env.CLOUDFLARE_API_TOKEN || '';
+          if (!token.trim()) {
+            fail('Add CLOUDFLARE_API_TOKEN under repository Settings > Secrets and variables > Actions > Secrets, or the production environment. Use a Cloudflare token with Workers Scripts Edit and D1 Edit for this account. A Worker secret or an Actions variable does not supply this credential. See DEPLOYMENT.md.');
+          }
+          if (/\s/.test(token)) {
+            fail('CLOUDFLARE_API_TOKEN contains whitespace. Save only the token value, without a command, Bearer prefix, spaces or line breaks.');
+          }
+          const config = JSON.parse(readFileSync('backend/wrangler.json', 'utf8'));
+          const accountId = (process.env.CLOUDFLARE_ACCOUNT_ID || config.account_id || '').trim();
+          if (!/^[a-f0-9]{32}$/i.test(accountId)) {
+            fail('Set a valid CLOUDFLARE_ACCOUNT_ID Actions variable or account_id in backend/wrangler.json. The account ID is public configuration, not a token.');
+          }
+          appendFileSync(process.env.GITHUB_OUTPUT, 'account-id=' + accountId + '\n');
+          console.log('Deployment token is present; account ID is configured. Cloudflare will verify access during migration and deployment.');
+          NODE
       - name: Verify complete source upload
         run: node scripts/verify-source.mjs
       - uses: actions/setup-node@v4
@@ -24,8 +55,11 @@ jobs:
       - run: npm run verify:publication
       - run: npm run verify:forms
       - run: npm run verify:mobile
+      - run: npm run verify:security-hardening
+      - run: npm run verify:customer-security
       - run: npm run verify:backend
       - run: npm run verify:commerce
+      - run: npm run verify:honeybook
       - run: npm run verify:website-payments
       - run: npm run verify:storage
       - name: Configure deployment
@@ -41,12 +75,16 @@ jobs:
           CUSTOM_DOMAIN_TARGET: ${{ vars.CUSTOM_DOMAIN_TARGET }}
           STRIPE_PORTAL_CONFIGURATION_ID: ${{ vars.STRIPE_PORTAL_CONFIGURATION_ID }}
           EMAIL_FROM: ${{ vars.EMAIL_FROM }}
-      - run: npm run db:backend
+          SECURITY_ALERT_EMAIL: ${{ vars.SECURITY_ALERT_EMAIL }}
+          SECURITY_EMAIL_FROM: ${{ vars.SECURITY_EMAIL_FROM }}
+      - name: Apply database migrations
+        run: npm run db:backend
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      - uses: cloudflare/wrangler-action@v3
+          CLOUDFLARE_ACCOUNT_ID: ${{ steps.cloudflare.outputs.account-id }}
+      - name: Deploy backend Worker
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          accountId: ${{ steps.cloudflare.outputs.account-id }}
           command: deploy --config backend/wrangler.json --keep-vars

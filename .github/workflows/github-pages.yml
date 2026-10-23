@@ -11,6 +11,9 @@ concurrency:
   group: pages
   cancel-in-progress: false
 jobs:
+  backend:
+    uses: ./.github/workflows/cloudflare-backend.yml
+    secrets: inherit
   build:
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +31,7 @@ jobs:
       - run: npm run verify:devices
       - run: npm run verify:creation
       - run: npm run verify:calendar
+      - run: npm run verify:templates
       - run: npm run verify:imported-template
       - name: Check backend connection
         run: test -n "$VITE_API_URL"
@@ -39,12 +43,13 @@ jobs:
           VITE_API_URL: ${{ vars.HWS_API_URL || 'https://hws-suite-api.huskysol.workers.dev' }}
           VITE_SUPABASE_URL: https://udkutexazdxkwcfayeak.supabase.co
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+      - run: npm run verify:build-security
       - uses: actions/upload-pages-artifact@v3
         with:
           path: pages-dist
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, backend]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
