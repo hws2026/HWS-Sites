@@ -12,7 +12,7 @@ The original imported Paradise files pass byte-for-byte preservation checks (74 
 Public Paradise form verification earlier in this task: the live published form accepted one clearly labeled software verification request, not a booking. Its request name is "Husky Suite form verification — not a booking" and email is suite-form-test@example.invalid. It may appear in the customer's inbox. No real HoneyBook booking, payment, or subscription was created.
 
 Limits:
-- DNS scanning supports public domains; automatic record insertion currently supports authorized Cloudflare and GoDaddy accounts, with manual instructions for other DNS providers. It does not silently overwrite conflicting records.
+- DNS setup is manual. Automatic provider approval and API-token DNS insertion have been removed. Scanning and domain/HTTPS verification remain.
 - Existing HoneyBook public form links work without Zapier. Responses go directly to HoneyBook and are not automatically copied into the suite inbox.
 - Suite form forwarding through a customer's own supported HoneyBook/Zapier connection is optional and off until configured, tested and enabled. The private hook is encrypted and retries preserve a stable submission ID.
 - Direct HoneyBook account/API integration requires HoneyBook to approve a Husky Suite application. No API approval has been requested and this integration is not active in this release.
@@ -20,3 +20,5 @@ Limits:
 - Tenant restrictions apply to normal suite UI/API access; infrastructure/database account holders retain their provider-level access.
 
 Build warnings were non-blocking: existing large frontend bundles and Vite's future config loader notice. No known failing check remains.
+
+MANUAL DNS UPDATE: automatic configuration removed; no live provider changes.

@@ -4,7 +4,7 @@ Customer websites are isolated from platform staff. The platform can assign a ne
 
 Customer portal now includes templates, blank starts, full templates and organization copies, archived websites and website access controls. Customer records cannot be used to suspend, delete or reassign an existing customer website.
 
-Domains: DNS scans work for any public domain. Automatic TXT/CNAME insertion supports authorized Cloudflare and GoDaddy DNS accounts. Tokens are used for one request and never saved. Existing records are checked first; conflicts stop writes. Other providers receive manual records and verification. No registrar changes, purchases, paid subscriptions or automatic nameserver migrations are performed.
+Domains: Automatic DNS configuration has been removed, including provider sign-in approval and API-token record insertion. Manual DNS setup is the default. Provider scanning, provider account/help links, copyable TXT/CNAME records, ownership checks, and HTTPS/domain verification remain available.
 
 Support messages queue branded email notifications to the customer or platform owner, plus the assigned support agent. Notification data is encrypted. Temporary delivery errors retry with an idempotency key; provider acceptance is reported separately from actual inbox delivery.
 
@@ -19,3 +19,6 @@ FORMS AND HONEYBOOK
 - Checked the original Paradise ZIP: it contains local draft handling, not a configured Paradise HoneyBook embed. Existing imported page/CSS source files are preserved.
 - Combined customer onboarding policies into one readable screen with one acceptance checkbox/button. Individual policy versions and server timestamps remain in the audit log. Acceptance is unavailable if any document fails to load.
 - Added an in-suite, no-Zapier setup for existing public HoneyBook form links. These submit directly to HoneyBook; suite forms remain separate unless forwarding is configured. Direct HoneyBook account/API integration awaits HoneyBook approval and is not activated.
+
+
+No provider submissions, live DNS changes, or paid purchases were made.

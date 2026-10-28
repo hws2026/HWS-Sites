@@ -13,12 +13,14 @@ SECURITY-REVIEW.txt
 SOURCE-FILES.txt
 UPDATE-NOTES.txt
 UPLOAD-README.txt
+VERIFICATION-2026-10-28.txt
 app/account-profile.css
 app/account-profile.tsx
 app/admin/audit-location.tsx
 app/admin/billing-panel.tsx
 app/admin/customer-center.tsx
 app/admin/customers-panel.tsx
+app/admin/dns-connect.tsx
 app/admin/domains-panel.tsx
 app/admin/honeybook-panel.tsx
 app/admin/incident-panel.tsx
@@ -49,6 +51,7 @@ app/editor.tsx
 app/editor/[id]/page.tsx
 app/finalsite-composition.css
 app/footer-settings.tsx
+app/form-connections.tsx
 app/forms-inbox.tsx
 app/globals.css
 app/header-editor.tsx
@@ -91,7 +94,9 @@ app/website/[slug]/[[...path]]/page.tsx
 backend/billing.ts
 backend/commerce-utils.ts
 backend/customer-services.ts
+backend/dns-connect.ts
 backend/domains.ts
+backend/form-connections.ts
 backend/forms.ts
 backend/honeybook.ts
 backend/http.ts
@@ -101,6 +106,7 @@ backend/profile.ts
 backend/public-site.ts
 backend/reminders.ts
 backend/security.ts
+backend/support-notifications.ts
 backend/website-payments.ts
 backend/worker.ts
 backend/wrangler.json
@@ -194,6 +200,8 @@ drizzle/0011_amusing_hellion.sql
 drizzle/0012_wealthy_rafael_vega.sql
 drizzle/0013_careless_zarda.sql
 drizzle/0014_honeybook_payment_sync.sql
+drizzle/0015_support_notifications.sql
+drizzle/0016_optional_honeybook_forms.sql
 drizzle/meta/0000_snapshot.json
 drizzle/meta/0001_snapshot.json
 drizzle/meta/0002_snapshot.json
@@ -209,6 +217,8 @@ drizzle/meta/0011_snapshot.json
 drizzle/meta/0012_snapshot.json
 drizzle/meta/0013_snapshot.json
 drizzle/meta/0014_snapshot.json
+drizzle/meta/0015_snapshot.json
+drizzle/meta/0016_snapshot.json
 drizzle/meta/_journal.json
 eslint.config.mjs
 examples/d1/app/api/notes/route.ts
@@ -226,6 +236,7 @@ lib/content-library.ts
 lib/create-website.ts
 lib/customer-lifecycle.ts
 lib/device-access.ts
+lib/domain-providers.ts
 lib/draft-recovery.ts
 lib/editor-model.ts
 lib/form-model.ts
@@ -427,8 +438,10 @@ scripts/verify-customer-services.html
 scripts/verify-customer-services.tsx
 scripts/verify-device-access.mjs
 scripts/verify-device-browser.html
+scripts/verify-drawer-ui.html
 scripts/verify-editor-options.html
 scripts/verify-editor-options.tsx
+scripts/verify-form-connections.mjs
 scripts/verify-forms.mjs
 scripts/verify-honeybook-ui.html
 scripts/verify-honeybook-ui.tsx
@@ -449,6 +462,9 @@ scripts/verify-security-hardening.mjs
 scripts/verify-source.mjs
 scripts/verify-storage.mjs
 scripts/verify-templates.mjs
+scripts/verify-tenant-isolation.mjs
+scripts/verify-tenant-ui.html
+scripts/verify-tenant-ui.tsx
 scripts/verify-upload.mjs
 scripts/verify-website-payments.mjs
 templates/hws-studio-pricing.original.html
@@ -456,18 +472,3 @@ tsconfig.json
 vendor/shadcn-tailwind-4.13.0.LICENSE.md
 vendor/shadcn-tailwind-4.13.0.css
 vite.config.ts
-app/admin/dns-connect.tsx
-backend/dns-connect.ts
-backend/support-notifications.ts
-drizzle/0015_support_notifications.sql
-drizzle/meta/0015_snapshot.json
-scripts/verify-tenant-isolation.mjs
-app/form-connections.tsx
-backend/form-connections.ts
-drizzle/0016_optional_honeybook_forms.sql
-drizzle/meta/0016_snapshot.json
-scripts/verify-form-connections.mjs
-scripts/verify-tenant-ui.html
-scripts/verify-tenant-ui.tsx
-scripts/verify-drawer-ui.html
-VERIFICATION-2026-10-28.txt

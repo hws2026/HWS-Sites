@@ -1,4 +1,4 @@
-import {scanDns,insertDns,dnsRateLimit} from './dns-connect';
+import {scanDns,dnsRateLimit} from './dns-connect';
 import {database,logStatement,sitePermission,visibleSites,siteScope} from '../lib/suite-store';
 import {body,CommerceError,failure,field,json,type CommerceUser} from './commerce-utils';
 
@@ -65,16 +65,11 @@ export async function domainRoute(request:Request,env:DomainEnv,user:CommerceUse
   const id=crypto.randomUUID();await db.prepare('INSERT INTO site_domains (id,site_id,owner,hostname,verification_token,created_at) VALUES (?,?,?,?,?,?)').bind(id,siteId,access.row.owner,host,crypto.randomUUID(),new Date().toISOString()).run();await logStatement(access.row.owner,'Added domain '+host,siteId).run();return json({ok:true,id});
  }
  const d=await db.prepare('SELECT * FROM site_domains WHERE id=?').bind(field(input.id)).first<Domain>();if(!d)throw new CommerceError('Domain not found.',404);await canManage(d.site_id,user);
- if(action==='scan'||action==='connect-dns'){
-  if(d.status==='disconnected')throw new CommerceError('Add this domain again before connecting DNS.',409);await dnsRateLimit(d.id);const scan=await scanDns(d.hostname);
-  if(action==='scan')return json({scan});
-  if(input.confirm!==true)throw new CommerceError('Confirm adding the displayed DNS records first.');
-  if(!env.CUSTOM_DOMAIN_TARGET)throw new CommerceError('Domain hosting target is not configured.',503);
-  const extra=(JSON.parse((await db.prepare('SELECT validation_records FROM site_domains WHERE id=?').bind(d.id).first<{validation_records:string}>())!.validation_records) as {type:string;name:string;value:string}[]);
-  const result=await insertDns(scan,[{type:'TXT',name:'_hws-verify.'+d.hostname,value:'hws-verification='+d.verification_token},{type:'CNAME',name:d.hostname,value:env.CUSTOM_DOMAIN_TARGET},...extra],input.token);
-  await logStatement(d.owner,'Connected DNS records for '+d.hostname,d.site_id).run();
-  return json({ok:true,...result,scan});
+ if(action==='scan'){
+  if(d.status==='disconnected')throw new CommerceError('Add this domain again before checking DNS.',409);
+  await dnsRateLimit(d.id);return json({scan:await scanDns(d.hostname)});
  }
+ if(action==='connect-dns'||action==='start-provider-connection')throw new CommerceError('Automatic DNS configuration has been removed. Add the displayed records in your provider’s DNS settings, then check the connection.',410);
  if(action==='verify'){try{await verify(d,env);}catch(error){await db.prepare('UPDATE site_domains SET last_error=?,checked_at=? WHERE id=?').bind(error instanceof CommerceError?error.message:'Verification could not be completed.',new Date().toISOString(),d.id).run();throw error;}return json({ok:true});}
  if(action==='primary'){if(d.status!=='active')throw new CommerceError('Connect and verify this domain first.',409);await db.batch([db.prepare('UPDATE site_domains SET is_primary=0 WHERE site_id=?').bind(d.site_id),db.prepare("UPDATE site_domains SET is_primary=1 WHERE id=? AND status='active'").bind(d.id)]);return json({ok:true});}
  if(action==='remove'){

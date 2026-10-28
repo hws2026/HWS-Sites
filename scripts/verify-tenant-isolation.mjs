@@ -61,15 +61,13 @@ try{
  const d=check(await req('/api/domains','POST',{action:'add',siteId:site.id,hostname:'www.cf-site.org'},'customer'),200,'customer adds own domain');
  check(await req('/api/domains','POST',{action:'scan',id:d.id}),404,'owner cannot scan private customer domain settings');
  assert.equal(check(await dns('scan',d.id),200,'DNS scan detects Cloudflare').scan.provider,'cloudflare');
- check(await dns('connect-dns',d.id,{token:'dns-test-token'}),400,'DNS writes require explicit approval');
- cloudRecords.push({type:'A',name:'www.cf-site.org',content:'192.0.2.2'});
- check(await dns('connect-dns',d.id,{token:'dns-test-token',confirm:true}),409,'conflicting website record blocks writes');assert.equal(dnsWrites.length,0);cloudRecords.pop();
- cloudRecords.push({type:'TXT',name:'_hws-verify.www.cf-site.org',content:'unrelated-verification'});
- check(await dns('connect-dns',d.id,{token:'dns-test-token',confirm:true}),200,'Cloudflare adds both required records');assert.equal(dnsWrites.length,2);assert.ok(cloudRecords.some(r=>r.content==='unrelated-verification'));
- check(await dns('connect-dns',d.id,{token:'dns-test-token',confirm:true}),200,'repeat connection preserves existing records');assert.equal(dnsWrites.length,2);
- const gd=check(await req('/api/domains','POST',{action:'add',siteId:site.id,hostname:'www.gd-site.org'},'customer'),200,'GoDaddy domain added');godaddyRecords.push({type:'MX',name:'@',data:'mail.example.test'});
- check(await dns('connect-dns',gd.id,{token:'gd-test-token',confirm:true}),200,'GoDaddy token inserts TXT and CNAME');assert.equal(dnsWrites.length,4);assert.equal(godaddyRecords[0].type,'MX');
- const unsupported=check(await req('/api/domains','POST',{action:'add',siteId:site.id,hostname:'www.other-site.org'},'customer'),200,'other provider domain added');assert.equal(check(await dns('scan',unsupported.id),200,'other DNS providers can be scanned').scan.provider,'manual');check(await dns('connect-dns',unsupported.id,{token:'never-saved',confirm:true}),409,'unsupported provider is clearly reported');
+ check(await dns('connect-dns',d.id,{token:'dns-test-token',confirm:true}),410,'automatic DNS writes are removed');
+ check(await dns('start-provider-connection',d.id),410,'automatic provider sign-in is removed');
+ assert.equal(dnsWrites.length,0);
+ const gd=check(await req('/api/domains','POST',{action:'add',siteId:site.id,hostname:'www.gd-site.org'},'customer'),200,'GoDaddy manual domain added');
+ assert.equal(check(await dns('scan',gd.id),200,'GoDaddy DNS remains scannable').scan.provider,'godaddy');
+ check(await dns('connect-dns',gd.id,{token:'gd-test-token',confirm:true}),410,'GoDaddy automatic insertion disabled');assert.equal(dnsWrites.length,0);
+ const unsupported=check(await req('/api/domains','POST',{action:'add',siteId:site.id,hostname:'www.other-site.org'},'customer'),200,'other provider manual domain added');assert.equal(check(await dns('scan',unsupported.id),200,'other DNS providers can be scanned').scan.provider,'manual');
  for(const table of ['site_domains','activity','security_events'])assert.ok(!JSON.stringify((await db.prepare('SELECT * FROM '+table).all()).results).includes('dns-test-token'));
  console.log(`PASS: ${checks} tenant isolation, support notification, and DNS connector checks; all providers mocked.`);
 }finally{await mf.dispose();}
