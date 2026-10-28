@@ -1,4 +1,5 @@
-import {database,logStatement,sitePermission} from '../lib/suite-store';
+import {scanDns,insertDns,dnsRateLimit} from './dns-connect';
+import {database,logStatement,sitePermission,visibleSites,siteScope} from '../lib/suite-store';
 import {body,CommerceError,failure,field,json,type CommerceUser} from './commerce-utils';
 
 export type DomainEnv={FRONTEND_URL?:string;CUSTOM_DOMAIN_ACCOUNT_ID?:string;CUSTOM_DOMAIN_PROJECT?:string;CUSTOM_DOMAIN_TARGET?:string;CLOUDFLARE_PAGES_TOKEN?:string};
@@ -7,7 +8,7 @@ type PagesDomain={id:string;name:string;status:string;validation_data?:{status:s
 const configured=(env:DomainEnv)=>Boolean(env.CUSTOM_DOMAIN_ACCOUNT_ID&&env.CUSTOM_DOMAIN_PROJECT&&env.CUSTOM_DOMAIN_TARGET&&env.CLOUDFLARE_PAGES_TOKEN);
 export async function removeCustomerHostname(env:DomainEnv,host:string){await cf(env,'/'+encodeURIComponent(host),'DELETE');}
 export function hostname(value:unknown){const raw=field(value,253).toLowerCase().replace(/\.$/,'');if(!/^[a-z0-9.-]+$/.test(raw)||raw.length>253||!raw.includes('.')||!/[a-z]/.test(raw.split('.').at(-1)!)||raw.split('.').some(label=>!/^([a-z0-9]|[a-z0-9][a-z0-9-]{0,61}[a-z0-9])$/.test(label))||/\.(localhost|local|internal|test|invalid|example)$/.test(raw))throw new CommerceError('Enter a domain such as www.yourschool.org, without https://, a port, or a path.');return raw;}
-async function canManage(siteId:string,user:CommerceUser){const access=await sitePermission(siteId,user.id);if(!access||access.row.archived||access.role==='viewer')throw new CommerceError('Website not found or domain access is unavailable.',404);return access;}
+async function canManage(siteId:string,user:CommerceUser){const access=await sitePermission(siteId,user.id);if(!access||access.row.archived||access.role!=='admin')throw new CommerceError('Website not found or domain access is unavailable.',404);return access;}
 async function cf<T>(env:DomainEnv,path:string,method='GET',payload?:unknown):Promise<T>{
  if(!configured(env))throw new CommerceError('Customer domain hosting needs its free Cloudflare Pages project and API connection configured by the administrator.',503);
  const endpoint='https://api.cloudflare.com/client/v4/accounts/'+encodeURIComponent(env.CUSTOM_DOMAIN_ACCOUNT_ID!)+'/pages/projects/'+encodeURIComponent(env.CUSTOM_DOMAIN_PROJECT!)+'/domains';
@@ -49,9 +50,10 @@ async function verify(d:Domain,env:DomainEnv){
 }
 export async function domainRoute(request:Request,env:DomainEnv,user:CommerceUser){try{
  const db=database();if(request.method==='GET'){
-  const sites=await db.prepare('SELECT s.id,s.title,COALESCE(p.enabled,0) enabled,(s.published IS NOT NULL) is_published,(s.owner=? OR a.role IN (\'admin\',\'editor\')) can_manage,(s.owner=?) can_publish FROM client_sites s LEFT JOIN site_publications p ON p.site_id=s.id LEFT JOIN site_access a ON a.site_id=s.id AND a.user_id=? WHERE s.archived=0 AND NOT EXISTS (SELECT 1 FROM customers c WHERE c.id=s.customer_id AND c.owner=s.owner AND c.archived!=0) AND (s.owner=? OR a.user_id=?) GROUP BY s.id ORDER BY s.title').bind(user.id,user.id,user.id,user.id,user.id).all();
-  const domains=await db.prepare('SELECT d.id,d.site_id,d.hostname,d.status,d.verification_token,d.is_primary,d.verified_at,d.ssl_status,d.hostname_status,d.validation_records,d.last_error,d.checked_at FROM site_domains d JOIN client_sites s ON s.id=d.site_id WHERE s.archived=0 AND NOT EXISTS (SELECT 1 FROM customers c WHERE c.id=s.customer_id AND c.owner=s.owner AND c.archived!=0) AND (s.owner=? OR EXISTS (SELECT 1 FROM site_access a WHERE a.site_id=s.id AND a.user_id=?)) ORDER BY d.created_at').bind(user.id,user.id).all();
-  return json({sites:sites.results,domains:domains.results,configured:configured(env),target:env.CUSTOM_DOMAIN_TARGET??'',admin:user.isAdmin});
+  const scope=await siteScope(user.id),visible=await visibleSites(user.id);
+  const sites=visible.map(s=>({...s,can_manage:Number(s.role==='admin'),can_publish:Number(s.role==='admin')}));
+  const domains=await db.prepare(`SELECT d.id,d.site_id,d.hostname,d.status,d.verification_token,d.is_primary,d.verified_at,d.ssl_status,d.hostname_status,d.validation_records,d.last_error,d.checked_at FROM site_domains d JOIN client_sites s ON s.id=d.site_id WHERE s.archived=0 AND ${scope.sql} ORDER BY d.created_at`).bind(...scope.args).all();
+  return json({sites,domains:domains.results,configured:configured(env),target:env.CUSTOM_DOMAIN_TARGET??'',admin:user.isAdmin});
  }
  if(request.method!=='POST')return json({error:'Method not allowed.'},405);const input=await body(request),action=input.action;
  if(action==='add'||action==='publication'){
@@ -63,6 +65,16 @@ export async function domainRoute(request:Request,env:DomainEnv,user:CommerceUse
   const id=crypto.randomUUID();await db.prepare('INSERT INTO site_domains (id,site_id,owner,hostname,verification_token,created_at) VALUES (?,?,?,?,?,?)').bind(id,siteId,access.row.owner,host,crypto.randomUUID(),new Date().toISOString()).run();await logStatement(access.row.owner,'Added domain '+host,siteId).run();return json({ok:true,id});
  }
  const d=await db.prepare('SELECT * FROM site_domains WHERE id=?').bind(field(input.id)).first<Domain>();if(!d)throw new CommerceError('Domain not found.',404);await canManage(d.site_id,user);
+ if(action==='scan'||action==='connect-dns'){
+  if(d.status==='disconnected')throw new CommerceError('Add this domain again before connecting DNS.',409);await dnsRateLimit(d.id);const scan=await scanDns(d.hostname);
+  if(action==='scan')return json({scan});
+  if(input.confirm!==true)throw new CommerceError('Confirm adding the displayed DNS records first.');
+  if(!env.CUSTOM_DOMAIN_TARGET)throw new CommerceError('Domain hosting target is not configured.',503);
+  const extra=(JSON.parse((await db.prepare('SELECT validation_records FROM site_domains WHERE id=?').bind(d.id).first<{validation_records:string}>())!.validation_records) as {type:string;name:string;value:string}[]);
+  const result=await insertDns(scan,[{type:'TXT',name:'_hws-verify.'+d.hostname,value:'hws-verification='+d.verification_token},{type:'CNAME',name:d.hostname,value:env.CUSTOM_DOMAIN_TARGET},...extra],input.token);
+  await logStatement(d.owner,'Connected DNS records for '+d.hostname,d.site_id).run();
+  return json({ok:true,...result,scan});
+ }
  if(action==='verify'){try{await verify(d,env);}catch(error){await db.prepare('UPDATE site_domains SET last_error=?,checked_at=? WHERE id=?').bind(error instanceof CommerceError?error.message:'Verification could not be completed.',new Date().toISOString(),d.id).run();throw error;}return json({ok:true});}
  if(action==='primary'){if(d.status!=='active')throw new CommerceError('Connect and verify this domain first.',409);await db.batch([db.prepare('UPDATE site_domains SET is_primary=0 WHERE site_id=?').bind(d.site_id),db.prepare("UPDATE site_domains SET is_primary=1 WHERE id=? AND status='active'").bind(d.id)]);return json({ok:true});}
  if(action==='remove'){

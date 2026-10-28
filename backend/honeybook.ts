@@ -1,4 +1,4 @@
-import {database} from '../lib/suite-store';
+import {database,visibleSites} from '../lib/suite-store';
 import {boundedBytes,RequestSizeError} from '../lib/request-size';
 import {honeyBookUrl,type HoneyBookPaymentDetails,type HoneyBookConnection} from '../lib/honeybook-model';
 import {audit,digest,json,now,seal,unseal,type Principal} from './security';
@@ -13,8 +13,8 @@ async function input(request:Request){let bytes:Uint8Array;try{bytes=await bound
 async function sitesFor(p:Principal){
  if(!['owner','admin','billing','customer'].includes(p.role))throw new CommerceError('Website billing access required.',403);
  // Editing content does not grant access to payer details or sync credentials.
- const clause=p.role==='customer'?"(lower(c.email)=? OR EXISTS (SELECT 1 FROM site_access a WHERE a.site_id=s.id AND a.user_id=? AND a.role='admin'))":'s.owner=?';
- return (await database().prepare(`SELECT s.id,s.title,s.customer_id,s.owner FROM client_sites s JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE s.archived=0 AND c.archived=0 AND ${clause} ORDER BY s.title,s.id`).bind(...(p.role==='customer'?[p.email,p.id]:[p.owner])).all<Site>()).results;
+ const available=await visibleSites(p.id);
+ return (await Promise.all(available.filter(s=>s.role==='admin').map(async s=>({id:s.id,title:s.title,customer_id:s.customer_id,owner:(await database().prepare('SELECT owner FROM client_sites WHERE id=?').bind(s.id).first<{owner:string}>())!.owner}))));
 }
 function selectedSite(sites:Site[],value:unknown){const site=sites.find(s=>s.id===value);if(!site)throw new CommerceError('Website billing access denied.',403);return site;}
 function paymentDetails(b:Record<string,unknown>):HoneyBookPaymentDetails {
@@ -28,7 +28,7 @@ function paymentDetails(b:Record<string,unknown>):HoneyBookPaymentDetails {
  const date=text(b.paidAt,'Payment date',50,true);
  if(!/^\d{4}-\d\d-\d\dT\d\d:\d\d(?::\d\d(?:\.\d{1,3})?)?(?:Z|[+-]\d\d:\d\d)$/.test(date)||!Number.isFinite(Date.parse(date))||Date.parse(date)>Date.now()+300000)throw new CommerceError('Use the actual payment date in ISO format with a time zone.');
  const clientEmail=text(b.clientEmail,'Client email',254);if(clientEmail&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clientEmail))throw new CommerceError('Check the client email.');
- const rawUrl=text(b.invoiceUrl,'Invoice URL',2000),invoiceUrl=rawUrl?honeyBookUrl(rawUrl):'';if(rawUrl&&!invoiceUrl)throw new CommerceError('Use an HTTPS invoice link on honeybook.com.');
+ const rawUrl=text(b.invoiceUrl,'Invoice URL',2000),invoiceUrl=rawUrl?honeyBookUrl(rawUrl):'';if(rawUrl&&!invoiceUrl)throw new CommerceError('Use an HTTPS invoice link on honeybook.com or hbportal.co.');
  return {paymentId,label,amount,currency:b.currency,paidAt:new Date(date).toISOString(),clientName:text(b.clientName,'Client name'),clientEmail,project:text(b.project,'Project'),invoiceUrl:invoiceUrl||''};
 }
 function sameHash(a:string,b:string){if(a.length!==b.length)return false;let difference=0;for(let n=0;n<a.length;n++)difference|=a.charCodeAt(n)^b.charCodeAt(n);return difference===0;}
@@ -41,7 +41,7 @@ async function recordPayment(env:Env,site:Site,details:HoneyBookPaymentDetails,s
  const payload=await seal(env,details,'honeybook-payment:'+id);
  const conditions=connection?' AND EXISTS (SELECT 1 FROM honeybook_connections hc WHERE hc.site_id=s.id AND hc.id=? AND hc.enabled=1 AND hc.token_hash=?)':'';
  // Recheck ownership, archival, and credentials in the write itself to close revocation races.
- const result=await db.prepare(`INSERT OR IGNORE INTO honeybook_payments (id,owner,customer_id,site_id,payment_key,source,payload,created_at) SELECT ?,s.owner,s.customer_id,s.id,?,?,?,? FROM client_sites s JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE s.id=? AND s.owner=? AND s.customer_id=? AND s.archived=0 AND c.archived=0${conditions}`).bind(id,key,source,payload,at,site.id,site.owner,site.customer_id,...(connection?[connection.id,connection.token_hash]:[])).run();
+ const result=await db.prepare(`INSERT OR IGNORE INTO honeybook_payments (id,owner,customer_id,site_id,payment_key,source,payload,created_at) SELECT ?,s.owner,s.customer_id,s.id,?,?,?,? FROM client_sites s LEFT JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE s.id=? AND s.owner=? AND s.customer_id=? AND s.archived=0 AND (s.customer_id='' OR c.archived=0)${conditions}`).bind(id,key,source,payload,at,site.id,site.owner,site.customer_id,...(connection?[connection.id,connection.token_hash]:[])).run();
  if(!result.meta.changes){const duplicate=await db.prepare('SELECT id,payload FROM honeybook_payments WHERE site_id=? AND payment_key=?').bind(site.id,key).first<{id:string;payload:string}>();if(!duplicate)throw new CommerceError('The website or connection changed. Refresh before retrying.',409);const old=await unseal<HoneyBookPaymentDetails>(env,duplicate.payload,'honeybook-payment:'+duplicate.id);if(old.amount!==details.amount||old.currency!==details.currency)throw new CommerceError('This payment ID already has a different amount or currency.',409);return {id:duplicate.id,duplicate:true};}
  return {id,duplicate:false};
 }
@@ -87,7 +87,7 @@ export async function honeybook(request:Request,env:Env,p:Principal){try{
  }
  if(action!=='save-link')throw new CommerceError('Unknown HoneyBook action.');
  const label=text(b.label,'Link label',160,true),destination=honeyBookUrl(b.url),kind=b.kind??'private_invoice';
- if(!destination)throw new CommerceError('Use a secure HTTPS link from honeybook.com.');
+ if(!destination)throw new CommerceError('Use a secure HTTPS link from honeybook.com or hbportal.co.');
  if(kind!=='private_invoice'&&kind!=='public_form')throw new CommerceError('Choose a private invoice or public lead form.');
  if(kind==='public_form'&&b.confirmPublic!==true)throw new CommerceError('Confirm this is a public HoneyBook lead form, not a private client invoice.');
  const id=crypto.randomUUID();await db.prepare('INSERT INTO honeybook_links (id,owner,site_id,label,url,enabled,kind,created_at) VALUES (?,?,?,?,?,1,?,?)').bind(id,site.owner,site.id,'Encrypted payment link',await seal(env,{label,url:destination},'honeybook:'+id),kind,now()).run();await audit(request,env,p,'honeybook.link','success',200,site.id);return json({ok:true,id});
@@ -103,7 +103,7 @@ export async function honeybookEvent(request:Request,env:Env,id:string){try{
  const bearer=request.headers.get('authorization')??'';if(!/^Bearer hws_hb_[a-f0-9]{64}$/.test(bearer))throw new CommerceError('Invalid sync credential.',401);
  const db=database(),connection=await db.prepare('SELECT * FROM honeybook_connections WHERE id=? AND enabled=1').bind(id).first<Connection>();
  if(!connection||!sameHash(connection.token_hash,await digest(bearer.slice(7))))throw new CommerceError('Invalid sync credential.',401);
- const site=await db.prepare('SELECT s.id,s.title,s.customer_id,s.owner FROM client_sites s JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE s.id=? AND s.owner=? AND s.customer_id=? AND s.archived=0 AND c.archived=0').bind(connection.site_id,connection.owner,connection.customer_id).first<Site>();if(!site)throw new CommerceError('This website is unavailable for syncing.',410);
+ const site=await db.prepare("SELECT s.id,s.title,s.customer_id,s.owner FROM client_sites s LEFT JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE s.id=? AND s.owner=? AND s.customer_id=? AND s.archived=0 AND (s.customer_id='' OR c.archived=0)").bind(connection.site_id,connection.owner,connection.customer_id).first<Site>();if(!site)throw new CommerceError('This website is unavailable for syncing.',410);
  if(!request.headers.get('content-type')?.toLowerCase().startsWith('application/json'))throw new CommerceError('Send Content-Type: application/json.',415);
  await limit(site.id);const b=await input(request);
  const allowed=new Set(['type','paymentId','label','amount','currency','paidAt','clientName','clientEmail','project','invoiceUrl']);if(Object.keys(b).some(k=>!allowed.has(k)))throw new CommerceError('Unexpected field. Send only the documented payment fields; never card data or suite/customer IDs.');
@@ -116,7 +116,7 @@ export async function honeybookEvent(request:Request,env:Env,id:string){try{
  }catch(e){const response=failure(e);const headers=new Headers(response.headers);headers.set('Cache-Control','no-store');if(response.status===429)headers.set('Retry-After','3600');return new Response(response.body,{status:response.status,headers});}}
 
 export async function publicHoneyBookLink(env:Pick<Env,'HWS_DATA_KEY'>,siteId:string,linkId:string){
- const row=await database().prepare("SELECT h.id,h.url FROM honeybook_links h JOIN client_sites s ON s.id=h.site_id JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE h.id=? AND h.site_id=? AND h.kind='public_form' AND h.enabled=1 AND s.archived=0 AND c.archived=0 AND c.status!='Paused'").bind(linkId,siteId).first<{id:string;url:string}>();
+ const row=await database().prepare("SELECT h.id,h.url FROM honeybook_links h JOIN client_sites s ON s.id=h.site_id LEFT JOIN customers c ON c.id=s.customer_id AND c.owner=s.owner WHERE h.id=? AND h.site_id=? AND h.kind='public_form' AND h.enabled=1 AND s.archived=0 AND (s.customer_id='' OR c.archived=0) AND (s.customer_id='' OR c.status!='Paused')").bind(linkId,siteId).first<{id:string;url:string}>();
  if(!row)throw new CommerceError('This HoneyBook form is unavailable.',404);
  const link=await unseal<{label:string;url:string}>(env as Env,row.url,'honeybook:'+row.id),url=honeyBookUrl(link.url);if(!url)throw new CommerceError('The HoneyBook link is invalid.',503);
  return {provider:'honeybook' as const,label:link.label,url,available:true,testMode:false};

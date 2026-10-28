@@ -16,6 +16,7 @@ export async function customerLifecycle(input:Record<string,unknown>,owner:strin
   await db.batch([db.prepare('UPDATE customers SET archived=0 WHERE id=? AND owner=? AND archived=1').bind(id,owner),logStatement(owner,'Restored customer '+customer.name)]);
   return Response.json({ok:true});
  }
+ if(await db.prepare('SELECT id FROM client_sites WHERE customer_id=? AND owner=? LIMIT 1').bind(id,owner).first())return fail('Customer websites are private and customer-controlled. This customer cannot be archived or deleted while they own websites.',403);
  const siteIds='SELECT id FROM client_sites WHERE customer_id=? AND owner=?';
  if(action==='archive-customer'){
   if(customer.archived===2)return fail('Deletion has started. Retry deletion to finish.');
@@ -45,7 +46,7 @@ export async function customerLifecycle(input:Record<string,unknown>,owner:strin
  statements.push(db.prepare(`DELETE FROM form_rate_limits WHERE EXISTS (SELECT 1 FROM client_sites s WHERE s.customer_id=? AND s.owner=? AND substr(form_rate_limits.key,1,length(s.id)+1)=s.id||':')`).bind(id,owner));
  statements.push(db.prepare('DELETE FROM reminder_deliveries WHERE reminder_id IN (SELECT id FROM reminders WHERE customer_id=? AND owner=?)').bind(id,owner));
  for(const table of ['website_payments','website_orders','payment_offers','merchant_accounts','reminders','billing_payments','billing_agreements','billing_accounts','client_sites'])statements.push(db.prepare(`DELETE FROM ${table} WHERE customer_id=? AND owner=?`).bind(id,owner));
- statements.push(db.prepare('DELETE FROM support_messages WHERE thread_id IN (SELECT id FROM support_threads WHERE customer_id=? AND owner=?)').bind(id,owner),db.prepare('DELETE FROM support_threads WHERE customer_id=? AND owner=?').bind(id,owner),db.prepare('DELETE FROM customer_templates WHERE customer_id=?').bind(id),db.prepare('DELETE FROM customer_accounts WHERE customer_id=? AND owner=?').bind(id,owner));
+ statements.push(db.prepare('DELETE FROM support_notifications WHERE thread_id IN (SELECT id FROM support_threads WHERE customer_id=? AND owner=?)').bind(id,owner),db.prepare('DELETE FROM support_messages WHERE thread_id IN (SELECT id FROM support_threads WHERE customer_id=? AND owner=?)').bind(id,owner),db.prepare('DELETE FROM support_threads WHERE customer_id=? AND owner=?').bind(id,owner),db.prepare('DELETE FROM customer_templates WHERE customer_id=?').bind(id),db.prepare('DELETE FROM customer_accounts WHERE customer_id=? AND owner=?').bind(id,owner));
  statements.push(db.prepare('DELETE FROM customers WHERE id=? AND owner=? AND archived=2').bind(id,owner),logStatement(owner,'Permanently deleted customer '+customer.name+' and their websites'));
  await db.batch(statements);
  return Response.json({ok:true});

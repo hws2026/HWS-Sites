@@ -1,0 +1,42 @@
+import {Miniflare,createFetchMock} from 'miniflare';
+import {readFile,readdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const mock=createFetchMock();mock.disableNetConnect();
+for(const id of ['owner','customer','other','editor'])mock.get('https://auth.test').intercept({path:'/auth/v1/user',headers:{authorization:'Bearer '+id}}).reply(200,{id,email:id+'@example.test',email_confirmed_at:'2026-10-01'}).persist();
+const sent=[];let responseStatus=200;
+for(const status of [200,503,200,410])mock.get('https://hooks.zapier.com').intercept({path:'/hooks/catch/123/test-hook/',method:'POST'}).reply(status,async o=>{sent.push(JSON.parse(await new Response(o.body).text()));return '{}';});
+const mf=new Miniflare({modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],r2Buckets:['BUCKET'],fetchMock:mock,bindings:{FRONTEND_URL:'https://front.test/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'mock',ADMIN_SUPABASE_USER_IDS:'owner',HWS_DATA_KEY:'19'.repeat(32)}});
+let checks=0;const verify=async(r,status,label)=>{const d=await r.json();assert.equal(r.status,status,label+': '+JSON.stringify(d));checks++;console.log('PASS '+label);return d;};
+const call=(data,who='customer',extra={})=>mf.dispatchFetch('https://api.test/api/form-connections?siteId=site',{method:data?'POST':'GET',headers:{Origin:'https://front.test',Authorization:'Bearer '+who,'Content-Type':'application/json',...extra},body:data?JSON.stringify(data):undefined});
+const tick=async()=>{await (await mf.getWorker()).scheduled({scheduledTime:Date.now(),cron:'* * * * *'});};
+try{
+ const db=await mf.getD1Database('DB');for(const f of (await readdir('drizzle')).filter(f=>f.endsWith('.sql')).sort())for(const s of (await readFile('drizzle/'+f,'utf8')).replaceAll(/-->[^\n]*/g,'').split(';').filter(s=>s.trim()))await db.prepare(s).run();
+ await db.prepare("INSERT INTO customers (id,owner,name,email,phone,status,notes) VALUES ('customer','owner','Example','customer@example.test','','Active','')").run();
+ await db.prepare("INSERT INTO customer_accounts (customer_id,owner,email,user_id,status) VALUES ('customer','owner','customer@example.test','customer','active')").run();
+ const site={name:'Example',slug:'example',font:'sans',accent:'#2020b7',pages:[{id:'home',slug:'home',name:'Home',blocks:[{id:'form',type:'form',title:'Contact',fields:[{id:'name',label:'Your name',type:'text',required:true},{id:'email',label:'Email',type:'email',required:true},{id:'file',label:'Document',type:'file'}]}]}]};
+ await db.prepare('INSERT INTO client_sites (id,owner,customer_id,title,slug,template_id,draft,published,revision,archived,updated_at) VALUES (?,?,?,?,?,?,?,?,1,0,?)').bind('site','owner','customer','Example','example','general',JSON.stringify(site),JSON.stringify(site),new Date().toISOString()).run();
+ await db.prepare("INSERT INTO site_publications VALUES ('site','owner',1)").run();await db.prepare("INSERT INTO site_access VALUES ('editor','owner','site','editor@example.test','editor','editor')").run();
+ const submit=async(id=crypto.randomUUID())=>{const f=new FormData();for(const [k,v]of Object.entries({pageId:'home',formId:'form',requestId:id,website:'','field:name':'Example person','field:email':'guest@example.test'}))f.set(k,v);f.set('field:file',new Blob(['PRIVATE FILE CONTENT'],{type:'text/plain'}),'details.txt');const r=new Response(f);return mf.dispatchFetch('https://api.test/sites/site/api/forms',{method:'POST',headers:{Origin:'https://api.test','CF-Connecting-IP':'192.0.2.10','Content-Type':r.headers.get('content-type')},body:await r.arrayBuffer()});};
+ assert.equal((await verify(await call(),200,'customer has in-suite connection setup')).enabled,false);
+ for(const who of ['owner','editor','other'])await verify(await call(undefined,who),403,who+' cannot read customer connection');
+ await verify(await call(undefined,'customer',{'X-HWS-Device':'mobile'}),200,'mobile Forms setup retains owner checks');
+ await verify(await submit(),201,'unconnected form saves internally');assert.equal((await db.prepare('SELECT count(*) n FROM form_deliveries').first()).n,0);
+ for(const url of ['http://hooks.zapier.com/hooks/catch/123/abc/','https://evil.test/hooks/catch/123/abc/','https://hooks.zapier.com.evil.test/hooks/catch/123/abc/','https://hooks.zapier.com/hooks/catch/123/abc/?secret=1'])await verify(await call({action:'save',url,confirm:true}),400,'unsupported destination rejected');
+ const url='https://hooks.zapier.com/hooks/catch/123/test-hook/';await verify(await call({action:'save',url,confirm:true}),200,'existing customer automation saved');
+ assert.ok(!(await db.prepare('SELECT endpoint FROM form_connections').first()).endpoint.includes('test-hook'));
+ assert.ok(!JSON.stringify(await (await call()).json()).includes('test-hook'));
+ await verify(await call({action:'toggle',enabled:true,confirm:true}),409,'cannot enable untested connection');
+ await verify(await call({action:'test',confirm:true}),200,'labeled sample reaches automation');assert.equal(sent[0].test,true);assert.match(sent[0].name,/not a booking/);
+ await verify(await call({action:'toggle',enabled:true}),409,'customer confirms final HoneyBook destination');
+ await verify(await call({action:'toggle',enabled:true,confirm:true}),200,'customer enables forwarding');
+ const requestId=crypto.randomUUID(),saved=await verify(await submit(requestId),201,'internal response commits before external forwarding');
+ await verify(await submit(requestId),200,'submission retry does not duplicate response or forwarding');assert.equal((await db.prepare('SELECT count(*) n FROM form_deliveries').first()).n,1);
+ responseStatus=503;await tick();assert.equal((await db.prepare('SELECT status FROM form_deliveries').first()).status,'pending');assert.equal((await db.prepare('SELECT count(*) n FROM form_submissions WHERE id=?').bind(saved.submissionId).first()).n,1);checks++;console.log('PASS external outage preserves internal response and queues retry');
+ await db.prepare('UPDATE form_deliveries SET next_at=0').run();responseStatus=200;await tick();assert.equal((await db.prepare('SELECT status FROM form_deliveries').first()).status,'accepted');assert.equal(sent.at(-1).submissionId,saved.submissionId);assert.equal(sent.at(-2).submissionId,saved.submissionId);assert.equal(sent.at(-1).email,'guest@example.test');assert.ok(!JSON.stringify(sent).includes('PRIVATE FILE CONTENT'));assert.ok(!JSON.stringify(sent).includes('attachmentId'));const n=sent.length;await tick();assert.equal(sent.length,n);checks++;console.log('PASS stable retry IDs, private attachments excluded, accepted deliveries not repeated');
+ const failed=await verify(await submit(),201,'next response still saved');responseStatus=410;await tick();assert.equal((await db.prepare('SELECT status FROM form_deliveries WHERE submission_id=?').bind(failed.submissionId).first()).status,'failed');await verify(await call({action:'retry',id:failed.submissionId}),200,'failed delivery can be retried inside suite');
+ await verify(await call({action:'disconnect'}),200,'disconnect cancels pending copies');assert.equal((await db.prepare('SELECT status FROM form_deliveries WHERE submission_id=?').bind(failed.submissionId).first()).status,'cancelled');await verify(await submit(),201,'disconnected website form still works');
+ await verify(await mf.dispatchFetch('https://api.test/api/forms?siteId=site',{headers:{Origin:'https://front.test',Authorization:'Bearer customer'}}),200,'customer sees saved responses in private inbox');
+ // Owner may connect their own personal websites, without customer access.
+ await db.prepare("UPDATE client_sites SET customer_id='' WHERE id='site'").run();await verify(await call(undefined,'owner'),200,'platform owner can configure own website');await verify(await call(undefined,'customer'),403,'former customer cannot configure unowned site');
+ console.log(`PASS: ${checks} optional form connection checks; no external traffic sent.`);
+}finally{await mf.dispose();}

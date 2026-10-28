@@ -23,9 +23,12 @@ export async function createWebsite(input:CreateWebsiteInput,request:Requester,o
  }
  let id=options.id;
  if(!id){
-  const created=await json<{id:string;creationVersion?:number}>(options.endpoint??'/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'site',...input})});
+  const created=await json<{id:string;creationVersion?:number;assigned?:boolean}>(options.endpoint??'/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'site',...input})});
   if(!created.id)throw new Error('The server did not return the new website. Refresh your website list before trying again.');
-  id=created.id;options.onCreated?.(id);
+  id=created.id;
+  // Assignment deliberately does not grant the platform access to the customer draft.
+  if(created.assigned)return id;
+  options.onCreated?.(id);
   if(input.source&&input.source!=='template'&&created.creationVersion!==2)throw new Error('Update the backend before using blank or existing-site creation. The created draft was preserved for review.');
  }
  if(input.source==='existing'||input.source==='blank'){

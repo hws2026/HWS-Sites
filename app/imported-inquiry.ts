@@ -24,7 +24,10 @@ export function connectImportedInquiry(form:HTMLFormElement,{pageId,formId,live,
   try{
    await responseJson(await fetch(publicFormUrl(),{method:'POST',body:data,credentials:'omit'}));sent=true;
    status.textContent=message||'Your availability request was received. Our team will contact you to confirm your event details.';
-   button.textContent='Request received';form.querySelectorAll('input,select,textarea').forEach(input=>(input as HTMLInputElement).disabled=true);
+   form.reset();
+   form.querySelectorAll('input,select,textarea').forEach(element=>{const input=element as HTMLInputElement;input.value='';if(input.type==='checkbox'||input.type==='radio')input.checked=false;input.disabled=true;});
+   try{form.ownerDocument.defaultView?.localStorage.removeItem('paradise-inquiry-draft');}catch{}
+   button.textContent='Request received';
   }catch(error){status.textContent=failureReason(error)+' Your details are still here. Please try again.';button.textContent='Submit availability request';button.disabled=false;}
   finally{pending=false;}
  };

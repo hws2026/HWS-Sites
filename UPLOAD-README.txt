@@ -1,7 +1,7 @@
-HUSKY SUITE — COMPLETE SOURCE UPLOAD — OCTOBER 23, 2026
-HONEYBOOK UPDATE
+HUSKY SUITE — COMPLETE SOURCE UPLOAD — OCTOBER 28, 2026
+CUSTOMER PRIVACY, FORMS, HONEYBOOK CONNECTIONS & ONBOARDING
 
-This ZIP is a source update. Its HoneyBook changes are NOT deployed live yet.
+This ZIP is a source update. These changes are NOT deployed live yet.
 No subscription or real payment has been created. Existing server secrets stay
 in Cloudflare and are not included in this ZIP. No new global secret is needed.
 
@@ -14,11 +14,12 @@ in Cloudflare and are not included in this ZIP. No new global secret is needed.
 4. Commit and use normal Push / Sync Changes. Do not force-push.
 5. GitHub -> Actions -> Deploy suite to GitHub Pages starts automatically.
    It builds the frontend and calls Deploy Cloudflare backend for the SAME commit.
-   The backend applies pending database migrations, including 0014, and deploys
+   The backend applies pending database migrations, including 0015 and 0016, and deploys
    the Worker with existing secrets preserved. Pages publishes only after both
    jobs succeed. If backend setup fails, the previous frontend stays live.
 6. Wait for the latest workflow to turn green, then refresh suite.huskysol.com.
-   Open Website payments -> HoneyBook. See HONEYBOOK-SETUP.txt for each option.
+   Open Forms inbox -> HoneyBook form connection, or Website payments ->
+   HoneyBook -> Form connection. See HONEYBOOK-SETUP.txt for each option.
 
 For a retry, run a NEW Deploy suite to GitHub Pages workflow from latest main;
 do not rerun a historical revision. Deploy Cloudflare backend remains available

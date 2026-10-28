@@ -1,0 +1,11 @@
+import '@vitejs/plugin-react/preamble';
+import {createRoot} from 'react-dom/client';
+import Suite from '../app/admin/suite';
+import {setSessionToken,setSessionUser} from '../lib/client-runtime';
+import '../app/globals.css';import '../app/suite-brand.css';import '../app/commerce.css';import '../app/customer-services.css';import '../app/account-profile.css';
+setSessionToken('local-test-only');setSessionUser('sample');
+const portal=new URLSearchParams(location.search).get('portal')==='1';
+const sites=[{id:'test',title:portal?'Paradisephotobooths':'Husky Solutions LLC',customer_id:portal?'customer':'',slug:'sample',template_id:portal?'paradis-photo-booths':'general',revision:1,archived:0,updated_at:new Date().toISOString(),role:'admin',is_published:1}];
+const originalFetch=window.fetch.bind(window);
+window.fetch=async(input,init)=>{const url=new URL(input instanceof Request?input.url:String(input),location.origin);if(!url.pathname.startsWith('/api/'))return originalFetch(input,init);if(url.pathname==='/api/forms')return Response.json({responses:[],total:0});if(url.pathname==='/api/form-connections')return Response.json({configured:false,enabled:false,testedAt:null,canConnect:true,deliveries:[]});if(url.pathname==='/api/profile')return Response.json({profile:{name:'Example Account'},email:'sample@example.test'});if(init?.method==='POST')return Response.json({ok:true});if(url.pathname==='/api/portal')return Response.json({sites,organizations:[{id:'customer',name:'Example business',assignedTemplateId:'paradis-photo-booths'}],access:[],email:'sample@example.test',archivedTemplateIds:[]});if(url.pathname==='/api/admin')return Response.json({workspace:{id:'sample',name:'Husky Suite'},customers:[],sites,access:[],activity:[],email:'sample@example.test',archivedTemplateIds:[]});return Response.json({error:'This local verification page only simulates websites, templates, and Forms settings. Use the real suite for other features.'},{status:503});};
+createRoot(document.getElementById('root')!).render(<Suite portal={portal}/>);

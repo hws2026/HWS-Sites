@@ -12,13 +12,13 @@ try{
  const desktop=(path,method='GET',body)=>req(path,method,body,'admin',false);
  check(await desktop('/api/admin','POST',{action:'initialize'}),200,'workspace initialized');
  const customer=check(await desktop('/api/admin','POST',{action:'customer',name:'Mobile customer',email:'editor@example.com'}),200,'customer created');
- const id=check(await desktop('/api/admin','POST',{action:'site',customerId:customer.id,title:'Published school',templateId:'general',startMode:'full'}),200,'test website created').id;
+ const id=check(await desktop('/api/admin','POST',{action:'site',assignTo:'self',title:'Published school',templateId:'general',startMode:'full'}),200,'test website created').id;
  const otherId=check(await desktop('/api/admin','POST',{action:'site',assignTo:'self',title:'Private other site',templateId:'general',startMode:'scratch'}),200,'other website created').id;
  for(const role of ['editor','viewer'])check(await desktop('/api/admin','POST',{action:'access',siteId:id,email:role+'@example.com',role}),200,role+' invited');
  check(await req('/api/mobile','POST',{action:'site',title:'Forbidden'}),400,'mobile cannot create websites');
  for(const user of ['editor','viewer'])check(await req('/api/mobile','POST',{action:'activate'},user),200,'mobile invitation activated: '+user);
  const customerSites=check(await req('/api/mobile','GET',undefined,'editor'),200,'customer mobile list loads');assert.deepEqual(customerSites.sites.map(s=>s.id),[id]);
- assert.equal(check(await req('/api/mobile'),200,'administrator can select all owned customer sites').sites.length,2);
+ assert.equal(check(await req('/api/mobile'),200,'administrator can select their own sites').sites.length,2);
  assert.equal(check(await req('/api/mobile','GET',undefined,'other'),200,'unassigned account has empty workspace').sites.length,0);
  for(const path of ['/api/mobile','/api/events?siteId='+id,'/api/forms?siteId='+id,'/api/billing'])check(await req(path,'GET',undefined,null),401,'login required: '+path);
  for(const [path,method,body] of [['/api/admin','GET'],['/api/site','PUT',{}],['/api/portal','POST',{action:'site'}],['/api/domains','POST',{}],['/api/upload','POST',{}]])check(await req(path,method,body),403,'mobile denies full workspace route '+path);
@@ -51,7 +51,7 @@ try{
  check(await req('/api/billing','POST',{action:'save',customerId:customer.id,label:'Forged amount',amount:'20',currency:'USD',interval:'month'},'editor'),403,'customer cannot assign billing prices');
  await db.prepare('DELETE FROM site_access WHERE site_id=? AND user_id=?').bind(id,'editor').run();
  check(await req(endpoint,'GET',undefined,'editor'),403,'revoked event access is rejected immediately');
- await db.prepare('UPDATE customers SET archived=1 WHERE id=?').bind(customer.id).run();
- check(await req(endpoint),403,'archived customers cannot manage events');assert.equal((await req('/api/mobile')).data.sites.some(s=>s.id===id),false);
+ await db.prepare('UPDATE client_sites SET archived=1 WHERE id=?').bind(id).run();
+ check(await req(endpoint),403,'archived websites cannot manage events');assert.equal((await req('/api/mobile')).data.sites.some(s=>s.id===id),false);
  console.log(`PASS: ${checks} mobile checks. Identity, billing, and data are isolated test fixtures.`);
 }finally{await mf.dispose();}

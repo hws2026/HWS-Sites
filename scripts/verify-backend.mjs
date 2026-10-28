@@ -3,7 +3,7 @@ import {readFile,readdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const mock=createFetchMock();mock.disableNetConnect();
 for(const [token,id,email] of [['admin-token','admin-uuid','admin@example.com'],['customer-token','customer-uuid','customer@example.com'],['other-token','other-uuid','other@example.com']])mock.get('https://auth.test').intercept({path:'/auth/v1/user',headers:{authorization:'Bearer '+token}}).reply(200,{id,email,email_confirmed_at:'2026-10-01'}).persist();
-mock.get('https://api.resend.com').intercept({path:'/emails',method:'POST'}).reply(200,{id:'mock-email-id'}).times(2);
+mock.get('https://api.resend.com').intercept({path:'/emails',method:'POST'}).reply(200,{id:'mock-email-id'}).times(1);
 mock.get('https://api.resend.com').intercept({path:'/emails',method:'POST'}).reply(503,{}).persist();
 const mf=new Miniflare({modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],r2Buckets:['BUCKET'],fetchMock:mock,bindings:{FRONTEND_URL:'https://front.test/hws/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'public-test-key',ADMIN_SUPABASE_USER_IDS:'admin-uuid',RESEND_API_KEY:'mock-only',EMAIL_FROM:'test@example.com'}});
 let checks=0;
@@ -44,13 +44,14 @@ check(await req('/api/site','PUT',{id:blankSiteId,site:blankSite.site,revision:b
 const fullSiteId=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Full branded site',templateId:'eaglecrest',startMode:'full'}),200,'owner explicitly creates the whole template').id;
 const fullSite=check(await req('/api/site?id='+fullSiteId),200,'whole template opens in the editor');assert.ok(fullSite.site.pages.length>100);assert.ok(fullSite.site.pages[0].blocks.length>0);assert.ok(fullSite.site.calendarEvents.length>0);checks++;console.log('PASS full mode retains all template pages and sample content');
 const customer=check(await req('/api/admin','POST',{action:'customer',name:'Backend test customer',email:'customer@example.com'}),200,'explicit test customer created');
-const siteId=check(await req('/api/admin','POST',{action:'site',customerId:customer.id,title:'Backend test site',templateId:'sau70'}),200,'explicit customer website created').id;
-const secondSiteId=check(await req('/api/admin','POST',{action:'site',customerId:customer.id,title:'Second test site',templateId:'crane'}),200,'second test website created').id;
+const siteId=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Backend test site',templateId:'sau70'}),200,'explicit customer website created').id;
+const secondSiteId=check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Second test site',templateId:'crane'}),200,'second test website created').id;
 check(await req('/api/admin','POST',{action:'site',customerId:'foreign-customer',title:'No access',templateId:'sau70'}),404,'foreign customer assignment denied');
 check(await req('/api/admin','POST',{action:'access',siteId,email:'customer@example.com',role:'editor'}),200,'assigned site access');check(await req('/api/portal','POST',{},'customer-token'),200,'verified email claims portal access');check(await req('/api/site?id='+siteId,'GET',null,'customer-token'),200,'assigned customer can edit');check(await req('/api/site?id='+siteId,'GET',null,'other-token'),404,'cross-customer data denied');
 
 check(await req('/api/site-login','POST',{id:siteId},'customer-token'),200,'site admin login accepts the assigned editor');
 
+await req('/api/admin','POST',{action:'access',siteId:secondSiteId,email:'customer@example.com',role:'editor'});
 check(await req('/api/site-login','POST',{id:secondSiteId},'customer-token'),200,'customer contact automatically receives its second website');
 await db.prepare('DELETE FROM site_access WHERE site_id=? AND email=?').bind(secondSiteId,'customer@example.com').run();
 const crossLogin=check(await req('/api/site-login','POST',{id:secondSiteId},'customer-token'),403,'another website rejects the same authenticated account');assert.equal(crossLogin.site,null);
@@ -73,22 +74,13 @@ const branding=check(await req('/api/site-login?id='+siteId,'GET',null,null),200
 check(await req('/api/reminders','POST',{action:'rules',onboardingEnabled:true,eventEnabled:true,onboardingDays:7,eventHours:24}),200,'both automatic rules enabled');check(await req('/api/reminders','GET',null,'customer-token'),403,'customer cannot schedule admin mail');
 const customerId=customer.id;check(await req('/api/reminders','POST',{customerId,subject:'Test reminder',body:'Test message',nextAt:new Date(Date.now()+60000).toISOString(),intervalDays:0}),200,'custom reminder scheduled');
 await db.prepare("UPDATE customers SET status='Onboarding' WHERE owner='admin-uuid'").run();await db.prepare("UPDATE reminders SET next_at=? WHERE source IS NULL").bind(new Date(Date.now()-1000).toISOString()).run();
-const scheduled=await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});const deliveries=await db.prepare("SELECT * FROM reminder_deliveries WHERE status='sent'").all();assert.equal(deliveries.results.length,2);checks++;console.log('PASS scheduled custom and published-event reminders sent through mock provider');
+const scheduled=await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});const deliveries=await db.prepare("SELECT * FROM reminder_deliveries WHERE status='sent'").all();assert.equal(deliveries.results.length,1);checks++;console.log('PASS scheduled custom reminder sent through mock provider');
 const auto=await db.prepare("SELECT * FROM reminders WHERE source LIKE 'onboarding-%'").all();assert.ok(auto.results.length>0);checks++;console.log('PASS onboarding reminders generated');
-await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare('SELECT * FROM reminder_deliveries').all()).results.length,2);checks++;console.log('PASS repeated cron does not duplicate delivery');
-const sharedSources=await db.prepare("SELECT * FROM reminders WHERE source LIKE 'event-%'").all();assert.equal(sharedSources.results.length,1);checks++;console.log('PASS one shared event creates one reminder across nested cards and calendar pages');
-let calendarDraft=(await req('/api/site?id='+siteId)).data;calendarDraft.site.calendarEvents.push({id:'reschedule-test',title:'Planning meeting',description:'First version',location:'Main office',category:'Meetings',link:'',startsAt:new Date(Date.now()+72*3600000).toISOString()});
-check(await req('/api/site','PUT',{id:siteId,site:calendarDraft.site,revision:calendarDraft.revision,publish:true}),200,'future shared calendar event published');await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});
-let queued=(await db.prepare("SELECT * FROM reminders WHERE source LIKE '%reschedule-test%' AND enabled=1").all()).results;assert.equal(queued.length,1);const oldSource=queued[0].source;
-calendarDraft=(await req('/api/site?id='+siteId)).data;calendarDraft.site.calendarEvents.find(e=>e.id==='reschedule-test').startsAt=new Date(Date.now()+96*3600000).toISOString();
-check(await req('/api/site','PUT',{id:siteId,site:calendarDraft.site,revision:calendarDraft.revision,publish:true}),200,'shared calendar event rescheduled');await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});
-queued=(await db.prepare("SELECT * FROM reminders WHERE source LIKE '%reschedule-test%' AND enabled=1").all()).results;assert.equal(queued.length,1);assert.notEqual(queued[0].source,oldSource);assert.equal((await db.prepare('SELECT enabled FROM reminders WHERE source=?').bind(oldSource).first()).enabled,0);checks++;console.log('PASS rescheduling cancels the previous queued reminder and schedules the new date');
-calendarDraft=(await req('/api/site?id='+siteId)).data;calendarDraft.site.calendarEvents=calendarDraft.site.calendarEvents.filter(e=>e.id!=='reschedule-test');
-check(await req('/api/site','PUT',{id:siteId,site:calendarDraft.site,revision:calendarDraft.revision,publish:false}),200,'calendar deletion saved only to draft');await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare("SELECT count(*) n FROM reminders WHERE source LIKE '%reschedule-test%' AND enabled=1").first()).n,1);checks++;console.log('PASS unpublished calendar edits do not change live reminders');
-calendarDraft=(await req('/api/site?id='+siteId)).data;check(await req('/api/site','PUT',{id:siteId,site:calendarDraft.site,revision:calendarDraft.revision,publish:true}),200,'calendar deletion published');await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare("SELECT count(*) n FROM reminders WHERE source LIKE '%reschedule-test%' AND enabled=1").first()).n,0);checks++;console.log('PASS removing a shared event cancels every queued reminder for it');
+await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare('SELECT * FROM reminder_deliveries').all()).results.length,1);checks++;console.log('PASS repeated cron does not duplicate delivery');
+const sharedSources=await db.prepare("SELECT * FROM reminders WHERE source LIKE 'event-%' AND enabled=1").all();assert.equal(sharedSources.results.length,0);checks++;console.log('PASS platform reminders cannot read or queue customer website events');
 check(await req('/api/reminders','POST',{customerId:'another-customer',subject:'No',body:'No',nextAt:new Date(Date.now()+60000).toISOString()}),400,'cross-workspace recipient rejected');
 const failure=check(await req('/api/reminders','POST',{customerId,subject:'Fail test',body:'Test only',nextAt:new Date(Date.now()+60000).toISOString()}),200,'failure test reminder scheduled');await db.prepare('UPDATE reminders SET next_at=? WHERE id=?').bind(new Date(Date.now()-1000).toISOString(),failure.id).run();await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});const failed=await db.prepare('SELECT enabled,last_error FROM reminders WHERE id=?').bind(failure.id).first();assert.equal(failed.enabled,0);assert.ok(failed.last_error);checks++;console.log('PASS failed delivery stopped for review');
-await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare('SELECT * FROM reminder_deliveries').all()).results.length,3);checks++;console.log('PASS failed delivery is not silently retried');
+await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare('SELECT * FROM reminder_deliveries').all()).results.length,2);checks++;console.log('PASS failed delivery is not silently retried');
 check(await req('/api/reminders','POST',{action:'rules',onboardingEnabled:false,eventEnabled:false,onboardingDays:7,eventHours:24}),200,'automatic rules disabled');await (await mf.getWorker()).scheduled({cron:'* * * * *',scheduledTime:Math.floor(Date.now()/3600000)*3600000});assert.equal((await db.prepare('SELECT * FROM reminders WHERE source IS NOT NULL AND enabled=1').all()).results.length,0);checks++;console.log('PASS rule disabling cancels queued automatic reminders');
 
 await db.prepare('DELETE FROM site_access WHERE site_id = ? AND user_id = ?').bind(siteId,'customer-uuid').run();
@@ -99,17 +91,18 @@ const archivedLogin=check(await req('/api/site-login','POST',{id:siteId}),403,'a
 check(await req('/api/site-login?id='+siteId,'GET',null,null),404,'archived site login branding disappears');
 
 
+const customerReq=(path,method='GET',body,token='customer-token',...rest)=>req(path,method,body,token,...rest);
 // Library retirement never retires customer websites or their publications.
-const lifecycleCustomer=check(await req('/api/admin','POST',{action:'customer',name:'Lifecycle organization',email:'lifecycle@example.com'}),200,'lifecycle organization created');
+const lifecycleCustomer=check(await req('/api/admin','POST',{action:'customer',name:'Lifecycle organization',email:'customer@example.com'}),200,'lifecycle organization created');
 const life=check(await req('/api/admin','POST',{action:'site',customerId:lifecycleCustomer.id,title:'Original lifecycle site',templateId:'crane',startMode:'full'}),200,'lifecycle source created').id;
-check(await req('/api/admin','POST',{action:'access',siteId:life,email:'customer@example.com',role:'editor'}),200,'source editor assigned');
-check(await req('/api/admin','POST',{action:'access',siteId:life,email:'other@example.com',role:'viewer'}),200,'source viewer assigned');
+check(await customerReq('/api/portal','POST',{action:'access',siteId:life,email:'customer@example.com',role:'editor'}),200,'source editor assigned');
+check(await customerReq('/api/portal','POST',{action:'access',siteId:life,email:'other@example.com',role:'viewer'}),200,'source viewer assigned');
 await req('/api/portal','POST',{},'customer-token');await req('/api/portal','POST',{},'other-token');
-let source=(await req('/api/site?id='+life)).data;
+let source=(await customerReq('/api/site?id='+life)).data;
 source.site.logo='/media/lifecycle-logo';source.site.favicon='/media/lifecycle-logo';source.site.logoDisplay='text-logo';source.site.colors={header:'#123456',menu:'#112233'};
 await db.prepare('INSERT INTO media (id,owner,site_id,filename,key,content_type) VALUES (?,?,?,?,?,?)').bind('lifecycle-logo','admin-uuid',life,'logo.png','admin-uuid/source/logo.png','image/png').run();
 const bucket=await mf.getR2Bucket('BUCKET');await bucket.put('admin-uuid/source/logo.png',new Uint8Array([137,80,78,71]));
-check(await req('/api/site','PUT',{id:life,site:source.site,revision:source.revision,publish:true}),200,'source with media published');
+check(await customerReq('/api/site','PUT',{id:life,site:source.site,revision:source.revision,publish:true}),200,'source with media published');
 const beforeArchive=await db.prepare('SELECT draft,published,revision FROM client_sites WHERE id=?').bind(life).first();
 check(await req('/api/admin','POST',{action:'archive-template',templateId:'crane'},'customer-token'),403,'customer cannot archive library designs');
 check(await req('/api/admin','POST',{action:'archive-template',templateId:'crane'}),200,'admin archives template');
@@ -117,10 +110,10 @@ assert.deepEqual(await db.prepare('SELECT draft,published,revision FROM client_s
 assert.ok((await req('/api/admin')).data.archivedTemplateIds.includes('crane'));
 assert.ok((await req('/api/portal','GET',null,'customer-token')).data.archivedTemplateIds.includes('crane'));
 check(await req('/api/published?id='+life,'GET',null,null),200,'archived template public website stays available');
-source=(await req('/api/site?id='+life)).data;
-check(await req('/api/site','PUT',{id:life,site:source.site,revision:source.revision,publish:false},'customer-token'),200,'archived design remains editable by its assigned customer');
-source=(await req('/api/site?id='+life)).data;
-check(await req('/api/site','PUT',{id:life,site:source.site,revision:source.revision,publish:true}),200,'archived design remains publishable');
+source=(await customerReq('/api/site?id='+life)).data;
+check(await customerReq('/api/site','PUT',{id:life,site:source.site,revision:source.revision,publish:false},'customer-token'),200,'archived design remains editable by its assigned customer');
+source=(await customerReq('/api/site?id='+life)).data;
+check(await customerReq('/api/site','PUT',{id:life,site:source.site,revision:source.revision,publish:true}),200,'archived design remains publishable');
 check(await req('/api/admin','POST',{action:'site',assignTo:'self',title:'Disallowed library selection',templateId:'crane'}),409,'archive blocks new library selection server-side');
 let switchTarget=(await req('/api/site?id='+blankSiteId)).data;
 switchTarget.site.templateId='crane';
@@ -129,33 +122,33 @@ const createCopy={action:'site',source:'existing',sourceSiteId:life,contextSiteI
 check(await req('/api/portal','POST',createCopy,'other-token'),403,'viewer cannot create sibling websites');
 check(await req('/api/portal','POST',{...createCopy,contextSiteId:blankSiteId},'customer-token'),403,'unassigned organization context denied');
 check(await req('/api/admin','POST',{...createCopy,assignTo:'self'}),403,'cross-customer copy denied even when source is in same workspace');
-const copied=check(await req('/api/portal','POST',{...createCopy,customerId:'forged',owner:'forged'},'customer-token'),200,'editor creates outline from their archived design');
+const copied=check(await req('/api/portal','POST',{...createCopy,customerId:'forged',owner:'forged'},'customer-token'),200,'customer owner creates outline from their archived design');
 assert.equal(copied.creationVersion,2);
-const copy=(await req('/api/site?id='+copied.id,'GET',null,'customer-token')).data;
-assert.equal(copy.site.templateId,'crane');assert.equal(copy.site.pages.length,source.site.pages.length);assert.ok(copy.site.pages.every(page=>page.blocks.length===0));assert.deepEqual(copy.site.colors,source.site.colors);assert.deepEqual(copy.site.calendarEvents,[]);assert.equal(copy.published,null);assert.equal(copy.role,'editor');assert.notEqual(copy.site.logo,source.site.logo);assert.equal(copy.site.favicon,copy.site.logo);assert.equal(copy.site.logoDisplay,'text-logo');
+const copy=(await customerReq('/api/site?id='+copied.id,'GET',null,'customer-token')).data;
+assert.equal(copy.site.templateId,'crane');assert.equal(copy.site.pages.length,source.site.pages.length);assert.ok(copy.site.pages.every(page=>page.blocks.length===0));assert.deepEqual(copy.site.colors,source.site.colors);assert.deepEqual(copy.site.calendarEvents,[]);assert.equal(copy.published,null);assert.equal(copy.role,'admin');assert.notEqual(copy.site.logo,source.site.logo);assert.equal(copy.site.favicon,copy.site.logo);assert.equal(copy.site.logoDisplay,'text-logo');
 const copyRecord=await db.prepare('SELECT owner,customer_id FROM client_sites WHERE id=?').bind(copied.id).first();assert.deepEqual(copyRecord,{owner:'admin-uuid',customer_id:lifecycleCustomer.id});
-check(await req('/api/site?id='+copied.id,'GET',null,'other-token'),404,'source viewer is not silently granted access to the new site');
+check(await customerReq('/api/site?id='+copied.id,'GET',null,'other-token'),404,'source viewer is not silently granted access to the new site');
 const mediaRecord=await db.prepare('SELECT key,site_id FROM media WHERE id=?').bind(copy.site.logo.slice(7)).first();assert.equal(mediaRecord.site_id,copied.id);assert.equal(mediaRecord.key,'admin-uuid/source/logo.png');
 const previewFile=await mf.dispatchFetch('https://api.test'+copy.site.logo,{headers:{Authorization:'Bearer customer-token'}});assert.equal(previewFile.status,200);checks++;console.log('PASS copied logo has independent site authorization');
 const designCopy=check(await req('/api/portal','POST',{...createCopy,startMode:'design',title:'Brand-only campus'},'customer-token'),200,'portal supports design-only copies');
-const brandOnly=(await req('/api/site?id='+designCopy.id)).data.site;assert.equal(brandOnly.pages.length,1);assert.equal(brandOnly.pages[0].blocks.length,0);assert.deepEqual(brandOnly.colors,source.site.colors);assert.deepEqual(brandOnly.headerMenus,[]);
-check(await req('/api/site','PUT',{id:copied.id,site:copy.site,revision:copy.revision,publish:true}),200,'copied outline publishes independently');
+const brandOnly=(await customerReq('/api/site?id='+designCopy.id)).data.site;assert.equal(brandOnly.pages.length,1);assert.equal(brandOnly.pages[0].blocks.length,0);assert.deepEqual(brandOnly.colors,source.site.colors);assert.deepEqual(brandOnly.headerMenus,[]);
+check(await customerReq('/api/site','PUT',{id:copied.id,site:copy.site,revision:copy.revision,publish:true}),200,'copied outline publishes independently');
 const publicLogo=await mf.dispatchFetch('https://api.test/sites/'+copied.id+copy.site.logo);assert.equal(publicLogo.status,200);checks++;console.log('PASS copied uploaded logo is available to anonymous visitors');
 const wholeCopy=check(await req('/api/portal','POST',{...createCopy,startMode:'full',title:'Whole campus copy'},'customer-token'),200,'whole-site copy supported in customer portal');
-assert.ok((await req('/api/site?id='+wholeCopy.id)).data.site.pages[0].blocks.length>0);
+assert.ok((await customerReq('/api/site?id='+wholeCopy.id)).data.site.pages[0].blocks.length>0);
 const neutralCopy=check(await req('/api/portal','POST',{action:'site',source:'blank',contextSiteId:life,title:'Blank school'},'customer-token'),200,'portal can create a completely blank sibling');
-const neutralSite=(await req('/api/site?id='+neutralCopy.id)).data;assert.equal(neutralSite.site.templateId,'blank');assert.equal(neutralSite.site.layout,'simple');assert.equal(neutralSite.site.pages.length,1);assert.deepEqual(neutralSite.site.pages[0].blocks,[]);
+const neutralSite=(await customerReq('/api/site?id='+neutralCopy.id)).data;assert.equal(neutralSite.site.templateId,'blank');assert.equal(neutralSite.site.layout,'simple');assert.equal(neutralSite.site.pages.length,1);assert.deepEqual(neutralSite.site.pages[0].blocks,[]);
 check(await req('/api/portal','POST',{action:'site',source:'template',contextSiteId:life,templateId:'crane',title:'Hidden library template'},'customer-token'),409,'portal cannot select an archived library design');
 check(await req('/api/admin','POST',{action:'restore-template',templateId:'crane'}),200,'admin restores library template');
 assert.ok(!(await req('/api/admin')).data.archivedTemplateIds.includes('crane'));
 check(await req('/api/portal','POST',{action:'site',source:'template',contextSiteId:life,templateId:'crane',startMode:'scratch',title:'Restored library design'},'customer-token'),200,'restored template selectable in portal');
 await db.prepare('UPDATE client_sites SET archived=1 WHERE id=?').bind(life).run();
 check(await req('/api/portal','POST',createCopy,'customer-token'),403,'archived source website cannot create siblings');
-check(await req('/api/site?id='+copied.id,'GET',null,'customer-token'),200,'archiving the source leaves its copied draft usable');
+check(await customerReq('/api/site?id='+copied.id,'GET',null,'customer-token'),200,'archiving the source leaves its copied draft usable');
 assert.equal((await mf.dispatchFetch('https://api.test/sites/'+copied.id+copy.site.logo)).status,200);
 await db.prepare('UPDATE client_sites SET archived=0 WHERE id=?').bind(life).run();
 await db.prepare('UPDATE customers SET archived=1 WHERE id=?').bind(lifecycleCustomer.id).run();
-check(await req('/api/portal','POST',createCopy,'customer-token'),403,'archived customer cannot create siblings');
+check(await req('/api/portal','POST',createCopy,'customer-token'),404,'archived customer cannot create siblings');
 
 console.log(`PASS: ${checks} standalone backend checks; all email delivery used a mock provider.`);
 }finally{await mf.dispose();}

@@ -1,3 +1,5 @@
+import {formConnections,sendFormDeliveries} from './form-connections';
+import {sendSupportNotifications} from './support-notifications';
 import {login,principal,staffAllowed,onboardingEnabled,onboardingState,onboarding,changePassword,securityLog,audit,reconcileOnboarding} from './security';
 import {accessHold,holdResponse,suiteLocked,incidentRoute,observeDenial,sendSecurityAlerts,isRecoveryOwner} from './incidents';
 import {boundedBytes,RequestSizeError} from '../lib/request-size';
@@ -15,13 +17,13 @@ import * as site from '../app/api/site/route';
 import * as upload from '../app/api/upload/route';
 import * as media from '../app/media/[id]/route';
 import * as siteLogin from '../app/api/site-login/route';
-import {withBackendEnv, type BackendEnv} from '../lib/server-context';
+import {withBackendEnv, withRequestActor, type BackendEnv} from '../lib/server-context';
 import {reminderRoute,sendDueReminders} from './reminders';
 import {billingRoute,stripeWebhook,type BillingEnv} from './billing';
 import {domainRoute,type DomainEnv} from './domains';
 import {publicSite} from './public-site';
 import type {NextRequest} from 'next/server';
-export type Env=BackendEnv & BillingEnv & MerchantEnv & DomainEnv & {SUPABASE_URL:string;SUPABASE_PUBLISHABLE_KEY:string;ADMIN_SUPABASE_USER_IDS:string;RESEND_API_KEY?:string;EMAIL_FROM?:string;HWS_DATA_KEY?:string;HWS_ONBOARDING_ENABLED?:string;SECURITY_ALERT_EMAIL?:string;SECURITY_EMAIL_FROM?:string};
+export type Env=BackendEnv & BillingEnv & MerchantEnv & DomainEnv & {SUPABASE_URL:string;SUPABASE_PUBLISHABLE_KEY:string;ADMIN_SUPABASE_USER_IDS:string;RESEND_API_KEY?:string;EMAIL_FROM?:string;HWS_DATA_KEY?:string;HWS_ONBOARDING_ENABLED?:string;SECURITY_ALERT_EMAIL?:string;SECURITY_EMAIL_FROM?:string;SUPPORT_NOTIFICATION_EMAIL?:string};
 const json=(data:unknown,status=200)=>Response.json(data,{status});
 export async function authenticate(request:Request,env:Env,fetcher:typeof fetch=fetch){const bearer=request.headers.get('authorization');if(!bearer||!/^Bearer [\w.-]+$/.test(bearer))return null;const result=await fetcher(env.SUPABASE_URL+'/auth/v1/user',{headers:{Authorization:bearer,apikey:env.SUPABASE_PUBLISHABLE_KEY}});if(!result.ok)return null;const user=await result.json() as {id?:string;email?:string;email_confirmed_at?:string;phone?:string};return user.id&&user.email&&user.email_confirmed_at?{id:user.id,email:user.email.toLowerCase(),phone:user.phone??''}:null;}
 export default {
@@ -42,7 +44,7 @@ export default {
  try{if(!env.SUPABASE_URL||!env.SUPABASE_PUBLISHABLE_KEY||!env.ADMIN_SUPABASE_USER_IDS)return cors(json({error:'Backend authentication has not been configured.'},503));const user=await authenticate(request,env);if(!user)return cors(json({error:'Sign in to continue.'},401));const p=await withBackendEnv(env,()=>principal(user,env));const hold=await withBackendEnv(env,()=>accessHold(env,p.id));if(hold)return cors(holdResponse(hold.scope));if(isMobileRequest(request.headers)&&!isMobileApiAllowed(url.pathname,request.method)&&!(isRecoveryOwner(env,p.id)&&['/api/security','/api/incidents'].includes(url.pathname)))return cors(json({error:DESKTOP_REQUIRED_MESSAGE,code:'DESKTOP_REQUIRED'},403));const isAdmin=p.role==='owner'||p.role==='admin';if(!staffAllowed(p.role,url.pathname)){await withBackendEnv(env,async()=>{await audit(request,env,p,request.method+' '+url.pathname,'role_denied',403);await observeDenial(request,env,p,403);});return cors(json({error:'Your team role does not allow this action.'},403));}const effective={...user,id:isAdmin||p.role==='billing'?p.owner:user.id,isAdmin:isAdmin||p.role==='billing'};
  // Never accept identity headers supplied by a browser. Shared handlers see only verified identity.
  const headers=new Headers(request.headers);headers.delete('oai-authenticated-user-id');headers.delete('oai-authenticated-user-email');headers.set('oai-authenticated-user-id',effective.id);headers.set('oai-authenticated-user-email',user.email);const body=request.body&&url.pathname!=='/api/upload'?await boundedBytes(request,1024*1024):request.body;const req=new Request(request.url,{method:request.method,headers,body,redirect:request.redirect}) as NextRequest;Object.defineProperty(req,'nextUrl',{value:url});Object.defineProperty(req,'cf',{value:request.cf});
- return await withBackendEnv(env,async()=>{
+ return await withBackendEnv(env,()=>withRequestActor(p,async()=>{
  let auditEvent=request.method+' '+url.pathname,auditTarget=url.searchParams.get('id')??url.searchParams.get('siteId')??'';
  const run=async()=>{
   if(url.pathname==='/api/me')return json({email:user.email,role:p.role==='owner'||p.role==='admin'?'admin':p.role,teamRole:p.role,onboardingRequired:(await onboardingState(p)).mustChangePassword||await onboardingEnabled(env,p)&&(await onboardingState(p)).required});
@@ -60,6 +62,7 @@ export default {
   if(url.pathname==='/api/honeybook')return honeybook(req,env,p);
   if(url.pathname==='/api/mobile')return mobileWorkspace(req,effective);
   if(url.pathname==='/api/events')return mobileEvents(req,effective);
+  if(url.pathname==='/api/form-connections')return formConnections(req,env,p);
   if(url.pathname==='/api/forms')return formsInbox(req,effective.id);
   if(url.pathname==='/api/website-payments')return websitePaymentsRoute(req,env,effective);
   if(url.pathname==='/api/billing')return billingRoute(req,env,effective);
@@ -76,6 +79,6 @@ export default {
   return response;
  };
  const response=await run();if(url.pathname!=='/api/security'||!response.ok)await audit(request,env,p,auditEvent,response.ok?'success':'denied_or_failed',response.status,auditTarget);await observeDenial(request,env,p,response.status);return cors(response);
- });}catch(e){if(e instanceof RequestSizeError)return cors(json({error:e.message},413));console.error('Backend request failed',e instanceof Error?e.message:'unknown error');return cors(json({error:'The service is temporarily unavailable.'},503));}
- },scheduled(controller:ScheduledController,env:Env,ctx:ExecutionContext){ctx.waitUntil(withBackendEnv(env,async()=>{await sendSecurityAlerts(env);if(new Date(controller.scheduledTime).getUTCMinutes()!==0)return;await Promise.all([sendDueReminders(env),env.DB?.prepare('DELETE FROM login_limits WHERE expires_at < ?').bind(Date.now()).run(),env.DB?.prepare('DELETE FROM form_rate_limits WHERE expires_at < ?').bind(Date.now()).run()]);}));}
+ }));}catch(e){if(e instanceof RequestSizeError)return cors(json({error:e.message},413));console.error('Backend request failed',e instanceof Error?e.message:'unknown error');return cors(json({error:'The service is temporarily unavailable.'},503));}
+ },scheduled(controller:ScheduledController,env:Env,ctx:ExecutionContext){ctx.waitUntil(withBackendEnv(env,async()=>{await Promise.all([sendSecurityAlerts(env),sendSupportNotifications(env),sendFormDeliveries(env)]);if(new Date(controller.scheduledTime).getUTCMinutes()!==0)return;await Promise.all([sendDueReminders(env),env.DB?.prepare('DELETE FROM login_limits WHERE expires_at < ?').bind(Date.now()).run(),env.DB?.prepare('DELETE FROM form_rate_limits WHERE expires_at < ?').bind(Date.now()).run()]);}));}
 };

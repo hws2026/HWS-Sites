@@ -1,4 +1,4 @@
-import {database,sitePermission,logStatement,type SiteRow} from './suite-store';
+import {database,sitePermission,logStatement,siteScope,type SiteRow} from './suite-store';
 import {blankWebsite,startFromTemplate,startFromWebsite} from './template-start';
 import {isTemplateId} from './template-catalog';
 import {archivedTemplateIds} from './template-catalog-store';
@@ -10,15 +10,16 @@ const field=(value:unknown,max=120)=>typeof value==='string'&&value.length<=max?
 
 /** A customer can create within an assigned organization, never choose another owner. */
 export async function createSiteRecord(body:Record<string,unknown>,user:{id:string;email:string},portal=false){
- const db=database(),title=field(body.title);
+ const db=database(),title=field(body.title),scope=await siteScope(user.id);const actorId=scope.id;
  if(!title)throw new CreationError('Enter a website name (up to 120 characters).');
  const source=body.source??'template';
  if(!['blank','template','existing'].includes(String(source)))throw new CreationError('Choose a blank site, a template, or an existing website.');
- let owner=user.id,customerId='',sourceRow:SiteRow|undefined;
+ let owner=actorId,customerId='',sourceRow:SiteRow|undefined;
  if(portal){
-  const context=await sitePermission(field(body.contextSiteId),user.id);
-  if(!context||context.row.archived||context.role==='viewer'||(!context.row.customer_id&&context.row.owner!==user.id))throw new CreationError('Choose an active organization website you can edit.',403);
-  owner=context.row.owner;customerId=context.row.customer_id;
+  if(scope.platform)throw new CreationError('Create your own website from the administrator workspace.',403);
+  const context=body.contextSiteId?await sitePermission(field(body.contextSiteId),actorId):null;
+  if(context){if(context.row.archived||context.role!=='admin')throw new CreationError('Choose an organization website you own.',403);owner=context.row.owner;customerId=context.row.customer_id;}
+  else{const organization=await db.prepare('SELECT c.id,c.owner FROM customers c JOIN customer_accounts a ON a.customer_id=c.id AND a.owner=c.owner WHERE a.user_id=? AND c.id=?').bind(actorId,field(body.customerId)).first<{id:string;owner:string}>();if(!organization)throw new CreationError('Choose your organization.',403);owner=organization.owner;customerId=organization.id;}
  }else{
   if(body.assignTo!==undefined&&!['self','customer'].includes(String(body.assignTo)))throw new CreationError('Choose who this website belongs to.');
   customerId=body.assignTo==='self'?'':field(body.customerId);
@@ -64,9 +65,9 @@ export async function createSiteRecord(body:Record<string,unknown>,user:{id:stri
  validateWebsite(draft);const serialized=JSON.stringify(draft);
  if(new TextEncoder().encode(serialized).byteLength>900000)throw new CreationError('This starting website exceeds the 900 KB draft limit. Choose its outline or reduce its content.',413);
  statements.unshift(db.prepare('INSERT INTO client_sites (id,owner,customer_id,title,slug,template_id,draft,revision,archived,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)').bind(id,owner,customerId,title,draft.slug,templateId,serialized,1,0,new Date().toISOString()));
- if(customerId&&!portal){const contact=await db.prepare('SELECT email FROM customers WHERE id=? AND owner=?').bind(customerId,owner).first<{email:string}>();if(contact)statements.push(db.prepare("INSERT INTO site_access (id,owner,site_id,email,role) VALUES (?,?,?,?,'editor')").bind(crypto.randomUUID(),owner,id,contact.email.toLowerCase()));}
- if(portal&&owner!==user.id)statements.push(db.prepare('INSERT INTO site_access (id,owner,site_id,email,user_id,role) VALUES (?,?,?,?,?,?)').bind(crypto.randomUUID(),owner,id,user.email,user.id,'editor'));
+ if(customerId&&!portal){const contact=await db.prepare('SELECT email FROM customers WHERE id=? AND owner=?').bind(customerId,owner).first<{email:string}>();if(contact)statements.push(db.prepare("INSERT INTO site_access (id,owner,site_id,email,role) VALUES (?,?,?,?,'admin')").bind(crypto.randomUUID(),owner,id,contact.email.toLowerCase()));}
+ if(portal&&owner!==user.id)statements.push(db.prepare('INSERT INTO site_access (id,owner,site_id,email,user_id,role) VALUES (?,?,?,?,?,?)').bind(crypto.randomUUID(),owner,id,user.email,actorId,'admin'));
  statements.push(logStatement(owner,`Created website ${title}${sourceRow?' from '+sourceRow.title:''}`,id));
  await db.batch(statements);
- return {ok:true,id,creationVersion:2};
+ return {ok:true,id,creationVersion:2,assigned:!!customerId&&!portal};
 }

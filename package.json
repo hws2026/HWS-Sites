@@ -41,7 +41,9 @@
     "verify:security-hardening": "node scripts/verify-security-hardening.mjs",
     "postinstall": "node scripts/harden-build-dependencies.mjs",
     "verify:build-security": "node scripts/verify-build-security.mjs",
-    "verify:honeybook": "node scripts/verify-honeybook.mjs"
+    "verify:honeybook": "node scripts/verify-honeybook.mjs",
+    "verify:tenant-isolation": "node scripts/verify-tenant-isolation.mjs",
+    "verify:form-connections": "node scripts/verify-form-connections.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

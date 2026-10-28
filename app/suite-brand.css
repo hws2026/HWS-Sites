@@ -69,3 +69,15 @@
 }
 
 .signin-location{padding:12px 0;border-top:1px solid #e1e1eb;margin-top:4px}.auth-card .signin-location .button{background:transparent;border:1px solid #c9c9dd;color:#333333;width:auto;font-size:12px;padding:8px 10px}.auth-card .signin-location p{font-size:11px;line-height:1.5;margin:8px 0;color:#586171}.signin-location a,.signin-location-remove{color:#2020b7;text-decoration:underline}.signin-location-remove{background:none;border:0;font-size:inherit;padding:0;cursor:pointer}
+
+/* The drawer is rendered in a portal, so it needs its own branding and bounds. */
+.suite-sidebar[data-mobile="true"]{--sidebar:#fff;--sidebar-foreground:#333333;--sidebar-primary:#2020b7;width:min(300px,calc(100vw - 40px));height:100dvh;max-height:100dvh;overflow:hidden;color:#333;background:#fff;}
+.suite-sidebar[data-mobile="true"] [data-slot="sidebar-inner"]{min-height:0;}
+.suite-sidebar[data-mobile="true"] [data-slot="sidebar-header"]{padding:30px 16px 12px;flex-shrink:0;}
+.suite-sidebar[data-mobile="true"] .husky-suite-logo{width:100px;height:80px;object-fit:contain;}
+.suite-sidebar[data-mobile="true"] [data-slot="sidebar-content"]{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 8px;}
+.suite-sidebar[data-mobile="true"] .suite-menu-button{min-height:34px;white-space:normal;}
+.suite-sidebar[data-mobile="true"] [data-slot="sidebar-footer"]{flex-shrink:0;padding:8px 16px;}
+.suite-sidebar[data-mobile="true"] .profile-account-text{min-width:0;overflow:hidden;text-overflow:ellipsis;}
+
+@media(max-height:820px){.suite-sidebar[data-mobile="true"] [data-slot=sidebar-header]{padding:26px 12px 8px}.suite-sidebar[data-mobile="true"] .suite-brand .husky-suite-logo{width:80px;height:64px}.suite-sidebar[data-mobile="true"] .suite-menu-button{height:32px;min-height:32px}.suite-sidebar[data-mobile="true"] [data-slot=sidebar-footer]{padding:4px 12px}}

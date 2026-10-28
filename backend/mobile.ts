@@ -1,4 +1,4 @@
-import {database,sitePermission,logStatement} from '../lib/suite-store';
+import {database,sitePermission,logStatement,visibleSites} from '../lib/suite-store';
 import {validateWebsite} from '../lib/site-store';
 import {enableSiteCalendar} from '../lib/site-calendar';
 import type {Website} from '../lib/editor-model';
@@ -14,8 +14,8 @@ export async function mobileWorkspace(request:Request,user:User){
   return json({ok:true});
  }
  if(request.method!=='GET')return json({error:'Method not allowed.'},405);
- const sites=await database().prepare("SELECT s.id,s.title,CASE WHEN s.owner=? THEN 'admin' ELSE a.role END AS role FROM client_sites s LEFT JOIN site_access a ON a.site_id=s.id AND a.user_id=? WHERE (s.owner=? OR a.user_id=?) AND s.archived=0 AND NOT EXISTS (SELECT 1 FROM customers c WHERE c.id=s.customer_id AND c.owner=s.owner AND c.archived!=0) GROUP BY s.id ORDER BY s.title").bind(user.id,user.id,user.id,user.id).all();
- return json({email:user.email,role:user.isAdmin?'admin':'customer',sites:sites.results});
+ const sites=await visibleSites(user.id);
+ return json({email:user.email,role:user.isAdmin?'admin':'customer',sites});
 }
 
 export async function mobileEvents(request:Request,user:User){

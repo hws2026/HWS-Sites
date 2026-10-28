@@ -12,14 +12,14 @@ export function SiteStartFields(props:{
  templateId:string;setTemplateId:(id:string)=>void;startMode:TemplateStartMode|'outline'|'design';setStartMode:(mode:TemplateStartMode|'outline'|'design')=>void;
 }){
  const {portal,email,customers,sites,archivedIds,customerId,setCustomerId,source,setSource,sourceSiteId,setSourceSiteId,contextSiteId,setContextSiteId,templateId,setTemplateId,startMode,setStartMode}=props;
- const eligible=sites.filter(s=>!s.archived&&s.role!=='viewer'&&(!portal||s.customer_id||s.role==='admin'));
+ const eligible=sites.filter(s=>!s.archived&&s.role==='admin'&&(!portal||s.customer_id||s.role==='admin'));
  const context=eligible.find(s=>s.id===contextSiteId);
- const sameOrganization=eligible.filter(s=>s.customer_id===(portal?context?.customer_id:customerId==='self'?'':customerId));
+ const sameOrganization=eligible.filter(s=>s.customer_id===(customerId==='self'?'':customerId));
  const available=templateChoices.filter(t=>!archivedIds.includes(t.id));
  const selected=eligible.find(s=>s.id===sourceSiteId);
  function chooseSource(value:WebsiteSource){setSource(value);setStartMode(value==='existing'?'outline':'scratch');if(value==='existing'&&!sameOrganization.some(s=>s.id===sourceSiteId))setSourceSiteId(sameOrganization[0]?.id??'');if(value==='template'&&!available.some(t=>t.id===templateId))setTemplateId(available[0]?.id??'');}
  return <>
-  {portal?<label>Organization website<select value={contextSiteId} required onChange={e=>{setContextSiteId(e.target.value);setSourceSiteId(e.target.value);}}><option value="">Choose an organization…</option>{eligible.map(s=><option key={s.id} value={s.id}>{s.title}</option>)}</select><span className="field-help">The new website belongs to the same organization as this assigned site.</span></label>:<label>Website owner<select value={customerId} onChange={e=>{setCustomerId(e.target.value);const existing=eligible.find(s=>s.customer_id===(e.target.value==='self'?'':e.target.value));setSourceSiteId(existing?.id??'');setSource(existing?'existing':'blank');setStartMode(existing?'outline':'scratch');}}><option value="self">My account{email?' · '+email:''}</option>{customers.filter(c=>!c.archived).map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>}
+  {portal?<label>Organization<select value={customerId} required onChange={e=>{setCustomerId(e.target.value);setContextSiteId('');setSourceSiteId('');setSource('blank');}}><option value="">Choose an organization…</option>{customers.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select><span className="field-help">The new website belongs to this organization and is managed by your account.</span></label>:<label>Website owner<select value={customerId} onChange={e=>{setCustomerId(e.target.value);const existing=eligible.find(s=>s.customer_id===(e.target.value==='self'?'':e.target.value));setSourceSiteId(existing?.id??'');setSource(existing?'existing':'blank');setStartMode(existing?'outline':'scratch');}}><option value="self">My account{email?' · '+email:''}</option>{customers.filter(c=>!c.archived).map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label>}
   <fieldset className="template-start-options site-source-options"><legend>Starting point</legend>{[
    {value:'blank',title:'Blank website',description:'A neutral design and one empty Home page. Build everything your way.'},
    {value:'template',title:'Template library',description:'Choose an available design and decide how much sample content to include.'},

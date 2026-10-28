@@ -6,7 +6,7 @@ for(const id of ['owner','owner2','customer','other','editor','viewer','billing'
 const options={modules:true,scriptPath:'backend/backend-dist/worker.js',compatibilityDate:'2026-05-15',compatibilityFlags:['nodejs_compat'],d1Databases:['DB'],fetchMock:mock,bindings:{FRONTEND_URL:'https://front.test/',SUPABASE_URL:'https://auth.test',SUPABASE_PUBLISHABLE_KEY:'public-test',ADMIN_SUPABASE_USER_IDS:'owner,owner2',HWS_DATA_KEY:'19'.repeat(32),HWS_ONBOARDING_ENABLED:'false'}};
 const mf=new Miniflare(options);let checks=0;
 const check=(r,status,label)=>{assert.equal(r.status,status,label+': '+JSON.stringify(r.data));checks++;console.log('PASS '+label);return r.data;};
-async function request(path,method='GET',body,who='owner',headers={}){const r=await mf.dispatchFetch('https://api.test'+path,{method,headers:{Origin:'https://front.test',...(who?{Authorization:'Bearer '+who}:{}),'Content-Type':'application/json',...headers},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
+async function request(path,method='GET',body,who=path.startsWith('/api/site')?'customer':'owner',headers={}){const r=await mf.dispatchFetch('https://api.test'+path,{method,headers:{Origin:'https://front.test',...(who?{Authorization:'Bearer '+who}:{}),'Content-Type':'application/json',...headers},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
 async function hook(connection,body,headers={},raw=false){const r=await mf.dispatchFetch(connection.endpoint,{method:'POST',headers:{Authorization:'Bearer '+connection.token,'Content-Type':'application/json',...headers},body:raw?body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
 try{
  const db=await mf.getD1Database('DB');for(const file of (await readdir('drizzle')).filter(f=>f.endsWith('.sql')).sort())for(const sql of (await readFile('drizzle/'+file,'utf8')).replaceAll(/-->[^\n]*/g,'').split(';').filter(s=>s.trim()))await db.prepare(sql).run();
@@ -24,12 +24,12 @@ try{
  check(await request('/api/honeybook?siteId='+site.id,'GET',undefined,'owner2'),403,'another platform owner cannot read website billing');
  for(const who of ['editor','viewer'])check(await request('/api/honeybook?siteId='+site.id,'GET',undefined,who),403,who+' cannot read payer details');
  check(await request('/api/honeybook','GET',undefined,'support'),403,'support staff cannot read billing');
- check(await request('/api/honeybook?siteId='+site.id,'GET',undefined,'billing'),200,'billing staff can manage payments');
+ check(await request('/api/honeybook?siteId='+site.id,'GET',undefined,'billing'),403,'platform billing staff cannot manage customer payments');
  const save=body=>request('/api/honeybook','POST',{siteId:site.id,...body},'customer');
  const privateLink=check(await save({label:'Private invoice',url:'https://app.honeybook.com/pay/private-client'}),200,'private invoice saved by default');
- for(const url of ['http://honeybook.com/pay','https://honeybook.com.evil.test/pay','https://honeybook.com@evil.test/pay','https://evil.test@honeybook.com/pay','https://honeybook.com:8443/pay','javascript:alert(1)'])check(await save({label:'Unsafe',url}),400,'unsafe payment URL rejected: '+url);
+ for(const url of ['http://honeybook.com/pay','https://honeybook.com.evil.test/pay','https://business.hbportal.co.evil.test/pay','https://honeybook.com@evil.test/pay','https://evil.test@honeybook.com/pay','https://honeybook.com:8443/pay','javascript:alert(1)'])check(await save({label:'Unsafe',url}),400,'unsafe payment URL rejected: '+url);
  check(await save({kind:'public_form',label:'Booking',url:'https://app.honeybook.com/public/booking'}),400,'public form requires explicit acknowledgement');
- const publicLink=check(await save({kind:'public_form',confirmPublic:true,label:'Book your booth',url:'https://app.honeybook.com/public/booking'}),200,'public form saved');
+ const publicLink=check(await save({kind:'public_form',confirmPublic:true,label:'Book your booth',url:'https://example.hbportal.co/public/booking'}),200,'public HoneyBook portal form saved');
  const editorOptions=check(await request('/api/website-payments?siteId='+site.id+'&provider=honeybook','GET',undefined,'editor'),200,'content editor can select public forms');assert.deepEqual(editorOptions.links.map(l=>l.id),[publicLink.id]);assert.ok(!JSON.stringify(editorOptions).includes('https://'));checks++;console.log('PASS editor picker exposes no private URLs or invoices');
  check(await request('/api/honeybook','POST',{siteId:site.id,label:'Forbidden',url:'https://app.honeybook.com/public/booking'},'other'),403,'cross-customer mutation blocked');
  const foreignLink=check(await request('/api/honeybook','POST',{siteId:second.id,kind:'public_form',confirmPublic:true,label:'Other form',url:'https://app.honeybook.com/public/other'},'other'),200,'second customer saves independent form');
@@ -66,7 +66,7 @@ try{
  const block={id:'hb-block',type:'payment',title:'Book a booth',text:'Choose your booking.',label:'Continue to HoneyBook',link:'#',image:'',background:'#ffffff',color:'#333333',align:'left',padding:32,paymentProvider:'honeybook',honeybookLinkId:publicLink.id};draft.site.pages[0].blocks=[block];
  check(await request('/api/site','PUT',{id:site.id,revision:draft.revision,site:draft.site,publish:true}),200,'HoneyBook section saves and publishes');
  const path='/sites/'+site.id+'/api/payments?'+new URLSearchParams({pageId:draft.site.pages[0].id,blockId:block.id});
- const publicResponse=check(await request(path,'GET',undefined,null),200,'published form opens without sign-in or Stripe');assert.equal(publicResponse.url,'https://app.honeybook.com/public/booking');assert.equal(publicResponse.provider,'honeybook');
+ const publicResponse=check(await request(path,'GET',undefined,null),200,'published form opens without sign-in or Stripe');assert.equal(publicResponse.url,'https://example.hbportal.co/public/booking');assert.equal(publicResponse.provider,'honeybook');
  async function publishLink(id,hidden=false){const current=(await request('/api/site?id='+site.id)).data;current.site.pages[0].blocks=[{...block,honeybookLinkId:id,hidden}];return check(await request('/api/site','PUT',{id:site.id,revision:current.revision,site:current.site,publish:true}),200,'publish payment section configuration');}
  await publishLink(privateLink.id);check(await request(path,'GET',undefined,null),404,'private invoice cannot be exposed by forged section ID');
  await publishLink(foreignLink.id);check(await request(path,'GET',undefined,null),404,'another customer form cannot be exposed');

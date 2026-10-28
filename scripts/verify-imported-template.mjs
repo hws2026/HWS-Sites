@@ -9,7 +9,7 @@ const m=await import(dir+'/check.mjs');
 const manifest=JSON.parse(await readFile('scripts/paradis-source-manifest.json','utf8'));
 for(const file of manifest){const bytes=await readFile('public/imported-templates/paradis-photo-booths/'+file.path);assert.equal(bytes.length,file.bytes);assert.equal(createHash('sha256').update(bytes).digest('hex'),file.sha256,file.path+' must remain unchanged');if(file.path.endsWith('.html'))assert.equal(m.paradisDocuments[file.path],bytes.toString());}
 console.log('PASS all 74 original HTML, CSS, JavaScript, and media files are byte-identical to the supplied archive.');
-assert.ok(m.isTemplateId(m.PARADIS_TEMPLATE));assert.equal(m.templateChoices.find(t=>t.id===m.PARADIS_TEMPLATE).name,'Paradis Photo Booths');
+assert.ok(m.isTemplateId(m.PARADIS_TEMPLATE));assert.equal(m.templateChoices.find(t=>t.id===m.PARADIS_TEMPLATE).name,'Paradisephotobooths');
 const original=m.startFromTemplate(m.PARADIS_TEMPLATE,'full');m.validateWebsite(original);
 assert.equal(original.pages.length,8);assert.equal(original.pages.reduce((n,p)=>n+p.blocks.length,0),32);
 assert.ok(Buffer.byteLength(JSON.stringify(original))<900000);

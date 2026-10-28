@@ -18,7 +18,7 @@ export type ImportedSection={template:typeof PARADIS_TEMPLATE;page:string;sectio
 export type ImportedSite={template:typeof PARADIS_TEMPLATE;header:ImportedEdits;footer:ImportedEdits};
 
 export function paradisTemplate():Website{
- return {name:'Paradise Photo Booths',slug:'paradise-photo-booths',templateId:PARADIS_TEMPLATE,
+ return {name:'Paradisephotobooths',slug:'paradise-photo-booths',templateId:PARADIS_TEMPLATE,
   accent:'#fd66c1',font:'sans',layout:'simple',imported:{template:PARADIS_TEMPLATE,header:{},footer:{}},
   pages:paradisPages.map(p=>({id:uid(),name:p.name,slug:p.slug,importedPage:p.file,layout:'full',hidden:p.file==='thank-you.html',
    blocks:Array.from({length:p.sections},(_,section)=>({...makeBlock('imported'),title:`${p.name} · Section ${section+1}`,text:'',label:'',padding:0,

@@ -23,17 +23,18 @@ try{
  await db.prepare("INSERT INTO client_sites (id,owner,customer_id,title,slug,template_id,draft,published,updated_at) VALUES ('site','owner','business','Business','business','sau70',?,?,?)").bind(JSON.stringify(site),JSON.stringify(site),new Date().toISOString()).run();
  await db.prepare("INSERT INTO site_publications (site_id,owner,enabled) VALUES ('site','owner',1)").run();
  await db.prepare("INSERT INTO site_access (id,owner,site_id,email,user_id,role) VALUES ('access','owner','site','customer@example.com','customer-user','editor')").run();
- async function req(input,token='admin',query=''){const r=await mf.dispatchFetch('https://api.test/api/website-payments'+query,{method:input?'POST':'GET',headers:{Origin:'https://front.test',Authorization:'Bearer '+token,'Content-Type':'application/json'},body:input?JSON.stringify(input):undefined});return {status:r.status,data:await r.json()};}
+ await db.prepare("INSERT INTO customer_accounts (customer_id,owner,email,user_id) VALUES ('business','owner','customer@example.com','customer-user')").run();
+ async function req(input,token='customer',query=''){const r=await mf.dispatchFetch('https://api.test/api/website-payments'+query,{method:input?'POST':'GET',headers:{Origin:'https://front.test',Authorization:'Bearer '+token,'Content-Type':'application/json'},body:input?JSON.stringify(input):undefined});return {status:r.status,data:await r.json()};}
  async function pub(input,query='',origin='https://api.test'){const r=await mf.dispatchFetch('https://api.test/sites/site/api/payments'+query,{method:input?'POST':'GET',headers:{Origin:origin,'Content-Type':'application/json','User-Agent':'Mozilla/5.0 iPhone','CF-Connecting-IP':'192.0.2.8'},body:input?JSON.stringify(input):undefined});return {status:r.status,data:await r.json()};}
  let seq=0;async function event(type,id='cs_1',opt={}){const t=Math.floor(Date.now()/1000),raw=JSON.stringify({id:opt.id??'evt_'+(++seq),type,account:opt.account??'acct_business',livemode:opt.live??false,data:{object:{id}}}),sig=createHmac('sha256','whsec_mock').update(t+'.'+raw).digest('hex');const r=await mf.dispatchFetch('https://api.test/api/stripe/connect-webhook',{method:'POST',headers:{'Stripe-Signature':`t=${t},v1=${sig}`},body:opt.tamper?raw+' ':raw});return {status:r.status,data:await r.json()};}
- check(await req({action:'connect',customerId:'business'}),403,'administrator cannot open another business’s onboarding');
+ check(await req({action:'connect',customerId:'business'},'admin'),404,'administrator cannot open another business’s onboarding');
  check(await req({action:'connect',customerId:'business'},'other'),404,'unrelated account cannot connect business');
  check(await req({action:'connect',customerId:'business'},'customer'),200,'business contact can start hosted Stripe onboarding');
  check(await req({action:'refresh',customerId:'business'},'customer'),200,'Stripe account readiness fetched from provider');
  const payload={action:'save-offer',siteId:'site',label:'Booking deposit',amount:'125.00',currency:'USD',interval:'one_time'};
  check(await req(payload,'other'),404,'cross-customer price creation denied');
  check(await req({...payload,amount:'1.001'}),400,'fractional cents rejected');
- const offer=check(await req(payload),200,'admin can assign website payment amount');
+ const offer=check(await req(payload),200,'business owner assigns website payment amount');
  const monthly=check(await req({...payload,interval:'month'},'customer'),200,'business contact creates monthly price');
  check(await req({...payload,interval:'year'},'customer'),200,'business contact creates yearly price');
  assert.equal(check(await req(undefined,'other'),200,'private history scoped by business contact').offers.length,0);

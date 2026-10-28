@@ -1,6 +1,6 @@
 import {publicHoneyBookLink,honeybookEditorLinks} from './honeybook';
 import {boundedBytes,RequestSizeError} from '../lib/request-size';
-import {database,sitePermission} from '../lib/suite-store';
+import {database,sitePermission,siteScope} from '../lib/suite-store';
 import {visibleBlocks,type Website} from '../lib/editor-model';
 import {amountInMinorUnits,billingCurrencies} from '../lib/commerce-model';
 import {stripe,validSignature,type BillingEnv} from './billing';
@@ -16,7 +16,7 @@ type Session={id:string;url:string;status:string;payment_status:string;livemode:
 const now=()=>new Date().toISOString();
 const live=(env:MerchantEnv)=>Number(Boolean(env.STRIPE_SECRET_KEY?.includes('_live_')));
 const configured=(env:MerchantEnv)=>Boolean(env.STRIPE_SECRET_KEY&&env.STRIPE_CONNECT_WEBHOOK_SECRET);
-async function customerAccess(id:string,user:CommerceUser){const c=await database().prepare('SELECT * FROM customers WHERE id=?').bind(id).first<Customer>();if(!c||!(user.isAdmin?c.owner===user.id:c.email.toLowerCase()===user.email))throw new CommerceError('Payment account not found.',404);return c;}
+async function customerAccess(id:string,user:CommerceUser){const c=await database().prepare('SELECT * FROM customers WHERE id=?').bind(id).first<Customer>();const scope=await siteScope(user.id);if(!c||scope.platform||!await database().prepare('SELECT customer_id FROM customer_accounts WHERE customer_id=? AND owner=? AND user_id=?').bind(id,c.owner,scope.id).first())throw new CommerceError('Payment account not found.',404);return c;}
 function active(c:Customer){if(c.archived||c.status==='Paused')throw new CommerceError('Restore and activate this customer before accepting payments.',409);}
 async function merchant(id:string,env:MerchantEnv){const m=await database().prepare('SELECT * FROM merchant_accounts WHERE customer_id=?').bind(id).first<Merchant>();if(m&&m.live!==live(env))throw new CommerceError('Stripe test/live mode does not match this payment account. Contact the administrator.',409);return m;}
 async function refresh(env:MerchantEnv,m:Merchant){if(!m.account_id||m.disconnected)throw new CommerceError('Connect this business to Stripe first.',409);const a=await stripe<Account>(env,'accounts/'+encodeURIComponent(m.account_id));if(a.id!==m.account_id)throw new CommerceError('Stripe account mismatch.',502);await database().prepare('UPDATE merchant_accounts SET charges_enabled=?,details_submitted=?,updated_at=? WHERE customer_id=? AND account_id=? AND disconnected=0').bind(Number(a.charges_enabled),Number(a.details_submitted),now(),m.customer_id,m.account_id).run();return a;}
@@ -27,7 +27,7 @@ export async function websitePaymentsRoute(request:Request,env:MerchantEnv,user:
  if(request.method==='GET'){
   const siteId=url.searchParams.get('siteId');
   if(siteId){if(!await sitePermission(siteId,user.id))throw new CommerceError('Website not found.',404);if(url.searchParams.get('provider')==='honeybook')return json({links:await honeybookEditorLinks(env,siteId)});const rows=await db.prepare('SELECT id,label,amount,currency,interval,enabled FROM payment_offers WHERE site_id=? ORDER BY updated_at DESC').bind(siteId).all();return json({offers:rows.results});}
-  const condition=user.isAdmin?'c.owner=?':'lower(c.email)=?',identity=user.isAdmin?user.id:user.email;
+  const scope=await siteScope(user.id),condition=scope.platform?'0 AND c.owner=?':'EXISTS (SELECT 1 FROM customer_accounts ca WHERE ca.customer_id=c.id AND ca.owner=c.owner AND ca.user_id=?)',identity=scope.id;
   const [customers,sites,accounts,offers,orders,payments]=await Promise.all([
    db.prepare(`SELECT c.id,c.name,c.email,c.archived FROM customers c WHERE ${condition}`).bind(identity).all(),
    db.prepare(`SELECT s.id,s.title,s.customer_id FROM client_sites s JOIN customers c ON c.id=s.customer_id WHERE ${condition} AND c.archived=0 AND s.archived=0`).bind(identity).all(),

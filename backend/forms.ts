@@ -1,3 +1,4 @@
+import {formDeliveryStatement} from './form-connections';
 import {database,sitePermission} from '../lib/suite-store';
 import {publishedForm,MAX_FORM_FILES,MAX_FORM_FILE_BYTES,type FormAnswer,type FormSubmission,submissionsCsv} from '../lib/form-model';
 import type {Website} from '../lib/editor-model';
@@ -74,9 +75,9 @@ export async function submitPublicForm(request:Request,siteId:string,site:Websit
   if(limits.some(r=>r.results.some(row=>Number(row.count)>Number(row.max_count))))throw new FormError('Too many form responses have been sent. Please try again later.',429);
   const id=crypto.randomUUID();
   const insert=db.prepare('INSERT INTO form_submissions (id,site_id,page_id,page_name,form_id,form_name,request_id,payload_hash,answers,status,created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)').bind(id,siteId,pageId,form.page.name,formId,form.block.title||'Website form',requestId,payloadHash,content,'new',new Date().toISOString());
-  try{await db.batch([insert,...files.map(file=>db.prepare('INSERT INTO form_attachments (id,submission_id,site_id,filename,content_type,size,content) VALUES (?,?,?,?,?,?,?)').bind(file.id,id,siteId,file.filename,file.type,file.bytes.length,file.bytes))]);}
+  try{await db.batch([insert,formDeliveryStatement(siteId,id),...files.map(file=>db.prepare('INSERT INTO form_attachments (id,submission_id,site_id,filename,content_type,size,content) VALUES (?,?,?,?,?,?,?)').bind(file.id,id,siteId,file.filename,file.type,file.bytes.length,file.bytes))]);}
   catch(error){const duplicate=await db.prepare('SELECT payload_hash FROM form_submissions WHERE site_id=? AND request_id=?').bind(siteId,requestId).first<{payload_hash:string}>();if(duplicate?.payload_hash===payloadHash)return json({ok:true});throw error;}
-  return json({ok:true},201);
+  return json({ok:true,submissionId:id},201);
  }catch(error){if(error instanceof FormError)return json({error:error.message},error.status);console.error('Form submission unavailable',error instanceof Error?error.message:'Unknown failure');return json({error:'Your response could not be stored because the form service is unavailable. Please try again later; your answers are still on this page.'},503);}
 }
 export async function formsInbox(request:Request,userId:string){

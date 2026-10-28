@@ -1,3 +1,4 @@
+import {FormConnections} from '../form-connections';
 import {useEffect,useRef,useState} from 'react';
 import {Link2,RefreshCw,ShieldCheck,ArrowUpRight,KeyRound} from 'lucide-react';
 import {serviceRequest} from './customer-center';
@@ -10,7 +11,7 @@ type Credential={token:string;endpoint:string};
 const emptyPayment={paymentId:'',label:'',amount:'',currency:'USD',paidAt:'',clientName:'',clientEmail:'',project:'',invoiceUrl:''};
 const when=(date:string|null)=>date?new Date(date).toLocaleString():'None yet';
 export function HoneyBookPanel(){
- const [data,setData]=useState<HoneyBookData|null>(null),[siteId,setSiteId]=useState(()=>readViewState('honeybookSite')??''),[view,setView]=useState(()=>['links','history','sync'].includes(readViewState('honeybookView'))?readViewState('honeybookView'):'links');
+ const [data,setData]=useState<HoneyBookData|null>(null),[siteId,setSiteId]=useState(()=>readViewState('honeybookSite')??''),[view,setView]=useState(()=>['links','history','sync','forms'].includes(readViewState('honeybookView'))?readViewState('honeybookView'):'links');
  const [label,setLabel]=useState(''),[url,setUrl]=useState(''),[kind,setKind]=useState<'private_invoice'|'public_form'>('private_invoice'),[confirmPublic,setConfirmPublic]=useState(false);
  const [payment,setPayment]=useState(emptyPayment),[error,setError]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false),[refresh,setRefresh]=useState(0),[credential,setCredential]=useState<Credential|null>(null);
  const requestVersion=useRef(0);
@@ -27,8 +28,9 @@ export function HoneyBookPanel(){
   <div className="honeybook-heading"><div className="honeybook-emblem"><Link2 size={25}/></div><div><span className="eyebrow">YOUR BUSINESS · YOUR PAYMENT PROVIDER</span><h2>HoneyBook</h2><p>Keep collecting payments through your own HoneyBook account.</p></div><a className="button" href="https://app.honeybook.com/" target="_blank" rel="noopener noreferrer">Open HoneyBook <ArrowUpRight size={15}/></a></div>
   <div className="honeybook-toolbar"><label>Website<select value={siteId} disabled={busy} onChange={e=>{setSiteId(e.target.value);setNotice('');setCredential(null);setPayment(emptyPayment);}}><option value="">Choose website</option>{data?.sites.map(s=><option key={s.id} value={s.id}>{s.title}</option>)}</select></label><button className="button" disabled={busy} onClick={()=>setRefresh(n=>n+1)}><RefreshCw size={15}/>Refresh</button></div>
   {error&&<div role="alert"><p>{error}</p>{siteId&&<button className="button" onClick={()=>setSiteId('')}>Choose another website</button>}</div>}{notice&&<p role="status">{notice}</p>}
-  {!data&&!error?<p role="status">Loading HoneyBook…</p>:!data?.sites.length?<p>No websites with billing access. The customer contact, website administrator, or platform billing team can manage HoneyBook.</p>:<>
-  <div className="honeybook-tabs" role="group" aria-label="HoneyBook area">{[['links','Payment links'],['history','Payment history'],['sync','Automatic sync']].map(([id,name])=><button className="button" key={id} aria-pressed={view===id} disabled={busy} onClick={()=>{setView(id);setNotice('');}}>{name}</button>)}</div>
+  {!data&&!error?<p role="status">Loading HoneyBook…</p>:!data?.sites.length?<p>No websites with billing access. Only this website’s administrators can configure HoneyBook.</p>:<>
+  <div className="honeybook-tabs" role="group" aria-label="HoneyBook area">{[['links','Payment links'],['history','Payment history'],['sync','Payment sync'],['forms','Form connection']].map(([id,name])=><button className="button" key={id} aria-pressed={view===id} disabled={busy} onClick={()=>{setView(id);setNotice('');}}>{name}</button>)}</div>
+  {view==='forms'&&siteId&&<FormConnections key={siteId} siteId={siteId} expanded/>}
   {view==='links'&&<>
    <div className="honeybook-explainer"><ShieldCheck size={20}/><p><strong>No extra integration subscription needed.</strong> Save a private invoice to share with its intended payer, or a public lead form for your website. Payment details and processing stay in HoneyBook.</p></div>
    <form className="suite-form honeybook-form" onSubmit={e=>{e.preventDefault();void action({action:'save-link',label,url,kind,confirmPublic},'Link saved. Public forms can be selected in a Payment checkout section in the editor.').then(ok=>{if(ok){setLabel('');setUrl('');setConfirmPublic(false);}});}}>

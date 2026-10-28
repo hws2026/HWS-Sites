@@ -8,7 +8,7 @@ export type HoneyBookData = {sites:{id:string;title:string;customer_id:string}[]
 // The browser and server use the same allowlist. No redirects are fetched by HWS.
 export function honeyBookUrl(value:unknown):string|null {
  if(typeof value!=='string'||value.length>2000)return null;
- try {const url=new URL(value);return url.protocol==='https:'&&!url.username&&!url.password&&!url.port&&(url.hostname==='honeybook.com'||url.hostname.endsWith('.honeybook.com'))?url.href:null;}catch{return null;}
+ try {const url=new URL(value);return url.protocol==='https:'&&!url.username&&!url.password&&!url.port&&['honeybook.com','hbportal.co'].some(host=>url.hostname===host||url.hostname.endsWith('.'+host))?url.href:null;}catch{return null;}
 }
 
 export const honeyBookSetup = {

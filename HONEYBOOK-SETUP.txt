@@ -102,3 +102,20 @@ https://zapier.com/apps/honeybook/integrations
 https://help.zapier.com/hc/en-us/articles/8496326446989-Send-webhooks-in-Zaps
 https://help.honeybook.com/en/articles/11067573-create-and-share-pay-links-in-honeybook
 https://help.honeybook.com/en/articles/9472515-make-a-lead-form-to-sell-digital-products
+
+OPTIONAL WEBSITE FORM FORWARDING
+In Forms inbox, expand HoneyBook form connection, or open Website payments > HoneyBook > Form connection. Each website administrator (including the platform owner on personal websites) can configure their own connection.
+1. Create or reuse a Zapier Catch Hook connected to your own HoneyBook Create Project action. In HoneyBook use Tools > Integrations > Zapier; enter that HoneyBook API key in Zapier's HoneyBook connection, not in Husky Suite.
+2. Save the Catch Hook URL in the suite. It is encrypted server-side and never returned to the browser, public website, template library, or logs. Saving or replacing a connection turns forwarding off.
+3. Send the labeled sample. Check the resulting HoneyBook project and publish your Zap. A successful HTTP reply only proves Zapier accepted the sample.
+4. Confirm the destination and enable forwarding. All form submissions still commit to the private suite inbox first, and the background delivery queue retries transient failures. File contents/download URLs are excluded. Map submissionId for deduplication: delivery retries can occur after a timeout.
+5. Review recent delivery status, retry failures, or turn forwarding off/disconnect. Changes cancel queued copies but keep internal responses. Setup is available on mobile within Forms too.
+HoneyBook Essentials/Premium and a Zapier plan supporting Webhooks are needed for automation. No accounts are purchased or upgraded by Husky Suite. The inbox and CSV export do not require HoneyBook or Zapier.
+
+EXISTING CUSTOMER WEBSITE IMPORTS
+Inspect form action URLs, iframe/embed ownership, scripts and field mappings before adapting a new website. Preserve customer-owned connections after confirming the destination; do not copy one customer's private hooks into a shared template. Do not execute an uploaded script or restore an obsolete embed simply because it is present in the source.
+The Paradise-Photo-Booths-BUF.zip RESTORE-REPORT.txt explicitly states that its original HoneyBook embed identified Lifetime Photo Booth and was replaced with local browser drafts. That ZIP contains no working Paradise HoneyBook delivery connection. The suite adapter sends its original form controls into the private inbox; optional forwarding requires that customer's own setup above. Original page/CSS assets remain unchanged.
+
+WITHOUT ZAPIER
+The connection screen also accepts an existing public HoneyBook lead/contact form link. Save it, then add a Payment checkout section in the editor and choose HoneyBook plus that saved form. These responses go directly to HoneyBook; they are not copied to the suite inbox. Suite forms and CSV exports remain available independently.
+HoneyBook now documents a private API with OAuth/PKCE and signed client authentication. An approved Husky Suite application is required before a direct account connection can operate. It is not active in this release and no application has been submitted. Official documentation: https://developers.honeybook.com/

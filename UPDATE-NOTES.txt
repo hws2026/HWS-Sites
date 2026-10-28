@@ -1,205 +1,21 @@
-FINAL MORNING EDITS — SIDEBAR, POLICY HISTORY & OPTIONAL LOCATION
+HUSKY SUITE — 28 OCTOBER 2026
 
-- The sidebar logo and spacing adapt to screen height. Removed the duplicate
-  template promotion; all 14 navigation items and Customer portal remain visible
-  at tested 1366x720 and 1366x640 desktop viewports. Very small/zoomed windows can
-  still scroll so controls are never clipped or hidden.
-- Policy acceptance history starts with a customer selector. Choose a customer
-  to see their policy versions, timestamps, signer details and IP. Selected
-  history is queried on the server and paginated. Archived/deleted account
-  history remains reviewable. The selection survives refresh.
-- Sign-in now offers Share device location (optional). It asks the browser only
-  after the user clicks. The user can remove it; permission denial does not
-  prevent sign-in. Reports are one-time, expire after five minutes, are cleared
-  after the attempt, and are stored encrypted in the audit record.
-- Device-reported coordinates retain six decimal places for display and a
-  reported accuracy in metres. The map can show a pin at the reported location.
-  Device reports are unverified telemetry, never authorization evidence. GPS,
-  Wi-Fi and cell-tower accuracy vary; neither they nor IP lookup guarantee an
-  exact address. Older IP-only records remain broad network estimates.
-- Maps load only after the administrator clicks, with notice that the displayed
-  location is shared with OpenStreetMap. No real device location was collected
-  for verification; browser tests used an explicitly simulated location.
+Customer websites are isolated from platform staff. The platform can assign a new website or template; customers manage their own drafts, publishing, domains, forms, media, events and website payments. Owner personal websites remain in the owner workspace. Existing assigned customer accounts become website owners automatically through their verified account binding.
 
-VERIFICATION FOR THIS PACKAGE
-- TypeScript, production frontend and backend build checks passed.
-- 111 customer/security checks, 87 HoneyBook checks, 157 backend checks,
-  44 mobile checks, 42 existing Stripe payment checks, 34 publication checks
-  and 26 website-creation checks passed using isolated fixtures.
-- 403 native template/section combinations and 1,356 template pages rendered;
-  HoneyBook sections also validated in all 13 native templates. Imported-template
-  compatibility passed and all 74 original photo-booth files remain unchanged.
-- Browser checks covered HoneyBook desktop/mobile (390px), editor form selection,
-  compact sidebar at 720px/640px heights, customer policy selection/refresh and a
-  simulated device pin. No real device coordinates or customer payment data used.
-- Archive contents are checked against SOURCE-FILES.txt and ZIP checksums.
+Customer portal now includes templates, blank starts, full templates and organization copies, archived websites and website access controls. Customer records cannot be used to suspend, delete or reassign an existing customer website.
 
-HONEYBOOK OPTIONS & COORDINATED DEPLOYMENT — OCTOBER 23, 2026
+Domains: DNS scans work for any public domain. Automatic TXT/CNAME insertion supports authorized Cloudflare and GoDaddy DNS accounts. Tokens are used for one request and never saved. Existing records are checked first; conflicts stop writes. Other providers receive manual records and verification. No registrar changes, purchases, paid subscriptions or automatic nameserver migrations are performed.
 
-SOURCE UPDATE — NOT DEPLOYED LIVE OR CONNECTED TO A CUSTOMER ACCOUNT.
-See UPLOAD-README.txt. The coordinated Pages workflow now applies pending backend
-migrations and deploys the Worker before publishing the matching frontend. Copy
-hidden .github too; the source verifier rejects the old workflow arrangement.
+Support messages queue branded email notifications to the customer or platform owner, plus the assigned support agent. Notification data is encrypted. Temporary delivery errors retry with an idempotency key; provider acceptance is reported separately from actual inbox delivery.
 
-- HoneyBook and Stripe can be selected separately in Website payments.
-- Private client invoice links and public booking/payment lead forms are separate.
-  Only public forms are selectable in any template's Payment checkout section.
-- Visitors can open a published HoneyBook form without signing into Husky Suite.
-- Manual payment history works without an additional automation subscription.
-  Records can be voided/corrected, with history retained; no charge/refund occurs.
-- Optional per-website automatic payment events support the customer's HoneyBook
-  and Zapier accounts. Setup, test timestamps, key replacement, disconnection and
-  understandable errors are in the suite. See HONEYBOOK-SETUP.txt for requirements.
-- Details/URLs are encrypted; sync keys are hashed and shown once. Customer/site
-  permissions protect payer data. Duplicate deliveries do not duplicate payments.
-- Customer archive/deletion and copied-site payment destination protections apply.
-- Billing staff and mobile billing can access the HoneyBook workspace. Its open
-  website and tab survive refresh through the URL.
-- Migration 0014 adds connection/history tables; existing links stay private.
-- No HoneyBook account, Zap, subscription or live financial transaction was created.
-  Sync is successful-payment activity, not full invoice/refund/balance synchronization.
+The drawer now receives suite styling and has a visible close button. Template library name corrected to Paradisephotobooths; template identifiers and original imported files are preserved.
 
-EARLIER RELEASE NOTES (HISTORICAL DEPLOYMENT INSTRUCTIONS ARE SUPERSEDED ABOVE)
+Deployment includes migrations 0015 and 0016 and the complete .github folder. GitHub Pages waits for the matching backend deployment. Do not upload a partial ZIP or overwrite the .git folder. Infrastructure account holders retain their underlying hosting/database powers; these restrictions protect the normal suite UI and API.
 
-SECURITY SAFEGUARDS & PRICING LIBRARY — OCTOBER 23, 2026
-
-SOURCE UPDATE ONLY — NOT DEPLOYED LIVE.
-Upload the complete contents, including .github. Start a NEW Deploy Cloudflare
-backend workflow from main and deploy GitHub Pages from the same commit. The
-backend applies pending migrations 0012 and 0013 automatically. Existing server
-secrets must be preserved. No paid service or new secret was added.
-
-- Security alerts send FROM security@huskysol.com TO awilson2951@gmail.com.
-  Welcome emails still send from onboarding@huskysol.com.
-- Wrong passwords are throttled; they never trigger a suite-wide shutdown.
-  Sustained authenticated probing of restricted admin areas holds only the
-  offending account. Only the primary owner can take the whole suite offline.
-- Owner recovery and audit access remain at /#/security, including on mobile.
-  Other admins can view; only the primary owner can manage restrictions or purge.
-- Alerts repeat approximately every 15 minutes until acknowledged. Acknowledging
-  stops reminders without restoring access. Email-provider errors show in the UI.
-- Updated dependencies, bounded request bodies, upload signature checks, and a
-  production browser script policy. See SECURITY-REVIEW.txt for scope, encryption,
-  test results and remaining advisory limitations. This is not a hack-proof claim.
-- Added the supplied pricing HTML as editable native content: nine plans, ten
-  add-ons, shared features and billing notes. Editor -> Library -> Pages ->
-  Pricing & plans adds the full page. Sections -> Commerce adds pricing cards or
-  add-ons individually; Pricing billing notes is also available in the library.
-  Use the right inspector to edit prices, periods, badges and feature lists.
-  Cards use the current website's accent, fonts and colors; mobile stacks them.
-  This display content does not create payments or change account allowances.
-- All earlier profile, onboarding, audit, refresh and template work remains.
-  Original photo-booth files were not changed. Private audit exports are excluded.
-- HoneyBook was deferred in this earlier release; the update above now adds it.
-
-PRIOR UPDATE DETAILS FOLLOW
-
-PROFILE, ONBOARDING, AUDIT & REFRESH UPDATE — OCTOBER 23, 2026
-
-THIS PACKAGE IS SOURCE CODE, NOT A LIVE DEPLOYMENT.
-Upload the complete contents, including .github. Run the NEWEST main version of
-Deploy Cloudflare backend (not a rerun of an old job), then deploy GitHub Pages.
-The backend workflow applies migration 0012 automatically. No new secrets or
-paid services are needed. Existing server secrets must remain in Cloudflare.
-
-IN THIS RELEASE
-- A customer switches from Onboarding to Active after changing any required
-  temporary password and accepting every current policy. Completion is timestamped.
-  Opening Customers also reconciles accounts that finished before this fix.
-  Paused/archived customers are not automatically reactivated.
-- Profile photo/name/password settings open from the top-left account button.
-  Admins, customers, and staff can update their own profiles. Uploaded photos
-  are cropped/resized, and stored encrypted. Email/phone fields are read-only.
-  Normal password changes require the current password.
-- Workspace identity moves to the desktop header's right side. The desktop
-  Mobile workspace link is removed. Mobile sessions still use the mobile workspace.
-- Audit filters run on the server, so failed sign-ins do not disappear behind
-  the newest 100 general activity records. The open log refreshes every 15 seconds.
-  Unreadable old encrypted details no longer break the entire event list.
-- Only the configured primary owner can delete an audit entry or purge the
-  audit log. Other administrators retain view access. Deletion needs typed
-  confirmation, keeps newer activity and policy acceptance records, and writes
-  a deletion receipt. No live records were purged while preparing this update.
-- Empty geolocation coordinates now stay unavailable instead of turning into
-  zero degrees. IP locations are labeled as estimates and use a wider map,
-  without a house-level pin. This cannot guarantee a person's physical location.
-- Refresh keeps the current admin/customer section, editor page and preview size,
-  editor panel, mobile billing area, selected form inbox and status, domain site,
-  billing filter, support conversation, and archive views in the URL.
-  Refresh does not automatically save unpublished/unsaved form or editor edits.
-- HoneyBook syncing is ON HOLD. This ZIP keeps the existing HoneyBook links;
-  it does not claim to connect a customer's HoneyBook account or sync payments.
-
-VERIFIED
-TypeScript check; production frontend/backend builds; 96 customer security,
-157 backend, and 44 mobile regression checks; browser checks for photo resizing,
-profile save, read-only contact fields, purge confirmation, audit filtering,
-and actual navigation/refresh in the suite and editor.
-A single fake-address live login test returned logged=true. Live audit data
-was not deleted. Direct database inspection was denied by the current local
-Cloudflare credential; deployment must use the configured GitHub workflow.
-
-PRIOR RELEASE NOTES (historical deployment statements below are not for this ZIP)
-
-CUSTOMER SERVICES UPDATE — OCTOBER 23, 2026
-
-LOGIN NOTICE: The always-visible security notice has been removed. Invalid
-credentials now show the requested red message below Sign in with an underlined
-Privacy and account policies link. Password recovery, temporary lockouts, and
-connection errors keep their own messages. Security logging is unchanged.
-
-BACKEND WORKFLOW SETUP FIX: Missing GitHub deployment credentials are detected
-before installation/build instead of failing at database migration. The account
-ID defaults to backend/wrangler.json; only the Cloudflare deployment token must
-be added as an Actions secret. This package does not contain any secret token.
-
-See CUSTOMER-SETUP-README.txt for the complete change list and activation steps.
-Includes verified Resend onboarding, temporary passwords, policy version history,
-security logs, encrypted support conversations, staff roles, HoneyBook links,
-customer template assignment, and mobile-menu fixes.
-Upload the complete source package, then enable customer setup in Customers.
-
-OLDER RELEASE NOTES BELOW (deployment statements refer to those older releases)
-
-MOBILE WORKSPACE
-Phones and tablets can sign in to Billing, Forms, and Events. Use Mobile workspace in the desktop header to preview it. Deploy the backend as well as the GitHub Pages frontend. Event publishing keeps unrelated website edits private.
-
-HWS Studio update - October 11, 2026
-
-SOURCE PACKAGE: This package has not been deployed. Upload its contents into the repository root, including the .github folder. Deploy the Cloudflare backend and GitHub Pages frontend from this same source version. Existing backend secrets remain in Cloudflare; do not put them in this package. See DEPLOYMENT.md.
-
-Included:
-- Working forms across every template, including nested forms: editable fields, required/choice options, confirmation text, privacy note and acceptance toggle. Published public websites receive responses; editor/demo/review previews do not submit.
-- A private Forms inbox in the admin panel, customer portal and editor. Website owners and assigned editors can read answers, mark new/read/archived, restore archived responses, download private attachments and export CSV. Viewers and other-site accounts are denied. No form response emails are sent.
-- Up to three attachments per form, each up to 256 KB (PDF, PNG, JPEG or TXT). Answers and files are stored in private Cloudflare D1 records. Published-schema validation, idempotent retries, a honeypot and per-sender/site rate limits protect submissions.
-- Persistent save-failure reasons with affected page/section details where available, retry, draft backup, expired-session sign-in and conflict recovery. Failed saves keep edits visible in the current tab.
-- REQUIRED: apply migration 0004_glossy_ma_gnuci.sql before deploying the new Worker, then deploy Pages. This package has not been deployed; uploading only the frontend will not activate submissions. The backend GitHub workflow applies pending migrations before deployment. No new secrets or storage setup are needed.
-- Scratch-creation hotfix: verify the persisted draft before opening the editor. Older backends that ignore the starting choice now receive an explicit empty-draft save for the untouched new record. Save/verification failures retain the same record for retry, and edited/published websites are never automatically cleared.
-- Website creation and the editor template picker now offer Start from scratch (the UI default) or Use the whole template. Scratch keeps the selected design with one empty Home page and removes demo pages, menus, links, logos, contacts, and events. Whole template includes all sample content. Changing an existing site requires an explicit apply action and can be undone.
-- Sign-in and password recovery; public sign-up UI and handler removed.
-- A separate shared calendar per website, opened from Calendar in the editor toolbar.
-- Homepage event cards and full calendars use the same events, including nested sections. Categories, featured events, card limits, all-day/multi-day dates and website timezones are editable.
-- Events update the draft preview immediately. Publishing updates live website placements. Existing automatic customer email reminders use published events and deduplicate repeated placements. Email credentials and enabled rules are still required.
-- Existing sites can import dated events into their shared calendar. Undated legacy cards remain local until explicitly connected.
-- Ten fictional reference templates now contain 1,347 generated pages from public page inventories. Three general templates add nine pages. All references use the common editable module system.
-- 44 reusable section presets, 19 page layouts, saved-section import/export, nested tabs/accordions/groups, tables, directory and document filters, galleries, forms and calendars.
-- 37 theme color roles, editable existing template palette, section colors, and nested-section color overrides.
-- Editable header mini menus, hierarchical navigation, mega menus, and responsive menu refinements.
-
-Verified:
-- 41 forms and save-error checks, including site isolation, field validation, attachments, empty optional browser file fields, duplicate retries, connected domains, CSV escaping and rate limits.
-- Isolated browser checks of public form submission, corresponding inbox answers/read status, detailed save-validation and expired-session errors, retained edits and successful retries. Editor mobile preview form/canvas widths were checked for horizontal overflow; this was not a separate physical-device browser test.
-- 21 new website-creation regression checks covering older/current backend behavior, all 12 selectable templates, failed saves/reads, retry without duplicate records, and protection for edited/published drafts. The local browser creation flow against a simulated older backend showed one empty Home page still present after reload.
-- TypeScript check, production Pages build, Cloudflare Worker dry-run build.
-- 1,356 template page renders and 377 template/block combinations.
-- 104 backend checks, 61 commerce checks, 16 private storage checks. All external providers were mocked; no email/payment/DNS changes were made.
-- Scratch/full initialization checks across all 13 templates, plus backend creation, validation, saving and publishing for both choices.
-- Shared calendar synchronization, filtering, backups, legacy migration, timezone/DST and invalid-input checks.
-- Browser checks of event create/edit/delete synchronization, all-day multi-day events, mobile calendar overflow, and sign-in/password-reset screens.
-- Representative template interior/header/mobile menu and editable color checks.
-- Browser checks of the two template choices, adding content to an empty Home page, undoing replacement, and loading a complete 155-page template.
-
-Coverage limits:
-Public inventories and representative interior pages informed the templates. This is not a claim that every source page has been visually reproduced pixel for pixel. Source portals/external applications use fictional local content. Demo/editor/review previews do not submit responses; published public website forms save responses privately in the suite. Colors embedded inside photos/videos remain part of those assets.
-
-Existing customer drafts are preserved. Selecting a replacement template replaces the draft and is undoable; new template page architecture is not silently merged into existing customer sites. This update does not change Supabase's project-level registration setting.
+FORMS AND HONEYBOOK
+- Added customer-owned HoneyBook form connection setup under Forms inbox and HoneyBook: encrypted URL storage, labeled test, explicit enable/disable, delivery status, disconnect and retry.
+- Suite-built forms always save internally; HoneyBook forwarding is optional and uses the customer's own Zapier/HoneyBook connection. Delivery failures do not erase or reject the internal response.
+- Successful website forms clear their fields and retain a sent confirmation. Failed requests retain answers for retry. The forms inbox refreshes every 15 seconds while visible.
+- Checked the original Paradise ZIP: it contains local draft handling, not a configured Paradise HoneyBook embed. Existing imported page/CSS source files are preserved.
+- Combined customer onboarding policies into one readable screen with one acceptance checkbox/button. Individual policy versions and server timestamps remain in the audit log. Acceptance is unavailable if any document fails to load.
+- Added an in-suite, no-Zapier setup for existing public HoneyBook form links. These submit directly to HoneyBook; suite forms remain separate unless forwarding is configured. Direct HoneyBook account/API integration awaits HoneyBook approval and is not activated.

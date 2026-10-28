@@ -38,7 +38,7 @@ export function isMobileApiAllowed(path:string,method:string) {
   const routes:Record<string,string[]>={
     '/api/profile':['GET','POST'], '/api/login':['POST'], '/api/onboarding':['GET','POST'], '/api/account-password':['POST'], '/api/session':['POST'], '/api/honeybook':['GET','POST'], '/api/me':['GET'], '/api/site-login':['GET','POST'],
     '/api/mobile':['GET','POST'], '/api/events':['GET','PUT'],
-    '/api/forms':['GET','PUT'], '/api/billing':['GET','POST'],
+    '/api/forms':['GET','PUT'], '/api/form-connections':['GET','POST'], '/api/billing':['GET','POST'],
     '/api/website-payments':['GET','POST'],
   };
   return routes[path]?.includes(method)??false;

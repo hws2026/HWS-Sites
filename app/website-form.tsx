@@ -11,11 +11,11 @@ export function WebsiteForm({block,editing}:{block:Block;editing?:boolean}){
  const live=context.live&&!editing&&Boolean(publicFormUrl()),closed=block.formEnabled===false;
  async function submit(event:React.FormEvent<HTMLFormElement>){
   event.preventDefault();if(!live||closed||busy)return;
-  const data=new FormData(event.currentTarget),files=Array.from(data.values()).filter((v):v is File=>v instanceof File&&v.size>0);
+  const form=event.currentTarget,data=new FormData(form),files=Array.from(data.values()).filter((v):v is File=>v instanceof File&&v.size>0);
   if(files.length>MAX_FORM_FILES||files.some(f=>f.size>MAX_FORM_FILE_BYTES)){setError('Use up to three attachments, no larger than 256 KB each.');return;}
   if(!requestId.current)requestId.current=crypto.randomUUID();data.set('requestId',requestId.current);data.set('pageId',context.pageId);data.set('formId',block.id);
   setBusy(true);setError('');
-  try{await responseJson(await fetch(publicFormUrl(),{method:'POST',body:data,credentials:'omit'}));setSent(true);}catch(e){setError(failureReason(e));}finally{setBusy(false);}
+  try{await responseJson(await fetch(publicFormUrl(),{method:'POST',body:data,credentials:'omit'}));form.reset();setSent(true);}catch(e){setError(failureReason(e));}finally{setBusy(false);}
  }
  if(sent)return <div className="form-success" role="status"><strong>Response received</strong><p>{block.formSuccessMessage||'Thank you. Your response has been sent to our team.'}</p><button type="button" className="module-button" onClick={()=>{requestId.current='';setSent(false);}}>Send another response</button></div>;
  return <form className="module-form" onSubmit={e=>void submit(e)}>{block.text&&<p>{block.text}</p>}{!live&&<p className="form-demo-note">Form preview. Responses are collected on the published public website.</p>}{closed&&<p role="status">This form is not currently accepting responses.</p>}

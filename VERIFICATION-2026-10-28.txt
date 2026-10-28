@@ -1,0 +1,22 @@
+HUSKY SUITE UPDATE — LOCAL VERIFICATION — 28 OCTOBER 2026
+
+This source package has not been uploaded or deployed by this task. The user will upload and deploy it.
+
+Passed: TypeScript typecheck, production GitHub Pages build, Cloudflare Worker dry-run build, complete source/workflow validation.
+Passed verification scripts: tenant-isolation, form-connections, forms, backend, publication, mobile, customer-security, security-hardening, commerce, honeybook, website-payments, storage, creation, calendar, device-access, idle-media-footer, imported-template, templates, build-security and source.
+The HoneyBook connection checks use isolated local databases and mocked providers. They do not prove delivery into a customer's real HoneyBook account; that must be configured and tested by that customer.
+
+Browser checks: customer template library and site creation; compact sidebar at 680x760; customer form connection controls; Paradise form failure preserves answers, subsequent successful submission clears every field and shows the receipt; all 25 onboarding policies displayed together with one acceptance checkbox and button. Policy acceptance was not submitted on a real customer account.
+The original imported Paradise files pass byte-for-byte preservation checks (74 source/assets).
+
+Public Paradise form verification earlier in this task: the live published form accepted one clearly labeled software verification request, not a booking. Its request name is "Husky Suite form verification — not a booking" and email is suite-form-test@example.invalid. It may appear in the customer's inbox. No real HoneyBook booking, payment, or subscription was created.
+
+Limits:
+- DNS scanning supports public domains; automatic record insertion currently supports authorized Cloudflare and GoDaddy accounts, with manual instructions for other DNS providers. It does not silently overwrite conflicting records.
+- Existing HoneyBook public form links work without Zapier. Responses go directly to HoneyBook and are not automatically copied into the suite inbox.
+- Suite form forwarding through a customer's own supported HoneyBook/Zapier connection is optional and off until configured, tested and enabled. The private hook is encrypted and retries preserve a stable submission ID.
+- Direct HoneyBook account/API integration requires HoneyBook to approve a Husky Suite application. No API approval has been requested and this integration is not active in this release.
+- Email provider acceptance is not a guarantee of mailbox delivery.
+- Tenant restrictions apply to normal suite UI/API access; infrastructure/database account holders retain their provider-level access.
+
+Build warnings were non-blocking: existing large frontend bundles and Vite's future config loader notice. No known failing check remains.
